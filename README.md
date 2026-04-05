@@ -2,6 +2,8 @@
 
 Um fork medieval de **Space Station 14** com foco em sandbox económico, roleplay medieval e desenvolvimento comunitário.
 
+> 🤖 **Este projeto é desenvolvido com auxílio de IA via OpenCode.** Veja a seção [Desenvolvimento com OpenCode](#-desenvolvimento-com-opencode) abaixo para configurar seu ambiente de desenvolvimento com IA.
+
 ## 🎮 Sobre o Jogo
 
 OpenEdge 14 reimagina o conceito de Space Station 14 em um cenário de fantasia medieval. Em vez de uma estação espacial, os jogadores exploram e desenvolvem uma cidade medieval com sistemas de crafting, magia, economia e roleplay social.
@@ -27,17 +29,109 @@ OpenEdge 14 reimagina o conceito de Space Station 14 em um cenário de fantasia 
 
 ### Para Desenvolvedores
 
-Veja [Development Setup](DOCS/Development/00-Getting-Started.md)
+Recomendamos usar o **OpenCode** para desenvolver neste projeto. Veja a seção completa abaixo: [Desenvolvimento com OpenCode](#-desenvolvimento-com-opencode).
+
+Para build manual sem IA:
+```bash
+git submodule update --init --recursive
+dotnet build -c Release
+bash runserver.sh
+```
+
+## 🤖 Desenvolvimento com OpenCode
+
+OpenEdge 14 usa **OpenCode** como ferramenta principal de desenvolvimento assistido por IA. Todos os comandos, workflow e configurações já estão prontos no repositório.
+
+### Instalação
+
+#### Linux (Arch, Ubuntu, Debian, Fedora...)
 
 ```bash
-# Compilar
-dotnet build -c Debug
+curl -fsSL https://opencode.ai/install | bash
+```
 
-# Rodar servidor (com lobby)
-DOTNET_ConfigPresets="_OE14/Dev" dotnet run --project Content.Server
+Adicione ao PATH se necessário:
+```bash
+echo 'export PATH="$HOME/.opencode/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
 
-# Rodar cliente
-dotnet run --project Content.Client
+#### Windows (via WSL2)
+
+1. Instale o WSL2 com Ubuntu:
+   ```powershell
+   wsl --install
+   ```
+2. Abra o terminal Ubuntu e siga os passos do Linux acima.
+3. Clone o repositório dentro do WSL (`~/` ou `/home/usuario/`), **não** em `/mnt/c/` (muito mais lento).
+
+> **Requisitos**: Node.js 18+ ou Bun instalado na máquina.
+
+### Plugins Recomendados (opcionais)
+
+Estes plugins ampliam as capacidades do OpenCode neste projeto:
+
+```bash
+# Rodar servidor em background sem bloquear a conversa
+opencode plugin install @howaboua/opencode-background-process
+
+# Aplicação rápida de patches de código (mais eficiente)
+opencode plugin install @jredeker/opencode-morph-fast-apply
+```
+
+### Iniciando uma Sessão
+
+```bash
+cd OpenEdge-14
+opencode
+```
+
+O OpenCode vai carregar o `CLAUDE.md` automaticamente com o contexto completo do projeto.
+
+### Comandos Disponíveis
+
+Estes comandos já estão configurados globalmente para este projeto:
+
+| Comando | Descrição |
+|---|---|
+| `/build` | Compila o projeto em Release mode |
+| `/server` | Inicia o servidor do jogo |
+| `/kill-server` | Para o servidor em execução |
+| `/doctor` | Diagnóstico do projeto (erros, warnings) |
+| `/review` | Code review de um arquivo ou mudança |
+| `/plan` | Análise read-only antes de implementar |
+| `/status` | Git status atual |
+| `/diff` | Ver todas as mudanças pendentes |
+| `/test` | Rodar testes do projeto |
+
+### Workflow Recomendado
+
+1. Abra o terminal na pasta do projeto e rode `opencode`
+2. Use `/build` para confirmar que o projeto compila sem erros
+3. Diga "inicie o servidor" ou use `/server` para subir o game server
+4. Faça suas alterações com ajuda da IA
+5. Use `/build` novamente para validar (0 erros obrigatório antes de commitar)
+6. Use `/review` para revisar o código gerado
+7. Faça o commit com a mensagem e o co-author (veja Política de IA abaixo)
+
+### Servidor em Background
+
+Com o plugin `opencode-background-process` instalado, o servidor roda sem bloquear a conversa:
+
+- **"inicie o servidor"** ou `/server` — sobe o servidor em background
+- **"mostre os logs do servidor"** — exibe o output em tempo real
+- **"pare o servidor"** ou `/kill-server` — encerra o processo
+
+Sem o plugin, use o script diretamente em outro terminal:
+```bash
+bash runserver.sh
+```
+
+### Alternativa: Claude Code
+
+[Claude Code](https://claude.ai/code) também funciona com este projeto — o arquivo `CLAUDE.md` na raiz configura o contexto automaticamente. Instale via:
+```bash
+npm install -g @anthropic-ai/claude-code
 ```
 
 ## 📚 Documentação
@@ -55,15 +149,11 @@ dotnet run --project Content.Client
 - [Map Creation](DOCS/Development/03-Map-Creation.md) - Como criar mapas
 - [Entity System](DOCS/Development/04-Entity-System.md) - Sistema de entidades
 
-### API Reference
-- [Systems](DOCS/API/Systems.md) - Principais sistemas
-- [Components](DOCS/API/Components.md) - Componentes disponíveis
-- [Events](DOCS/API/Events.md) - Eventos do sistema
-
 ## 🏗️ Estrutura do Projeto
 
 ```
 OpenEdge-14/
+├── CLAUDE.md                 # Contexto para IA (OpenCode/Claude Code)
 ├── Content.Server/           # Código do servidor
 ├── Content.Client/           # Código do cliente
 ├── Content.Shared/           # Código compartilhado
@@ -74,8 +164,7 @@ OpenEdge-14/
 │   └── ServerInfo/Guidebook/ # Guidebook in-game
 ├── DOCS/                    # Documentação do projeto
 │   ├── Gameplay/
-│   ├── Development/
-│   └── API/
+│   └── Development/
 └── RobustToolbox/           # Framework base (submodule)
 ```
 
@@ -99,7 +188,7 @@ dotnet build -c Release
 
 ### Rodar Servidor Desenvolvimento
 ```bash
-DOTNET_ConfigPresets="_OE14/Dev" dotnet run --project Content.Server
+bash runserver.sh
 ```
 
 Acesse: `localhost:1212` (no launcher do SS14)
@@ -123,9 +212,16 @@ Este é um projeto pessoal para exploração e aprendizado. Sinta-se livre para:
 
 ## ⚠️ Política de IA
 
-- **Código**: Pode usar IA como assistência, mas revise bem antes de commitar
-- **Documentação**: IA é uma excelente ferramenta, use à vontade
-- **Conceito**: Criatividade e ideias devem vir de você
+Este projeto usa IA como ferramenta de desenvolvimento. As regras são:
+
+- **Código gerado por IA é permitido** — este é um fork pessoal, não há restrições internas
+- **Não envie código AI para o upstream** — nunca faça PR com código AI para o repositório Ss14-Medieval original
+- **Build obrigatório antes de commitar** — `dotnet build` deve retornar 0 erros
+- **Co-author em todo commit com código AI**:
+  ```
+  Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
+  ```
+- **Revise antes de commitar** — use `/review` no OpenCode para validar o que foi gerado
 
 ## 📝 Licença
 
@@ -135,10 +231,11 @@ Baseado em [Space Station 14](https://github.com/space-wizards/space-station-14)
 
 - **Space Station 14**: https://spacestation14.io/
 - **SS14 Docs**: https://docs.spacestation14.io/
+- **OpenCode**: https://opencode.ai/
 - **Discord**: [Seu servidor discord aqui]
 
 ---
 
 **Desenvolvido com ❤️ por RustedBR**
 
-Última atualização: 2026-03-22
+Última atualização: 2026-04-05
