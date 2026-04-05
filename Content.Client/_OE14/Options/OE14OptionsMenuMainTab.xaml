@@ -1,0 +1,36 @@
+<options:OE14OptionsMenuMainTab
+    xmlns="https://spacestation14.io"
+    xmlns:ui="clr-namespace:Content.Client.Options.UI"
+    xmlns:options="clr-namespace:Content.Client._OE14.Options">
+
+    <!--
+    Place for all custom settings of OE14
+    -->
+    <BoxContainer Orientation="Vertical">
+
+        <!-- Main options container -->
+        <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer Orientation="Vertical" Margin="8 8 8 8" VerticalExpand="True">
+
+                <!-- Graphics group -->
+                <Label Text="{Loc 'oe14-ui-options-main-graphics-label'}"
+                       StyleClasses="LabelKeyText"/>
+
+                <CheckBox Name="WaveShaderEnabled"
+                    Text="{Loc 'oe14-ui-options-main-graphics-wave-shader'}"/>
+                    <!-- TODO: Wave shader tooltip -->
+                <CheckBox Name="PostProcessCheckBox"
+                    Text="{Loc 'oe14-ui-options-postprocess'}"
+                    ToolTip="{Loc 'oe14-ui-options-postprocess-tooltip'}"/>
+
+            </BoxContainer>
+        </ScrollContainer>
+
+        <!--
+        Utilitarian element to simplify configuration work,
+        ust don't touch that, okay?
+        -->
+        <ui:OptionsTabControlRow Name="Control" />
+
+    </BoxContainer>
+</options:OE14OptionsMenuMainTab>

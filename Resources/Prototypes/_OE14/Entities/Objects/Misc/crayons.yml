@@ -1,0 +1,240 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: OE14Crayon
+  name: crayon
+  description: A colourful crayon.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Thaumaturgy/crayon.rsi
+    layers:
+    - state: handle
+    - state: crayon
+      color: white
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Write
+    - Crayon
+  - type: UserInterface
+    interfaces:
+      enum.CrayonUiKey.Key:
+        type: CrayonBoundUserInterface
+  - type: Crayon
+    capacity: 15
+  localizationId: ent-OE14Crayon
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonWhite
+  name: white crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: white
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: white
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: white
+  - type: Crayon
+    color: white
+  - type: StaticPrice
+    price: 4
+  localizationId: ent-OE14CrayonWhite
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonRainbow
+  name: magic rainbow crayon
+  categories:
+  - DoNotMap
+  suffix: Artifact
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: white
+      shader: unshaded
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: white
+        shader: unshaded
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: white
+        shader: unshaded
+  - type: Crayon
+    color: Red
+    selectableColor: true
+    capacity: 1000
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+  - type: RgbLightController
+    layers:
+    - 1
+  - type: StaticPrice
+    price: 200
+  localizationId: ent-OE14CrayonRainbow
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonBlack
+  name: black crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: black
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: black
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: black
+  - type: Crayon
+    color: black
+  localizationId: ent-OE14CrayonBlack
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonRed
+  name: red crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: '#ed5f5f'
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: '#ed5f5f'
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: '#ed5f5f'
+  - type: Crayon
+    color: '#ed5f5f'
+  - type: StaticPrice
+    price: 8
+  localizationId: ent-OE14CrayonRed
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonYellow
+  name: yellow crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: '#ebe46e'
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: '#ebe46e'
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: '#ebe46e'
+  - type: Crayon
+    color: '#ebe46e'
+  - type: StaticPrice
+    price: 7.5
+  localizationId: ent-OE14CrayonYellow
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonGreen
+  name: green crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: '#6eeb87'
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: '#6eeb87'
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: '#6eeb87'
+  - type: Crayon
+    color: '#6eeb87'
+  - type: StaticPrice
+    price: 11
+  localizationId: ent-OE14CrayonGreen
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonBlue
+  name: blue crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: '#6eaaeb'
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: '#6eaaeb'
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: '#6eaaeb'
+  - type: Crayon
+    color: '#6eaaeb'
+  - type: StaticPrice
+    price: 12.6
+  localizationId: ent-OE14CrayonBlue
+- type: entity
+  parent: OE14Crayon
+  id: OE14CrayonPurple
+  name: purple crayon
+  components:
+  - type: Sprite
+    layers:
+    - state: handle
+    - state: crayon
+      color: '#d46eeb'
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: handle-inhand-left
+      - state: crayon-inhand-left
+        color: '#d46eeb'
+      right:
+      - state: handle-inhand-right
+      - state: crayon-inhand-right
+        color: '#d46eeb'
+  - type: Crayon
+    color: '#d46eeb'
+  - type: StaticPrice
+    price: 8.4
+  localizationId: ent-OE14CrayonPurple

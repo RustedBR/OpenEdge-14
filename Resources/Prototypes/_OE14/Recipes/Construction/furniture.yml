@@ -1,0 +1,305 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14ChairWooden
+  graph: OE14Seat
+  startNode: start
+  targetNode: OE14ChairWooden
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14ChairWoodenBirch
+  graph: OE14Seat
+  startNode: start
+  targetNode: OE14ChairWoodenBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14StoolWooden
+  graph: OE14Stool
+  startNode: start
+  targetNode: OE14StoolWooden
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14StoolBirch
+  graph: OE14Stool
+  startNode: start
+  targetNode: OE14StoolBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TableWooden
+  graph: OE14TableWooden
+  startNode: start
+  targetNode: OE14TableWooden
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TableWoodenBirch
+  graph: OE14TableWooden
+  startNode: start
+  targetNode: OE14TableWoodenBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TableWoodenRound
+  graph: OE14TableWoodenRound
+  startNode: start
+  targetNode: OE14TableWoodenRound
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TableWoodenBirchRound
+  graph: OE14TableWoodenBirchRound
+  startNode: start
+  targetNode: OE14TableWoodenBirchRound
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TableWoodenCounter
+  graph: OE14TableWooden
+  startNode: start
+  targetNode: OE14TableWoodenCounter
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TableWoodenBirchCounter
+  graph: OE14TableWooden
+  startNode: start
+  targetNode: OE14TableWoodenBirchCounter
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14OrderBoard
+  graph: OE14OrderBoard
+  startNode: start
+  targetNode: OE14OrderBoard
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14Mannequin
+  graph: OE14Mannequin
+  startNode: start
+  targetNode: OE14mannequin
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TargetStake
+  graph: OE14TargetStake
+  startNode: start
+  targetNode: OE14targetStake
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14Target
+  graph: OE14TargetStake
+  startNode: start
+  targetNode: OE14target
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14TargetEffigy
+  graph: OE14TargetEffigy
+  startNode: start
+  targetNode: OE14targetEffigy
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenBed
+  graph: OE14WoodenBed
+  startNode: start
+  targetNode: OE14WoodenBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14BirchWoodenBed
+  graph: OE14WoodenBed
+  startNode: start
+  targetNode: OE14BirchWoodenBed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14BenchWood
+  graph: OE14BenchWood
+  startNode: start
+  targetNode: OE14BenchWood
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14BenchWoodBirch
+  graph: OE14BenchWood
+  startNode: start
+  targetNode: OE14BenchWoodBirch
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenCloset
+  graph: OE14WoodenCloset
+  startNode: start
+  targetNode: OE14WoodenCloset
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenCabinet
+  graph: OE14WoodenCabinet
+  startNode: start
+  targetNode: OE14WoodenCabinet
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14IronCabinet
+  graph: OE14IronCabinet
+  startNode: start
+  targetNode: OE14IronCabinet
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14Furnace
+  graph: OE14Furnace
+  startNode: start
+  targetNode: OE14Furnace
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

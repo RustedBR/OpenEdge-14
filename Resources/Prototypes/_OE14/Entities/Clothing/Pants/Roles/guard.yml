@@ -1,0 +1,12 @@
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsGuardsChainmailSkirt
+  name: guard's chainmail skirt
+  description: Skirt with stitched clutch padding, in standard Imperial Guard uniform
+    colors.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/Roles/Guard/b_chainmail.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/Roles/Guard/b_chainmail.rsi
+  localizationId: ent-OE14ClothingPantsGuardsChainmailSkirt

@@ -1,0 +1,29 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14DayflinSilverNeedle
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14SilverNeedle:
+      amount: 1
+  products:
+    OE14EssenceFrost: 0.5
+    OE14EssenceLife: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+- type: reaction
+  id: OE14SilverNeedleAdmixture1
+  minTemp: 500
+  reactants:
+    OE14SilverNeedle:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14PositiveEffectHealMana:
+      amount: 1
+  products:
+    OE14HealingEffectHealCold: 2
+    OE14NegativeEffectSpeedDown: 1

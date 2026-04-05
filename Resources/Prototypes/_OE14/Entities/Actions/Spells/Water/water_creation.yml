@@ -1,0 +1,157 @@
+- type: entity
+  id: OE14ActionSpellWaterCreation
+  parent: OE14ActionSpellBase
+  name: Water creation
+  description: Creating a clot of water that is held in a floating balloon shape for some time
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 10
+  - type: OE14ActionFreeHandsRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneWaterCreation
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/water.rsi
+      state: water_creation
+  - type: DoAfterArgs
+    delay: 1
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectWaterCreation
+      - !type:OE14SpellSpawnInHandEntity
+        spawns:
+        - OE14LiquidDropWater
+
+- type: entity
+  id: OE14RuneWaterCreation
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5eabeb"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: OE14LiquidDropWater
+  parent:
+  - BaseItem
+  - ItemHeftyBase
+  name: floating liquid drop
+  description: A clot of liquid held in the shape of a ball by magic
+  suffix: Water
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Ginormous
+  - type: SolutionContainerManager
+    solutions:
+      drop:
+        maxVol: 10
+        reagents:
+        - ReagentId: Water
+          Quantity: 10
+  - type: OE14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 1 # 1 hits
+  - type: LandAtCursor
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 1
+  - type: MeleeWeapon
+    attackRate: 1.8
+    wideAnimationRotation: 225
+    wideAnimation: OE14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: drop
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PassiveDamage # Around 8 damage a minute healed
+    damage:
+      groups:
+        Brute: 0.016 # ~ 1 minute
+  - type: Damageable
+    damageContainer: Biological
+  - type: Edible
+    edible: Drink
+    solution: drop
+    delay: 0.5
+    forceFeedDelay: 1.5
+  - type: ExaminableSolution
+    solution: drop
+  - type: RefillableSolution
+    solution: drop
+  - type: InjectableSolution
+    solution: drop
+  - type: FitsInDispenser
+    solution: drop
+  - type: MixableSolution
+    solution: drop
+  #- type: SolutionTransfer
+  #  canChangeTransferAmount: false
+  - type: SolutionItemStatus
+    solution: drop
+  - type: OE14SolutionTemperature
+  - type: Appearance
+  - type: Sprite
+    sprite: _OE14/Objects/Misc/liquid_drop.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: liq-
+    inHandsMaxFillLevels: 1
+    inHandsFillBaseName: -fill
+  - type: Injector
+    solutionName: drop
+    injectOnly: true
+    transferAmounts:
+    - 5
+    currentTransferAmount: 5
+    toggleState: 0
+
+- type: entity
+  id: OE14ImpactEffectWaterCreation
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollWater
+  id: OE14SpellScrollWaterCreation
+  name: water creation spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellWaterCreation
+

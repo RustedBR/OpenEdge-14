@@ -1,0 +1,38 @@
+<Document>
+# Other Systems Reference
+
+Quick reference for miscellaneous systems in OpenEdge 14.
+
+## OE14Farming
+
+Plant growth system with energy cycles and harvest mechanics. Plants grow through stages based on light and water availability.
+
+[bold]Key components:[/bold] OE14PlantComponent, OE14SeedComponent
+[bold]Files:[/bold] [mono]Content.Server/_OE14/Farming/[/mono]
+
+## Status Effects
+
+Status effects (Burning, Frozen, Poisoned, Bleeding) are applied via the StatusEffect component system.
+
+[bold]Applying a status effect:[/bold]
+<CodeBlock>
+_statusEffect.TryAddStatusEffect(uid, "Burning", TimeSpan.FromSeconds(5), true);
+</CodeBlock>
+
+## OE14Vampire
+
+Vampire role mechanics — special abilities, feeding, and transformation. Vampires have unique skill trees.
+
+[bold]Files:[/bold] [mono]Content.Server/_OE14/Vampire/[/mono]
+
+## OE14Demiplane
+
+Dimensional travel system. Players or entities can be transported to a pocket dimension.
+
+[bold]Files:[/bold] [mono]Content.Server/_OE14/Demiplane/[/mono]
+
+## Content Under Construction
+
+Detailed documentation for each system coming soon.
+
+</Document>

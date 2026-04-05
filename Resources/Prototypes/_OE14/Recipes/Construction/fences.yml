@@ -1,0 +1,103 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceBigWooden
+  graph: OE14FenceBigWooden
+  startNode: start
+  targetNode: OE14FenceBigWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceBigWoodenBirch
+  graph: OE14FenceBigWoodenBirch
+  startNode: start
+  targetNode: OE14FenceBigWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceGateBigWooden
+  graph: OE14FenceGateBigWooden
+  startNode: start
+  targetNode: OE14FenceGateBigWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceGateBigWoodenBirch
+  graph: OE14FenceGateBigWoodenBirch
+  startNode: start
+  targetNode: OE14FenceGateBigWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceWooden
+  graph: OE14FenceWooden
+  startNode: start
+  targetNode: OE14FenceWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceWoodenBirch
+  graph: OE14FenceWoodenBirch
+  startNode: start
+  targetNode: OE14FenceWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceGateWooden
+  graph: OE14FenceGateWooden
+  startNode: start
+  targetNode: OE14FenceGateWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FenceGateWoodenBirch
+  graph: OE14FenceGateWoodenBirch
+  startNode: start
+  targetNode: OE14FenceGateWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

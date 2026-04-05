@@ -1,0 +1,164 @@
+- type: species
+  id: OE14Human
+  name: oe14-species-name-human
+  roundStart: true
+  prototype: OE14MobHuman
+  sprites: OE14MobHumanSprites
+  markingLimits: MobHumanMarkingLimits
+  dollPrototype: OE14MobHumanDummy
+  skinColoration: HumanToned
+  maleFirstNames: OE14_Names_Human_Male_First
+  femaleFirstNames: OE14_Names_Human_Female_First
+  lastNames: OE14_Names_Human_Last
+
+- type: speciesBaseSprites
+  id: OE14MobHumanSprites
+  sprites:
+    Head: OE14MobHumanHead
+    Hair: OE14MobHumanoidAnyMarking
+    FacialHair: OE14MobHumanoidAnyMarking
+    Snout: OE14MobHumanoidAnyMarking
+    Chest: OE14MobHumanTorso
+    Eyes: OE14MobHumanoidEyes
+    LArm: OE14MobHumanLArm
+    RArm: OE14MobHumanRArm
+    LHand: OE14MobHumanLHand
+    RHand: OE14MobHumanRHand
+    LLeg: OE14MobHumanLLeg
+    RLeg: OE14MobHumanRLeg
+    LFoot: OE14MobHumanLFoot
+    RFoot: OE14MobHumanRFoot
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanoidEyes
+  baseSprite:
+    sprite: _OE14/Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanoidAnyMarking
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanoidMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanHead
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanHeadFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/female_parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanTorso
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanTorsoFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/female_parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLLegFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/female_parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLArm
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLArmFemale
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/female_parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLHand
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLHandFemale
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/female_parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLFoot
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanLFootFemale
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/female_parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRLeg
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRLegFemale
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/female_parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRArm
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRArmFemale
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/female_parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRHand
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRHandFemale
+  baseSprite:
+    sprite:  _OE14/Mobs/Species/Human/female_parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/parts.rsi
+    state: r_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobHumanRFootFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Human/female_parts.rsi
+    state: r_foot
+

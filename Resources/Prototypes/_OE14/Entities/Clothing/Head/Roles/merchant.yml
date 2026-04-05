@@ -1,0 +1,23 @@
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadBowler
+  name: bowler hat
+  description: It has an aristocratic vibe about it...
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Merchant/bowler_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Merchant/bowler_hat.rsi
+  localizationId: ent-OE14ClothingHeadBowler
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadBowlerGolden
+  name: golden bowler hat
+  description: What an exquisite hat. It's clearly a hat that only sophisticated people
+    prefer to wear.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Merchant/bowler_golden_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Merchant/bowler_golden_hat.rsi
+  localizationId: ent-OE14ClothingHeadBowlerGolden

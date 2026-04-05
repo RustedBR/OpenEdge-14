@@ -1,0 +1,13 @@
+# Cloak
+
+- type: loadoutGroup
+  id: OE14GuardCommanderCloak
+  name: oe14-loadout-guard-commander-cloak
+  loadouts:
+  - OE14ClothingCloakGuardCommander
+
+- type: loadout
+  id: OE14ClothingCloakGuardCommander
+  equipment:
+    cloak: OE14ClothingCloakGuardCommander
+

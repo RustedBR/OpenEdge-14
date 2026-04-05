@@ -1,0 +1,58 @@
+- type: department
+  id: OE14Demigods
+  name: department-OE14Demigods
+  description: department-OE14Demigods-desc
+  weight: 666 # >:)
+  color: "#ffffff"
+  editorHidden: true
+  roles:
+  - OE14GodLumera
+  - OE14GodMerkas
+
+- type: department
+  id: OE14Command
+  name: department-OE14Command
+  description: department-OE14Command-desc
+  primary: false
+  weight: 10
+  color: "#3ec8fa"
+  editorHidden: true
+  roles:
+  - OE14GuardCommander
+  - OE14Guildmaster
+
+- type: department
+  id: OE14Guard
+  name: department-OE14Guard
+  description: department-OE14Guard-desc
+  weight: 9
+  color: "#576384"
+  editorHidden: false
+  roles:
+  - OE14GuardCommander
+  - OE14Investigator
+  - OE14Guard
+
+- type: department
+  id: OE14Artisan
+  name: department-OE14Artisan
+  description: department-OE14Artisan-desc
+  weight: 7
+  color: "#834833"
+  roles:
+  - OE14Merchant
+  - OE14Alchemist
+  - OE14Blacksmith
+  - OE14Apprentice
+  - OE14Innkeeper
+
+- type: department
+  id: OE14Mercenary
+  name: department-OE14Mercenary
+  description: department-OE14Mercenary-desc
+  weight: 6
+  color: "#588151"
+  roles:
+  - OE14Guildmaster
+  - OE14GuildWorker
+  - OE14Adventurer

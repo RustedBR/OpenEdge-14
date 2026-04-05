@@ -1,0 +1,141 @@
+- type: entity
+  parent: BaseStructure
+  id: OE14BaseGuardBell
+  name: guard bell
+  description: A strong bell to alert the entire settlement of a possible threat.
+  categories:
+  - ForkFiltered
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    offset: 0, 0.2
+    sprite: _OE14/Structures/Specific/Guard/guard_bell.rsi
+    layers:
+    - state: base
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: TriggerOnActivate
+  - type: OE14TriggerOnDamageReceived
+  - type: SpawnOnTrigger
+    proto: GuardBellEffect1
+  - type: UseDelay
+    delay: 2.0
+  localizationId: ent-OE14BaseGuardBell
+- type: entity
+  id: OE14GuardBell
+  parent: OE14BaseGuardBell
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+  - type: SpawnOnTrigger
+    proto: OE14GuardBellEffect1
+  localizationId: ent-OE14GuardBell
+- type: entity
+  id: OE14GuardBell2
+  parent: OE14BaseGuardBell
+  components:
+  - type: Sprite
+    layers:
+    - state: base-2
+  - type: SpawnOnTrigger
+    proto: OE14GuardBellEffect2
+  localizationId: ent-OE14GuardBell2
+- type: entity
+  id: OE14GuardBell3
+  parent: OE14BaseGuardBell
+  components:
+  - type: Sprite
+    layers:
+    - state: base-3
+  - type: SpawnOnTrigger
+    proto: OE14GuardBellEffect3
+  localizationId: ent-OE14GuardBell3
+- type: entity
+  id: OE14GuardBell4
+  parent: OE14BaseGuardBell
+  components:
+  - type: Sprite
+    layers:
+    - state: base-4
+  - type: SpawnOnTrigger
+    proto: OE14GuardBellEffect4
+  localizationId: ent-OE14GuardBell4
+- type: entity
+  id: OE14BaseGuardBellEffect
+  categories:
+  - HideSpawnMenu
+  abstract: true
+  components:
+  - type: OE14PvsOverride
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_OE14/Misc/scary-bell-short.ogg
+      params:
+        variation: 0.1
+        maxDistance: 200
+  - type: TimedDespawn
+    lifetime: 4.8
+  - type: Sprite
+    drawdepth: Effects
+    offset: 0, 0.5
+    layers:
+    - state: circle_increase
+      sprite: _OE14/Effects/Magic/cast_impact.rsi
+      shader: unshaded
+  localizationId: ent-OE14BaseGuardBellEffect
+- type: entity
+  id: OE14GuardBellEffect1
+  parent: OE14BaseGuardBellEffect
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_OE14/Misc/scary-bell-short.ogg
+      params:
+        variation: 0.1
+        maxDistance: 200
+  localizationId: ent-OE14GuardBellEffect1
+- type: entity
+  id: OE14GuardBellEffect2
+  parent: OE14BaseGuardBellEffect
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_OE14/Misc/doom-bell-short.ogg
+      params:
+        variation: 0.1
+        maxDistance: 200
+  localizationId: ent-OE14GuardBellEffect2
+- type: entity
+  id: OE14GuardBellEffect3
+  parent: OE14BaseGuardBellEffect
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_OE14/Misc/minor-alert-short.ogg
+      params:
+        volume: 20
+        variation: 0.1
+        maxDistance: 200
+  localizationId: ent-OE14GuardBellEffect3
+- type: entity
+  id: OE14GuardBellEffect4
+  parent: OE14BaseGuardBellEffect
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_OE14/Misc/major-alert-short.ogg
+      params:
+        variation: 0.1
+        maxDistance: 200
+  localizationId: ent-OE14GuardBellEffect4

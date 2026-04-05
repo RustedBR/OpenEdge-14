@@ -1,0 +1,69 @@
+- type: entity
+  id: OE14MobUndeadZombie
+  parent: OE14BaseMobZombie
+  name: walking dead
+  description: A reanimated rotting body of a dead man wanting to devour the living.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: OE14ZombieCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - OE14Monster
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      tags:
+      - OE14RaidLeader
+
+- type: entity
+  id: OE14MobUndeadZombieGearEasy1
+  parent: OE14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes: [ OE14MobUndeadEasy1 ]
+
+- type: entity
+  id: OE14MobUndeadZombieGearEasy2
+  parent: OE14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes: [ OE14MobUndeadEasy2 ]
+
+- type: entity
+  id: OE14MobUndeadZombieGearEasy3
+  parent: OE14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes: [ OE14MobUndeadEasy3 ]
+
+- type: entity
+  id: OE14MobUndeadZombieGearEasy4
+  parent: OE14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes: [ OE14MobUndeadEasy4 ]
+
+- type: entity
+  id: OE14MobUndeadZombieGearEasy5
+  parent: OE14MobUndeadZombie
+  suffix: Zombie. Easy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Loadout
+    prototypes: [ OE14MobUndeadEasy5 ]

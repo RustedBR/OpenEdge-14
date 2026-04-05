@@ -1,0 +1,139 @@
+- type: entity
+  parent: BaseItem
+  id: OE14BaseKeyRing
+  suffix: Empty
+  name: key ring
+  description: Allows you to comfortably store a large number of keys in one place.
+  categories: [ ForkFiltered ]
+  components:
+  - type: OE14KeyRing
+  - type: Sprite
+    sprite: _OE14/Objects/keys.rsi
+    layers:
+    - state: keyring
+    - state: ring-0
+      map: ["enum.StorageFillLayers.Fill"]
+  - type: Appearance
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_OE14/Items/key_drop.ogg
+      params:
+        variation: 0.05
+  - type: StorageFillVisualizer
+    maxFillLevels: 4
+    fillBaseName: ring
+  - type: Storage
+    grid:
+    - 0,0,5,1
+    maxItemSize: Small
+    whitelist:
+      tags:
+        - OE14Key
+        - OE14Lockpick
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - keys
+    - belt
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 5
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingInnkeeper
+  suffix: Innkeeper
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyTavernHall
+    - id: OE14KeyTavernStaff
+    - id: OE14KeyTavernDormsAbstract # TODO: Move to main innkeeper
+    - id: OE14KeyTavernDormsAbstract
+    - id: OE14KeyTavernDormsAbstract
+    - id: OE14KeyTavernDormsAbstract
+    - id: OE14KeyTavernDormsAbstract
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingBlacksmith
+  suffix: Blacksmith
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyBlacksmithAbstract
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingPersonalHouse
+  suffix: Personal House
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyPersonalHouseAbstract
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingAlchemist
+  suffix: Alchemist
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyTavernAlchemistAbstract
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingMerchant
+  suffix: Merchant
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyMerchantShopPublic
+    - id: OE14KeyTavernMerchantShopAbstract
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingGuard
+  suffix: Guardian
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyCityGate
+    - id: OE14KeyGuardBarracks
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingGuardCommander
+  suffix: Guard Commander
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyCityGate
+    - id: OE14KeyGuardBarracks
+    - id: OE14KeyGuardCommander
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingGuildmaster
+  suffix: Guildmaster
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyGuildmaster
+    - id: OE14KeyAdventureGuild
+
+- type: entity
+  parent: OE14BaseKeyRing
+  id: OE14KeyRingGuildworker
+  suffix: Guildworker
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14KeyAdventureGuild

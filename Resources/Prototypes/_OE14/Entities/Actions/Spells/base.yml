@@ -1,0 +1,63 @@
+- type: entity
+  id: OE14ActionSpellBase
+  abstract: true
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/rumble.ogg
+
+- type: entity
+  id: OE14BaseMagicRune
+  name: magic rune
+  description: manifestation of magical energy in the physical plane
+  abstract: true
+  components:
+  - type: TimedDespawn
+    lifetime: 120
+  - type: Sprite
+    noRot: true
+    drawDepth: FloorTiles
+    sprite: _OE14/Effects/Magic/cast_rune.rsi
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: PointLight
+    radius: 1.5
+    energy: 2.5
+    netsync: false
+
+- type: entity
+  id: OE14BaseMagicImpact
+  name: magic impact
+  description: manifestation of magical energy in the physical plane
+  abstract: true
+  components:
+  - type: TimedDespawn
+    lifetime: 1.6
+  - type: AnimationPlayer
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _OE14/Effects/Magic/cast_impact.rsi
+    noRot: true
+
+- type: entity
+  id: OE14BaseMagicTrap
+  name: magic trap
+  description: Manifestation of magical energy in the physical plane
+  abstract: true
+  components:
+  - type: Transform
+    anchored: false
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: OE14Spectral
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    noRot: true
+    drawDepth: FloorTiles
+    sprite: _OE14/Effects/Magic/magic_trap.rsi

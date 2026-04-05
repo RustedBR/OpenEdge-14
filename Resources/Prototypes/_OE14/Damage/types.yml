@@ -1,0 +1,6 @@
+- type: damageType
+  id: OE14ManaDepletion
+  name: oe14-damage-type-manadepletion
+  armorCoefficientPrice: 5
+  armorFlatPrice: 20
+

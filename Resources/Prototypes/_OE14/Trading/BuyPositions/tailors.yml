@@ -1,0 +1,165 @@
+# Reputation Level 0 - Basic & Tools
+- type: oe14TradingPosition
+  id: OE14Cloth10
+  faction: Tailors
+  uiPosition: 0
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Materials/cloth.rsi
+    state: cloth_3
+  service: !type:OE14BuyItemsService
+    product: OE14Cloth10
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14Scissors
+  faction: Tailors
+  uiPosition: 2
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Tools/scissors.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14Scissors
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14DyeRed
+  faction: Tailors
+  uiPosition: 4
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14DyeRed
+    count: 5
+
+- type: oe14TradingPosition
+  id: OE14DyeBlue
+  faction: Tailors
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14DyeBlue
+    count: 5
+
+# Clothing rep 0
+- type: oe14TradingPosition
+  id: OE14ClothingHeadBeretMercenary
+  faction: Tailors
+  uiPosition: 7
+  priceMarkup: 10
+  icon:
+    sprite: _OE14/Clothing/Head/Roles/General/beret_mercenary.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14ClothingHeadBeretMercenary
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14ClothingShirtMercenary
+  faction: Tailors
+  uiPosition: 8
+  priceMarkup: 10
+  icon:
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/mercenary.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14ClothingShirtMercenary
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14ClothingPantsMercenaryTrousers
+  faction: Tailors
+  uiPosition: 9
+  priceMarkup: 10
+  icon:
+    sprite: _OE14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14ClothingPantsMercenaryTrousers
+    count: 1
+
+# Reputation Level 1 - Advanced
+- type: oe14TradingPosition
+  id: OE14Rope
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 0
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Tools/rope.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14Rope
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14DyeYellow
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 4
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14DyeYellow
+    count: 5
+
+- type: oe14TradingPosition
+  id: OE14DyeGreen
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14DyeGreen
+    count: 5
+
+- type: oe14TradingPosition
+  id: OE14ClothingShirtYellowWizardDress
+  faction: Tailors
+  reputationLevel: 1
+  uiPosition: 8
+  priceMarkup: 15
+  icon:
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14ClothingShirtYellowWizardDress
+    count: 1
+
+# Reputation Level 2
+- type: oe14TradingPosition
+  id: OE14DyePurple
+  faction: Tailors
+  reputationLevel: 2
+  uiPosition: 4
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14DyePurple
+    count: 5
+
+- type: oe14TradingPosition
+  id: OE14DyeBlack
+  faction: Tailors
+  reputationLevel: 2
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Materials/dye.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14DyeBlack
+    count: 5

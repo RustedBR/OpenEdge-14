@@ -1,0 +1,27 @@
+<Document>
+# Sistema de Habilidades & Magias
+
+O Sistema de Habilidades e Magias define como personagens aprendem e usam habilidades. Habilidades são organizadas em árvores, e cada habilidade concede magias ou bônus de atributos quando aprendida.
+
+## O Que Esta Seção Cobre
+
+- [textlink="Árvores de Habilidades & Distribuição" link="OE14_DEV_Skills_Trees"] — alocação de pontos e progressão de árvores
+- [textlink="Mecânicas de Magias" link="OE14_DEV_Skills_Mechanics"] — como magias são conjuradas, seus efeitos e resolução
+- [textlink="Sistema de Mana" link="OE14_DEV_Skills_Mana"] — pools de mana, custos e regeneração
+- [textlink="Criando Habilidades Customizadas" link="OE14_DEV_Skills_Custom"] — guia passo a passo para adicionar novas habilidades
+
+## Conceitos Chave
+
+- Habilidades são definidas em prototypes YAML
+- Cada habilidade faz parte de uma árvore (ex: Piromancia, Hidrosafia, Artesanato)
+- Habilidades têm tiers: T1 (básico) a T3 (avançado)
+- Aprender uma habilidade custa pontos de personagem
+- Algumas habilidades concedem modificadores de atributos além de magias
+
+## Arquivos Chave
+
+- [mono]Resources/Prototypes/_OE14/Skills/[/mono]
+- [mono]Content.Shared/_OE14/Skills/OE14SkillComponent.cs[/mono]
+- [mono]Content.Server/_OE14/Skills/OE14SkillSystem.cs[/mono]
+
+</Document>

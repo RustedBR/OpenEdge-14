@@ -1,0 +1,29 @@
+<Document>
+
+# Lockpicking
+
+Lockpicking is the act of attempting to unlock a locked chest or door without a key. Lockpicks can be stored on Key Rings spawned on your character for ease of storage.
+
+[bold][color=#ff6961]This action is considered ILLEGAL if used to gain access to restricted areas.[/color][/bold]
+
+## Types of Lockpicks
+
+There are two lockpicks available:
+- Iron lockpick
+- Mithril lockpick
+
+All lockpicks function the same way. The only difference between types is durability — Mithril lockpicks last significantly longer.
+
+## Steps of Lockpicking
+
+1. Hold the lockpick on the active hand.
+
+2. Right-click a locked door or chest and hover over the "Pick the lock" option.
+
+3. Pick a number from -2 to 2. This process will take a moment to trigger.
+- If the number you selected is incorrect, the lock resets itself, a loud click can be heard, and you must start the process over.
+- If the number you selected is correct, you will hear a soft click instead.
+
+4. Continue the guessing process until you succeed 3 to 7 times, depending on the metal the lock is made of. Higher-tier metal locks require more correct guesses.
+
+</Document>

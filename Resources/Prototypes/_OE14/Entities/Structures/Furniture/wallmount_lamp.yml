@@ -1,0 +1,101 @@
+- type: entity
+  id: OE14WallmountLampEmpty
+  name: crystal wall lamp
+  suffix: Empty
+  parent:
+  - OE14BaseWallmount
+  - OE14BaseCrystalSlot
+  description: A simple wallmount magical device that converts crystal energy into bright light.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Wallmount/wallmount_lamp.rsi
+    layers:
+      - state: base
+      - state: crystal
+        map: [ "crystal" ]
+        visible: false
+      - state: on
+        color: "#b2ceeb"
+        shader: unshaded
+        map: [ "light" ]
+        visible: false
+  - type: PointLight
+    energy: 1
+    radius: 8
+    color: "#dfe7f0"
+    enabled: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OE14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+      enum.OE14MagicSlotVisuals.Powered:
+        light:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              OE14ScrapCopper:
+                min: 1
+                max: 3
+  - type: OE14MagicLantern
+  - type: OE14MagicEnergyDraw
+    energy: -0.1
+    delay: 12
+  - type: Construction
+    graph: OE14WallmountLampEmpty
+    node: OE14WallmountLampEmpty
+
+- type: entity
+  id: OE14WallmountLamp
+  suffix: Small crystal
+  parent: OE14WallmountLampEmpty
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Wallmount/wallmount_lamp.rsi
+    layers:
+      - state: base
+      - state: crystal
+        map: [ "crystal" ]
+        visible: true
+      - state: on
+        color: "#b2ceeb"
+        shader: unshaded
+        map: [ "light" ]
+        visible: true
+  - type: PointLight
+    enabled: true
+  - type: ItemSlots
+    slots:
+      crystal_slot:
+        startingItem: OE14EnergyCrystalMedium
+        insertSound:
+          path: /Audio/_OE14/Items/crystal_insert.ogg
+          params:
+            variation: 0.05
+        ejectSound:
+          path: /Audio/_OE14/Items/crystal_eject.ogg
+          params:
+            variation: 0.05
+        ejectOnInteract: false
+        name: oe14-magic-energy-crystal-slot-name
+        whitelist:
+          components:
+          - OE14MagicEnergyCrystal
+

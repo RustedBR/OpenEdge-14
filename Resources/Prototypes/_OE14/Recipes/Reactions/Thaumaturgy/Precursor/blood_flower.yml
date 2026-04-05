@@ -1,0 +1,78 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14BloodFlowerSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14BloodFlowerSap:
+      amount: 1
+  products:
+    OE14EssenceLife: 0.5
+    OE14EssenceWater: 0.5
+
+- type: reaction
+  id: OE14BloodFlowerBloodSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14BloodFlowerSap:
+      amount: 1
+    OE14BloodTiefling:
+      amount: 1
+  products:
+    OE14EssenceFire: 1
+    OE14EssenceLife: 1
+
+- type: reaction
+  id: OE14BloodFlowerTieflingSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14BloodFlowerSap:
+      amount: 1
+    OE14Blood:
+      amount: 1
+  products:
+    OE14EssenceLife: 2
+
+- type: reaction
+  id: OE14BloodFlowerElfSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14BloodFlowerSap:
+      amount: 1
+    OE14BloodElf:
+      amount: 1
+  products:
+    OE14EssenceOrder: 1
+    OE14EssenceLife: 1
+
+- type: reaction
+  id: OE14BloodFlowerGoblinSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14BloodFlowerSap:
+      amount: 1
+    OE14BloodGoblin:
+      amount: 1
+  products:
+    OE14EssenceChaos: 1
+    OE14EssenceLife: 1
+
+#- type: reaction
+#  id: OE14BloodFlowerVampireSplitting
+#  requiredMixerCategories:
+#  - OE14MagicSplitting
+#  reactants:
+#    OE14BloodFlowerSap:
+#      amount: 1
+#    OE14BloodVampire:
+#      amount: 1
+#  products:
+#    OE14EssenceChaos: 1 #TODO: need some advanced essences first
+#    OE14EssenceLife: 1
+

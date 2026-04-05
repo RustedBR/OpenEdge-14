@@ -1,0 +1,1 @@
+oe14-workbench-condition-mana-in-w = A estação deve estar cheia de mana em {$count}%.

@@ -1,0 +1,9 @@
+# - type: oe14TradingRequest
+#   id: BradPotionsMonsterGlands
+#   possibleFactions:
+#   - BradPotions
+#   - Butchers
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: OE14PartsMonsterGlands
+#     count: 4

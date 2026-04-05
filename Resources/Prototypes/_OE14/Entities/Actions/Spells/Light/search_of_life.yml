@@ -1,0 +1,95 @@
+- type: entity
+  id: OE14ActionSpellSearchOfLife
+  parent: OE14ActionSpellBase
+  name: Search of life
+  description: Detects all living things in a large radius around you.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 30
+  - type: OE14ActionSpeaking
+    startSpeech: "Ego vultus..."
+    endSpeech: "parumper vita"
+  - type: OE14ActionFreeHandsRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneSearchOfLife
+  - type: DoAfterArgs
+    delay: 1.5
+    breakOnDamage: true
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: _OE14/Actions/Spells/light.rsi
+      state: search_of_life
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectSearchOfLife
+      - !type:OE14SpellPointerToAlive
+        pointerEntity: OE14SearchOfLifePointer
+        searchRange: 30
+
+- type: entity
+  id: OE14ImpactEffectSearchOfLife
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#efedff"
+      shader: unshaded
+    - state: circle_increase
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  id: OE14RuneSearchOfLife
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#efedff"
+      shader: unshaded
+    - state: double_outer
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  id: OE14SearchOfLifePointer
+  name: pointer
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: /Textures/_OE14/Effects/Magic/pointer.rsi
+      offset: 0, -1
+      layers:
+        - state: pointer
+          shader: unshaded
+      drawdepth: LowFloors
+    - type: PointLight
+      netSync: false
+      radius: 3
+      color: "#ffffff"
+      energy: 0.2
+    - type: TimedDespawn
+      lifetime: 8
+    - type: Tag
+      tags:
+      - HideContextMenu
+
+- type: entity
+  parent: OE14BaseSpellScrollLight
+  id: OE14SpellScrollSearchOfLife
+  name: search of life spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellSearchOfLife

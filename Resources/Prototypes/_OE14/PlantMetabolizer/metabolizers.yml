@@ -1,0 +1,7 @@
+- type: OE14PlantMetabolizer
+  id: Base
+  metabolization:
+    Water:
+      - !type:AffectPlantValues
+        resource: 1
+

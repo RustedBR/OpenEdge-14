@@ -1,0 +1,266 @@
+- type: tile
+  editorHidden: false
+  id: OE14FloorFoundation
+  name: oe14-tiles-foundation
+  sprite: /Textures/_OE14/Tiles/foundation.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 99 #Dont have edges, but block natural ones
+  baseTurf: OE14FloorBase
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileFoundation
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorStonebricks
+  name: oe14-tiles-stonebricks
+  sprite: /Textures/_OE14/Tiles/Stonebricks/stonebricks.png
+  variants: 9
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Stonebricks/double_edge_W.png
+  baseTurf: OE14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileStonebricks
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorStonebricksSnowed
+  name: oe14-tiles-stonebricks
+  sprite: /Textures/_OE14/Tiles/Stonebricks/snowstonebricks.png
+  variants: 9
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Stonebricks/double_edge_W.png
+  baseTurf: OE14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileStonebricks
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorStonebricksSmallCarved1
+  name: oe14-tiles-stonebricks-small-carved1
+  sprite: /Textures/_OE14/Tiles/Stonebricks/stonebricks_small_carved_1.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Stonebricks/double_edge_W.png
+  baseTurf: OE14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileStonebricksSmallCarved
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorStonebricksSmallCarved2
+  name: oe14-tiles-stonebricks-small-carved2
+  sprite: /Textures/_OE14/Tiles/Stonebricks/stonebricks_small_carved_2.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Stonebricks/double_edge_W.png
+  baseTurf: OE14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileStonebricksSmallCarved2
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorStonebricksSquareCarved
+  name: oe14-tiles-stonebricks-square-carved
+  sprite: /Textures/_OE14/Tiles/Stonebricks/stonebricks_square_carved.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 101
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Stonebricks/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Stonebricks/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Stonebricks/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Stonebricks/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Stonebricks/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Stonebricks/double_edge_W.png
+  baseTurf: OE14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileStonebricksSquareCarved
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorMarble
+  name: oe14-tiles-stonebricks-marble
+  sprite: /Textures/_OE14/Tiles/Marble/marble.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 102
+  edgeSprites:
+    South: /Textures/_OE14/Tiles/Marble/double_edge_S.png
+  baseTurf: OE14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileMarbleBrick
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorMarbleSmallbricks
+  name: oe14-tiles-stonebricks-marble
+  sprite: /Textures/_OE14/Tiles/Marble/small_bricks.png
+  variants: 9
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 102
+  edgeSprites:
+    South: /Textures/_OE14/Tiles/Marble/double_edge_S.png
+  baseTurf: OE14FloorFoundation
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  deconstructTools: [ Prying ]
+  itemDrop: OE14FloorTileMarbleSmallbricks
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorDirtSeedbed
+  name: oe14-tiles-dirt-seedbed
+  sprite: /Textures/_OE14/Tiles/DirtSeedBag/seedbed.png
+  variants: 2
+  placementVariants:
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 100
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/DirtSeedBag/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/DirtSeedBag/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/DirtSeedBag/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/DirtSeedBag/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/DirtSeedBag/double_edge_S.png
+    East: /Textures/_OE14/Tiles/DirtSeedBag/double_edge_E.png
+    North: /Textures/_OE14/Tiles/DirtSeedBag/double_edge_N.png
+    West: /Textures/_OE14/Tiles/DirtSeedBag/double_edge_W.png
+  baseTurf: OE14FloorDirt
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14DirtEffect
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+

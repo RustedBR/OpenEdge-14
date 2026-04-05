@@ -1,0 +1,19 @@
+- type: constructionGraph
+  id: OE14Bonfire
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14Bonfire
+          steps:
+            - material: OE14Stone
+              amount: 2
+              doAfter: 2
+            - stackGroup: WoodenPlanks
+              amount: 1
+              doAfter: 2
+
+    - node: OE14Bonfire
+      entity: OE14Bonfire

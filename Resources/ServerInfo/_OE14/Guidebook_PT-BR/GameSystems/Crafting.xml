@@ -1,0 +1,77 @@
+<Document>
+  # Sistema de Crafting
+
+  OpenEdge 14 tem três sistemas de crafting diferentes, cada um adequado para diferentes tipos de itens.
+
+  ## Crafting na Bancada
+
+  O método de crafting mais comum. Aproxime-se de uma bancada de trabalho e interaja com ela para ver as receitas disponíveis. Coloque os materiais necessários por perto, selecione uma receita e aguarde a conclusão do crafting.
+
+  O crafting leva tempo — uma barra de progresso aparecerá enquanto seu personagem trabalha. Se afastar ou levar dano pode interromper o processo.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Workbench" Caption="Bancada de Trabalho"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchCooking" Caption="Mesa de Culinária"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchSewing" Caption="Mesa de Costura"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchAnvil" Caption="Bigorna"/>
+  </Box>
+
+  [bold]Dicas:[/bold]
+  - Diferentes bancadas desbloqueiam receitas diferentes.
+  - Algumas receitas requerem ferramentas além de materiais.
+
+  ## Culinária
+
+  Alimentos são preparados usando fornos, fogueiras e caldeirões. Coloque os ingredientes crus no dispositivo de cozimento e aplique calor. Os itens se transformam quando atingem temperaturas específicas.
+
+  Preste atenção nos níveis de calor — comida que esquenta demais queima e fica intragável. Alimentos diferentes requerem tempos de cozimento diferentes.
+
+  [bold]Ferramentas comuns de cozinha:[/bold]
+  - Lareira: Fonte básica de calor para cozimento simples
+  - Forno: Calor mais controlado, adequado para assados
+  - Caldeirão: Recipiente grande para sopas e ensopados
+  - Fogueira: Calor alto, bom para grelhar
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Furnace"/>
+    <GuideEntityEmbed Entity="OE14Cauldron"/>
+    <GuideEntityEmbed Entity="OE14FryingPan"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14CookingPot"/>
+    <GuideEntityEmbed Entity="OE14Lighter"/>
+  </Box>
+
+  ## Crafting Modular
+
+  Crafters avançados podem personalizar armas e armaduras com peças modulares. Cada arma ou armadura fabricada pode aceitar múltiplos componentes modulares que melhoram suas propriedades.
+
+  [bold]Peças Modulares Disponíveis:[/bold]
+  - [bold]Cristais de Atributo:[/bold] Fragmentos de essência que adicionam +1 a atributos específicos (Força, Vitalidade, Destreza, Inteligência)
+  - [bold]Peças de Arma:[/bold] Lâminas de dano e punhos de velocidade para aumentar dano e velocidade de ataque
+  - [bold]Peças de Armadura:[/bold] Placas pesadas e acolchoamento protetor para melhorar redução de dano
+  - [bold]Peças de Mobilidade:[/bold] Abraço leve e tecido ágil para reduzir penalidades de movimento
+  - [bold]Peças Mágicas:[/bold] Conduítes de mana e amplificadores para reduzir custos de conjuração
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14ModularCrystalStrength" Caption="Cristal de FOR"/>
+    <GuideEntityEmbed Entity="OE14ModularBladeDamage" Caption="Lâmina de Dano"/>
+    <GuideEntityEmbed Entity="OE14ModularArmorPlateHeavy" Caption="Placa Pesada"/>
+    <GuideEntityEmbed Entity="OE14ModularManaReduction" Caption="Conduíte de Mana"/>
+  </Box>
+
+  Para aplicar uma peça modular a uma arma ou armadura, segure a peça e interaja com o item. Uma barra de progresso aparecerá durante a montagem. Uma vez anexada, o item ganha os bônus da peça.
+
+  Você também pode desmontar itens modulares causando dano — as peças cairão e poderão ser recuperadas.
+
+  Veja a seção [textlink="Forja" link="OE14Smithing"] para receitas e instruções detalhadas de montagem.
+
+  ## Sistemas Relacionados
+
+  - [textlink="Magia" link="OE14_PT_Magic"] — crie recipientes para armazenar magias e encantamentos
+  - [textlink="Combate" link="OE14_PT_Combat"] — crie armas adequadas ao seu estilo de luta
+  - [textlink="Forja" link="OE14Smithing"] — especialize-se como ferreiro para crafting avançado
+  - [textlink="Economia" link="OE14_PT_Economy"] — ganhe moedas vendendo produtos fabricados
+
+</Document>

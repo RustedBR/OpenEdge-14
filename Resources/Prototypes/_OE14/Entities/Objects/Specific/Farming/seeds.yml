@@ -1,0 +1,137 @@
+- type: entity
+  id: OE14BaseSeed
+  parent: BaseItem
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Farming/seeds.rsi
+  - type: OE14Seed
+  - type: Tag
+    tags:
+    - OE14FarmSeed
+  localizationId: ent-OE14BaseSeed
+- type: entity
+  id: OE14SeedWheat
+  name: wheat seeds
+  description: Small wheat seeds. What will you do with them? Grind them into flour,
+    or plant them again?
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: wheat
+  - type: OE14Seed
+    plantProto: OE14PlantWheat
+  - type: StaticPrice
+    price: 0.4
+  localizationId: ent-OE14SeedWheat
+- type: entity
+  id: OE14SeedPumpkin
+  name: pumpkin seeds
+  description: Pumpkin seeds. Some pumpkin seems to have been gutted and butchered.
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: pumpkin
+  - type: OE14Seed
+    plantProto: OE14PlantPumpkin
+  - type: StaticPrice
+    price: 1
+  localizationId: ent-OE14SeedPumpkin
+- type: entity
+  id: OE14SeedCabbage
+  name: cabbage seeds
+  description: Oh, no, my cabbage!
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: cabbage
+  - type: OE14Seed
+    plantProto: OE14PlantCabbage
+  - type: StaticPrice
+    price: 0.6
+  localizationId: ent-OE14SeedCabbage
+- type: entity
+  id: OE14SeedCucumber
+  name: cucumber seeds
+  description: Are cucumber seeds. You know what to do with them.
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: cucumber
+  - type: OE14Seed
+    plantProto: OE14PlantCucumber
+  - type: StaticPrice
+    price: 1
+  localizationId: ent-OE14SeedCucumber
+- type: entity
+  id: OE14SeedTomato
+  name: tomato seeds
+  description: It looks like powder! They're so small, these seeds.
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: tomato
+  - type: OE14Seed
+    plantProto: OE14PlantTomatoes
+  - type: StaticPrice
+    price: 0.4
+  localizationId: ent-OE14SeedTomato
+- type: entity
+  id: OE14SeedPepper
+  name: pepper seeds
+  description: Pepper seeds, with a peppercorn inside.
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: pepper
+  - type: OE14Seed
+    plantProto: OE14PlantPepper
+  - type: StaticPrice
+    price: 2
+  localizationId: ent-OE14SeedPepper
+- type: entity
+  id: OE14SeedSage
+  name: sage seeds
+  description: Sage seeds. It's time to grow some fun herbs!
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: sage
+  - type: OE14Seed
+    plantProto: OE14PlantSage
+  - type: StaticPrice
+    price: 5
+  localizationId: ent-OE14SeedSage
+- type: entity
+  id: OE14SeedCotton
+  name: cotton seeds
+  description: Cotton seeds. It's time to grow some pants!
+  parent: OE14BaseSeed
+  components:
+  - type: Sprite
+    layers:
+    - state: bag
+    - state: cotton
+  - type: OE14Seed
+    plantProto: OE14PlantCotton
+  - type: StaticPrice
+    price: 1
+  localizationId: ent-OE14SeedCotton

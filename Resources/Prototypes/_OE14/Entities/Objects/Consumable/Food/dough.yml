@@ -1,0 +1,260 @@
+- type: entity
+  id: OE14FoodDoughLarge
+  parent: FoodInjectableBase
+  name: large piece of dough
+  description: The perfect ingredient for any flour product. The only thing left to
+    do is to shape it.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Temperature
+  - type: FlavorProfile
+    flavors:
+    - bread
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/dough.rsi
+    state: dough_large
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 2
+  - type: SliceableFood
+    count: 4
+    slice: OE14FoodDoughMedium
+  - type: OE14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14FoodBread
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodDoughLarge
+- type: entity
+  id: OE14FoodBread
+  parent: OE14FoodDoughLarge
+  name: bread
+  description: Crispy and so flavourful!
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/dough.rsi
+    state: bread_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Protein
+          Quantity: 2
+  - type: SliceableFood
+    count: 4
+    slice: OE14FoodBreadSlice
+  - type: OE14TemperatureTransformation
+    autoTransformOnCooked: false
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14Ash1
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodBread
+- type: entity
+  id: OE14FoodBreadSlice
+  parent: OE14FoodDoughMedium
+  name: bread slice
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/dough.rsi
+    state: bread_slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 0.5
+  - type: OE14TemperatureTransformation
+    autoTransformOnCooked: false
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: null
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodBreadSlice
+- type: entity
+  id: OE14FoodDoughMedium
+  parent: FoodInjectableBase
+  name: medium piece of dough
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Tiny
+  - type: Temperature
+  - type: FlavorProfile
+    flavors:
+    - bread
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/dough.rsi
+    state: dough_medium
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.5
+  - type: OE14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14FoodBreadBun
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodDoughMedium
+- type: entity
+  id: OE14FoodBreadBun
+  parent: OE14FoodDoughMedium
+  name: bread bun
+  description: it's like regular bread, only smaller and funnier.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/dough.rsi
+    state: bun_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5.2
+        - ReagentId: Protein
+          Quantity: 0.5
+  - type: Butcherable
+    butcherDelay: 1
+    spawned:
+    - id: OE14FoodBreadBunBottom
+      amount: 1
+    - id: OE14FoodBreadBunTop
+      amount: 1
+  - type: OE14TemperatureTransformation
+    autoTransformOnCooked: false
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14Ash1
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodBreadBun
+- type: entity
+  id: OE14FoodBreadBunBottom
+  parent: OE14FoodDoughMedium
+  name: botton bread bun
+  description: It's like regular bread, only smaller and funnier. And cut in half.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/dough.rsi
+    layers:
+    - state: bun_cooked_slice_bottom
+    - map:
+      - foodSequenceLayers
+  - type: FoodSequenceStartPoint
+    key: OE14Sandwich
+    maxLayers: 5
+    startPosition: 0, 0
+    offset: 0, 0.07
+    minLayerOffset: -0.05, 0
+    maxLayerOffset: 0.05, 0
+    nameGeneration: oe14-food-sequence-sandwich-gen
+    contentSeparator: ', '
+  - type: Appearance
+  - type: FoodMetamorphableByAdding
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        canReact: false
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.6
+        - ReagentId: Protein
+          Quantity: 0.25
+  - type: OE14TemperatureTransformation
+    autoTransformOnCooked: false
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14Ash1
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodBreadBunBottom
+- type: entity
+  id: OE14FoodBreadBunTop
+  parent: OE14FoodDoughMedium
+  name: top bread bun
+  description: It's like regular bread, only smaller and funnier. And cut in half.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/dough.rsi
+    state: bun_cooked_slice_top
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.6
+        - ReagentId: Protein
+          Quantity: 0.25
+  - type: FoodSequenceElement
+    entries:
+      OE14Sandwich: OE14BunTopSandwich
+  - type: OE14TemperatureTransformation
+    autoTransformOnCooked: false
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14Ash1
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodBreadBunTop
+- type: entity
+  id: OE14FoodDoughMediumFlat
+  parent: OE14FoodDoughMedium
+  name: rolled dough
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    state: dough_medium_flat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 0.5
+  - type: OE14TemperatureTransformation
+    autoTransformOnCooked: false
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14Ash1
+  - type: Tag
+    tags:
+    - OE14Dough
+  localizationId: ent-OE14FoodDoughMediumFlat

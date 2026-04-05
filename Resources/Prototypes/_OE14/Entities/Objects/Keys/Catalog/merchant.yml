@@ -1,0 +1,40 @@
+- type: entity
+  parent: OE14KeyIronBlank
+  id: OE14KeyTavernMerchantShopAbstract
+  suffix: Abstract Merchant shop
+  components:
+  - type: OE14AbstractKey
+    group: Merchant
+  localizationId: ent-OE14KeyTavernMerchantShopAbstract
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyMerchantShopPublic
+  suffix: Merchant public shop
+  components:
+  - type: OE14Key
+    autoGenerateShape: ShopPublic
+  localizationId: ent-OE14KeyMerchantShopPublic
+- type: entity
+  parent: OE14KeyIronBlank
+  id: OE14KeyMerchantShop1
+  suffix: Merchant shop 1
+  components:
+  - type: OE14Key
+    autoGenerateShape: Shop1
+  localizationId: ent-OE14KeyMerchantShop1
+- type: entity
+  parent: OE14KeyIronBlank
+  id: OE14KeyMerchantShop2
+  suffix: Merchant shop 2
+  components:
+  - type: OE14Key
+    autoGenerateShape: Shop2
+  localizationId: ent-OE14KeyMerchantShop2
+- type: entity
+  parent: OE14KeyIronBlank
+  id: OE14KeyMerchantShop3
+  suffix: Merchant shop 3
+  components:
+  - type: OE14Key
+    autoGenerateShape: Shop3
+  localizationId: ent-OE14KeyMerchantShop3

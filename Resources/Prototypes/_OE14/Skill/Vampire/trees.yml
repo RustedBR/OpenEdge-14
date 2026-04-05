@@ -1,0 +1,7 @@
+- type: oe14SkillTree
+  id: Vampire
+  name: oe14-skill-tree-vampire-name
+  desc: oe14-skill-tree-vampire-desc
+  skillType: Blood
+  color: "#b01e34"
+  parallax: OE14Blood

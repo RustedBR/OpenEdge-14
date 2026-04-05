@@ -1,0 +1,79 @@
+<Document>
+  # Welcome to OpenEdge 14
+
+  OpenEdge 14 is a medieval fantasy multiplayer RPG built on the Space Station 14 engine. You share the world with other players in real time — cooperate, trade, fight, and survive together.
+
+  This section covers the core systems. Use the links in the sidebar to read about each one in detail.
+
+
+  ## First Steps
+
+  When you spawn, you will have a job and a starting location. Take a moment to look around and get your bearings before acting.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobHuman" Caption="Your Character"/>
+    <GuideEntityEmbed Entity="OE14WeaponSwordIron" Caption="Starting Weapon"/>
+    <GuideEntityEmbed Entity="OE14CopperCoin1" Caption="Starting Coins"/>
+  </Box>
+
+  [bold]Open your inventory[/bold] with [bold]I[/bold] — check what items you start with. Different jobs spawn with different equipment.
+
+  [bold]Open your action bar[/bold] with [bold]Q[/bold] — if you are holding a magical item, your spells appear here.
+
+  [bold]Open the character menu[/bold] with [bold]C[/bold] — this shows your character stats: Strength, Vitality, Dexterity, and Intelligence.
+
+  [bold]Right-click[/bold] on objects and characters to see context options: pick up, examine, interact, attack.
+
+
+  ## Staying Alive
+
+  Your [color=#e05050]health bar[/color] appears at the bottom of the screen. If it reaches zero, you are critically injured and will die without help.
+
+  - Carry [bold]bandages[/bold] to stop bleeding.
+  - Eat and drink regularly to maintain stamina.
+  - Avoid fighting enemies that are too strong for your current gear.
+  - If you are in danger, [bold]run[/bold] — there is no shame in retreating.
+
+
+  ## Core Systems
+
+  [bold]Magic[/bold] — equip magical staffs to gain spells. Cast them using mana from the action bar.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MagicFireStaff" Caption="Magic Staff"/>
+    <GuideEntityEmbed Entity="OE14SpellScrollFireball" Caption="Spell Scroll"/>
+  </Box>
+
+  [bold]Crafting[/bold] — use workbenches to build items, cook food over fires, and assemble custom weapons from components.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Workbench" Caption="Workbench"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchAnvil" Caption="Anvil"/>
+  </Box>
+
+  [bold]Economy[/bold] — earn coins from your job salary, sell goods at trading platforms, and grow crops for profit.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14GoldCoin1" Caption="Gold Coin"/>
+    <GuideEntityEmbed Entity="OE14TradingPlatform" Caption="Trading Platform"/>
+  </Box>
+
+  [bold]Combat[/bold] — fight with melee weapons, apply status effects, and improve your skills with practice.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WeaponWarAxeIron" Caption="War Axe"/>
+    <GuideEntityEmbed Entity="OE14HerbalBandage1" Caption="Herbal Bandage"/>
+  </Box>
+
+  [bold]Character Stats[/bold] — your Strength, Vitality, Dexterity, and Intelligence values affect damage, health, stamina, and mana.
+
+
+  ## Tips for New Players
+
+  - [bold]Read item descriptions[/bold] — examine items to learn what they do before using them.
+  - [bold]Talk to other players[/bold] — veterans are usually willing to help newcomers.
+  - [bold]Stick to your job role[/bold] early on — your job gives you tools and a salary to get started.
+  - [bold]Death is not the end[/bold] — you respawn after a delay. Use the time to think about what went wrong.
+  - [bold]Coins are physical[/bold] — keep them in a pouch so you don't drop them when you take damage.
+
+</Document>

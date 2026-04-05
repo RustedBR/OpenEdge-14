@@ -1,0 +1,80 @@
+- type: entity
+  id: OE14ActionSpellManaConsume
+  parent: OE14ActionSpellBase
+  name: Mana consume
+  description: You absorb a small amount of mana from the target.
+  components:
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneManaConsume
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/meta.rsi
+      state: mana_consume
+  - type: DoAfterArgs
+    repeat: true
+    breakOnMove: true
+    delay: 1
+    breakOnDamage: true
+  - type: TargetAction
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - OE14MagicEnergyContainer
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaConsume
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaConsume
+      - !type:OE14SpellConsumeManaEffect
+        mana: 10
+
+- type: entity
+  id: OE14ActionSpellManaConsumeElf
+  parent: OE14ActionSpellManaConsume
+  name: Carefull mana consume
+  description: You absorb mana at a tremendous rate without dealing damage to the mana holder.
+  components:
+  - type: EntityTargetAction
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaConsume
+      - !type:OE14SpellConsumeManaEffect
+        safe: true
+        mana: 20
+
+- type: entity
+  id: OE14RuneManaConsume
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5096d4"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#5096d4"
+      shader: unshaded
+    - state: double_outer
+      color: "#5096d4"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectManaConsume
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_down
+      color: "#5096d4"
+      shader: unshaded
+

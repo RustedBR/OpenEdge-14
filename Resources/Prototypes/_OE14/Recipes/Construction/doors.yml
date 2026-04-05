@@ -1,0 +1,168 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenDoor
+  graph: OE14WoodenDoor
+  startNode: start
+  targetNode: OE14WoodenDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenDoorMirrored
+  graph: OE14WoodenDoor
+  startNode: start
+  targetNode: OE14WoodenDoorMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenDoorWindowed
+  graph: OE14WoodenDoor
+  startNode: start
+  targetNode: OE14WoodenDoorWindowed
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenDoorWindowedMirrored
+  graph: OE14WoodenDoor
+  startNode: start
+  targetNode: OE14WoodenDoorWindowedMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenBirchDoor
+  graph: OE14WoodenBirchDoor
+  startNode: start
+  targetNode: OE14WoodenBirchDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenBirchDoorMirrored
+  graph: OE14WoodenBirchDoor
+  startNode: start
+  targetNode: OE14WoodenBirchDoorMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenBirchDoorWindowed
+  graph: OE14WoodenBirchDoor
+  startNode: start
+  targetNode: OE14WoodenBirchDoorWindowed
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenBirchDoorWindowedMirrored
+  graph: OE14WoodenBirchDoor
+  startNode: start
+  targetNode: OE14WoodenBirchDoorWindowedMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14IronDoor
+  graph: OE14IronDoor
+  startNode: start
+  targetNode: OE14IronDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14IronDoorMirrored
+  graph: OE14IronDoor
+  startNode: start
+  targetNode: OE14IronDoorMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14IronDoorWindowed
+  graph: OE14IronDoor
+  startNode: start
+  targetNode: OE14IronDoorWindowed
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14IronDoorWindowedMirrored
+  graph: OE14IronDoor
+  startNode: start
+  targetNode: OE14IronDoorWindowedMirrored
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+

@@ -1,0 +1,198 @@
+- type: entity
+  parent: BaseArrow
+  id: OE14BaseCrossbolt
+  categories:
+  - ForkFiltered
+  abstract: true
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: Tag
+    tags:
+    - OE14CrossbowBolt
+  localizationId: ent-OE14BaseCrossbolt
+- type: entity
+  parent: BaseArrow
+  id: OE14BaseBigCrossbolt
+  categories:
+  - ForkFiltered
+  abstract: true
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Ranged/Projectiles/crossbolt.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: Tag
+    tags:
+    - OE14BigCrossbowBolt
+  localizationId: ent-OE14BaseBigCrossbolt
+- type: entity
+  id: OE14CrossboltIron
+  parent: OE14BaseCrossbolt
+  name: iron crossbow bolt
+  description: Rod with a pointed spike in iron. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 17
+  - type: Sprite
+    layers:
+    - state: rod
+    - state: solution1
+      map:
+      - enum.SolutionContainerLayers.Fill
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 2
+  localizationId: ent-OE14CrossboltIron
+- type: entity
+  id: OE14CrossboltGold
+  parent: OE14BaseCrossbolt
+  name: gold crossbow bolt
+  description: Rod with a pointed spike in gold. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 12.75
+  - type: Sprite
+    layers:
+    - state: rod
+      color: '#ffe269'
+    - state: solution1
+      map:
+      - enum.SolutionContainerLayers.Fill
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 2
+  localizationId: ent-OE14CrossboltGold
+- type: entity
+  id: OE14CrossboltCopper
+  parent: OE14BaseCrossbolt
+  name: copper crossbow bolt
+  description: Rod with a pointed spike in copper. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 12.75
+  - type: Sprite
+    layers:
+    - state: rod
+      color: '#e28f08'
+    - state: solution1
+      map:
+      - enum.SolutionContainerLayers.Fill
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 2
+  localizationId: ent-OE14CrossboltCopper
+- type: entity
+  id: OE14CrossboltMithril
+  parent: OE14BaseCrossbolt
+  name: mithril crossbow bolt
+  description: Rod with a pointed spike in mithril. No plumage, they're not bows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 21.25
+  - type: Sprite
+    layers:
+    - state: rod
+      color: '#38f0b3'
+    - state: solution1
+      map:
+      - enum.SolutionContainerLayers.Fill
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Mithril: 2
+  localizationId: ent-OE14CrossboltMithril
+- type: entity
+  id: OE14BigCrossboltIron
+  parent: OE14BaseBigCrossbolt
+  name: iron big crossbow bolt
+  description: A large rod without plumage, for large crossbows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 29.75
+  - type: Sprite
+    layers:
+    - state: big_rod
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 5
+  localizationId: ent-OE14BigCrossboltIron
+- type: entity
+  id: OE14BigCrossboltGold
+  parent: OE14BaseBigCrossbolt
+  name: gold big crossbow bolt
+  description: A large rod without plumage, for large crossbows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 21.25
+  - type: Sprite
+    layers:
+    - state: big_rod
+      color: '#ffe269'
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 5
+  localizationId: ent-OE14BigCrossboltGold
+- type: entity
+  id: OE14BigCrossboltCopper
+  parent: OE14BaseBigCrossbolt
+  name: copper big crossbow bolt
+  description: A large rod without plumage, for large crossbows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 21.25
+  - type: Sprite
+    layers:
+    - state: big_rod
+      color: '#e28f08'
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 5
+  localizationId: ent-OE14BigCrossboltCopper
+- type: entity
+  id: OE14BigCrossboltMithril
+  parent: OE14BaseBigCrossbolt
+  name: mithril big crossbow bolt
+  description: A large rod without plumage, for large crossbows.
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 34
+  - type: Sprite
+    layers:
+    - state: big_rod
+      color: '#38f0b3'
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Mithril: 5
+  localizationId: ent-OE14BigCrossboltMithril

@@ -1,0 +1,257 @@
+# Bushes
+
+- type: decal
+  id: OE14GrassBushes1
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes1
+
+- type: decal
+  id: OE14GrassBushes2
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes2
+
+- type: decal
+  id: OE14GrassBushes3
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes3
+
+- type: decal
+  id: OE14GrassBushes4
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes4
+
+- type: decal
+  id: OE14GrassBushes5
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes5
+
+- type: decal
+  id: OE14GrassBushes6
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes6
+
+- type: decal
+  id: OE14GrassBushes7
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes7
+
+- type: decal
+  id: OE14GrassBushes8
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes8
+
+- type: decal
+  id: OE14GrassBushes9
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_bushes9
+
+# Grass
+
+- type: decal
+  id: OE14FloraGrass1
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short1
+
+- type: decal
+  id: OE14FloraGrass2
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short2
+
+- type: decal
+  id: OE14FloraGrass3
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short3
+
+- type: decal
+  id: OE14FloraGrass4
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short4
+
+- type: decal
+  id: OE14FloraGrass5
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short5
+
+- type: decal
+  id: OE14FloraGrass6
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short6
+
+- type: decal
+  id: OE14FloraGrass7
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short7
+
+- type: decal
+  id: OE14FloraGrass8
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short8
+
+- type: decal
+  id: OE14FloraGrass9
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short9
+
+- type: decal
+  id: OE14FloraGrass10
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short10
+
+- type: decal
+  id: OE14FloraGrass11
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short11
+
+- type: decal
+  id: OE14FloraGrass12
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short12
+
+- type: decal
+  id: OE14FloraGrass13
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short13
+
+- type: decal
+  id: OE14FloraGrass14
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/_OE14/Decals/Flora/Grass.rsi
+    state: grass_short14
+# Rocks
+
+- type: decal
+  id: OE14FloraRock01
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock01
+
+- type: decal
+  id: OE14FloraRock02
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock02
+
+- type: decal
+  id: OE14FloraRock03
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock03
+
+- type: decal
+  id: OE14FloraRock04
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock04
+
+- type: decal
+  id: OE14FloraRock05
+  snapCardinals: true
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: /Textures/Decals/Flora/flora_rocks.rsi
+    state: rock05
+

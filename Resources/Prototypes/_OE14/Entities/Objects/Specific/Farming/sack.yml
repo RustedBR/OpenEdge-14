@@ -1,0 +1,147 @@
+- type: entity
+  name: produce sack
+  id: OE14SackFarming
+  parent:
+  - BaseStorageItem
+  - OE14ClothingHeadBase
+  description: Bag for quick transport of items
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Storage/sack.rsi
+    state: icon
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,3,3
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,3
+    quickInsert: true
+    areaInsert: true
+  - type: Dumpable
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 55
+  - type: FlashImmunity
+  - type: IdentityBlocker
+  - type: EyeProtection
+  - type: IngestionBlocker
+  - type: Blindfold
+  localizationId: ent-OE14SackFarming
+- type: entity
+  id: OE14SackFarmingVegetables
+  parent: OE14SackFarming
+  categories:
+  - ForkFiltered
+  suffix: Vegetables
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14Wheat
+      amount: 2
+    - id: OE14FoodCabbage
+      orGroup: LargeVegetables
+      amount: 2
+    - id: OE14FoodPumpkin
+      orGroup: LargeVegetables
+      amount: 2
+    - id: OE14FoodPotato
+      amount: 2
+    - id: OE14FoodCucumber
+      amount: 2
+    - id: OE14FoodTomatoes
+      amount: 2
+  localizationId: ent-OE14SackFarmingVegetables
+- type: entity
+  id: OE14SackFarmingApple
+  parent: OE14SackFarming
+  suffix: Apple
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14FoodApple
+      amount: 3
+    - id: OE14FoodApple
+      amount: 3
+      prob: 0.6
+  localizationId: ent-OE14SackFarmingApple
+- type: entity
+  id: OE14SackFarmingWheat
+  parent: OE14SackFarming
+  suffix: Wheat
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14Wheat
+      amount: 4
+    - id: OE14Wheat
+      amount: 2
+      prob: 0.6
+  localizationId: ent-OE14SackFarmingWheat
+- type: entity
+  id: OE14SackFarmingSeed
+  parent: BaseStorageItem
+  name: seed sack
+  description: A sack for various plant seeds.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Storage/sack.rsi
+    state: seed
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,3,3
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,3
+    quickInsert: true
+    areaInsert: true
+  - type: Dumpable
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 25
+  localizationId: ent-OE14SackFarmingSeed
+- type: entity
+  id: OE14SackFarmingSeedFull
+  parent: OE14SackFarmingSeed
+  suffix: Full
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14SeedWheat
+      amount: 1
+    - id: OE14SeedWheat
+      amount: 1
+      prob: 0.6
+    - id: OE14SeedPumpkin
+      amount: 1
+    - id: OE14SeedCucumber
+      amount: 1
+    - id: OE14SeedTomato
+      amount: 1
+    - id: OE14SeedCabbage
+      amount: 1
+    - id: OE14SeedPepper
+      amount: 1
+    - id: OE14SeedSage
+      amount: 1
+    - id: OE14SeedCotton
+      amount: 1
+      prob: 0.4
+  localizationId: ent-OE14SackFarmingSeedFull
+- type: entity
+  id: OE14SackFarmingSeedSnail
+  parent: OE14SackFarmingSeed
+  suffix: Snail
+  components:
+  - type: StorageFill
+    contents:
+    - id: OE14FoodSnailShellCooked
+      amount: 12
+  localizationId: ent-OE14SackFarmingSeedSnail

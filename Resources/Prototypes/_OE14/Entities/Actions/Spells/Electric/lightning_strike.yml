@@ -1,0 +1,107 @@
+- type: entity
+  id: OE14ActionSpellLightningStrike
+  parent: OE14ActionSpellBase
+  name: Lightning strike
+  description: You charge a powerful lightning bolt that burns a large amount of stamina from the target.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 20
+  - type: OE14ActionSpeaking
+    startSpeech: "A fulgur percutiens... "
+    endSpeech: "erit ledo vobis!"
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneLightningStrike
+  - type: OE14ActionDangerous
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/electromancy.rsi
+      state: lightning_strike
+  - type: TargetAction
+    range: 5
+  - type: DoAfterArgs
+    delay: 2
+    breakOnDamage: true
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ElectrifiedEffect
+      - !type:OE14SpellCreateBeam
+        beamProto: OE14LightningStrikeBeam
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          ignoreResistances: false
+          damage:
+            types:
+              Shock: 12
+        - !type:Jitter
+        - !type:OE14StaminaChange
+          staminaDelta: -80
+      - !type:OE14SpellThrowFromUser
+        throwPower: 4
+        distance: 1
+
+- type: entity
+  name: lightning
+  id: OE14LightningStrikeBeam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/_OE14/Effects/Beams/lightning.rsi
+    drawdepth: Effects
+    layers:
+    - state: lightning
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: PointLight
+    enabled: true
+    color: "#e8ff4c"
+    radius: 1.5
+    softness: 1
+    autoRot: true
+    castShadows: false
+  - type: Beam
+    sound: /Audio/Effects/Lightning/lightningshock.ogg
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: LightFade
+    duration: 1.5
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: OE14SpellEffectOnCollide
+    effects:
+    - !type:OE14SpellSpawnEntityOnTarget
+      spawns:
+      - OE14ElectrifiedEffect
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Shock: 10
+      - !type:Jitter
+      - !type:OE14StaminaChange
+        staminaDelta: -30
+
+- type: entity
+  id: OE14RuneLightningStrike
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#e8ff4c"
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      color: "#e8ff4c"
+      shader: unshaded

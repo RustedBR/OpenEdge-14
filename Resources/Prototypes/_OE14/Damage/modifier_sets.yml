@@ -1,0 +1,206 @@
+# Structures
+
+# For any thin wooden entities
+# Use if the logical “thickness” of this entity is less than the logs of a tree.
+# Examples of uses: Chairs, tables, plates, wooden weapons,...
+- type: damageModifierSet
+  id: OE14Wood
+  coefficients:
+    Blunt: 0.5
+    Slash: 2.0
+    Heat: 1.5
+
+# For any thick monolithic wooden objects.
+# Use if the logical “thickness” of the object is equal to or greater than a tree log
+# Examples of use: Trees, wooden walls
+- type: damageModifierSet
+  id: OE14WoodStructural
+  coefficients:
+    Blunt: 0.4
+    Slash: 1.5
+    Piercing: 0.8
+    Heat: 1.3
+    Structural: 0.25
+  flatReductions:
+    Blunt: 10
+    Slash: 10
+    Piercing: 10
+    Structural: 10
+
+# For small items made of stone
+- type: damageModifierSet
+  id: OE14Rock
+  coefficients:
+    Blunt: 0.75
+    Slash: 0.5
+    Piercing: 1.0
+    Heat: 0.15
+    Structural: 4
+
+# For thick, monolithic stone structures such as statues, large stones, stone walls
+- type: damageModifierSet
+  id: OE14RockStructural
+  coefficients:
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.8
+    Heat: 0.1
+    Structural: 1
+  flatReductions:
+    Blunt: 10
+    Slash: 10
+    Piercing: 10
+    Structural: 10
+
+- type: damageModifierSet
+  id: OE14Metallic
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.5
+    Piercing: 0.7
+    Shock: 1.2
+    Structural: 0.8
+  flatReductions:
+    Blunt: 5
+    Heat: 5
+
+- type: damageModifierSet
+  id: OE14MetallicStructural
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.5
+    Piercing: 0.7
+    Shock: 1.2
+    Structural: 0.8
+  flatReductions:
+    Blunt: 10
+    Slash: 10
+    Piercing: 10
+    Heat: 10
+    Structural: 10
+
+# Mobs
+
+- type: damageModifierSet
+  id: OE14Zombie
+  coefficients:
+    Blunt: 0.8
+    Slash: 1.0
+    Piercing: 0.8
+    Heat: 1.5
+    Cold: 0.4
+    Poison: 0
+
+- type: damageModifierSet
+  id: OE14Dinosaur
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.7
+    Piercing: 1.2
+    Heat: 0.8
+    Cold: 1.4
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: OE14LittleInsects
+  coefficients:
+    Blunt: 0.0
+    Slash: 0.0
+    Piercing: 0.0
+    Heat: 1.3
+    Cold: 0.8
+    Poison: 0.2
+
+- type: damageModifierSet
+  id: OE14WatcherIce
+  coefficients:
+    Heat: 1.4
+    Cold: 0.2
+
+- type: damageModifierSet
+  id: OE14Cackle
+  coefficients:
+    Heat: 1.4
+    Slash: 1.2
+    Piercing: 0.6
+
+- type: damageModifierSet
+  id: OE14WatcherFire
+  coefficients:
+    Heat: 0.2
+    Cold: 1.4
+
+# Slimes
+# TODO: upstream a way to get modifier sets to inherit from each other
+
+- type: damageModifierSet
+  id: OE14Slime
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Cold: 1.5
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: OE14SlimeElectric
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 1.2
+    Cold: 1.5
+    Shock: 0.0
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: OE14SlimeFire
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 0.0
+    Cold: 2.0
+    Poison: 0.8
+
+- type: damageModifierSet
+  id: OE14SlimeIce
+  coefficients:
+    Blunt: 0.6
+    Slash: 1.2
+    Piercing: 1.2
+    Heat: 2.0
+    Cold: 0.0
+    Poison: 0.8
+
+# Species
+
+- type: damageModifierSet
+  id: OE14Tiefling
+  coefficients:
+    Heat: 0.5
+    Cold: 1.5
+
+- type: damageModifierSet
+  id: OE14Goblin
+  coefficients:
+    Blunt: 1.25
+    Slash: 1.25
+    Piercing: 1.25
+    Heat: 1.25
+    Cold: 1.25
+    Shock: 1.25
+    Poison: 0.5
+    Caustic: 0.5
+
+- type: damageModifierSet
+  id: OE14Skeleton
+  coefficients:
+    Blunt: 1.2
+    Piercing: 0.8
+    Cold: 0.0
+    Poison: 0.0
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    Bloodloss: 0.0
+    Cellular: 0.0

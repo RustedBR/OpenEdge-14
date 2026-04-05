@@ -1,0 +1,280 @@
+# Base Alcohol
+
+- type: reagent
+  id: OE14DwarfBeer
+  name: oe14-reagent-name-dwarfbeer
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-beer
+  slipData:
+    requiredSlipSpeed: 3.5
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: OE14dwarfbeer
+  color: "#4b3620"
+  boilingPoint: 78.2
+  meltingPoint: -114.1
+  metabolisms:
+    Alcohol:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        - !type:OrganType
+          type: OE14Dwarf
+          shouldHave: false
+        damage:
+          types:
+            Poison: 1
+      # dwarves take less toxin damage and heal a marginal amount of brute
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        - !type:OrganType
+          type: OE14Dwarf
+        damage:
+          types:
+            Poison: 0.2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        - !type:OrganType
+          type: OE14Dwarf
+        damage:
+          groups:
+            Brute: -1
+      - !type:ChemVomit
+        probability: 0.04
+        conditions:
+        - !type:ReagentThreshold
+          reagent: OE14DwarfBeer
+          min: 8
+        - !type:OrganType
+          type: OE14Dwarf
+          shouldHave: false
+      - !type:Drunk
+        boozePower: 2
+  fizziness: 0.8
+  pricePerUnit: 4
+
+- type: reagent
+  id: OE14Beer
+  name: oe14-reagent-name-beer
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-beer
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14beer
+  color: "#e3e77b"
+  recognizable: true
+  fizziness: 0.6
+  metabolisms:
+    Poison:
+      metabolismRate: 0.1
+      effects:
+      - !type:Emote
+        emote: Laugh
+        probability: 0.05
+  pricePerUnit: 0.23
+
+- type: reagent
+  id: OE14BeerGerbil
+  name: oe14-reagent-name-gerbil
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-beer
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14gerbil
+  color: "#3c1e14"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Beer
+        amount: 0.2
+  pricePerUnit: 0.26
+
+- type: reagent
+  id: OE14BeerBreeze
+  name: oe14-reagent-name-breeze
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-beer
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14breeze
+  color: "#ffdc64"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Beer
+        amount: 0.2
+  pricePerUnit: 0.15
+
+- type: reagent
+  id: OE14BeerBlowLaw
+  name: oe14-reagent-name-blowlaw
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-beer
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14blowLaw
+  color: "#f0d778"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Beer
+        amount: 0.3
+  pricePerUnit: 0.35
+
+- type: reagent
+  id: OE14Wine
+  name: oe14-reagent-name-wine
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-wine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: OE14wine
+  color: "#7E4043"
+  recognizable: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 0.4
+  pricePerUnit: 0.5
+
+- type: reagent
+  id: OE14WineZellasianPleasure
+  name: oe14-reagent-name-zellasian-pleasure
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-wine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: OE14zellasianPleasure
+  color: "#5a1e1e"
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Wine
+        amount: 0.3
+  pricePerUnit: 1.5
+
+- type: reagent
+  id: OE14WineLeeks
+  name: oe14-reagent-name-leeks
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-wine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: OE14leeks
+  color: "#961e32"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Wine
+        amount: 0.2
+  pricePerUnit: 0.2
+
+- type: reagent
+  id: OE14WineDurandate
+  name: oe14-reagent-name-durandate
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-wine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: OE14durandate
+  color: "#8c3c32"
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Wine
+        amount: 0.01
+  pricePerUnit: 1
+
+- type: reagent
+  id: OE14Ale
+  name: oe14-reagent-name-ale
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-ale
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14ale
+  color: "#663100"
+  recognizable: true
+  fizziness: 0.6
+  metabolisms:
+    Poison:
+      metabolismRate: 0.2
+      effects:
+      - !type:Emote
+        emote: Laugh
+        probability: 0.05
+  pricePerUnit: 0.1
+
+- type: reagent
+  id: OE14AleBloodyTear
+  name: oe14-reagent-name-bloody-tear
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-ale
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14bloodyTear
+  color: "#993333"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Ale
+        amount: 0.2
+  pricePerUnit: 0.2
+
+- type: reagent
+  id: OE14AleBottomless
+  name: oe14-reagent-name-bottomless
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-ale
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14bottomless
+  color: "#2d1914"
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Ale
+        amount: 0.2
+  pricePerUnit: 0.35
+
+# Magic beer from spell, cost nothing
+- type: reagent
+  id: OE14MagicBeer
+  name: oe14-reagent-name-bottomless
+  parent: BaseAlcohol
+  desc: oe14-reagent-desc-ale
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: OE14bottomless
+  color: "#2d1914"
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: OE14Ale
+        amount: 0.2
+  pricePerUnit: 0

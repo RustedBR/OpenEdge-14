@@ -1,0 +1,25 @@
+<Document>
+# Humans
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobHuman" Caption="Human"/>
+</Box>
+
+Humans - One of the youngest races culturally. Humans stand out for their commonness while being one of the dominant races in numbers. They are the benchmark from which all other species are measured — perfectly balanced across all attributes.
+
+## Attributes
+
+[bold]Scale: 1–10 | Human baseline: 5 in all stats[/bold]
+
+- [color=#e05050]Strength[/color] — [bold]5[/bold] | Physical damage multiplier. Neutral — neither strong nor weak.
+- [color=#50e050]Vitality[/color] — [bold]5[/bold] | Maximum health. [color=#77dd77]100 HP[/color] before Critical, [color=#ff6961]200 HP[/color] before Death.
+- [color=#50e0e0]Dexterity[/color] — [bold]5[/bold] | Maximum stamina. [color=#77dd77]100 stamina[/color] before Stamina Crit.
+- [color=#a050e0]Intelligence[/color] — [bold]5[/bold] | Maximum mana. [color=#42aaf5]100 mana[/color].
+
+Humans have no extremes — they are the ideal starting point for any playstyle, and their attribute points during character creation can push them in any direction.
+
+## Opportunists
+
+Humans have [bold]0.5 more Memory skill points[/bold] from the start of the round, giving them a small advantage in skill progression.
+
+</Document>

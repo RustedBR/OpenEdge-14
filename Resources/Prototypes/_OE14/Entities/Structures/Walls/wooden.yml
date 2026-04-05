@@ -1,0 +1,196 @@
+# Wooden
+
+- type: entity
+  id: OE14WallFrameWooden
+  name: wooden wall frame
+  parent:
+  - OE14BaseWallFrame
+  - OE14BaseFlammableSpreading
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Walls/wooden_wall.rsi
+    state: frame
+  - type: Icon
+    sprite: _OE14/Structures/Walls/wooden_wall.rsi
+    state: frame
+  - type: Construction
+    graph: OE14WallWooden
+    node: OE14WallFrameWooden
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: OE14WallWooden
+  name: wooden wall
+  parent:
+  - OE14BaseWall
+  - OE14BaseFlammableSpreading
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Walls/wooden_wall.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Walls/wooden_wall.rsi
+  - type: IconSmooth
+    base: wood
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14WallFrameWooden
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14WallWooden
+    node: OE14WallWooden
+  - type: OE14WallpaperHolder
+
+# Wooden birch
+
+- type: entity
+  id: OE14WallFrameWoodenBirch
+  parent: OE14WallFrameWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Construction
+    graph: OE14WallWoodenBirch
+    node: OE14WallFrameWoodenBirch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: OE14WallWoodenBirch
+  parent: OE14WallWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Walls/wooden_wall_birch.rsi
+  - type: Construction
+    graph: OE14WallWoodenBirch
+    node: OE14WallWoodenBirch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14WallFrameWoodenBirch
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+# Wooden spruce
+
+- type: entity
+  id: OE14WallFrameWoodenSpruce
+  parent: OE14WallFrameWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Construction
+    graph: OE14WallWoodenSpruce
+    node: OE14WallFrameWoodenSpruce
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14SpruceWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: OE14WallWoodenSpruce
+  parent: OE14WallWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Walls/wooden_wall_spruce.rsi
+  - type: Construction
+    graph: OE14WallWoodenSpruce
+    node: OE14WallWoodenSpruce
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14SpruceWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14WallFrameWoodenSpruce
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

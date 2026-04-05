@@ -1,0 +1,103 @@
+# TIER 1
+
+- type: entity
+  parent: MarkerBase
+  id: OE14SpawnerDemiplaneLootT1
+  name: Demiplane T1 Loot
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _OE14/Objects/Materials/copper_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 0.7
+      tableId: OE14TableDemiplaneLootT1
+
+- type: entityTable
+  id: OE14TableDemiplaneLootT1
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - !type:GroupSelector
+        children:
+        - id: OE14SpellScrollIceShards
+        - id: OE14SpellScrollShadowGrab
+        - id: OE14SpellScrollSphereOfLight
+        - id: OE14SpellScrollCureWounds
+        - id: OE14SpellScrollBloodPurification
+        - id: OE14SpellScrollCureBurn
+        - id: OE14SpellScrollFlameCreation
+        - id: OE14SpellScrollEarthWall
+        - id: OE14SpellScrollFlashLight
+        - id: OE14SpellScrollWaterCreation
+        - id: OE14SpellScrollMagicalAcceleration
+        - id: OE14SpellScrollHeat
+      - id: OE14ScrapCopper
+      - id: OE14ScrapIron
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: OE14BaseLockpick
+      - id: OE14EnergyCrystalMediumEmpty
+      - id: OE14ClothingCloakAmuletGold
+      - id: OE14SpellScrollElectricTrap
+      - id: OE14SpellScrollIceTrap
+      # Rare standard village crates loot
+      - !type:NestedSelector
+        tableId: OE14StationCrateLoot
+
+# TIER 2
+
+- type: entity
+  parent: MarkerBase
+  id: OE14SpawnerDemiplaneLootT2
+  name: Demiplane T2 Loot
+  categories: [ ForkFiltered, DoNotMap ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _OE14/Objects/Materials/iron_bar.rsi
+      state: bar_3
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      prob: 0.7
+      tableId: OE14TableDemiplaneLootT2
+
+- type: entityTable
+  id: OE14TableDemiplaneLootT2
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      # T1 loot chance
+      - !type:NestedSelector
+        tableId: OE14TableDemiplaneLootT1
+        weight: 2 #Temp (small amount T2 loot)
+      - !type:GroupSelector
+        children:
+        - id: OE14SpellScrollFireTrap
+        - id: OE14SpellScrollShadowStep
+        - id: OE14SpellScrollFireball
+        - id: OE14SpellScrollBeerCreation
+          weight: 0.2
+      - id: OE14ScrapGold
+      - id: OE14ScrapMithril
+        weight: 0.5
+    # Rare
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - !type:GroupSelector # remove this when players can create their own magic items
+        children:
+        - id: OE14ClothingCloakAmuletMana
+

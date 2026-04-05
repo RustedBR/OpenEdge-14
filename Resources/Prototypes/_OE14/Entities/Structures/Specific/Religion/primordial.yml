@@ -1,0 +1,22 @@
+- type: entity
+  parent: OE14BaseAltarPrimordial
+  id: OE14AltarPrimordialGodLumera
+  name: primordial statue of Lumera
+  description: The enchanting statue of Lumera, patroness of the starry sky, night,
+    and mysteries. She does not demand worship—she simply observes. And waits for
+    you to ask.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    offset: 0.0,0.8
+    sprite: _OE14/Structures/Specific/Religion/lumera_statue.rsi
+    layers:
+    - state: statue1
+  - type: OE14ReligionAltar
+    religion: Lumera
+  - type: OE14ReligionObserver
+    religion: Lumera
+    radius: 15
+  - type: SpawnPoint
+    job_id: OE14GodLumera
+  localizationId: ent-OE14AltarPrimordialGodLumera

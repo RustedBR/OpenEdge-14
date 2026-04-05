@@ -1,0 +1,139 @@
+<Document>
+# Ferreiro
+
+A arte de trabalhar metais e criar armas. Como ferreiro, você forja armas aprimoradas e armaduras, e specializes em montagem de componentes modulares para personalizar equipamentos com bônus de atributos e propriedades especiais.
+
+## A Arte do Ferreiro
+
+Ferreiros trabalham em [bold]Bigornas[/bold] para forjar armas, armaduras e componentes modulares. Cada receita leva tempo para ser completada — observe a barra de progresso e certifique-se de não se mover ou tomar dano durante o processo.
+
+Os principais recursos do ferreiro são:
+- [bold]Barras de Ferro[/bold] — bloco básico de construção de metal (1 barra crafts 1 unidade de metal)
+- [bold]Barras de Cobre[/bold] — metal secundário para ligas e componentes
+- [bold]Tábuas de Madeira[/bold] — cabo, empunhadura e reforço
+- [bold]Couro[/bold] — envelopamentos, padding e componentes flexíveis
+
+<Box>
+  <GuideEntityEmbed Entity="OE14WorkbenchAnvil" Caption="Bigorna"/>
+  <GuideEntityEmbed Entity="OE14WorkbenchFurnace" Caption="Forja"/>
+</Box>
+
+## Sistema de Crafting Modular
+
+### O que é Crafting Modular?
+
+Crafting modular permite personalizar armas e armaduras anexando peças especializadas. Cada arma e peça de armadura tem [bold]2 slots de anexação[/bold] que podem aceitar diferentes tipos de componentes.
+
+Quando você anexa uma parte modular a uma arma ou armadura:
+1. O item ganha imediatamente bônus de atributos (se a parte tiver)
+2. As propriedades de dano, proteção ou velocidade do item são modificadas
+3. Você pode anexar múltiplas partes para maximizar a personalização
+
+### Partes Modulares Disponíveis
+
+#### Cristais de Atributos (Todos os Slots)
+Fragmentos de essência criados com materiais básicos. Cada um adiciona +1 a um atributo específico quando equipado.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14ModularCrystalStrength" Caption="Cristal de FOR"/>
+  <GuideEntityEmbed Entity="OE14ModularCrystalVitality" Caption="Cristal de VIT"/>
+  <GuideEntityEmbed Entity="OE14ModularCrystalDexterity" Caption="Cristal de DES"/>
+  <GuideEntityEmbed Entity="OE14ModularCrystalIntelligence" Caption="Cristal de INT"/>
+</Box>
+
+- [bold]Fragmento de Essência de Força:[/bold] +1 FOR — Craftado com 2 Barras de Ferro + 1 Barra de Cobre
+- [bold]Fragmento de Essência de Vitalidade:[/bold] +1 VIT — Craftado com 2 Barras de Ferro + 1 Barra de Cobre
+- [bold]Fragmento de Essência de Destreza:[/bold] +1 DES — Craftado com 2 Barras de Ferro + 1 Barra de Cobre
+- [bold]Fragmento de Essência de Inteligência:[/bold] +1 INT — Craftado com 2 Barras de Ferro + 1 Barra de Cobre
+
+#### Partes de Arma (Slots Lâmina/Cabo)
+
+- [bold]Lâmina de Dano:[/bold] Aumenta o dano da arma em ~2 Cortante/Perfurante, ~1 Contusão
+  - Custo: 4 Barras de Ferro + 2 Barras de Cobre
+  - Slot: Lâmina
+
+- [bold]Cabo de Velocidade:[/bold] Aumenta a velocidade de ataque em 15%
+  - Custo: 3 Barras de Ferro + 2 Tábuas de Madeira
+  - Slot: Cabo
+
+#### Parts de Armadura (Slots Placa/Fixação)
+
+- [bold]Placa de Armadura Pesada:[/bold] Reduz todo dano em ~10-15% (Contusão 85%, Cortante 90%, Perfurante 80%)
+  - Custo: 5 Barras de Ferro + 2 Barras de Cobre
+  - Slot: Placa de Armadura
+
+- [bold]Padding Protetor:[/bold] Reduz todo dano em ~8%
+  - Custo: 3 Tecido + 1 Barra de Cobre
+  - Slot: Fixação
+
+#### Parts de Mobilidade (Slot Fixação)
+
+- [bold]Abraço Leve:[/bold] Reduz penalidade de movimento em 5% (caminhada/sprint +5% velocidade)
+  - Custo: 2 Barras de Ferro + 3 Couro
+  - Slot: Fixação
+
+- [bold]Tecido Ágil:[/bold] Reduz penalidade de movimento em 8-10% (caminhada +8%, sprint +10% velocidade)
+  - Custo: 4 Couro
+  - Slot: Fixação
+
+#### Parts Mágicos (Slots Lâmina/Placa)
+
+- [bold]Conduto de Mana:[/bold] Reduz custo de conjuração em 10%
+  - Custo: 3 Barras de Cobre + 2 Minério de Cristal
+  - Slot: Lâmina ou Placa de Armadura
+
+- [bold]Amplificador de Mana:[/bold] Reduz custo de conjuração em 15% (requer mais cristais)
+  - Custo: 2 Barras de Ferro + 4 Minério de Cristal
+  - Slot: Lâmina ou Placa de Armadura
+
+## Como Craftar Parts Modulares
+
+Todas as partes modulares são craftadas em uma [bold]Bigorna[/bold].
+
+1. [bold]Colete matérias-primas:[/bold]
+     - Encontre depósitos de minério no mundo (Minério de Ferro, Minério de Cobre, Minério de Ouro, ou Minério de Mithril)
+     - Mine o minério e traga para a Bigorna
+     - Crafte barras de metal: Cada barra requer 10 unidades de minério
+     - Exemplo: 10 Minério de Ferro → 1 Barra de Ferro (use as receitas "Derreter")
+
+2. [bold]Acesse a bigorna:[/bold]
+     - Aproxime-se da Bigorna e interaja com ela
+     - Veja as receitas disponíveis no menu de crafting
+
+3. [bold]Crafte uma parte modular:[/bold]
+     - Encontre a receita que deseja (ex: "Craftar Cristal de Força")
+     - Coloque os materiais necessários (2 Barras de Ferro + 1 Barra de Cobre para cristais de atributo)
+     - Selecione a receita e espere a barra de progresso completar
+     - A parte final será placed nearby
+
+## Como Anexar Parts Modulares
+
+1. [bold]Craft ou obtenha uma arma ou armadura base[/bold]
+2. [bold]Tenha uma parte modular no seu inventário[/bold]
+3. [bold]Examine a arma ou armadura[/bold] (clique direito ou use a tecla de examinar)
+4. [bold]Selecione a ação "Anexar Parte"[/bold] do menu de examinar
+     - Uma barra de progresso aparecerá (1.5-3 segundos dependendo da parte)
+     - Não se mova ou tome dano durante a montagem
+     - Quando completo, a parte se anexa e aplica seus bônus
+
+Uma vez anexada, a arma ou armadura [bold]mantém permanentemente os bônus de atributos[/bold] e benefícios mecânicos daquela parte. Você pode anexar múltiplas partes ao mesmo item (até o número de slots disponíveis).
+
+## Desmontando Itens Modulares
+
+Se você danificar uma arma ou armadura modular o suficiente (receber ~50 de dano), ela quebrará e dropará todas as partes anexadas como itens separados. Você pode então coletar as partes e reutilizá-las em outros equipamentos.
+
+## Dicas Avançadas de Ferreiro
+
+- [bold]Combine cristais de atributo com partes de arma:[/bold] Anexe um Fragmento de Força + Lâmina de Dano na sua espada para ambos +1 FOR e +2 de dano
+- [bold]Camadas de proteção de armadura:[/bold] Use Placa Pesada + Padding Protetor na sua couraça para acumular redução de dano
+- [bold]Balance mobilidade:[/bold] Armaduras pesadas penalizam movimento; compense com Abraço Leve ou Tecido Ágil
+- [bold]Especialize para magia:[/bold] Se você também conjura magias, adicione Conduto de Mana ao seu bastão para conjuração mais barata
+- [bold]Colete e reutilize:[/bold] Parts modulares são valiosos — mantenha extras no armazenamento para trocar entre diferentes armas e builds
+
+## Sistemas Relacionados
+
+- [textlink="Crafting" link="OE14_PT_Crafting"] — visão geral de todos os métodos de crafting
+  - [textlink="Combat" link="OE14_PT_Combat"] — como atributos de arma afetam o dano
+  - [textlink="Jobs" link="OE14_EN_Jobs"] — detalhes e requisitos do trabalho Ferreiro
+
+</Document>

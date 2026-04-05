@@ -1,0 +1,58 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WallmountTorch
+  graph: OE14WallmountTorch
+  startNode: start
+  targetNode: OE14WallmountTorch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+    - !type:OE14WallRequired
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14FloorTorch
+  graph: OE14FloorTorch
+  startNode: start
+  targetNode: OE14FloorTorch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WallmountLampEmpty
+  graph: OE14WallmountLampEmpty
+  startNode: start
+  targetNode: OE14WallmountLampEmpty
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+    - !type:OE14WallRequired
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WallmountBarShelfA
+  graph: OE14WallmountBarShelfA
+  startNode: start
+  targetNode: OE14WallmountBarShelfA
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  canRotate: true
+  conditions:
+    - !type:TileNotBlocked
+    - !type:OE14WallRequired
+

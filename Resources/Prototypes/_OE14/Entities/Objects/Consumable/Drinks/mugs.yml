@@ -1,0 +1,117 @@
+- type: entity
+  parent: BaseItem
+  id: OE14DrinkBaseMug
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/mug.rsi
+    layers:
+    - state: icon-0
+    - map:
+      - enum.SolutionContainerLayers.Fill
+      state: icon-3
+      visible: false
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: /Audio/Effects/Fluids/splat.ogg
+    damage:
+      types:
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      mug:
+        maxVol: 10
+  - type: OE14SolutionTemperature
+  - type: MixableSolution
+    solution: mug
+  - type: FitsInDispenser
+    solution: mug
+  - type: RefillableSolution
+    solution: mug
+  - type: DrainableSolution
+    solution: mug
+  - type: ExaminableSolution
+    solution: mug
+  - type: DrawableSolution
+    solution: mug
+  - type: InjectableSolution
+    solution: mug
+  - type: SolutionItemStatus
+    solution: mug
+  - type: TrashOnSolutionEmpty
+    solution: mug
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: mug
+  - type: Drink
+    solution: mug
+  - type: Appearance
+  - type: Injector
+    solutionName: mug
+    injectOnly: false
+    ignoreMobs: true
+    toggleState: 1
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: icon-
+  localizationId: ent-OE14DrinkBaseMug
+- type: entity
+  parent: OE14DrinkBaseMug
+  id: OE14MetalBeerMug
+  name: metal mug
+  categories:
+  - ForkFiltered
+  description: The most common metal mug.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/beer_mug_4.rsi
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 2
+  localizationId: ent-OE14MetalBeerMug
+- type: entity
+  parent: OE14DrinkBaseMug
+  id: OE14WoodenBeerMug
+  name: wooden mug
+  categories:
+  - ForkFiltered
+  description: Wooden mug for beer.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/beer_mug_1.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 20
+  localizationId: ent-OE14WoodenBeerMug
+- type: entity
+  parent: OE14DrinkBaseMug
+  id: OE14SteelBeerMug
+  name: beer mug
+  categories:
+  - ForkFiltered
+  description: Wooden mug with iron inclusions.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/beer_mug_2.rsi
+  localizationId: ent-OE14SteelBeerMug
+- type: entity
+  parent: OE14DrinkBaseMug
+  id: OE14SteelWoodBeerMug
+  name: beer mug
+  categories:
+  - ForkFiltered
+  description: Wooden mug with iron inclusions.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/beer_mug_3.rsi
+  localizationId: ent-OE14SteelWoodBeerMug

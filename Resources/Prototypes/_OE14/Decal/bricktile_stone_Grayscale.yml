@@ -1,0 +1,135 @@
+﻿- type: decal
+  id: OE14BrickTileGrayScaleStoneBox
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_box
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneCornerNe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_corner_ne
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneCornerSe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_corner_se
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneCornerNw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_corner_nw
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneCornerSw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_corner_sw
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneInnerNe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_inner_ne
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneInnerSe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_inner_se
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneInnerNw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_inner_nw
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneInnerSw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_inner_sw
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneEndN
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_end_n
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneEndE
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_end_e
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneEndS
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_end_s
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneEndW
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_end_w
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneLineN
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_line_n
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneLineE
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_line_e
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneLineS
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_line_s
+
+- type: decal
+  id: OE14BrickTileGrayScaleStoneLineW
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/stone_Grayscale.rsi
+    state: stone_line_w

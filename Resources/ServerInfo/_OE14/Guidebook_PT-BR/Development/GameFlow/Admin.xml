@@ -1,0 +1,30 @@
+<Document>
+# Ferramentas & Comandos de Admin
+
+Esta página descreve as ferramentas de admin disponíveis para gerenciar o servidor e rodadas.
+
+## Comandos de Admin Comuns
+
+[bold]Controle de rodada:[/bold]
+- [mono]forcestart[/mono] — Força início imediato da rodada
+- [mono]endround[/mono] — Termina a rodada atual
+- [mono]restartround[/mono] — Reinicia sem esperar
+
+[bold]Gerenciamento de jogadores:[/bold]
+- [mono]kick[nome de usuário][/mono] — Expulsa um jogador do servidor
+- [mono]ban[nome de usuário][/mono] — Bane um jogador
+- [mono]respawn[nome de usuário][/mono] — Respawna um jogador
+
+[bold]Ferramentas de entidades:[/bold]
+- [mono]spawn[ID de entidade][/mono] — Spawna uma entidade na sua posição
+- [mono]delete[/mono] — Deleta a entidade que você está olhando
+
+## Painel de Admin
+
+O painel de admin (F7 por padrão) fornece uma GUI para ações comuns de admin sem precisar de comandos de console.
+
+## Conteúdo Em Construção
+
+Documentação completa de ferramentas de admin coming soon. Consulte a documentação upstream do SS14 para referência detalhada de comandos de admin.
+
+</Document>

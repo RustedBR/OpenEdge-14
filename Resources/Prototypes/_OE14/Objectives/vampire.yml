@@ -1,0 +1,20 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: OE14BaseVampireObjective
+  components:
+  - type: Objective
+    issuer: oe14-objective-issuer-vampire
+    difficulty: 1
+
+- type: entity
+  parent: OE14BaseVampireObjective
+  id: OE14VampireObjectiveBloodPurity
+  components:
+  - type: OE14VampireBloodPurityCondition
+
+- type: entity
+  parent: OE14BaseVampireObjective
+  id: OE14VampireObjectiveDefenseVillage
+  components:
+  - type: OE14VampireDefenceVillageCondition

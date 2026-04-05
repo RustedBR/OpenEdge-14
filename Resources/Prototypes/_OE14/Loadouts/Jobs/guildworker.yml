@@ -1,0 +1,36 @@
+# Head
+
+- type: loadoutGroup
+  id: OE14GuildWorkerHead
+  name: oe14-loadout-guildworker-head
+  loadouts:
+  - OE14ClothingHeadGuildBeret
+  - OE14ClothingHeadGuildBeretRed
+  - OE14ClothingHeadGuildBeretYellow
+  - OE14ClothingHeadGuildBeretBlue
+  - OE14ClothingHeadGuildBeretGreen
+
+- type: loadout
+  id: OE14ClothingHeadGuildBeret
+  equipment:
+    head: OE14ClothingHeadGuildBeret
+
+- type: loadout
+  id: OE14ClothingHeadGuildBeretRed
+  equipment:
+    head: OE14ClothingHeadGuildBeretRed
+
+- type: loadout
+  id: OE14ClothingHeadGuildBeretYellow
+  equipment:
+    head: OE14ClothingHeadGuildBeretYellow
+
+- type: loadout
+  id: OE14ClothingHeadGuildBeretGreen
+  equipment:
+    head: OE14ClothingHeadGuildBeretGreen
+
+- type: loadout
+  id: OE14ClothingHeadGuildBeretBlue
+  equipment:
+    head: OE14ClothingHeadGuildBeretBlue

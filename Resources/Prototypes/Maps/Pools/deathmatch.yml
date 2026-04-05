@@ -1,0 +1,4 @@
+- type: gameMapPool
+  id: NOOE14DeathMatchMapPool
+  maps:
+  - MeteorArena

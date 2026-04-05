@@ -1,0 +1,60 @@
+- type: constructionGraph
+  id: OE14TargetStake
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14targetStake
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: OE14targetStake
+      entity: OE14TargetStake
+      edges:
+        - to: start
+          completed:
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Screwing
+              doAfter: 1
+        - to: OE14target
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 1
+            - tool: OE14Hammering
+              doAfter: 1
+
+    - node: OE14target
+      entity: OE14Target
+      edges:
+        - to: OE14targetStake
+          completed:
+            - !type:GivePrototype
+              prototype: OE14WoodenPlanks1
+              amount: 3
+          steps:
+            - tool: OE14Hammering
+              doAfter: 2
+
+- type: constructionGraph
+  id: OE14TargetEffigy
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14targetEffigy
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 5
+            - material: OE14Cloth
+              amount: 2
+    - node: OE14targetEffigy
+      entity: OE14TargetEffigy

@@ -1,0 +1,24 @@
+<Document>
+# Guias de Desenvolvimento
+
+Guias passo a passo para tarefas comuns de desenvolvimento no OpenEdge 14.
+
+## Guias Disponíveis
+
+- [textlink="Adicionando Novas Habilidades" link="OE14_DEV_Guide_Skills"] — crie uma nova árvore de habilidades e progressão
+- [textlink="Adicionando Novas Magias" link="OE14_DEV_Guide_Spells"] — defina e implemente uma nova ação de magia
+- [textlink="Adicionando Novos Trabalhos" link="OE14_DEV_Guide_Jobs"] — crie um novo trabalho com salário e ponto de spawn
+- [textlink="Adicionando Novas Espécies" link="OE14_DEV_Guide_Species"] — adicione uma espécie jogável com bônus raciais
+- [textlink="Migrações de Banco de Dados" link="OE14_DEV_Guide_Migrations"] — adicione ou modifique schema de banco de dados com segurança
+- [textlink="Testes & Debugging" link="OE14_DEV_Guide_Testing"] — dicas para testar suas mudanças
+
+## Antes de Começar
+
+Certifique-se de entender a arquitetura central:
+- [textlink="Entity-Component-System" link="OE14_DEV_Arch_ECS"] — como o jogo é estruturado
+- [textlink="Recipiente IoC" link="OE14_DEV_Arch_IoC"] — como sistemas acessam uns aos outros
+- [textlink="Sistema de Eventos" link="OE14_DEV_Arch_Events"] — como sistemas se comunicam
+
+Leia CLAUDE.md na raiz do repositório para convenções de projeto e regras de codificação.
+
+</Document>

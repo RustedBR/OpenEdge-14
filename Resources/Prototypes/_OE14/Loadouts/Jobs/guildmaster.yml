@@ -1,0 +1,70 @@
+
+# Head
+- type: loadoutGroup
+  id: OE14GuildmasterHead
+  name: oe14-loadout-guildmaster-head
+  loadouts:
+  - OE14ClothingHeadGildmaster
+
+- type: loadout
+  id: OE14ClothingHeadGildmaster
+  equipment:
+    head: OE14ClothingHeadGildmaster
+
+# Cloak
+
+- type: loadoutGroup
+  id: OE14GuildmasterCloak
+  name: oe14-loadout-guildmaster-cloak
+  loadouts:
+  - OE14ClothingCloakGuildmasterCape
+
+- type: loadout
+  id: OE14ClothingCloakGuildmasterCape
+  equipment:
+    cloak: OE14ClothingCloakGuildmasterCape
+
+# OuterClothing
+
+- type: loadoutGroup
+  id: OE14GuildmasterOuterClothing
+  name: oe14-loadout-guildmaster-outer
+  loadouts:
+  - OE14ClothingOuterClothingGreenVest
+  - OE14ClothingOuterClothingGreenVest2
+
+- type: loadout
+  id: OE14ClothingOuterClothingGreenVest
+  equipment:
+    outerClothing: OE14ClothingOuterClothingGreenVest
+
+- type: loadout
+  id: OE14ClothingOuterClothingGreenVest2
+  equipment:
+    outerClothing: OE14ClothingOuterClothingGreenVest2
+
+
+# Shirt
+
+- type: loadoutGroup
+  id: OE14GuildmasterShirt
+  name: oe14-loadout-guildmaster-shirt
+  loadouts:
+  - OE14ClothingShirtCottonWhite
+
+# Pants
+
+- type: loadoutGroup
+  id: OE14GuildmasterPants
+  name: oe14-loadout-guildmaster-pants
+  loadouts:
+  - OE14ClothingPantsAristocratic
+
+# Shoes
+
+- type: loadoutGroup
+  id: OE14GuildmasterShoes
+  name: oe14-loadout-guildmaster-shoes
+  loadouts:
+  - OE14ShoesAristocraticBlack
+

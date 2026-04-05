@@ -1,0 +1,251 @@
+- type: entity
+  parent: BaseItem
+  id: OE14FloorTileItemBase
+  name: carpet
+  description: Rolled up carpet for easy transport.
+  abstract: true
+  components:
+  - type: Stack
+    count: 1
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/Carpets/icons.rsi
+  - type: StackPrice
+    price: 0.5
+  - type: SpawnAfterInteract
+    doAfter: 0.5
+    removeOnInteract: true
+  localizationId: ent-OE14FloorTileItemBase
+- type: entity
+  name: blue carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemBlue1
+  categories:
+  - ForkFiltered
+  suffix: Blue
+  components:
+  - type: Sprite
+    state: blue
+  - type: Stack
+    stackType: OE14FloorCarpetBlue
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetBlue
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 8.6
+  localizationId: ent-OE14FloorCarpetItemBlue1
+- type: entity
+  name: red carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemRed1
+  categories:
+  - ForkFiltered
+  suffix: Red
+  components:
+  - type: Sprite
+    state: red
+  - type: Item
+    heldPrefix: carpet-Red
+  - type: Stack
+    stackType: OE14FloorCarpetRed
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetRed
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 4
+  localizationId: ent-OE14FloorCarpetItemRed1
+- type: entity
+  name: cyan carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemCyan1
+  categories:
+  - ForkFiltered
+  suffix: Cyan
+  components:
+  - type: Sprite
+    state: cyan
+  - type: Item
+    heldPrefix: carpet-Cyan
+  - type: Stack
+    stackType: OE14FloorCarpetCyan
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetCyan
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 14.6
+  localizationId: ent-OE14FloorCarpetItemCyan1
+- type: entity
+  name: green carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemGreen1
+  categories:
+  - ForkFiltered
+  suffix: Green
+  components:
+  - type: Sprite
+    state: green
+  - type: Item
+    heldPrefix: carpet-Green
+  - type: Stack
+    stackType: OE14FloorCarpetGreen
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetGreen
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 6
+  localizationId: ent-OE14FloorCarpetItemGreen1
+- type: entity
+  name: orange carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemOrange1
+  categories:
+  - ForkFiltered
+  suffix: Orange
+  components:
+  - type: Sprite
+    state: orange
+  - type: Item
+    heldPrefix: carpet-Orange
+  - type: Stack
+    stackType: OE14FloorCarpetOrange
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetOrange
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 7.5
+  localizationId: ent-OE14FloorCarpetItemOrange1
+- type: entity
+  name: purpule carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemPurple1
+  categories:
+  - ForkFiltered
+  suffix: Purple
+  components:
+  - type: Sprite
+    state: purple
+  - type: Item
+    heldPrefix: carpet-Purple
+  - type: Stack
+    stackType: OE14FloorCarpetPurple
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetPurple
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 4.4
+  localizationId: ent-OE14FloorCarpetItemPurple1
+- type: entity
+  name: black carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemBlack1
+  categories:
+  - ForkFiltered
+  suffix: Black
+  components:
+  - type: Sprite
+    state: black
+  - type: Stack
+    stackType: OE14FloorCarpetBlack
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetBlack
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 6
+  localizationId: ent-OE14FloorCarpetItemBlack1
+- type: entity
+  name: yellow carpet
+  parent: OE14FloorTileItemBase
+  id: OE14FloorCarpetItemYellow1
+  categories:
+  - ForkFiltered
+  suffix: Yellow
+  components:
+  - type: Sprite
+    state: yellow
+  - type: Stack
+    stackType: OE14FloorCarpetYellow
+  - type: SpawnAfterInteract
+    prototype: OE14CarpetYellow
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 3.5
+  localizationId: ent-OE14FloorCarpetItemYellow1
+- type: entity
+  id: OE14FloorCarpetItemBlue10
+  parent: OE14FloorCarpetItemBlue1
+  suffix: Blue 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemBlue10
+- type: entity
+  id: OE14FloorCarpetItemRed10
+  parent: OE14FloorCarpetItemRed1
+  suffix: Red 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemRed10
+- type: entity
+  id: OE14FloorCarpetItemCyan10
+  parent: OE14FloorCarpetItemCyan1
+  suffix: Cyan 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemCyan10
+- type: entity
+  id: OE14FloorCarpetItemGreen10
+  parent: OE14FloorCarpetItemGreen1
+  suffix: Green 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemGreen10
+- type: entity
+  id: OE14FloorCarpetItemOrange10
+  parent: OE14FloorCarpetItemOrange1
+  suffix: Orange 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemOrange10
+- type: entity
+  id: OE14FloorCarpetItemPurple10
+  parent: OE14FloorCarpetItemPurple1
+  suffix: Purple 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemPurple10
+- type: entity
+  id: OE14FloorCarpetItemBlack10
+  parent: OE14FloorCarpetItemBlack1
+  suffix: Black 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemBlack10
+- type: entity
+  id: OE14FloorCarpetItemYellow10
+  parent: OE14FloorCarpetItemYellow1
+  suffix: Yellow 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloorCarpetItemYellow10

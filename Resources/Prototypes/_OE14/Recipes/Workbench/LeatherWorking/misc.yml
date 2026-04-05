@@ -1,0 +1,13 @@
+- type: OE14Recipe
+  id: OE14ClothingShoesLongLeatherBoots
+  tag: OE14RecipeLeatherWorking
+  category: LeatherWorking
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14ThinLeather
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 2
+  result: OE14ClothingShoesLongLeatherBoots

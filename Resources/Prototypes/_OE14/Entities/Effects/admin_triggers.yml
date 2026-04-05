@@ -1,0 +1,34 @@
+- type: entity
+  id: OE14ShipExplosion
+  parent: AdminInstantEffectBase
+  categories:
+  - ForkFiltered
+  suffix: Fire Explosion
+  components:
+  - type: Explosive
+    totalIntensity: 75
+    intensitySlope: 1
+    maxIntensity: 400
+    explosionType: FireBomb
+  - type: ExplodeOnTrigger
+    targetUser: false
+  localizationId: ent-OE14ShipExplosion
+- type: entity
+  id: OE14ShipExplosionBig
+  parent: AdminInstantEffectBase
+  categories:
+  - ForkFiltered
+  suffix: Big Fire Explosion
+  components:
+  - type: Explosive
+    totalIntensity: 90
+    intensitySlope: 0.1
+    maxIntensity: 400
+    explosionType: Default
+  - type: ExplodeOnTrigger
+    targetUser: false
+  - type: FlashOnTrigger
+    range: 30
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
+  localizationId: ent-OE14ShipExplosionBig

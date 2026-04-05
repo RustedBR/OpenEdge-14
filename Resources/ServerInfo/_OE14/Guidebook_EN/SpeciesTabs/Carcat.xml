@@ -1,0 +1,37 @@
+<Document>
+# Carcats
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobCarcat" Caption="Carcat"/>
+</Box>
+
+The Carcats are a desert nation inhabiting the harsh expanse of the Great Dune Desert. They are known for their endurance, isolation, and deep connection to their ancestors. Their homeland is Bafamir, a state that rose from the ashes of war and disaster, held together by the iron will of the Sultan and the overriding clans. In other lands they are often found as mercenaries, traders, and artisans.
+
+## Attributes
+
+[bold]Scale: 1–10 | Effective values shown (includes free racial skills)[/bold]
+
+- [color=#e05050]Strength[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Average physical power, same as humans.
+- [color=#50e050]Vitality[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Average health. [color=#c8c8c8]~100 HP[/color] before Critical, [color=#ff6961]~200 HP[/color] before Death.
+- [color=#50e0e0]Dexterity[/color] — [bold][color=#77dd77]9[/color][/bold] | Exceptional agility. [color=#77dd77]~200 stamina[/color] before Stamina Crit — very hard to stagger. (Base DEX 7, +2 from free [color=#ffe269]Electromancy[/color] skills)
+- [color=#a050e0]Intelligence[/color] — [bold][color=#ffa500]3[/color][/bold] | Limited magical potential. Only [color=#42aaf5]~63 mana[/color].
+
+Carcats combine human-level strength and health with exceptional agility and unique physical traits. Their low mana makes sustained spellcasting difficult, but their reflexes and natural abilities make them formidable in close quarters.
+
+## Feline Abilities
+
+- [bold]Natural claws[/bold] — deal enhanced damage in melee without needing a weapon
+- [bold]Soft paws[/bold] — completely silent footsteps, ideal for ambushes and stealth
+- [bold]Night vision[/bold] — see in darkness almost as well as in daylight
+- [bold]Animal stomach[/bold] — can eat raw meat without consequences
+- [bold]No shoes[/bold] — clawed paws cannot wear standard footwear
+
+## Cultural Features
+
+- [bold]Ancestral nation[/bold] — Carcats honor the spirits of their ancestors rather than worshipping gods
+- [bold]Anonymity of power[/bold] — the Sultans of Bafamir have no name, clan, or face; their figure represents the will of the desert
+- [bold]Tribal ties[/bold] — Carcats far from home are especially warm toward their tribesmen
+
+Carcats begin with free Basic and Advanced [color=#ffe269]Electromancy[/color], granting +2 DEX and access to lightning-based abilities.
+
+</Document>

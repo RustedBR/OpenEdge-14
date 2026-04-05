@@ -1,0 +1,39 @@
+- type: Tag
+  id: OE14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanCoreRoom_1
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - OE14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanCoreRoom_2
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - OE14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanCoreRoom_3
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - OE14DemiplanCoreRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanCoreRoom_4
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_core.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - OE14DemiplanCoreRoom
+

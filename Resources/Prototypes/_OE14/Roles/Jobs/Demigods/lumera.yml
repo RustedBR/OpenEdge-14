@@ -1,0 +1,16 @@
+- type: job
+  id: OE14GodLumera
+  name: oe14-job-name-god-lumera
+  description: oe14-job-desc-god-lumera
+  setPreference: false
+  playTimeTracker: OE14GodLumera
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 # 10 hrs
+  canBeAntag: false
+  icon: OE14JobIconGodLumera
+  jobEntity: OE14MobGodLumera
+  joinNotifyCrew: false
+  requireAdminNotify: true
+  jobPreviewEntity: OE14MobGodLumera
+  applyTraits: false

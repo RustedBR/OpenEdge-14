@@ -1,0 +1,32 @@
+- type: shader
+  id: Wave
+  kind: source
+  path: "/Textures/_OE14/Shaders/wave.swsl"
+
+# Base post-processing
+- type: shader
+  id: BasePostProcess
+  kind: source
+  path: "/Textures/_OE14/Shaders/base_postprocess.swsl"
+  params:
+    CircleRadius: 420.0
+    CircleMinDist: 0.0
+    CirclePow: 1.0
+    CircleMax: 4.0
+    CircleMult: 0.25
+    FalloffClampMin: 0.075
+    FalloffClampMax: 1.0
+    FalloffStrength: 0.75
+    FalloffPow: 3.0
+    HDR: 1.5
+
+- type: shader
+  id: OE14ReligionVision
+  kind: source
+  path: "/Textures/_OE14/Shaders/religion.swsl"
+
+
+- type: shader
+  id: OE14BlueNoir
+  kind: source
+  path: "/Textures/_OE14/Shaders/blue_noir.swsl"

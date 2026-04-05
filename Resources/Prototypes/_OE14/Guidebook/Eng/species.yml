@@ -1,0 +1,64 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Species
+  name: Playable species
+  text: "/ServerInfo/_OE14/Guidebook_EN/Species.xml"
+  children:
+  - OE14_EN_Human
+  - OE14_EN_Elf
+  - OE14_EN_Dwarf
+  - OE14_EN_Goblin
+  - OE14_EN_Tiefling
+  - OE14_EN_Silva
+  - OE14_EN_Carcat
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Human
+  name: Human
+  text: "/ServerInfo/_OE14/Guidebook_EN/SpeciesTabs/Human.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Silva
+  name: Silva
+  text: "/ServerInfo/_OE14/Guidebook_EN/SpeciesTabs/Silva.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Elf
+  name: Elf
+  text: "/ServerInfo/_OE14/Guidebook_EN/SpeciesTabs/Elf.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Tiefling
+  name: Tiefling
+  text: "/ServerInfo/_OE14/Guidebook_EN/SpeciesTabs/Tiefling.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Goblin
+  name: Goblin
+  text: "/ServerInfo/_OE14/Guidebook_EN/SpeciesTabs/Goblin.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Dwarf
+  name: Dwarf
+  text: "/ServerInfo/_OE14/Guidebook_EN/SpeciesTabs/Dwarf.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Carcat
+  name: Carcat
+  text: "/ServerInfo/_OE14/Guidebook_EN/SpeciesTabs/Carcat.xml"
+  filterEnabled: True
+

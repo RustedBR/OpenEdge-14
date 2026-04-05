@@ -1,0 +1,62 @@
+- type: entity
+  id: OE14ActionSpellTieflingInnerFire
+  parent: OE14ActionSpellBase
+  name: Inner fire
+  description: You unleash your inner fire, setting yourself on fire and temporarily speeding up your movement.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneTieflingRevenge
+  - type: DoAfterArgs
+    delay: 1
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/fire.rsi
+      state: tiefling_revenge
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectTieflingRevenge
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:FlammableReaction
+          multiplier: 1.5
+        - !type:AdjustTemperature
+          amount: 6000
+        - !type:Ignite
+        - !type:MovespeedModifier
+          walkSpeedModifier: 1.2
+          sprintSpeedModifier: 1.2
+          statusLifetime: 5
+
+- type: entity
+  id: OE14ImpactEffectTieflingRevenge
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: OE14RuneTieflingRevenge
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+

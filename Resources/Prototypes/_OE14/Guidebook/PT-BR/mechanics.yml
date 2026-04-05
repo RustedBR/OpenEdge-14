@@ -1,0 +1,7 @@
+- type: guideEntry
+  openEdgeAllowed: false
+  id: OE14_PT_Mechanics
+  name: Mecânicas
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Mechanics.xml"
+  children:
+  - OE14_PT_Locks_and_Keys

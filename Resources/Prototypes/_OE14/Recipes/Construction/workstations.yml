@@ -1,0 +1,51 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14Workbench
+  graph: OE14Workbench
+  startNode: start
+  targetNode: OE14Workbench
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WorkbenchCooking
+  graph: OE14WorkbenchCooking
+  startNode: start
+  targetNode: OE14WorkbenchCooking
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WorkbenchSewing
+  graph: OE14WorkbenchSewing
+  startNode: start
+  targetNode: OE14WorkbenchSewing
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WorkbenchLeather
+  graph: OE14WorkbenchLeather
+  startNode: start
+  targetNode: OE14WorkbenchLeather
+  category: construction-category-machines
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

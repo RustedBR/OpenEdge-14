@@ -1,0 +1,72 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Alchemy
+  name: Alquimia
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/Alchemy.xml"
+  children:
+  - OE14_PT_Precurser
+  - OE14_PT_ThaumaturgyEssence
+  - OE14_PT_TargetEffects
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Precurser
+  name: Precursores Naturais
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/Precurser.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_ThaumaturgyEssence
+  name: Essências Taumatúrgicas
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/Essence.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_TargetEffects
+  name: Efeitos Alvo
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
+  children:
+  - OE14_PT_HealingEffects
+  - OE14_PT_DamageEffects
+  - OE14_PT_PositiveEffects
+  - OE14_PT_NegativeEffects
+  - OE14_PT_SideEffects
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_HealingEffects
+  name: Efeitos de Cura
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/HealingEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DamageEffects
+  name: Efeitos de Dano
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/DamageEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_PositiveEffects
+  name: Efeitos Positivos
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/PositiveEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_NegativeEffects
+  name: Efeitos Negativos
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/NegativeEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_SideEffects
+  name: Efeitos Colaterais
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/SideEffects.xml"
+  filterEnabled: True

@@ -1,0 +1,180 @@
+- type: OE14Recipe
+  id: OE14FloorTileFoundation
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14Stone
+    count: 1
+  result: OE14FloorTileFoundation
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileMarbleBrick
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14MarbleStone
+    count: 1
+  result: OE14FloorTileMarbleBrick
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileMarbleSmallbricks
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14MarbleStone
+    count: 1
+  result: OE14FloorTileMarbleSmallbricks
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileStonebricks
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14Stone
+    count: 1
+  result: OE14FloorTileStonebricks
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileStonebricksSmallCarved
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14Stone
+    count: 1
+  result: OE14FloorTileStonebricksSmallCarved
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileStonebricksSmallCarved2
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14Stone
+    count: 1
+  result: OE14FloorTileStonebricksSmallCarved2
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileStonebricksSquareCarved
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14Stone
+    count: 1
+  result: OE14FloorTileStonebricksSquareCarved
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileOakWoodplanks
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14WoodenPlanks
+    count: 1
+  result: OE14FloorTileOakWoodplanks
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileOakWoodplanksBig
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14WoodenPlanks
+    count: 1
+  result: OE14FloorTileOakWoodplanksBig
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileOakWoodplanksCruciform
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14WoodenPlanks
+    count: 1
+  result: OE14FloorTileOakWoodplanksCruciform
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileOakWoodplanksStairs
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14WoodenPlanks
+    count: 1
+  result: OE14FloorTileOakWoodplanksStairs
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileBirchWoodplanks
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14BirchWoodenPlanks
+    count: 1
+  result: OE14FloorTileBirchWoodplanks
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileBirchWoodplanksBig
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14BirchWoodenPlanks
+    count: 1
+  result: OE14FloorTileBirchWoodplanksBig
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileBirchWoodplanksCruciform
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14BirchWoodenPlanks
+    count: 1
+  result: OE14FloorTileBirchWoodplanksCruciform
+  resultCount: 4
+
+- type: OE14Recipe
+  id: OE14FloorTileBirchWoodplanksStairs
+  tag: OE14RecipeWorkbench
+  category: FloorTile
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14BirchWoodenPlanks
+    count: 1
+  result: OE14FloorTileBirchWoodplanksStairs
+  resultCount: 4
+

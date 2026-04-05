@@ -1,0 +1,110 @@
+- type: entity
+  id: OE14HerbalBandage
+  parent: BaseItem
+  name: herbal bandage
+  description: A bandage net woven from grass, not the most reliable or useful thing,
+    but better than nothing.
+  suffix: 5
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Medical/medical.rsi
+    state: herbbandage_3
+    layers:
+    - state: herbbandage_3
+      map:
+      - base
+  - type: Appearance
+  - type: Construction
+    graph: OE14HerbBandage
+    node: oe14herbbandage
+  - type: Healing
+    damageContainers:
+    - OE14Biological
+    damage:
+      types:
+        Slash: -2
+        Piercing: -2
+    bloodlossModifier: -6
+    delay: 2.5
+    healingBeginSound:
+      path: /Audio/Items/Medical/brutepack_begin.ogg
+    healingEndSound:
+      path: /Audio/Items/Medical/brutepack_end.ogg
+  - type: Stack
+    stackType: OE14HerbalBandage
+    count: 5
+    baseLayer: base
+    layerStates:
+    - herbbandage
+    - herbbandage_2
+    - herbbandage_3
+  localizationId: ent-OE14HerbalBandage
+- type: entity
+  id: OE14HerbalBandage1
+  parent: OE14HerbalBandage
+  suffix: 1
+  components:
+  - type: Sprite
+    state: herbbandage
+  - type: Stack
+    count: 1
+  localizationId: ent-OE14HerbalBandage1
+- type: entity
+  id: OE14Gauze
+  parent: BaseItem
+  name: gauze
+  description: Dense cloth gauze, to prevent valuable blood from leaking out of the
+    body.
+  suffix: 5
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Medical/medical.rsi
+    state: bandage_3
+    layers:
+    - state: bandage_3
+      map:
+      - base
+  - type: Appearance
+  - type: Construction
+    graph: OE14Gauze
+    node: oe14gauze
+  - type: Healing
+    damageContainers:
+    - OE14Biological
+    damage:
+      types:
+        Slash: -6
+        Piercing: -6
+    bloodlossModifier: -10
+    delay: 2
+    healingBeginSound:
+      path: /Audio/Items/Medical/brutepack_begin.ogg
+    healingEndSound:
+      path: /Audio/Items/Medical/brutepack_end.ogg
+  - type: Stack
+    stackType: OE14Gauze
+    count: 5
+    baseLayer: base
+    layerStates:
+    - bandage
+    - bandage_2
+    - bandage_3
+  localizationId: ent-OE14Gauze
+- type: entity
+  id: OE14Gauze1
+  parent: OE14Gauze
+  suffix: 1
+  components:
+  - type: Sprite
+    state: bandage
+  - type: Stack
+    count: 1
+  localizationId: ent-OE14Gauze1

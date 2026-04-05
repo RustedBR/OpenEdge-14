@@ -1,0 +1,40 @@
+- type: job
+  id: OE14Merchant
+  setPreference: true
+  name: oe14-job-name-merchant
+  description: oe14-job-desc-merchant
+  playTimeTracker: OE14JobMerchant
+  startingGear: OE14MerchantGear
+  icon: "OE14JobIconMerchant"
+  supervisors: oe14-job-supervisors-commandant
+  canBeAntag: false
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600 # 1 hours
+  special:
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - VictoriaGardens
+      - BradPotions
+      - DwarfMining
+      - Thaumaturgy
+      - HomeDecor
+      - Horticulture
+      - Butchers
+      - Dairy
+      - Tailors
+      - HelmirChild
+    - !type:OE14LearnSkillsSpecial
+      skills:
+      - TraderWit
+
+- type: startingGear
+  id: OE14MerchantGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+    - OE14EnergyCrystalMedium
+  equipment:
+    belt: OE14WalletFilledTest
+    keys: OE14KeyRingMerchant
+

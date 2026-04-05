@@ -1,0 +1,142 @@
+# T1
+
+- type: oe14Skill
+  id: PyrokineticT1
+  skillUiPosition: 1, 0
+  tree: Pyrokinetic
+  name: oe14-skill-pyro-t1-name
+  desc: oe14-skill-pyro-t1-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: pyro
+  effects:
+  - !type:OE14AddStatBonus
+    stat: strength
+
+- type: oe14Skill
+  id: OE14ActionSpellFlameCreation
+  skillUiPosition: 0, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: flame_creation
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellFlameCreation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:SpeciesBlacklist
+    species: OE14Skeleton
+
+- type: oe14Skill
+  id: OE14ActionSpellHeat
+  skillUiPosition: 0, 6
+  tree: Pyrokinetic
+  icon:
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: heat
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellHeat
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+
+- type: oe14Skill
+  id: OE14ActionSpellHellBallade
+  skillUiPosition: 2, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: fire_music
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellHellBallade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:SpeciesWhitelist
+    species: OE14Tiefling
+
+- type: oe14Skill
+  id: OE14ActionSpellTieflingInnerFire
+  skillUiPosition: 2, 6
+  tree: Pyrokinetic
+  icon:
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: tiefling_revenge
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellTieflingInnerFire
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+  - !type:SpeciesWhitelist
+    species: OE14Tiefling
+
+# T2
+
+- type: oe14Skill
+  id: PyrokineticT2
+  skillUiPosition: 7, 0
+  tree: Pyrokinetic
+  name: oe14-skill-pyro-t2-name
+  desc: oe14-skill-pyro-t2-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: pyro2
+  effects:
+  - !type:OE14AddStatBonus
+    stat: strength
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT1
+
+- type: oe14Skill
+  id: OE14ActionSpellFireball
+  skillUiPosition: 6, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: fireball
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellFireball
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+  - !type:SpeciesBlacklist
+    species: OE14Skeleton
+
+- type: oe14Skill
+  id: OE14ActionSpellFirewave
+  skillUiPosition: 8, 4
+  tree: Pyrokinetic
+  icon:
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: firewave
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellFirewave
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+
+# T3
+
+#- type: oe14Skill
+#  id: PyrokineticT3
+#  skillUiPosition: 13, 0
+#  tree: Pyrokinetic
+#  name: oe14-skill-pyro-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _OE14/Actions/skill_tree.rsi
+#    state: pyro3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: PyrokineticT2
+

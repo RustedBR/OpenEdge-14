@@ -1,0 +1,79 @@
+<Document>
+# Adding New Skills
+
+This guide walks you through adding a new skill tree to OpenEdge 14.
+
+## Overview
+
+A skill tree consists of:
+1. Skill prototypes (define tiers and what they grant)
+2. Species prototype update (add the tree to a species)
+3. Optional stat modifiers
+
+## Step 1: Create Skill Prototypes
+
+Create a new file in [mono]Resources/Prototypes/_OE14/Skills/[/mono]:
+
+<CodeBlock>
+- type: OE14SkillPrototype
+  id: MySkillT1
+  name: My Skill I
+  tier: 1
+  pointCost: 1
+  grants:
+    - SpellMyAbility
+  statModifiers:
+    Strength: 1
+
+- type: OE14SkillPrototype
+  id: MySkillT2
+  name: My Skill II
+  tier: 2
+  pointCost: 2
+  requires: MySkillT1
+  grants:
+    - SpellMyBetterAbility
+  statModifiers:
+    Strength: 1
+
+- type: OE14SkillPrototype
+  id: MySkillT3
+  name: My Skill III
+  tier: 3
+  pointCost: 3
+  requires: MySkillT2
+  grants:
+    - SpellMyBestAbility
+  statModifiers:
+    Strength: 1
+</CodeBlock>
+
+## Step 2: Add to Species
+
+Find the species prototype in [mono]Resources/Prototypes/_OE14/Species/[/mono] and add the skill tree:
+
+<CodeBlock>
+- type: OE14CharacterStats
+  id: HumanStats
+  skillTrees:
+    - id: ExistingTree
+    - id: MyNewSkillTree  # Add here
+</CodeBlock>
+
+## Step 3: Define the Spells
+
+For each spell granted by the skill, see [textlink="Adding New Spells" link="OE14_DEV_Guide_Spells"].
+
+## Step 4: Test
+
+1. Build: [mono]dotnet build[/mono]
+2. Start server and client
+3. Create a character with the updated species
+4. Open the skill tree and verify tiers are visible
+5. Spend points and verify spell appears in action bar
+
+## Content Under Construction
+
+More detailed guide with full examples coming soon.
+
+</Document>

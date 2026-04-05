@@ -1,0 +1,22 @@
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtMerchant
+  name: merchant's shirt
+  description: A white shirt with bronze inserts.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/Merchant/merchant.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/Merchant/merchant.rsi
+  localizationId: ent-OE14ClothingShirtMerchant
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtMerchantDress
+  name: merchant's dress
+  description: An elegant dress for equally elegant individuals.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/Merchant/merchants_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/Merchant/merchants_dress.rsi
+  localizationId: ent-OE14ClothingShirtMerchantDress

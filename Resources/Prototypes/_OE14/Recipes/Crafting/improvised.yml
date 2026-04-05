@@ -1,0 +1,26 @@
+- type: construction
+  openEdgeAllowed: true
+  id: oe14herbbandage
+  graph: OE14HerbBandage
+  startNode: start
+  targetNode: oe14herbbandage
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  openEdgeAllowed: true
+  id: oe14gauze
+  graph: OE14Gauze
+  startNode: start
+  targetNode: oe14gauze
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  openEdgeAllowed: true
+  id: oe14torch
+  graph: OE14Torch
+  startNode: start
+  targetNode: oe14torch
+  category: construction-category-tools
+  objectType: Item

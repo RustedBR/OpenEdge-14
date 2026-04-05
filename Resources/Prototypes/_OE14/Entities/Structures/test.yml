@@ -1,0 +1,77 @@
+- type: entity
+  id: OE14DPSMeter
+  parent: BaseStructureDynamic
+  categories: [ ForkFiltered, DoNotMap ]
+  name: DPS Meter
+  description: Counts the average damage per second. If you stop hitting it, it shows the result.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Security/target.rsi
+    state: target_stake
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 200
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+  - type: InteractionOutline
+  - type: Physics
+  - type: Damageable
+  - type: OE14DPSMeter
+
+- type: entity
+  parent: BaseStructure
+  id: OE14RoundLeaver
+  name: distance fog
+  description: You have reached the edge of the game map. There's nothing further. You can use this fog to get out of the game.
+  categories: [ ForkFiltered ]
+  components:
+  - type: PlacementReplacement
+    key: roundLeaver
+  - type: OE14RoundLeave
+  - type: SyncSprite
+  - type: Sprite
+    snapCardinals: true
+    sprite: Effects/weather.rsi
+    state: snowfall_med
+    color: "#f26363"
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+
+- type: entity
+  parent: OE14RoundLeaver
+  id: OE14RoundLeaverDarkFog
+  components:
+    - type: Occluder
+    - type: Sprite
+      drawdepth: Effects
+      sprite: Effects/spookysmoke.rsi
+      layers:
+      - state: spookysmoke
+        color: "#793a80dd"
+        map: [base]
+    - type: OptionsVisualizer
+      visuals:
+        base:
+        - options: Default
+          data: { state: spookysmoke }
+        - options: ReducedMotion
+          data: { state: spookysmoke_static }

@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  parent: OE14BaseMobCarcat
+  id: OE14MobCarcat
+  localizationId: ent-OE14MobCarcat

@@ -1,0 +1,87 @@
+- type: entity
+  id: OE14ActionSpellVampireResurrection
+  parent: OE14ActionSpellBase
+  name: Resurrection
+  description: You're trying to put the soul back into the body.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.7
+  - type: OE14ActionManaCost
+    manaCost: 50
+  - type: OE14MagicEffectVampire
+  - type: OE14ActionSkillPointCost
+    skillPoint: Blood
+    count: 1
+  - type: OE14ActionTargetMobStatusRequired
+    allowedStates:
+    - Dead
+  - type: OE14ActionSpeaking
+    startSpeech: "Redi animam meam..."
+    endSpeech: "Eu rezei por ti"
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneVampireResurrection
+  - type: DoAfterArgs
+    delay: 5
+  - type: Action
+    useDelay: 180
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_OE14/Effects/ritual_end.ogg
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: resurrection
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodEssenceInverse
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodEssence2
+      - !type:OE14SpellResurrectionEffect
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:ChemVomit
+          probability: 0.25
+        - !type:Emote
+          showInChat: false
+          emote: Cough
+          probability: 0.3
+        - !type:HealthChange
+          damage:
+            types:
+              Asphyxiation: -500
+              Bloodloss: -100
+        - !type:Jitter
+
+- type: entity
+  id: OE14RuneVampireResurrection
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 16
+  - type: LightFade
+    duration: 10
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#d60032"
+      shader: unshaded
+    - state: medium_circle
+      color: "#d60032"
+      shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_OE14/Effects/ritual_begin.ogg

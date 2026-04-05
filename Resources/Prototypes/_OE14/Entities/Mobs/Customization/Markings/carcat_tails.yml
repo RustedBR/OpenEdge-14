@@ -1,0 +1,45 @@
+- type: marking
+  id: OE14CarcatTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Carcat ]
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/carcat_tail.rsi
+      state: tail
+
+- type: marking
+  id: OE14CarcatTailFluffy
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Carcat ]
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/carcat_tail.rsi
+      state: tail_fluffy
+
+# Animation
+
+- type: marking
+  id: OE14CarcatTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/carcat_tail.rsi
+      state: tail_waggin
+
+- type: marking
+  id: OE14CarcatTailFluffyAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/carcat_tail.rsi
+      state: tail_fluffy_waggin

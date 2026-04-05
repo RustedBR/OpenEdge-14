@@ -1,0 +1,54 @@
+- type: entity
+  parent:
+  - OE14ClothingCloakBase
+  - OE14ClothingBaseContainer
+  id: OE14ClothingCloakAlchemist
+  name: alchemist's cloak
+  description: An expensive fabric that can withstand acid splashes - the standard
+    for alchemist experts.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/Alchemist/alchemist_cloak.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/Alchemist/alchemist_cloak.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Caustic: 0.75
+  - type: Storage
+    maxItemSize: Tiny
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,1,1
+    whitelist:
+      tags:
+      - OE14Vial
+  localizationId: ent-OE14ClothingCloakAlchemist
+- type: entity
+  parent:
+  - OE14ClothingCloakBase
+  - OE14ClothingBaseContainer
+  id: OE14ClothingCloakAlchemistMantle
+  name: alchemist's mantle
+  description: An expensive fabric that can withstand acid splashes - the standard
+    for alchemist experts.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/Alchemist/alchemist_cloak2.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/Alchemist/alchemist_cloak2.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Caustic: 0.75
+  - type: Storage
+    maxItemSize: Tiny
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,1,1
+    whitelist:
+      tags:
+      - OE14Vial
+  localizationId: ent-OE14ClothingCloakAlchemistMantle

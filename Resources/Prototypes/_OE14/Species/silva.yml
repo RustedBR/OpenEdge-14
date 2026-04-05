@@ -1,0 +1,200 @@
+- type: species
+  id: OE14Silva
+  name: oe14-species-name-silva
+  roundStart: true
+  prototype: OE14MobSilva
+  sprites: OE14MobSilvaSprites
+  markingLimits: OE14MobSilvaMarkingLimits
+  dollPrototype: OE14MobSilvaDummy
+  skinColoration: OE14SilvasHues
+  defaultSkinTone: "#6c741d"
+  maleFirstNames: OE14_Names_Silva_Male_First
+  femaleFirstNames: OE14_Names_Silva_Female_First
+  naming: First
+  minAge: 18
+  maxAge: 500
+  youngAge: 100
+  oldAge: 300
+
+- type: speciesBaseSprites
+  id: OE14MobSilvaSprites
+  sprites:
+    Head: OE14MobSilvaHead
+    HeadTop: OE14MobSilvaAnyMarking
+    Hair: OE14MobSilvaAnyMarking
+    FacialHair: OE14MobSilvaAnyMarking
+    Snout: OE14MobSilvaMarkingMatchSkin
+    Tail: OE14MobSilvaAnyMarking
+    Chest: OE14MobSilvaTorso
+    Eyes: OE14MobSilvaEyes
+    LArm: OE14MobSilvaLArm
+    RArm: OE14MobSilvaRArm
+    LHand: OE14MobSilvaLHand
+    RHand: OE14MobSilvaRHand
+    LLeg: OE14MobSilvaLLeg
+    RLeg: OE14MobSilvaRLeg
+    LFoot: OE14MobSilvaLFoot
+    RFoot: OE14MobSilvaRFoot
+
+- type: markingPoints
+  id: OE14MobSilvaMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    HeadTop:
+      points: 2
+      required: false
+    Tail:
+      points: 2
+      required: false
+    Snout:
+      points: 1
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaEyes
+  baseSprite:
+    sprite: _OE14/Mobs/Customization/eyes.rsi
+    state: silva_eyes
+    shader: unshaded
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaAnyMarking
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaHead
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaHeadFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaTorso
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaTorsoFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLLegFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLArmFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLHandFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaLFootFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRLegFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRArmFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRHandFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/parts.rsi
+    state: r_foot
+
+
+- type: humanoidBaseSprite
+  id: OE14MobSilvaRFootFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Silva/female_parts.rsi
+    state: r_foot

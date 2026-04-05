@@ -1,0 +1,141 @@
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouseAbstract
+  suffix: Abstract Personal house
+  components:
+  - type: OE14AbstractKey
+    group: PersonalHouse
+  localizationId: ent-OE14KeyPersonalHouseAbstract
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouseAbstractLoadoutDummy
+  name: a key to a random personal home (limited per map)
+  localizationId: ent-OE14KeyPersonalHouseAbstractLoadoutDummy
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse1
+  suffix: PersonalHouse1
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse1
+  localizationId: ent-OE14KeyPersonalHouse1
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse2
+  suffix: PersonalHouse2
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse2
+  localizationId: ent-OE14KeyPersonalHouse2
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse3
+  suffix: PersonalHouse3
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse3
+  localizationId: ent-OE14KeyPersonalHouse3
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse4
+  suffix: PersonalHouse4
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse4
+  localizationId: ent-OE14KeyPersonalHouse4
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse5
+  suffix: PersonalHouse5
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse5
+  localizationId: ent-OE14KeyPersonalHouse5
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse6
+  suffix: PersonalHouse6
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse6
+  localizationId: ent-OE14KeyPersonalHouse6
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse7
+  suffix: PersonalHouse7
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse7
+  localizationId: ent-OE14KeyPersonalHouse7
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse8
+  suffix: PersonalHouse8
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse8
+  localizationId: ent-OE14KeyPersonalHouse8
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse9
+  suffix: PersonalHouse9
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse9
+  localizationId: ent-OE14KeyPersonalHouse9
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse10
+  suffix: PersonalHouse10
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse10
+  localizationId: ent-OE14KeyPersonalHouse10
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse11
+  suffix: PersonalHouse11
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse11
+  localizationId: ent-OE14KeyPersonalHouse11
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse12
+  suffix: PersonalHouse12
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse12
+  localizationId: ent-OE14KeyPersonalHouse12
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse13
+  suffix: PersonalHouse13
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse13
+  localizationId: ent-OE14KeyPersonalHouse13
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse14
+  suffix: PersonalHouse14
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse14
+  localizationId: ent-OE14KeyPersonalHouse14
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse15
+  suffix: PersonalHouse15
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse15
+  localizationId: ent-OE14KeyPersonalHouse15
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyPersonalHouse16
+  suffix: PersonalHouse16
+  components:
+  - type: OE14Key
+    autoGenerateShape: PersonalHouse16
+  localizationId: ent-OE14KeyPersonalHouse16

@@ -1,0 +1,24 @@
+- type: entity
+  id: OE14WallpaperBank
+  parent: OE14BaseWallpaper
+  name: wallpaper "banker's integrity"
+  components:
+  - type: Sprite
+    state: bank
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_bank.rsi
+  - type: Stack
+    stackType: OE14WallpaperBank
+  localizationId: ent-OE14WallpaperBank
+- type: entity
+  id: OE14WallpaperBank2
+  parent: OE14BaseWallpaper
+  name: wallpaper "banker's wealth"
+  components:
+  - type: Sprite
+    state: bank2
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_bank2.rsi
+  - type: Stack
+    stackType: OE14WallpaperBank2
+  localizationId: ent-OE14WallpaperBank2

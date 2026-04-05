@@ -1,0 +1,12 @@
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakGuardCommander
+  name: armored cloak of a guard commander
+  description: It is an extremely durable and lightweight cape, custom designed for
+    Imperial Guard commanders
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/guard_commander_cloak.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/guard_commander_cloak.rsi
+  localizationId: ent-OE14ClothingCloakGuardCommander

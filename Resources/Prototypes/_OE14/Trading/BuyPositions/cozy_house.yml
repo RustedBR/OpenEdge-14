@@ -1,0 +1,203 @@
+
+# Rep 0
+
+- type: oe14TradingPosition
+  id: OE14Candle
+  faction: HomeDecor
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Misc/candles.rsi
+    state: small1
+  service: !type:OE14BuyItemsService
+    product: OE14Candle
+
+- type: oe14TradingPosition
+  id: OE14Bell
+  faction: HomeDecor
+  uiPosition: 1
+  icon:
+    sprite: _OE14/Objects/Misc/bell.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14Bell
+
+- type: oe14TradingPosition
+  id: OE14KeyCopperBlank
+  faction: HomeDecor
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/keys.rsi
+    state: key_copper
+  service: !type:OE14BuyItemsService
+    product: OE14KeyCopperBlank
+
+- type: oe14TradingPosition
+  id: OE14LockCopper
+  faction: HomeDecor
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/keys.rsi
+    state: lock_copper
+  service: !type:OE14BuyItemsService
+    product: OE14LockCopper
+
+
+- type: oe14TradingPosition
+  id: OE14WallpaperBlack
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 6
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: black
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperBlack
+
+- type: oe14TradingPosition
+  id: OE14WallpaperGreen
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: green
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperGreen
+
+- type: oe14TradingPosition
+  id: OE14WallpaperPurple
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 8
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: purple
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperPurple
+
+- type: oe14TradingPosition
+  id: OE14WallpaperRed
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 9
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: red
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperRed
+
+- type: oe14TradingPosition
+  id: OE14WallpaperWhite
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 10
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: white
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperWhite
+
+- type: oe14TradingPosition
+  id: OE14WallpaperWhite2
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 11
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: white2
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperWhite2
+
+- type: oe14TradingPosition
+  id: OE14WallpaperYellow
+  faction: HomeDecor
+  reputationLevel: 0
+  uiPosition: 12
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: yellow
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperYellow
+
+# Rep 1
+
+- type: oe14TradingPosition
+  id: OE14Candelabra
+  faction: HomeDecor
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Misc/candelabra.rsi
+    state: triple
+  service: !type:OE14BuyItemsService
+    product: OE14Candelabra
+
+- type: oe14TradingPosition
+  id: OE14KeyIronBlank
+  faction: HomeDecor
+  reputationLevel: 1
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/keys.rsi
+    state: key_iron
+  service: !type:OE14BuyItemsService
+    product: OE14KeyIronBlank
+
+- type: oe14TradingPosition
+  id: OE14LockIron
+  faction: HomeDecor
+  reputationLevel: 1
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/keys.rsi
+    state: lock_iron
+  service: !type:OE14BuyItemsService
+    product: OE14LockIron
+
+- type: oe14TradingPosition
+  id: OE14WallpaperBank
+  faction: HomeDecor
+  priceMarkup: 5
+  reputationLevel: 1
+  uiPosition: 6
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: bank
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperBank
+
+- type: oe14TradingPosition
+  id: OE14WallpaperBank2
+  faction: HomeDecor
+  priceMarkup: 5
+  reputationLevel: 1
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+    state: bank2
+  service: !type:OE14BuyItemsService
+    product: OE14WallpaperBank2
+
+# Rep 2
+
+- type: oe14TradingPosition
+  id: OE14KeyGoldBlank
+  faction: HomeDecor
+  reputationLevel: 2
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/keys.rsi
+    state: key_gold
+  service: !type:OE14BuyItemsService
+    product: OE14KeyGoldBlank
+
+- type: oe14TradingPosition
+  id: OE14LockGold
+  faction: HomeDecor
+  reputationLevel: 2
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/keys.rsi
+    state: lock_gold
+  service: !type:OE14BuyItemsService
+    product: OE14LockGold

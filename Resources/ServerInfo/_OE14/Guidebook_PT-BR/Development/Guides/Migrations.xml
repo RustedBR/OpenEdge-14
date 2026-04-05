@@ -1,0 +1,65 @@
+<Document>
+# Migrações de Banco de Dados
+
+Este guia cobre como criar migrações Entity Framework Core para OpenEdge 14.
+
+## Quando Você Precisa de uma Migração
+
+- Adicionando uma nova tabela de banco de dados
+- Adicionando uma coluna a uma tabela existente
+- Modificando uma coluna (tipo, nullable, padrão)
+- Adicionando índices ou relacionamentos
+
+## Arquivos de Migração
+
+EF Core requer [bold]dois arquivos[/bold] por migração:
+1. [mono]TIMESTAMP_MigrationName.cs[/mono] — a lógica de migração (métodos Up/Down)
+2. [mono]TIMESTAMP_MigrationName.Designer.cs[/mono] — snapshot auto-gerado
+
+[bold]Importante:[/bold] O arquivo Designer.cs deve existir. Se você gerar o arquivo principal manualmente, você também deve criar o Designer.cs. A ausência deste arquivo faz a migração falhar silenciosamente.
+
+## Criando uma Migração
+
+<CodeBlock>
+# Da raiz do projeto
+dotnet ef migrations add MigrationName --project Content.Server
+</CodeBlock>
+
+Se ferramentas EF não estão instaladas:
+<CodeBlock>
+dotnet tool install --global dotnet-ef
+</CodeBlock>
+
+## Estrutura de Migração
+
+[bold]Arquivo de migração (método Up):[/bold]
+<CodeBlock>
+protected override void Up(MigrationBuilder migrationBuilder)
+{
+    migrationBuilder.AddColumn<int>(
+        name: "BaseStrength",
+        table: "CharacterStats",
+        nullable: false,
+        defaultValue: 5);
+}
+</CodeBlock>
+
+[bold]Método Down (rollback):[/bold]
+<CodeBlock>
+protected override void Down(MigrationBuilder migrationBuilder)
+{
+    migrationBuilder.DropColumn(
+        name: "BaseStrength",
+        table: "CharacterStats");
+}
+</CodeBlock>
+
+## Problema Conhecido
+
+Ao criar migrações manualmente (sem dotnet ef), o Designer.cs deve ser gerado a partir do template ModelSnapshot. A ausência deste arquivo causa um erro conhecido onde a migração parece existir mas não aplica em um banco de dados fresco. Veja a seção de erros em CLAUDE.md para detalhes.
+
+## Conteúdo Em Construção
+
+Documentação completa de migração com template de Designer.cs coming soon.
+
+</Document>

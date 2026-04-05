@@ -1,0 +1,30 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14BlueAmanitaSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14BlueAmanita:
+      amount: 1
+  products:
+    OE14EssenceMagic: 0.5
+    OE14EssenceWater: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+- type: reaction
+  id: OE14BlueAmanitaAdmixture
+  minTemp: 500
+  reactants:
+    OE14BlueAmanita:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14SideEffectRainbow:
+      amount: 1
+  products:
+    OE14PositiveEffectHealMana: 2
+    OE14SideEffectDrunk: 1
+

@@ -1,0 +1,22 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Locks_and_Keys
+  name: Locks and Keys
+  text: "/ServerInfo/_OE14/Guidebook_EN/LocksKeys.xml"
+  children:
+  - OE14_EN_Lockpicking
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Lockpicking
+  name: Lockpicking
+  text: "/ServerInfo/_OE14/Guidebook_EN/Lockpicking.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Monster_Toxins
+  name: Monster Toxins
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AdventurersTabs/MonsterToxins.xml"
+  filterEnabled: True

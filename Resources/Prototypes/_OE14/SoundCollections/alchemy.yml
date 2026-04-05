@@ -1,0 +1,21 @@
+- type: soundCollection
+  id: OE14Pestle
+  files:
+    - /Audio/_OE14/Items/Pestle/pestle1.ogg
+    - /Audio/_OE14/Items/Pestle/pestle2.ogg
+    - /Audio/_OE14/Items/Pestle/pestle3.ogg
+    - /Audio/_OE14/Items/Pestle/pestle4.ogg
+    - /Audio/_OE14/Items/Pestle/pestle5.ogg
+
+- type: soundCollection
+  id: OE14Bubbles
+  files:
+    - /Audio/Effects/Chemistry/bubbles.ogg
+    - /Audio/_OE14/Effects/bubbles.ogg
+
+- type: soundCollection
+  id: OE14GrassGathering
+  files:
+    - /Audio/_OE14/Items/grass_gather.ogg
+    - /Audio/_OE14/Items/grass_gather2.ogg
+    - /Audio/_OE14/Items/grass_gather3.ogg

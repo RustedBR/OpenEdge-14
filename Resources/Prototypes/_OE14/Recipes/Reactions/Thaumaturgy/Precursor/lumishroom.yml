@@ -1,0 +1,47 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14LumiMushroomSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14LumiMushroom:
+      amount: 1
+  products:
+    OE14EssenceLight: 0.5
+    OE14EssenceEarth: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+# Idea: Full randomness
+
+#- type: reaction
+#  id: OE14LumiMushroomAdmixture
+#  minTemp: 500
+#  reactants:
+#    OE14LumiMushroom:
+#      amount: 1
+#    OE14BasicEffectEmpty:
+#      amount: 1
+#  oe14RandomProducts:
+#  - OE14BasicEffectHealBrute: 2
+#  - OE14BasicEffectDamageBrute: 2
+#  - OE14BasicEffectHealHeat: 2
+#  - OE14BasicEffectDamageHeat: 2
+#  - OE14BasicEffectHealCold: 2
+#  - OE14BasicEffectDamageCold: 2
+#  - OE14BasicEffectHealPoison: 2
+#  - OE14BasicEffectDamagePoison: 2
+#  - OE14BasicEffectHealAirloss: 2
+#  - OE14BasicEffectDamageAirloss: 2
+#  - OE14BasicEffectBloodRestore: 2
+#  - OE14BasicEffectBloodAbsorption: 2
+#  - OE14BasicEffectSatiateHunger: 2
+#  - OE14BasicEffectSatiateThirst: 2
+#  - OE14BasicEffectHealMana: 2
+#  - OE14BasicEffectDamageMana: 2
+#  - OE14BasicEffectSpeedUp: 2
+#  - OE14BasicEffectSpeedDown: 2
+#  - OE14BasicEffectSleep: 2
+#  - OE14BasicEffectUnsleep: 2

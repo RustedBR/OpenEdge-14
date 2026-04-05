@@ -1,0 +1,58 @@
+<Document>
+  # Seu Primeiro Prato
+
+  Diga olá ao seu novo viajante — Silvon, o Ossudo!
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobUndeadSkeletonBardT2" Caption="Olá! TRAC, TRAC!"/>
+  </Box>
+
+  Silvon está cansado de viajar pelos demiplanos e veio até você para uma boa pausa de toda essa correria. Chamando você, ele fez um pequeno pedido de... Qualquer três pratos à sua escolha. Mas você não sabe como nem o que preparar para ele... Sem problema! Vamos resolver isso agora!
+
+  ## Para começar — uma torta
+
+  Pensando um pouco, você decidiu — ele definitivamente precisa de uma torta! Para preparar qualquer torta, você primeiro precisa fazer massa. A massa é feita a partir de feixes de trigo na mesa de culinária especial.
+  <Box>
+    <GuideEntityEmbed Entity="OE14Wheat"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchCooking"/>
+    <GuideEntityEmbed Entity="OE14FoodDoughMedium"/>
+  </Box>
+
+  Depois de fazer a massa — coloque-a na forma junto com 3 pedaços de qualquer carne e duas fatias de pimenta. Coloque no forno e aguarde a torta ficar pronta. As tortas são divididas em cinco partes, uma mordida cada. Pronto! Você fez uma torta de carne!
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodDoughMedium"/>
+    <GuideEntityEmbed Entity="OE14FoodMeatLambSlice"/>
+    <GuideEntityEmbed Entity="OE14FoodPepperSlice"/>
+    <GuideEntityEmbed Entity="OE14PlatePie"/>
+    <GuideEntityEmbed Entity="OE14Furnace"/>
+  </Box>
+
+  ## Pratos na frigideira
+  Ótimo! A torta já está pronta, então é hora do prato principal. Vamos fazer batatas com purê!
+  Para preparar as batatas — basta colocar 5 batatas e 1 fatia de cebola na frigideira e levar ao forno. Certifique-se de servir no prato... E pronto!
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodOnionSlice"/>
+    <GuideEntityEmbed Entity="OE14FoodPotato"/>
+    <GuideEntityEmbed Entity="OE14FryingPan"/>
+    <GuideEntityEmbed Entity="OE14Furnace"/>
+    <GuideEntityEmbed Entity="OE14PlateWooden"/>
+  </Box>
+
+  ## Sopas
+
+  E agora é hora de completar essa refeição... Com uma boa sopa! Pensando um pouco, veio a ideia de... Sopa de queijo.
+  As sopas são um pouco mais complexas de preparar do que a comida comum. Para elas você precisa de uma panela e água. Adicione 30 unidades de água na panela e um pedaço de queijo e aguarde tudo ficar pronto. Voilà! Sirva na tigela e Bon Appétit!
+  <Box>
+    <GuideEntityEmbed Entity="OE14CookingPot"/>
+    <GuideEntityEmbed Entity="OE14FoodCheesePart"/>
+    <GuideEntityEmbed Entity="OE14Furnace"/>
+    <GuideEntityEmbed Entity="OE14BowlWooden"/>
+  </Box>
+
+  ## O mais importante... EXPERIMENTE!
+  Esses foram apenas os pratos que você talvez já tenha visto... Mas o mundo da culinária está cheio de mistérios! Você sabia que com a carne de um monstro é possível fazer uma boa omelete?
+  Não se esqueça de pedir para Silvon pagar pelos seus pratos e deseje a ele uma boa viagem! Até logo, Silvon!
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobUndeadSkeletonBardT2" Caption="Aqui está! 5 moedas de prata, TRAC, TRAC! Com gorjeta!"/>
+    <GuideEntityEmbed Entity="OE14SilverCoin5" Caption="5 moedas de prata"/>
+  </Box>
+</Document>

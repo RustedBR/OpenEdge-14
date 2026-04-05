@@ -1,0 +1,33 @@
+<Document>
+# Skill Trees & Distribution
+
+Skill trees define the progression paths available to each species. Each tree contains tiers of skills that must be learned in order.
+
+## Tree Structure
+
+<CodeBlock>
+Tree: Pyromancy
+  T1: FireBolt       (1 point)
+  T2: FireBall       (2 points, requires T1)
+  T3: Inferno        (3 points, requires T2)
+</CodeBlock>
+
+## Species & Trees
+
+Each species has access to different skill trees:
+- [bold]Humans[/bold] — Craftsmanship trees (smithing, alchemy, etc.)
+- [bold]Elves[/bold] — Magic trees (Pyromancy, Hydrosophistry, etc.)
+- [bold]Dwarves[/bold] — Combat and crafting trees
+
+## Point Allocation
+
+Characters receive points at character creation and through gameplay. Points are spent to unlock skill tiers.
+
+[bold]Important:[/bold] Spending points on skills may grant stat modifiers. These modifiers count toward the stat cap, so overflow is possible. See [textlink="Spell Fallback System" link="OE14_DEV_Stats_Fallback"] for details.
+
+## Content Under Construction
+
+Full skill tree documentation coming soon. The skill definitions are in:
+[mono]Resources/Prototypes/_OE14/Skills/[/mono]
+
+</Document>

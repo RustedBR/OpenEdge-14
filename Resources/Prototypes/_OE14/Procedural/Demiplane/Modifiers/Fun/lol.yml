@@ -1,0 +1,68 @@
+- type: oe14LocationModifier
+  id: RoyalPumpkin
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  generationProb: 0.1
+  categories:
+    Fun: 1
+  requiredTags:
+  - OE14DemiplaneHerbals
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14OreDunGen
+      tileMask:
+      - OE14FloorGrass
+      - OE14FloorGrassLight
+      - OE14FloorGrassTall
+      entity: OE14RoyalPumpkin
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: oe14LocationModifier
+  id: LucenTree
+  levels:
+    min: 0
+    max: 10
+  generationWeight: 0.1
+  generationProb: 0.1
+  categories:
+    Fun: 1
+  requiredTags:
+  - OE14DemiplaneHerbals
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14OreDunGen
+      tileMask:
+      - OE14FloorGrass
+      - OE14FloorGrassLight
+      - OE14FloorGrassTall
+      entity: OE14BaseLucensTreeLarge
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: oe14LocationModifier
+  id: StatueStoneHead
+  levels:
+    min: 0
+    max: 5
+  generationWeight: 0.1
+  generationProb: 0.1
+  categories:
+    Fun: 1
+  requiredTags:
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14StatueStoneHeadHigh
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1
+    - !type:OE14OreDunGen
+      entity: OE14StatueStoneHeadLow
+      count: 1
+      minGroupSize: 1
+      maxGroupSize: 1

@@ -1,0 +1,88 @@
+<Document>
+  # Alquimia
+
+  A alquimia é uma das mecânicas que permite aos jogadores criar poções e outras substâncias. Alquimistas podem usar diversos ingredientes para criar poções com efeitos variados. Você precisará experimentar com diferentes ingredientes para encontrar novas receitas e aprimorar as antigas.
+
+  ## Com o que você vai trabalhar
+
+  No mundo é possível encontrar uma grande quantidade de substâncias "brutas". Sucos de plantas, sangue de criaturas vivas, ou até cristais triturados. Um alquimista habilidoso pode transformar esses itens, inúteis para a maioria das pessoas, em algo valioso.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14BlueAmanita"/>
+    <GuideEntityEmbed Entity="OE14AgaricMushroom"/>
+    <GuideEntityEmbed Entity="OE14Dayflin"/>
+    <GuideEntityEmbed Entity="OE14ChromiumSlime"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14WildSage"/>
+    <GuideEntityEmbed Entity="OE14AirLily"/>
+    <GuideEntityEmbed Entity="OE14LumiMushroom"/>
+    <GuideEntityEmbed Entity="OE14BloodFlower"/>
+  </Box>
+
+  A maior parte desses ingredientes "brutos" pode ser primeiro triturada com um [bold]pilão e almofariz[/bold].
+
+  Colocando as substâncias brutas dentro do almofariz, você precisa triturá-las bem, clicando no pilão repetidamente. Gradualmente todos os itens desaparecem e no almofariz resta um líquido que você pode transferir para onde precisar.
+
+  Para descobrir que líquidos estão nos recipientes, você pode usar [bold]óculos alquímicos especiais[/bold], disponíveis apenas para a função de "Alquimista".
+
+  Além disso, as seguintes ferramentas podem ajudar no seu ofício:
+  - Conta-gotas. Permite transferir pequenas doses de líquidos, de 0,25u a 1u.
+  - Frascos de diferentes tamanhos e resistências.
+  - Caldeirão. Um bom recipiente com capacidade de 100u, que pode ser aquecido em uma fogueira ou no forno alquímico.
+  - Tina grande. Um recipiente enorme com capacidade de 500u, que pode ser aquecido em uma fogueira. Útil para produção de substâncias em escala industrial.
+  - Forno alquímico. Um forno movido a combustível de madeira, que permite aquecer suas soluções.
+  - Luva de mana. Uma mistura simples, porém esteticamente agradável, de tecnologia e cristais mágicos, que permite manipular a mana bruta: absorvê-la de alguns itens e infundi-la em outros. A função mais importante da luva para o alquimista é a [color=#5EABEB]Divisão Mágica[/color]. Permite separar uma solução em seus componentes. Para usar, selecione [color=#5EABEB]Divisão Mágica[/color] no painel de ações e clique no recipiente com a solução.
+  <GuideEntityEmbed Entity="OE14ActionSpellMagicSplitting"/>
+  - Purificador de soluções. Um dispositivo avançado que remove da solução o reagente presente em menor quantidade. Requer um cristal de energia para funcionar.
+  - Bomba alquímica. Um recipiente com capacidade de 10u. Quando cheio com qualquer reagente e arremessado ao chão, cria uma nuvem alquímica que aplica todos os reagentes da poção em todas as criaturas próximas.
+  - Óculos de taumaturgia. Óculos que permitem escanear itens e ver as essências neles contidas.
+  - Coletor de essências. Alimentado por um cristal de energia, começa a absorver toda a essência flutuando no ar e convertê-la em um líquido útil.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Dropper"/>
+    <GuideEntityEmbed Entity="OE14VialTiny"/>
+    <GuideEntityEmbed Entity="OE14VialSmall"/>
+    <GuideEntityEmbed Entity="OE14VialMedium"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Cauldron"/>
+    <GuideEntityEmbed Entity="OE14BaseVat"/>
+    <GuideEntityEmbed Entity="OE14Furnace"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14ManaOperationGlove"/>
+    <GuideEntityEmbed Entity="OE14AlchemySolutionCleaner"/>
+    <GuideEntityEmbed Entity="OE14BaseAlchemyBomb"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14ClothingEyesThaumaturgyGlasses"/>
+    <GuideEntityEmbed Entity="OE14EssenceCollector"/>
+  </Box>
+
+  ## Corantes
+
+  Além de preparar poções curativas ou não tão curativas, os alquimistas podem criar corantes para vender. Os corantes podem ser usados para tingir tecidos.
+
+  - Corante vermelho - 10u [color=#5c1f0a]Néctar de rosas sangrentas[/color] e 1u de água (catalisador).
+  - Corante amarelo - 10u [color=#ffe269]Polpa de diacravos solares[/color] e 1u de água (catalisador).
+  - Corante azul - 10u [color=#6bb4bf]Amanita Azul[/color] e 1u de água (catalisador).
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14DyeRed"/>
+    <GuideEntityEmbed Entity="OE14DyeYellow"/>
+    <GuideEntityEmbed Entity="OE14DyeBlue"/>
+  </Box>
+
+  ## Dicas
+
+  - Experimente! A alquimia é divertida! Não tenha medo de tentar algo novo e descobrir novas receitas.
+  - Peça ajuda aos Aventureiros. Eles podem trazer ingredientes dos demiplanos ou comprar poções de você.
+  - Nem todas as impurezas são inúteis. Algumas podem ser usadas para criar ou purificar poções, ou ajudá-lo a economizar dinheiro em reagentes — mesmo em pequenas quantidades, as poções podem ser muito poderosas.
+  - O feitiço Congelar permite apagar o forno para não desperdiçar combustível.
+  <GuideEntityEmbed Entity="OE14ActionSpellFreeze"/>
+  - O limo de crômio pode salvá-lo em momentos difíceis. Ao aquecê-lo junto com uma solução vazia, ele inverte os efeitos dos reagentes. Isso pode permitir que você transforme 200u de solução venenosa em 200u de solução antídoto!
+</Document>

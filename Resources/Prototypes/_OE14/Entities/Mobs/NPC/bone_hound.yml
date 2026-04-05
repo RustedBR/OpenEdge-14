@@ -1,0 +1,106 @@
+- type: entity
+  id: OE14MobMonsterBoneHound
+  parent: OE14SimpleMobBase
+  name: bone hound
+  description: The skeleton of a hound, animated by dark magic, even more bloodthirsty and dangerous than when alive.
+  categories: [ ForkFiltered ]
+  components:
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    name: oe14-ghost-role-information-name-bone-hound
+    allowMovement: true
+    description: oe14-ghost-role-information-description-bone-hound
+    rules: oe14-ghost-role-information-rules-demiplane
+    mindRoles:
+    - OE14MindRoleDemiplaneAntag
+    raffle:
+      settings: default
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        10
+      AggroVisionRadius: !type:Single
+        10
+  - type: NpcFactionMember
+    factions:
+    - OE14Monster
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      components:
+      - MobThresholds
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - sprite: _OE14/Mobs/Monster/bone_hound.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: OE14NightVision
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.8
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 40
+    damage:
+      types:
+        OE14ManaDepletion: -0.05
+      groups:
+        Brute: -0.07
+        Burn: -0.05
+        Toxin: -0.03
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 4
+        Piercing: 4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
+  - type: Damageable
+    damageContainer: OE14BiologicalAnaerobic
+    damageModifierSet: OE14Skeleton
+  - type: Bloodstream
+    bloodReagent: OE14BloodAnimal
+    bloodMaxVolume: 0
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: Tag
+    tags:
+      - FootstepSound
+      - OE14Mosquito
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BoneRemainsBoneHound:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: OE14BoneCrack

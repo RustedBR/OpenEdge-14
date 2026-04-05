@@ -1,0 +1,108 @@
+<Document>
+  # Atributos do Personagem
+
+  Seu personagem tem quatro atributos principais que influenciam sua eficácia em diferentes situações. Abra o menu de personagem com [bold]C[/bold] para ver seus valores atuais.
+
+  Os atributos variam de [bold]1 a 10[/bold]. O atributo [bold]5[/bold] é o valor neutro — sem bônus ou penalidade.
+
+  ## Força
+
+  [color=#e05050]Força[/color] determina o quão forte você bate em combate físico.
+
+  Atributo 5 = sem bônus (1.0x), Atributo 10 = [bold]+50% de dano[/bold] (1.5x), Atributo 1 = [bold]-50% de dano[/bold] (0.5x).
+
+  A escala é levemente assimétrica: cada ponto acima de 5 adiciona +10%, enquanto cada ponto abaixo de 5 subtrai 12,5%.
+
+  ## Vitalidade
+
+  [color=#50e050]Vitalidade[/color] determina quanto dano você pode levar antes de cair.
+
+  Cada ponto acima ou abaixo de 5 muda sua vida em [bold]+/-12,5 HP[/bold] (limiar crítico).
+
+  Atributo 5 = 100 HP para crítico / 200 para morrer, Atributo 10 = 162 HP / 325 para morrer, Atributo 1 = 50 HP / 100 para morrer.
+
+  ## Destreza
+
+  [color=#50e0e0]Destreza[/color] determina quanto dano de stamina você pode absorver antes de ser [bold]derrubado no chão[/bold].
+
+  O dano de stamina acumula ao correr, levar golpes e outros esforços. Quando atinge seu [bold]limiar de queda[/bold], você cai e fica brevemente atordoado. Recupera ao longo do tempo.
+
+  Cada ponto acima ou abaixo de 5 muda seu limiar em [bold]+/-25%[/bold].
+
+  Atributo 5 = 100, Atributo 10 = 225 (muito difícil de derrubar), Atributo 1 = 0 (cai instantaneamente).
+
+  ## Inteligência
+
+  [color=#a050e0]Inteligência[/color] determina quanto mana você tem disponível para conjurar magias.
+
+  Cada ponto acima ou abaixo de 5 muda o mana em [bold]+/-18,75[/bold].
+
+  Atributo 5 = 100 mana, Atributo 10 = [bold]~194 mana[/bold], Atributo 1 = [bold]25 mana[/bold] (mínimo — mal dá para uma magia).
+
+  ## Resumo dos Atributos
+
+  | Atributo | Neutro (5) | Máx (10) | Mín (1) |
+  |---|---|---|---|
+  | Força | 1.0x dano | 1.5x dano | 0.5x dano |
+  | Vitalidade | 100 HP crítico | 162 HP crítico | 50 HP crítico |
+  | Destreza | 100 queda | 225 queda | 0 (cai instantaneamente) |
+  | Inteligência | 100 mana | ~194 mana | 25 mana |
+
+  ## Atributos por Raça
+
+  Cada raça jogável começa com valores de atributos diferentes, refletindo seus pontos fortes e fracos. Algumas raças têm design min-max, se destacando em um atributo mas sofrendo em outro. Habilidades raciais gratuitas fornecem bônus adicionais.
+
+  ### Tabela de Atributos por Raça
+
+  | Raça | FOR | VIT | DES | INT | Habilidades Gratuitas | Notas |
+  |---|---|---|---|---|---|---|
+  | [bold]Humano[/bold] ⭐ | 5 | 5 | 5 | 5 | Nenhuma | Equilibrado, 5 pontos gastáveis |
+  | [bold]Elfo[/bold] | 6 | 6 | 1 | 7⭐ | Metamagia T1/T2 +INT | Mestre mago, frágil (INT efetivo 9) |
+  | [bold]Goblin[/bold] | 6 | 6 | 7⭐ | 1 | Atlético T1/T2 +DES | Caçador ágil, mana quase zero (DES efetivo 9) |
+  | [bold]Silva[/bold] | 1 | 7⭐ | 5 | 7 | Cura T1/T2 +VIT | Curandeiro da natureza, lutador fraco (VIT efetivo 9) |
+  | [bold]Tiefling[/bold] | 7⭐ | 5 | 2 | 6 | Pirocinético T1/T2 +FOR | Manipulador de fogo, stamina baixa (FOR efetivo 9) |
+  | [bold]Carcat[/bold] | 5 | 5 | 7⭐ | 3 | Eletromancia T1/T2 +DES | Reflexos felinos, mana muito limitada (DES efetivo 9) |
+  | [bold]Anão[/bold] | 7⭐ | 7⭐ | 2 | 4 | Hidrossofia T1/T2 +VIT | Resistente e forte, muito lento (VIT efetivo 9) |
+
+  ⭐ = Vantagem de atributo (maior naquela categoria ou recebeu bônus de habilidade gratuita)
+
+  ## Modificadores de Atributo
+
+  Além dos seus atributos base, [bold]modificadores de atributo[/bold] temporários podem ser ganhos de habilidades equipadas, magias ou itens. Estes modificam seus atributos efetivos sem alterar seus valores base.
+
+  Seu [bold]atributo efetivo[/bold] é calculado como: [bold]Atributo Base + Todos os Modificadores[/bold].
+
+  Por exemplo, um Elfo com INT 8 que equipa uma habilidade de Metamagia (+2 INT) tem um INT efetivo de 10 (8 + 2).
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14ModularCrystalStrength" Caption="Cristal +1 FOR"/>
+    <GuideEntityEmbed Entity="OE14ModularCrystalVitality" Caption="Cristal +1 VIT"/>
+    <GuideEntityEmbed Entity="OE14ModularCrystalDexterity" Caption="Cristal +1 DES"/>
+    <GuideEntityEmbed Entity="OE14ModularCrystalIntelligence" Caption="Cristal +1 INT"/>
+  </Box>
+
+  ### Proteção de Overflow de Modificador
+
+  Se um modificador empurrar seu atributo efetivo acima de 10, o sistema concede [bold]pontos de atributo disponíveis[/bold] como compensação em vez de desperdiçar o bônus.
+
+  Exemplo: Elfo INT 8 ganha um modificador de +3. Em vez de desperdiçar no limite de 10, você recebe: INT efetivo limitado a 10, mais 1 ponto disponível (overflow de 11 - 10 = 1).
+
+  ## Gastando Pontos de Atributo
+
+  Na criação de personagem você recebe [bold]3 pontos[/bold] para distribuir livremente entre quaisquer atributos. O criador de personagem mostra seus atributos raciais base, o bônus que está adicionando e o valor final.
+
+  Durante o jogo, pontos adicionais podem ser ganhos através de progressão e gastos no menu de Personagem ([bold]C[/bold]).
+
+  ### Regras de Gasto de Pontos
+
+  - Atributos têm máximo de [bold]10[/bold]
+  - Você [bold]não pode gastar um ponto[/bold] num atributo que já está em [bold]10 (valor efetivo incluindo modificadores)[/bold]
+  - Se você tem equipamento com modificadores que te levam a 10 efetivo, deve removê-lo antes de gastar mais pontos naquele atributo
+  - Pontos gastos aumentam seu atributo base em 1
+
+  ## Sistemas Relacionados
+
+  - [textlink="Combate" link="OE14_PT_Combat"] — Força e Vitalidade afetam diretamente sua eficácia em combate
+  - [textlink="Magia" link="OE14_PT_Magic"] — Inteligência determina quantas magias você pode conjurar antes de ficar sem mana
+
+</Document>

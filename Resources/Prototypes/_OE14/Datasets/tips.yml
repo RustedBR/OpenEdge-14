@@ -1,0 +1,6 @@
+- type: localizedDataset
+  id: OE14Tips
+  values:
+    prefix: oe14-tips-
+    count: 17
+

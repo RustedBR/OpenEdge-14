@@ -1,0 +1,21 @@
+- type: constructionGraph
+  id: OE14VampireStoneAltar
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14VampireStoneAltar
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: OE14Stone
+              amount: 5
+              doAfter: 2
+            - material: OE14IronBar
+              amount: 2
+              doAfter: 2
+            - material: OE14BloodEssence
+              amount: 1
+              doAfter: 2
+    - node: OE14VampireStoneAltar
+      entity: OE14VampireStoneAltar

@@ -1,0 +1,315 @@
+- type: entity
+  parent: OE14BaseWorkbench
+  id: OE14WorkbenchVampire
+  categories: [ ForkFiltered ]
+  name: vampire power point
+  description: A table imbued with vampire magic, allowing you to create items of dark arts.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Specific/Vampire/workbench.rsi
+    layers:
+    - state: base
+    - state: fx
+      shader: unshaded
+  - type: Icon
+    sprite: _OE14/Structures/Specific/Vampire/workbench.rsi
+    state: base
+  - type: OE14Workbench
+    craftSound:
+      path: /Audio/_OE14/Effects/vampire_craft.ogg
+      params:
+        variation: 0.125
+    recipeTags:
+    - OE14RecipeVampire
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 8
+        startValue: 1.0
+        endValue: 3.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: PointLight
+    enabled: true
+    color: "#d60032"
+    energy: 1
+    radius: 3
+  - type: Construction
+    graph: OE14WorkbenchVampire
+    node: OE14WorkbenchVampire
+
+- type: entity
+  parent: BaseStructure
+  id: OE14VampireClanHeartBase
+  abstract: true
+  categories: [ ForkFiltered ]
+  name: vampire clan heart
+  description: The source of power for the vampire clan. By gathering the life force of its victims, the clan becomes stronger.
+  components:
+  - type: WarpPoint
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+    sprite: _OE14/Structures/Specific/Vampire/heart.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Specific/Vampire/heart.rsi
+    state: base
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 8
+        startValue: 1.0
+        endValue: 3.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: PointLight
+    enabled: true
+    color: "#d60032"
+    energy: 1
+    radius: 3
+  - type: OE14VampireClanHeart
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.VampireClanLevelVisuals.Level:
+        level:
+          1: {state: orb1}
+          2: {state: orb2}
+          3: {state: orb3}
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Metallic
+
+- type: entity
+  parent: OE14VampireClanHeartBase
+  id: OE14VampireClanHeartUnnameable
+  suffix: Unnameable
+  name: heart of unnameable clan
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: unnameable
+      shader: unshaded
+    - state: orb1
+      sprite: _OE14/Structures/Specific/Vampire/heart_orb.rsi
+      shader: unshaded
+      offset: 0, 0.5
+      map: [ "level" ]
+  - type: OE14VampireClanHeart
+    faction: Unnameable
+  - type: Construction
+    graph: OE14VampireClanHeartUnnameable
+    node: OE14VampireClanHeartUnnameable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:OE14VampireAltarExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14SkyLightningRed:
+            min: 1
+            max: 1
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14VampireClanHeartUnnameableFrame
+
+- type: entity
+  parent: OE14VampireClanHeartBase
+  id: OE14VampireClanHeartDevourers
+  suffix: Devourers
+  name: heart of devourers clan
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: devourers
+      shader: unshaded
+    - state: orb1
+      sprite: _OE14/Structures/Specific/Vampire/heart_orb.rsi
+      shader: unshaded
+      offset: 0, 0.5
+      map: [ "level" ]
+  - type: OE14VampireClanHeart
+    faction: Devourers
+  - type: Construction
+    graph: OE14VampireClanHeartDevourers
+    node: OE14VampireClanHeartDevourers
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:OE14VampireAltarExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14SkyLightningRed:
+            min: 1
+            max: 1
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14VampireClanHeartDevourersFrame
+
+- type: entity
+  parent: OE14VampireClanHeartBase
+  id: OE14VampireClanHeartNightChildren
+  suffix: Night childrens
+  name: heart of night childrens clan
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: childrens
+      shader: unshaded
+    - state: orb1
+      sprite: _OE14/Structures/Specific/Vampire/heart_orb.rsi
+      shader: unshaded
+      offset: 0, 0.5
+      map: [ "level" ]
+  - type: OE14VampireClanHeart
+    faction: NightChildrens
+  - type: Construction
+    graph: OE14VampireClanHeartNightChildren
+    node: OE14VampireClanHeartNightChildren
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:OE14VampireAltarExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14SkyLightningRed:
+            min: 1
+            max: 1
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14VampireClanHeartNightChildrenFrame
+
+- type: entity
+  parent: BaseStructure
+  id: OE14VampireClanHeartFrameUnnameable
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  name: clan heart frame
+  description: A majestic artifact of vampire culture. Unfinished.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Specific/Vampire/heart.rsi
+    layers:
+    - state: frame
+  - type: Construction
+    graph: OE14VampireClanHeartUnnameable
+    node: OE14VampireClanHeartUnnameableFrame
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14StoneBlock1:
+            min: 1
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: OE14VampireClanHeartFrameUnnameable
+  id: OE14VampireClanHeartFrameDevourers
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  components:
+  - type: Construction
+    graph: OE14VampireClanHeartDevourers
+    node: OE14VampireClanHeartDevourersFrame
+  
+- type: entity
+  parent: OE14VampireClanHeartFrameUnnameable
+  id: OE14VampireClanHeartFrameNightChildrens
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  components:
+  - type: Construction
+    graph: OE14VampireClanHeartNightChildren
+    node: OE14VampireClanHeartNightChildrenFrame
+
+- type: entity
+  id: OE14VampireStoneAltar
+  parent: Bed
+  categories: [ ForkFiltered ]
+  name: bloody altar
+  description: A gruesome stone altar splattered with blood. Doubles the amount of blood essence extracted from vampire victims.
+  components:
+  - type: OE14VampireAltar
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _OE14/Structures/Specific/Vampire/altar.rsi
+    layers:
+    - state: base
+    - state: fx
+      shader: unshaded
+    noRot: true
+  - type: Icon
+    sprite: _OE14/Structures/Specific/Vampire/altar.rsi
+    state: base
+  - type: Construction
+    graph: OE14VampireStoneAltar
+    node: OE14VampireStoneAltar
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14StoneBlock1:
+            min: 2
+            max: 4
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BloodEssence:
+            min: 1
+            max: 1
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

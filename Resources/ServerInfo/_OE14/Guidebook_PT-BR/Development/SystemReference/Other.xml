@@ -1,0 +1,38 @@
+<Document>
+# Referência de Outros Sistemas
+
+Referência rápida para sistemas diversos no OpenEdge 14.
+
+## OE14Farming
+
+Sistema de crescimento de plantas com ciclos de energia e mecânicas de colheita. Plantas crescem através de estágios baseados em disponibilidade de luz e água.
+
+[bold]Componentes chave:[/bold] OE14PlantComponent, OE14SeedComponent
+[bold]Arquivos:[/bold] [mono]Content.Server/_OE14/Farming/[/mono]
+
+## Efeitos de Status
+
+Efeitos de status (Queimando, Congelado, Envenenado, Sangrando) são aplicados via sistema de componente StatusEffect.
+
+[bold]Aplicando um efeito de status:[/bold]
+<CodeBlock>
+_statusEffect.TryAddStatusEffect(uid, "Burning", TimeSpan.FromSeconds(5), true);
+</CodeBlock>
+
+## OE14Vampire
+
+Mecânicas de papel de vampiro — habilidades especiais, alimentação e transformação. Vampiros têm árvores de habilidades únicas.
+
+[bold]Arquivos:[/bold] [mono]Content.Server/_OE14/Vampire/[/mono]
+
+## OE14Demiplane
+
+Sistema de viagem dimensional. Jogadores ou entidades podem ser transportados para uma dimensão de bolso.
+
+[bold]Arquivos:[/bold] [mono]Content.Server/_OE14/Demiplane/[/mono]
+
+## Conteúdo Em Construção
+
+Documentação detalhada para cada sistema coming soon.
+
+</Document>

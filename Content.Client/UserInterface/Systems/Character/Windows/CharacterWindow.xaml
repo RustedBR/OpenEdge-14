@@ -1,0 +1,196 @@
+<windows:CharacterWindow
+    xmlns="https://spacestation14.io"
+    xmlns:cc="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:windows="clr-namespace:Content.Client.UserInterface.Systems.Character.Windows"
+    Title="{Loc 'character-info-title'}"
+    MinWidth="600"
+    MinHeight="300"
+    MaxWidth="800"
+    MaxHeight="1000">
+    <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="10 8 10 8">
+
+            <!-- Objectives (moved here, usually hidden) -->
+            <Label Name="ObjectivesLabel" Access="Public"
+                   Text="{Loc 'character-info-objectives-label'}"
+                   HorizontalAlignment="Center" Visible="False"/>
+            <BoxContainer Orientation="Vertical" Name="Objectives" Access="Public" Margin="0 0 0 8"/>
+
+            <!-- Stats Panel -->
+            <PanelContainer Name="StatsPanel" Access="Public" Visible="False"
+                            StyleClasses="PanelDark" Margin="0 10 0 0"
+                            HorizontalExpand="True">
+                <BoxContainer Orientation="Vertical" Margin="10 8 10 10" HorizontalExpand="True">
+
+                    <!-- Heading -->
+                    <Label Text="{Loc 'oe14-character-stats-heading'}" HorizontalAlignment="Center"
+                           Margin="0 0 0 6" StyleClasses="LabelHeading"/>
+
+                    <!-- Stats table: Base | Current | Mods | Button -->
+                    <!-- Header row with Race label -->
+                    <BoxContainer Orientation="Horizontal" Margin="0 0 0 4">
+                        <Label Name="RaceLabel" Text="{Loc 'species-name-human'}" FontColorOverride="#d4a84b" MinWidth="50" Access="Public"/>
+                        <Label Text="{Loc 'oe14-stat-current'}" FontColorOverride="#888888" MinWidth="60"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Text="{Loc 'oe14-stat-mod-sources'}" FontColorOverride="#888888" HorizontalAlignment="Right" MinWidth="80"/>
+                        <Label Text="" MinWidth="28"/>
+                    </BoxContainer>
+
+                    <!-- STR -->
+                            <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                                <Label Text="{Loc 'oe14-stat-strength'}" FontColorOverride="#d4a84b" MinWidth="35"/>
+                                <Label MinWidth="8"/>
+                                <BoxContainer Name="StrBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                                <Label MinWidth="8"/>
+                                <Label Text="" FontColorOverride="#999999" Name="StrengthBaseLabel" Access="Public" MinWidth="20"/>
+                                <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                                <Label Text="" FontColorOverride="#d4a84b" Name="StrengthValue" Access="Public" MinWidth="20"/>
+                                <Label MinWidth="20"/>
+                                <BoxContainer Name="StrengthModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                                <Button Name="StrengthSpendButton" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Visible="False" Margin="4 0 0 0"/>
+                            </BoxContainer>
+
+                            <!-- VIT -->
+                            <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                                <Label Text="{Loc 'oe14-stat-vitality'}" FontColorOverride="#e05050" MinWidth="35"/>
+                                <Label MinWidth="8"/>
+                                <BoxContainer Name="VitBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                                <Label MinWidth="8"/>
+                                <Label Text="" FontColorOverride="#999999" Name="VitalityBaseLabel" Access="Public" MinWidth="20"/>
+                                <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                                <Label Text="" FontColorOverride="#e05050" Name="VitalityValue" Access="Public" MinWidth="20"/>
+                                <Label MinWidth="20"/>
+                                <BoxContainer Name="VitalityModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                                <Button Name="VitalitySpendButton" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Visible="False" Margin="4 0 0 0"/>
+                            </BoxContainer>
+
+                            <!-- DEX -->
+                            <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                                <Label Text="{Loc 'oe14-stat-dexterity'}" FontColorOverride="#50c878" MinWidth="35"/>
+                                <Label MinWidth="8"/>
+                                <BoxContainer Name="DexBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                                <Label MinWidth="8"/>
+                                <Label Text="" FontColorOverride="#999999" Name="DexterityBaseLabel" Access="Public" MinWidth="20"/>
+                                <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                                <Label Text="" FontColorOverride="#50c878" Name="DexterityValue" Access="Public" MinWidth="20"/>
+                                <Label MinWidth="20"/>
+                                <BoxContainer Name="DexterityModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                                <Button Name="DexteritySpendButton" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Visible="False" Margin="4 0 0 0"/>
+                            </BoxContainer>
+
+                            <!-- INT -->
+                            <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                                <Label Text="{Loc 'oe14-stat-intelligence'}" FontColorOverride="#5090e0" MinWidth="35"/>
+                                <Label MinWidth="8"/>
+                                <BoxContainer Name="IntBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                                <Label MinWidth="8"/>
+                                <Label Text="" FontColorOverride="#999999" Name="IntelligenceBaseLabel" Access="Public" MinWidth="20"/>
+                                <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                                <Label Text="" FontColorOverride="#5090e0" Name="IntelligenceValue" Access="Public" MinWidth="20"/>
+                                <Label MinWidth="20"/>
+                                <BoxContainer Name="IntelligenceModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                                <Button Name="IntelligenceSpendButton" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Visible="False" Margin="4 0 0 0"/>
+                            </BoxContainer>
+
+                    <!-- Available Points row -->
+                    <BoxContainer Orientation="Horizontal" Margin="0 0 0 8" Name="PointsRow" Access="Public" Visible="False">
+                        <Label Text="{Loc 'oe14-stat-points-to-spend'}" FontColorOverride="#aaaaaa"
+                               VerticalAlignment="Center"/>
+                        <Label Name="AvailablePointsValue" Text="0" FontColorOverride="#f0c050"
+                               StyleClasses="LabelBig" Access="Public"/>
+                    </BoxContainer>
+
+
+                    <!-- Derived values -->
+                    <!-- HP with current and thresholds -->
+                    <BoxContainer Orientation="Horizontal" Margin="0 6 0 0" HorizontalExpand="True">
+                        <Label Text="{Loc 'oe14-stat-hp'}" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Name="DerivedHP" Text="100" FontColorOverride="#e05050" HorizontalAlignment="Right" Access="Public"/>
+                    </BoxContainer>
+                    <BoxContainer Orientation="Horizontal" Margin="0 0 0 3" HorizontalExpand="True">
+                        <Label MinWidth="80"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Text="{Loc 'oe14-stat-hp-thresholds-default'}" FontColorOverride="#888888"
+                               HorizontalAlignment="Right" Access="Public"
+                               Name="DerivedHPThresholds"/>
+                    </BoxContainer>
+                    <!-- Stamina: Current / Max -->
+                    <BoxContainer Orientation="Horizontal" Margin="0 3" HorizontalExpand="True">
+                        <Label Text="{Loc 'oe14-stat-stamina'}" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Name="DerivedStamina" Text="100 / 100" FontColorOverride="#50c878" HorizontalAlignment="Right" Access="Public"/>
+                    </BoxContainer>
+                    <BoxContainer Orientation="Horizontal" Margin="0 0 0 3" HorizontalExpand="True">
+                        <Label MinWidth="80"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Name="DerivedStaminaSlow" Text="{Loc 'oe14-stat-stamina-slow-default'}" FontColorOverride="#888888" HorizontalAlignment="Right" Access="Public"/>
+                    </BoxContainer>
+
+                    <!-- Mana: Current mana / Max mana -->
+                    <BoxContainer Orientation="Horizontal" Margin="0 3" HorizontalExpand="True">
+                        <Label Text="{Loc 'oe14-stat-mana'}" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Name="DerivedMana" Text="225" FontColorOverride="#5090e0" HorizontalAlignment="Right" Access="Public"/>
+                    </BoxContainer>
+                    <BoxContainer Orientation="Horizontal" Margin="0 0 0 3" HorizontalExpand="True">
+                        <Label MinWidth="80"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Name="DerivedManaRegen" Text="2.25/3s" FontColorOverride="#5090e0" HorizontalAlignment="Right" Access="Public"/>
+                        <Label Text="{Loc 'oe14-stat-mana-regen'}" FontColorOverride="#555555" Margin="4 0 0 0"/>
+                    </BoxContainer>
+
+                    <!-- Damage -->
+                    <BoxContainer Orientation="Horizontal" Margin="0 3" HorizontalExpand="True">
+                        <Label Text="{Loc 'oe14-stat-damage'}" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                        <Label HorizontalExpand="True"/>
+                        <Label Name="DerivedDamage" Text="1.00x" FontColorOverride="#d4a84b" HorizontalAlignment="Right" Access="Public"/>
+                        <Label Text="{Loc 'oe14-stat-damage-multiplier'}" FontColorOverride="#555555" Margin="4 0 0 0"/>
+                    </BoxContainer>
+
+                    <!-- Character Info & Special Roles Panel -->
+                    <PanelContainer StyleClasses="PanelDark" Margin="0 8 0 0" HorizontalExpand="True" Name="CharacterInfoPanel" Access="Public">
+                        <BoxContainer Orientation="Vertical" Margin="10 8 10 8" HorizontalExpand="True">
+
+                            <!-- Character Portrait and Info -->
+                            <BoxContainer Orientation="Horizontal" Margin="0 0 0 8" HorizontalExpand="True">
+                                <!-- Sprite -->
+                                <SpriteView OverrideDirection="South" Scale="2 2" Name="SpriteView"
+                                            Access="Public" SetSize="64 80" VerticalAlignment="Top"/>
+                                <!-- Character Details -->
+                                <BoxContainer Orientation="Vertical" Margin="12 0 0 0" HorizontalExpand="True" VerticalAlignment="Center">
+                                    <Label Name="NameLabel" Access="Public" StyleClasses="LabelBig"/>
+                                    <Label Name="SubText" StyleClasses="LabelSubText" Access="Public"/>
+                                    <Label Name="RoleType" Margin="0 4 0 0" StyleClasses="LabelSubText" Access="Public"/>
+                                </BoxContainer>
+                            </BoxContainer>
+
+                            <!-- Special Roles section -->
+                            <Label Name="SpecialRolesLabel" Access="Public"
+                                   Text="{Loc 'character-info-objectives-label'}"
+                                   HorizontalAlignment="Center" Visible="False" Margin="0 0 0 4"/>
+                            <cc:Placeholder Name="RolePlaceholder" Access="Public"
+                                            PlaceholderText="{Loc 'character-info-roles-antagonist-text'}" HorizontalExpand="True"/>
+                        </BoxContainer>
+                    </PanelContainer>
+
+                    <!-- DEBUG PANEL: Show raw modifier values -->
+                    <PanelContainer Name="DebugPanel" Access="Public" Visible="True"
+                                    StyleClasses="PanelDark" Margin="0 8 0 0"
+                                    HorizontalExpand="True">
+                        <BoxContainer Orientation="Vertical" Margin="8 6 8 6" HorizontalExpand="True">
+                            <Label Text="{Loc 'oe14-debug-modifier-sources'}" FontColorOverride="#ff6666" StyleClasses="LabelSmall"/>
+                            <Label Name="DebugStrModifiers" Text="STR: {Loc 'oe14-debug-no-data'}" FontColorOverride="#aaaaaa" Access="Public"/>
+                            <Label Name="DebugVitModifiers" Text="VIT: {Loc 'oe14-debug-no-data'}" FontColorOverride="#aaaaaa" Access="Public"/>
+                            <Label Name="DebugDexModifiers" Text="DEX: {Loc 'oe14-debug-no-data'}" FontColorOverride="#aaaaaa" Access="Public"/>
+                            <Label Name="DebugIntModifiers" Text="INT: {Loc 'oe14-debug-no-data'}" FontColorOverride="#aaaaaa" Access="Public"/>
+                            <Label Name="DebugEffectiveStats" Text="{Loc 'oe14-debug-effective'}: {Loc 'oe14-debug-no-data'}" FontColorOverride="#aaaaaa" Access="Public" Margin="0 4 0 0"/>
+                        </BoxContainer>
+                    </PanelContainer>
+
+                </BoxContainer>
+            </PanelContainer>
+
+        </BoxContainer>
+    </ScrollContainer>
+</windows:CharacterWindow>

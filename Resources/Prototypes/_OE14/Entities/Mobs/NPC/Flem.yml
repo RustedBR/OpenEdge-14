@@ -1,0 +1,99 @@
+- type: entity
+  id: OE14MobMonsterFlem
+  parent: OE14SimpleMobBase
+  name: flem
+  description: An odd looking fish standing on two stubby legs. you know what that means...
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: OE14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        3
+      AggroVisionRadius: !type:Single
+        1
+  - type: NpcFactionMember
+    factions:
+    - OE14Fishies
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _OE14/Mobs/Monster/flem.rsi
+      state: flem_live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.20
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: Body
+    prototype: Animal
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: Stamina
+    critThreshold: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 8
+        Structural: 20
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.6
+    baseSprintSpeed: 2.6
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: flem_live
+      Dead:
+        Base: flem_dead
+  - type: Butcherable
+    spawned:
+    - id: OE14FoodMeatFlemHead
+      amount: 1
+    - id: OE14FoodMeatFlemTorso
+      amount: 1
+    - id: OE14FoodMeatFlemLeg
+      amount: 2
+      prob: 0.6
+  - type: Bloodstream
+    bloodMaxVolume: 200
+    bloodReagent: OE14BloodAnimal
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: TypingIndicator
+    proto: alien
+  - type: OE14MagicEnergyContainer
+    magicAlert: OE14MagicEnergy
+    maxEnergy: 100
+    energy: 100
+  - type: OE14MagicEnergyDraw
+    energy: 2
+    delay: 4
+  - type: SpamEmitSound
+    minInterval: 10
+    maxInterval: 30
+    sound:
+      collection: OE14Flem
+      params:
+        variation: 0.125
+  - type: SoundWhileAlive
+  - type: Tag
+    tags:
+      - FootstepSound
+      - OE14Mosquito

@@ -1,0 +1,180 @@
+- type: oe14LocationModifier
+  id: WeatherNone
+  levels:
+    min: 1
+    max: 10
+  generationWeight: 3
+  categories:
+    Weather: 1
+
+- type: oe14LocationModifier
+  id: WeatherInfinityMist
+  levels:
+    min: 1
+    max: 10
+  categories:
+    Weather: 1
+  requiredTags:
+  - OE14DemiplaneOpenSky
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: OE14Mist
+
+- type: oe14LocationModifier
+  id: WeatherRain
+  levels:
+    min: 0
+    max: 10
+  categories:
+    Weather: 1
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: null
+      duration:
+        min: 30
+        max: 120
+    - visuals: OE14Rain
+      duration:
+        min: 180
+        max: 240
+
+- type: oe14LocationModifier
+  id: WeatherInfinityStorm
+  levels:
+    min: 2
+    max: 10
+  name: oe14-modifier-storm
+  categories:
+    Weather: 1
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: OE14Storm
+  layers:
+    - !type:OE14RoomsDunGen
+      count: 8
+      tags:
+      - OE14DemiplaneRuins
+
+- type: oe14LocationModifier
+  id: WeatherSnow
+  levels:
+    min: 0
+    max: 10
+  categories:
+    Weather: 1
+  requiredTags:
+  - OE14DemiplaneCold
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: null
+      duration:
+        min: 30
+        max: 120
+    - visuals: OE14SnowLight
+      duration:
+        min: 30
+        max: 180
+    - visuals: OE14SnowMedium
+      duration:
+        min: 30
+        max: 180
+
+- type: oe14LocationModifier
+  id: WeatherSnowHeavy
+  levels:
+    min: 1
+    max: 10
+  name: oe14-modifier-snow-storm
+  categories:
+    Weather: 1
+  requiredTags:
+  - OE14DemiplaneCold
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: OE14SnowHeavyWithStorm
+      duration:
+        min: 30
+        max: 180
+    - visuals: SnowfallHeavy
+      duration:
+        min: 30
+        max: 60
+  layers:
+    - !type:OE14RoomsDunGen
+      count: 8
+      tags:
+      - OE14DemiplaneRuins
+
+- type: oe14LocationModifier
+  id: OE14ManaMist
+  name: oe14-modifier-mana-mist
+  levels:
+    min: 1
+    max: 10
+  categories:
+    Weather: 1
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: OE14ManaMist
+  requiredTags:
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14RoomsDunGen
+      count: 8
+      tags:
+      - OE14DemiplaneRuins
+
+- type: oe14LocationModifier
+  id: OE14AntiManaMist
+  name: oe14-modifier-anti-mana-mist
+  levels:
+    min: 1
+    max: 10
+  categories:
+    Weather: 1
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: OE14AntiManaMist
+  requiredTags:
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14RoomsDunGen
+      count: 8
+      tags:
+      - OE14DemiplaneRuins
+
+- type: oe14LocationModifier
+  id: OE14FireStormPeriod
+  name: oe14-modifier-fire-storm
+  levels:
+    min: 2
+    max: 10
+  requiredTags:
+  - OE14DemiplaneHot
+  - OE14DemiplaneOpenSky
+  categories:
+    Weather: 1
+  components:
+  - type: OE14WeatherController
+    entries:
+    - visuals: AshfallLight
+      duration:
+        min: 30
+        max: 180
+    - visuals: OE14FireStorm
+      duration:
+        min: 30
+        max: 60
+  layers:
+    - !type:OE14RoomsDunGen
+      count: 8
+      tags:
+      - OE14DemiplaneRuins
+

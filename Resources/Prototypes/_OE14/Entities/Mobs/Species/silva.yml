@@ -1,0 +1,358 @@
+- type: entity
+  parent: OE14BaseMobSpeciesOrganic
+  id: OE14BaseMobSilva
+  name: Mr. Silva
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.HumanoidVisualLayers.Chest
+    - map:
+      - enum.HumanoidVisualLayers.Head
+    - map:
+      - enum.HumanoidVisualLayers.Snout
+    - map:
+      - enum.HumanoidVisualLayers.Eyes
+      shader: unshaded
+    - map:
+      - vampire_fangs
+      sprite: _OE14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false
+    - map:
+      - enum.HumanoidVisualLayers.RArm
+    - map:
+      - enum.HumanoidVisualLayers.LArm
+    - map:
+      - enum.HumanoidVisualLayers.RLeg
+    - map:
+      - enum.HumanoidVisualLayers.LLeg
+    - shader: StencilClear
+      sprite: _OE14/Mobs/Species/Human/parts.rsi
+      state: l_leg
+    - map:
+      - enum.HumanoidVisualLayers.Tail
+    - shader: StencilMask
+      map:
+      - enum.HumanoidVisualLayers.StencilMask
+      sprite: Mobs/Customization/masking_helpers.rsi
+      state: unisex_full
+      visible: false
+    - map:
+      - enum.HumanoidVisualLayers.LFoot
+    - map:
+      - enum.HumanoidVisualLayers.RFoot
+    - map:
+      - pants
+    - map:
+      - shoes
+    - map:
+      - shirt
+    - map:
+      - enum.HumanoidVisualLayers.LHand
+    - map:
+      - enum.HumanoidVisualLayers.RHand
+    - map:
+      - enum.HumanoidVisualLayers.HeadSide
+    - map:
+      - enum.HumanoidVisualLayers.HeadTop
+    - map:
+      - gloves
+    - map:
+      - ears
+    - map:
+      - outerClothing
+    - map:
+      - cloak
+    - map:
+      - eyes
+    - map:
+      - belt
+    - map:
+      - belt2
+    - map:
+      - neck
+    - map:
+      - back
+    - map:
+      - enum.HumanoidVisualLayers.FacialHair
+    - map:
+      - enum.HumanoidVisualLayers.Hair
+    - map:
+      - mask
+    - map:
+      - head
+    - map:
+      - pocket1
+    - map:
+      - pocket2
+    - map:
+      - enum.HumanoidVisualLayers.Handcuffs
+      color: '#ffffff'
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: HumanoidAppearance
+    species: OE14Silva
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: full
+  - type: OE14CharacterStats
+    strength: 1
+    vitality: 7
+    dexterity: 5
+    intelligence: 7
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      125: Critical
+      250: Dead
+  - type: Stamina
+    critThreshold: 100
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 150
+    energy: 150
+  - type: OE14SkillStorage
+    freeLearnedSkills:
+    - HealingT1
+    - HealingT2
+  - type: OE14MagicEnergyPhotosynthesis
+  - type: OE14MagicEnergyDraw
+    enable: false
+  - type: Body
+    prototype: OE14Silva
+    requiredLegs: 2
+  - type: OE14AuraImprint
+    imprintColor: '#31cc3b'
+  - type: Bloodstream
+    bloodReagent: OE14BloodFlowerSap
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+    femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14BaseMobSilva
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobSilvaDummy
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.HumanoidVisualLayers.Chest
+    - map:
+      - enum.HumanoidVisualLayers.Head
+    - map:
+      - enum.HumanoidVisualLayers.Snout
+    - map:
+      - enum.HumanoidVisualLayers.Eyes
+      shader: unshaded
+    - map:
+      - enum.HumanoidVisualLayers.RArm
+    - map:
+      - enum.HumanoidVisualLayers.LArm
+    - map:
+      - enum.HumanoidVisualLayers.RLeg
+    - map:
+      - enum.HumanoidVisualLayers.LLeg
+    - shader: StencilClear
+      sprite: _OE14/Mobs/Species/Human/parts.rsi
+      state: l_leg
+    - map:
+      - enum.HumanoidVisualLayers.Tail
+    - shader: StencilMask
+      map:
+      - enum.HumanoidVisualLayers.StencilMask
+      sprite: Mobs/Customization/masking_helpers.rsi
+      state: unisex_full
+      visible: false
+    - map:
+      - enum.HumanoidVisualLayers.LFoot
+    - map:
+      - enum.HumanoidVisualLayers.RFoot
+    - map:
+      - pants
+    - map:
+      - shoes
+    - map:
+      - shirt
+    - map:
+      - enum.HumanoidVisualLayers.LHand
+    - map:
+      - enum.HumanoidVisualLayers.RHand
+    - map:
+      - enum.HumanoidVisualLayers.HeadSide
+    - map:
+      - enum.HumanoidVisualLayers.HeadTop
+    - map:
+      - gloves
+    - map:
+      - ears
+    - map:
+      - outerClothing
+    - map:
+      - cloak
+    - map:
+      - eyes
+    - map:
+      - belt
+    - map:
+      - belt2
+    - map:
+      - neck
+    - map:
+      - back
+    - map:
+      - enum.HumanoidVisualLayers.FacialHair
+    - map:
+      - enum.HumanoidVisualLayers.Hair
+    - map:
+      - mask
+    - map:
+      - head
+    - map:
+      - pocket1
+    - map:
+      - pocket2
+    - map:
+      - enum.HumanoidVisualLayers.Handcuffs
+      color: '#ffffff'
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: HumanoidAppearance
+    species: OE14Silva
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+    femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14MobSilvaDummy

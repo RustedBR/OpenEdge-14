@@ -1,0 +1,87 @@
+- type: entity
+  id: OE14ActionSpellCureBurn
+  parent: OE14ActionSpellBase
+  name: Cure burn
+  description: You heal skin damage caused by excessive cooling or heating.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 10
+  - type: OE14ActionTargetMobStatusRequired
+  - type: OE14ActionSpeaking
+    startSpeech: "Pellis dolorem..."
+    endSpeech: "non novit"
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneCureBurn
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/healing.rsi
+      state: cure_burn
+  - type: DoAfterArgs
+    delay: 1.5
+    breakOnDamage: true
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectCureBurn
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectCureBurn
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Cold: -10
+              Heat: -10
+              Shock: -10
+        - !type:Jitter
+
+- type: entity
+  id: OE14RuneCureBurn
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#79b330"
+      shader: unshaded
+    - state: double_outer
+      color: "#ed9b4a"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectCureBurn
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollHealing
+  id: OE14SpellScrollCureBurn
+  name: cure burn spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellCureBurn

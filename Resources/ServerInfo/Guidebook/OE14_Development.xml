@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+  <header>
+    <title>🛠️ Desenvolvimento</title>
+    <guidebookdata key="Development"/>
+  </header>
+
+  <section>
+    <title>Começando a Desenvolver</title>
+
+    <subsection>
+      <title>Visão Geral</title>
+      <text>
+OpenEdge 14 é um fork de Space Station 14 com foco em gameplay de sandbox, economia e roleplay em um cenário medieval.
+
+Este guia ajuda desenvolvedores a entender como o projeto funciona e como adicionar novas features.
+
+O projeto está organizado para facilitar desenvolvimento com compilação rápida e testes imediatos.
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Setup para Desenvolvedores</title>
+
+    <subsection>
+      <title>Pré-requisitos</title>
+      <text>
+- .NET 9.0 ou superior
+- Git (para versionamento)
+- Um editor (VS Code, Visual Studio recomendado)
+- 30-40GB de espaço em disco (submodules inclusos)
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Primeiros Passos</title>
+      <text>
+1. Clone o repositório:
+   git clone https://github.com/RustedBR/OpenEdge-14.git
+
+2. Inicialize submodules (IMPORTANTE):
+   git submodule update --init --recursive
+
+3. Compile em Debug:
+   dotnet build -c Debug
+
+4. Rode o servidor:
+   DOTNET_ConfigPresets="_OE14/Dev" dotnet run --project Content.Server
+
+5. Acesse em localhost:1212 com o cliente SS14
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Estrutura do Projeto</title>
+
+    <subsection>
+      <title>Pastas Principais</title>
+      <text>
+Content.Server/ - Backend (lógica do servidor)
+├── _OE14/ - Tudo específico de OpenEdge
+│   ├── Systems/ - Lógicas do jogo
+│   ├── Components/ - Propriedades das entidades
+│   └── [Features específicas]
+└── [Código compartilhado com SS14]
+
+Content.Client/ - Frontend (UI e gráficos)
+├── Interfaces visuais
+├── Aparências (sprites)
+└── Renderização
+
+Content.Shared/ - Código compartilhado entre Server e Client
+├── Components compartilhadas
+├── Enums e tipos
+└── Lógica de rede
+
+Resources/ - Assets e Configuração
+├── Prototypes/_OE14/ - Definições YAML
+│   ├── Magic/ - Spells
+│   ├── Items/ - Itens
+│   ├── Mobs/ - NPCs
+│   └── [Mais...]
+├── Maps/_OE14/ - Mapas do jogo
+├── Textures/ - Imagens e sprites
+└── ServerInfo/Guidebook/ - Documentação in-game
+
+RobustToolbox/ - Framework base (não modifique!)
+├── Compilador de engine
+├── Sistemas de rede
+├── Renderização
+└── [Fundação do jogo]
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Arquitetura do Jogo</title>
+      <text>
+OpenEdge 14 usa Entity Component System (ECS):
+
+Entity (Entidade) = Algo no mundo
+- Jogador
+- Item
+- NPC
+- Efeito visual
+
+Component (Componente) = Propriedade de uma entidade
+- HealthComponent (tem vida?)
+- ItemComponent (é um item?)
+- AIComponent (é controlado por IA?)
+- InventoryComponent (tem inventário?)
+
+System (Sistema) = Lógica que atua sobre componentes
+- HealthSystem (processa dano)
+- CombatSystem (processa combate)
+- MovementSystem (processa movimento)
+- AISystem (executa IA)
+
+Fluxo: Entidade + Componente → Sistema detecta e executa lógica
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Adicionando Features</title>
+
+    <subsection>
+      <title>Passo 1: Planeje Sua Feature</title>
+      <text>
+Decida que tipo de feature você quer adicionar:
+
+1. Novo Item?
+   - Crie arquivo YAML em Resources/Prototypes/_OE14/Items/
+   - Exemplo: Resources/Prototypes/_OE14/Items/sword_iron.yml
+
+2. Novo Sistema de Jogo?
+   - Crie classe C# em Content.Server/_OE14/Systems/
+   - Exemplo: Content.Server/_OE14/Systems/MiningSystem.cs
+
+3. Novo Job/Papel?
+   - Crie YAML em Resources/Prototypes/_OE14/Jobs/
+   - Exemplo: Resources/Prototypes/_OE14/Jobs/miner.yml
+
+4. Novo Mapa?
+   - Crie arquivo YAML em Resources/Maps/_OE14/
+   - Use template.yml como referência
+
+5. Novo NPC/Mob?
+   - Crie YAML em Resources/Prototypes/_OE14/Mobs/
+   - Combine components para criar comportamento
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Passo 2: Implemente Sua Feature</title>
+      <text>
+Exemplo - Adicionando um item simples (YAML):
+
+Crie Resources/Prototypes/_OE14/Items/meu_item.yml:
+
+- type: entity
+  id: MyNewSword
+  name: Espada Mágica
+  components:
+    - type: Sprite
+      sprite: /path/to/sprite.png
+    - type: Item
+      size: Large
+    - type: MeleeWeapon
+      damage: 20
+      attackSpeed: 0.9
+
+Exemplo - Adicionando um sistema (C#):
+
+Crie Content.Server/_OE14/Systems/MySystem.cs:
+
+public class MySystem : EntitySystem
+{
+    public override void Update(float frameTime)
+    {
+        // Lógica aqui
+        // Processa entidades com certos componentes
+    }
+}
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Passo 3: Compile e Teste</title>
+      <text>
+Depois de implementar:
+
+1. Compile:
+   dotnet build -c Debug
+
+2. Rode o servidor:
+   DOTNET_ConfigPresets="_OE14/Dev" dotnet run --project Content.Server
+
+3. Conecte no localhost:1212
+
+4. Teste sua feature:
+   - Procure seu item
+   - Teste comportamentos
+   - Verifique erros no console
+
+5. Debug se necessário:
+   - Verifique o console para erros
+   - Use breakpoints no VS Code
+   - Teste diferentes cenários
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Workflow de Desenvolvimento</title>
+
+    <subsection>
+      <title>Processo Git Recomendado</title>
+      <text>
+1. Crie uma branch para sua feature:
+   git checkout -b feature/minha-feature
+
+2. Implemente sua feature
+
+3. Teste localmente
+
+4. Commit com mensagem clara:
+   git commit -m "Adiciona novo sistema de magia"
+
+5. Push para seu fork:
+   git push origin feature/minha-feature
+
+6. Crie Pull Request no GitHub
+
+7. Code review e merge
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Boas Práticas</title>
+      <text>
+- Commits pequenos e lógicos (não tudo de uma vez)
+- Mensagens de commit descritivas em português
+- Teste sua feature antes de commitar
+- Não inclua arquivos build na commit
+- Mantenha a estrutura de pastas
+- Siga o padrão de código existente
+- Adicione comentários em código complexo
+- Documente mudanças significativas
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Sistemas Principais</title>
+
+    <subsection>
+      <title>Magic System (Sistema de Magia)</title>
+      <text>
+Localização: Resources/Prototypes/_OE14/Entities/Actions/Spells/
+
+Componentes:
+- ActionComponent - Define que é uma ação
+- InstantActionComponent - Executa imediatamente
+
+Exemplo - Novo Spell:
+
+- type: entity
+  id: MyFireballSpell
+  name: Fireball
+  components:
+    - type: InstantAction
+      event: !type:FireballEvent
+      needsTarget: true
+      cost: 50
+
+Depois implemente o evento em Content.Server/_OE14/ para definir lógica de dano.
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Crafting System (Sistema de Crafting)</title>
+      <text>
+Localização: Resources/Prototypes/_OE14/Recipes/
+
+Componentes:
+- RecipePrototype - Define receita
+- CraftingStationComponent - Define workbench
+
+Exemplo - Nova Receita:
+
+- type: recipe
+  id: IronSwordRecipe
+  name: "Iron Sword"
+  category: Smithing
+  ingredients:
+    - IronOre: 7
+    - Coal: 2
+  result: IronSword
+  duration: 30
+
+Workbenches são definidos em prototypes com CraftingStationComponent.
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Combat System (Sistema de Combate)</title>
+      <text>
+Localização: Content.Server/_OE14/Systems/CombatSystem.cs
+
+Componentes:
+- HealthComponent - Define vida máxima e atual
+- CombatComponent - Define stats de combate (STR, DEX, etc)
+- MeleeWeaponComponent - Define armas melee
+- ItemComponent - Item pode ser arma?
+
+Fluxo:
+1. Jogador ataca (tecla de ataque)
+2. CombatSystem processa o ataque
+3. Calcula dano baseado em weapon + stats
+4. Subtrai de HealthComponent do alvo
+5. Se HP = 0, alvo morre
+
+Para adicionar nova mecânica, estenda CombatSystem.
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Job System (Sistema de Jobs)</title>
+      <text>
+Localização: Resources/Prototypes/_OE14/Jobs/
+
+Componentes:
+- JobPrototype - Define job disponível
+- JobComponent - Jogador tem esse job
+
+Exemplo - Novo Job:
+
+- type: job
+  id: Alchemist
+  name: "Alquimista"
+  startingGear:
+    - PotionBottle
+    - Herbs
+  requirementRoles:
+    - Civilian
+  maxCount: 5
+
+Jobs usam o sistema de spawning para dar itens ao jogador.
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Map System (Sistema de Mapas)</title>
+      <text>
+Localização: Resources/Maps/_OE14/
+
+Formato: YAML com grid de tiles
+
+Exemplo:
+- type: grid
+  id: Comoss
+  mapPrototype: DefaultGrid
+  seed: 12345
+
+Mapas definem:
+- Estruturas (paredes, pisos)
+- Spawners (onde NPCs aparecem)
+- Pontos de interesse (lojas, casas)
+- Z-levels (andares/niveis)
+
+Use o template.yml como referência para criar novo mapa.
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Recursos &amp; Documentação</title>
+
+    <subsection>
+      <title>Referências Locais</title>
+      <text>
+- README.md - Overview do projeto
+- PROJECT_STATUS.md - Status atual do desenvolvimento
+- INVENTORY_OE14_SYSTEMS.md - Catalogação de sistemas
+- Resources/Prototypes/_OE14/ - Exemplos YAML
+- Content.Server/_OE14/ - Código de exemplo
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Documentação Oficial SS14</title>
+      <text>
+Como OpenEdge 14 é fork de Space Station 14:
+
+- https://docs.spacestation14.io/ - Documentação oficial
+- https://github.com/space-wizards/space-station-14 - Repositório base
+- C# e .NET documentation
+
+Muitas funcionalidades compartilhadas usam mesmos padrões SS14.
+      </text>
+    </subsection>
+
+    <subsection>
+      <title>Comunidade</title>
+      <text>
+GitHub: https://github.com/RustedBR/OpenEdge-14
+
+Issues: Reporte bugs e sugira features
+Discussions: Pergunte e discuta ideias
+Pull Requests: Contribua com código
+
+Junte-se ao desenvolvimento!
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Troubleshooting</title>
+
+    <subsection>
+      <title>Erros Comuns</title>
+      <text>
+Erro: "submodule not initialized"
+Solução: git submodule update --init --recursive
+
+Erro: Build falha com "CS1061: does not contain definition"
+Solução: Verifique namespaces e imports, faça rebuild completo
+
+Erro: Server não inicia, port em uso
+Solução: Mude DOTNET_ConfigPresets ou mate outro processo na porta 1212
+
+Erro: Seu item/spell não aparece
+Solução: Verifique YAML syntax, reload/restart servidor
+
+Erro: Client conecta mas nada funciona
+Solução: Verifique Content.Client e se componentes estão sincronizadas
+      </text>
+    </subsection>
+  </section>
+
+  <section>
+    <title>Próximos Passos</title>
+
+    <subsection>
+      <title>Como Começar</title>
+      <text>
+1. Setup o ambiente de desenvolvimento (siga Setup para Desenvolvedores)
+
+2. Compile e rode o servidor uma vez para verificar
+
+3. Escolha uma feature simples:
+   - Adicione um novo item (mais fácil)
+   - Modifique um job existente
+   - Crie um novo NPC
+
+4. Implemente sua feature seguindo os passos
+
+5. Teste localmente antes de commitar
+
+6. Faça commit com mensagem clara
+
+7. Considere contribuir (pull request) para melhorar o projeto
+
+Sucesso! Bem-vindo ao desenvolvimento de OpenEdge 14!
+      </text>
+    </subsection>
+  </section>
+
+</document>

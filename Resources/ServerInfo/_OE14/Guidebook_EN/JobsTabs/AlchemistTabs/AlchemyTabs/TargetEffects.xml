@@ -1,0 +1,22 @@
+<Document>
+
+# Target alchemical solutions
+
+Using combinations of thaumaturgical essences in the right proportions, you can create a variety of alchemical substances, from powerful medicines to deadly poisons:
+
+## Healing
+<GuideReagentGroupEmbed Group="OE14HealingEffect"/>
+
+## Damaging
+<GuideReagentGroupEmbed Group="OE14DamageEffect"/>
+
+## Positive
+<GuideReagentGroupEmbed Group="OE14PositiveEffect"/>
+
+## Negative
+<GuideReagentGroupEmbed Group="OE14NegativeEffect"/>
+
+## Contaminants
+<GuideReagentGroupEmbed Group="OE14SideEffect"/>
+
+</Document>

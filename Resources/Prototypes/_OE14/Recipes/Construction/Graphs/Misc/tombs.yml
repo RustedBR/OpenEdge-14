@@ -1,0 +1,24 @@
+- type: constructionGraph
+  id: OE14BaseTombstone
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14BaseTombstone
+          steps:
+            - material: OE14Stone
+              amount: 5
+              doAfter: 2
+    - node: OE14BaseTombstone
+      entity: OE14BaseTombstone
+      edges:
+      - to: start
+        steps:
+        - tool: OE14Hammering
+          doAfter: 10
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14StoneBlock1
+          amount: 5

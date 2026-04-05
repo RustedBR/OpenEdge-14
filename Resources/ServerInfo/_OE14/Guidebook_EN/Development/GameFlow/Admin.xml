@@ -1,0 +1,30 @@
+<Document>
+# Admin Tools & Commands
+
+This page describes the admin tools available for managing the server and rounds.
+
+## Common Admin Commands
+
+[bold]Round control:[/bold]
+- [mono]forcestart[/mono] — Force start the round immediately
+- [mono]endround[/mono] — End the current round
+- [mono]restartround[/mono] — Restart without waiting
+
+[bold]Player management:[/bold]
+- [mono]kick[username][/mono] — Kick a player from the server
+- [mono]ban[username][/mono] — Ban a player
+- [mono]respawn[username][/mono] — Respawn a player
+
+[bold]Entity tools:[/bold]
+- [mono]spawn[entityId][/mono] — Spawn an entity at your position
+- [mono]delete[/mono] — Delete the entity you're looking at
+
+## Admin Panel
+
+The admin panel (F7 by default) provides a GUI for common admin actions without needing console commands.
+
+## Content Under Construction
+
+Full admin tools documentation coming soon. Refer to the upstream SS14 documentation for detailed admin command reference.
+
+</Document>

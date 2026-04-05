@@ -1,0 +1,63 @@
+<Document>
+# Adding New Spells
+
+This guide explains how to create a new spell action in OpenEdge 14.
+
+## Step 1: Create the Spell Action Entity
+
+Create a prototype in [mono]Resources/Prototypes/_OE14/Magic/Spells/[/mono]:
+
+<CodeBlock>
+- type: entity
+  id: SpellMyFireball
+  name: fireball
+  noSpawn: true
+  components:
+    - type: InstantAction
+      useDelay: 2
+      icon:
+        sprite: /Textures/_OE14/Interface/Actions/spells.rsi
+        state: fireball
+    - type: OE14ActionManaCost
+      cost: 20
+    - type: OE14SpellProjectile
+      prototype: ProjectileFireball
+      speed: 20
+</CodeBlock>
+
+## Step 2: Create the Projectile (if needed)
+
+<CodeBlock>
+- type: entity
+  id: ProjectileFireball
+  components:
+    - type: Projectile
+      damage:
+        types:
+          Heat: 30
+    - type: IgniteOnCollide
+</CodeBlock>
+
+## Step 3: Add to a Skill
+
+Reference the spell in a skill prototype (see [textlink="Adding New Skills" link="OE14_DEV_Guide_Skills"]):
+
+<CodeBlock>
+- type: OE14SkillPrototype
+  id: PyromancyT3
+  grants:
+    - SpellMyFireball
+</CodeBlock>
+
+## Step 4: Test
+
+1. Learn the skill that grants the spell
+2. Equip if spell comes from an item (via OE14SpellStorage)
+3. Verify mana cost is deducted
+4. Verify effect applies correctly
+
+## Content Under Construction
+
+More detailed guide with full examples for different spell types coming soon. See [textlink="Spell Mechanics" link="OE14_DEV_Skills_Mechanics"] for the mechanics overview.
+
+</Document>

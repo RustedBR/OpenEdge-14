@@ -1,0 +1,17 @@
+- type: oe14VampireFaction
+  id: Unnameable
+  name: oe14-vampire-fraction-name-unnameable
+  factionIcon: OE14VampireUnnameable
+  singletonTeleportKey: OE14VampirePortalGlyphUnnameable
+
+- type: oe14VampireFaction
+  id: Devourers
+  name: oe14-vampire-fraction-name-devourers
+  factionIcon: OE14VampireDevourers
+  singletonTeleportKey: OE14VampirePortalGlyphDevourers
+
+- type: oe14VampireFaction
+  id: NightChildrens
+  name: oe14-vampire-fraction-name-night-childrens
+  factionIcon: OE14VampireNightChildrens
+  singletonTeleportKey: OE14VampirePortalGlyphNightChildrens

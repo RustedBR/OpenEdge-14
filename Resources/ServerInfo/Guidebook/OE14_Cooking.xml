@@ -1,0 +1,55 @@
+<Document>
+  # Cooking System
+
+  The Cooking system allows players to transform raw ingredients into delicious meals using heat sources and cooking devices.
+
+  ## How It Works
+
+  Cooking requires a [bold]cooking device[/bold] (pot, oven, cauldron) and a [bold]heat source[/bold]. Place raw ingredients into the device and apply heat.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14CookingPot" Caption="Cooking Pot"/>
+    <GuideEntityEmbed Entity="OE14Cauldron" Caption="Cauldron"/>
+  </Box>
+
+  ## Temperature System
+
+  Items transform based on the [bold]temperature[/bold] they reach:
+
+  [bold]Transformation Stages:[/bold]
+  - [bold]Raw:[/bold] Original state of ingredients
+  - [bold]Cooked:[/bold] Reaches optimal temperature (400K) — item is now edible
+  - [bold]Burnt:[/bold] Exceeds safe temperature (500K+) — item becomes inedible ash
+
+  [bold]Temperature Ranges:[/bold]
+  - 0-400K: Raw ingredients
+  - 400-500K: Cooked (edible)
+  - 500K+: Burnt (inedible, becomes trash)
+
+  ## Examples
+
+  [bold]Dough Process:[/bold]
+  1. Place dough in cooking pot
+  2. Heat to 400-500K → transforms into [textlink="Bread" link="OE14CookingRecipes"]
+  3. If heated beyond 500K → becomes Ash (trash)
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodDoughLarge" Caption="Raw Dough"/>
+    <GuideEntityEmbed Entity="OE14FoodBread" Caption="Cooked Bread"/>
+  </Box>
+
+  ## Cooking Tips
+
+  - [bold]Watch the temperature[/bold] — too low won't cook, too high burns food
+  - [bold]Different foods have different optimal temperatures[/bold]
+  - [bold]Burnt food becomes trash[/bold] — watch closely!
+  - [bold]Some recipes require specific ingredients[/bold]
+
+  See [textlink="Cooking Recipes" link="OE14CookingRecipes"] for a complete list of transformations.
+
+  ## Related Systems
+
+  - [textlink="Crafting" link="OE14Crafting"] — workbench crafting
+  - [textlink="Economy" link="OE14Economy"] — sell cooked food for profit
+
+</Document>

@@ -1,0 +1,63 @@
+<Document>
+  # Sistema de Habilidades
+
+  O Sistema de Habilidades permite que personagens se especializem em diferentes estilos de combate e magia. Cada árvore de habilidades fornece bônus e habilidades únicos.
+
+  ## Árvores de Habilidades
+
+  Árvores de habilidades definem quais habilidades um personagem pode aprender. Sua espécie determina a quais árvores você tem acesso. Por exemplo, Elfos começam com a árvore de Metamagia para aprimoramento mágico.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MetamagicT1" Caption="Metamagia Nível 1"/>
+    <GuideEntityEmbed Entity="OE14MetamagicT2" Caption="Metamagia Nível 2"/>
+  </Box>
+
+  ## Como Ganhar Pontos de Habilidade
+
+  Pontos de habilidade são a moeda para aprender novas habilidades. Existem dois tipos de pontos:
+
+  [bold]Pontos de Memória[/bold] — usados por todas as árvores padrão (Pirocinético, Cura, Metamagia, etc.). Atualmente não podem ser obtidos de itens e são concedidos apenas através de eventos especiais ou progressão.
+
+  [bold]Essência de Sangue[/bold] — usada exclusivamente pela árvore de Vampiro. Vampiros ganham pontos de Sangue por:
+  - Ser selecionado como antagonista vampiro (começa com 2 pontos de Sangue)
+  - Consumir itens de [bold]Essência de Sangue[/bold]
+  - Coletar essência de vítimas
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14BloodEssence" Caption="Essência de Sangue"/>
+  </Box>
+
+  Diferentes árvores requerem tipos de pontos diferentes. A maioria usa Memória, enquanto a árvore de Vampiro usa Sangue.
+
+  ## Aprendendo Habilidades
+
+  Abra seu menu de personagem (pressione C) e navegue até a aba de Habilidades. Habilidades disponíveis aparecem na árvore. Clique numa habilidade para aprendê-la se tiver pontos suficientes.
+
+  [bold]Requisitos:[/bold]
+  - Pontos de habilidade disponíveis (Memory para árvores padrão, Blood para Vampiro)
+  - Habilidade deve estar numa árvore disponível (determinada pela espécie)
+  - Algumas habilidades requerem pré-requisitos (habilidades anteriores na árvore)
+
+  ## Habilidades Gratuitas (Bônus de Espécie)
+
+  Algumas espécies têm habilidades inatas que são aprendidas automaticamente na criação do personagem. Essas habilidades são gratuitas e não requerem pontos de habilidade.
+
+  [bold]Exemplo:[/bold]
+  - Elfo: Metamagia T1 e T2 fornecem +1 de Inteligência cada
+  - São aplicadas automaticamente quando o personagem aparece
+
+  ## Efeitos de Habilidades
+
+  Habilidades podem fornecer vários bônus:
+  - [bold]Modificadores de Atributo:[/bold] +1 para Força, Vitalidade, Destreza ou Inteligência
+  - [bold]Habilidades Especiais:[/bold] Efeitos únicos de combate ou magia
+
+  [bold]Nota:[/bold] Modificadores de atributo de habilidades contribuem para seus atributos efetivos e podem causar overflow se empurrarem seu atributo acima de 10. Nesses casos, você recebe pontos disponíveis como bônus.
+
+  ## Sistemas Relacionados
+
+  - [textlink="Atributos" link="OE14_PT_CharacterStats"] — atributos afetados por habilidades
+  - [textlink="Combate" link="OE14_PT_Combat"] — habilidades de combate para bônus de dano
+  - [textlink="Magia" link="OE14_PT_Magic"] — habilidades de magia aprimoram conjuração
+
+</Document>

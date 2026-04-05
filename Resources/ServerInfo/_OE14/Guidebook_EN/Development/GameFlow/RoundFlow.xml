@@ -1,0 +1,40 @@
+<Document>
+# Round Flow & States
+
+A round in OpenEdge 14 goes through several states managed by the GameTicker system.
+
+## Round States
+
+<CodeBlock>
+PreRoundLobby  -> Players wait in lobby, select characters
+InRound        -> Active gameplay
+PostRound      -> Round over, results shown
+</CodeBlock>
+
+## State Transitions
+
+- [bold]PreRoundLobby -> InRound:[/bold] When enough players ready up, or admin forces start
+- [bold]InRound -> PostRound:[/bold] When win/lose condition triggers, or admin ends round
+- [bold]PostRound -> PreRoundLobby:[/bold] After delay, server resets
+
+## Listening to Round Events
+
+Systems can react to round state changes:
+
+<CodeBlock>
+private void OnRoundStart(RoundStartedEvent args)
+{
+    // Initialize systems for new round
+}
+
+private void OnRoundEnd(RoundEndedEvent args)
+{
+    // Clean up, calculate results
+}
+</CodeBlock>
+
+## Content Under Construction
+
+Full round flow documentation coming soon.
+
+</Document>

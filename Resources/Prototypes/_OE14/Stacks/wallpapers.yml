@@ -1,0 +1,63 @@
+- type: stack
+  id: OE14WallpaperBlack
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperBlack
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: black }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperGreen
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperGreen
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: green }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperPurple
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperPurple
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: purple }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperRed
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperRed
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: red }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperWhite
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperWhite
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: white }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperWhite2
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperWhite2
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: white2 }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperYellow
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperYellow
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: yellow }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperBank
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperBank
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: bank }
+  maxCount: 30
+
+- type: stack
+  id: OE14WallpaperBank2
+  name: oe14-stack-wallpaper
+  spawn: OE14WallpaperBank2
+  icon: { sprite: _OE14/Structures/Wallpaper/icons.rsi, state: bank2 }
+  maxCount: 30
+

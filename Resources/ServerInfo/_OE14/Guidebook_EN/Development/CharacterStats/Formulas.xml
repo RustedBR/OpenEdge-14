@@ -1,0 +1,48 @@
+<Document>
+# Stat Formulas & Calculations
+
+This page documents the math behind how character stats affect gameplay in OpenEdge 14.
+
+## Stat Ranges
+
+All four stats (STR, VIT, DEX, INT) use the same range:
+- [bold]Minimum:[/bold] 1
+- [bold]Maximum:[/bold] 10
+- [bold]Default (no spending):[/bold] 5
+
+## How Stats Affect Gameplay
+
+### Strength (STR)
+- Increases melee damage and carrying capacity
+- Each point above 5 adds bonus melee damage
+- Affects stamina usage in combat
+
+### Vitality (VIT)
+- Increases maximum health (MobThresholds)
+- Each point adds health to the max pool
+- Affects stamina regeneration
+
+### Dexterity (DEX)
+- Affects attack speed and dodge chance
+- DEX multiplier applied to action delays
+- Higher DEX = faster actions
+
+### Intelligence (INT)
+- Increases maximum mana (MagicEnergy)
+- Required for high-level spell casting
+- Affects spell power
+
+## Effective Stat Formula
+
+<CodeBlock>
+EffectiveStat = min(BaseStat + sum(Modifiers), MaxStat)
+</CodeBlock>
+
+Where [mono]Modifiers[/mono] is a dictionary of source -> bonus value pairs.
+
+## Content Under Construction
+
+Detailed formula documentation coming soon. For now, refer to the source:
+[mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+
+</Document>

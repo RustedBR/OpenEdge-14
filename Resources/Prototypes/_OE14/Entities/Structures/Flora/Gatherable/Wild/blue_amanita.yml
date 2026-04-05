@@ -1,0 +1,28 @@
+- type: entity
+  id: OE14GatherableBlueAmanita
+  parent: OE14GatherableBase
+  name: blue Amanita
+  description: A sky blue flower known for its medicinal and magical properties.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _OE14/Structures/Flora/Wild/blue_amanita.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+        world4: ""
+        world5: ""
+  - type: OE14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: !type:GroupSelector
+        children:
+        - id: OE14BlueAmanita
+

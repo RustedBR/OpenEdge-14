@@ -1,0 +1,158 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: OE14ClothingMaskBase
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Clothing
+    equipDelay: 0.7
+    unequipDelay: 0.4
+    slots:
+    - mask
+  localizationId: ent-OE14ClothingMaskBase
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskSinner
+  name: sinner's mask
+  description: A mask intented to be worn by not the brightest individuals. Executioners
+    put them on themselves and the victim before execution.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/sinner.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/sinner.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  localizationId: ent-OE14ClothingMaskSinner
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskSteelMask
+  name: steel mask
+  description: A steel mask that protects the face from the external effects of iron.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/steel_mask.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/steel_mask.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 20
+  localizationId: ent-OE14ClothingMaskSteelMask
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskNeckerchief
+  name: neckerchief
+  description: It hides your face to the best of its ability.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/neckerchief.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/neckerchief.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  localizationId: ent-OE14ClothingMaskNeckerchief
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskRedNeckerchief
+  name: red neckerchief
+  description: It hides your face to the best of its ability.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/red_neckerchief.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/red_neckerchief.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  localizationId: ent-OE14ClothingMaskRedNeckerchief
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskGreenNeckerchief
+  name: green neckerchief
+  description: It hides your face to the best of its ability.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/green_neckerchief.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/green_neckerchief.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  localizationId: ent-OE14ClothingMaskGreenNeckerchief
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskBoneMask
+  name: bone mask
+  description: An enchanted mask formerly belonging to a magical creature.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/bone_mask.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/bone_mask.rsi
+  - type: IdentityBlocker
+  - type: AddAccentClothing
+    accent: ReplacementAccent
+    replacement: oe14skeleton
+  localizationId: ent-OE14ClothingMaskBoneMask
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskBoneHornedMask
+  name: horned bone mask
+  description: A bone mask of some kind of animal.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/horned_bone_mask.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/horned_bone_mask.rsi
+  - type: IdentityBlocker
+  - type: AddAccentClothing
+    accent: ReplacementAccent
+    replacement: oe14skeleton
+  localizationId: ent-OE14ClothingMaskBoneHornedMask
+- type: entity
+  parent: OE14ClothingMaskBoneMask
+  id: OE14ClothingMaskBoneMaskMind
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: BlockMovement
+  - type: Actions
+  - type: Emoting
+  - type: DoAfter
+  - type: SkeletonAccent
+  - type: Speech
+    speechVerb: Skeleton
+  - type: Vocal
+    sounds:
+      Male: Skeleton
+      Female: Skeleton
+      Unsexed: Skeleton
+  - type: Organ
+  - type: Brain
+  - type: Tag
+    tags:
+    - MindTransferTarget
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: OE14ClothingMaskBoneMask
+      amount: 1
+  localizationId: ent-OE14ClothingMaskBoneMaskMind
+- type: entity
+  parent: OE14ClothingMaskBase
+  id: OE14ClothingMaskMime
+  name: mask of silence
+  description: '...'
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/mime_mask.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Masks/mime_mask.rsi
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  localizationId: ent-OE14ClothingMaskMime

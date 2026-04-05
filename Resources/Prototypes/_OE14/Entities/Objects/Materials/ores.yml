@@ -1,0 +1,252 @@
+- type: entity
+  id: OE14OreCopper1
+  parent: BaseItem
+  name: copper ore
+  description: A piece of pale, heavy copper.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/copper_ore.rsi
+    layers:
+    - state: ore1
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14OreCopper
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 2
+  localizationId: ent-OE14OreCopper1
+- type: entity
+  id: OE14OreCopper5
+  parent: OE14OreCopper1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14OreCopper5
+- type: entity
+  id: OE14OreCopper10
+  parent: OE14OreCopper1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14OreCopper10
+- type: entity
+  id: OE14OreIron1
+  parent: BaseItem
+  name: iron ore
+  description: A piece of cold, heavy iron.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/iron_ore.rsi
+    layers:
+    - state: ore1
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14OreIron
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 2
+  localizationId: ent-OE14OreIron1
+- type: entity
+  id: OE14OreIron5
+  parent: OE14OreIron1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14OreIron5
+- type: entity
+  id: OE14OreIron10
+  parent: OE14OreIron1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14OreIron10
+- type: entity
+  id: OE14OreGold1
+  parent: BaseItem
+  name: gold ore
+  description: A piece of soft, pure gold.
+  categories:
+  - ForkFiltered
+  - DoNotMap
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/gold_ore.rsi
+    layers:
+    - state: ore1
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14OreGold
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 2
+  localizationId: ent-OE14OreGold1
+- type: entity
+  id: OE14OreGold5
+  parent: OE14OreGold1
+  categories:
+  - DoNotMap
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14OreGold5
+- type: entity
+  id: OE14OreGold10
+  parent: OE14OreGold1
+  categories:
+  - DoNotMap
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14OreGold10
+- type: entity
+  id: OE14OreMithril1
+  parent: BaseItem
+  name: mithril ore
+  description: A piece of enchanted, pure mithril.
+  categories:
+  - ForkFiltered
+  - DoNotMap
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/mithril_ore.rsi
+    layers:
+    - state: ore1
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14OreMithril
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Mithril: 2
+  localizationId: ent-OE14OreMithril1
+- type: entity
+  id: OE14OreMithril5
+  parent: OE14OreMithril1
+  categories:
+  - DoNotMap
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14OreMithril5
+- type: entity
+  id: OE14OreMithril10
+  parent: OE14OreMithril1
+  categories:
+  - DoNotMap
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14OreMithril10
+- type: entity
+  id: OE14OreCoal1
+  parent: BaseItem
+  name: coal
+  description: This is coal! It burns very well!
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/coal_ore.rsi
+    layers:
+    - state: ore1
+      map:
+      - base
+  - type: Tag
+    tags:
+    - OE14FireplaceFuel
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 30
+    damage:
+      types:
+        Heat: 2
+  - type: Appearance
+  - type: Stack
+    stackType: OE14OreCoal
+    count: 1
+    baseLayer: base
+    layerStates:
+    - ore1
+    - ore2
+    - ore3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14OreCoal: 2
+  localizationId: ent-OE14OreCoal1
+- type: entity
+  id: OE14OreCoal5
+  parent: OE14OreCoal1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14OreCoal5
+- type: entity
+  id: OE14OreCoal10
+  parent: OE14OreCoal1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14OreCoal10

@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseItem
+  id: OE14Lighter
+  name: flint and steel
+  description: Setting things on fire
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _OE14/Objects/Tools/flint.rsi
+    state: icon
+  - type: OE14DelayedIgnitionSource
+    enabled: true
+  - type: Tag
+    tags:
+    - OE14Lighter
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Stone: 20
+      OE14Iron: 10
+  localizationId: ent-OE14Lighter

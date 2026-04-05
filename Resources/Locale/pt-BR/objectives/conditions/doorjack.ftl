@@ -1,0 +1,2 @@
+objective-condition-doorjack-title = Violar {$count} portas na estação.
+objective-condition-doorjack-description = Suas luvas podem abrir as portas com um chip. Faça isso em {$count} portas na estação.

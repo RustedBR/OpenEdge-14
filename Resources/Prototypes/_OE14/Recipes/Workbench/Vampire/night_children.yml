@@ -1,0 +1,30 @@
+- type: OE14Recipe
+  id: OE14ClothingMaskVampireVoiceNightChildrens
+  tag: OE14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateNightChildrens
+  requirements:
+  - !type:StackResource
+    stack: OE14ThinLeather
+    count: 2
+  result: OE14ClothingMaskVampireVoiceNightChildrens
+  resultCount: 1
+
+- type: OE14Recipe
+  id: OE14ClothingCloakVampireNightChildrens
+  tag: OE14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateNightChildrens
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 4
+  - !type:StackResource
+    stack: OE14BloodEssence
+    count: 1
+  result: OE14ClothingCloakVampireNightChildrens
+  resultCount: 1

@@ -1,0 +1,51 @@
+# Back
+
+- type: loadoutGroup
+  id: OE14GeneralVillagerBackCargo
+  name: oe14-loadout-general-villager-back-cargo
+  loadouts:
+  - OE14ClothingBackBackpackT2
+  - OE14ClothingBackBackpackCargo
+  - OE14ClothingBackSatchelT2
+#  - OE14ClothingBackExplorerBackpackT2
+
+- type: loadout
+  id: OE14ClothingBackBackpackT2
+  equipment:
+    back: OE14ClothingBackBackpackT2
+
+- type: loadout
+  id: OE14ClothingBackBackpackCargo
+  equipment:
+    back: OE14ClothingBackBackpackCargo
+
+- type: loadout
+  id: OE14ClothingBackSatchelT2
+  equipment:
+    back: OE14ClothingBackSatchelT2
+
+# - type: loadout
+#   id: OE14ClothingBackExplorerBackpackT2
+#   equipment:
+#     back: OE14ClothingBackExplorerBackpackT2
+
+
+- type: loadoutGroup
+  id: OE14GeneralVillagerBackReinforced
+  name: oe14-loadout-general-villager-back-reinforced
+  loadouts:
+  - OE14ClothingBackBackpackT2
+  - OE14ClothingBackBackpackReinforced
+  - OE14ClothingBackSatchelT2
+  - OE14ClothingBackSatchelReinforced
+#  - OE14ClothingBackExplorerBackpackT2
+
+- type: loadout
+  id: OE14ClothingBackBackpackReinforced
+  equipment:
+    back: OE14ClothingBackBackpackReinforced
+
+- type: loadout
+  id: OE14ClothingBackSatchelReinforced
+  equipment:
+    back: OE14ClothingBackSatchelReinforced

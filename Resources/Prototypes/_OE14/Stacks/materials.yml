@@ -1,0 +1,153 @@
+- type: stack
+  id: OE14Dirt
+  name: oe14-stack-dirt-block
+  spawn: OE14DirtBlock1
+  icon: { sprite: _OE14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14Stone
+  name: oe14-stack-stone-block
+  spawn: OE14StoneBlock1
+  icon: { sprite: _OE14/Objects/Materials/stone_block.rsi, state: stone_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14MarbleStone
+  name: oe14-stack-marble-block
+  spawn: OE14MarbleBlock1
+  icon: { sprite: _OE14/Objects/Materials/marble_block.rsi, state: stone_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14WoodenPlanks
+  name: oe14-stack-wood-planks
+  spawn: OE14WoodenPlanks1
+  icon: { sprite: _OE14/Objects/Materials/wood.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
+  id: OE14BirchWoodenPlanks
+  name: oe14-stack-wood-planks-birch
+  spawn: OE14BirchWoodenPlanks1
+  icon: { sprite: _OE14/Objects/Materials/wood_birch.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
+  id: OE14LucensWoodenPlanks
+  name: oe14-material-lucens-planks
+  spawn: OE14LucensWoodenPlanks1
+  icon: { sprite: _OE14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
+  id: OE14SpruceWoodenPlanks
+  name: oe14-material-spruce-planks
+  spawn: OE14SpruceWoodenPlanks1
+  icon: { sprite: _OE14/Objects/Materials/wood_spruce.rsi, state: planks_2 }
+  maxCount: 20
+
+- type: stack
+  id: OE14Cloth
+  name: oe14-stack-cloth
+  spawn: OE14Cloth1
+  icon: { sprite: _OE14/Objects/Materials/cloth.rsi, state: cloth_3 }
+  maxCount: 10
+
+- type: stack
+  id: OE14CopperBar
+  name: oe14-stack-copper-bars
+  spawn: OE14CopperBar1
+  icon: { sprite: _OE14/Objects/Materials/copper_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14IronBar
+  name: oe14-stack-iron-bars
+  spawn: OE14IronBar1
+  icon: { sprite: _OE14/Objects/Materials/iron_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14BrassBar
+  name: oe14-stack-brass-bars
+  spawn: OE14BrassBar1
+  icon: { sprite: _OE14/Objects/Materials/brass_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14GoldBar
+  name: oe14-stack-gold-bars
+  spawn: OE14GoldBar1
+  icon: { sprite: _OE14/Objects/Materials/gold_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14MithrilBar
+  name: oe14-stack-mithril-bars
+  spawn: OE14MithrilBar1
+  icon: { sprite: _OE14/Objects/Materials/mithril_bar.rsi, state: bar_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14GlassSheet
+  name: oe14-stack-glass-sheet
+  spawn: OE14GlassSheet1
+  icon: { sprite: _OE14/Objects/Materials/glass.rsi, state: glass_2 }
+  maxCount: 10
+
+- type: stack
+  id: OE14FloraMaterial
+  name: oe14-stack-flora
+  icon: { sprite: "_OE14/Objects/Materials/flora.rsi", state: grass_material1 }
+  spawn: OE14FloraMaterial1
+  maxCount: 10
+
+- type: stack
+  id: OE14Compost
+  name: oe14-stack-compost
+  icon: { sprite: "_OE14/Objects/Materials/compost.rsi", state: compost2 }
+  spawn: OE14CompostMaterial1
+  maxCount: 10
+
+- type: stack
+  id: OE14Ash
+  name: oe14-stack-ash-pile
+  icon: { sprite: "_OE14/Objects/Materials/ash.rsi", state: ash_1 }
+  spawn: OE14Ash1
+  maxCount: 10
+
+- type: stack
+  id: OE14ThinLeather
+  name: oe14-stack-hide-thin
+  icon: { sprite: "_OE14/Objects/Ingredients/hide.rsi", state: thin_hide1 }
+  spawn: OE14ThinLeather1
+  maxCount: 5
+
+- type: stack
+  id: OE14Leather
+  name: oe14-stack-hide
+  icon: { sprite: "_OE14/Objects/Ingredients/hide.rsi", state: hide1 }
+  spawn: OE14Leather1
+  maxCount: 5
+
+- type: stack
+  id: OE14RuggedLeather
+  name: oe14-stack-hide-rugged
+  icon: { sprite: "_OE14/Objects/Ingredients/hide.rsi", state: rugged_hide1 }
+  spawn: OE14RuggedLeather1
+  maxCount: 5
+
+- type: stack
+  id: OE14BloodEssence
+  name: oe14-stack-blood-essence
+  icon: { sprite: "_OE14/Objects/Materials/blood_essence.rsi", state: drop }
+  spawn: OE14BloodEssence
+  maxCount: 10
+
+- type: stack
+  id: OE14Bone
+  name: oe14-stack-bones-pile
+  icon: { sprite: _OE14/Objects/Materials/bones.rsi, state: bone_1 }
+  spawn: OE14Bone1
+  maxCount: 10

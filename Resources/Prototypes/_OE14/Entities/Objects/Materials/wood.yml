@@ -1,0 +1,308 @@
+- type: entity
+  id: OE14WoodLog
+  parent: BaseItem
+  name: wooden log
+  description: A piece of unprocessed wood. Good material for building, or starting a fire.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,2 # 2x3
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Tag
+    tags:
+    - OE14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 10
+    damage:
+      types:
+        Heat: 1
+  - type: Log
+    spawnedPrototype: OE14WoodenPlanks1
+    spawnCount: 3
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 30
+
+- type: entity
+  id: OE14WoodenPlanks1
+  parent: BaseItem
+  name: wooden planks
+  description: Treated and ready-to-use wood.
+  categories: [ ForkFiltered ]
+  suffix: 1
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Tag
+    tags:
+    - OE14FireplaceFuel
+    - Wooden
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    cP14FireplaceFuel: 8
+    damage:
+      types:
+        Heat: 1
+  - type: Appearance
+  - type: Stack
+    stackType: OE14WoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 10
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: OE14WoodenPlanks10
+  parent: OE14WoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: OE14WoodenPlanks20
+  parent: OE14WoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
+
+# Lucen
+
+- type: entity
+  id: OE14LucensWoodLog
+  parent: OE14WoodLog
+  name: lucens log
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood_lucens.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Log
+    spawnedPrototype: OE14LucensWoodenPlanks1
+    spawnCount: 3
+  - type: PhysicalComposition
+    materialComposition:
+      OE14LucensWoodenPlanks: 30
+
+- type: entity
+  id: OE14LucensWoodenPlanks1
+  parent: OE14WoodenPlanks1
+  name: lucens planks
+  suffix: 1
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood_lucens.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Stack
+    stackType: OE14LucensWoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+  - type: PhysicalComposition
+    materialComposition:
+      OE14LucensWoodenPlanks: 10
+
+- type: entity
+  id: OE14LucensWoodenPlanks10
+  parent: OE14LucensWoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: OE14LucensWoodenPlanks20
+  parent: OE14LucensWoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
+
+#Birch
+
+- type: entity
+  id: OE14BirchWoodLog
+  parent: OE14WoodLog
+  name: birch log
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood_birch.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Log
+    spawnedPrototype: OE14BirchWoodenPlanks1
+    spawnCount: 3
+
+- type: entity
+  id: OE14BirchWoodenPlanks1
+  parent: OE14WoodenPlanks1
+  name: birch planks
+  suffix: 1
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood_birch.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Stack
+    stackType: OE14BirchWoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+
+- type: entity
+  id: OE14BirchWoodenPlanks10
+  parent: OE14BirchWoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: OE14BirchWoodenPlanks20
+  parent: OE14BirchWoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20
+
+#Spruce
+
+- type: entity
+  id: OE14SpruceWoodLog
+  parent: OE14WoodLog
+  name: spruce log
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood_spruce.rsi
+    layers:
+      - state: log
+        map: ["random"]
+  - type: RandomSprite
+    available:
+      - random:
+          log: ""
+          log_2: ""
+          log_3: ""
+  - type: Log
+    spawnedPrototype: OE14SpruceWoodenPlanks1
+    spawnCount: 3
+
+- type: entity
+  id: OE14SpruceWoodenPlanks1
+  parent: OE14WoodenPlanks1
+  name: spruce planks
+  suffix: 1
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/wood_spruce.rsi
+    layers:
+      - state: planks
+        map: ["base"]
+  - type: Stack
+    stackType: OE14SpruceWoodenPlanks
+    count: 1
+    baseLayer: base
+    layerStates:
+    - planks
+    - planks_2
+    - planks_3
+
+- type: entity
+  id: OE14SpruceWoodenPlanks10
+  parent: OE14SpruceWoodenPlanks1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  id: OE14SpruceWoodenPlanks20
+  parent: OE14SpruceWoodenPlanks1
+  suffix: 20
+  components:
+  - type: Stack
+    count: 20

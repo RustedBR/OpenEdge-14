@@ -1,0 +1,146 @@
+<Document>
+# Cooking Guide
+
+Cooking is one of the most important skills for an Innkeeper. You'll transform raw ingredients into delicious meals to serve guests and make profit.
+
+## What You'll Work With
+
+As an Innkeeper, you'll need various tools and ingredients to prepare meals.
+
+### Cookware & Utensils
+
+<Box>
+<GuideEntityEmbed Entity="OE14PlateWooden"/>
+<GuideEntityEmbed Entity="OE14BowlWooden"/>
+<GuideEntityEmbed Entity="OE14Spoon"/>
+<GuideEntityEmbed Entity="OE14WeaponDaggerHatchet"/>
+</Box>
+
+### Cooking Equipment
+
+<Box>
+<GuideEntityEmbed Entity="OE14FryingPan"/>
+<GuideEntityEmbed Entity="OE14CookingPot"/>
+<GuideEntityEmbed Entity="OE14Cauldron"/>
+</Box>
+
+### Heat Sources
+
+<Box>
+<GuideEntityEmbed Entity="OE14Furnace"/>
+<GuideEntityEmbed Entity="OE14WoodenPlanks20"/>
+<GuideEntityEmbed Entity="OE14Lighter"/>
+</Box>
+
+### Basic Ingredients
+
+<Box>
+<GuideEntityEmbed Entity="OE14Wheat"/>
+<GuideEntityEmbed Entity="OE14FoodPepper"/>
+<GuideEntityEmbed Entity="OE14FoodApple"/>
+<GuideEntityEmbed Entity="OE14FoodOnion"/>
+</Box>
+
+## Temperature System
+
+The cooking system uses temperature to transform raw ingredients into cooked food.
+
+- [bold]0-400K:[/bold] Raw ingredients
+- [bold]400-500K:[/bold] Cooked (edible)
+- [bold]500K+:[/bold] Burnt (inedible, becomes trash)
+
+### Tips
+
+- Use the [color=#ffa500]Fire Creation[/color] spell instead of wood for clean, cost-effective heating
+- Use the [color=#ffa500]Heat[/color] spell to instantly cook food without fuel costs
+
+## Simple Transformations
+
+These items transform automatically when heated to 400K:
+
+| Input | Output | Temperature |
+|-------|--------|-------------|
+| Large Dough | Bread | 400K |
+| Raw Lamb Meat | Cooked Lamb | 400K |
+| Raw Egg | Cooked Egg | 400K |
+
+## Meal Recipes
+
+Meals are prepared at a [textlink="Cooking Workbench" link="OE14Crafting"] using ingredient tags.
+
+### 1 Ingredient
+
+| Recipe | Required Tags |
+|--------|---------------|
+| Green Salad | Salad + Vegetable |
+| Meat Plate | Meat + Meat Slice |
+| Bread Plate | Dough |
+| Mashed Potato | Potato |
+
+### 2 Ingredients
+
+| Recipe | Required Tags |
+|--------|---------------|
+| Green Salad with Meat | Salad+Vegetable, Meat |
+| Monster Egg | Egg, Monster Meat |
+| Mashed Potato with Meat | Potato, Meat |
+| Mashed Potato Salad | Potato, Salad+Vegetable |
+| Cheese Bread | Dough, Cheese |
+
+### 3 Ingredients
+
+| Recipe | Required Tags |
+|--------|---------------|
+| Zellasian Breakfast | Egg, Dough, Meat |
+| Stuffed Potato | Meat Slice, Cheese, Potato |
+
+### 4 Ingredients
+
+| Recipe | Required Tags |
+|--------|---------------|
+| Ham in Cheese | Pig Meat, Leg Meat, Cheese, Salad |
+
+## Soup Recipes
+
+Soups require Water (20 units) plus ingredients in a cooking pot.
+
+### 2 Ingredients (Water + 1 Tag)
+
+| Recipe | Required Tags |
+|--------|---------------|
+| Meat Soup | Meat |
+| Cheese Soup | Cheese |
+| Pumpkin Puree | Pumpkin |
+
+### 3 Ingredients (Water + 2 Tags)
+
+| Recipe | Required Tags |
+|--------|---------------|
+| Vegetable Soup | Salad+Vegetable (no Meat) |
+| Meat & Cheese Soup | Meat, Cheese |
+| Meat & Salad Soup | Meat, Salad+Vegetable |
+| Monster Brew | Monster Meat, Egg |
+
+## Pie Recipes
+
+Pies are prepared in a pie pan on the workbench.
+
+| Recipe | Required Tags |
+|--------|---------------|
+| Vegetable Pie | Salad + Vegetable |
+| Meat Pie | Meat + Meat Slice |
+| Pumpkin Pie | Pumpkin |
+
+## Tips & Tricks
+
+- Watch the temperature — cooking is automatic once correct temperature is reached
+- Use appropriate heat sources — too much heat burns, too little doesn't cook
+- Use spells — Fire Creation and Heat spells make cooking much easier
+- Stock up on plates and bowls — meals must be served on appropriate dishes
+
+## Related Pages
+
+- [textlink="Crafting" link="OE14Crafting"] — create cooking tools and workbenches
+- [textlink="Magic" link="OE14Magic"] — use spells to enhance cooking
+- [textlink="Economy" link="OE14Economy"] — sell cooked food for profit
+</Document>

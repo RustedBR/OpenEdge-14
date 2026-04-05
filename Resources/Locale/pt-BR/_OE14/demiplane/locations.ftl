@@ -1,0 +1,9 @@
+oe14-demiplane-location-cave = Cavernas
+oe14-demiplane-location-cave-grass = Cavernas cobertas de vegetação
+oe14-demiplane-location-cave-magma = Cavernas flamejantes
+oe14-demiplane-location-grassland-island = Ilha Verde
+oe14-demiplane-location-ice-cave = Cavernas de gelo
+oe14-demiplane-location-snow-island = Ilha nevada
+oe14-demiplane-location-leaf-maze = Labirinto de folhas
+oe14-demiplane-location-wastelands = Terras abandonadas
+oe14-demiplane-location-mushroom-caves = Cavernas de cogumelos

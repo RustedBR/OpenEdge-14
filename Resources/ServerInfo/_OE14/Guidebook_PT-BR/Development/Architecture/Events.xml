@@ -1,0 +1,339 @@
+<Document>
+# Sistema de Eventos
+
+O Sistema de Eventos é como diferentes sistemas se comunicam sem estarem fortemente coupled. Um sistema emite um evento, e outros sistemas ouvem e reagem.
+
+## Por Que Eventos?
+
+### Sem Eventos (Acoplamento Apertado)
+<CodeBlock>
+// Ruim: CombatSystem chama diretamente HealthSystem
+var health = _entityManager.GetComponent<HealthComponent>(target);
+health.Health -= damage;
+
+// Agora CombatSystem depende de HealthSystem
+// Se HealthSystem mudar, CombatSystem pode quebrar
+// Difícil testar CombatSystem em isolamento
+</CodeBlock>
+
+### Com Eventos (Acoplamento Fraco)
+<CodeBlock>
+// Bom: CombatSystem emite evento
+var damageEvent = new DamageEvent(target, damage);
+RaiseLocalEvent(target, damageEvent);
+
+// HealthSystem ouve DamageEvent
+// CombatSystem não sabe ou se importa quem ouve
+// Fácil adicionar novos ouvintes sem mudar CombatSystem
+</CodeBlock>
+
+## Como Eventos Funcionam
+
+<CodeBlock>
+Sistema A emite:
+   |
+DamageEvent criado
+   |
+Todos os ouvintes são chamados:
+   - HealthSystem ouve -> Aplica dano
+   - AudioSystem ouve -> Toca som de hit
+   - ParticleSystem ouve -> Mostra efeito de sangue
+   - StatusEffectSystem ouve -> Aplica sangramento
+   |
+Processamento de evento completo
+</CodeBlock>
+
+Cada sistema faz seu trabalho, independentemente.
+
+## Criando um Evento
+
+<CodeBlock>
+// Em Content.Shared/_OE14/Events/
+public sealed class DamageEvent : EntityEventArgs
+{
+    public EntityUid Target { get; }
+    public int Damage { get; }
+    public EntityUid? Source { get; }
+
+    public DamageEvent(EntityUid target, int damage, EntityUid? source = null)
+    {
+        Target = target;
+        Damage = damage;
+        Source = source;
+    }
+}
+</CodeBlock>
+
+Eventos são containers de dados simples que guardam informação sobre o que aconteceu.
+
+## Levantando (Emitindo) um Evento
+
+<CodeBlock>
+public class CombatSystem : EntitySystem
+{
+    [Dependency] private readonly EntityManager _entityManager = default!;
+
+    public void AttackEnemy(EntityUid attacker, EntityUid target, int damage)
+    {
+        // Calcula dano real
+        int actualDamage = CalculateDamage(attacker, target, damage);
+
+        // Emite evento
+        var damageEvent = new DamageEvent(target, actualDamage, attacker);
+        RaiseLocalEvent(target, damageEvent);
+
+        // Restante da lógica de ataque
+    }
+}
+</CodeBlock>
+
+[mono]RaiseLocalEvent(entity, event)[/mono] diz ao framework: "Ei, algo aconteceu com esta entidade!"
+
+## Ouvindo Eventos
+
+<CodeBlock>
+public class HealthSystem : EntitySystem
+{
+    [Dependency] private readonly EntityManager _entityManager = default!;
+
+    // Este método é chamado quando DamageEvent é levantado
+    private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+    {
+        // Aplica dano
+        entity.Comp.Health -= args.Damage;
+
+        // Para se a vida foi negativa
+        if (entity.Comp.Health <= 0)
+            entity.Comp.Health = 0;
+    }
+}
+</CodeBlock>
+
+O framework automaticamente chama [mono]OnDamage[/mono] sempre que DamageEvent é levantado.
+
+## Convenção de Nomeação de Manipuladores de Eventos
+
+Métodos manipuladores seguem um padrão:
+<CodeBlock>
+private void On<EventName>(<Entity>, ref <EventName>)
+{
+    // Manipula o evento
+}
+</CodeBlock>
+
+Exemplos:
+- [mono]OnDamage[/mono] para DamageEvent
+- [mono]OnDeath[/mono] para DeathEvent
+- [mono]OnSpellCast[/mono] para SpellCastEvent
+
+## Múltiplos Sistemas Ouvindo
+
+Múltiplos sistemas podem ouvir o mesmo evento:
+
+<CodeBlock>
+// Em HealthSystem
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    entity.Comp.Health -= args.Damage;
+}
+
+// Em AudioSystem
+private void OnDamage(Entity<AudioComponent> entity, ref DamageEvent args)
+{
+    PlaySound("hit.wav");
+}
+
+// Em ParticleSystem
+private void OnDamage(Entity<SpriteComponent> entity, ref DamageEvent args)
+{
+    ShowBloodEffect(entity);
+}
+
+// Em StatusEffectSystem
+private void OnDamage(Entity<StatusEffectComponent> entity, ref DamageEvent args)
+{
+    if (args.Damage > 20)
+        ApplyStatusEffect(entity, "Bleeding");
+}
+</CodeBlock>
+
+Quando DamageEvent é levantado:
+1. HealthSystem aplica dano
+2. AudioSystem toca som
+3. ParticleSystem mostra efeito
+4. StatusEffectSystem aplica sangramento
+
+Todos independentemente!
+
+## Propagação de Eventos
+
+Eventos se propagam através da hierarquia de entidades:
+
+<CodeBlock>
+Entidade filha recebe dano
+   |
+OnDamage chamado para filha
+   |
+Evento sobe para pai
+   |
+OnDamage chamado para pai
+   |
+Evento continua subindo
+</CodeBlock>
+
+Você pode parar a propagação:
+<CodeBlock>
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    entity.Comp.Health -= args.Damage;
+    args.Handled = true;  // <- Para propagação
+}
+</CodeBlock>
+
+## Performance de Eventos
+
+Eventos são muito eficientes:
+- Zero alocação para manipuladores de eventos (usa ponteiros de método)
+- Eventos processados imediatamente (sem fila)
+- Lookup de manipulador é O(1) com cache
+
+Seguro para levantar centenas de eventos por frame!
+
+## Exemplo Real: Fluxo de Combate
+
+<CodeBlock>
+// CombatSystem levanta evento
+public void AttackEnemy(EntityUid attacker, EntityUid target)
+{
+    int baseDamage = 20;
+    int actualDamage = CalculateModifiers(attacker, baseDamage);
+
+    var damageEvent = new DamageEvent(target, actualDamage, attacker);
+    RaiseLocalEvent(target, damageEvent);
+}
+
+// HealthSystem ouve
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    entity.Comp.Health -= args.Damage;
+
+    if (entity.Comp.Health <= 0)
+    {
+        var deathEvent = new DeathEvent(args.Source);
+        RaiseLocalEvent(entity, deathEvent);  // Encadeia eventos!
+    }
+}
+
+// DeathSystem ouve
+private void OnDeath(Entity<ActorComponent> entity, ref DeathEvent args)
+{
+    RemoveEntity(entity);
+}
+
+// LootSystem ouve
+private void OnDeath(Entity<LootableComponent> entity, ref DeathEvent args)
+{
+    DropLoot(entity);
+}
+
+// AudioSystem ouve
+private void OnDeath(Entity<AudioComponent> entity, ref DeathEvent args)
+{
+    PlaySound("death.wav");
+}
+</CodeBlock>
+
+Um único ataque desencadeia múltiplas reações através de eventos!
+
+## Eventos Filtrados
+
+Eventos podem ser filtrados para componentes específicos:
+
+<CodeBlock>
+// Apenas chama isso se entidade tem HealthComponent
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    // Apenas entidades com HealthComponent chegam aqui
+}
+
+// Apenas chama se entidade tem ArmorComponent
+private void OnDamage(Entity<ArmorComponent> entity, ref DamageEvent args)
+{
+    // Reduz dano baseado na armadura
+    args.Damage *= (1 - entity.Comp.ArmorRating);
+}
+</CodeBlock>
+
+Framework automaticamente chama o manipulador certo baseado no componente!
+
+## Eventos Direcionados vs Broadcast
+
+### Direcionado (Para Uma Entidade)
+<CodeBlock>
+RaiseLocalEvent(entity, new DamageEvent(...));  // Apenas esta entidade recebe
+</CodeBlock>
+
+### Broadcast (Para Todos)
+<CodeBlock>
+RaiseLocalEvent(new GlobalEventArgs());  // Todos os sistemas recebem
+</CodeBlock>
+
+A maioria dos eventos são direcionados a uma entidade específica.
+
+## Melhores Práticas
+
+[bold]FAÇA:[/bold]
+- Emita eventos para mudanças importantes
+- Deixe múltiplos sistemas ouvirem independentemente
+- Nomeie eventos claramente (DamageEvent, DeathEvent, etc.)
+- Mantenha dados de eventos mínimos e relevantes
+- Encadeie eventos quando necessário (morte desencadeia loot drop)
+
+[bold]NÃO FAÇA:[/bold]
+- Crie payloads de eventos enormes (network eficientemente)
+- Tenha eventos chamando de volta no emissor (lógica circular)
+- Emita eventos a cada frame para dados contínuos (use componentes)
+- Faça sistemas dependerem da ordem de eventos
+
+## Exemplos de Eventos no OpenEdge
+
+[bold]DamageEvent[/bold] — emitido por CombatSystem, ouvido por HealthSystem, StatusEffectSystem, AudioSystem
+
+[bold]DeathEvent[/bold] — emitido por HealthSystem, ouvido por LootSystem, AudioSystem, UISystem
+
+[bold]SpellCastEvent[/bold] — emitido por SpellSystem, ouvido por ManaSystem, AudioSystem, ParticleSystem
+
+[bold]ItemPickupEvent[/bold] — emitido por InventorySystem, ouvido por AudioSystem, UISystem
+
+[bold]StatModifierEvent[/bold] — emitido por CharacterStatsSystem, ouvido por UISystem, ValidationSystem
+
+## Debugando Eventos
+
+### Problema: Manipulador não sendo chamado
+1. Verificar: O método manipulador está nomeado como [mono]On[EventName][/mono]?
+2. Verificar: Ele aceita [mono]Entity\<ComponentType\>[/mono] e [mono]ref EventType[/mono]?
+3. Verificar: O evento está sendo realmente levantado com [mono]RaiseLocalEvent[/mono]?
+
+### Problema: Evento chamado duas vezes
+1. Verificar: Múltiplos sistemas estão manipulando o mesmo evento?
+2. Verificar: Evento está sendo levantado duas vezes?
+3. Verificar: Propagação está desabilitada ([mono]args.Handled = true[/mono])?
+
+## Navegação
+
+- Quer comunicar entre sistemas? Use eventos
+- Precisa prevenir trapaça? Valide em manipuladores de eventos
+- Quer adicionar um novo sistema? Ouça eventos relevantes
+- Debugando uma mecânica? Verifique quais eventos estão sendo levantados
+
+## Resumo
+
+- [bold]Eventos[/bold] desacoplam sistemas
+- [bold]RaiseLocalEvent[/bold] emite um evento
+- [bold]Método On[EventName][/mono] manipulador[/bold] manipula eventos
+- [bold]Múltiplos ouvintes[/bold] reagem independentemente
+- [bold]Muito eficiente[/bold] mesmo em alta frequência
+
+Eventos são a espinha dorsal de comunicação do OpenEdge 14!
+
+</Document>

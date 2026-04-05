@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  parent: OE14BaseMobHuman
+  id: OE14MobHuman
+  localizationId: ent-OE14MobHuman

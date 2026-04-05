@@ -1,0 +1,35 @@
+
+# Content types
+
+- type: Tag
+  id: OE14DemiplaneOres
+
+- type: Tag
+  id: OE14DemiplanePeacefulAnimals
+
+- type: Tag
+  id: OE14DemiplaneAnimalsSwamp
+
+- type: Tag
+  id: OE14DemiplaneHerbals
+
+- type: Tag
+  id: OE14DemiplaneMushrooms
+
+# Demiplane features
+
+- type: Tag
+  id: OE14DemiplaneOpenSky
+
+- type: Tag
+  id: OE14DemiplaneUnderground
+
+- type: Tag
+  id: OE14DemiplaneWater
+
+- type: Tag
+  id: OE14DemiplaneCold
+
+- type: Tag
+  id: OE14DemiplaneHot
+

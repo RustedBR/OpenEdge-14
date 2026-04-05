@@ -1,0 +1,263 @@
+# Seção de Desenvolvimento - Arquitetura e Design
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Architecture
+  name: Arquitetura e Design
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Architecture/Overview.xml"
+  children:
+  - OE14_PT_DEV_Arch_ECS
+  - OE14_PT_DEV_Arch_IoC
+  - OE14_PT_DEV_Arch_Netcode
+  - OE14_PT_DEV_Arch_Events
+  - OE14_PT_DEV_Arch_Modifiers
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Arch_ECS
+  name: Entity-Component-System
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Architecture/ECS.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Arch_IoC
+  name: Container IoC
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Architecture/IoC.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Arch_Netcode
+  name: Sincronização de Rede
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Architecture/Netcode.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Arch_Events
+  name: Sistema de Eventos
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Architecture/Events.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Arch_Modifiers
+  name: Sistema de Modificadores
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Architecture/Modifiers.xml"
+
+# Sistema de Atributos de Personagem (Dev)
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_CharacterStats
+  name: Sistema de Atributos
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/CharacterStats/Overview.xml"
+  children:
+  - OE14_PT_DEV_Stats_Formulas
+  - OE14_PT_DEV_Stats_Modifiers
+  - OE14_PT_DEV_Stats_Fallback
+  - OE14_PT_DEV_Stats_Network
+  - OE14_PT_DEV_Stats_Code
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Stats_Formulas
+  name: Fórmulas e Cálculos
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/CharacterStats/Formulas.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Stats_Modifiers
+  name: Modificadores e Overflow
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/CharacterStats/Modifiers.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Stats_Fallback
+  name: Sistema de Fallback
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/CharacterStats/Fallback.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Stats_Network
+  name: Implementação de Rede
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/CharacterStats/Network.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Stats_Code
+  name: Exemplos de Código
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/CharacterStats/Code.xml"
+
+# Sistema de Habilidades e Magias (Dev)
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Skills
+  name: Sistema de Habilidades
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Skills/Overview.xml"
+  children:
+  - OE14_PT_DEV_Skills_Trees
+  - OE14_PT_DEV_Skills_Mechanics
+  - OE14_PT_DEV_Skills_Mana
+  - OE14_PT_DEV_Skills_Custom
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Skills_Trees
+  name: Árvores de Habilidades
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Skills/Trees.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Skills_Mechanics
+  name: Mecânicas de Magias
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Skills/Mechanics.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Skills_Mana
+  name: Sistema de Mana
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Skills/Mana.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Skills_Custom
+  name: Criando Habilidades Customizadas
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Skills/Custom.xml"
+
+# Fluxo do Jogo
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_GameFlow
+  name: Fluxo do Jogo
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/GameFlow/Overview.xml"
+  children:
+  - OE14_PT_DEV_Flow_Rounds
+  - OE14_PT_DEV_Flow_Spawn
+  - OE14_PT_DEV_Flow_Admin
+  - OE14_PT_DEV_Flow_Events
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Flow_Rounds
+  name: Fluxo de Rodadas
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/GameFlow/RoundFlow.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Flow_Spawn
+  name: Spawn de Jogadores
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/GameFlow/Spawn.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Flow_Admin
+  name: Ferramentas de Admin
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/GameFlow/Admin.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Flow_Events
+  name: Fluxo de Eventos
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/GameFlow/Events.xml"
+
+# Referência de Sistemas
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_SystemReference
+  name: Referência de Sistemas
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SystemReference/Index.xml"
+  children:
+  - OE14_PT_DEV_SysRef_Stats
+  - OE14_PT_DEV_SysRef_Magic
+  - OE14_PT_DEV_SysRef_Crafting
+  - OE14_PT_DEV_SysRef_Economy
+  - OE14_PT_DEV_SysRef_Combat
+  - OE14_PT_DEV_SysRef_Other
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_SysRef_Stats
+  name: Sistema OE14CharacterStats
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SystemReference/CharacterStats.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_SysRef_Magic
+  name: Sistemas de Magia
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SystemReference/Magic.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_SysRef_Crafting
+  name: Sistemas de Crafting
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SystemReference/Crafting.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_SysRef_Economy
+  name: Sistema de Economia
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SystemReference/Economy.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_SysRef_Combat
+  name: Sistema de Combate
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SystemReference/Combat.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_SysRef_Other
+  name: Outros Sistemas
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SystemReference/Other.xml"
+
+# Guias de Desenvolvimento
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Guides
+  name: Guias de Desenvolvimento
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Guides/Overview.xml"
+  children:
+  - OE14_PT_DEV_Guide_Skills
+  - OE14_PT_DEV_Guide_Spells
+  - OE14_PT_DEV_Guide_Jobs
+  - OE14_PT_DEV_Guide_Species
+  - OE14_PT_DEV_Guide_Migrations
+  - OE14_PT_DEV_Guide_Testing
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Guide_Skills
+  name: Adicionando Novas Habilidades
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Guides/AddingSkills.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Guide_Spells
+  name: Adicionando Novas Magias
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Guides/AddingSpells.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Guide_Jobs
+  name: Adicionando Novos Jobs
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Guides/AddingJobs.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Guide_Species
+  name: Adicionando Novas Espécies
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Guides/AddingSpecies.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Guide_Migrations
+  name: Migrações de Banco de Dados
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Guides/Migrations.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_DEV_Guide_Testing
+  name: Testes e Debugging
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Guides/Testing.xml"

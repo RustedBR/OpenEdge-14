@@ -1,0 +1,130 @@
+- type: entity
+  parent: OE14WoodenCloset
+  id: OE14WoodenClosetAlchemyFilled
+  suffix: Alchemist, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14WeaponDaggerSickle
+        amount: 2
+      - id: OE14HandLabeler
+      - id: OE14Lighter
+      - id: OE14ManaOperationGlove
+      - id: OE14Syringe
+        amount: 2
+      - id: OE14Cauldron
+      - id: OE14Pestle
+        amount: 1
+      - id: OE14Mortar
+        amount: 1
+      - id: OE14Dropper
+        amount: 1
+      - id: OE14VialTiny
+        amount: 3
+      - id: OE14VialSmall
+        amount: 3
+      - id: OE14VialSkull
+        prob: 0.5
+      - id: OE14PaperFolderBlue
+      - id: OE14PenFeather
+        amount: 1
+      - id: OE14WoodenPlanks20
+      - id: OE14VialMediumEarthEssence
+      - id: OE14VialMediumFireEssence
+      - id: OE14VialMediumWaterEssence
+      - id: OE14VialMediumAirEssence
+      - id: OE14VialMediumOrderEssence
+      - id: OE14VialMediumChaosEssence
+
+- type: entity
+  parent: OE14WoodenCloset
+  id: OE14WoodenClosetMerchantFilled
+  suffix: Merchant, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14HandLabeler
+      - id: OE14StampDenied
+      - id: OE14StampApproved
+      - id: OE14ManaOperationGlove
+      - id: OE14PaperFolderRed
+        amount: 2
+      - id: OE14PaperFolderBlue
+        amount: 2
+      - id: OE14PaperFolderRed
+        prob: 0.5
+      - id: OE14PaperFolderBlue
+        prob: 0.5
+      - id: OE14Paper
+        amount: 2
+      - id: OE14PenFeather
+        amount: 2
+      - id: OE14Inkwell
+        prob: 0.2
+      - id: OE14CopperCoin5
+        prob: 0.2
+      - id: OE14SilverCoin1
+        prob: 0.2
+
+- type: entity
+  parent: OE14WoodenCloset
+  id: OE14WoodenClosetBlacksmithFilled
+  suffix: Blacksmith, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14HandLabeler
+      - id: OE14WoodenPlanks20
+      - id: OE14CopperBar10
+      - id: OE14CopperBar10
+      - id: OE14IronBar10
+      - id: OE14PaperFolderRed
+      - id: OE14PenFeather
+
+- type: entity
+  parent: OE14WoodenCloset
+  id: OE14WoodenClosetGuildmasterFilled
+  suffix: Guildmaster, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14StampGuildmaster
+      - id: OE14HandLabeler
+      - id: OE14StampDenied
+      - id: OE14StampApproved
+      - id: OE14PaperFolderBlue
+      - id: OE14ClothingHeadGuildBeretRed
+      - id: OE14ClothingHeadGuildBeretYellow
+      - id: OE14ClothingHeadGuildBeretBlue
+      - id: OE14ClothingHeadGuildBeretGreen
+      - id: OE14GuildSignRed
+      - id: OE14GuildSignYellow
+      - id: OE14GuildSignGreen
+      - id: OE14GuildSignBlue
+
+- type: entity
+  parent: OE14WoodenCloset
+  id: OE14WoodenClosetChefFilled
+  suffix: Chef, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14WeaponFork
+        amount: 2
+      - id: OE14Fork
+        amount: 2
+      - id: OE14Spoon
+        amount: 2
+      - id: OE14WeaponDaggerHatchet
+        amount: 2
+      - id: OE14FryingPan
+      - id: OE14CookingPot
+      - id: OE14PlateWooden
+        amount: 2
+      - id: OE14BowlWooden
+        amount: 2
+      - id: OE14BookTieflingGambit
+      - id: OE14GuidebookCooking
+      - id: OE14SackFarmingSeedFull
+      - id: OE14SackFarmingSeedSnail
+        prob: 0.6

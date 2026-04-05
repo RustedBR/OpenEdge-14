@@ -1,0 +1,1 @@
+oe14-game-hud-open-knowledge-menu-button-tooltip = Abrir menu de conhecimento do personagem.

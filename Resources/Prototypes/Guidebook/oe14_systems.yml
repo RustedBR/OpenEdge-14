@@ -1,0 +1,55 @@
+# OpenEdge 14 Game Systems - Guidebook Entries
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Magic
+  name: Magic
+  text: "/ServerInfo/Guidebook/OE14_Magic.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Crafting
+  name: Crafting
+  text: "/ServerInfo/Guidebook/OE14_Crafting.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Economy
+  name: Economy
+  text: "/ServerInfo/Guidebook/OE14_Economy.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Combat
+  name: Combat
+  text: "/ServerInfo/Guidebook/OE14_Combat.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14CharacterStats
+  name: Character Stats
+  text: "/ServerInfo/Guidebook/OE14_CharacterStats.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Skill
+  name: Skills
+  text: "/ServerInfo/Guidebook/OE14_Skill.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Trading
+  name: Trading
+  text: "/ServerInfo/Guidebook/OE14_Trading.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14StatusEffects
+  name: Status Effects
+  text: "/ServerInfo/Guidebook/OE14_StatusEffects.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14OpenCodeGuide
+  name: OpenCode Guide
+  text: "/ServerInfo/Guidebook/OE14_OpenCodeGuide.xml"

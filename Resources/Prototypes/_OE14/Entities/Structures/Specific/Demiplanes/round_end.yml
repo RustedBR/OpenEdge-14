@@ -1,0 +1,113 @@
+- type: entity
+  id: OE14DemiplaneLinkCrystal
+  parent: BaseStructure
+  categories: [ ForkFiltered ]
+  name: demiplane link crystal
+  description: Maintains communication with the demiplanes while charged. Causes monsters from the demiplanes to attack the city. Once it is discharged, the game is over.
+  suffix: ONE TO MAP
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Structures/Specific/Thaumaturgy/energy_monolith_big.rsi
+    layers:
+    - state: dimension
+    - state: frame
+    drawdepth: Mobs
+    offset: 0,0.8
+  - type: PointLight
+    enabled: true
+    color: "#8f42ff"
+    energy: 1
+    radius: 5
+    netsync: false
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        interpolate: Cubic
+        maxDuration: 5
+        startValue: 0.1
+        endValue: 2.0
+        property: Energy
+        isLooped: true
+        enabled: true
+  - type: OE14MagicContainerRoundFinisher
+  - type: OE14MagicEnergyExaminable
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 1000
+    energy: 1000
+  - type: OE14MagicEnergyDraw
+    energy: -10
+    delay: 60 # 1h 30 minutes to full discharge
+  - type: AmbientSound
+    volume: 5
+    range: 10
+    sound:
+      path: /Audio/_OE14/Effects/demiplane_heartbeat.ogg
+  - type: ActivatableUI
+    key: enum.OE14DemiplaneMapUiKey.Key
+  - type: OE14DemiplaneNavigationMap
+  - type: UserInterface
+    interfaces:
+      enum.OE14DemiplaneMapUiKey.Key:
+        type: OE14DemiplaneMapBoundUserInterface
+
+- type: entity
+  id: OE14PortalFrameCrystal
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  name: portal frame
+  description: A structure made of shadow crystals used to create a stable portal to another location.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: Tag
+    tags:
+      - Structure
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Structures/Specific/Thaumaturgy/energy_monolith_small.rsi
+    layers:
+    - state: dimension
+    - state: frame
+    drawdepth: Mobs
+    offset: 0,0.4
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 100
+    energy: 100
+  - type: OE14MagicEnergyExaminable
+  - type: OE14MagicEnergyPortRelay
+
+- type: entity
+  id: OE14PortalFrameCrystalLight
+  categories: [ ForkFiltered ]
+  parent: OE14PortalFrameCrystal
+  suffix: Glow
+  components:
+  - type: PointLight
+    color: "#9c34e6"
+    energy: 2.5
+    radius: 8

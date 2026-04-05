@@ -1,0 +1,152 @@
+- type: entity
+  id: OE14WindowWooden
+  parent:
+  - OE14WindowBase
+  - OE14BaseFlammable
+  name: wooden window
+  description: A wooden wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/wooden_window.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/wooden_window.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14WindowWoodenBroken
+  - type: Construction
+    graph: OE14WindowWooden
+    node: OE14WindowWooden
+
+- type: entity
+  id: OE14WindowWoodenBirch
+  parent: OE14WindowWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/birch_window.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/birch_window.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14WindowWoodenBirchBroken
+  - type: Construction
+    graph: OE14WindowWooden
+    node: OE14WindowWoodenBirch
+
+- type: entity
+  id: OE14WindowFrameWooden
+  name: wooden window frame
+  parent:
+  - OE14BaseWindowFrame
+  - OE14BaseFlammable
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/wooden_window_frame.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/wooden_window_frame.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14WindowWooden
+    node: OE14WindowFrameWooden
+
+- type: entity
+  id: OE14WindowFrameWoodenBirch
+  parent: OE14WindowFrameWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/birch_window_frame.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/birch_window_frame.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14WindowWooden
+    node: OE14WindowFrameWoodenBirch
+
+- type: entity
+  id: OE14WindowWoodenBroken
+  name: shattered wooden window
+  parent:
+  - OE14BaseWindowFrameBroken
+  - OE14WindowFrameWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/wooden_window_broken.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/wooden_window_broken.rsi
+  - type: Construction
+    graph: OE14WindowWooden
+    node: OE14WindowWoodenBroken
+
+- type: entity
+  id: OE14WindowWoodenBirchBroken
+  parent: OE14WindowWoodenBroken
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/birch_window_broken.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/birch_window_broken.rsi
+  - type: Construction
+    graph: OE14WindowWooden
+    node: OE14WindowWoodenBirchBroken

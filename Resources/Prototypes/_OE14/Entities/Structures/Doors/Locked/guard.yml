@@ -1,0 +1,57 @@
+- type: entity
+  parent: OE14IronDoor
+  id: OE14IronDoorGuardBarracks
+  suffix: Guard Barracks
+  components:
+  - type: OE14Lock
+    autoGenerateShape: GuardBarracks
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorGuardBarracks
+- type: entity
+  parent: OE14IronDoor
+  id: OE14IronDoorGuardCommandantRoom
+  suffix: Guard Commander
+  components:
+  - type: OE14Lock
+    autoGenerateShape: GuardCommander
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorGuardCommandantRoom
+- type: entity
+  parent: OE14IronDoorWindowed
+  id: OE14IronDoorWindowedCityGate
+  suffix: Guard Barracks
+  components:
+  - type: OE14Lock
+    autoGenerateShape: GuardBarracks
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorWindowedCityGate
+- type: entity
+  parent:
+  - OE14IronDoorWindowedCityGate
+  - OE14IronDoorWindowedMirrored
+  id: OE14IronDoorWindowedMirroredCityGate
+  suffix: Guard Barracks, Mirrored
+  localizationId: ent-OE14IronDoorWindowedMirroredCityGate
+- type: entity
+  parent: OE14FenceGateBigIron
+  id: OE14FenceGateBigIronGuardBarracks
+  suffix: Guard Barracks
+  components:
+  - type: OE14Lock
+    autoGenerateShape: GuardBarracks
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14FenceGateBigIronGuardBarracks
+- type: entity
+  parent: OE14FenceGateBigIron
+  id: OE14FenceGateBigIronCityGate
+  suffix: City Gate
+  components:
+  - type: OE14Lock
+    autoGenerateShape: CityGate
+  - type: Lock
+    locked: false
+  localizationId: ent-OE14FenceGateBigIronCityGate

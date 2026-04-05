@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: OE14Torch
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: oe14torch
+      steps:
+      - material: OE14WoodenPlanks
+        amount: 1
+      - material: OE14Cloth
+        amount: 1
+        doAfter: 4
+
+  - node: oe14torch
+    entity: OE14Torch

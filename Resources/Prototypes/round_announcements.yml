@@ -1,0 +1,7 @@
+#- type: roundAnnouncement
+#  id: Welcome
+#  sound: /Audio/Announcements/welcome.ogg #REPLACED By CrystallEdge
+
+- type: roundAnnouncement
+  id: Welcome
+  sound: /Audio/_OE14/Effects/round_start.ogg

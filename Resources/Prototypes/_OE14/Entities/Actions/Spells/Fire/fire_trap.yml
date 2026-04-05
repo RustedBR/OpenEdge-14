@@ -1,0 +1,150 @@
+- type: entity
+  id: OE14ActionSpellFireTrap
+  parent: OE14ActionSpellBase
+  name: Fire trap
+  description: Creates a fire trap at the selected location. Don't forget to recharge it with mana.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.9
+  - type: OE14ActionManaCost
+    manaCost: 40
+  - type: OE14ActionSpeaking
+    startSpeech: "Signum ignis..."
+    endSpeech: "hunc locum custodi"
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneFireTrap
+  - type: Action
+    useDelay: 4
+    icon:
+      sprite: _OE14/Actions/Spells/fire.rsi
+      state: fire_trap
+  - type: TargetAction
+    range: 3
+  - type: DoAfterArgs
+    delay: 2
+  - type: WorldTargetAction
+    event: !type:OE14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectFireTrap
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14SpawnMagicFireTrap
+
+- type: entity
+  id: OE14RuneFireTrap
+  parent: OE14BaseMagicTrap
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#fdda5d"
+      shader: unshaded
+    - state: rune_fire
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectFireTrap
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: OE14SpawnMagicFireTrap
+  parent: OE14BaseMagicTrap
+  name: fire trap
+  description: A rune of fire drawn on the ground using magic — it's best not to step on it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - state: small_circle
+      color: "#fdda5d"
+      shader: unshaded
+    - state: rune_fire
+      color: "#eea911"
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      trap:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+          - MobMask
+        layer:
+          - SlipLayer
+  - type: OE14MagicEnergyExaminable
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 42
+    energy: 42
+    unsafeSupport: true
+  - type: OE14MagicEnergyDraw
+    energy: -0.5
+    delay: 5
+  - type: OE14MagicUnsafeDamage
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: TriggerOnCollide
+    fixtureID: trap
+  - type: IgnitionSource
+    temperature: 400
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 3
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: FireBomb
+    totalIntensity: 8.0
+    intensitySlope: 3
+    maxIntensity: 2
+  - type: DeleteOnTrigger
+
+- type: entity
+  parent: OE14BaseSpellScrollFire
+  id: OE14SpellScrollFireTrap
+  name: fire trap spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellFireTrap
+
+- type: entity
+  parent: OE14SpawnMagicFireTrap
+  id: OE14SpawnMagicFireTrapInvisible
+  suffix: Invisible. Permanent. Admin
+  components:
+  - type: Visibility
+    layer: 16
+  - type: OE14MagicEnergyDraw
+    energy: 0
+    delay: 0
+
+- type: entity
+  parent: OE14SpawnMagicFireTrap
+  id: OE14SpawnMagicFireTrapPermanent
+  suffix: Permanent
+  components:
+  - type: OE14MagicEnergyDraw
+    energy: 0
+    delay: 0

@@ -1,0 +1,90 @@
+- type: entity
+  name: generic rubber stamp
+  parent: BaseItem
+  id: OE14StampBase
+  description: A rubber stamp for stamping important documents.
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-default
+    stampState: denied_on_paper
+    stampedColor: '#a23e3e'
+    sound:
+      path: /Audio/Items/Stamp/thick_stamp_sub.ogg
+      params:
+        volume: -2
+        maxDistance: 5
+  - type: Sprite
+    sprite: _OE14/Objects/Bureaucracy/stamp.rsi
+    state: denied
+  - type: Item
+    size: Tiny
+  localizationId: ent-OE14StampBase
+- type: entity
+  id: OE14StampDenied
+  parent: OE14StampBase
+  name: denied stamp
+  components:
+  - type: Stamp
+    stampedName: oe14-stamp-denied
+    stampedColor: '#b53535'
+    stampState: denied_on_paper
+  - type: Sprite
+    state: denied
+  localizationId: ent-OE14StampDenied
+- type: entity
+  id: OE14StampApproved
+  parent: OE14StampBase
+  name: approved stamp
+  components:
+  - type: Stamp
+    stampedName: oe14-stamp-approved
+    stampedColor: '#35b56c'
+    stampState: approved_on_paper
+  - type: Sprite
+    state: approved
+  localizationId: ent-OE14StampApproved
+- type: entity
+  id: OE14StampCommandant
+  parent: OE14StampBase
+  name: commandant stamp
+  categories:
+  - DoNotMap
+  components:
+  - type: Stamp
+    stampedName: oe14-stamp-bank
+    stampedColor: '#e8c348'
+    stampState: bank_on_paper
+  - type: Sprite
+    state: bank
+  localizationId: ent-OE14StampCommandant
+- type: entity
+  id: OE14StampGuardCommander
+  parent: OE14StampBase
+  name: guard commander stamp
+  categories:
+  - DoNotMap
+  components:
+  - type: Stamp
+    stampedName: oe14-stamp-guard-commander
+    stampedColor: '#436a92'
+    stampState: guard_on_paper
+  - type: Sprite
+    state: guard
+  localizationId: ent-OE14StampGuardCommander
+- type: entity
+  id: OE14StampGuildmaster
+  parent: OE14StampBase
+  name: guildmaster stamp
+  categories:
+  - DoNotMap
+  components:
+  - type: Stamp
+    stampedName: oe14-stamp-guildmaster
+    stampedColor: '#115c41'
+    stampState: guildmaster_on_paper
+  - type: Sprite
+    state: guildmaster
+  localizationId: ent-OE14StampGuildmaster

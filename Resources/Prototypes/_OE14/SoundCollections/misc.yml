@@ -1,0 +1,54 @@
+- type: soundCollection
+  id: OE14LobbyMusic
+  files:
+    - /Audio/Lobby/absconditus.ogg
+    - /Audio/_OE14/Lobby/crystal.ogg
+    - /Audio/_OE14/Lobby/eldermourne.ogg
+    - /Audio/_OE14/Lobby/arcane_winds.ogg
+    - /Audio/_OE14/Lobby/blood_fog.ogg
+
+- type: soundCollection
+  id: OE14DemiplaneIntro
+  files:
+    - /Audio/_OE14/Ambience/Demiplane/intro1.ogg
+    - /Audio/_OE14/Ambience/Demiplane/intro2.ogg
+    - /Audio/_OE14/Ambience/Demiplane/intro3.ogg
+    - /Audio/_OE14/Ambience/Demiplane/intro4.ogg
+
+- type: soundCollection
+  id: OE14LearnSkill
+  files:
+    - /Audio/_OE14/Effects/skill_up1.ogg
+    - /Audio/_OE14/Effects/skill_up2.ogg
+    - /Audio/_OE14/Effects/skill_up3.ogg
+    - /Audio/_OE14/Effects/skill_up4.ogg
+
+- type: soundCollection
+  id: OE14LightningFar
+  files:
+    - /Audio/_OE14/Ambience/Lightning/lightning_far1.ogg
+    - /Audio/_OE14/Ambience/Lightning/lightning_far2.ogg
+    - /Audio/_OE14/Ambience/Lightning/lightning_far3.ogg
+
+- type: soundCollection
+  id: OE14LurkerRitual
+  files:
+    - /Audio/_OE14/Effects/Lurker/ritual1.ogg
+    - /Audio/_OE14/Effects/Lurker/ritual2.ogg
+    - /Audio/_OE14/Effects/Lurker/ritual3.ogg
+
+- type: soundCollection
+  id: OE14CoinImpact
+  files:
+    - /Audio/_OE14/Effects/coin_impact1.ogg
+    - /Audio/_OE14/Effects/coin_impact2.ogg
+    - /Audio/_OE14/Effects/coin_impact3.ogg
+
+- type: soundCollection
+  id: OE14MoonStrike
+  files:
+    - /Audio/_OE14/Effects/moon_strike1.ogg
+    - /Audio/_OE14/Effects/moon_strike2.ogg
+    - /Audio/_OE14/Effects/moon_strike3.ogg
+    - /Audio/_OE14/Effects/moon_strike4.ogg
+

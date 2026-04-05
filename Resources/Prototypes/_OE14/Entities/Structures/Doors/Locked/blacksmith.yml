@@ -1,0 +1,51 @@
+- type: entity
+  parent: OE14IronDoor
+  id: OE14IronDoorBlacksmith1
+  suffix: Blacksmith 1
+  components:
+  - type: OE14Lock
+    autoGenerateShape: Blacksmith1
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorBlacksmith1
+- type: entity
+  parent:
+  - OE14IronDoorBlacksmith1
+  - OE14IronDoorMirrored
+  id: OE14IronDoorMirroredBlacksmith1
+  suffix: Blacksmith 1, Mirrored
+  localizationId: ent-OE14IronDoorMirroredBlacksmith1
+- type: entity
+  parent: OE14IronDoor
+  id: OE14IronDoorBlacksmith2
+  suffix: Blacksmith 2
+  components:
+  - type: OE14Lock
+    autoGenerateShape: Blacksmith2
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorBlacksmith2
+- type: entity
+  parent:
+  - OE14IronDoorBlacksmith2
+  - OE14IronDoorMirrored
+  id: OE14IronDoorMirroredBlacksmith2
+  suffix: Blacksmith 2, Mirrored
+  localizationId: ent-OE14IronDoorMirroredBlacksmith2
+- type: entity
+  parent: OE14IronDoor
+  id: OE14IronDoorBlacksmith3
+  suffix: Blacksmith 3
+  components:
+  - type: OE14Lock
+    autoGenerateShape: Blacksmith3
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorBlacksmith3
+- type: entity
+  parent:
+  - OE14IronDoorBlacksmith3
+  - OE14IronDoorMirrored
+  id: OE14IronDoorMirroredBlacksmith3
+  suffix: Blacksmith 3, Mirrored
+  localizationId: ent-OE14IronDoorMirroredBlacksmith3

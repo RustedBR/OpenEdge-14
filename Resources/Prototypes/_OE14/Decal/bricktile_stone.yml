@@ -1,0 +1,135 @@
+﻿- type: decal
+  id: OE14BrickTileStoneBox
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_box
+
+- type: decal
+  id: OE14BrickTileStoneCornerNe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_corner_ne
+
+- type: decal
+  id: OE14BrickTileStoneCornerSe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_corner_se
+
+- type: decal
+  id: OE14BrickTileStoneCornerNw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_corner_nw
+
+- type: decal
+  id: OE14BrickTileStoneCornerSw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_corner_sw
+
+- type: decal
+  id: OE14BrickTileStoneInnerNe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_inner_ne
+
+- type: decal
+  id: OE14BrickTileStoneInnerSe
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_inner_se
+
+- type: decal
+  id: OE14BrickTileStoneInnerNw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_inner_nw
+
+- type: decal
+  id: OE14BrickTileStoneInnerSw
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_inner_sw
+
+- type: decal
+  id: OE14BrickTileStoneEndN
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_end_n
+
+- type: decal
+  id: OE14BrickTileStoneEndE
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_end_e
+
+- type: decal
+  id: OE14BrickTileStoneEndS
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_end_s
+
+- type: decal
+  id: OE14BrickTileStoneEndW
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_end_w
+
+- type: decal
+  id: OE14BrickTileStoneLineN
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_line_n
+
+- type: decal
+  id: OE14BrickTileStoneLineE
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_line_e
+
+- type: decal
+  id: OE14BrickTileStoneLineS
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_line_s
+
+- type: decal
+  id: OE14BrickTileStoneLineW
+  defaultSnap: true
+  showMenu: true
+  sprite:
+    sprite: _OE14/Decals/Stone.rsi
+    state: stone_line_w

@@ -1,0 +1,368 @@
+<Document>
+# Entity-Component-System (ECS)
+
+The Entity-Component-System pattern is the foundation of how OpenEdge 14 works. Everything in the game world is built using this pattern.
+
+## The Three Pillars
+
+### Entity
+An [bold]Entity[/bold] is a unique object in the world. It has an ID and a collection of components.
+
+[bold]Examples:[/bold]
+- A player character
+- A sword on the ground
+- A fire hazard
+- A door
+- An NPC
+- A particle effect
+
+[bold]Code representation:[/bold]
+<CodeBlock>
+// EntityUid is the unique identifier
+EntityUid playerId = new EntityUid(1234);
+</CodeBlock>
+
+[bold]Key fact:[/bold] An entity is just an ID. It holds no data. All data comes from components.
+
+### Component
+A [bold]Component[/bold] is a data container attached to an entity. It stores information relevant to that entity's behavior.
+
+[bold]Examples of components:[/bold]
+- HealthComponent — stores health and max health
+- InventoryComponent — stores items the entity is carrying
+- TransformComponent — stores position and rotation
+- CharacterStatsComponent — stores STR, VIT, DEX, INT
+- AI Component — stores AI behavior state
+
+[bold]Code representation:[/bold]
+<CodeBlock>
+public sealed partial class HealthComponent : Component
+{
+    [DataField]
+    public float Health { get; set; } = 100f;
+
+    [DataField]
+    public float MaxHealth { get; set; } = 100f;
+}
+</CodeBlock>
+
+[bold]Key fact:[/bold] Components are pure data. They have no logic. Logic lives in systems.
+
+### System
+A [bold]System[/bold] is logic that processes entities based on their components.
+
+[bold]Examples of systems:[/bold]
+- HealthSystem — processes health-related events
+- CombatSystem — processes attacks and damage
+- MovementSystem — updates position based on velocity
+- ActionBlockerSystem — determines if an entity can act
+- CharacterStatsSystem — processes stat bonuses and calculations
+
+[bold]Code representation:[/bold]
+<CodeBlock>
+public class HealthSystem : EntitySystem
+{
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    public override void Update(float frameTime)
+    {
+        // Iterate over all entities with HealthComponent
+        var query = EntityQueryEnumerator<HealthComponent>();
+        while (query.MoveNext(out var uid, out var health))
+        {
+            // Process this entity
+            if (health.Health <= 0)
+            {
+                // Handle death
+            }
+        }
+    }
+}
+</CodeBlock>
+
+[bold]Key fact:[/bold] Systems are stateless and pure. They don't store state about entities; they read/write component data.
+
+## The Pattern in Action
+
+### Example: Creating a Player Character
+
+Step 1: Create Entity (get an ID)
+<CodeBlock>
+EntityUid playerId = _entityManager.SpawnEntity("Player", new MapCoordinates(...))
+</CodeBlock>
+
+Step 2: Add Components
+<CodeBlock>
+_entityManager.AddComponent<HealthComponent>(playerId);
+_entityManager.AddComponent<InventoryComponent>(playerId);
+_entityManager.AddComponent<CharacterStatsComponent>(playerId);
+</CodeBlock>
+
+Step 3: Set Component Data
+<CodeBlock>
+var health = _entityManager.GetComponent<HealthComponent>(playerId);
+health.Health = 100;
+health.MaxHealth = 100;
+</CodeBlock>
+
+Step 4: Systems Process
+- MovementSystem updates position every frame
+- HealthSystem checks if health has reached zero
+- ActionBlockerSystem allows/denies actions
+- CharacterStatsSystem calculates effective stats
+
+## Component Lifecycle
+
+<CodeBlock>
+Entity Created
+    |
+Add HealthComponent
+    |
+Systems detect it (EntityQueryEnumerator)
+    |
+Every frame, systems process it
+    |
+HealthComponent value changes (damage)
+    |
+Network syncs to client (AutoNetworkedField)
+    |
+Remove HealthComponent (entity dies)
+    |
+Systems stop processing it
+    |
+Entity Deleted
+</CodeBlock>
+
+## Querying Entities
+
+Systems find entities to process using [bold]queries[/bold]. A query is "give me all entities with component X and Y".
+
+### Method 1: EntityQueryEnumerator (Recommended)
+<CodeBlock>
+var query = EntityQueryEnumerator<HealthComponent>();
+while (query.MoveNext(out var uid, out var health))
+{
+    // uid is the entity ID
+    // health is the HealthComponent
+    if (health.Health <= 0)
+        HandleDeath(uid);
+}
+</CodeBlock>
+
+[bold]Why use this:[/bold] Most efficient, iterates only matching entities.
+
+### Method 2: GetComponent (Single Entity)
+<CodeBlock>
+if (_entityManager.TryGetComponent(playerId, out HealthComponent? health))
+{
+    health.Health -= 10;
+}
+</CodeBlock>
+
+[bold]Why use this:[/bold] When you know the specific entity to modify.
+
+### Method 3: EntityQuery (Less Common)
+<CodeBlock>
+var query = _entityManager.GetEntityQuery<HealthComponent>();
+var entities = query.ToList();
+</CodeBlock>
+
+[bold]Why use this:[/bold] When you need a list of all matching entities.
+
+## Real Example: Combat System Flow
+
+<CodeBlock>
+Player clicks enemy
+    |
+InputSystem detects click
+    |
+CombatSystem.Update() runs:
+    query = EntityQueryEnumerator<CombatComponent>();
+    while (query.MoveNext(out var attacker, out var combatComp))
+    {
+        if (IsQueuedAttack(attacker))
+        {
+            var target = GetTargetFromClick();
+            var damage = CalculateDamage(attacker, target);
+
+            // Create event
+            var damageEvent = new DamageEvent(attacker, target, damage);
+
+            // Other systems listen to this event:
+            // - HealthSystem applies damage
+            // - AudioSystem plays hit sound
+            // - ParticleSystem shows impact effect
+            // - StatusEffectSystem applies bleeding
+            RaiseLocalEvent(target, damageEvent);
+        }
+    }
+</CodeBlock>
+
+Each system does one thing, and events connect them.
+
+## Component Sharing Between Systems
+
+Multiple systems can read the same component.
+
+<CodeBlock>
+// In HealthSystem
+public override void Update(float frameTime)
+{
+    var query = EntityQueryEnumerator<HealthComponent>();
+    while (query.MoveNext(out var uid, out var health))
+    {
+        // Reads HealthComponent
+    }
+}
+
+// In StatusEffectSystem
+public override void Update(float frameTime)
+{
+    var query = EntityQueryEnumerator<StatusEffectComponent>();
+    while (query.MoveNext(out var uid, out var effect))
+    {
+        // Also reads HealthComponent for different purpose
+        if (_entityManager.TryGetComponent(uid, out HealthComponent? health))
+        {
+            // Apply poison damage
+            health.Health -= 1;
+        }
+    }
+}
+</CodeBlock>
+
+Both systems can safely access the same component. Changes one makes are visible to the other.
+
+## Component Storage
+
+Components are stored efficiently:
+- Each component type gets its own storage array
+- Only entities with that component take up space in that array
+- Systems iterate only the storage they need
+- Very cache-friendly and efficient
+
+[bold]Memory diagram:[/bold]
+<CodeBlock>
+HealthComponent Storage:    [Entity1, Entity3, Entity7]  (3 entities)
+InventoryComponent Storage: [Entity1, Entity2, Entity4]  (3 entities)
+
+When HealthSystem runs:
+- Iterates [Entity1, Entity3, Entity7]
+- Doesn't touch Entity2 or Entity4
+
+When InventorySystem runs:
+- Iterates [Entity1, Entity2, Entity4]
+- Doesn't touch Entity3 or Entity7
+</CodeBlock>
+
+## Adding Components Dynamically
+
+You don't have to add all components at spawn. You can add them later.
+
+<CodeBlock>
+// Player gets a health bar
+_entityManager.AddComponent<HealthComponent>(player);
+
+// Door becomes locked
+_entityManager.AddComponent<LockComponent>(door);
+
+// Item becomes magical
+_entityManager.AddComponent<MagicalComponent>(item);
+</CodeBlock>
+
+Systems automatically start processing the new component.
+
+## Removing Components
+
+You can remove components to disable behavior.
+
+<CodeBlock>
+// Make NPC non-hostile
+_entityManager.RemoveComponent<HostileComponent>(npc);
+
+// Make object fall
+_entityManager.RemoveComponent<StaticComponent>(entity);
+
+// Disable AI
+_entityManager.RemoveComponent<AIComponent>(creature);
+</CodeBlock>
+
+Systems automatically stop processing entities without that component.
+
+## Component Serialization
+
+Components persist when you save/load:
+
+<CodeBlock>
+- type: entity
+  id: IronSword
+  components:
+    - type: Sprite
+      sprite: /path/to/sword.rsi
+    - type: MeleeWeapon
+      damage: 25
+    - type: Item
+      size: Large
+</CodeBlock>
+
+When the entity loads, all components are re-created with their saved values.
+
+## Best Practices
+
+[bold]DO:[/bold]
+- [bold]One responsibility per component[/bold] — HealthComponent stores health, not damage calculation
+- [bold]Keep components simple[/bold] — just data and getters/setters
+- [bold]Use EntityQueryEnumerator[/bold] — most efficient for iteration
+- [bold]Name systems clearly[/bold] — CombatSystem, HealthSystem, MovementSystem
+
+[bold]DON'T:[/bold]
+- [bold]Store logic in components[/bold] — components are data, systems have logic
+- [bold]Create tight coupling[/bold] — systems shouldn't know about each other
+- [bold]Manually iterate all entities[/bold] — use EntityQueryEnumerator
+- [bold]Store entity references inside components[/bold] — this breaks serialization and networking
+
+## Navigation
+
+- Confused about IoC? → [textlink="Read IoC Container" link="OE14_DEV_Arch_IoC"] to understand service resolution
+- Want to sync with client? → [textlink="Read Netcode" link="OE14_DEV_Arch_Netcode"] for networking
+- Need to communicate between systems? → [textlink="Read Events" link="OE14_DEV_Arch_Events"]
+- Building a character system? → [textlink="Read CharacterStats System" link="OE14_DEV_Stats_Formulas"]
+
+## Gameplay Example: Boss Fight
+
+<CodeBlock>
+// Boss entity with components:
+// - HealthComponent (500 HP)
+// - CombatComponent (strong attacker)
+// - AI Component (behavior tree)
+// - PhysicsComponent (can be knocked back)
+
+// Player attacks:
+// CombatSystem detects attack, raises DamageEvent(boss, 50 damage)
+//   |
+// HealthSystem listens, reduces health: 500 -> 450
+//   |
+// HealthComponent syncs to client (AutoNetworkedField)
+//   |
+// Client receives: Health changed to 450
+//   |
+// UI updates: Boss health bar shows 90%
+//   |
+// Next frame, AISystem checks: health < 300? Trigger phase 2
+//   |
+// Boss behavior changes: faster attacks, different pattern
+</CodeBlock>
+
+All thanks to ECS pattern!
+
+## Summary
+
+- [bold]Entities[/bold] are unique IDs in the world
+- [bold]Components[/bold] store data (no logic)
+- [bold]Systems[/bold] contain logic (no data)
+- [bold]Queries[/bold] find entities with specific components
+- [bold]Events[/bold] let systems communicate without coupling
+
+This flexibility lets you easily add features without touching existing code!
+
+</Document>

@@ -1,0 +1,327 @@
+<Document>
+# Recipiente IoC (Injeção de Dependência)
+
+O IoC (Inversion of Control) Container é um registro global de [bold]serviços[/bold] — gerenciadores, sistemas e utilitários que seu código precisa.
+
+Em vez de criar instâncias diretamente, você pede ao recipiente IoC por eles. Isso desacopra seu código e facilita testes.
+
+## O Conceito Central
+
+### O que é Injeção de Dependência?
+
+Em vez disso (ruim):
+<CodeBlock>
+public class CombatSystem
+{
+    private HealthSystem _healthSystem = new HealthSystem();  // Cria
+
+    public void AttackEnemy(EntityUid enemy)
+    {
+        _healthSystem.ApplyDamage(enemy, 10);  // Usa
+    }
+}
+</CodeBlock>
+
+Faça isso (bom):
+<CodeBlock>
+public class CombatSystem
+{
+    [Dependency] private readonly HealthSystem _healthSystem = default!;  // Injetado
+
+    public void AttackEnemy(EntityUid enemy)
+    {
+        _healthSystem.ApplyDamage(enemy, 10);  // Usa
+    }
+}
+</CodeBlock>
+
+[bold]A diferença:[/bold]
+- Versão ruim: CombatSystem cria seu próprio HealthSystem
+- Versão boa: IoC fornece HealthSystem para CombatSystem
+
+### Benefícios:
+- [bold]Acoplamento fraco[/bold] — CombatSystem não sabe como HealthSystem é criado
+- [bold]Testes fáceis[/bold] — injete um mock HealthSystem nos testes
+- [bold]Responsabilidade única[/bold] — HealthSystem tem uma fonte de verdade
+- [bold]Flexibilidade[/bold] — troque implementações sem mudar CombatSystem
+
+## Como Usar IoCManager
+
+### Obtendo um Serviço
+
+<CodeBlock>
+// Padrão mais comum - usando atributo Dependency
+public class MySystem : EntitySystem
+{
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly ChatSystem _chatSystem = default!;
+}
+</CodeBlock>
+
+O atributo Dependency diz ao IoC para injetar esses serviços quando MySystem é criado.
+
+### Resolução Manual (Menos Comum)
+
+<CodeBlock>
+var entityManager = IoCManager.Resolve<IEntityManager>();
+var chatSystem = IoCManager.Resolve<ChatSystem>();
+</CodeBlock>
+
+Use isso apenas quando não puder usar o atributo Dependency (casos raros).
+
+## Serviços Comuns no OpenEdge 14
+
+[bold]Serviços do motor:[/bold]
+- [mono]IEntityManager[/mono] — Criar, consultar e modificar entidades
+- [mono]IActionBlockerSystem[/mono] — Determinar se ações são permitidas
+- [mono]IConfigurationManager[/mono] — Acessar valores de configuração
+- [mono]ILogManager[/mono] — Logar mensagens no console
+- [mono]IMapManager[/mono] — Gerenciar mapas e grids
+- [mono]IRobustRandom[/mono] — Geração de números aleatórios
+- [mono]TransformSystem[/mono] — Manipular posições de entidades
+- [mono]PhysicsSystem[/mono] — Manipular colisões e forças
+- [mono]AudioSystem[/mono] — Tocar sons
+- [mono]AnimationSystem[/mono] — Tocar animações
+
+[bold]Serviços específicos do OpenEdge:[/bold]
+- [mono]OE14CharacterStatsSystem[/mono] — Processar atributos e modificadores do personagem
+- [mono]OE14SkillSystem[/mono] — Gerenciar árvores de habilidades e progressão
+- [mono]OE14MagicEnergySystem[/mono] — Manipular pools de mana e regeneração
+- [mono]OE14CombatSystem[/mono] — Processar ataques e dano
+- [mono]OE14EconomySystem[/mono] — Gerenciar moeda e comércio
+- [mono]OE14CookingSystem[/mono] — Manipular preparo de comida
+
+## Acessando Serviços em Código
+
+### Em um Sistema (Recomendado)
+
+<CodeBlock>
+public sealed class MyCustomSystem : EntitySystem
+{
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly OE14CharacterStatsSystem _statsSystem = default!;
+    [Dependency] private readonly ChatSystem _chatSystem = default!;
+
+    public override void Update(float frameTime)
+    {
+        // Usa serviços injetados
+        var entities = _entityManager.GetEntities();
+        var stats = _statsSystem.GetStats(someEntity);
+        _chatSystem.SendMessage("Hello world");
+    }
+}
+</CodeBlock>
+
+### Em um Manipulador de Eventos
+
+<CodeBlock>
+public sealed partial class DamageEventHandler
+{
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    private void OnDamage(DamageEvent args)
+    {
+        // Usa serviço
+        var health = _entityManager.GetComponent<HealthComponent>(args.Target);
+        health.Health -= args.Amount;
+    }
+}
+</CodeBlock>
+
+### Em um Componente (Framework de Sistema de Entidade)
+
+<CodeBlock>
+public sealed partial class OE14CharacterStatsComponent : Component
+{
+    // Componentes geralmente não usam [Dependency]
+    // Em vez disso, armazenam dados e sistemas os processam
+}
+</CodeBlock>
+
+[bold]Nota:[/bold] Componentes são dados, não comportamento. Não use o atributo Dependency em componentes.
+
+## Registrando Serviços Customizados
+
+Quando você cria um novo sistema, ele precisa ser registrado no IoC para que outros possam acessá-lo.
+
+<CodeBlock>
+// Em uma classe de inicialização ou código de inicialização:
+IoCManager.Register<MyCustomSystem>();
+</CodeBlock>
+
+O framework geralmente lida com isso automaticamente para a maioria dos sistemas.
+
+## Tempo de Vida de Serviços
+
+Serviços no IoC têm diferentes tempos de vida:
+
+### Singleton (Padrão)
+<CodeBlock>
+IoCManager.Register<ConfigurationManager>(new ConfigurationManager());
+</CodeBlock>
+- Criado uma vez
+- Persiste por toda a execução do jogo
+- Thread-safe
+
+### Por-Resolução (Cria Novo a Cada Vez)
+<CodeBlock>
+IoCManager.Register<MyFactory, IMyFactory>(() => new MyFactory());
+</CodeBlock>
+- Criado fresco cada vez que você resolve
+- Raramente usado
+
+A maioria dos serviços são singletons.
+
+## Correntes de Dependência
+
+Serviços podem depender de outros serviços:
+
+<CodeBlock>
+CombatSystem precisa:
+   |
+HealthSystem, PhysicsSystem, AudioSystem
+
+PhysicsSystem precisa:
+   |
+TransformSystem, IMapManager
+
+TransformSystem precisa:
+   |
+IEntityManager
+
+Tudo resolvido automaticamente!
+</CodeBlock>
+
+Quando você injeta CombatSystem, IoC automaticamente garante que todas as suas dependências existam.
+
+## Exemplo Real: Atributos do Personagem
+
+<CodeBlock>
+public sealed class OE14CharacterStatsSystem : EntitySystem
+{
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly IActionBlockerSystem _actionBlocker = default!;
+
+    public override void Update(float frameTime)
+    {
+        // Pega todas as entidades com atributos de personagem
+        var query = EntityQueryEnumerator<OE14CharacterStatsComponent>();
+        while (query.MoveNext(out var uid, out var stats))
+        {
+            // Calcula atributos efetivos
+            stats.EffectiveStats = CalculateEffectiveStats(stats.BaseStats, stats.Modifiers);
+
+            // Verifica se algum atributo está no máximo
+            foreach (var stat in stats.EffectiveStats)
+            {
+                if (stat.Value >= MaxStatValue)
+                {
+                    // Notifica action blocker de limitações
+                    _actionBlocker.BlockAction(uid, ActionType.SpellCast);
+                }
+            }
+        }
+    }
+
+    private Dictionary<string, int> CalculateEffectiveStats(...)
+    {
+        // Cálculo complexo
+    }
+}
+</CodeBlock>
+
+Ambos [mono]_entityManager[/mono] e [mono]_actionBlocker[/mono] são fornecidos pelo IoC.
+
+## Armadilhas a Evitar
+
+[bold]Não Resolva no Construtor:[/bold]
+<CodeBlock>
+// Ruim!
+public MySystem()
+{
+    var service = IoCManager.Resolve<SomeService>();  // Não faça isso
+}
+</CodeBlock>
+
+[bold]Use o Atributo Dependency:[/bold]
+<CodeBlock>
+// Bom!
+[Dependency] private readonly SomeService _service = default!;
+</CodeBlock>
+
+[bold]Não Acesse IoCManager Repetidamente:[/bold]
+<CodeBlock>
+// Ruim!
+public void DoSomething()
+{
+    var service1 = IoCManager.Resolve<ServiceA>();
+    var service2 = IoCManager.Resolve<ServiceB>();
+}
+</CodeBlock>
+
+[bold] Injete Uma Vez:[/bold]
+<CodeBlock>
+[Dependency] private readonly ServiceA _serviceA = default!;
+[Dependency] private readonly ServiceB _serviceB = default!;
+</CodeBlock>
+
+## Testando com IoC
+
+A força do IoC brilha em testes:
+
+<CodeBlock>
+[Test]
+public void TestCombatDamage()
+{
+    // Cria serviços mock
+    var mockEntityManager = new MockEntityManager();
+    var mockHealthSystem = new MockHealthSystem();
+
+    // Registra mocks
+    IoCManager.Register<IEntityManager>(mockEntityManager);
+    IoCManager.Register<HealthSystem>(mockHealthSystem);
+
+    // Testa seu sistema
+    var combatSystem = new CombatSystem();
+    combatSystem.Attack(enemy, 10);
+
+    // Verifica
+    Assert.That(mockHealthSystem.ApplyDamageCalls, Is.EqualTo(1));
+}
+</CodeBlock>
+
+Muito mais fácil do que testar código fortemente coupled!
+
+## Descoberta de Serviços
+
+Para encontrar quais serviços estão disponíveis, pesquise a base de código:
+
+<CodeBlock>
+# Encontra todos os serviços registrados
+grep -r "IoCManager.Register<" Content.Server/_OE14/
+
+# Encontra uma interface específica
+grep -r "interface IMyService" Content.Shared/_OE14/
+</CodeBlock>
+
+Ou consulte a seção [textlink="Referência de Sistemas" link="OE14_DEV_SystemReference"] deste guia.
+
+## Navegação
+
+- Quer usar um serviço em código? Use o atributo Dependency
+- Precisa criar um novo sistema? Herde de [mono]EntitySystem[/mono] e ele se registra automaticamente
+- Testando seu código? Use mocks com IoC para substituição fácil
+- Procurando um serviço específico? Verifique [textlink="Referência de Sistemas" link="OE14_DEV_SystemReference"]
+
+## Resumo
+
+- [bold]Serviços[/bold] são gerenciadores e sistemas disponíveis globalmente
+- [bold]Injeção de Dependência[/bold] desacopra seu código
+- [bold]Atributo Dependency[/bold] injeta serviços automaticamente
+- [bold]IoCManager.Resolve\<T\>()[/bold] obtém serviços manualmente (raro)
+- [bold]Testes[/bold] se tornam fáceis com serviços mock
+
+Use IoC em todo lugar no OpenEdge 14!
+
+</Document>

@@ -1,0 +1,26 @@
+- type: entity
+  id: OE14GatherableBloodFlower
+  parent: OE14GatherableBase
+  name: blood rose
+  description: Scarlet flowers growing where blood has been spilled.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _OE14/Structures/Flora/Wild/blood_flower.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+  - type: OE14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: !type:GroupSelector
+        children:
+        - id: OE14BloodFlower
+

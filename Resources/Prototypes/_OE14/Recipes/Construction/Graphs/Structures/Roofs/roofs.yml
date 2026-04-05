@@ -1,0 +1,72 @@
+- type: constructionGraph
+  id: OE14RoofWooden
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14RoofWooden
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 1
+              doAfter: 2
+        - to: OE14RoofWoodenBirch
+          steps:
+          - material: OE14BirchWoodenPlanks
+            amount: 1
+            doAfter: 2
+
+    - node: OE14RoofWooden
+      entity: OE14RoofWooden
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 1
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+    - node: OE14RoofWoodenBirch
+      entity: OE14RoofWoodenBirch
+      edges:
+      - to: start
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14BirchWoodenPlanks1
+          amount: 1
+        - !type:DeleteEntity { }
+        steps:
+        - tool: Prying
+          doAfter: 2
+
+- type: constructionGraph
+  id: OE14RoofStone
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14RoofStone
+          steps:
+            - material: OE14Stone
+              amount: 1
+              doAfter: 2
+
+    - node: OE14RoofStone
+      entity: OE14RoofStone
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14StoneBlock1
+              amount: 1
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2
+

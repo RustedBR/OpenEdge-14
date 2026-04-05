@@ -1,0 +1,139 @@
+<Document>
+  # Smithing
+
+  The art of metalworking and weaponcrafting. As a blacksmith, you craft enhanced weapons and armor, and specialize in modular component assembly to customize equipment with stat bonuses and special properties.
+
+  ## The Blacksmith's Craft
+
+  Blacksmiths work at [bold]Anvil workbenches[/bold] to forge weapons, armor, and modular components. Each recipe takes time to complete — watch the progress bar and ensure you don't move or take damage during the process.
+
+  The blacksmith's primary resources are:
+  - [bold]Iron Bars[/bold] — basic metal building block (1 bar crafts 1 unit of metal)
+  - [bold]Copper Bars[/bold] — secondary metal for alloys and components
+  - [bold]Wooden Planks[/bold] — handles, hilts, and reinforcement
+  - [bold]Leather[/bold] — wrappings, padding, and flexible components
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WorkbenchAnvil" Caption="Anvil"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchFurnace" Caption="Furnace"/>
+  </Box>
+
+  ## Modular Crafting System
+
+  ### What is Modular Crafting?
+
+  Modular crafting allows you to customize weapons and armor by attaching specialized parts. Each weapon and armor piece has [bold]2 attachment slots[/bold] that can accept different component types.
+
+  When you attach a modular part to a weapon or armor:
+  1. The item immediately gains stat bonuses (if the part has them)
+  2. The item's damage, protection, or speed properties are modified
+  3. You can attach multiple parts to maximize customization
+
+  ### Available Modular Parts
+
+  #### Stat Crystals (All Slots)
+  Essence shards crafted from basic materials. Each adds +1 to a specific stat when equipped.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14ModularCrystalStrength" Caption="STR Crystal"/>
+    <GuideEntityEmbed Entity="OE14ModularCrystalVitality" Caption="VIT Crystal"/>
+    <GuideEntityEmbed Entity="OE14ModularCrystalDexterity" Caption="DEX Crystal"/>
+    <GuideEntityEmbed Entity="OE14ModularCrystalIntelligence" Caption="INT Crystal"/>
+  </Box>
+
+  - [bold]Strength Essence Shard:[/bold] +1 STR — Crafted from 2 Iron Bars + 1 Copper Bar
+  - [bold]Vitality Essence Shard:[/bold] +1 VIT — Crafted from 2 Iron Bars + 1 Copper Bar
+  - [bold]Dexterity Essence Shard:[/bold] +1 DEX — Crafted from 2 Iron Bars + 1 Copper Bar
+  - [bold]Intelligence Essence Shard:[/bold] +1 INT — Crafted from 2 Iron Bars + 1 Copper Bar
+
+  #### Weapon Parts (Blade/Hilt Slots)
+
+  - [bold]Damage Blade:[/bold] Increases weapon damage by ~2 Slash/Pierce, ~1 Blunt
+    - Cost: 4 Iron Bars + 2 Copper Bars
+    - Slot: Blade
+
+  - [bold]Speed Hilt:[/bold] Increases attack speed by 15%
+    - Cost: 3 Iron Bars + 2 Wooden Planks
+    - Slot: Hilt
+
+  #### Armor Parts (Plate/Fastening Slots)
+
+  - [bold]Heavy Armor Plate:[/bold] Reduces all damage by ~10-15% (Blunt 85%, Slash 90%, Pierce 80%)
+    - Cost: 5 Iron Bars + 2 Copper Bars
+    - Slot: Armor Plate
+
+  - [bold]Protective Padding:[/bold] Reduces all damage by ~8%
+    - Cost: 3 Cloth + 1 Copper Bar
+    - Slot: Fastening
+
+  #### Mobility Parts (Fastening Slot)
+
+  - [bold]Light Embrace:[/bold] Reduces movement penalty by 5% (walk/sprint +5% speed)
+    - Cost: 2 Iron Bars + 3 Leather
+    - Slot: Fastening
+
+  - [bold]Agile Weave:[/bold] Reduces movement penalty by 8-10% (walk +8%, sprint +10% speed)
+    - Cost: 4 Leather
+    - Slot: Fastening
+
+  #### Magical Parts (Blade/Plate Slots)
+
+  - [bold]Mana Conduit:[/bold] Reduces spell casting cost by 10%
+    - Cost: 3 Copper Bars + 2 Crystal Ore
+    - Slot: Blade or Armor Plate
+
+  - [bold]Mana Amplifier:[/bold] Reduces spell casting cost by 15% (requires more crystals)
+    - Cost: 2 Iron Bars + 4 Crystal Ore
+    - Slot: Blade or Armor Plate
+
+  ## How to Craft Modular Parts
+
+  All modular parts are crafted at an [bold]Anvil workbench[/bold].
+
+  1. [bold]Gather raw materials:[/bold]
+     - Find ore deposits in the world (Iron Ore, Copper Ore, Gold Ore, or Mithril Ore)
+     - Mine the ore and bring it to the Anvil
+     - Craft metal bars: Each bar requires 10 units of ore
+     - Example: 10 Iron Ore → 1 Iron Bar (use the "Smelt" recipes)
+
+  2. [bold]Access the Anvil workbench:[/bold]
+     - Approach the Anvil and interact with it
+     - View available recipes in the crafting menu
+
+  3. [bold]Craft a modular part:[/bold]
+     - Find the recipe you want (e.g., "Craft Strength Crystal")
+     - Place the required materials (2 Iron Bars + 1 Copper Bar for stat crystals)
+     - Select the recipe and wait for the progress bar to complete
+     - The finished part will be placed nearby
+
+  ## How to Attach Modular Parts
+
+  1. [bold]Craft or obtain a base weapon or armor[/bold]
+  2. [bold]Have a modular part in your inventory[/bold]
+  3. [bold]Examine the weapon or armor[/bold] (right-click or use examine key)
+  4. [bold]Select the "Attach Part" action[/bold] from the examine menu
+     - A progress bar will appear (1.5-3 seconds depending on part)
+     - Do not move or take damage during assembly
+     - When complete, the part attaches and applies its bonuses
+
+  Once attached, the weapon or armor [bold]permanently keeps the stat bonuses[/bold] and mechanical benefits of that part. You can attach multiple parts to the same item (up to the number of available slots).
+
+  ## Disassembling Modular Items
+
+  If you damage a modular weapon or armor enough (take ~50 damage), it will break and drop all attached parts as separate items. You can then collect the parts and reuse them on other equipment.
+
+  ## Advanced Smithing Tips
+
+  - [bold]Combine stat crystals with weapon parts:[/bold] Attach a Strength Shard + Damage Blade to your sword for both +1 STR and +2 damage
+  - [bold]Layer armor protection:[/bold] Use Heavy Plate + Protective Padding on your cuirass to stack damage reduction
+  - [bold]Balance mobility:[/bold] Heavy armor penalizes movement; offset this with Light Embrace or Agile Weave parts
+  - [bold]Specialize for magic:[/bold] If you also cast spells, add Mana Conduit to your staff for cheaper casting
+  - [bold]Collect and reuse:[/bold] Modular parts are valuable — keep extras in storage to swap between different weapons and builds
+
+  ## Related Systems
+
+  - [textlink="Crafting" link="OE14Crafting"] — overview of all crafting methods
+  - [textlink="Combat" link="OE14Combat"] — how weapon stats affect damage
+  - [textlink="Jobs" link="OE14_EN_Jobs"] — the Blacksmith job details and requirements
+
+</Document>

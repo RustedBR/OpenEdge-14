@@ -1,0 +1,73 @@
+
+- type: reaction
+  id: OE14BloodFlowerBrewing
+  impact: Low
+  minTemp: 393
+  priority: 1
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    OE14BloodFlowerSap:
+      amount: 10
+    Water:
+      amount: 1
+      catalyst: true
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -50
+  - !type:CreateEntityReactionEffect
+      entity: OE14DyeRed
+
+- type: reaction
+  id: OE14YellowDayflinBrewing
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  minTemp: 393
+  reactants:
+    OE14YellowDayflinPulp:
+      amount: 10
+    Water:
+      amount: 1
+      catalyst: true
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -50
+  - !type:CreateEntityReactionEffect
+      entity: OE14DyeYellow
+
+- type: reaction
+  id: OE14BlueAmanitaColor
+  minTemp: 393
+  priority: 1
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    OE14BlueAmanita:
+      amount: 10
+    Water:
+      amount: 1
+      catalyst: true
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -50
+  - !type:CreateEntityReactionEffect
+      entity: OE14DyeBlue
+
+- type: reaction
+  id: OE14PurpleSageColor
+  minTemp: 393
+  priority: 1
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    OE14WildSageSap:
+      amount: 10
+    Water:
+      amount: 1
+      catalyst: true
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -50
+  - !type:CreateEntityReactionEffect
+      entity: OE14DyePurple

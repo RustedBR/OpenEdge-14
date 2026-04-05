@@ -1,0 +1,17 @@
+- type: oe14SkillPoint
+  id: Memory
+  name: oe14-skill-point-memory
+  getPointPopup: oe14-skill-popup-memory-added
+  losePointPopup: oe14-skill-popup-memory-losed
+  icon:
+    sprite: _OE14/Interface/Misc/skill_point.rsi
+    state: exp
+    
+- type: oe14SkillPoint
+  id: Blood
+  name: oe14-skill-point-vampire-blood
+  getPointPopup: oe14-skill-popup-blood-added
+  losePointPopup: oe14-skill-popup-blood-losed
+  icon:
+    sprite: _OE14/Interface/Misc/skill_point.rsi
+    state: blood

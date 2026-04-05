@@ -1,0 +1,68 @@
+- type: entity
+  parent: BaseItem
+  id: OE14Fork
+  name: fork
+  description: Thousands of years of progress, and there it is, the fork.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Tag
+    tags:
+    - Hoe
+    - Metal
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/cutlery.rsi
+    state: fork
+  - type: Item
+    sprite: _OE14/Objects/Consumable/Food/cutlery.rsi
+    heldPrefix: fork
+  - type: Utensil
+    types:
+    - Fork
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 1.5
+    damage:
+      types:
+        Piercing: 1
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 4
+  localizationId: ent-OE14Fork
+- type: entity
+  parent: BaseItem
+  id: OE14Spoon
+  name: spoon
+  description: It is considered the first tool for eating, not counting the hands.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Tag
+    tags:
+    - Metal
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/cutlery.rsi
+    state: spoon
+  - type: Item
+    sprite: _OE14/Objects/Consumable/Food/cutlery.rsi
+    heldPrefix: spoon
+  - type: Utensil
+    types:
+    - Spoon
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 1
+  - type: Shovel
+    speedModifier: 0.1
+  - type: ReactionMixer
+    mixMessage: spoon-mixing-success
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 4
+  localizationId: ent-OE14Spoon

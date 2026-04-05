@@ -1,0 +1,78 @@
+- type: entity
+  id: OE14StoneWell
+  parent: BaseStructure
+  categories:
+  - ForkFiltered
+  name: well
+  description: At the bottom of this well gurgles clear water. If you have a bucket,
+    you can reach it.
+  components:
+  - type: Sprite
+    noRot: true
+    offset: 0, 0.3
+    drawdepth: Mobs
+    sprite: _OE14/Structures/Specific/Farming/well.rsi
+    layers:
+    - state: icon
+  - type: DrawableSolution
+    solution: pool
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 9999999
+        reagents:
+        - ReagentId: Water
+          Quantity: 9999999
+  - type: DrainableSolution
+    solution: pool
+  - type: Drink
+    solution: pool
+  localizationId: ent-OE14StoneWell
+- type: entity
+  id: OE14StoneWellBroken
+  parent: OE14StoneWell
+  categories:
+  - ForkFiltered
+  name: broken well
+  description: A barely surviving well that's been through too much, maybe there's
+    still water left.
+  components:
+  - type: Sprite
+    noRot: true
+    offset: 0, 0.3
+    drawdepth: Mobs
+    sprite: _OE14/Structures/Specific/Farming/well.rsi
+    layers:
+    - state: broken
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 999
+        reagents:
+        - ReagentId: Water
+          Quantity: 200
+  localizationId: ent-OE14StoneWellBroken
+- type: entity
+  id: OE14StoneWellGrovelling
+  parent: OE14StoneWell
+  categories:
+  - ForkFiltered
+  name: grovelling well
+  description: A well ruined by time, overgrown with moss and grass, perhaps there
+    was at least a couple of buckets of water left there.
+  components:
+  - type: Sprite
+    noRot: true
+    offset: 0, 0.3
+    drawdepth: Mobs
+    sprite: _OE14/Structures/Specific/Farming/well.rsi
+    layers:
+    - state: grovelling
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 999
+        reagents:
+        - ReagentId: Water
+          Quantity: 50
+  localizationId: ent-OE14StoneWellGrovelling

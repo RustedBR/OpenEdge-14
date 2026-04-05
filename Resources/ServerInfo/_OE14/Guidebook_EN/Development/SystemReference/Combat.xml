@@ -1,0 +1,43 @@
+<Document>
+# Combat System Reference
+
+Quick reference for the combat systems in OpenEdge 14.
+
+## Damage Flow
+
+<CodeBlock>
+Player attacks
+  |
+MeleeWeapon component calculates base damage
+  |
+STR modifier applied
+  |
+DamageEvent raised
+  |
+HealthSystem applies damage
+  |
+StatusEffectSystem applies effects (bleeding, etc.)
+</CodeBlock>
+
+## Key Components
+
+[bold]MeleeWeapon[/bold] — defines weapon damage and attack speed. DEX stat affects attack delay.
+
+[bold]OE14Skills[/bold] — combat skill trees that grant damage bonuses and special attacks.
+
+## Stat Effects on Combat
+
+- [bold]STR[/bold] — increases melee damage
+- [bold]DEX[/bold] — decreases attack delay (faster attacks)
+- [bold]VIT[/bold] — increases max health (survivability)
+
+## File Locations
+
+- [mono]Content.Shared/_OE14/Combat/[/mono]
+- [mono]Content.Server/_OE14/Combat/[/mono]
+
+## Content Under Construction
+
+Full combat system reference coming soon.
+
+</Document>

@@ -1,0 +1,300 @@
+<Document>
+# Sincronização de Rede (Netcode)
+
+A sincronização de rede mantém o servidor e o cliente perfeitamente em sincronia. Quando algo muda no servidor, ele atualiza automaticamente em cada cliente conectado.
+
+## O Problema Que Estamos Resolvendo
+
+### Sem Rede
+- Apenas um jogador (não é multiplayer)
+- Mudanças existem apenas no seu computador
+- Outros jogadores não veem o que você faz
+- Caos total
+
+### Com Rede
+- Múltiplos jogadores veem o mesmo mundo
+- Quando você se move, outros veem você se mover
+- Quando você recebe dano, a barra de vida atualiza para todos
+- Servidor é a fonte da verdade
+
+## Como Funciona: AutoNetworkedField
+
+A maneira mais simples de sincronizar dados é com o atributo [mono]AutoNetworkedField[/mono]:
+
+<CodeBlock>
+public sealed partial class HealthComponent : Component
+{
+    [DataField]
+    public float Health { get; set; } = 100f;
+
+    [DataField, AutoNetworkedField]  // <- Esta linha sincroniza para cliente!
+    public float MaxHealth { get; set; } = 100f;
+}
+</CodeBlock>
+
+Quando [mono]MaxHealth[/mono] muda no servidor:
+1. Servidor define [mono]health.MaxHealth = 150[/mono]
+2. AutoNetworkedField detecta a mudança
+3. Mensagem de rede enviada para todos os clientes
+4. Clientes atualizam sua cópia
+5. UI atualiza automaticamente
+
+[bold]Nenhum código manual necessário![/bold]
+
+## Quando Usar AutoNetworkedField
+
+[bold]Use AutoNetworkedField para:[/bold]
+- Propriedades simples que mudam ocasionalmente
+- Valores de atributos (HP, mana, atributos)
+- Flags de componentes (isVisible, isLocked)
+- Informação de status (onFire, frozen)
+- Qualquer bool, int, float, string que clientes precisam ver
+
+[bold]Não use AutoNetworkedField para:[/bold]
+- Arrays enormes (problema de banda de rede)
+- Dados apenas locais (estado de animação que não precisa sincronização)
+- Dados que mudam a cada frame (física pode ser melhor)
+- Informações sensíveis (não envie senhas!)
+
+## Exemplo Real: Sincronização de Atributos
+
+Aqui está como atributos de personagem sincronizam para o cliente:
+
+<CodeBlock>
+public sealed partial class OE14CharacterStatsComponent : Component
+{
+    [DataField]
+    public int BaseStrength { get; set; } = 5;
+
+    [DataField, AutoNetworkedField]  // <- Sincroniza para cliente
+    public int EffectiveStrength { get; set; } = 5;
+
+    [DataField, AutoNetworkedField]  // <- Sincroniza para cliente
+    public Dictionary<ModifierSource, int> StrengthModifiers { get; set; } = new();
+}
+</CodeBlock>
+
+Quando o servidor calcula novos modificadores:
+1. Servidor: atualiza [mono]StrengthModifiers[/mono]
+2. Rede: Mensagem enviada para todos os clientes
+3. Cliente: Recebe e atualiza sua cópia
+4. UI: Mostra "FOR: 5 -> 7 (+2 Magia)"
+
+Automático! Sem código manual de rede!
+
+## Autoridade do Servidor
+
+[bold]CRÍTICO:[/bold] O servidor está sempre certo. Clientes podem prever, mas valores do servidor são canônicos.
+
+<CodeBlock>
+Jogador clica para atacar:
+   |
+Cliente prevê ataque (mostra animação de golpe)
+   |
+Cliente envia solicitação de ataque para servidor
+   |
+Servidor valida: "Este jogador pode atacar? Alvo está no alcance?"
+   |
+Servidor aceita ou rejeita ataque
+   |
+Servidor calcula dano real: 20
+   |
+Servidor atualiza vida do defensor: 100 -> 80
+   |
+AutoNetworkedField sincroniza Vida para todos os clientes
+   |
+Clientes veem valor de vida correto: 80 (não 82 previstos do cliente)
+</CodeBlock>
+
+[bold]Por quê:[/bold] Evita trapaça. Jogadores não podem modificar seu cliente para não tomar dano.
+
+## Frequência de Atualização de Rede
+
+### Com Que Frequência Atualizações Acontecem?
+
+Componentes são networkados a uma frequência fixa (geralmente 30 atualizações por segundo):
+
+<CodeBlock>
+Frame do Servidor:   60 ticks/seg
+Atualização de Rede: 30 pacotes/seg
+Cliente Vê:    Posição interpolada suave
+</CodeBlock>
+
+Isso equilibra precisão e banda.
+
+### Considerações de Banda
+
+Apenas dados [bold]alterados[/bold] são enviados:
+
+<CodeBlock>
+Frame 1: Jogador se move de X=10 para X=12
+  -> Envia "Posição mudou para 12"
+
+Frame 2: Jogador se move de X=12 para X=14
+  -> Envia "Posição mudou para 14"
+
+Frame 3: Jogador fica parado (sem mudança)
+  -> Não envia nada! (banda economizada)
+</CodeBlock>
+
+## Predição e Interpolação de Rede
+
+Clientes não apenas esperam por atualizações do servidor. Eles preveem à frente:
+
+<CodeBlock>
+Servidor: "Jogador em X=100, velocidade=5"
+   |
+Cliente prevê: Próximo frame será X=105
+   |
+Cliente prevê: Frame depois X=110
+   |
+Cliente mostra: Jogador se movendo suavemente
+   |
+Servidor: "Correção: Jogador em X=108 (levemente diferente)"
+   |
+Cliente: "Ajusta interpolação para corresponder ao servidor"
+</CodeBlock>
+
+Resultado: Gameplay suave mesmo com 100ms de latência de rede!
+
+## Sincronização de Eventos de Rede
+
+Nem todos os dados cabem em AutoNetworkedField. Às vezes você precisa de eventos:
+
+<CodeBlock>
+// Lado do servidor
+public override void Update(float frameTime)
+{
+    // Jogador recebeu dano
+    var damageEvent = new DamageEvent(target, 10);
+    RaiseLocalEvent(target, damageEvent);
+}
+</CodeBlock>
+
+Isso sincroniza automaticamente para o cliente porque é um tipo de evento networkado.
+
+## Prevenindo Trapaça de Rede
+
+Nunca confie no cliente. Sempre valide no servidor:
+
+<CodeBlock>
+// Ruim - confia no cliente
+public void CastSpell(EntityUid spellId)
+{
+    _spellSystem.Cast(spellId);  // E se o cliente enviar ID de magia inválida?
+}
+
+// Bom - valida no servidor
+public void CastSpell(EntityUid spellId)
+{
+    var player = GetCurrentPlayer();
+    if (!player.HasSpell(spellId))
+        return;  // Rejeita
+
+    if (player.Mana < GetManaCost(spellId))
+        return;  // Rejeita
+
+    _spellSystem.Cast(spellId);  // Agora é seguro
+}
+</CodeBlock>
+
+Servidor verifica:
+- Jogador tem esta magia?
+- Jogador tem mana suficiente?
+- Jogador pode conjurar (não atordoado, silenciado)?
+- Alvo está no alcance?
+
+## Visibilidade de Rede
+
+Alguns dados devem ir apenas para certos clientes:
+
+<CodeBlock>
+// Envia vida apenas para o dono (não outros jogadores)
+[DataField, AutoNetworkedField(Access = ViewAccessLevel.Private)]
+public int Health { get; set; }
+
+// Envia para todos
+[DataField, AutoNetworkedField(Access = ViewAccessLevel.Public)]
+public string Name { get; set; }
+
+// Envia apenas para admins
+[DataField, AutoNetworkedField(Access = ViewAccessLevel.Admin)]
+public int DebugValue { get; set; }
+</CodeBlock>
+
+Previne vazar informações sensíveis.
+
+## Debugando Problemas de Rede
+
+### Problema: Dados não sincronizando
+1. Verificar: O campo está marcado com o atributo AutoNetworkedField?
+2. Verificar: O componente está em uma entidade networkada?
+3. Verificar: A propriedade é pública?
+4. Corrigir: Adicionar AutoNetworkedField à propriedade
+
+### Problema: Clientes fora de sincronia
+1. Servidor está quebrando/reiniciando
+2. Pacotes de rede sendo perdidos
+3. Predição do cliente muito agressiva
+
+### Problema: Banda de rede muito alta
+1. Muitos AutoNetworkedFields atualizando a cada frame
+2. Solução: Apenas networkar dados críticos
+3. Usar eventos para notificações únicas
+
+## Melhores Práticas
+
+[bold]FAÇA:[/bold]
+- Marque campos networkados com o atributo AutoNetworkedField
+- Sempre valide no servidor
+- Apenas sincronize dados que jogadores precisam ver
+- Assuma que a rede será instável (trate lag)
+
+[bold]NÃO FAÇA:[/bold]
+- Confie em dados do cliente para decisões importantes
+- Envie arrays enormes pela rede
+- Atualize campos não networkados para lógica de jogo
+- Assuma atualizações de rede instantâneas
+
+## Exemplo: Jogador Recebe Dano
+
+<CodeBlock>
+1. Cliente envia: "Jogador clicou ataque no inimigo"
+   |
+2. Servidor recebe, valida, calcula dano (20)
+   |
+3. Servidor atualiza: health.Health = 80 (era 100)
+   |
+4. AutoNetworkedField detecta mudança
+   |
+5. Mensagem de rede: "Vida mudou para 80"
+   |
+6. Todos os clientes recebem atualização
+   |
+7. Clientes atualizam: health.Health = 80
+   |
+8. UI atualiza: Barra de vida mostra 80/100
+   |
+9. Todo jogador no jogo vê a vida correta
+</CodeBlock>
+
+Tudo automático!
+
+## Navegação
+
+- Precisa sincronizar um campo de componente? Use o atributo AutoNetworkedField
+- Quer enviar mensagens únicas? Use eventos networkados
+- Preocupado com trapaça? Sempre valide no servidor
+- Otimizar banda? Apenas sincronize dados críticos
+
+## Resumo
+
+- [bold]Servidor é autoridade[/bold] — valores do servidor são sempre corretos
+- [bold]AutoNetworkedField[/bold] — sincronização automática
+- [bold]Predição do cliente[/bold] — gameplay suave apesar da latência
+- [bold]Eventos de rede[/bold] — mensagens únicas para clientes
+- [bold]Validação[/bold] — sempre verifique no servidor
+
+O framework lida com a maior parte do networking para você. Basta marcar seus campos e deixe funcionar!
+
+</Document>

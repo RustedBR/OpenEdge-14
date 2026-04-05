@@ -1,0 +1,10 @@
+- type: roleType
+  id: OE14DemiplaneAntagonist
+  name: oe14-role-type-demiplane-antag-name
+  color: '#e03876'
+
+- type: roleType
+  id: OE14RaidAntagonist
+  name: oe14-role-type-raid-antag-name
+  color: '#a81b24'
+

@@ -1,0 +1,33 @@
+<Document>
+# Elves
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobElf" Caption="Elf"/>
+</Box>
+
+Elves are a race very similar to humans, but have no common ancestors. They can be found in any corner of Sileitha, but most often living near forests or reserves. Their bodies are sturdy and long-lived — and their connection to magic is unrivaled among the mortal races.
+
+## Attributes
+
+[bold]Scale: 1–10 | Effective values shown (includes free racial skills)[/bold]
+
+- [color=#e05050]Strength[/color] — [bold][color=#77dd77]6[/color][/bold] | Above-average physical power. Deals more damage than humans.
+- [color=#50e050]Vitality[/color] — [bold][color=#77dd77]6[/color][/bold] | Decent toughness. [color=#77dd77]~112 HP[/color] before Critical, [color=#ff6961]~225 HP[/color] before Death.
+- [color=#50e0e0]Dexterity[/color] — [bold][color=#ff6961]1[/color][/bold] | Extremely fragile stamina. Only [color=#ff6961]~25 stamina[/color] before Stamina Crit — nearly any hit can floor an Elf.
+- [color=#a050e0]Intelligence[/color] — [bold][color=#42aaf5]9[/color][/bold] | Exceptional magical power. [color=#42aaf5]~175 mana[/color]. (Base INT 7, +2 from free [color=#5EABEB]Metamagic[/color] skills)
+
+Elves are masters of magic with respectable health — but their near-zero stamina is a critical weakness. A single burst of physical attacks can stagger them before they can react.
+
+## Ancient Magic
+
+The magic reserves of Elves are [color=#1e90ff]far larger than that of Humans.[/color] However, they have [color=#ffa500]NO natural mana regeneration.[/color]
+
+The only way for Elves to regenerate mana is via their racial ability: [color=#5EABEB]Mana Trance[/color].
+
+<Box>
+<GuideEntityEmbed Entity="OE14ActionSpellManaTrance" Caption="[color=#5EABEB]Mana Trance[/color]"/>
+</Box>
+
+Elves also begin with free Basic and Advanced [color=#5EABEB]Metamagic[/color], granting +2 INT and enabling advanced spell techniques.
+
+</Document>

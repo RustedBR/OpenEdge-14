@@ -1,0 +1,69 @@
+- type: Tag
+  id: OE14DemiplaneRuins
+
+- type: entity
+  id: OE14DemiplaneRuinsRoomSpawner
+  categories: [ ForkFiltered ]
+  parent: BaseRoomMarker
+  name: Demiplane ruins room spawner
+  components:
+  - type: RoomFill
+    clearExisting: true
+    roomWhitelist:
+      tags:
+      - OE14DemiplaneRuins
+
+- type: dungeonRoom
+  id: OE14DemiplaneRuins_1
+  size: 5,5
+  atlas: /Maps/_OE14/Dungeon/demiplane_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - OE14DemiplaneRuins
+
+- type: dungeonRoom
+  id: OE14DemiplaneRuins_2
+  size: 5,5
+  atlas: /Maps/_OE14/Dungeon/demiplane_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 6,0
+  tags:
+    - OE14DemiplaneRuins
+
+- type: dungeonRoom
+  id: OE14DemiplaneRuins_3
+  size: 5,5
+  atlas: /Maps/_OE14/Dungeon/demiplane_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 12,0
+  tags:
+    - OE14DemiplaneRuins
+
+- type: dungeonRoom
+  id: OE14DemiplaneRuins_4
+  size: 5,5
+  atlas: /Maps/_OE14/Dungeon/demiplane_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 18,0
+  tags:
+    - OE14DemiplaneRuins
+
+- type: dungeonRoom
+  id: OE14DemiplaneRuins_5
+  size: 5,5
+  atlas: /Maps/_OE14/Dungeon/demiplane_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - OE14DemiplaneRuins
+
+- type: dungeonRoom
+  id: OE14DemiplaneRuins_6
+  size: 5,5
+  atlas: /Maps/_OE14/Dungeon/demiplane_ruins.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 30,0
+  tags:
+    - OE14DemiplaneRuins
+

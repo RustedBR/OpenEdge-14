@@ -1,0 +1,96 @@
+- type: npcFaction
+  id: OE14Adventurers #TODO - Change name to some lore-related
+  hostile:
+  - OE14AggressiveAnimals
+  - OE14Undead
+  - OE14HostileEveryone
+  - OE14Monster
+  - OE14Insects
+  - OE14Slimes
+  - OE14Fishies
+
+- type: npcFaction
+  id: OE14HostileEveryone
+  hostile:
+  - OE14Adventurers
+  - OE14Undead
+  - OE14PeacefulAnimals
+  - OE14AggressiveAnimals
+  - OE14Monster
+  - OE14Slimes
+  - OE14Fishies
+  - OE14Cat
+  - OE14Rodent
+
+- type: npcFaction
+  id: OE14Undead
+  hostile:
+  - OE14Adventurers
+  - OE14HostileEveryone
+  - OE14PeacefulAnimals
+  - OE14AggressiveAnimals
+  - OE14Fishies
+  - OE14Cat
+  - OE14Rodent
+
+- type: npcFaction
+  id: OE14PeacefulAnimals
+
+- type: npcFaction
+  id: OE14Neutrals
+
+- type: npcFaction
+  id: OE14Cat
+  hostile:
+    - OE14Rodent
+    - OE14Fishies
+
+- type: npcFaction
+  id: OE14Rodent
+
+- type: npcFaction
+  id: OE14AggressiveAnimals
+  hostile:
+  - OE14Adventurers
+  - OE14Undead
+  - OE14PeacefulAnimals
+  - OE14Monster
+  - OE14Slimes
+  - OE14HostileEveryone
+  - OE14Fishies
+  - OE14Cat
+  - OE14Rodent
+
+- type: npcFaction
+  id: OE14Monster
+  hostile:
+  - OE14Adventurers
+  - OE14HostileEveryone
+  - OE14AggressiveAnimals
+  - OE14Cat
+  - OE14Rodent
+
+- type: npcFaction
+  id: OE14Insects
+  hostile:
+  - OE14Adventurers
+  - OE14AggressiveAnimals
+  - OE14Fishies
+
+- type: npcFaction
+  id: OE14Slimes
+  hostile:
+  - OE14Adventurers
+  - OE14HostileEveryone
+  - OE14AggressiveAnimals
+  - OE14Cat
+  - OE14Rodent
+
+- type: npcFaction
+  id: OE14Fishies
+  hostile:
+  - OE14Adventurers
+  - OE14HostileEveryone
+  - OE14AggressiveAnimals
+  - OE14Insects
+  - OE14Undead

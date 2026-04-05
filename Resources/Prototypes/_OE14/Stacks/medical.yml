@@ -1,0 +1,13 @@
+- type: stack
+  id: OE14HerbalBandage
+  name: oe14-stack-pack-herbal-bandage
+  icon: { sprite: "_OE14/Objects/Specific/Medical/medical.rsi", state: herbbandage_3 }
+  spawn: OE14HerbalBandage
+  maxCount: 5
+
+- type: stack
+  id: OE14Gauze
+  name: oe14-stack-pack-gauze
+  icon: { sprite: "_OE14/Objects/Specific/Medical/medical.rsi", state: bandage_3 }
+  spawn: OE14Gauze
+  maxCount: 5

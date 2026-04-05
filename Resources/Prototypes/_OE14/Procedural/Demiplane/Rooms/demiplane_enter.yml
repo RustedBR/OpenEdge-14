@@ -1,0 +1,47 @@
+- type: Tag
+  id: OE14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanEnterRoom_1
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 0,0
+  tags:
+    - OE14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanEnterRoom_2
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 8,0
+  tags:
+    - OE14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanEnterRoom_3
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 16,0
+  tags:
+    - OE14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanEnterRoom_4
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 24,0
+  tags:
+    - OE14DemiplanEnterRoom
+
+- type: dungeonRoom
+  id: OE14DemiplanEnterRoom_5
+  size: 7,7
+  atlas: /Maps/_OE14/Dungeon/demiplane_enter.yml
+  ignoreTile: FloorShuttlePurple
+  offset: 32,0
+  tags:
+    - OE14DemiplanEnterRoom

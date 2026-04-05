@@ -1,0 +1,53 @@
+<Document>
+# Criando Habilidades Customizadas
+
+Esta página guia você através de adicionar uma nova árvore de habilidades e magias ao OpenEdge 14.
+
+## Etapa 1: Definir a Ação de Magia
+
+Crie o prototype de entidade de magia em [mono]Resources/Prototypes/_OE14/Magic/Spells/[/mono]:
+
+<CodeBlock>
+- type: entity
+  id: SpellMyNewSpell
+  name: My New Spell
+  components:
+    - type: InstantAction
+    - type: OE14ActionManaCost
+      cost: 15
+    - type: OE14Spell
+      # Adicione componentes específicos da magia aqui
+</CodeBlock>
+
+## Etapa 2: Definir a Habilidade
+
+Crie o prototype de habilidade em [mono]Resources/Prototypes/_OE14/Skills/[/mono]:
+
+<CodeBlock>
+- type: OE14SkillPrototype
+  id: MyNewSkill
+  name: My New Skill
+  tier: 1
+  pointCost: 1
+  grants:
+    - SpellMyNewSpell
+  statModifiers:
+    Intelligence: 1  # Bônus de atributo opcional
+</CodeBlock>
+
+## Etapa 3: Adicionar a uma Árvore
+
+Adicione sua habilidade a uma árvore existente ou crie uma nova no prototype de espécie.
+
+## Etapa 4: Testar
+
+1. Compile e rode o servidor
+2. Crie um personagem com a espécie que tem esta árvore
+3. Gaste pontos para desbloquear a habilidade
+4. Verifique a magia aparece na barra de ações
+
+## Conteúdo Em Construção
+
+Guia passo a passo com exemplos completos de código coming soon. Veja [textlink="Adicionando Novas Magias" link="OE14_DEV_Guide_Spells"] para um walkthrough mais completo.
+
+</Document>

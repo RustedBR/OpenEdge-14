@@ -1,0 +1,64 @@
+<Document>
+# Adding New Jobs
+
+This guide covers how to create a new job in OpenEdge 14.
+
+## Step 1: Create the Job Prototype
+
+Create a prototype in [mono]Resources/Prototypes/_OE14/Jobs/[/mono]:
+
+<CodeBlock>
+- type: job
+  id: OE14Blacksmith
+  name: job-name-oe14-blacksmith
+  description: job-description-oe14-blacksmith
+  playTimeTracker: JobBlacksmith
+  startingGear: BlacksmithGear
+  icon:
+    sprite: /Textures/_OE14/Interface/Jobs/blacksmith.rsi
+    state: icon
+</CodeBlock>
+
+## Step 2: Add to Map
+
+Add the job's spawn point to the map using the map editor. Spawn points are entities with the [mono]SpawnPoint[/mono] component and a job filter.
+
+## Step 3: Configure Salary
+
+If the job receives a salary, add the OE14Salary component to the spawn point or job entity:
+
+<CodeBlock>
+- type: OE14Salary
+  job: OE14Blacksmith
+  amount: 10
+  interval: 300  # seconds between payments
+</CodeBlock>
+
+## Step 4: Create Starting Gear
+
+Define what the job starts with:
+
+<CodeBlock>
+- type: startingGear
+  id: BlacksmithGear
+  equipment:
+    jumpsuit: ClothingUniformBlacksmithApron
+    shoes: ClothingShoesBoot
+  inhand:
+    - BlacksmithHammer
+</CodeBlock>
+
+## Step 5: Add Localization
+
+Add strings to [mono]Resources/Locale/en-US/_OE14/jobs.ftl[/mono]:
+
+<CodeBlock>
+job-name-oe14-blacksmith = Blacksmith
+job-description-oe14-blacksmith = Forge weapons and armor for the settlement.
+</CodeBlock>
+
+## Content Under Construction
+
+Full guide with screenshots and map editor instructions coming soon.
+
+</Document>

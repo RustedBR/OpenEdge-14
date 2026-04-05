@@ -1,0 +1,49 @@
+- type: entity
+  id: OE14ActionSpellLurkerKick
+  parent: OE14ActionSpellBase
+  name: Crushing attack
+  description: You prepare a powerful melee strike that will knock your target back with force and stun them for a long time.
+  components:
+  - type: OE14ActionStaminaCost
+    stamina: 20
+  - type: DoAfterArgs
+    delay: 2.5
+    distanceThreshold: 2.5
+    breakOnDamage: true
+  - type: OE14ActionEmoting
+    startEmote: oe14-kick-lurker-start
+    endEmote: oe14-kick-lurker
+  - type: OE14ActionDangerous
+  - type: Action
+    useDelay: 20
+    icon:
+      sprite: _OE14/Actions/Spells/lurker.rsi
+      state: kick
+  - type: TargetAction
+    range: 2
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellRevealStealthUser
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14LurkerRitualSound
+      effects:
+      - !type:OE14SpellRevealStealthUser
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Paralyze
+          paralyzeTime: 15
+      - !type:OE14SpellThrowFromUser
+        throwPower: 4
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14DustEffectKickSound
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          ignoreResistances: false
+          damage:
+            types:
+              Blunt: 10

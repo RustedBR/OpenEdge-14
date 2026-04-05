@@ -1,0 +1,202 @@
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakFurcapeBlack
+  name: furcape
+  description: Brutal woolen wool cape.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/furcape2.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/furcape2.rsi
+  localizationId: ent-OE14ClothingCloakFurcapeBlack
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakFurcapeBlue
+  name: furcape
+  description: Brutal woolen wool cape.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/furcape.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/furcape.rsi
+  localizationId: ent-OE14ClothingCloakFurcapeBlue
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakRitualAttireLeather
+  name: ritual attire with leather
+  description: The traditional attire of Southern mages who have undergone the ritual.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/cheetah_skin.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/cheetah_skin.rsi
+  localizationId: ent-OE14ClothingCloakRitualAttireLeather
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakWhite
+  name: white cloak
+  description: A spacious white coat. For those who like to look aesthetically pleasing.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/white.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/white.rsi
+  localizationId: ent-OE14ClothingCloakWhite
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakGreen
+  name: green cloak
+  description: A spacious green coat. For those who like to look aesthetically pleasing.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/green.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/green.rsi
+  localizationId: ent-OE14ClothingCloakGreen
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakBlue
+  name: blue cloak
+  description: Blue cape covering her entire body.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/blue.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/blue.rsi
+  localizationId: ent-OE14ClothingCloakBlue
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakFurCoat
+  name: fur coat
+  description: Warm in the rain, warm in the snow, warm in the wind. Nice.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/fur_coat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/fur_coat.rsi
+  localizationId: ent-OE14ClothingCloakFurCoat
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakBrownFurCoat
+  name: brown fur coat
+  description: Warm in the rain, warm in the snow, warm in the wind. Nice.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/fur_coat_brown.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/fur_coat_brown.rsi
+  localizationId: ent-OE14ClothingCloakBrownFurCoat
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakInsulated
+  name: insulated mantle
+  description: Winter is coming...
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/insulated_mantle.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/insulated_mantle.rsi
+  localizationId: ent-OE14ClothingCloakInsulated
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakBlackSyurko
+  name: black surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/black_syurko.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/black_syurko.rsi
+  localizationId: ent-OE14ClothingCloakBlackSyurko
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakRedSyurko
+  name: red surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/red_syurko.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/red_syurko.rsi
+  localizationId: ent-OE14ClothingCloakRedSyurko
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakBlueSyurko
+  name: blue surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/blue_syurko.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/blue_syurko.rsi
+  localizationId: ent-OE14ClothingCloakBlueSyurko
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakGreenSyurko
+  name: green surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/green_syurko.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/green_syurko.rsi
+  localizationId: ent-OE14ClothingCloakGreenSyurko
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakWhiteSyurko
+  name: white surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/white_syurko.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/white_syurko.rsi
+  localizationId: ent-OE14ClothingCloakWhiteSyurko
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakYellowSyurko
+  name: yellow surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/yellow_syurko.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/yellow_syurko.rsi
+  localizationId: ent-OE14ClothingCloakYellowSyurko
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakAristocraticCloak
+  name: aristocratic cloak
+  description: Aristocratic red coat with fur collar, very expensive, very cool, a
+    little uncomfortable.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/aristocratic_cloak.rsi
+  localizationId: ent-OE14ClothingCloakAristocraticCloak
+- type: entity
+  parent:
+  - OE14ClothingCloakBase
+  - ClothingSlotBase
+  id: OE14ClothingCloakMaidArpon
+  name: maid's apron
+  description: Cleanliness, orderliness and obedience are the main traits of a good
+    maid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/maid_apron.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/maid_apron.rsi
+  localizationId: ent-OE14ClothingCloakMaidArpon
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakHaori
+  name: haori
+  description: Traditional roomy jacket of a traveler from distant lands.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/haori.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/haori.rsi
+  localizationId: ent-OE14ClothingCloakHaori

@@ -1,0 +1,92 @@
+- type: oe14SkillTree
+  id: Pyrokinetic
+  name: oe14-skill-tree-pyrokinetic-name
+  desc: oe14-skill-tree-pyrokinetic-desc
+  skillType: Memory
+  color: "#d6933c"
+
+- type: oe14SkillTree
+  id: Hydrosophistry
+  name: oe14-skill-tree-hydrosophistry-name
+  desc: oe14-skill-tree-hydrosophistry-desc
+  skillType: Memory
+  color: "#1554a1"
+
+- type: oe14SkillTree
+  id: Illusion
+  name: oe14-skill-tree-illusion-name
+  desc: oe14-skill-tree-illusion-desc
+  skillType: Memory
+  color: "#f55faf"
+
+- type: oe14SkillTree
+  id: Metamagic
+  name: oe14-skill-tree-metamagic-name
+  desc: oe14-skill-tree-metamagic-desc
+  skillType: Memory
+  color: "#56e5f5"
+
+- type: oe14SkillTree
+  id: Healing
+  name: oe14-skill-tree-healing-name
+  desc: oe14-skill-tree-healing-desc
+  skillType: Memory
+  color: "#51cf72"
+
+- type: oe14SkillTree
+  id: Athletic
+  name: oe14-skill-tree-athletic-name
+  desc: oe14-skill-tree-athletic-desc
+  skillType: Memory
+  color: "#8bdb7f"
+
+#- type: oe14SkillTree
+#  id: Dimension
+#  name: oe14-skill-tree-dimension-name
+#  desc: oe14-skill-tree-dimension-desc
+#  skillType: Memory
+#  color: "#ac66be"
+
+- type: oe14SkillTree
+  id: Electromancy
+  name: oe14-skill-tree-electric-name
+  desc: oe14-skill-tree-electric-desc
+  skillType: Memory
+  color: "#e8ff4c"
+
+- type: oe14SkillTree
+  id: MartialArts
+  name: oe14-skill-tree-martial-name
+  desc: oe14-skill-tree-martial-desc
+  skillType: Memory
+  color: "#f54242"
+
+#
+
+#- type: oe14SkillTree
+#  id: Thaumaturgy
+#  name: oe14-skill-tree-thaumaturgy-name
+#  desc: oe14-skill-tree-thaumaturgy-desc
+#  skillType: Memory
+#  color: "#7c52bf"
+
+#- type: oe14SkillTree
+#  id: Blacksmithing
+#  name: oe14-skill-tree-blacksmithing-name
+#  desc: oe14-skill-tree-blacksmithing-desc
+#  skillType: Memory
+#  color: "#6b3200"
+
+#- type: oe14SkillTree
+#  id: Trading
+#  name: oe14-skill-tree-trading-name
+#  desc: oe14-skill-tree-trading-desc
+#  skillType: Memory
+#  color: "#f5edaa"
+
+- type: oe14SkillTree
+  id: Craftsmanship
+  name: oe14-skill-tree-craftsman-name
+  desc: oe14-skill-tree-craftsman-desc
+  skillType: Memory
+  color: "#a04b00"

@@ -1,0 +1,20 @@
+- type: entity
+  id: OE14WeaponArcSlash
+  parent: WeaponArcStatic
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: WeaponArcVisuals
+    animation: CPSlash
+  localizationId: ent-OE14WeaponArcSlash
+- type: entity
+  id: OE14WeaponArcThrust
+  parent: WeaponArcStatic
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: WeaponArcVisuals
+    animation: CPThrust
+  localizationId: ent-OE14WeaponArcThrust

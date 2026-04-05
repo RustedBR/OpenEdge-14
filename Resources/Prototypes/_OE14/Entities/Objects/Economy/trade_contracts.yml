@@ -1,0 +1,152 @@
+- type: entity
+  parent: BaseItem
+  id: OE14TradeContractBase
+  abstract: true
+  categories:
+  - ForkFiltered
+  name: trade contract
+  components:
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Document
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Economy/trade_contracts.rsi
+    state: blank
+  - type: StaticPrice
+    price: 10
+  - type: OE14TradingContract
+  localizationId: ent-OE14TradeContractBase
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractVictoriaGardens
+  description: Trading contract with the "Victoria Gardens" shop. Allows you to purchase
+    various natural products on the trading platform.
+  suffix: Victoria Gardens
+  components:
+  - type: Sprite
+    state: victoria_garden
+  - type: OE14TradingContract
+    faction: VictoriaGardens
+  localizationId: ent-OE14TradeContractVictoriaGardens
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractBradPotions
+  description: Trading contract with the "Brad's marvelous potions" ahop. Allows you
+    to purchase various potions and alchemy equipment.
+  suffix: Brad Potions
+  components:
+  - type: Sprite
+    state: brad_potions
+  - type: OE14TradingContract
+    faction: BradPotions
+  localizationId: ent-OE14TradeContractBradPotions
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractDwarfMining
+  description: Trading contract with the "Dwarf Steel" mining branch. Allows you to
+    purchase various ore and mining tools.
+  suffix: Dwarf Miners
+  components:
+  - type: Sprite
+    state: dwarf_mining
+  - type: OE14TradingContract
+    faction: DwarfMining
+  localizationId: ent-OE14TradeContractDwarfMining
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractThaumaturgy
+  description: Trading contract with the "Academy of Thaumaturgy". Allows you to purchase
+    various magic device, tools and scrolls.
+  suffix: Thaumaturgy
+  components:
+  - type: Sprite
+    state: magic
+  - type: OE14TradingContract
+    faction: Thaumaturgy
+  localizationId: ent-OE14TradeContractThaumaturgy
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractHomeDecor
+  description: Trading contract with the "Cozy House" store. Allows you to buy various
+    decorations and nice things to furnish your home.
+  suffix: Home Decor
+  components:
+  - type: Sprite
+    state: house
+  - type: OE14TradingContract
+    faction: HomeDecor
+  localizationId: ent-OE14TradeContractHomeDecor
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractHorticulture
+  description: Trading contract with "Horticulture Consortium". Allows you to purchase
+    seeds, plants and gardening tools.
+  suffix: Horticulture
+  components:
+  - type: Sprite
+    state: horticulture
+  - type: OE14TradingContract
+    faction: Horticulture
+  localizationId: ent-OE14TradeContractHorticulture
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractButchers
+  description: Trading contract with "Master Butchers Union". Allows you to purchase
+    fresh meat products and butchering equipment.
+  suffix: Butchers
+  components:
+  - type: Sprite
+    state: butchers
+  - type: OE14TradingContract
+    faction: Butchers
+  localizationId: ent-OE14TradeContractButchers
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractDairy
+  description: Trading contract with "Golden Udder Dairy". Allows you to purchase
+    fresh dairy products and eggs.
+  suffix: Dairy
+  components:
+  - type: Sprite
+    state: dairy
+  - type: OE14TradingContract
+    faction: Dairy
+  localizationId: ent-OE14TradeContractDairy
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractTailors
+  description: Trading contract with the "Silk & Needle Tailors Guild". Allows you
+    to purchase fabrics, clothing and tailoring tools.
+  suffix: Tailors
+  components:
+  - type: Sprite
+    state: tailors
+  - type: OE14TradingContract
+    faction: Tailors
+  localizationId: ent-OE14TradeContractTailors
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractGuards
+  description: Trading contract with the "Imperial Guard". Allows you to purchase
+    items that are important for maintaining law and order.
+  suffix: Guards
+  components:
+  - type: Sprite
+    state: guard
+  - type: OE14TradingContract
+    faction: Guards
+  localizationId: ent-OE14TradeContractGuards
+- type: entity
+  parent: OE14TradeContractBase
+  id: OE14TradeContractHelmirChild
+  description: Trading contract with the "Helmirs childs". Allows you to purchase
+    various weapons and ammunition
+  suffix: Helmirs childs
+  components:
+  - type: Sprite
+    state: helmir_child
+  - type: OE14TradingContract
+    faction: HelmirChild
+  localizationId: ent-OE14TradeContractHelmirChild

@@ -1,0 +1,22 @@
+marking-OE14TieflingHornsSmall = Chifres Pequenos
+marking-OE14TieflingHornsMedium = Chifres Médios
+marking-OE14TieflingHornsLarge = Chifres Grandes
+marking-OE14TieflingHornsCurved = Chifres Curvados
+marking-OE14TieflingHornsStraight = Chifres Retos
+marking-OE14TieflingHornsSpiral = Chifres Espirais
+marking-OE14TieflingHornsRam = Chifres de Carneiro
+marking-OE14TieflingHornsAntlers = Galhadas
+marking-OE14TieflingHornsBroken = Chifres Quebrados
+marking-OE14TieflingHornsCrown = Coroa de Chifres
+
+marking-OE14TieflingHorns = Sinuosos
+marking-OE14TieflingHorns2 = Diligentes
+marking-OE14TieflingHorns3 = Vertical do Poder
+marking-OE14TieflingHorns3Broken = Vertical Quebrada
+marking-OE14TieflingHorns4 = Miúdos
+marking-OE14TieflingHorns5 = Diabo
+marking-OE14TieflingHorns5Broken = Diabo Quebrado
+marking-OE14TieflingHorns6 = Carneirinho
+marking-OE14TieflingHorns7 = Ajustados
+marking-OE14TieflingHorns8 = Coroa
+marking-OE14TieflingHorns9 = Unicórnio

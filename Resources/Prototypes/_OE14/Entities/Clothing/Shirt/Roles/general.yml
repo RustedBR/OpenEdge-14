@@ -1,0 +1,463 @@
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonBlack
+  name: cotton black shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/black.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/black.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  localizationId: ent-OE14ClothingShirtCottonBlack
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtBlackDress
+  name: cotton black dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/black_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/black_dress.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  localizationId: ent-OE14ClothingShirtBlackDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonBlue
+  name: cotton blue shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/blue.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/blue.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 25
+  - type: StaticPrice
+    price: 8.6
+  localizationId: ent-OE14ClothingShirtCottonBlue
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonBlueCollar
+  name: cotton blue collar shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/blue_collar.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/blue_collar.rsi
+  localizationId: ent-OE14ClothingShirtCottonBlueCollar
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtBlueCollarDress
+  name: cotton blue collar dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/blue_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/blue_dress.rsi
+  localizationId: ent-OE14ClothingShirtBlueCollarDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtMercenary
+  name: mercenary shirt
+  description: A mercenary's colourful shirt.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/mercenary.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/mercenary.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  - type: StaticPrice
+    price: 12.6
+  localizationId: ent-OE14ClothingShirtMercenary
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtBlueOpen
+  name: cotton blue open shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/open_blue.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/open_blue.rsi
+  localizationId: ent-OE14ClothingShirtBlueOpen
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtBlueOpenDress
+  name: cotton blue open dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/blue_open_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/blue_open_dress.rsi
+  localizationId: ent-OE14ClothingShirtBlueOpenDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtRedOpen
+  name: cotton red open shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/open_red.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/open_red.rsi
+  localizationId: ent-OE14ClothingShirtRedOpen
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtRedOpenDress
+  name: cotton red open dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/open_red_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/open_red_dress.rsi
+  localizationId: ent-OE14ClothingShirtRedOpenDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtYellowOpen
+  name: cotton yellow open shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/open_yellow.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/open_yellow.rsi
+  localizationId: ent-OE14ClothingShirtYellowOpen
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtYellowOpenDress
+  name: cotton yellow open dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/open_yellow_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/open_yellow_dress.rsi
+  localizationId: ent-OE14ClothingShirtYellowOpenDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonPurple
+  name: cotton purple shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/purple.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/purple.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  - type: StaticPrice
+    price: 4.4
+  localizationId: ent-OE14ClothingShirtCottonPurple
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonRed
+  name: cotton red shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/red.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/red.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  - type: StaticPrice
+    price: 4
+  localizationId: ent-OE14ClothingShirtCottonRed
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonRedDress
+  name: cotton red dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/red_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/red_dress.rsi
+  localizationId: ent-OE14ClothingShirtCottonRedDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonWhite
+  name: cotton white shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/white.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/white.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  localizationId: ent-OE14ClothingShirtCottonWhite
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonWhiteDress
+  name: cotton white dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_brown_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_brown_dress.rsi
+  localizationId: ent-OE14ClothingShirtCottonWhiteDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonWhiteCollar
+  name: cotton white collar shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/white_collar.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/white_collar.rsi
+  localizationId: ent-OE14ClothingShirtCottonWhiteCollar
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonWhiteCollarDress
+  name: cotton white collar dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_collar_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_collar_dress.rsi
+  localizationId: ent-OE14ClothingShirtCottonWhiteCollarDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonYellow
+  name: cotton yellow shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/yellow.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/yellow.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  - type: StaticPrice
+    price: 3.5
+  localizationId: ent-OE14ClothingShirtCottonYellow
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtJestersAttire
+  name: jester's attire
+  description: It's rags, but it's colorful.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/jesters_attire.rsi
+  localizationId: ent-OE14ClothingShirtJestersAttire
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonYellowCollar
+  name: cotton yellow collar shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/yellow_collar.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/yellow_collar.rsi
+  localizationId: ent-OE14ClothingShirtCottonYellowCollar
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtCottonYellowCollarDress
+  name: cotton yellow collar dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/yellow_collar_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/yellow_collar_dress.rsi
+  localizationId: ent-OE14ClothingShirtCottonYellowCollarDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtYellowWizardDress
+  name: yellow wizard robe
+  description: A loose magician's shirt, comfortable and nice looking.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/yellow_wizard_dress.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 35
+  - type: StaticPrice
+    price: 16.6
+  localizationId: ent-OE14ClothingShirtYellowWizardDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtGreenBeltDress
+  name: green skirt with belt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/green_belt_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/green_belt_dress.rsi
+  localizationId: ent-OE14ClothingShirtGreenBeltDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtGreenBeltDress2
+  name: green skirt with belt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/green_belt2_dress.rsi
+  localizationId: ent-OE14ClothingShirtGreenBeltDress2
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtGreenLightDress
+  name: light green dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/light_green_dress.rsi
+  localizationId: ent-OE14ClothingShirtGreenLightDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothingShirtWarriorsGarbDress
+  name: warrior's garb
+  description: show your strength.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/warrior_garb.rsi
+  localizationId: ent-OE14ClothingShirtWarriorsGarbDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtMaidDress
+  name: maid's dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/maid_dress.rsi
+  localizationId: ent-OE14ClothinShirtMaidDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtBlueYellowDress
+  name: blue-yellow dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/blue_yellow_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/blue_yellow_dress.rsi
+  localizationId: ent-OE14ClothinShirtBlueYellowDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtWhiteBlueDress
+  name: white-blue dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_blue_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_blue_dress.rsi
+  localizationId: ent-OE14ClothinShirtWhiteBlueDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtWhiteBlue2Dress
+  name: white-blue dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_blue_dress2.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_blue_dress2.rsi
+  localizationId: ent-OE14ClothinShirtWhiteBlue2Dress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtBrown2Dress
+  name: brown dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_brown2_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_brown2_dress.rsi
+  localizationId: ent-OE14ClothinShirtBrown2Dress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtBrown3Dress
+  name: brown dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_brown3_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_brown3_dress.rsi
+  localizationId: ent-OE14ClothinShirtBrown3Dress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtWhiteGreenDress
+  name: green dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_green_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_green_dress.rsi
+  localizationId: ent-OE14ClothinShirtWhiteGreenDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtwhiteGreenYellowDress
+  name: green-yellow dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_green_yellow_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_green_yellow_dress.rsi
+  localizationId: ent-OE14ClothinShirtwhiteGreenYellowDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtRedBlueDress
+  name: red-blue dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_red_blue_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/white_red_blue_dress.rsi
+  localizationId: ent-OE14ClothinShirtRedBlueDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtYellowBlueDress
+  name: yellow-blue dress
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/yellow_blue_dress.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Dress/yellow_blue_dress.rsi
+  localizationId: ent-OE14ClothinShirtYellowBlueDress
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtBlueGreen
+  name: blue-green shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/blue_green.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/blue_green.rsi
+  localizationId: ent-OE14ClothinShirtBlueGreen
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtGray
+  name: gray shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/gray.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/gray.rsi
+  localizationId: ent-OE14ClothinShirtGray
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtGreenYellow
+  name: green-yellow shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/green_yellow.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/green_yellow.rsi
+  localizationId: ent-OE14ClothinShirtGreenYellow
+- type: entity
+  parent: OE14ClothingShirtBase
+  id: OE14ClothinShirtWhiteBrown
+  name: white-brown shirt
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/white_brown.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shirt/Roles/General/Shirts/white_brown.rsi
+  localizationId: ent-OE14ClothinShirtWhiteBrown

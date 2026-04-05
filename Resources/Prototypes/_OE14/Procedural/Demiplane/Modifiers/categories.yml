@@ -1,0 +1,21 @@
+- type: oe14LocationModifierCategory
+  id: Danger
+
+- type: oe14LocationModifierCategory
+  id: GhostRoleDanger
+
+- type: oe14LocationModifierCategory
+  id: Reward
+
+- type: oe14LocationModifierCategory
+  id: Ore
+
+- type: oe14LocationModifierCategory
+  id: Fun
+
+- type: oe14LocationModifierCategory
+  id: Weather
+
+- type: oe14LocationModifierCategory
+  id: MapLight
+

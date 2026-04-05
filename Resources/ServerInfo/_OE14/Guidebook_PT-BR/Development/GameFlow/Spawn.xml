@@ -1,0 +1,41 @@
+<Document>
+# Spawn do Jogador & Carregamento
+
+Esta página descreve como jogadores ingressam no jogo e como seus personagens são inicializados.
+
+## Fluxo de Spawn
+
+<CodeBlock>
+Jogador conecta
+   |
+Tela de seleção de personagem (lobby)
+   |
+Jogador seleciona espécie e gasta pontos de criação
+   |
+Rodada inicia (ou jogador entra no meio da rodada)
+   |
+SpawnSystem cria entidade no ponto de spawn
+   |
+Componentes de espécie adicionados (atributos raciais, habilidades)
+   |
+Atributos de personagem aplicados (atributos base + modificadores raciais)
+   |
+Jogador ganha controle da entidade
+</CodeBlock>
+
+## Pontos de Criação de Personagem
+
+Durante a criação do personagem, jogadores recebem pontos para gastar em atributos. O número de pontos é configurado nas configurações do servidor.
+
+Após gastar, modificadores raciais são aplicados sobre os atributos base. Isso pode causar overflow se bônus raciais empurrarem um atributo além do limite.
+
+## Problema Conhecido
+
+Jogadores podem spawnar como um personagem aleatório em vez de seu perfil salvo ao usar o dev map. Este é um bug conhecido relacionado a como o dev map trata o carregamento de personagens. Veja a seção de Problemas Conhecidos na memória do projeto.
+
+## Conteúdo Em Construção
+
+Documentação completa de spawn coming soon. Arquivos chave:
+[mono]Content.Server/GameTicking/GameTicker.Spawning.cs[/mono]
+
+</Document>

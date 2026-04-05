@@ -1,0 +1,18 @@
+- type: sourcePort
+  id: OE14Pressed
+  name: oe14-signal-port-name-pressed
+  description: oe14-signal-port-description-pressed
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: OE14Released
+  name: oe14-signal-port-name-released
+  description: oe14-signal-port-description-released
+  defaultLinks: [ Toggle, Trigger, Timer ]
+
+- type: sourcePort
+  id: OE14PowerSource
+  name: oe14-signal-port-name-power-source
+  description: oe14-signal-port-description-power-source
+  defaultLinks: [ OE14PowerTarget ]
+

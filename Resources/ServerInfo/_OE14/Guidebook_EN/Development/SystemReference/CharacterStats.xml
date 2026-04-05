@@ -1,0 +1,35 @@
+<Document>
+# OE14CharacterStats System Reference
+
+Quick reference for the OE14CharacterStats system.
+
+## Components
+
+[bold]OE14CharacterStatsComponent[/bold] — stores base stats, modifiers, effective stats, and available points.
+
+[bold]Fields:[/bold]
+- [mono]BaseStrength / BaseVitality / BaseDexterity / BaseIntelligence[/mono] — immutable base values
+- [mono]EffectiveStrength / EffectiveVitality / ...[/mono] — calculated (base + modifiers), networked
+- [mono]StrengthModifiers / ...[/mono] — dictionary of source -> bonus, networked
+- [mono]AvailablePoints[/mono] — points left to spend
+
+## Key Methods
+
+[bold]OE14CharacterStatsSystem:[/bold]
+- [mono]RecalculateStats(uid, component)[/mono] — recalculates effective stats and handles overflow
+- [mono]AddModifier(uid, stat, source, value)[/mono] — adds a modifier from a source
+- [mono]RemoveModifier(uid, stat, source)[/mono] — removes a modifier
+
+## Network Events
+
+[bold]OE14SpendStatPointEvent[/bold] — raised by client when player spends a point on a stat
+
+## File Locations
+
+- [mono]Content.Shared/_OE14/CharacterStats/[/mono]
+- [mono]Content.Server/_OE14/CharacterStats/[/mono]
+- [mono]Content.Client/_OE14/CharacterStats/[/mono]
+
+For full details, see [textlink="Character Stats System" link="OE14_DEV_CharacterStats"].
+
+</Document>

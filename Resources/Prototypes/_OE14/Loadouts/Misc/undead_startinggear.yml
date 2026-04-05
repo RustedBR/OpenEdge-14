@@ -1,0 +1,32 @@
+- type: startingGear
+  id: OE14MobUndeadEasy1
+  equipment:
+    shirt: OE14ClothingShirtCottonBlack
+    pants: OE14ClothingPantsTrouserDarkBlue
+    belt: OE14WalletFilledLootT1
+
+- type: startingGear
+  id: OE14MobUndeadEasy2
+  equipment:
+    head: OE14ClothingHeadMetalHeadband
+    pants: OE14ClothingPantsLoincloth
+
+- type: startingGear
+  id: OE14MobUndeadEasy3
+  equipment:
+    pants: OE14ClothingPantsTrouserDarkBlue
+    shoes: OE14ClothingShoesSandals
+    mask: OE14ClothingMaskSinner
+
+- type: startingGear
+  id: OE14MobUndeadEasy4
+  equipment:
+    cloak: OE14ClothingCloakRitualAttireLeather
+    pants: OE14ClothingPantsGreen
+
+- type: startingGear
+  id: OE14MobUndeadEasy5
+  equipment:
+    pants: OE14ClothingPantsBrown
+    outerClothing: OE14ClothingOuterClothingBrownVest1
+    belt: OE14WalletFilledLootT1

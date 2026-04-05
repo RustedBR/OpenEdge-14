@@ -1,0 +1,209 @@
+# TIER 1
+
+- type: oe14LocationModifier
+  id: Marble
+  levels:
+    min: 0
+    max: 10
+  unique: true
+  categories:
+    Ore: 0
+  requiredTags:
+  - OE14DemiplaneOres
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallMarbleStone
+      count: 5
+      minGroupSize: 5
+      maxGroupSize: 10
+
+- type: oe14LocationModifier
+  id: IronOre
+  levels:
+    min: 1
+    max: 10
+  name: oe14-modifier-iron-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneIronOre
+      count: 20
+      minGroupSize: 2
+      maxGroupSize: 4
+
+- type: oe14LocationModifier
+  id: IronOreUnderground
+  levels:
+    min: 1
+    max: 10
+  name: oe14-modifier-iron-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneUnderground
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneIronOre
+      count: 15
+      minGroupSize: 4
+      maxGroupSize: 6
+
+- type: oe14LocationModifier
+  id: CopperOre
+  levels:
+    min: 0
+    max: 3
+  name: oe14-modifier-copper-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneCopperOre
+      count: 20
+      minGroupSize: 2
+      maxGroupSize: 4
+
+- type: oe14LocationModifier
+  id: CopperOreUnderground
+  levels:
+    min: 0
+    max: 3
+  name: oe14-modifier-copper-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneUnderground
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneCopperOre
+      count: 15
+      minGroupSize: 4
+      maxGroupSize: 6
+
+- type: oe14LocationModifier
+  id: CoalOre
+  levels:
+    min: 0
+    max: 5
+  name: oe14-modifier-coal-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneCoalOre
+      count: 20
+      minGroupSize: 4
+      maxGroupSize: 6
+
+- type: oe14LocationModifier
+  id: CoalOreUnderground
+  levels:
+    min: 0
+    max: 5
+  name: oe14-modifier-copper-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneUnderground
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneCoalOre
+      count: 15
+      minGroupSize: 6
+      maxGroupSize: 8
+
+# TIER 2
+
+- type: oe14LocationModifier
+  id: GoldOre
+  levels:
+    min: 3
+    max: 10
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneGoldOre
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: oe14LocationModifier
+  id: MithrilOre
+  levels:
+    min: 4
+    max: 10
+  name: oe14-modifier-mithril-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneOpenSky
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneMithrilOre
+      count: 10
+      minGroupSize: 2
+      maxGroupSize: 4
+
+- type: oe14LocationModifier
+  id: MithrilOreUnderground
+  levels:
+    min: 4
+    max: 10
+  name: oe14-modifier-mithril-ore
+  unique: false
+  categories:
+    Ore: 0.25
+  requiredTags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneUnderground
+  layers:
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      entity: OE14WallStoneMithrilOre
+      count: 15
+      minGroupSize: 2
+      maxGroupSize: 4

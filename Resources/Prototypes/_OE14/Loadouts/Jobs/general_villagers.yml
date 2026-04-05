@@ -1,0 +1,24 @@
+# Back
+
+- type: loadoutGroup
+  id: OE14GeneralVillagerBack
+  name: oe14-loadout-general-villager-back
+  loadouts:
+  - OE14ClothingBackBackpackT1
+  - OE14ClothingBackSatchelT1
+#  - OE14ClothingBackExplorerBackpackT1
+
+- type: loadout
+  id: OE14ClothingBackBackpackT1
+  equipment:
+    back: OE14ClothingBackBackpackT1
+
+- type: loadout
+  id: OE14ClothingBackSatchelT1
+  equipment:
+    back: OE14ClothingBackSatchelT1
+
+# - type: loadout
+#   id: OE14ClothingBackExplorerBackpackT1
+#   equipment:
+#     back: OE14ClothingBackExplorerBackpackT1

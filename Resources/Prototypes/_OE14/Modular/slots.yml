@@ -1,0 +1,10 @@
+# Modular Crafting Slots
+# Define available attachment points for modular parts on weapons and armor
+
+- type: modularSlot
+  id: OE14ModularSlotGem
+  name: oe14-modular-slot-gem
+
+- type: modularSlot
+  id: OE14ModularSlotModification
+  name: oe14-modular-slot-modification

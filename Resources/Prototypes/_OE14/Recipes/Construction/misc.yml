@@ -1,0 +1,39 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14Bonfire
+  graph: OE14Bonfire
+  startNode: start
+  targetNode: OE14Bonfire
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14BaseTombstone
+  graph: OE14BaseTombstone
+  startNode: start
+  targetNode: OE14BaseTombstone
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenPallet
+  graph: OE14WoodenPallet
+  startNode: start
+  targetNode: OE14WoodenPallet
+  category: construction-category-misc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+

@@ -1,0 +1,187 @@
+- type: entity
+  parent: BaseStructure
+  id: OE14TradingPlatform
+  name: buying dimensional platform
+  suffix: Trade
+  description: Allows you to trade with the outside world, through retail trade transactions.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    snapCardinals: true
+    sprite: _OE14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: base
+    - state: buy
+  - type: Icon
+    sprite: _OE14/Structures/Specific/Economy/buy_platform.rsi
+    state: base
+  - type: ActivatableUI
+    key: enum.OE14TradingUiKey.Buy
+  - type: Clickable
+  - type: InteractionOutline
+  - type: OE14TradingPlatform
+  - type: UserInterface
+    interfaces:
+      enum.OE14TradingUiKey.Buy:
+        type: OE14TradingPlatformBoundUserInterface
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+    whitelist:
+      tags:
+      - OE14Coin
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+  #- type: GuideHelp
+  #  guides:
+  #  - OE14_RU_Trading
+  #  - OE14_EN_Trading
+
+- type: entity
+  parent: OE14TradingPlatform
+  id: OE14TradingPlatformPublic
+  name: public buying dimensional platform
+  description: Allows you to trade with the outside world, through retail trade transactions. But since this retail outlet is not bound by contracts with specific merchants, the markup here is terrible.
+  components:
+  - type: OE14TradingPlatform
+    platformMarkupProcent: 1.5
+  - type: Sprite
+    layers:
+    - state: base
+    - state: old
+    - state: buy
+
+- type: entity
+  parent: BaseStructure
+  id: OE14TradingSellingPlatform
+  name: selling dimensional platform
+  suffix: Trade
+  description: Allows you to sell any items and structures to the outside world. Fill the platform completely with mana to sell whatever you place on it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    snapCardinals: true
+    sprite: _OE14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: base
+    - state: sell
+  - type: Icon
+    sprite: _OE14/Structures/Specific/Economy/buy_platform.rsi
+    state: base
+  - type: Clickable
+  - type: InteractionOutline
+  - type: OE14SellingPlatform
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+  - type: ActivatableUI
+    key: enum.OE14TradingUiKey.Sell
+  - type: UserInterface
+    interfaces:
+      enum.OE14TradingUiKey.Sell:
+        type: OE14SellingPlatformBoundUserInterface
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+
+- type: entity
+  parent: OE14TradingSellingPlatform
+  id: OE14TradingSellingPlatformPublic
+  name: public selling dimensional platform
+  description: Allows you to sell any items and structures to the outside world. Fill the platform completely with mana to sell whatever you place on it. But since this retail outlet is not bound by contracts with specific merchants, the markup here is terrible.
+  components:
+  - type: OE14SellingPlatform
+    platformMarkupProcent: 0.5
+  - type: Sprite
+    layers:
+    - state: base
+    - state: old
+    - state: sell
+
+- type: entity
+  parent: BaseStructure
+  id: OE14SalaryPlatform
+  name: salary dimensional platform
+  description: allows you to quickly receive the salary you are entitled to (if, of course, you are supposed to receive a salary from the empire)
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    snapCardinals: true
+    sprite: _OE14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: base
+    - state: salary
+  - type: Clickable
+  - type: InteractionOutline
+  - type: OE14SalaryPairoll
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    maxEntities: 0
+    whitelist:
+      tags:
+      - OE14Coin
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+
+- type: entity
+  id: OE14CashImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Specific/Economy/buy_platform.rsi
+    layers:
+    - state: impact
+      shader: unshaded
+      color: "#8f42ff"
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: PointLight
+    color: "#8f42ff"
+    enabled: true
+    radius: 8
+    energy: 8
+    netsync: false
+  - type: LightFade
+    duration: 2
+

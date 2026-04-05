@@ -1,0 +1,12 @@
+oe14-reagent-physical-desc-ferrous = ferroso
+oe14-reagent-physical-desc-scarlet = escarlata cintilante
+oe14-reagent-physical-desc-colorless = incolor
+oe14-reagent-physical-desc-viscous = viscoso
+oe14-reagent-physical-desc-cloudy = turvo
+oe14-reagent-physical-desc-sparkling = borbulhante
+oe14-reagent-physical-desc-pureed = puree
+oe14-reagent-physical-desc-iridescent = iridescente
+oe14-reagent-physical-desc-powdery = pulverulento
+oe14-reagent-physical-desc-shimmering = cintilante
+oe14-reagent-physical-desc-grainy = granuloso
+oe14-reagent-physical-desc-slick = escorregadio

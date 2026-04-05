@@ -1,0 +1,88 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: OE14BaseJewelry
+  categories:
+  - ForkFiltered
+  components:
+  - type: Tag
+    tags:
+    - OE14Coin
+  - type: Sprite
+    sprite: /Textures/_OE14/Objects/Economy/jewelry.rsi
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 150
+  localizationId: ent-OE14BaseJewelry
+- type: entity
+  parent: OE14BaseJewelry
+  id: OE14JewelryRuby
+  name: ruby
+  description: A beautiful ruby stone that's worth a lot of money.
+  components:
+  - type: Sprite
+    layers:
+    - state: ruby1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        ruby1: ''
+        ruby2: ''
+        ruby3: ''
+  localizationId: ent-OE14JewelryRuby
+- type: entity
+  parent: OE14BaseJewelry
+  id: OE14JewelryEmerald
+  name: emerald
+  description: A beautiful emerald stone that's worth a lot of money.
+  components:
+  - type: Sprite
+    layers:
+    - state: emerald1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        emerald1: ''
+        emerald2: ''
+        emerald3: ''
+        emerald4: ''
+  localizationId: ent-OE14JewelryEmerald
+- type: entity
+  parent: OE14BaseJewelry
+  id: OE14JewelrySapphire
+  name: sapphire
+  description: A beautiful sapphire stone that's worth a lot of money.
+  components:
+  - type: Sprite
+    layers:
+    - state: sapphire1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        sapphire1: ''
+        sapphire2: ''
+        sapphire3: ''
+  localizationId: ent-OE14JewelrySapphire
+- type: entity
+  parent: OE14BaseJewelry
+  id: OE14JewelryTopaz
+  name: topaz
+  description: A beautiful topaz stone that's worth a lot of money.
+  components:
+  - type: Sprite
+    layers:
+    - state: topaz1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        topaz1: ''
+  localizationId: ent-OE14JewelryTopaz

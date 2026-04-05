@@ -1,0 +1,320 @@
+# SORTED BY EDGE SPRITE PRIORITY
+
+# 0
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorMarbleCave
+  name: oe14-tiles-marble-cave
+  sprite: /Textures/_OE14/Tiles/marble_cave.png
+  variants: 14
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: OE14FloorBase
+  deconstructTools: [ OE14Digging ]
+  isSubfloor: true
+  itemDrop: OE14MarbleBlock1
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
+
+- type: tile
+  id: OE14FloorIce
+  editorHidden: false
+  name: tiles-ice
+  sprite: /Textures/_OE14/Tiles/ice.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: OE14FloorBase
+  isSubfloor: false
+  heatCapacity: 10000
+  friction: 0.05
+  mobAcceleration: 0.1
+  weather: true
+  
+- type: tile
+  editorHidden: false
+  id: OE14FloorDirt
+  name: oe14-tiles-dirt
+  sprite: /Textures/_OE14/Tiles/Dirt/cavedrought.png
+  variants: 16
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Dirt/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Dirt/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Dirt/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Dirt/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Dirt/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Dirt/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Dirt/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Dirt/double_edge_W.png
+  baseTurf: OE14FloorBase
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14RandomDirtLootSpawner
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorCobblestone
+  name: oe14-tiles-cobblestone
+  sprite: /Textures/_OE14/Tiles/Cobblestone/cobble.png
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 2
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Cobblestone/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Cobblestone/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Cobblestone/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Cobblestone/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Cobblestone/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Cobblestone/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Cobblestone/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Cobblestone/double_edge_W.png
+  baseTurf: OE14FloorDirt
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14RandomStoneLootSpawner
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: OE14FloorMycelium
+  editorHidden: false
+  name: oe14-tiles-mycelium
+  sprite: /Textures/_OE14/Tiles/Mycelium/tile.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 3
+  edgeSprites:
+    South: /Textures/_OE14/Tiles/Mycelium/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Mycelium/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Mycelium/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Mycelium/double_edge_W.png
+  baseTurf: OE14FloorDirt
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: OE14FloorMyceliumLight
+  editorHidden: false
+  name: oe14-tiles-mycelium-light
+  sprite: /Textures/_OE14/Tiles/MyceliumLight/tile.png
+  variants: 12
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 4
+  edgeSprites:
+    South: /Textures/_OE14/Tiles/MyceliumLight/double_edge_S.png
+    East: /Textures/_OE14/Tiles/MyceliumLight/double_edge_E.png
+    North: /Textures/_OE14/Tiles/MyceliumLight/double_edge_N.png
+    West: /Textures/_OE14/Tiles/MyceliumLight/double_edge_W.png
+  baseTurf: OE14FloorDirt
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14RandomDirtLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  editorHidden: false
+  id: OE14FloorSand
+  name: oe14-tiles-sand
+  sprite: /Textures/_OE14/Tiles/Sand/sand.png
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 5
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Sand/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Sand/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Sand/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Sand/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Sand/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Sand/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Sand/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Sand/double_edge_W.png
+  baseTurf: OE14FloorBase
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14DirtEffect #TODO sand variant
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepSnow #TODO
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: OE14FloorSnowDeepDeep
+  editorHidden: false
+  name: oe14-tiles-snow-deep-deep
+  sprite: /Textures/_OE14/Tiles/SnowDeepDeep/snow.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1000 # Because snowfall!
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/SnowDeepDeep/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/SnowDeepDeep/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/SnowDeepDeep/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/SnowDeepDeep/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/SnowDeepDeep/double_edge_S.png
+    East: /Textures/_OE14/Tiles/SnowDeepDeep/double_edge_E.png
+    North: /Textures/_OE14/Tiles/SnowDeepDeep/double_edge_N.png
+    West: /Textures/_OE14/Tiles/SnowDeepDeep/double_edge_W.png
+  baseTurf: OE14FloorDirt
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14RandomSnowLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: OE14FloorSnowDeep
+  editorHidden: false
+  name: oe14-tiles-snow-deep
+  sprite: /Textures/_OE14/Tiles/SnowDeep/snow.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1001 # Because snowfall!
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/SnowDeep/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/SnowDeep/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/SnowDeep/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/SnowDeep/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/SnowDeep/double_edge_S.png
+    East: /Textures/_OE14/Tiles/SnowDeep/double_edge_E.png
+    North: /Textures/_OE14/Tiles/SnowDeep/double_edge_N.png
+    West: /Textures/_OE14/Tiles/SnowDeep/double_edge_W.png
+  baseTurf: OE14FloorSnowDeepDeep
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14RandomSnowLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true
+
+- type: tile
+  id: OE14FloorSnow
+  editorHidden: false
+  name: oe14-tiles-snow
+  sprite: /Textures/_OE14/Tiles/Snow/snow.png
+  variants: 6
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1002 # Because snowfall!
+  edgeSprites:
+    SouthEast: /Textures/_OE14/Tiles/Snow/single_edge_SE.png
+    NorthEast: /Textures/_OE14/Tiles/Snow/single_edge_NE.png
+    NorthWest: /Textures/_OE14/Tiles/Snow/single_edge_NW.png
+    SouthWest: /Textures/_OE14/Tiles/Snow/single_edge_SW.png
+    South: /Textures/_OE14/Tiles/Snow/double_edge_S.png
+    East: /Textures/_OE14/Tiles/Snow/double_edge_E.png
+    North: /Textures/_OE14/Tiles/Snow/double_edge_N.png
+    West: /Textures/_OE14/Tiles/Snow/double_edge_W.png
+  baseTurf: OE14FloorSnowDeep
+  deconstructTools: [ OE14Digging ]
+  itemDrop: OE14RandomSnowLootSpawner
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepSnow
+  heatCapacity: 10000
+  weather: true

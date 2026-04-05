@@ -1,0 +1,105 @@
+- type: constructionGraph
+  id: OE14FenceBigWooden
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14FenceBigWooden
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 4
+              doAfter: 2
+
+    - node: OE14FenceBigWooden
+      entity: OE14FenceBigWooden
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 4
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+- type: constructionGraph
+  id: OE14FenceBigWoodenBirch
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14FenceBigWoodenBirch
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: OE14BirchWoodenPlanks
+              amount: 4
+              doAfter: 2
+
+    - node: OE14FenceBigWoodenBirch
+      entity: OE14FenceBigWoodenBirch
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 4
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+- type: constructionGraph
+  id: OE14FenceGateBigWooden
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14FenceGateBigWooden
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 4
+              doAfter: 2
+
+    - node: OE14FenceGateBigWooden
+      entity: OE14FenceGateBigWooden
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 4
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2
+
+- type: constructionGraph
+  id: OE14FenceGateBigWoodenBirch
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14FenceGateBigWoodenBirch
+          steps:
+            - material: OE14BirchWoodenPlanks
+              amount: 4
+              doAfter: 2
+
+    - node: OE14FenceGateBigWoodenBirch
+      entity: OE14FenceGateBigWoodenBirch
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 4
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 2

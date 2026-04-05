@@ -1,0 +1,101 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Jobs
+  name: Jobs
+  text: "/ServerInfo/_OE14/Guidebook_EN/Jobs.xml"
+  children:
+  - OE14_EN_JobAdventurer
+  - OE14_EN_JobGuildWorker
+  - OE14_EN_JobGuildmaster
+  - OE14_EN_JobMerchant
+  - OE14_EN_JobAlchemist
+  - OE14_EN_JobInnkeeper
+  - OE14_EN_JobApprentice
+  - OE14_EN_JobGuard
+  - OE14_EN_JobInvestigator
+  - OE14_EN_JobGuardCommander
+  - OE14_EN_Patrons
+  filterEnabled: True
+
+
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobAdventurer
+  name: Adventurers
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Adventurers.xml"
+  children:
+  - OE14_EN_Monster_Toxins
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobGuildWorker
+  name: Guild Worker
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/GuildWorker.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobGuildmaster
+  name: Guildmaster
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Guildmaster.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobMerchant
+  name: Merchant
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Merchant.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobAlchemist
+  name: Alchemist
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Alchemist.xml"
+  children:
+  - OE14_EN_Alchemy
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobInnkeeper
+  name: Innkeepers
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Innkeepers.xml"
+  children:
+  - OE14_EN_Cooking
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobApprentice
+  name: Apprentice
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Apprentice.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobGuard
+  name: Guard
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Guard.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobInvestigator
+  name: Investigator
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Investigator.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_JobGuardCommander
+  name: Guard Commander
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/GuardCommander.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Patrons
+  name: Patrons
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/Patrons.xml"
+  filterEnabled: True

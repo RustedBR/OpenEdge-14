@@ -1,0 +1,30 @@
+- type: entity
+  id: OE14PlantWheat
+  parent: OE14GatherablePlantSingleHarvestBase
+  name: wheat
+  description: Most popular crop. Unpretentious, it opens the way to an abundance of flour products.
+  components:
+  - type: Sprite
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      sprite: _OE14/Structures/Flora/Farm/wheat.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: OE14PlantVisuals
+    growthSteps: 5
+  - type: OE14PlantGatherable
+    loot:
+      All: !type:AllSelector
+        children:
+        - id: OE14Wheat
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: OE14SeedWheat
+          rolls: !type:RangeNumberSelector
+            range: 1, 2
+  - type: OE14WaveShader
+    speed: 2.8
+    dis: 4
+

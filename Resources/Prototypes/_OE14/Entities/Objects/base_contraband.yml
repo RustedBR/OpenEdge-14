@@ -1,0 +1,14 @@
+- type: entity
+  id: OE14BaseMinorContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: OE14Minor
+  localizationId: ent-OE14BaseMinorContraband
+- type: entity
+  id: OE14BaseMajorContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: OE14Major
+  localizationId: ent-OE14BaseMajorContraband

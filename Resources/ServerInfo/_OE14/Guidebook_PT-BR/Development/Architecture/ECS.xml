@@ -1,0 +1,368 @@
+<Document>
+# Entity-Component-System (ECS)
+
+O padrão Entity-Component-System é a fundação de como o OpenEdge 14 funciona. Tudo no mundo do jogo é construído usando este padrão.
+
+## Os Três Pilares
+
+### Entidade
+Uma [bold]Entidade[/bold] é um objeto único no mundo. Ela tem um ID e uma coleção de componentes.
+
+[bold]Exemplos:[/bold]
+- Um personagem jogador
+- Uma espada no chão
+- Um perigo de fogo
+- Uma porta
+- Um NPC
+- Um efeito de partícula
+
+[bold]Representação em código:[/bold]
+<CodeBlock>
+// EntityUid é o identificador único
+EntityUid playerId = new EntityUid(1234);
+</CodeBlock>
+
+[bold]Fato chave:[/bold] Uma entidade é apenas um ID. Ela não guarda dados. Todos os dados vêm de componentes.
+
+### Componente
+Um [bold]Componente[/bold] é um container de dados anexado a uma entidade. Ele armazena informações relevantes para o comportamento daquela entidade.
+
+[bold]Exemplos de componentes:[/bold]
+- HealthComponent — armazena vida e vida máxima
+- InventoryComponent — armazena itens que a entidade carrega
+- TransformComponent — armazena posição e rotação
+- CharacterStatsComponent — armazena FOR, VIT, DES, INT
+- AIComponent — armazena estado de comportamento de IA
+
+[bold]Representação em código:[/Bold]
+<CodeBlock>
+public sealed partial class HealthComponent : Component
+{
+    [DataField]
+    public float Health { get; set; } = 100f;
+
+    [DataField]
+    public float MaxHealth { get; set; } = 100f;
+}
+</CodeBlock>
+
+[bold]Fato chave:[/bold] Componentes são dados puros. Eles não têm lógica. Lógica vive em sistemas.
+
+### Sistema
+Um [bold]Sistema[/bold] é lógica que processa entidades baseado em seus componentes.
+
+[bold]Exemplos de sistemas:[/bold]
+- HealthSystem — processa eventos relacionados à vida
+- CombatSystem — processa ataques e dano
+- MovementSystem — atualiza posição baseada em velocidade
+- ActionBlockerSystem — determina se uma entidade pode agir
+- CharacterStatsSystem — processa bônus e cálculos de atributos
+
+[bold]Representação em código:[/bold]
+<CodeBlock>
+public class HealthSystem : EntitySystem
+{
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    public override void Update(float frameTime)
+    {
+        // Itera sobre todas as entidades com HealthComponent
+        var query = EntityQueryEnumerator<HealthComponent>();
+        while (query.MoveNext(out var uid, out var health))
+        {
+            // Processa esta entidade
+            if (health.Health <= 0)
+            {
+                // Trata morte
+            }
+        }
+    }
+}
+</CodeBlock>
+
+[bold]Fato chave:[/bold] Sistemas são sem estado e puros. Eles não armazenam estado sobre entidades; eles leem/escrevem dados de componentes.
+
+## O Padrão em Ação
+
+### Exemplo: Criando um Personagem Jogador
+
+Etapa 1: Criar Entidade (obter um ID)
+<CodeBlock>
+EntityUid playerId = _entityManager.SpawnEntity("Player", new MapCoordinates(...))
+</CodeBlock>
+
+Etapa 2: Adicionar Componentes
+<CodeBlock>
+_entityManager.AddComponent<HealthComponent>(playerId);
+_entityManager.AddComponent<InventoryComponent>(playerId);
+_entityManager.AddComponent<CharacterStatsComponent>(playerId);
+</CodeBlock>
+
+Etapa 3: Definir Dados do Componente
+<CodeBlock>
+var health = _entityManager.GetComponent<HealthComponent>(playerId);
+health.Health = 100;
+health.MaxHealth = 100;
+</CodeBlock>
+
+Etapa 4: Sistemas Processam
+- MovementSystem atualiza posição a cada frame
+- HealthSystem verifica se a vida chegou a zero
+- ActionBlockerSystem permite/nega ações
+- CharacterStatsSystem calcula atributos efetivos
+
+## Ciclo de Vida de Componentes
+
+<CodeBlock>
+Entidade Criada
+    |
+Adicionar HealthComponent
+    |
+Sistemas detectam (EntityQueryEnumerator)
+    |
+A cada frame, sistemas processam
+    |
+Valor do HealthComponent muda (dano)
+    |
+Rede sincroniza para cliente (AutoNetworkedField)
+    |
+Remover HealthComponent (entidade morre)
+    |
+Sistemas param de processar
+    |
+Entidade Deletada
+</CodeBlock>
+
+## Consultando Entidades
+
+Sistemas encontram entidades para processar usando [bold]consultas[/bold]. Uma consulta é "me dê todas as entidades com componente X e Y".
+
+### Método 1: EntityQueryEnumerator (Recomendado)
+<CodeBlock>
+var query = EntityQueryEnumerator<HealthComponent>();
+while (query.MoveNext(out var uid, out var health))
+{
+    // uid é o ID da entidade
+    // health é o HealthComponent
+    if (health.Health <= 0)
+        HandleDeath(uid);
+}
+</CodeBlock>
+
+[bold]Por que usar:[/bold] Mais eficiente, itera apenas entidades correspondentes.
+
+### Método 2: GetComponent (Entidade Única)
+<CodeBlock>
+if (_entityManager.TryGetComponent(playerId, out HealthComponent? health))
+{
+    health.Health -= 10;
+}
+</CodeBlock>
+
+[bold]Por que usar:[/bold] Quando você sabe a entidade específica para modificar.
+
+### Método 3: EntityQuery (Menos Comum)
+<CodeBlock>
+var query = _entityManager.GetEntityQuery<HealthComponent>();
+var entities = query.ToList();
+</CodeBlock>
+
+[bold]Por que usar:[/bold] Quando você precisa de uma lista de todas as entidades correspondentes.
+
+## Exemplo Real: Fluxo do Sistema de Combate
+
+<CodeBlock>
+Jogador clica no inimigo
+    |
+InputSystem detecta clique
+    |
+CombatSystem.Update() executa:
+    query = EntityQueryEnumerator<CombatComponent>();
+    while (query.MoveNext(out var attacker, out var combatComp))
+    {
+        if (IsQueuedAttack(attacker))
+        {
+            var target = GetTargetFromClick();
+            var damage = CalculateDamage(attacker, target);
+
+            // Cria evento
+            var damageEvent = new DamageEvent(attacker, target, damage);
+
+            // Outros sistemas ouvem este evento:
+            // - HealthSystem aplica dano
+            // - AudioSystem toca som de hit
+            // - ParticleSystem mostra efeito de impacto
+            // - StatusEffectSystem aplica sangramento
+            RaiseLocalEvent(target, damageEvent);
+        }
+    }
+</CodeBlock>
+
+Cada sistema faz uma coisa, e eventos os conectam.
+
+## Compartilhamento de Componentes Entre Sistemas
+
+Múltiplos sistemas podem ler o mesmo componente.
+
+<CodeBlock>
+// Em HealthSystem
+public override void Update(float frameTime)
+{
+    var query = EntityQueryEnumerator<HealthComponent>();
+    while (query.MoveNext(out var uid, out var health))
+    {
+        // Lê HealthComponent
+    }
+}
+
+// Em StatusEffectSystem
+public override void Update(float frameTime)
+{
+    var query = EntityQueryEnumerator<StatusEffectComponent>();
+    while (query.MoveNext(out var uid, out var effect))
+    {
+        // Também lê HealthComponent para propósito diferente
+        if (_entityManager.TryGetComponent(uid, out HealthComponent? health))
+        {
+            // Aplica dano de veneno
+            health.Health -= 1;
+        }
+    }
+}
+</CodeBlock>
+
+Ambos sistemas podem acessar safely o mesmo componente. Mudanças que um faz são visíveis para o outro.
+
+## Armazenamento de Componentes
+
+Componentes são armazenados eficientemente:
+- Cada tipo de componente obtém seu próprio array de armazenamento
+- Apenas entidades com aquele componente ocupam espaço nesse array
+- Sistemas iteram apenas o armazenamento que precisam
+- Muito amigável para cache e eficiente
+
+[bold]Diagrama de memória:[/bold]
+<CodeBlock>
+Armazenamento HealthComponent:    [Entidade1, Entidade3, Entidade7]  (3 entidades)
+Armazenamento InventoryComponent: [Entidade1, Entidade2, Entidade4]  (3 entidades)
+
+Quando HealthSystem executa:
+- Itera [Entidade1, Entidade3, Entidade7]
+- Não toca Entidade2 ou Entidade4
+
+Quando InventorySystem executa:
+- Itera [Entidade1, Entidade2, Entidade4]
+- Não toca Entidade3 ou Entidade7
+</CodeBlock>
+
+## Adicionando Componentes Dinamicamente
+
+Você não precisa adicionar todos os componentes no spawn. Você pode adicioná-los depois.
+
+<CodeBlock>
+// Jogador obtém barra de vida
+_entityManager.AddComponent<HealthComponent>(player);
+
+// Porta fica trancada
+_entityManager.AddComponent<LockComponent>(door);
+
+// Item se torna mágico
+_entityManager.AddComponent<MagicalComponent>(item);
+</CodeBlock>
+
+Sistemas automaticamente começam a processar o novo componente.
+
+## Removendo Componentes
+
+Você pode remover componentes para desabilitar comportamento.
+
+<CodeBlock>
+// Make NPC não-hostil
+_entityManager.RemoveComponent<HostileComponent>(npc);
+
+// Faz objeto cair
+_entityManager.RemoveComponent<StaticComponent>(entity);
+
+// Desabilita IA
+_entityManager.RemoveComponent<AIComponent>(creature);
+</CodeBlock>
+
+Sistemas automaticamente param de processar entidades sem aquele componente.
+
+## Serialização de Componentes
+
+Componentes persistem quando você salva/carrega:
+
+<CodeBlock>
+- type: entity
+  id: IronSword
+  components:
+    - type: Sprite
+      sprite: /path/to/sword.rsi
+    - type: MeleeWeapon
+      damage: 25
+    - type: Item
+      size: Large
+</CodeBlock>
+
+Quando a entidade carrega, todos os componentes são recriados com seus valores salvos.
+
+## Melhores Práticas
+
+[bold]FAÇA:[/bold]
+- [bold]Uma responsabilidade por componente[/bold] — HealthComponent armazena vida, não cálculo de dano
+- [bold]Mantenha componentes simples[/bold] — apenas dados e getters/setters
+- [bold]Use EntityQueryEnumerator[/bold] — mais eficiente para iteração
+- [bold]Nomeie sistemas claramente[/bold] — CombatSystem, HealthSystem, MovementSystem
+
+[bold]NÃO FAÇA:[/bold]
+- [bold]Guarde lógica em componentes[/bold] — componentes são dados, sistemas têm lógica
+- [bold]Crie acoplamento apertado[/bold] — sistemas não devem saber uns sobre os outros
+- [bold]Itere todas as entidades manualmente[/bold] — use EntityQueryEnumerator
+- [bold]Guarde referências de entidade dentro de componentes[/bold] — isso quebra serialização e networking
+
+## Navegação
+
+- Confuso sobre IoC? → [textlink="Leia o Recipiente IoC" link="OE14_DEV_Arch_IoC"] para entender resolução de serviços
+- Quer sincronizar com cliente? → [textlink="Leia Netcode" link="OE14_DEV_Arch_Netcode"] para networking
+- Precisa comunicar entre sistemas? → [textlink="Leia Eventos" link="OE14_DEV_Arch_Events"]
+- Construindo um sistema de personagem? → [textlink="Leia Sistema de Atributos do Personagem" link="OE14_DEV_Stats_Formulas"]
+
+## Exemplo de Gameplay: Luta de Chefe
+
+<CodeBlock>
+// Entidade de chefe com componentes:
+// - HealthComponent (500 HP)
+// - CombatComponent (atacante forte)
+// - AIComponent (árvore de comportamento)
+// - PhysicsComponent (pode ser jogado para trás)
+
+// Jogador ataca:
+// CombatSystem detecta ataque, levanta DamageEvent(chefe, 50 de dano)
+//   |
+// HealthSystem ouve, reduz vida: 500 -> 450
+//   |
+// HealthComponent sincroniza para cliente (AutoNetworkedField)
+//   |
+// Cliente recebe: Vida mudou para 450
+//   |
+// UI atualiza: Barra de vida do chefe mostra 90%
+//   |
+// Próximo frame, AISystem verifica: vida < 300? Trigger fase 2
+//   |
+// Comportamento do chefe muda: ataques mais rápidos, padrão diferente
+</CodeBlock>
+
+Tudo gracias ao padrão ECS!
+
+## Resumo
+
+- [bold]Entidades[/bold] são IDs únicos no mundo
+- [bold]Componentes[/bold] armazenam dados (sem lógica)
+- [bold]Sistemas[/bold] contêm lógica (sem dados)
+- [bold]Consultas[/bold] encontram entidades com componentes específicos
+- [bold]Eventos[/bold] permitem que sistemas comuniquem sem acoplamento
+
+Esta flexibilidade permite que você adicione facilmente recursos sem tocar código existente!
+
+</Document>

@@ -1,0 +1,34 @@
+- type: job
+  id: OE14Investigator
+  setPreference: true
+  name: oe14-job-name-investigator
+  description: oe14-job-desc-investigator
+  playTimeTracker: OE14JobInvestigator
+  startingGear: OE14InvestigatorGear
+  icon: "OE14JobIconInvestigator"
+  supervisors: oe14-job-supervisors-guard-commander
+  canBeAntag: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: OE14Guard
+      time: 3600 # 1 hours
+  special:
+    - !type:OE14LearnSkillsSpecial
+      skills:
+      - OE14ActionSpellMagicSplitting
+      - OE14ActionToggleMagicVision
+    - !type:AddComponentSpecial
+      components:
+      - type: OE14SalaryCounter
+        salary: 75
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - Guards
+      - Thaumaturgy
+
+- type: startingGear
+  id: OE14InvestigatorGear
+  equipment:
+    keys: OE14KeyRingGuard
+    belt: OE14WalletFilledTest
+

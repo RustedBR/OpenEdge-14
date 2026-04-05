@@ -1,0 +1,39 @@
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakGuardBase
+  abstract: true
+  name: guard's cloak
+  description: Shoulder cape in the standard Imperial Guard colors
+  localizationId: ent-OE14ClothingCloakGuardBase
+- type: entity
+  parent: OE14ClothingCloakGuardBase
+  id: OE14ClothingCloakGuardBlue
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/blue.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/blue.rsi
+  localizationId: ent-OE14ClothingCloakGuardBlue
+- type: entity
+  parent: OE14ClothingCloakGuardBase
+  id: OE14ClothingCloakGuardSyurko
+  name: guard surcoats
+  description: A long and roomy cloak that serves to protect your armour.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/guard_syurko.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/guard_syurko.rsi
+  localizationId: ent-OE14ClothingCloakGuardSyurko
+- type: entity
+  parent: OE14ClothingCloakGuardBase
+  id: OE14ClothingCloakGuardInvestigator
+  name: investigator's cloak
+  description: Cloaks that only senior investigators in the service of the empire
+    are allowed to wear.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/investigator.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/Guard/investigator.rsi
+  localizationId: ent-OE14ClothingCloakGuardInvestigator

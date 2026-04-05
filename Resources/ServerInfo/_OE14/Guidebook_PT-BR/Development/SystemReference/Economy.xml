@@ -1,0 +1,41 @@
+<Document>
+# Referência do Sistema Economia
+
+Referência rápida para os sistemas de economia no OpenEdge 14.
+
+## Sistemas
+
+[bold]OE14Currency[/bold] — entidades físicas de moedas com valor. Moedas existem como itens no mundo.
+
+[bold]OE14Salary[/bold] — paga automaticamente moedas para detentores de trabalho ao longo do tempo. Configurado por prototype de trabalho.
+
+[bold]OE14TradingPlatform[/bold] — sistema de compra/venda com precificação dinâmica baseada em oferta e demanda.
+
+## Adicionando um Item à Loja
+
+Listagens da plataforma de comércio são definidas em prototypes:
+
+<CodeBlock>
+- type: OE14TradingListing
+  id: IronSwordListing
+  entity: IronSword
+  basePrice: 50
+  buyable: true
+  sellable: true
+</CodeBlock>
+
+## Denominações de Moedas
+
+Moedas vêm em diferentes valores. A plataforma de comércio lida com troca automaticamente.
+
+## Localização dos Arquivos
+
+- [mono]Content.Shared/_OE14/Economy/[/mono]
+- [mono]Content.Server/_OE14/Economy/[/mono]
+- [mono]Resources/Prototypes/_OE14/Economy/[/mono]
+
+## Conteúdo Em Construção
+
+Referência completa do sistema de economia coming soon.
+
+</Document>

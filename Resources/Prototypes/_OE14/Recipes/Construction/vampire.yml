@@ -1,0 +1,131 @@
+# General
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WorkbenchVampire
+  graph: OE14WorkbenchVampire
+  startNode: start
+  targetNode: OE14WorkbenchVampire
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: BloodEssenceCreation
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14VampireStoneAltar
+  graph: OE14VampireStoneAltar
+  startNode: start
+  targetNode: OE14VampireStoneAltar
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: BloodEssenceCreation
+
+# Unnameable
+- type: construction
+  openEdgeAllowed: true
+  id: OE14VampireClanHeartUnnameable
+  graph: OE14VampireClanHeartUnnameable
+  startNode: start
+  targetNode: OE14VampireClanHeartUnnameable
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateUnnameable
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14VampirePortalGlyphUnnameable
+  graph: OE14VampirePortalGlyphUnnameable
+  startNode: start
+  targetNode: OE14VampirePortalGlyphUnnameable
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateUnnameable
+
+# Devourers
+- type: construction
+  openEdgeAllowed: true
+  id: OE14VampireClanHeartDevourers
+  graph: OE14VampireClanHeartDevourers
+  startNode: start
+  targetNode: OE14VampireClanHeartDevourers
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateDevourers
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14VampirePortalGlyphDevourers
+  graph: OE14VampirePortalGlyphDevourers
+  startNode: start
+  targetNode: OE14VampirePortalGlyphDevourers
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateDevourers
+
+# Night childrens
+- type: construction
+  openEdgeAllowed: true
+  id: OE14VampireClanHeartNightChildren
+  graph: OE14VampireClanHeartNightChildren
+  startNode: start
+  targetNode: OE14VampireClanHeartNightChildren
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateNightChildrens
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14VampirePortalGlyphNightChildrens
+  graph: OE14VampirePortalGlyphNightChildrens
+  startNode: start
+  targetNode: OE14VampirePortalGlyphNightChildrens
+  category: oe14-construction-category-vampire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  cP14Restrictions:
+    - !type:NeedPrerequisite
+      prerequisite: VampireTransmutateNightChildrens

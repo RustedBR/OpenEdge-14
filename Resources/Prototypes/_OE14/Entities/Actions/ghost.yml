@@ -1,0 +1,57 @@
+- type: entity
+  id: OE14ActionZLevelUp
+  name: Move up
+  description: Move up one Z-Level
+  components:
+  - type: Action
+    checkCanInteract: false
+    icon:
+      sprite: _OE14/Actions/zLevel.rsi
+      state: up
+  - type: InstantAction
+    event: !type:OE14ZLevelActionUp
+
+- type: entity
+  id: OE14ActionZLevelDown
+  name: Move down
+  description: Move down one Z-Level
+  components:
+  - type: Action
+    checkCanInteract: false
+    icon:
+      sprite: _OE14/Actions/zLevel.rsi
+      state: down
+  - type: InstantAction
+    event: !type:OE14ZLevelActionDown
+
+- type: entity
+  id: OE14ActionToggleRoofs
+  name: Toggle roofs
+  description: Show or hide roofs
+  components:
+  - type: Action
+    clientExclusive: true
+    checkCanInteract: false
+    icon:
+      sprite: _OE14/Actions/zLevel.rsi
+      state: roof
+  - type: InstantAction
+    event: !type:OE14ToggleRoofVisibilityAction
+
+- type: entity
+  id: OE14ActionRespawn
+  name: Respawn
+  description: Return to the lobby to connect with a new character.
+  components:
+  - type: Action
+    priority: 20
+    startDelay: true
+    useDelay: 300
+    checkCanInteract: false
+    icon:
+      sprite: _OE14/Actions/zLevel.rsi
+      state: respawn
+  - type: ConfirmableAction
+    popup: oe14-respawn-action-popup
+  - type: InstantAction
+    event: !type:OE14RespawnAction

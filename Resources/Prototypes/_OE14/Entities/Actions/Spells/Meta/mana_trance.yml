@@ -1,0 +1,50 @@
+- type: entity
+  id: OE14ActionSpellManaTrance
+  parent: OE14ActionSpellBase
+  name: Mana trance
+  description: You go into a trance for a while, restoring mana.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.05
+  - type: DoAfterArgs
+    repeat: true
+    delay: 1
+    hidden: true
+    breakOnDamage: true
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneManaTrance
+  - type: Action
+    useDelay: 60
+    icon:
+      sprite: _OE14/Actions/Spells/meta.rsi
+      state: mana_trance
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaGift
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:OE14ManaChange
+          manaDelta: 2
+          safe: true
+        - !type:HealthChange
+          damage:
+            types:
+              OE14ManaDepletion: -0.1
+
+- type: entity
+  id: OE14RuneManaTrance
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5096d4"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#5096d4"
+      shader: unshaded
+

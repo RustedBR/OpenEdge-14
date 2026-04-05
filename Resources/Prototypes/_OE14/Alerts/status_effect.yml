@@ -1,0 +1,31 @@
+- type: alert
+  id: OE14MagicArmor
+  icons:
+  - sprite: _OE14/Actions/Spells/meta.rsi
+    state: magic_armor
+
+- type: alert
+  id: OE14Glowing
+  icons:
+  - sprite: _OE14/Actions/Spells/light.rsi
+    state: sphere_of_light
+
+- type: alert
+  id: OE14VampireSleeping
+  icons:
+  - sprite: _OE14/Actions/Spells/vampire.rsi
+    state: blood_moon
+
+- type: alert
+  id: OE14ConfusedAura
+  name: oe14-alerts-confused-aura-name
+  description: oe14-alerts-confused-aura-desc
+  icons:
+  - sprite: _OE14/Actions/Spells/meta.rsi
+    state: magic_vision_shuffled
+
+- type: alert
+  id: OE14Vuln
+  icons:
+  - sprite: _OE14/Actions/Spells/misc.rsi
+    state: vulnerability

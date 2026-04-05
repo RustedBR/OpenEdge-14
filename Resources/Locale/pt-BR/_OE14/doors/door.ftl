@@ -1,0 +1,1 @@
+oe14-closed-door-interact-popup = Trancado.

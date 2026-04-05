@@ -1,0 +1,131 @@
+- type: entity
+  id: OE14FoodPotatoHot
+  parent:
+  - FoodInjectableBase
+  - OE14BurnsAsh
+  categories:
+  - ForkFiltered
+  name: hot potato
+  description: Warm and ruddy potatoes cooked over the fire.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+    - OE14HotPotato
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/hot_potato.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+        base3: ''
+        base4: ''
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 2
+  localizationId: ent-OE14FoodPotatoHot
+- type: entity
+  id: OE14FoodChromiumJelly
+  parent:
+  - FoodInjectableBase
+  - OE14BurnsAsh
+  categories:
+  - ForkFiltered
+  name: chromium jelly
+  description: At first glance unremarkable, but tastier than it looks, the main thing
+    is not to overeat.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+    - jelly
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/jelly.rsi
+    layers:
+    - state: chromium_jelly
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 9
+        reagents:
+        - ReagentId: OE14ChromiumSlime
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 6
+  - type: Temperature
+    currentTemperature: 250
+  localizationId: ent-OE14FoodChromiumJelly
+- type: entity
+  id: OE14FoodSnailShell
+  parent: FoodInjectableBase
+  categories:
+  - ForkFiltered
+  name: shell
+  description: A snail shell with a dead snail inside.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+    - meaty
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/shell.rsi
+    layers:
+    - state: shell
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.006
+    area: 0.006
+  - type: OE14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14FoodSnailShellCooked
+  localizationId: ent-OE14FoodSnailShell
+- type: entity
+  id: OE14FoodSnailShellCooked
+  parent:
+  - FoodInjectableBase
+  - OE14BurnsAsh
+  categories:
+  - ForkFiltered
+  name: cooked snail
+  description: Fried shells with snails in their own juice. Excellent.
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+    - meaty
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/shell.rsi
+    layers:
+    - state: cooked_snail
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Protein
+          Quantity: 3
+  localizationId: ent-OE14FoodSnailShellCooked

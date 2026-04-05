@@ -1,0 +1,8 @@
+- type: startingGear
+  id: OE14DeathMatchGear
+  equipment:
+    cloak: OE14ClothingCloakFurcapeBlue
+    shirt: OE14ClothingShirtCottonBlack
+    pants: OE14ClothingPantsLoincloth
+    shoes: OE14ClothingShoesSandals
+

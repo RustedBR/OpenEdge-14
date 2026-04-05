@@ -1,0 +1,117 @@
+- type: entity
+  id: OE14VialBloodFlowerSap
+  parent: OE14VialSmall
+  name: vial of blood rose sap
+  description: A medium vial containing concentrated blood rose sap.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14BloodFlowerSap
+          Quantity: 10
+  localizationId: ent-OE14VialBloodFlowerSap
+- type: entity
+  id: OE14VialWildSageSap
+  parent: OE14VialSmall
+  name: vial of wild sage sap
+  description: A medium vial containing concentrated wild sage sap.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14WildSageSap
+          Quantity: 10
+  localizationId: ent-OE14VialWildSageSap
+- type: entity
+  id: OE14VialYellowDayflinPulp
+  parent: OE14VialSmall
+  name: vial of dayflin pulp
+  description: A medium vial containing concentrated yellow dayflin pulp.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14YellowDayflinPulp
+          Quantity: 10
+  localizationId: ent-OE14VialYellowDayflinPulp
+- type: entity
+  id: OE14VialBlueAmanita
+  parent: OE14VialSmall
+  name: vial of blue amanita extract
+  description: A medium vial containing concentrated blue amanita extract.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14BlueAmanita
+          Quantity: 10
+  localizationId: ent-OE14VialBlueAmanita
+- type: entity
+  id: OE14VialLumiMushroom
+  parent: OE14VialSmall
+  name: vial of lumishroom extract
+  description: A medium vial containing concentrated lumishroom extract.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14LumiMushroom
+          Quantity: 10
+  localizationId: ent-OE14VialLumiMushroom
+- type: entity
+  id: OE14VialSilverNeedle
+  parent: OE14VialSmall
+  name: vial of silver needle extract
+  description: A medium vial containing concentrated silver needle extract.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SilverNeedle
+          Quantity: 10
+  localizationId: ent-OE14VialSilverNeedle
+- type: entity
+  id: OE14VialChromiumSlime
+  parent: OE14VialSmall
+  name: vial of chromium slime
+  description: A medium vial containing concentrated chromium slime.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14ChromiumSlime
+          Quantity: 10
+  localizationId: ent-OE14VialChromiumSlime
+- type: entity
+  id: OE14VialAgaricMushroom
+  parent: OE14VialSmall
+  name: vial of fly agaric extract
+  description: A medium vial containing concentrated fly agaric extract.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14AgaricMushroom
+          Quantity: 10
+  localizationId: ent-OE14VialAgaricMushroom
+- type: entity
+  id: OE14VialAirLily
+  parent: OE14VialSmall
+  name: vial of air lily extract
+  description: A medium vial containing concentrated air lily extract.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14AirLily
+          Quantity: 10
+  localizationId: ent-OE14VialAirLily

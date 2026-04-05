@@ -1,0 +1,129 @@
+﻿- type: entity
+  id: OE14TorsoSkeleton
+  parent: OE14TorsoHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+    state: torso
+
+- type: entity
+  id: OE14HeadSkeleton
+  parent: OE14HeadHuman
+  categories: [ ForkFiltered ]
+  name: skull
+  description: Alas poor Yorick...
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+    noRot: true
+    state: head
+  - type: Gibbable
+  - type: Speech
+    speechVerb: Skeleton
+  - type: SkeletonAccent
+  - type: Actions
+  - type: Vocal
+    sounds:
+      Male: Skeleton
+      Female: Skeleton
+      Unsexed: Skeleton
+  - type: Emoting
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: Examiner
+  - type: DoAfter
+  - type: MobState
+    allowedStates:
+      - Alive
+  - type: Tag
+    tags:
+    - MindTransferTarget
+    - Head
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: OE14LeftArmSkeleton
+  parent: OE14LeftArmHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+
+- type: entity
+  id: OE14RightArmSkeleton
+  parent: OE14RightArmHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+
+- type: entity
+  id: OE14LeftHandSkeleton
+  parent: OE14LeftHandHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+
+- type: entity
+  id: OE14RightHandSkeleton
+  parent: OE14RightHandHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+
+- type: entity
+  id: OE14LeftLegSkeleton
+  parent: OE14LeftLegHuman
+  categories: [ ForkFiltered ]
+  components:
+    - type: Sprite
+      sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+      state: "l_leg"
+    - type: Icon
+      sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+      state: "l_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Left
+
+- type: entity
+  id: OE14RightLegSkeleton
+  parent: OE14RightLegHuman
+  categories: [ ForkFiltered ]
+  components:
+    - type: Sprite
+      sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+      state: "r_leg"
+    - type: Icon
+      sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+      state: "r_leg"
+    - type: BodyPart
+      partType: Leg
+      symmetry: Right
+
+- type: entity
+  id: OE14LeftFootSkeleton
+  parent: OE14LeftFootHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+
+- type: entity
+  id: OE14RightFootSkeleton
+  parent: OE14RightFootHuman
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi

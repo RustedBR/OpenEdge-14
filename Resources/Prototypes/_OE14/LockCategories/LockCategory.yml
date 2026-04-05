@@ -1,0 +1,15 @@
+- type: OE14LockGroup
+  id: TavernDorms
+
+- type: OE14LockGroup
+  id: Blacksmith
+
+- type: OE14LockGroup
+  id: Alchemist
+
+- type: OE14LockGroup
+  id: PersonalHouse
+
+- type: OE14LockGroup
+  id: Merchant
+

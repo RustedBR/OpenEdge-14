@@ -1,0 +1,76 @@
+- type: entity
+  id: OE14ActionVampireBite
+  parent: OE14ActionSpellBase
+  name: Vampire bite
+  description: You suck the blood and very essence of life from your victim. (The amount of essence in each player is limited)
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.3
+  - type: OE14MagicEffectVampire
+  - type: OE14ActionSSDBlock
+  - type: OE14ActionTargetMobStatusRequired
+    allowedStates:
+    - Alive
+  - type: DoAfterArgs
+    delay: 2
+    hidden: true
+  - type: Action
+    useDelay: 0.5
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: bite
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/gib1.ogg
+  - type: TargetAction
+    repeat: true
+    range: 1
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      requireAll: true
+      components:
+      - MobState
+      - Bloodstream
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectVampireBite
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+      effects:
+      - !type:OE14SpellSuckBlood
+        suckAmount: 5
+      - !type:OE14SpellVampireGatherEssence
+      - !type:OE14SpellSpawnEntityOnUser
+        spawns:
+        - OE14ImpactEffectBloodEssence
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:ModifyBloodLevel
+          amount: -3
+
+- type: entity
+  id: OE14ImpactEffectVampireBite
+  parent: OE14SnowEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+      - state: snow1
+        map: [ "random" ]
+        color: red
+  - type: RandomSprite
+    cP14InheritBaseColor: red #Dont eat red snow baby
+    available:
+      - random:
+          snow1: Inherit
+          snow2: Inherit
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/gib1.ogg
+

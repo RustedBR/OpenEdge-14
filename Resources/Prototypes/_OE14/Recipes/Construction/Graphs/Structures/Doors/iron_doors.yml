@@ -1,0 +1,130 @@
+- type: constructionGraph
+  id: OE14IronDoor
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14IronDoorFrame
+          steps:
+            - material: OE14IronBar
+              amount: 2
+              doAfter: 2
+
+    - node: OE14IronDoorFrame
+      entity: OE14IronDoorFrame
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14ScrapIron
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 5
+        - to: OE14IronDoorFrameMirrored
+          steps:
+            - tool: OE14Hammering
+              doAfter: 1
+        - to: OE14IronDoor
+          steps:
+            - material: OE14IronBar
+              amount: 2
+              doAfter: 2
+        - to: OE14IronDoorWindowed
+          steps:
+            - material: OE14IronBar
+              amount: 2
+              doAfter: 2
+
+    - node: OE14IronDoorFrameMirrored
+      entity: OE14IronDoorFrameMirrored
+      edges:
+        - to: start
+          conditions:
+          - !type:Locked
+            locked: false
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14ScrapIron
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 5
+        - to: OE14IronDoorFrame
+          steps:
+            - tool: OE14Hammering
+              doAfter: 1
+        - to: OE14IronDoorMirrored
+          steps:
+            - material: OE14IronBar
+              amount: 2
+              doAfter: 2
+        - to: OE14IronDoorWindowedMirrored
+          steps:
+            - material: OE14IronBar
+              amount: 2
+              doAfter: 2
+
+    - node: OE14IronDoor
+      entity: OE14IronDoor
+      edges:
+        - to: OE14IronDoorFrame
+          conditions:
+          - !type:Locked
+            locked: false
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14ScrapIron
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 5
+
+    - node: OE14IronDoorMirrored
+      entity: OE14IronDoorMirrored
+      edges:
+        - to: OE14IronDoorFrameMirrored
+          conditions:
+          - !type:Locked
+            locked: false
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14ScrapIron
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 5
+
+    - node: OE14IronDoorWindowed
+      entity: OE14IronDoorWindowed
+      edges:
+        - to: OE14IronDoorFrame
+          conditions:
+          - !type:Locked
+            locked: false
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14ScrapIron
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 5
+
+    - node: OE14IronDoorWindowedMirrored
+      entity: OE14IronDoorWindowedMirrored
+      edges:
+        - to: OE14IronDoorFrameMirrored
+          conditions:
+          - !type:Locked
+            locked: false
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14ScrapIron
+              amount: 2
+          steps:
+            - tool: Prying
+              doAfter: 5

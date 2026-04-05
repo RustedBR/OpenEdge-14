@@ -1,0 +1,71 @@
+- type: entity
+  id: OE14ActionSpellBloodConnection
+  parent: OE14ActionSpellBase
+  name: Blood connection
+  description: You can sense the location of vampires from your clan from miles away.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 10
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneVampireHypnosis
+  - type: DoAfterArgs
+    delay: 1.5
+  - type: Action
+    useDelay: 8
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: search_clan
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectVampireHypnosis
+      - !type:OE14SpellPointerToVampireClan
+        searchRange: 60
+        pointerEntity: OE14BloodlustPointer
+
+- type: entity
+  parent: OE14ActionSpellBloodConnection
+  id: OE14ActionSpellBloodEnemySearch
+  name: Blood identification
+  description: You are searching within a large radius for all vampires from other factions and their clan hearts.
+  components:
+  - type: Action
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: search_clan_enemy
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+       effects:
+       - !type:OE14SpellSpawnEntityOnTarget
+         spawns:
+         - OE14ImpactEffectVampireHypnosis
+       - !type:OE14SpellPointerToVampireClan
+         inversed: true
+         searchRange: 60
+         pointerEntity: OE14BloodlustPointer
+
+- type: entity
+  id: OE14BloodlustPointer
+  name: pointer
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      color: red
+      sprite: /Textures/_OE14/Effects/Magic/pointer.rsi
+      offset: 0, -1
+      layers:
+        - state: pointer
+          shader: unshaded
+      drawdepth: LowFloors
+    - type: PointLight
+      netSync: false
+      radius: 3
+      color: red
+      energy: 0.2
+    - type: TimedDespawn
+      lifetime: 8
+    - type: Tag
+      tags:
+      - HideContextMenu

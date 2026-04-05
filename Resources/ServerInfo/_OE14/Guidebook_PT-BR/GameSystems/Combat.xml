@@ -1,0 +1,100 @@
+<Document>
+  # Sistema de Combate
+
+  O combate em OpenEdge 14 é em tempo real e baseado em habilidade. O sucesso depende do seu equipamento, níveis de habilidade do personagem e posicionamento.
+
+  ## Combate Básico
+
+  Clique em um inimigo para atacar com sua arma equipada. Cada arma tem uma velocidade de ataque — armas mais rápidas atacam com mais frequência mas causam menos dano por golpe, enquanto armas mais lentas acertam mais forte mas deixam você vulnerável entre os golpes.
+
+  Fique de olho na sua barra de vida. Recue quando estiver com pouca vida e use bandagens ou itens de cura para se recuperar.
+
+  ## Tipos de Arma
+
+  [bold]Armas cortantes[/bold] — espadas, adagas e machados. Alto dano, bom alcance. Algumas causam sangramento.
+
+  [bold]Armas contundentes[/bold] — clavas, maças e martelos. Menor dano mas podem atordoar inimigos e quebrar armaduras.
+
+  [bold]Armas de haste[/bold] — lanças e alabardas. Alcance longo permite atacar de uma distância mais segura.
+
+  [bold]Armas à distância[/bold] — arcos e itens arremessados. Ataque de longe mas requerem munição.
+
+  ### Armas Corpo a Corpo Comuns
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WeaponSwordIron" Caption="Espada de Ferro"/>
+    <GuideEntityEmbed Entity="OE14WeaponDaggerIron" Caption="Adaga de Ferro"/>
+    <GuideEntityEmbed Entity="OE14WeaponWarAxeIron" Caption="Machado de Guerra"/>
+  </Box>
+
+  ### Armas à Distância
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14BowCombat" Caption="Arco de Combate"/>
+    <GuideEntityEmbed Entity="OE14Arrow" Caption="Flechas"/>
+  </Box>
+
+  ### Escudos
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WeaponShieldWooden" Caption="Escudo de Madeira"/>
+    <GuideEntityEmbed Entity="OE14WeaponTowerShieldWooden" Caption="Escudo de Torre"/>
+  </Box>
+
+  ### Itens de Cura
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14HerbalBandage1" Caption="Bandagem de Ervas"/>
+    <GuideEntityEmbed Entity="OE14Gauze1" Caption="Gaze"/>
+  </Box>
+
+  ## Efeitos de Status
+
+  Muitas armas e magias aplicam efeitos de status ao acertar:
+
+  [color=#FF4500]Queimando[/color] — causa dano ao longo do tempo. Extinga com água ou rolando.
+
+  [color=#00BFFF]Congelado[/color] — reduz significativamente a velocidade de movimento. Aqueça perto de uma fogueira para se recuperar mais rápido.
+
+  [color=#7FFF00]Envenenado[/color] — causa dano ao longo do tempo, acumula com múltiplas aplicações. Use um antídoto para curar.
+
+  [color=#8B0000]Sangrando[/color] — drena vida lentamente. Aplique bandagens para estancar o sangramento.
+
+  ## Atributos no Combate
+
+  Os atributos do seu personagem afetam diretamente o desempenho em combate. Verifique seus atributos pressionando [bold]C[/bold].
+
+  - [color=#e05050]Força[/color] — cada ponto acima de 5 adiciona [bold]+10% de dano físico[/bold]. Atributo 10 = +50% (1.5x), Atributo 1 = -50% (0.5x).
+  - [color=#50e050]Vitalidade[/color] — cada ponto adiciona [bold]+/-12.5 HP[/bold] ao seu limiar crítico. Atributo 10 = 162 HP crítico / 325 HP morte.
+  - [color=#50e0e0]Destreza[/color] — cada ponto acima de 5 adiciona [bold]+25%[/bold] ao seu limiar de queda por stamina. Destreza baixa significa que um único ataque te derruba. Atributo 10 = 225, Atributo 1 = 0 (cai instantaneamente).
+  - [color=#a050e0]Inteligência[/color] — cada ponto adiciona [bold]+/-25 mana[/bold]. Útil ao combinar magias e corpo a corpo. Atributo 10 = 225 mana.
+
+  Aumentar seus atributos ao longo do tempo faz uma diferença significativa em quanto tempo você sobrevive e quanto dano causa. Veja [textlink="Atributos" link="OE14_PT_CharacterStats"] para detalhes completos.
+
+  ## Progressão de Habilidade
+
+  Conforme você luta, suas habilidades de combate melhoram automaticamente. Quanto mais usa um tipo de arma, melhor seu personagem se torna com ela. Níveis mais altos de habilidade aumentam o dano causado e reduzem o dano recebido.
+
+  Habilidades são salvas entre sessões. Um personagem veterano é significativamente mais eficaz em combate que um novo.
+
+  [bold]Categorias de habilidade:[/bold]
+  - Corpo a corpo: melhora dano com todas armas de mão
+  - Defesa: reduz dano recebido ao longo do tempo
+  - Magia: aumenta efetividade de magias e reduz custos de mana
+
+  ## Dicas
+
+  - Lute contra inimigos do seu nível — enfrentar inimigos muito fortes cedo leva a morte rápida.
+  - Afaste inimigos movendo enquanto ataca para evitar levar golpes.
+  - Efeitos de status podem virar o jogo — um inimigo congelado não pode desviar.
+  - Trabalhe com outros jogadores — combate em grupo é muito mais eficaz que solo.
+  - Sempre carregue bandagens e itens de cura antes de ir a áreas perigosas.
+
+  ## Sistemas Relacionados
+
+  - [textlink="Magia" link="OE14_PT_Magic"] — aprimore seu combate com magias e buffs mágicos
+  - [textlink="Crafting" link="OE14_PT_Crafting"] — forje armas e armaduras superiores para suas aventuras
+  - [textlink="Economia" link="OE14_PT_Economy"] — venda drops raros de inimigos e compre equipamentos melhores
+  - [textlink="Atributos" link="OE14_PT_CharacterStats"] — invista em Força e Vitalidade para ser um combatente mais eficaz
+
+</Document>

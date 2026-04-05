@@ -1,0 +1,14 @@
+- type: entity
+  parent:
+  - OE14ClothingCloakBase
+  - ClothingSlotBase
+  id: OE14ClothingCloakCaptainJacket
+  name: captain's jacket
+  description: the colors white and gold tell you that you're looking at a higher
+    power.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/Captain/captain_jacket.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/Captain/captain_jacket.rsi
+  localizationId: ent-OE14ClothingCloakCaptainJacket

@@ -1,0 +1,223 @@
+<Document>
+# Arquitetura & Design
+
+OpenEdge 14 é construído sobre vários padrões arquiteturais centrais que determinam como o jogo funciona. Entender esses padrões é crucial para o desenvolvimento eficaz.
+
+## O Quadro Geral
+
+<CodeBlock>
+[Robust Toolbox - .NET Engine]
+    |
+[Entity-Component-System (ECS)]
+    |
+[Recipiente IoC - Injeção de Dependência]
+    |
+[Comunicação Dirigida por Eventos]
+    |
+[Camada de Sincronização de Rede]
+    |
+[Sistemas & Gameplay do OpenEdge 14]
+</CodeBlock>
+
+## Cinco Conceitos Arquiteturais Centrais
+
+1. [textlink="Entity-Component-System (ECS)" link="OE14_DEV_Arch_ECS"]
+
+[bold]O que é:[/bold] Um padrão de design onde o mundo é feito de [bold]Entidades[/bold] que têm [bold]Componentes[/bold], e [bold]Sistemas[/bold] que processam esses componentes.
+
+[bold]Por que usamos:[/bold]
+- Composição flexível — combine componentes para criar qualquer tipo de objeto
+- Processamento eficiente — sistemas iteram apenas sobre entidades relevantes
+- Fácil de testar — sistemas são lógica pura, facilmente mockáveis
+- Suporte a networking — cada componente pode ser networkado independentemente
+
+[bold]Exemplo:[/bold]
+- Entidade: Um personagem jogador
+- Componentes: HealthComponent, InventoryComponent, TransformComponent, CharacterStatsComponent
+- Sistema: HealthSystem processa dano do HealthComponent
+
+2. [textlink="Recipiente IoC" link="OE14_DEV_Arch_IoC"]
+
+[bold]O que é:[/bold] Um registro de [bold]serviços[/bold] (sistemas, gerenciadores, utilitários) que podem ser acessados globalmente via [mono]IoCManager.Resolve\<T\>()[/mono].
+
+[bold]Por que usamos:[/bold]
+- Código desacoplado — componentes não precisam saber sobre implementações concretas
+- Injeção de dependência — serviços são fornecidos, não criados
+- Mocking fácil para testes
+- Evita acoplamento apertado
+
+[bold]Exemplo:[/bold]
+<CodeBlock>
+var entityManager = IoCManager.Resolve<IEntityManager>();
+var actionSystem = IoCManager.Resolve<ActionBlockerSystem>();
+</CodeBlock>
+
+3. [textlink="Sincronização de Rede" link="OE14_DEV_Arch_Netcode"]
+
+[bold]O que é:[/bold] Um sistema que mantém automaticamente servidor e cliente em sincronia transmitindo mudanças de componentes.
+
+[bold]Por que usamos:[/bold]
+- Suporte multiplayer — todos os jogadores veem o mesmo mundo
+- Autoridade do servidor — servidor é sempre correto, cliente interpola
+- Eficiente em banda — apenas dados alterados são transmitidos
+- Transparente — marcado com o atributo AutoNetworkedField
+
+[bold]Exemplo:[/bold]
+<CodeBlock>
+[DataField, AutoNetworkedField]
+public int Health { get; set; }  // Sincroniza para cliente automaticamente
+</CodeBlock>
+
+4. [textlink="Sistema de Eventos" link="OE14_DEV_Arch_Events"]
+
+[bold]O que é:[/bold] Um sistema de publish-subscribe onde sistemas emitem eventos, e outros sistemas ouvem e reagem.
+
+[bold]Por que usamos:[/bold]
+- Acoplamento fraco — sistemas não chamam uns aos outros diretamente
+- Flexibilidade — novas reações podem ser adicionadas sem mudar lógica central
+- Composabilidade — comportamentos complexos de simples cadeias de eventos
+- Intenção clara — o que está acontecendo é óbvio pelos eventos
+
+[bold]Exemplo:[/bold]
+- Evento: DamageEvent (entidade recebeu X de dano)
+- Ouvintes: HealthSystem (aplica dano), CombatLogSystem (registra o golpe), StatusEffectSystem (aplica sangramento)
+
+5. [textlink="Sistema de Modificadores" link="OE14_DEV_Arch_Modifiers"]
+
+[bold]O que é:[/bold] Um sistema para aplicar mudanças temporárias de atributos (bônus) de várias fontes sem mutar valores base.
+
+[bold]Por que usamos:[/bold]
+- Composabilidade — múltiplas fontes podem adicionar bônus
+- Rastreamento — sabe de qual fonte veio cada bônus
+- Proteção contra overflow — tratada quando modificadores excedem limites
+- Reutilizabilidade — mesmo sistema para magias, itens, buffs, etc.
+
+[bold]Exemplo:[/bold]
+- Atributo Base: INT = 8
+- Modificadores: +2 de magia metamágica, +1 de bônus de item
+- Efetivo: INT = 11 (limitado a 10, overflow = 1)
+- Exibição: "INT: 8 -> 10 (+3 Magia, overflow: 1)"
+
+## As Três Camadas
+
+### Camada 1: Camada de Conteúdo
+
+[bold]O que vai aqui:[/bold] Prototypes YAML, definições de itens, definições de magias, definições de trabalhos
+
+[bold]Localizado:[/bold] [mono]Resources/Prototypes/_OE14/[/mono]
+
+[bold]Frequência de mudança:[/bold] Muito frequentemente (balanceamento, novos itens, etc.)
+
+[bold]Exemplo:[/bold]
+<CodeBlock>
+- type: entity
+  id: IronSword
+  components:
+    - type: MeleeWeapon
+      damage: 25
+</CodeBlock>
+
+### Camada 2: Camada de Sistema
+
+[bold]O que vai aqui:[/bold] Sistemas C# que processam lógica de jogo
+
+[bold]Localizado:[/bold] [mono]Content.Server/_OE14/Systems/[/mono] e [mono]Content.Shared/_OE14/[/mono]
+
+[bold]Frequência de mudança:[/bold] Moderadamente (adicionando recursos, corrigindo bugs)
+
+[bold]Exemplo:[/bold]
+<CodeBlock>
+public class CombatSystem : EntitySystem
+{
+    public override void Update(float frameTime)
+    {
+        // Processa eventos de combate
+    }
+}
+</CodeBlock>
+
+### Camada 3: Camada de Framework
+
+[bold]O que vai aqui:[/bold] Código do motor RobustToolbox (não modifique!)
+
+[bold]Localizado:[/bold] [mono]RobustToolbox/[/mono] subdiretório
+
+[bold]Frequência de mudança:[/bold] Nunca (usamos como está)
+
+[bold]Exemplo:[/bold] Gerenciador de entidades, registro de componentes, serialização de rede
+
+## Fluxo de Dados: Como o Jogo Funciona
+
+### Um Exemplo Simples: Atacando um Inimigo
+
+<CodeBlock>
+1. Jogador clica no inimigo (Input)
+   |
+2. ActionBlockerSystem verifica se ação é permitida (jogador pode agir?)
+   |
+3. CombatSystem processa ataque
+   |
+4. Calcula dano: dano base + bônus FOR - armadura
+   |
+5. Cria DamageEvent com quantidade de dano
+   |
+6. HealthSystem ouve DamageEvent
+   |
+7. Aplica dano ao HealthComponent do inimigo
+   |
+8. Valor do HealthComponent muda (Health -= dano)
+   |
+9. AutoNetworkedField sincroniza novo valor de Health para cliente
+   |
+10. Cliente recebe atualização, exibe nova barra de vida
+   |
+11. Se vida <= 0:
+     - DeathEvent emitido
+     - PhysicsSystem desabilita movimento
+     - AnimationSystem toca animação de morte
+     - LootSystem cria itens dropados
+</CodeBlock>
+
+Cada etapa é independente e usa eventos para se comunicar.
+
+## Terminologia Chave
+
+- [bold]Entidade[/bold] — Um objeto no mundo (jogador, item, NPC, efeito)
+- [bold]Componente[/bold] — Um container de dados anexado a uma entidade (vida, posição, inventário)
+- [bold]Sistema[/bold] — Lógica que processa entidades com certos componentes
+- [bold]Serviço[/bold] — Um gerenciador global (EntityManager, TransformSystem, etc.)
+- [bold]Evento[/bold] — Uma mensagem enviada quando algo acontece (dano, morte, pegar)
+- [bold]Modificador[/bold] — Um bônus temporário de atributo de magias, itens ou efeitos
+- [bold]Rede[/bold] — Sincronizar estado entre servidor e cliente
+- [bold]Prototype[/bold] — Definição YAML de uma entidade ou item
+
+## Princípios de Design Importantes
+
+### Autoridade do Servidor
+O servidor está sempre certo. Clientes podem prever e interpolar, mas valores do servidor são canônicos. Nunca confie em input do cliente para decisões críticas.
+
+### Eficiência de Rede
+Apenas sincronize mudanças. Não reenvie dados que não mudaram. Agrupe atualizações quando possível.
+
+### Sem Números Mágicos
+Use enums e constantes nomeadas. Um valor de vida de 50 deve ser uma constante nomeada.
+
+### Separação de Concerns
+Sistemas devem fazer uma coisa bem. Não misture lógica de combate com código de UI.
+
+### Composição Sobre Herança
+Use componentes para adicionar comportamento, não hierarquias de classes. Muito mais flexível.
+
+## Próximos Passos
+
+Escolha um conceito para se aprofundar:
+
+- [textlink="Leia o Sistema ECS" link="OE14_DEV_Arch_ECS"] — entendendo entidade/componente/sistema
+- [textlink="Leia o Recipiente IoC" link="OE14_DEV_Arch_IoC"] — resolvendo serviços
+- [textlink="Leia Sincronização de Rede" link="OE14_DEV_Arch_Netcode"] — sincronizando com cliente
+- [textlink="Leia Sistema de Eventos" link="OE14_DEV_Arch_Events"] — criando lógica customizada
+- [textlink="Leia Sistema de Modificadores" link="OE14_DEV_Arch_Modifiers"] — adicionando bônus de atributos
+
+Ou vá para [textlink="Referência de Sistemas" link="OE14_DEV_SystemReference"] para um sistema específico.
+
+</Document>

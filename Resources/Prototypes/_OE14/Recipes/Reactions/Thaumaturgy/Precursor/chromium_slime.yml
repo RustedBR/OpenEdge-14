@@ -1,0 +1,65 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14ChromiumSlimeSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14ChromiumSlime:
+      amount: 1
+  products:
+    OE14EssenceCycle: 1
+
+
+# Chromium slime is a special reagent that inverts solution properties.
+
+- type: reaction
+  id: OE14ChromiumInverseEffect
+  quantized: true
+  minTemp: 350
+  conserveEnergy: false
+  reactants:
+    OE14ChromiumSlime:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 1
+  effects:
+  - !type:OE14InverseEffect
+    inversion:
+      OE14HealingEffectHealBrute: OE14DamageEffectDamageBrute
+      OE14DamageEffectDamageBrute: OE14HealingEffectHealBrute
+      #
+      OE14HealingEffectHealPoison: OE14DamageEffectDamagePoison
+      OE14DamageEffectDamagePoison: OE14HealingEffectHealPoison
+      #
+      OE14DamageEffectDamageHeat: OE14HealingEffectHealHeat
+      OE14HealingEffectHealHeat: OE14DamageEffectDamageHeat
+      #
+      OE14DamageEffectDamageCold: OE14HealingEffectHealCold
+      OE14HealingEffectHealCold: OE14DamageEffectDamageCold
+      #
+      OE14PositiveEffectSatiateHunger: OE14SideEffectVomit
+      OE14PositiveEffectSatiateThirst: OE14PositiveEffectSatiateHunger
+      OE14SideEffectVomit: OE14PositiveEffectSatiateThirst
+      #
+      OE14NegativeEffectDamageMana: OE14PositiveEffectHealMana
+      OE14PositiveEffectHealMana: OE14NegativeEffectDamageMana
+      #
+      OE14DamageEffectBloodAbsorption: OE14HealingEffectBloodRestore
+      OE14HealingEffectBloodRestore: OE14DamageEffectBloodAbsorption
+      #
+      OE14NegativeEffectSpeedDown: OE14PositiveEffectSpeedUp
+      OE14PositiveEffectSpeedUp: OE14NegativeEffectSpeedDown
+      #
+      OE14DamageEffectDamageAirloss: OE14HealingEffectHealAirloss
+      OE14HealingEffectHealAirloss: OE14DamageEffectDamageAirloss
+      #
+      OE14PositiveEffectUnsleep: OE14NegativeEffectSleep
+      OE14NegativeEffectSleep: OE14PositiveEffectUnsleep
+      #
+      OE14SideEffectRainbow: OE14SideEffectEmoteCough
+      OE14SideEffectEmoteCough: OE14SideEffectRainbow
+      #
+      OE14PositiveEffectHealStam: OE14NegativeEffectDamageStam
+      OE14NegativeEffectDamageStam: OE14PositiveEffectHealStam

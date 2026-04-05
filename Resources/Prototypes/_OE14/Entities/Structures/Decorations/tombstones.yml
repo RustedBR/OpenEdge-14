@@ -1,0 +1,59 @@
+- type: entity
+  id: OE14BaseTombstone
+  name: tombstone
+  description: A piece of stone placed in memory of the dead.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Structures/Decoration/tombstone.rsi
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: tomb
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        cross: ""
+        cross2: ""
+        tomb: ""
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 1000
+        layer:
+        - HalfWallLayer
+        - Opaque
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/break_stone.ogg
+            params:
+              volume: -4
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            OE14StoneBlock1:
+              min: 1
+              max: 4
+  - type: Climbable
+  - type: Construction
+    graph: OE14BaseTombstone
+    node: OE14BaseTombstone
+

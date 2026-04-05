@@ -1,0 +1,109 @@
+- type: entity
+  id: OE14ActionSpellEarthWall
+  parent: OE14ActionSpellBase
+  name: Earth wall
+  description: Raises a solid wall of earth from the bowels.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.3
+  - type: OE14ActionManaCost
+    manaCost: 15
+  - type: OE14ActionMaterialCost
+    requirement: !type:StackResource
+      stack: OE14Dirt
+      count: 2
+  - type: OE14ActionSpeaking
+    startSpeech: "Surgite terram..."
+    endSpeech: "de profundis terrae"
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneEarthWall
+  - type: DoAfterArgs
+    delay: 1.5
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/earth.rsi
+      state: earth_wall
+  - type: TargetAction
+    range: 10
+  - type: WorldTargetAction
+    event: !type:OE14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectEarthWall
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14WallSpawnEarthWall
+
+- type: entity
+  id: OE14RuneEarthWall
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#8f6a2b"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#8f6a2b"
+      shader: unshaded
+    - state: medium_circle
+      color: "#8f6a2b"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectEarthWall
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#8f6a2b"
+      shader: unshaded
+
+- type: entity
+  id: OE14WallSpawnEarthWall
+  categories: [ HideSpawnMenu ]
+  save: false
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    offset: 0, 0.2
+    sprite: _OE14/Effects/cubeup.rsi
+    state: cube_up
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.48,0.25,0.48"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
+  - type: TimedDespawn
+    lifetime: 1.2
+  - type: SpawnOnDespawn
+    prototype: OE14WallDirt
+
+- type: entity
+  parent: OE14BaseSpellScrollEarth
+  id: OE14SpellScrollEarthWall
+  name: earth wall spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellEarthWall
+

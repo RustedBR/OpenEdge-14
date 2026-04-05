@@ -1,0 +1,454 @@
+- type: OE14Recipe
+  id: OE14WeaponShieldWooden
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14WoodenPlanks
+    count: 3
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 2
+  result: OE14WeaponShieldWooden
+
+- type: OE14Recipe
+  id: OE14WeaponTowerShieldWooden
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14WoodenPlanks
+    count: 5
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 4
+  result: OE14WeaponTowerShieldWooden
+
+- type: OE14Recipe
+  id: OE14BaseWrench
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14BaseWrench
+
+- type: OE14Recipe
+  id: OE14PlatePie
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar # Physical Composition in item
+    count: 1
+  result: OE14PlatePie
+
+- type: OE14Recipe
+  id: OE14CrystalLampBlueEmpty
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar  # Physical Composition in item
+    count: 2
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14CrystalLampBlueEmpty
+
+- type: OE14Recipe
+  id: OE14Scissors
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14Scissors
+
+- type: OE14Recipe
+  id: OE14ClothingGlovesGirdles
+  tag: OE14RecipeAnvil
+  category: Armor
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14ClothingGlovesGirdles
+
+- type: OE14Recipe
+  id: OE14CrossboltCopper
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  result: OE14CrossboltCopper
+  resultCount: 5
+
+- type: OE14Recipe
+  id: OE14CrossboltIron
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14CrossboltIron
+  resultCount: 5
+
+- type: OE14Recipe
+  id: OE14CrossboltGold
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GoldBar
+    count: 1
+  result: OE14CrossboltGold
+  resultCount: 5
+
+- type: OE14Recipe
+  id: OE14CrossboltMithril
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14MithrilBar
+    count: 1
+  result: OE14CrossboltMithril
+  resultCount: 5
+
+- type: OE14Recipe
+  id: OE14BigCrossboltCopper
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  result: OE14BigCrossboltCopper
+  resultCount: 2
+
+- type: OE14Recipe
+  id: OE14BigCrossboltIron
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14BigCrossboltIron
+  resultCount: 2
+
+- type: OE14Recipe
+  id: OE14BigCrossboltGold
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GoldBar
+    count: 1
+  result: OE14BigCrossboltGold
+  resultCount: 2
+
+- type: OE14Recipe
+  id: OE14BigCrossboltMithril
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14MithrilBar
+    count: 1
+  result: OE14BigCrossboltMithril
+  resultCount: 2
+
+- type: OE14Recipe
+  id: OE14BaseLockpick
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14BaseLockpick
+
+- type: OE14Recipe
+  id: OE14LockpickMithril
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14MithrilBar
+    count: 1
+  result: OE14LockpickMithril
+
+- type: OE14Recipe
+  id: OE14BaseLightCrossbow
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 3
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 1
+  result: OE14BaseLightCrossbow
+
+- type: OE14Recipe
+  id: OE14BaseCrossbow
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 5
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 2
+  result: OE14BaseCrossbow
+
+- type: OE14Recipe
+  id: OE14ClothingMaskSteelMask
+  tag: OE14RecipeAnvil
+  category: Armor
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 2
+  result: OE14ClothingMaskSteelMask
+
+- type: OE14Recipe
+  id: OE14KeyCopperBlank
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  result: OE14KeyCopperBlank
+
+- type: OE14Recipe
+  id: OE14KeyIronBlank
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14KeyIronBlank
+
+- type: OE14Recipe
+  id: OE14KeyGoldBlank
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GoldBar
+    count: 1
+  result: OE14KeyGoldBlank
+
+- type: OE14Recipe
+  id: OE14KeyMithrilBlank
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14MithrilBar
+    count: 1
+  result: OE14KeyMithrilBlank
+
+- type: OE14Recipe
+  id: OE14KeyFile
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14KeyFile
+
+- type: OE14Recipe
+  id: OE14LockCopper
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  result: OE14LockCopper
+
+- type: OE14Recipe
+  id: OE14LockIron
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14LockIron
+
+- type: OE14Recipe
+  id: OE14LockGold
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GoldBar
+    count: 1
+  result: OE14LockGold
+
+- type: OE14Recipe
+  id: OE14LockMithril
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14MithrilBar
+    count: 1
+  result: OE14LockMithril
+
+- type: OE14Recipe
+  id: OE14EnergyCrystalMediumEmpty
+  tag: OE14RecipeAnvil
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14CrystalShardQuartz
+    count: 1
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  result: OE14EnergyCrystalMediumEmpty
+
+- type: OE14Recipe
+  id: OE14Fork
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14Fork
+  resultCount: 3
+
+- type: OE14Recipe
+  id: OE14Spoon
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14Spoon
+  resultCount: 3
+
+- type: OE14Recipe
+  id: OE14SteelGobletCopper
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  result: OE14SteelGobletCopper
+
+- type: OE14Recipe
+  id: OE14SteelGobletIron
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14SteelGobletIron
+
+- type: OE14Recipe
+  id: OE14SteelGobletGold
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GoldBar
+    count: 1
+  result: OE14SteelGobletGold
+
+- type: OE14Recipe
+  id: OE14FryingPan
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 2
+  - !type:StackResource
+    stack: OE14WoodenPlanks
+    count: 1
+  result: OE14FryingPan
+
+- type: OE14Recipe
+  id: OE14CookingPot
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 3
+  result: OE14CookingPot
+
+- type: OE14Recipe
+  id: OE14IronBuckleRecipe
+  tag: OE14RecipeAnvil
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14IronBuckle
+  resultCount: 5
+
+- type: OE14Recipe
+  id: OE14RatArmor
+  tag: OE14RecipeAnvil
+  category: Armor
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 6
+  result: OE14RatArmor

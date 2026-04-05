@@ -1,0 +1,25 @@
+- type: entity
+  id: OE14PlantCucumber
+  parent: OE14GatherablePlantMultiHarvestBase
+  name: cucumber
+  description: Don't trust people who know how to turn into pickles.
+  components:
+  - type: Sprite
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      sprite: _OE14/Structures/Flora/Farm/cucumber.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: OE14PlantGatherable
+    loot:
+      All: !type:AllSelector
+        children:
+        - id: OE14FoodCucumber
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: OE14SeedCucumber
+          rolls: !type:RangeNumberSelector
+            range: 0, 2
+

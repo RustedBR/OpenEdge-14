@@ -1,0 +1,198 @@
+- type: entity
+  id: OE14BaseCoin
+  parent: BaseItem
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: Tag
+    tags:
+    - OE14Coin
+  - type: Item
+    size: Tiny
+  - type: Stack
+    baseLayer: base
+    layerStates:
+    - coin0
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+  - type: Appearance
+  - type: StaticPrice
+    price: 0
+  - type: OE14CurrencyExaminable
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_OE14/Items/coins_fall.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OE14Coins
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OE14Coins
+  localizationId: ent-OE14BaseCoin
+- type: entity
+  id: OE14CopperCoin
+  parent: OE14BaseCoin
+  name: copper coin
+  description: The smallest denomination coin. Copper.
+  suffix: 10 coins - trade
+  components:
+  - type: Sprite
+    sprite: /Textures/_OE14/Objects/Economy/cp_coin.rsi
+    layers:
+    - state: coin10
+      map:
+      - base
+  - type: Stack
+    stackType: OE14CopperCoin
+    count: 10
+  - type: StackPrice
+    price: 1
+  localizationId: ent-OE14CopperCoin
+- type: entity
+  id: OE14CopperCoin5
+  parent: OE14CopperCoin
+  suffix: 5 coins - trade
+  components:
+  - type: Sprite
+    state: coin5
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14CopperCoin5
+- type: entity
+  id: OE14CopperCoin1
+  parent: OE14CopperCoin
+  suffix: 1 coin - trade
+  components:
+  - type: Sprite
+    state: coin1
+  - type: Stack
+    count: 1
+  localizationId: ent-OE14CopperCoin1
+- type: entity
+  id: OE14SilverCoin
+  parent: OE14BaseCoin
+  name: silver coin
+  description: A valuable coin made from a precisely calibrated silver alloy.....
+    and something else. Equal in value to ten coppers.
+  suffix: 10 coins - trade
+  components:
+  - type: Sprite
+    sprite: /Textures/_OE14/Objects/Economy/sp_coin.rsi
+    layers:
+    - state: coin10
+      map:
+      - base
+  - type: Stack
+    stackType: OE14SilverCoin
+    count: 10
+  - type: StackPrice
+    price: 10
+  localizationId: ent-OE14SilverCoin
+- type: entity
+  id: OE14SilverCoin5
+  parent: OE14SilverCoin
+  suffix: 5 coins - trade
+  components:
+  - type: Sprite
+    state: coin5
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14SilverCoin5
+- type: entity
+  id: OE14SilverCoin1
+  parent: OE14SilverCoin
+  suffix: 1 coin
+  components:
+  - type: Sprite
+    state: coin1
+  - type: Stack
+    count: 1
+  localizationId: ent-OE14SilverCoin1
+- type: entity
+  id: OE14GoldCoin
+  parent: OE14BaseCoin
+  name: gold coin
+  description: A gold, big, beautiful coin. Valuable enough to be stolen by bandits.
+    Equal in value to ten silver coins.
+  suffix: 10 coins - trade
+  components:
+  - type: Sprite
+    sprite: /Textures/_OE14/Objects/Economy/gp_coin.rsi
+    layers:
+    - state: coin10
+      map:
+      - base
+  - type: Stack
+    stackType: OE14GoldCoin
+    count: 10
+  - type: StackPrice
+    price: 100
+  localizationId: ent-OE14GoldCoin
+- type: entity
+  id: OE14GoldCoin5
+  parent: OE14GoldCoin
+  suffix: 5 coins - trade
+  components:
+  - type: Sprite
+    state: coin5
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14GoldCoin5
+- type: entity
+  id: OE14GoldCoin1
+  parent: OE14GoldCoin
+  suffix: 1 coin - trade
+  components:
+  - type: Sprite
+    state: coin1
+  - type: Stack
+    count: 1
+  localizationId: ent-OE14GoldCoin1
+- type: entity
+  id: OE14PlatinumCoin
+  parent: OE14BaseCoin
+  name: platinum coin
+  description: A platinum coin? It's so rare. Ten gold pieces is the price of one.
+  suffix: 10 coins - trade
+  components:
+  - type: Sprite
+    sprite: /Textures/_OE14/Objects/Economy/pp_coin.rsi
+    layers:
+    - state: coin10
+      map:
+      - base
+  - type: Stack
+    stackType: OE14PlatinumCoin
+    count: 10
+  - type: StackPrice
+    price: 1000
+  localizationId: ent-OE14PlatinumCoin
+- type: entity
+  id: OE14PlatinumCoin5
+  parent: OE14PlatinumCoin
+  suffix: 5 coins - trade
+  components:
+  - type: Sprite
+    state: coin5
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14PlatinumCoin5
+- type: entity
+  id: OE14PlatinumCoin1
+  parent: OE14PlatinumCoin
+  suffix: 1 coin - trade
+  components:
+  - type: Sprite
+    state: coin1
+  - type: Stack
+    count: 1
+  localizationId: ent-OE14PlatinumCoin1

@@ -1,0 +1,100 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Jobs
+  name: Funções do Jogo
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Jobs.xml"
+  children:
+  - OE14_PT_JobAdventurer
+  - OE14_PT_JobAlchemist
+  - OE14_PT_JobInnkeeper
+  - OE14_PT_JobGuildWorker
+  - OE14_PT_JobGuildmaster
+  - OE14_PT_JobMerchant
+  - OE14_PT_JobGuard
+  - OE14_PT_JobGuardCommander
+  - OE14_PT_JobApprentice
+  - OE14_PT_JobInvestigator
+  - OE14_PT_Patrons
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobAdventurer
+  name: Aventureiro
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Adventurers.xml"
+  children:
+  - OE14_PT_Monster_Toxins
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobAlchemist
+  name: Alquimista
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Alchemist.xml"
+  children:
+  - OE14_PT_Alchemy
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobInnkeeper
+  name: Estalajadeiro
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Innkeepers.xml"
+  children:
+  - OE14_PT_Cooking
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobGuildWorker
+  name: Trabalbador de Guilda
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/GuildWorker.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobGuildmaster
+  name: Mestre de Guilda
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Guildmaster.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobMerchant
+  name: Mercador
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Merchant.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobGuard
+  name: Guarda
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Guard.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobGuardCommander
+  name: Comandante da Guarda
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/GuardCommander.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobApprentice
+  name: Aprendiz
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Apprentice.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_JobInvestigator
+  name: Investigador
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Investigator.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Patrons
+  name: Protectores
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Patrons.xml"
+  filterEnabled: True

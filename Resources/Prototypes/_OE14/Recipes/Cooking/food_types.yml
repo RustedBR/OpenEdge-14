@@ -1,0 +1,8 @@
+- type: OE14FoodType
+  id: Meal
+
+- type: OE14FoodType
+  id: Soup
+
+- type: OE14FoodType
+  id: Pie

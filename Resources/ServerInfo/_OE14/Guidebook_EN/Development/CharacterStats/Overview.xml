@@ -1,0 +1,24 @@
+<Document>
+# Character Stats System
+
+The OE14CharacterStats system manages the four core stats that define a character's capabilities: [bold]Strength (STR)[/bold], [bold]Vitality (VIT)[/bold], [bold]Dexterity (DEX)[/bold], and [bold]Intelligence (INT)[/bold].
+
+## What This Section Covers
+
+- [textlink="Stat Formulas & Calculations" link="OE14_DEV_Stats_Formulas"] — the math behind how stats affect gameplay
+- [textlink="Stat Modifiers & Overflow" link="OE14_DEV_Stats_Modifiers"] — how temporary bonuses stack and overflow
+- [textlink="Spell Fallback System" link="OE14_DEV_Stats_Fallback"] — how spells interact with stat limits
+- [textlink="Network Implementation" link="OE14_DEV_Stats_Network"] — how stats sync between server and client
+- [textlink="Code Examples" link="OE14_DEV_Stats_Code"] — reference implementations
+
+## Key Files
+
+- [mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsComponent.cs[/mono]
+- [mono]Content.Server/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+- [mono]Content.Client/_OE14/CharacterStats/OE14CharacterStatsUISystem.cs[/mono]
+
+## Quick Overview
+
+Each stat ranges from 1 to 10. Stats are set during character creation and can be modified by spells, items, and buffs during gameplay. The effective stat is always [bold]base + modifiers[/bold], capped at 10.
+
+</Document>

@@ -1,0 +1,13 @@
+oe14-trade-faction-contracts = Zellasian Trade Guild
+oe14-trade-faction-victoria-gardens = Victoria Gardens
+oe14-trade-faction-brad-potions = Brad's marvelous potions
+oe14-trade-faction-dwarf-mining = 'Dwarf Steel' mining branch
+oe14-trade-faction-thaumaturgy = Academy of Thaumaturgy
+oe14-trade-faction-home-decor = Cozy home
+oe14-trade-faction-horticulture = Horticulture Consortium
+oe14-trade-faction-butchers = Master Butchers Union
+oe14-trade-faction-dairy = Golden Udder Dairy
+oe14-trade-faction-tailors = Silk & Needle Tailors Guild
+oe14-trade-faction-guard = Imperial Guard
+oe14-trade-faction-vampire-market = Vampire's lair
+oe14-trade-faction-helmir-child = Helmir's childs

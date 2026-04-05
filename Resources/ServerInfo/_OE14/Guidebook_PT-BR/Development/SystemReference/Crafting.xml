@@ -1,0 +1,40 @@
+<Document>
+# Referência de Sistemas de Crafting
+
+Referência rápida para os sistemas de crafting no OpenEdge 14.
+
+## Sistemas
+
+[bold]OE14Workbench[/bold] — crafting baseado em receitas em uma entidade de workbench. Jogador seleciona receita e espera DoAfter completar.
+
+[bold]OE14Cooking[/bold] — transformação de itens baseada em temperatura. Itens mudam ao atingir certos limites de temperatura.
+
+[bold]OE14ModularCraft[/bold] — crafting de montagem onde componentes são combinados. Modificadores de atributos podem afetar resultados.
+
+## Adicionando uma Receita de Crafting
+
+Receitas são definidas em prototypes YAML:
+
+<CodeBlock>
+- type: OE14WorkbenchRecipe
+  id: IronSwordRecipe
+  result: IronSword
+  ingredients:
+    - type: IronIngot
+      amount: 2
+    - type: WoodHandle
+      amount: 1
+  craftTime: 5.0
+</CodeBlock>
+
+## Localização dos Arquivos
+
+- [mono]Content.Shared/_OE14/Crafting/[/mono]
+- [mono]Content.Server/_OE14/Crafting/[/mono]
+- [mono]Resources/Prototypes/_OE14/Recipes/[/mono]
+
+## Conteúdo Em Construção
+
+Referência completa do sistema de crafting coming soon.
+
+</Document>

@@ -1,0 +1,272 @@
+
+# Rep 0
+
+- type: oe14TradingPosition
+  id: OE14VialSmallHealingBrute
+  faction: BradPotions
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallHealingBrute
+
+- type: oe14TradingPosition
+  id: OE14VialSmallHealingMana
+  faction: BradPotions
+  reputationLevel: 0
+  uiPosition: 1
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallHealingMana
+
+
+- type: oe14TradingPosition
+  id: OE14VialTiny
+  faction: BradPotions
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialTiny
+
+- type: oe14TradingPosition
+  id: OE14VialTinyReinforced
+  priceMarkup: 1
+  faction: BradPotions
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_tiny.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialTinyReinforced
+
+
+- type: oe14TradingPosition
+  id: OE14Pestle
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 6
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/mortar_pestle.rsi
+    state: pestle
+  service: !type:OE14BuyItemsService
+    product: OE14Pestle
+
+- type: oe14TradingPosition
+  id: OE14Mortar
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/mortar_pestle.rsi
+    state: mortar_base
+  service: !type:OE14BuyItemsService
+    product: OE14Mortar
+
+# Rep 1
+
+- type: oe14TradingPosition
+  id: OE14VialSmallHealingBlood
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallHealingBlood
+
+- type: oe14TradingPosition
+  id: OE14VialSmallHealingManaDepletion
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 1
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallHealingManaDepletion
+
+- type: oe14TradingPosition
+  id: OE14VialSmall
+  reputationLevel: 1
+  priceMarkup: 1
+  faction: BradPotions
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmall
+
+- type: oe14TradingPosition
+  id: OE14VialSmallReinforced
+  reputationLevel: 1
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallReinforced
+
+- type: oe14TradingPosition
+  id: OE14Dropper
+  priceMarkup: 1
+  reputationLevel: 1
+  faction: BradPotions
+  uiPosition: 6
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/dropper.rsi
+    state: dropper
+  service: !type:OE14BuyItemsService
+    product: OE14Dropper
+
+- type: oe14TradingPosition
+  id: OE14Syringe
+  priceMarkup: 2
+  reputationLevel: 1
+  faction: BradPotions
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/syringe.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14Syringe
+
+- type: oe14TradingPosition
+  id: OE14ClothingEyesAlchemyGlasses
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 9
+  icon:
+    sprite: _OE14/Clothing/Eyes/alchemy_glasses.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14ClothingEyesAlchemyGlasses
+
+- type: oe14TradingPosition
+  id: OE14ClothingEyesAlchemyMonocle
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 10
+  icon:
+    sprite: _OE14/Clothing/Eyes/alchemy_monocle.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14ClothingEyesAlchemyMonocle
+
+# Rep 2
+
+- type: oe14TradingPosition
+  id: OE14VialSmallHealingPoison
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallHealingPoison
+
+
+
+- type: oe14TradingPosition
+  id: OE14VialMedium
+  reputationLevel: 2
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_medium.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialMedium
+
+- type: oe14TradingPosition
+  id: OE14VialMediumReinforced
+  reputationLevel: 2
+  priceMarkup: 3
+  faction: BradPotions
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_medium.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialMediumReinforced
+
+- type: oe14TradingPosition
+  id: OE14Cauldron
+  priceMarkup: 5
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 6
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/cauldron.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14Cauldron
+
+- type: oe14TradingPosition
+  id: OE14BaseAlchemyBomb
+  faction: BradPotions
+  reputationLevel: 2
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14BaseAlchemyBomb
+
+# Rep 3
+
+- type: oe14TradingPosition
+  id: OE14VialSmallSpeedUp
+  faction: BradPotions
+  reputationLevel: 3
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallSpeedUp
+
+- type: oe14TradingPosition
+  id: OE14VialSmallRainbow
+  faction: BradPotions
+  reputationLevel: 3
+  uiPosition: 1
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallRainbow
+
+- type: oe14TradingPosition
+  id: OE14VialSkull
+  reputationLevel: 3
+  priceMarkup: 2
+  faction: BradPotions
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_skull.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSkull
+
+- type: oe14TradingPosition
+  id: OE14VialSkullReinforced
+  reputationLevel: 3
+  priceMarkup: 3
+  faction: BradPotions
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_skull.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSkullReinforced

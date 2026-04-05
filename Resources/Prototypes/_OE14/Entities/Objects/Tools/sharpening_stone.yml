@@ -1,0 +1,33 @@
+- type: entity
+  id: OE14BaseSharpeningStone
+  name: sharpening stone
+  description: Allows you to sharpen blunted weapons. If you overdo it, you may well sharpen the weapon completely.
+  categories: [ ForkFiltered ]
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _OE14/Objects/sharpening_stone.rsi
+    state: base
+  - type: UseDelay
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassCrack
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: OE14SharpeningStone
+    sharpnessHeal: 0.1
+  - type: Tag
+    tags:
+    - OE14SharpeningStone
+  - type: StaticPrice
+    price: 3

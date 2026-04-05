@@ -1,0 +1,24 @@
+- type: constructionGraph
+  id: OE14WoodenPallet
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WoodenPallet
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+    - node: OE14WoodenPallet
+      entity: OE14WoodenPallet
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 2

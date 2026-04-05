@@ -1,0 +1,135 @@
+- type: marking
+  id: OE14HumanScarCheekLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_cheek_left
+
+- type: marking
+  id: OE14HumanScarCheekRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_cheek_right
+
+- type: marking
+  id: OE14HumanScarChestLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_chest_left
+
+- type: marking
+  id: OE14HumanScarChestRight
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_chest_right
+
+- type: marking
+  id: OE14HumanScarCutLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_cut_left
+
+- type: marking
+  id: OE14HumanScarCutRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_cut_right
+
+- type: marking
+  id: OE14HumanScarEyeLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_eye_left
+
+- type: marking
+  id: OE14HumanScarEyeRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_eye_right
+
+- type: marking
+  id: OE14HumanScarEyebrowLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_eyebrow_left
+
+- type: marking
+  id: OE14HumanScarEyebrowRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_eyebrow_right
+
+- type: marking
+  id: OE14HumanScarHalfFaceLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_half_face_left
+
+- type: marking
+  id: OE14HumanScarHalfFaceRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_half_face_right
+
+- type: marking
+  id: OE14HumanScarNearRibLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_near_rib_left
+
+- type: marking
+  id: OE14HumanScarNearRibRight
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_near_rib_right
+
+- type: marking
+  id: OE14HumanScarNose
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/human_scars.rsi
+      state: scar_nose
+

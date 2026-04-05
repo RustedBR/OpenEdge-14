@@ -1,0 +1,27 @@
+<Document>
+# Referência de Sistemas
+
+Referência rápida para todos os sistemas principais do OpenEdge 14. Cada entrada vincula a documentação detalhada.
+
+## Sistemas Centrais
+
+- [textlink="Sistema OE14CharacterStats" link="OE14_DEV_SysRef_Stats"] — atributos FOR/VIT/DEX/INT, modificadores e gasto de pontos
+- [textlink="Sistemas de Magia & Magias" link="OE14_DEV_SysRef_Magic"] — magias, mana, armazenamento de magias
+- [textlink="Sistemas de Crafting" link="OE14_DEV_SysRef_Crafting"] — workbench, cozinhar, crafting modular
+- [textlink="Sistema Economia" link="OE14_DEV_SysRef_Economy"] — moeda, salário, plataforma de comércio
+- [textlink="Sistema de Combate" link="OE14_DEV_SysRef_Combat"] — corpo a corpo, dano, habilidades
+- [textlink="Outros Sistemas" link="OE14_DEV_SysRef_Other"] — farming, efeitos de status, demiplano, vampiro
+
+## Busca Rápida
+
+[bold]Eu quero adicionar bônus de atributos[/bold] — veja Sistema OE14CharacterStats e [textlink="Sistema de Modificadores" link="OE14_DEV_Arch_Modifiers"]
+
+[bold]Eu quero adicionar uma nova magia[/bold] — veja Sistemas de Magia & Magias e [textlink="Adicionando Novas Magias" link="OE14_DEV_Guide_Spells"]
+
+[bold]Eu quero adicionar uma receita de crafting[/bold] — see Sistemas de Crafting and [textlink="Adicionando Novas Habilidades" link="OE14_DEV_Guide_Skills"]
+
+[bold]Eu quero adicionar um novo item à loja[/bold] — see Sistema Economia
+
+[bold]Eu quero adicionar um efeito de status[/bold] — see Outros Sistemas
+
+</Document>

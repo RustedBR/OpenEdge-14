@@ -1,0 +1,167 @@
+- type: roleLoadout
+  id: JobOE14Adventurer
+  groups:
+  - OE14AdventureEquip
+  - OE14GeneralHead
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes
+  - OE14GeneralMask
+  - OE14GeneralCloak
+  - OE14GeneralGloves
+  - OE14GeneralShirt
+  - OE14GeneralPants
+  - OE14GeneralShoes
+  - OE14GeneralBack
+  - OE14GeneralTrinkets
+  - OE14GeneralKeys
+
+- type: roleLoadout
+  id: JobOE14Apprentice
+  groups:
+  - OE14GeneralHead
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes
+  - OE14GeneralGloves
+  - OE14GeneralShirt
+  - OE14GeneralPants
+  - OE14GeneralShoes
+  - OE14GeneralVillagerBack
+  - OE14GeneralTrinkets
+  - OE14GeneralKeys
+
+- type: roleLoadout
+  id: JobOE14Alchemist
+  groups:
+  - OE14AlchemistHead #
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes #
+  - OE14AlchemistCloak #
+  - OE14GeneralGloves
+  - OE14GeneralShirt
+  - OE14AlchemistBelt #
+  - OE14GeneralPants
+  - OE14GeneralShoes
+  - OE14GeneralVillagerBack
+  - OE14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobOE14Innkeeper
+  groups:
+  - OE14GeneralHead
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes
+  - OE14GeneralCloak
+  - OE14GeneralGloves
+  - OE14GeneralShirt
+  - OE14GeneralPants
+  - OE14GeneralShoes
+  - OE14GeneralVillagerBack
+  - OE14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobOE14Blacksmith
+  groups:
+  - OE14GeneralHead
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes
+  - OE14BlacksmithCloak
+  - OE14BlacksmithGloves
+  - OE14GeneralShirt
+  - OE14GeneralPants
+  - OE14GeneralShoes
+  - OE14GeneralVillagerBackCargo
+  - OE14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobOE14GuardCommander
+  groups:
+  - OE14GuardHead
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes
+  - OE14GuardCommanderCloak #
+  - OE14GeneralGloves
+  - OE14GuardShirt
+  - OE14GuardPants
+  - OE14GeneralShoes
+  - OE14GeneralVillagerBackReinforced
+  - OE14GeneralTrinkets
+  - OE14GuardEquip
+
+- type: roleLoadout
+  id: JobOE14Investigator
+  groups:
+  - OE14InvestigatorHead
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes
+  - OE14InvestigatorCloak #
+  - OE14GeneralGloves
+  - OE14GuardShirt
+  - OE14GuardPants
+  - OE14GeneralShoes
+  - OE14GeneralVillagerBackReinforced
+  - OE14GeneralBack
+  - OE14GeneralTrinkets
+  - OE14GuardEquip
+
+- type: roleLoadout
+  id: JobOE14Guard
+  groups:
+  - OE14GuardHead
+  - OE14GeneralOuterClothing
+  - OE14GeneralEyes
+  - OE14GuardCloak #
+  - OE14GeneralGloves
+  - OE14GuardShirt
+  - OE14GuardPants
+  - OE14GeneralShoes
+  - OE14GeneralVillagerBackReinforced
+  - OE14GeneralTrinkets
+  - OE14GuardEquip
+
+- type: roleLoadout
+  id: JobOE14Commandant
+  groups:
+  - OE14MerchantOuterClothing
+  - OE14GeneralEyes
+  - OE14MerchantShirt
+  - OE14MerchantPants
+  - OE14MerchantShoes
+  - OE14GeneralVillagerBackReinforced
+  - OE14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobOE14Guildmaster
+  groups:
+  - OE14GuildmasterOuterClothing
+  - OE14GeneralEyes
+  - OE14GuildmasterHead
+  - OE14GuildmasterCloak
+  - OE14GuildmasterShirt
+  - OE14GuildmasterPants
+  - OE14GuildmasterShoes
+  - OE14GeneralVillagerBackReinforced
+  - OE14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobOE14GuildWorker
+  groups:
+  - OE14GuildmasterOuterClothing
+  - OE14GeneralEyes
+  - OE14GuildWorkerHead
+  - OE14GuildmasterShirt
+  - OE14GuildmasterPants
+  - OE14GuildmasterShoes
+  - OE14GeneralVillagerBackReinforced
+  - OE14GeneralTrinkets
+
+- type: roleLoadout
+  id: JobOE14Merchant
+  groups:
+  - OE14MerchantHead
+  - OE14MerchantOuterClothing
+  - OE14GeneralEyes
+  - OE14MerchantShirt
+  - OE14MerchantPants
+  - OE14MerchantShoes
+  - OE14GeneralVillagerBackCargo
+  - OE14GeneralTrinkets

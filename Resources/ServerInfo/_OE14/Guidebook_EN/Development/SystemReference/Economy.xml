@@ -1,0 +1,41 @@
+<Document>
+# Economy System Reference
+
+Quick reference for the economy systems in OpenEdge 14.
+
+## Systems
+
+[bold]OE14Currency[/bold] — physical coin entities with a value. Coins exist as items in the world.
+
+[bold]OE14Salary[/bold] — automatically pays coins to job holders over time. Configured per job prototype.
+
+[bold]OE14TradingPlatform[/bold] — buy/sell system with dynamic pricing based on supply and demand.
+
+## Adding an Item to the Shop
+
+Trading platform listings are defined in prototypes:
+
+<CodeBlock>
+- type: OE14TradingListing
+  id: IronSwordListing
+  entity: IronSword
+  basePrice: 50
+  buyable: true
+  sellable: true
+</CodeBlock>
+
+## Currency Denominations
+
+Coins come in different values. The trading platform handles exchange automatically.
+
+## File Locations
+
+- [mono]Content.Shared/_OE14/Economy/[/mono]
+- [mono]Content.Server/_OE14/Economy/[/mono]
+- [mono]Resources/Prototypes/_OE14/Economy/[/mono]
+
+## Content Under Construction
+
+Full economy system reference coming soon.
+
+</Document>

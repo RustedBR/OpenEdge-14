@@ -1,0 +1,158 @@
+- type: material
+  id: OE14WoodenPlanks
+  stackEntity: OE14WoodenPlanks1
+  name: oe14-material-wooden-planks
+  unit: materials-unit-plank
+  icon: { sprite: _OE14/Objects/Materials/wood.rsi, state: planks_2 }
+  color: "#874d3a"
+  price: 0.1
+
+- type: material
+  id: OE14LucensWoodenPlanks
+  stackEntity: OE14LucensWoodenPlanks1
+  name: oe14-material-lucens-planks
+  unit: materials-unit-bar
+  icon: { sprite: _OE14/Objects/Materials/wood_lucens.rsi, state: planks_2 }
+  color: "#1a1e22"
+  price: 1
+
+- type: material
+  id: OE14Dirt
+  stackEntity: OE14DirtBlock1
+  name: oe14-material-dirt-block
+  unit: materials-unit-chunk
+  icon: { sprite: _OE14/Objects/Materials/dirt_block.rsi, state: dirt_2 }
+  color: "#5e3f31"
+  price: 0
+
+- type: material
+  id: OE14Stone
+  stackEntity: OE14StoneBlock1
+  name: oe14-material-stone-block
+  unit: materials-unit-chunk
+  icon: { sprite: _OE14/Objects/Materials/stone_block.rsi, state: stone_2 }
+  color: "#555963"
+  price: 0.02
+
+- type: material
+  id: OE14Glass
+  stackEntity: OE14GlassSheet1
+  name: materials-glass
+  icon: { sprite: _OE14/Objects/Materials/glass.rsi, state: glass_2 }
+  color: "#555963"
+  price: 0.15
+
+- type: material
+  id: OE14MarbleStone
+  stackEntity: OE14MarbleBlock1
+  name: oe14-material-stone-block #TODO
+  unit: materials-unit-chunk
+  icon: { sprite: _OE14/Objects/Materials/marble_block.rsi, state: stone_2 }
+  color: "#555963"
+  price: 0.15
+
+- type: material
+  id: OE14Cloth
+  stackEntity: OE14Cloth1
+  name: oe14-material-cloth
+  unit: materials-unit-roll
+  icon: { sprite: _OE14/Objects/Materials/cloth.rsi, state: cloth_3 }
+  color: "#d8e3e2"
+  price: 0.3
+
+- type: material
+  id: OE14Copper
+  stackEntity: OE14CopperBar1
+  name: oe14-material-copper
+  unit: materials-unit-bar
+  icon: { sprite: _OE14/Objects/Materials/copper_scrap.rsi, state: scrap }
+  color: "#9a5e22"
+  price: 1
+
+- type: material
+  id: OE14Iron
+  stackEntity: OE14IronBar1
+  name: oe14-material-iron
+  unit: materials-unit-bar
+  icon: { sprite: _OE14/Objects/Materials/iron_scrap.rsi, state: scrap_2 }
+  color: "#9093a1"
+  price: 2
+
+- type: material
+  id: OE14Brass
+  stackEntity: OE14IronBar1
+  name: oe14-material-brass
+  unit: materials-unit-bar
+  icon: { sprite: _OE14/Objects/Materials/brass_bar.rsi, state: bar_2 }
+  color: "#bb7547"
+  price: 2.5
+
+- type: material
+  id: OE14Gold
+  stackEntity: OE14GoldBar1
+  name: oe14-material-gold
+  unit: materials-unit-bar
+  icon: { sprite: _OE14/Objects/Materials/gold_scrap.rsi, state: scrap_3 }
+  color: "#FFD700"
+  price: 8
+
+- type: material
+  id: OE14Mithril
+  stackEntity: OE14MithrilBar1
+  name: oe14-material-mithril
+  unit: materials-unit-bar
+  icon: { sprite: _OE14/Objects/Materials/mithril_scrap.rsi, state: scrap }
+  color: "#006c83"
+  price: 5
+
+- type: material
+  id: OE14OreCoal
+  stackEntity: OE14OreCoal1
+  name: oe14-material-coal
+  icon: { sprite: _OE14/Objects/Materials/coal_ore.rsi, state: ore2 }
+  color: "#232526"
+  price: 0.8
+
+- type: material
+  id: OE14FloraMaterial
+  stackEntity: OE14FloraMaterial1
+  name: oe14-material-flora
+  unit: materials-unit-bunch
+  icon: { sprite: _OE14/Objects/Materials/flora.rsi, state: grass_material1 }
+  color: "#85903e"
+  price: 0.01
+
+- type: material
+  id: OE14Ash
+  stackEntity: OE14Ash1
+  name: oe14-material-ash
+  unit: oe14-materials-unit-pile
+  icon: { sprite: _OE14/Objects/Materials/ash.rsi, state: ash_1 }
+  color: "#2d313c"
+  price: 0
+
+- type: material
+  id: OE14Leather
+  stackEntity: OE14Leather1
+  name: oe14-material-leather
+  unit: materials-unit-roll
+  icon: { sprite: _OE14/Objects/Ingredients/leather.rsi, state: leather }
+  color: "#a78a63"
+  price: 1.2
+
+- type: material
+  id: OE14BloodEssence
+  stackEntity: OE14BloodEssence
+  name: oe14-stack-blood-essence
+  unit: materials-unit-bar
+  icon: { sprite: _OE14/Objects/Materials/blood_essence.rsi, state: drop }
+  color: "#a78a63"
+  price: 8
+
+- type: material
+  id: OE14Bone
+  stackEntity: OE14Bone1
+  name: oe14-material-bone
+  icon: { sprite: _OE14/Objects/Materials/bones.rsi, state: bone_1 }
+  color: "#ccb495"
+  price: 0.15

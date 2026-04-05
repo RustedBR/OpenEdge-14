@@ -1,0 +1,3 @@
+health-examinable-carbon-OE14ManaDepletion-25 = [color=blue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } pele rachada por todo o corpo.[/color]
+health-examinable-carbon-OE14ManaDepletion-50 = [colour=darkblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } rachaduras azuis por todo o corpo![/colour]
+health-examinable-carbon-OE14ManaDepletion-75 = [colour=darkblue]{ CAPITALIZE(POSS-ADJ($target)) } o corpo seca liberando mana das rachaduras![/colour]

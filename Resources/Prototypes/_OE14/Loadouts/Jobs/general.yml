@@ -1,0 +1,810 @@
+# Cloak
+
+- type: loadoutGroup
+  id: OE14GeneralCloak
+  name: oe14-loadout-general-cloak
+  minLimit: 0
+  loadouts:
+  - OE14ClothingCloakFurcapeBlack
+  - OE14ClothingCloakFurcapeBlue
+  - OE14ClothingCloakMaidArpon
+  - OE14ClothingCloakRitualAttireLeather
+  - OE14ClothingCloakWhite
+  - OE14ClothingCloakGreen
+  - OE14ClothingCloakBlue
+  - OE14ClothingCloakFurCoat
+  - OE14ClothingCloakBrownFurCoat
+  - OE14ClothingCloakInsulated
+  - OE14ClothingCloakBlackSyurko
+  - OE14ClothingCloakRedSyurko
+  - OE14ClothingCloakBlueSyurko
+  - OE14ClothingCloakGreenSyurko
+  - OE14ClothingCloakWhiteSyurko
+  - OE14ClothingCloakYellowSyurko
+  - OE14ClothingCloakHaori
+
+- type: loadout
+  id: OE14ClothingCloakFurcapeBlack
+  equipment:
+    cloak: OE14ClothingCloakFurcapeBlack
+
+- type: loadout
+  id: OE14ClothingCloakFurcapeBlue
+  equipment:
+    cloak: OE14ClothingCloakFurcapeBlue
+
+- type: loadout
+  id: OE14ClothingCloakBlackSyurko
+  equipment:
+    cloak: OE14ClothingCloakBlackSyurko
+
+- type: loadout
+  id: OE14ClothingCloakRedSyurko
+  equipment:
+    cloak: OE14ClothingCloakRedSyurko
+
+- type: loadout
+  id: OE14ClothingCloakMaidArpon
+  equipment:
+    cloak: OE14ClothingCloakMaidArpon
+
+- type: loadout
+  id: OE14ClothingCloakRitualAttireLeather
+  equipment:
+    cloak: OE14ClothingCloakRitualAttireLeather
+
+- type: loadout
+  id: OE14ClothingCloakWhite
+  equipment:
+    cloak: OE14ClothingCloakWhite
+
+- type: loadout
+  id: OE14ClothingCloakGreen
+  equipment:
+    cloak: OE14ClothingCloakGreen
+
+- type: loadout
+  id: OE14ClothingCloakBlue
+  equipment:
+    cloak: OE14ClothingCloakBlue
+
+- type: loadout
+  id: OE14ClothingCloakFurCoat
+  equipment:
+    cloak: OE14ClothingCloakFurCoat
+
+- type: loadout
+  id: OE14ClothingCloakInsulated
+  equipment:
+    cloak: OE14ClothingCloakInsulated
+
+- type: loadout
+  id: OE14ClothingCloakBrownFurCoat
+  equipment:
+    cloak: OE14ClothingCloakBrownFurCoat
+
+- type: loadout
+  id: OE14ClothingCloakBlueSyurko
+  equipment:
+    cloak: OE14ClothingCloakBlueSyurko
+
+- type: loadout
+  id: OE14ClothingCloakGreenSyurko
+  equipment:
+    cloak: OE14ClothingCloakGreenSyurko
+
+- type: loadout
+  id: OE14ClothingCloakWhiteSyurko
+  equipment:
+    cloak: OE14ClothingCloakWhiteSyurko
+
+- type: loadout
+  id: OE14ClothingCloakYellowSyurko
+  equipment:
+    cloak: OE14ClothingCloakYellowSyurko
+
+- type: loadout
+  id: OE14ClothingCloakHaori
+  equipment:
+    cloak: OE14ClothingCloakHaori
+
+# OuterClothing
+
+- type: loadoutGroup
+  id: OE14GeneralOuterClothing
+  name: oe14-loadout-general-outer
+  minLimit: 0
+  loadouts:
+  - OE14ClothingOuterClothingBrownVest1
+  - OE14ClothingOuterClothingBrownVest2
+  - OE14ClothingOuterClothingBrownVest3
+  - OE14ClothingOuterClothingJagermeisterWaistcoat
+  - OE14ClothingOuterClothingRedVest
+  - OE14ClothingOuterClothingPurple
+
+- type: loadout
+  id: OE14ClothingOuterClothingBrownVest1
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBrownVest1
+
+- type: loadout
+  id: OE14ClothingOuterClothingBrownVest2
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBrownVest2
+
+- type: loadout
+  id: OE14ClothingOuterClothingBrownVest3
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBrownVest3
+
+- type: loadout
+  id: OE14ClothingOuterClothingRedVest
+  equipment:
+    outerClothing: OE14ClothingOuterClothingRedVest
+
+- type: loadout
+  id: OE14ClothingOuterClothingJagermeisterWaistcoat
+  equipment:
+    outerClothing: OE14ClothingOuterClothingJagermeisterWaistcoat
+
+- type: loadout
+  id: OE14ClothingOuterClothingPurple
+  equipment:
+    outerClothing: OE14ClothingOuterClothingPurple
+
+# Eyes
+
+- type: loadoutGroup
+  id: OE14GeneralEyes
+  name: oe14-loadout-general-eyes
+  minLimit: 0
+  loadouts:
+  - OE14ClothingEyesMonocle
+  - OE14ClothingEyesGlasses
+  - OE14ClothingEyesEyePatch
+
+- type: loadout
+  id: OE14ClothingEyesMonocle
+  equipment:
+    eyes: OE14ClothingEyesMonocle
+
+- type: loadout
+  id: OE14ClothingEyesGlasses
+  equipment:
+    eyes: OE14ClothingEyesGlasses
+
+- type: loadout
+  id: OE14ClothingEyesEyePatch
+  equipment:
+    eyes: OE14ClothingEyesEyePatch
+
+# Gloves
+
+- type: loadoutGroup
+  id: OE14GeneralGloves
+  name: oe14-loadout-general-gloves
+  minLimit: 0
+  loadouts:
+  - OE14Girdles
+  - OE14ClothingGlovesJagermeister
+
+- type: loadout
+  id: OE14Girdles
+  equipment:
+    gloves: OE14ClothingGlovesGirdles
+
+- type: loadout
+  id: OE14ClothingGlovesJagermeister
+  equipment:
+    gloves: OE14ClothingGlovesJagermeister
+
+# Mask
+
+- type: loadoutGroup
+  id: OE14GeneralMask
+  name: oe14-loadout-general-mask
+  minLimit: 0
+  loadouts:
+  - OE14ClothingMaskSinner
+  - OE14ClothingMaskSteelMask
+  - OE14ClothingMaskNeckerchief
+  - OE14ClothingMaskRedNeckerchief
+  - OE14ClothingMaskGreenNeckerchief
+  - OE14ClothingMaskMime
+
+- type: loadout
+  id: OE14ClothingMaskSinner
+  equipment:
+    mask: OE14ClothingMaskSinner
+
+- type: loadout
+  id: OE14ClothingMaskSteelMask
+  equipment:
+    mask: OE14ClothingMaskSteelMask
+
+- type: loadout
+  id: OE14ClothingMaskNeckerchief
+  equipment:
+    mask: OE14ClothingMaskNeckerchief
+
+- type: loadout
+  id: OE14ClothingMaskMime
+  equipment:
+    mask: OE14ClothingMaskMime
+
+- type: loadout
+  id: OE14ClothingMaskRedNeckerchief
+  equipment:
+    mask: OE14ClothingMaskRedNeckerchief
+
+- type: loadout
+  id: OE14ClothingMaskGreenNeckerchief
+  equipment:
+    mask: OE14ClothingMaskGreenNeckerchief
+
+# Head
+
+- type: loadoutGroup
+  id: OE14GeneralHead
+  name: oe14-loadout-general-head
+  minLimit: 0
+  loadouts:
+  - OE14ClothingHeadMetalHeadband
+  - OE14ClothingHeadTriangularHat
+  - OE14ClothingHeadTriangularHatGolden
+  - OE14ClothingHeadJestersCap
+  - OE14ClothingHeadHuntersHat
+  - OE14ClothingHeadGreenHuntersHat
+  - OE14ClothingHeadRedHuntersHat
+  - OE14ClothingHeadJagermeisterHat
+  - OE14ClothingHeadStrawHat
+  - OE14ClothingHeadKasaHat
+  - OE14ClothingHeadBeretMercenary
+
+- type: loadout
+  id: OE14ClothingHeadMetalHeadband
+  equipment:
+    head: OE14ClothingHeadMetalHeadband
+
+- type: loadout
+  id: OE14ClothingHeadTriangularHat
+  equipment:
+    head: OE14ClothingHeadTriangularHat
+
+- type: loadout
+  id: OE14ClothingHeadTriangularHatGolden
+  equipment:
+    head: OE14ClothingHeadTriangularHatGolden
+
+- type: loadout
+  id: OE14ClothingHeadJestersCap
+  equipment:
+    head: OE14ClothingHeadJestersCap
+
+- type: loadout
+  id: OE14ClothingHeadStrawHat
+  equipment:
+    head: OE14ClothingHeadStrawHat
+
+- type: loadout
+  id: OE14ClothingHeadHuntersHat
+  equipment:
+    head: OE14ClothingHeadHuntersHat
+
+- type: loadout
+  id: OE14ClothingHeadJagermeisterHat
+  equipment:
+    head: OE14ClothingHeadJagermeisterHat
+
+- type: loadout
+  id: OE14ClothingHeadGreenHuntersHat
+  equipment:
+    head: OE14ClothingHeadGreenHuntersHat
+
+- type: loadout
+  id: OE14ClothingHeadRedHuntersHat
+  equipment:
+    head: OE14ClothingHeadRedHuntersHat
+
+- type: loadout
+  id: OE14ClothingHeadKasaHat
+  equipment:
+    head: OE14ClothingHeadKasaHat
+
+- type: loadout
+  id: OE14ClothingHeadBeretMercenary
+  equipment:
+    head: OE14ClothingHeadBeretMercenary
+
+# Pants
+
+- type: loadoutGroup
+  id: OE14GeneralPants
+  name: oe14-loadout-general-pants
+  loadouts:
+  - OE14ClothingPantsTrouserWhite
+  - OE14ClothingPantsTrouserDarkBlue
+  - OE14ClothingPantsJestersPantaloons
+  - OE14ClothingPantsAristocratic
+  - OE14ClothingPantsJagermeisterTrousers
+  - OE14ClothingPantsGreen
+  - OE14ClothingPantsBrown
+  - OE14ClothingPantsHakama
+  - OE14ClothingPantsMercenaryTrousers
+
+- type: loadout
+  id: OE14ClothingPantsTrouserWhite
+  equipment:
+    pants: OE14ClothingPantsTrouserWhite
+
+- type: loadout
+  id: OE14ClothingPantsTrouserDarkBlue
+  equipment:
+    pants: OE14ClothingPantsTrouserDarkBlue
+
+- type: loadout
+  id: OE14ClothingPantsJestersPantaloons
+  equipment:
+    pants: OE14ClothingPantsJestersPantaloons
+
+- type: loadout
+  id: OE14ClothingPantsAristocratic
+  equipment:
+    pants: OE14ClothingPantsAristocratic
+
+- type: loadout
+  id: OE14ClothingPantsGreen
+  equipment:
+    pants: OE14ClothingPantsGreen
+
+- type: loadout
+  id: OE14ClothingPantsBrown
+  equipment:
+    pants: OE14ClothingPantsBrown
+
+- type: loadout
+  id: OE14ClothingPantsJagermeisterTrousers
+  equipment:
+    pants: OE14ClothingPantsJagermeisterTrousers
+
+- type: loadout
+  id: OE14ClothingPantsHakama
+  equipment:
+    pants: OE14ClothingPantsHakama
+
+- type: loadout
+  id: OE14ClothingPantsMercenaryTrousers
+  equipment:
+    pants: OE14ClothingPantsMercenaryTrousers
+
+# Shirt
+
+- type: loadoutGroup
+  id: OE14GeneralShirt
+  name: oe14-loadout-general-shirt
+  loadouts:
+  - OE14ClothingShirtCottonBlack
+  - OE14ClothinShirtGray
+  - OE14ClothingShirtBlackDress
+  - OE14ClothinShirtMaidDress
+  - OE14ClothingShirtCottonBlue
+  - OE14ClothingShirtCottonBlueCollar
+  - OE14ClothingShirtBlueCollarDress
+  - OE14ClothingShirtBlueOpen
+  - OE14ClothingShirtBlueOpenDress
+  - OE14ClothinShirtWhiteBlueDress
+  - OE14ClothinShirtWhiteBlue2Dress
+  - OE14ClothinShirtRedBlueDress
+  - OE14ClothingShirtJestersAttire
+  - OE14ClothingShirtRedOpen
+  - OE14ClothingShirtRedOpenDress
+  - OE14ClothingShirtYellowOpen
+  - OE14ClothingShirtYellowOpenDress
+  - OE14ClothinShirtBlueYellowDress
+  - OE14ClothingShirtCottonPurple
+  - OE14ClothingShirtCottonRed
+  - OE14ClothingShirtCottonRedDress
+  - OE14ClothingShirtCottonWhite
+  - OE14ClothingShirtCottonWhiteDress
+  - OE14ClothingShirtCottonWhiteCollar
+  - OE14ClothingShirtCottonWhiteCollarDress
+  - OE14ClothinShirtWhiteBrown
+  - OE14ClothinShirtBrown2Dress
+  - OE14ClothinShirtBrown3Dress
+  - OE14ClothingShirtGreenBeltDress
+  - OE14ClothingShirtGreenBeltDress2
+  - OE14ClothinShirtWhiteGreenDress
+  - OE14ClothinShirtwhiteGreenYellowDress
+  - OE14ClothinShirtGreenYellow
+  - OE14ClothinShirtBlueGreen
+  - OE14ClothingShirtGreenLightDress
+  - OE14ClothingShirtCottonYellow
+  - OE14ClothingShirtCottonYellowCollar
+  - OE14ClothingShirtCottonYellowCollarDress
+  - OE14ClothinShirtYellowBlueDress
+  - OE14ClothingShirtWarriorsGarbDress
+  - OE14ClothingShirtMercenary
+
+- type: loadout
+  id: OE14ClothingShirtCottonBlack
+  equipment:
+    shirt: OE14ClothingShirtCottonBlack
+
+- type: loadout
+  id: OE14ClothingShirtBlackDress
+  equipment:
+    shirt: OE14ClothingShirtBlackDress
+
+- type: loadout
+  id: OE14ClothinShirtMaidDress
+  equipment:
+    shirt: OE14ClothinShirtMaidDress
+
+- type: loadout
+  id: OE14ClothingShirtCottonBlue
+  equipment:
+    shirt: OE14ClothingShirtCottonBlue
+
+- type: loadout
+  id: OE14ClothingShirtCottonBlueCollar
+  equipment:
+    shirt: OE14ClothingShirtCottonBlueCollar
+
+- type: loadout
+  id: OE14ClothingShirtBlueCollarDress
+  equipment:
+    shirt: OE14ClothingShirtBlueCollarDress
+
+- type: loadout
+  id: OE14ClothingShirtBlueOpen
+  equipment:
+    shirt: OE14ClothingShirtBlueOpen
+
+- type: loadout
+  id: OE14ClothingShirtBlueOpenDress
+  equipment:
+    shirt: OE14ClothingShirtBlueOpenDress
+
+- type: loadout
+  id: OE14ClothingShirtJestersAttire
+  equipment:
+    shirt: OE14ClothingShirtJestersAttire
+
+- type: loadout
+  id: OE14ClothingShirtRedOpen
+  equipment:
+    shirt: OE14ClothingShirtRedOpen
+
+- type: loadout
+  id: OE14ClothingShirtRedOpenDress
+  equipment:
+    shirt: OE14ClothingShirtRedOpenDress
+
+- type: loadout
+  id: OE14ClothingShirtYellowOpen
+  equipment:
+    shirt: OE14ClothingShirtYellowOpen
+
+- type: loadout
+  id: OE14ClothingShirtYellowOpenDress
+  equipment:
+    shirt: OE14ClothingShirtYellowOpenDress
+
+- type: loadout
+  id: OE14ClothingShirtCottonPurple
+  equipment:
+    shirt: OE14ClothingShirtCottonPurple
+
+- type: loadout
+  id: OE14ClothingShirtCottonRed
+  equipment:
+    shirt: OE14ClothingShirtCottonRed
+
+- type: loadout
+  id: OE14ClothingShirtCottonRedDress
+  equipment:
+    shirt: OE14ClothingShirtCottonRedDress
+
+- type: loadout
+  id: OE14ClothingShirtCottonWhite
+  equipment:
+    shirt: OE14ClothingShirtCottonWhite
+
+- type: loadout
+  id: OE14ClothingShirtCottonWhiteDress
+  equipment:
+    shirt: OE14ClothingShirtCottonWhiteDress
+
+- type: loadout
+  id: OE14ClothingShirtCottonWhiteCollar
+  equipment:
+    shirt: OE14ClothingShirtCottonWhiteCollar
+
+- type: loadout
+  id: OE14ClothingShirtCottonWhiteCollarDress
+  equipment:
+    shirt: OE14ClothingShirtCottonWhiteCollarDress
+
+- type: loadout
+  id: OE14ClothingShirtGreenBeltDress
+  equipment:
+    shirt: OE14ClothingShirtGreenBeltDress
+
+- type: loadout
+  id: OE14ClothingShirtGreenBeltDress2
+  equipment:
+    shirt: OE14ClothingShirtGreenBeltDress2
+
+- type: loadout
+  id: OE14ClothingShirtGreenLightDress
+  equipment:
+    shirt: OE14ClothingShirtGreenLightDress
+
+- type: loadout
+  id: OE14ClothingShirtCottonYellow
+  equipment:
+    shirt: OE14ClothingShirtCottonYellow
+
+- type: loadout
+  id: OE14ClothingShirtCottonYellowCollar
+  equipment:
+    shirt: OE14ClothingShirtCottonYellowCollar
+
+- type: loadout
+  id: OE14ClothingShirtCottonYellowCollarDress
+  equipment:
+    shirt: OE14ClothingShirtCottonYellowCollarDress
+
+- type: loadout
+  id: OE14ClothingShirtWarriorsGarbDress
+  equipment:
+    shirt: OE14ClothingShirtWarriorsGarbDress
+
+- type: loadout
+  id: OE14ClothinShirtBlueYellowDress
+  equipment:
+    shirt: OE14ClothinShirtBlueYellowDress
+
+- type: loadout
+  id: OE14ClothinShirtWhiteBlueDress
+  equipment:
+    shirt: OE14ClothinShirtWhiteBlueDress
+
+- type: loadout
+  id: OE14ClothinShirtWhiteBlue2Dress
+  equipment:
+    shirt: OE14ClothinShirtWhiteBlue2Dress
+
+- type: loadout
+  id: OE14ClothinShirtBrown2Dress
+  equipment:
+    shirt: OE14ClothinShirtBrown2Dress
+
+- type: loadout
+  id: OE14ClothinShirtBrown3Dress
+  equipment:
+    shirt: OE14ClothinShirtBrown3Dress
+
+- type: loadout
+  id: OE14ClothinShirtWhiteGreenDress
+  equipment:
+    shirt: OE14ClothinShirtWhiteGreenDress
+
+- type: loadout
+  id: OE14ClothinShirtwhiteGreenYellowDress
+  equipment:
+    shirt: OE14ClothinShirtwhiteGreenYellowDress
+
+- type: loadout
+  id: OE14ClothinShirtRedBlueDress
+  equipment:
+    shirt: OE14ClothinShirtRedBlueDress
+
+- type: loadout
+  id: OE14ClothinShirtYellowBlueDress
+  equipment:
+    shirt: OE14ClothinShirtYellowBlueDress
+
+- type: loadout
+  id: OE14ClothinShirtBlueGreen
+  equipment:
+    shirt: OE14ClothinShirtBlueGreen
+
+- type: loadout
+  id: OE14ClothinShirtGray
+  equipment:
+    shirt: OE14ClothinShirtGray
+
+- type: loadout
+  id: OE14ClothinShirtGreenYellow
+  equipment:
+    shirt: OE14ClothinShirtGreenYellow
+
+- type: loadout
+  id: OE14ClothinShirtWhiteBrown
+  equipment:
+    shirt: OE14ClothinShirtWhiteBrown
+
+- type: loadout
+  id: OE14ClothingShirtMercenary
+  equipment:
+    shirt: OE14ClothingShirtMercenary
+
+# Shoes
+
+- type: loadoutGroup
+  id: OE14GeneralShoes
+  name: oe14-loadout-general-shoes
+  loadouts:
+  - OE14ShoesBlack
+  - OE14ShoesAristocraticBlack
+  - OE14ShoesSandals
+  - OE14ClothingShoesLongLeatherBoots
+  - OE14ClothingShoesJestersRingers
+
+- type: loadout
+  id: OE14ShoesBlack
+  equipment:
+    shoes: OE14ClothingShoesBlack
+
+- type: loadout
+  id: OE14ShoesAristocraticBlack
+  equipment:
+    shoes: OE14ClothingShoesAristocraticBlack
+
+- type: loadout
+  id: OE14ShoesSandals
+  equipment:
+    shoes: OE14ClothingShoesSandals
+
+- type: loadout
+  id: OE14ClothingShoesLongLeatherBoots
+  equipment:
+    shoes: OE14ClothingShoesLongLeatherBoots
+
+- type: loadout
+  id: OE14ClothingShoesJestersRingers
+  equipment:
+    shoes: OE14ClothingShoesJestersRingers
+
+# Back
+
+- type: loadoutGroup
+  id: OE14GeneralBack
+  name: oe14-loadout-general-back
+  loadouts:
+  - OE14ClothingBackBackpackT0
+  - OE14ClothingBackSatchelT0
+#  - OE14ClothingBackExplorerBackpackT0
+
+- type: loadout
+  id: OE14ClothingBackBackpackT0
+  equipment:
+    back: OE14ClothingBackBackpackT0
+
+- type: loadout
+  id: OE14ClothingBackSatchelT0
+  equipment:
+    back: OE14ClothingBackSatchelT0
+
+# - type: loadout
+#   id: OE14ClothingBackExplorerBackpackT0
+#   equipment:
+#     back: OE14ClothingBackExplorerBackpackT0
+
+# Trinkets
+
+- type: loadoutGroup
+  id: OE14GeneralTrinkets
+  name: oe14-loadout-general-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - OE14ManaOperationGlove
+  - OE14CrystalLampOrangeEmpty
+  - OE14BaseSharpeningStone
+  - OE14Scissors
+  - OE14Rope
+  - OE14SilverCoin
+  - OE14Lighter
+  - OE14Torch
+  - OE14SmokingPipeFilledTobacco
+  - OE14FluteInstrument
+  - OE14LuteInstrument
+  - OE14LyraInstrument
+  - OE14SpellScrollResurrection
+
+- type: loadout
+  id: OE14ManaOperationGlove
+  storage:
+    back:
+    - OE14ManaOperationGlove
+
+- type: loadout
+  id: OE14CrystalLampOrangeEmpty
+  storage:
+    back:
+    - OE14CrystalLampOrangeEmpty
+
+- type: loadout
+  id: OE14BaseSharpeningStone
+  storage:
+    back:
+    - OE14BaseSharpeningStone
+
+- type: loadout
+  id: OE14Scissors
+  storage:
+    back:
+    - OE14Scissors
+
+- type: loadout
+  id: OE14Rope
+  storage:
+    back:
+    - OE14Rope
+
+- type: loadout
+  id: OE14SilverCoin
+  storage:
+    back:
+    - OE14SilverCoin
+
+- type: loadout
+  id: OE14Lighter
+  storage:
+    back:
+    - OE14Lighter
+
+- type: loadout
+  id: OE14Torch
+  storage:
+    back:
+    - OE14Torch
+
+- type: loadout
+  id: OE14SmokingPipeFilledTobacco
+  storage:
+    back:
+    - OE14SmokingPipeFilledTobacco
+
+- type: loadout
+  id: OE14LyraInstrument
+  storage:
+    back:
+    - OE14LyraInstrument
+
+- type: loadout
+  id: OE14LuteInstrument
+  storage:
+    back:
+    - OE14LuteInstrument
+
+- type: loadout
+  id: OE14FluteInstrument
+  storage:
+    back:
+    - OE14FluteInstrument
+
+- type: loadout
+  id: OE14SpellScrollResurrection
+  storage:
+    back:
+    - OE14SpellScrollResurrection
+
+# Keys
+
+- type: loadoutGroup
+  id: OE14GeneralKeys
+  name: oe14-loadout-general-keys
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - OE14KeyPersonalHouseAbstract
+
+- type: loadout
+  id: OE14KeyPersonalHouseAbstract
+  dummyEntity: OE14KeyPersonalHouseAbstractLoadoutDummy
+  storage:
+    back:
+    - OE14KeyPersonalHouseAbstract

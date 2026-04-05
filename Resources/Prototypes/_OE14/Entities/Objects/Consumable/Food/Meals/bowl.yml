@@ -1,0 +1,99 @@
+- type: entity
+  id: OE14BowlBase
+  parent: BaseItem
+  description: This is your bowl for a delicious soups!
+  categories:
+  - ForkFiltered
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/Soups/bowls.rsi
+  - type: Item
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+  - type: OE14FoodHolder
+    foodType: Soup
+    solutionId: food
+    displacementRsiPath: _OE14/Objects/Consumable/Food/Soups/displacement.rsi
+    canAcceptFood: true
+  - type: Appearance
+  - type: SolutionContainerVisuals
+  - type: Edible
+    edible: Drink
+    utensil: Spoon
+    transferAmount: 2.5
+  - type: Spillable
+    solution: food
+  localizationId: ent-OE14BowlBase
+- type: entity
+  id: OE14BowlWooden
+  parent: OE14BowlBase
+  name: wooden bowl
+  components:
+  - type: Sprite
+    layers:
+    - state: wooden
+    - map:
+      - oe14_foodLayers
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 20
+  - type: Food
+    trash:
+    - OE14BowlWooden
+  localizationId: ent-OE14BowlWooden
+- type: entity
+  id: OE14BowlIron
+  parent: OE14BowlBase
+  name: iron bowl
+  components:
+  - type: Sprite
+    layers:
+    - state: iron
+    - map:
+      - oe14_foodLayers
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 20
+  - type: Food
+    trash:
+    - OE14BowlIron
+  localizationId: ent-OE14BowlIron
+- type: entity
+  id: OE14BowlGold
+  parent: OE14BowlBase
+  name: gold bowl
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - map:
+      - oe14_foodLayers
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 20
+  - type: Food
+    trash:
+    - OE14BowlGold
+  localizationId: ent-OE14BowlGold
+- type: entity
+  id: OE14BowlCopper
+  parent: OE14BowlBase
+  name: copper bowl
+  components:
+  - type: Sprite
+    layers:
+    - state: copper
+    - map:
+      - oe14_foodLayers
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 20
+  - type: Food
+    trash:
+    - OE14BowlCopper
+  localizationId: ent-OE14BowlCopper

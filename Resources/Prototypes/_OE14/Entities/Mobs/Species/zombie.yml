@@ -1,0 +1,244 @@
+- type: entity
+  parent:
+  - OE14MobDamageable
+  - BaseSimpleMob
+  - MobFlammable
+  - MobCombat
+  id: OE14BaseMobZombie
+  name: Mr. Zombie
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: OE14Zombie
+  - type: Sprite
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
+    - map: [ "enum.HumanoidVisualLayers.LHand" ]
+    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "gloves" ]
+    - map: [ "ears" ]
+    - map: [ "outerClothing" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _OE14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false #Zombie vampire?
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: Cuffable
+  - type: Hands
+  - type: ComplexInteraction
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Zombie/parts.rsi
+    state: full
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+      - id: OE14FoodMeatHuman
+        amount: 4
+  - type: Body
+    prototype: OE14Zombie
+    requiredLegs: 2
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Critical
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      35: Critical
+      90: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      10: 0.8
+      20: 0.4
+      30: 0.2
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Electrocution
+    - Stutter
+    - TemporaryBlindness
+    - Pacified
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        mask:
+          - MobMask
+        layer:
+          - MobLayer
+  - type: Damageable
+    damageContainer: OE14Biological
+    damageModifierSet: OE14Zombie
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damage:
+      groups:
+        Brute: -2
+        Burn: -2
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 8
+  - type: Pullable
+  - type: SpamEmitSound
+    minInterval: 10
+    maxInterval: 30
+    sound:
+      collection: ZombieScreams
+      params:
+        variation: 0.125
+  - type: SoundWhileAlive
+  - type: Strippable
+  - type: Climbing
+  - type: ReplacementAccent
+    accent: zombie
+  - type: FireVisuals
+    alternateState: Standing #TODO - custom visuals
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: InventorySlots
+  - type: ContainerContainer
+  - type: FloorOcclusion
+  - type: Tag
+    tags:
+      - OE14Mosquito
+  - type: Inventory
+    templateId: OE14Partial
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+    femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobZombieDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: OE14Zombie
+  - type: Inventory
+    templateId: OE14Partial
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+    femaleDisplacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak #Its ok for gloves
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck

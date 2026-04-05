@@ -1,0 +1,33 @@
+- type: entity
+  parent:
+  - OE14ClothingCloakBase
+  - OE14ClothingBaseContainer
+  id: OE14ClothingCloakBlacksmithArpon
+  name: blacksmith's apron
+  description: Loose leather strips, still actually being clothing.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/Roles/General/blacksmith_apron.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: OE14RuggedLeather1
+      amount: 1
+  - type: Storage
+    maxItemSize: Small
+    defaultStorageOrientation: Vertical
+    grid:
+    - 0,0,2,1
+    whitelist:
+      tags:
+      - Crayon
+      - OE14Lighter
+      - OE14Scissors
+      - OE14SharpeningStone
+  localizationId: ent-OE14ClothingCloakBlacksmithArpon

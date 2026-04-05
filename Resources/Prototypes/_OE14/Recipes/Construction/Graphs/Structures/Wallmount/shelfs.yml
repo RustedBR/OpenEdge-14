@@ -1,0 +1,53 @@
+- type: constructionGraph
+  id: OE14WallmountBarShelfA
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WallmountBarShelfA
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+    - node: OE14WallmountBarShelfA
+      entity: OE14WallmountBarShelfA
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 0.5
+        - tool: Prying
+          doAfter: 1
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 2
+
+- type: constructionGraph
+  id: OE14WallmountBarShelfB
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WallmountBarShelfB
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 2
+    - node: OE14WallmountBarShelfB
+      entity: OE14WallmountBarShelfB
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 0.5
+        - tool: Prying
+          doAfter: 1
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 2

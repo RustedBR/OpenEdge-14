@@ -1,0 +1,7 @@
+oe14-ghost-role-information-rules-demiplane = Você é o [color=red]antagonista do demiplano[/color]. Sua tarefa é matar os invasores do demiplano a qualquer custo. Você pode cumprir seu objetivo de qualquer número de formas. Você não se lembra da sua vida passada, e você é absolutamente [color=red]NÃO[/color] permitido lembrar, dizer, o nome, aparência, etc. do seu personagem anterior.
+
+oe14-ghost-role-information-rules-free = Você é um [color=yellow]antagonista livre[/color]. Você pode fazer o que quiser, desde que não resulte em destruição generalizada e mortes em massa. Você não se lembra da sua vida passada, e você é absolutamente [color=red]NÃO[/color] permitido lembrar, dizer, o nome, aparência, etc. do seu personagem anterior.
+
+oe14-ghost-role-information-rules-raid = Você é um [color=red]membro do ataque[/color]. Sua tarefa é se infiltrar no coração da cidade e destruir o cristal de comunicação do demiplano. Você pode cumprir seu objetivo por qualquer meio necessário. Você não se lembra da sua vida passada, e você é absolutamente [color=red]NÃO[/color] permitido lembrar, dizer, o nome, aparência, etc. do seu personagem anterior.
+
+oe14-ghost-role-information-rules-pet = Você é um [color=yellow]agente neutro livre[/color]. Como uma criatura inteligente, você pode fazer o que quiser, desde que caiba no seu comportamento animal. Faça amizade com as pessoas ou junte-se a outros animais. Embora você não seja exatamente um antagonista, você ainda pode cometer pequenos crimes como roubo e pode se defender se for atacado.

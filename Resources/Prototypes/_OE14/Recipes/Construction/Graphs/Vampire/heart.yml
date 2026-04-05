@@ -1,0 +1,89 @@
+- type: constructionGraph
+  id: OE14VampireClanHeartUnnameable
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14VampireClanHeartUnnameableFrame
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: OE14Stone
+              amount: 10
+              doAfter: 2
+
+    - node: OE14VampireClanHeartUnnameableFrame
+      entity: OE14VampireClanHeartFrameUnnameable
+      edges:
+        - to: OE14VampireClanHeartUnnameable
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:OE14AllVampireClanRequired
+              faction: Unnameable
+          steps:
+            - material: OE14BloodEssence
+              amount: 1
+              doAfter: 1
+    - node: OE14VampireClanHeartUnnameable
+      entity: OE14VampireClanHeartUnnameable
+
+- type: constructionGraph
+  id: OE14VampireClanHeartDevourers
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14VampireClanHeartDevourersFrame
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: OE14Stone
+              amount: 10
+              doAfter: 2
+
+    - node: OE14VampireClanHeartDevourersFrame
+      entity: OE14VampireClanHeartFrameDevourers
+      edges:
+        - to: OE14VampireClanHeartDevourers
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:OE14AllVampireClanRequired
+              faction: Devourers
+          steps:
+            - material: OE14BloodEssence
+              amount: 1
+              doAfter: 2
+    - node: OE14VampireClanHeartDevourers
+      entity: OE14VampireClanHeartDevourers
+
+- type: constructionGraph
+  id: OE14VampireClanHeartNightChildren
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14VampireClanHeartNightChildrenFrame
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: OE14Stone
+              amount: 10
+              doAfter: 2
+
+    - node: OE14VampireClanHeartNightChildrenFrame
+      entity: OE14VampireClanHeartFrameNightChildrens
+      edges:
+        - to: OE14VampireClanHeartNightChildren
+          completed:
+            - !type:SnapToGrid
+          conditions:
+            - !type:OE14AllVampireClanRequired
+              faction: NightChildrens
+          steps:
+            - material: OE14BloodEssence
+              amount: 1
+              doAfter: 2
+    - node: OE14VampireClanHeartNightChildren
+      entity: OE14VampireClanHeartNightChildren

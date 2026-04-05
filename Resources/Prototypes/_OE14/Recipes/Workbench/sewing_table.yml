@@ -1,0 +1,698 @@
+- type: OE14Recipe
+  id: OE14ClothMaterialCotton
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Materials
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 2
+  result: OE14Cloth1
+
+- type: OE14Recipe
+  id: OE14StringCotton
+  tag: OE14RecipeSewing
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  result: OE14String
+
+- type: OE14Recipe
+  id: OE14ClothMaterialString
+  tag: OE14RecipeSewing
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 2
+  result: OE14Cloth1
+
+- type: OE14Recipe
+  id: OE14StringFromWeb
+  tag: OE14RecipeSewing
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Web
+    count: 2
+  result: OE14String
+
+- type: OE14Recipe
+  id: OE14StringCottonCloth
+  tag: OE14RecipeSewing
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 1
+  result: OE14String
+  resultCount: 2
+
+- type: OE14Recipe
+  id: OE14ClothingShirtCottonBlue
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  result: OE14ClothingShirtCottonBlue
+
+- type: OE14Recipe
+  id: OE14ClothingShirtCottonBlack
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlack
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtCottonBlack
+
+- type: OE14Recipe
+  id: OE14ClothingShirtCottonPurple
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyePurple
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtCottonPurple
+
+- type: OE14Recipe
+  id: OE14ClothingShirtCottonRed
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtCottonRed
+
+- type: OE14Recipe
+  id: OE14ClothingShirtCottonWhite
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtCottonWhite
+
+- type: OE14Recipe
+  id: OE14ClothingShirtCottonYellow
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeYellow
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtCottonYellow
+
+- type: OE14Recipe
+  id: OE14ClothingShirtBlackDress
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlack
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtBlackDress
+
+- type: OE14Recipe
+  id: OE14ClothingPantsTrouserWhite
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  result: OE14ClothingPantsTrouserWhite
+
+- type: OE14Recipe
+  id: OE14ClothingPantsTrouserDarkBlue
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  result: OE14ClothingPantsTrouserDarkBlue
+
+- type: OE14Recipe
+  id: OE14ClothingHeadHuntersHat
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlack
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 1
+  result: OE14ClothingHeadHuntersHat
+
+- type: OE14Recipe
+  id: OE14ClothingShirtMercenary
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtMercenary
+
+- type: OE14Recipe
+  id: OE14ClothingShirtYellowWizardDress
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeYellow
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingShirtYellowWizardDress
+
+- type: OE14Recipe
+  id: OE14ClothingHeadBeretMercenary
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 1
+  result: OE14ClothingHeadBeretMercenary
+
+- type: OE14Recipe
+  id: OE14ClothingPantsMercenaryTrousers
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  result: OE14ClothingPantsMercenaryTrousers
+
+- type: OE14Recipe
+  id: OE14ClothingOuterClothingFish
+  tag: OE14RecipeSewing
+  craftTime: 4
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodMeatFlemTorso
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 3
+  result: OE14ClothingOuterClothingFish
+
+- type: OE14Recipe
+  id: OE14ClothingHeadFishMask
+  tag: OE14RecipeSewing
+  craftTime: 5
+  category: Clothing
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodMeatFlemHead
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  result: OE14ClothingHeadFishMask
+
+# Misc
+
+- type: OE14Recipe
+  id: OE14SackFarming
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 5
+  result: OE14SackFarming
+
+- type: OE14Recipe
+  id: OE14SackFarmingSeed
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  result: OE14SackFarmingSeed
+
+# Wallpaper (TODO: Move to separate workbench?)
+
+- type: OE14Recipe
+  id: OE14WallpaperBlack
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Wallpaper
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlack
+  result: OE14WallpaperBlack
+
+- type: OE14Recipe
+  id: OE14WallpaperGreen
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Wallpaper
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14DyeGreen
+  result: OE14WallpaperGreen
+
+- type: OE14Recipe
+  id: OE14WallpaperPurple
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Wallpaper
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14DyePurple
+  result: OE14WallpaperPurple
+
+- type: OE14Recipe
+  id: OE14WallpaperRed
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Wallpaper
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  result: OE14WallpaperRed
+
+- type: OE14Recipe
+  id: OE14WallpaperWhite
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Wallpaper
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  result: OE14WallpaperWhite
+
+- type: OE14Recipe
+  id: OE14WallpaperWhite2
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Wallpaper
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  result: OE14WallpaperWhite2
+
+- type: OE14Recipe
+  id: OE14WallpaperYellow
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Wallpaper
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14DyeYellow
+  result: OE14WallpaperYellow
+
+# Plushies
+
+- type: OE14Recipe
+  id: OE14HumanPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 2
+  result: OE14HumanPlushie
+
+- type: OE14Recipe
+  id: OE14DwarfPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:StackResource
+    stack: OE14Stone
+    count: 3
+  result: OE14DwarfPlushie
+
+- type: OE14Recipe
+  id: OE14ElfPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14BlueAmanita
+    count: 2
+  result: OE14ElfPlushie
+
+- type: OE14Recipe
+  id: OE14GoblinPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:StackResource
+    stack: OE14CopperCoin
+    count: 5
+  result: OE14GoblinPlushie
+
+- type: OE14Recipe
+  id: OE14TieflingPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:StackResource
+    stack: OE14Ash
+    count: 3
+  result: OE14TieflingPlushie
+
+- type: OE14Recipe
+  id: OE14SilvaPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:StackResource
+    stack: OE14FloraMaterial
+    count: 3
+  result: OE14SilvaPlushie
+
+- type: OE14Recipe
+  id: OE14CarcatPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14WildSage
+    count: 2
+  result: OE14CarcatPlushie
+
+- type: OE14Recipe
+  id: OE14AgaricPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14AgaricMushroom
+    count: 1
+  result: OE14AgaricPlushie
+
+- type: OE14Recipe
+  id: OE14FrogPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14DyeGreen
+  result: OE14FrogPlushie
+
+- type: OE14Recipe
+  id: OE14SkeletonPlushie
+  tag: OE14RecipeSewing
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14ClothingMaskBoneMask
+  result: OE14SkeletonPlushie
+
+#carpet
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemBlue10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  result: OE14FloorCarpetItemBlue10
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemRed10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  result: OE14FloorCarpetItemRed10
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemCyan10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  - !type:ProtoIdResource
+    protoId: OE14DyeGreen
+  result: OE14FloorCarpetItemCyan10
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemGreen10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeGreen
+  result: OE14FloorCarpetItemGreen10
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemOrange10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  - !type:ProtoIdResource
+    protoId: OE14DyeYellow
+  result: OE14FloorCarpetItemOrange10
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemPurple10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyePurple
+  result: OE14FloorCarpetItemPurple10
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemBlack10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlack
+  result: OE14FloorCarpetItemBlack10
+
+- type: OE14Recipe
+  id: OE14FloorCarpetItemYellow10
+  tag: OE14RecipeSewing
+  craftTime: 2
+  category: Carpet
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 10
+  - !type:ProtoIdResource
+    protoId: OE14String
+  - !type:ProtoIdResource
+    protoId: OE14DyeYellow
+  result: OE14FloorCarpetItemYellow10

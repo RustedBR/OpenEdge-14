@@ -1,0 +1,63 @@
+# Util
+
+- type: Tag
+  id: OE14FitInFryingPan
+
+# Meat
+
+- type: Tag
+  id: OE14Meat
+
+- type: Tag
+  id: OE14MeatLeg
+
+- type: Tag
+  id: OE14MeatSlice
+
+- type: Tag
+  id: OE14MeatCutlet
+
+- type: Tag
+  id: OE14MeatMonster
+
+- type: Tag
+  id: OE14MeatPig
+
+# Vegetable
+
+- type: Tag
+  id: OE14Vegetable
+
+- type: Tag
+  id: OE14Salad
+
+- type: Tag
+  id: OE14Cabbage
+
+- type: Tag
+  id: OE14Potato
+
+- type: Tag
+  id: OE14Pumpkin
+
+# Fruits
+
+- type: Tag
+  id: OE14Fruits
+
+# Misc 
+
+- type: Tag
+  id: OE14Wheat
+
+- type: Tag
+  id: OE14Egg
+
+- type: Tag
+  id: OE14Dough
+
+- type: Tag
+  id: OE14Cheese
+
+- type: Tag
+  id: OE14Sandwich

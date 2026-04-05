@@ -1,0 +1,28 @@
+- type: job
+  id: OE14Guard
+  setPreference: true
+  name: oe14-job-name-guard
+  description: oe14-job-desc-guard
+  playTimeTracker: OE14JobGuard
+  startingGear: OE14GuardGear
+  icon: "OE14JobIconGuard"
+  supervisors: oe14-job-supervisors-guard-commander
+  canBeAntag: false
+  special:
+    #- !type:OE14LearnSkillsSpecial
+    #  skills:
+    #  - SwordMastery
+    - !type:AddComponentSpecial
+      components:
+      - type: OE14SalaryCounter
+        salary: 50
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - Guards
+
+- type: startingGear
+  id: OE14GuardGear
+  equipment:
+    keys: OE14KeyRingGuard
+    belt: OE14WalletFilledTest
+

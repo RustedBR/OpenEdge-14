@@ -1,0 +1,23 @@
+- type: constructionGraph
+  id: OE14Snowdrift
+  start: start
+  graph:
+    - node: start
+      entity: OE14Snowdrift
+      edges:
+        - to: OE14Snowdrift
+          steps:
+            - tool: OE14Digging
+              doAfter: 1
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14Snowball
+              amount: 3
+            - !type:SpawnPrototype
+              prototype: OE14SnowEffect
+              amount: 1
+            - !type:PlaySound
+              sound: /Audio/_OE14/Effects/snowball.ogg
+            - !type:DeleteEntity {}
+    - node: OE14Snowdrift
+

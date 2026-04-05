@@ -1,0 +1,61 @@
+- type: OE14CookingRecipe
+  id: InediblePie
+  foodType: Pie
+  foodData:
+    name: oe14-soup-recipe-pie-name
+    desc: oe14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _OE14/Objects/Consumable/Food/Pies/misc.rsi
+      state: veg
+    sliceProto: OE14FoodPiePieceTrash
+  requirements:
+  - !type:AlwaysMet
+
+# 1 Req
+
+- type: OE14CookingRecipe
+  id: PieVeg
+  foodType: Pie
+  foodData:
+    name: oe14-soup-recipe-pie-name
+    desc: oe14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _OE14/Objects/Consumable/Food/Pies/misc.rsi
+      state: veg
+    sliceProto: OE14FoodPiePieceVeg
+  requirements:
+  - !type:TagRequired
+    tags:
+    - OE14Salad
+    - OE14Vegetable
+
+- type: OE14CookingRecipe
+  id: PieMeat
+  foodType: Pie
+  foodData:
+    name: oe14-soup-recipe-pie-name
+    desc: oe14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _OE14/Objects/Consumable/Food/Pies/misc.rsi
+      state: meat
+    sliceProto: OE14FoodPiePieceMeat
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - OE14Meat
+    - OE14MeatSlice
+
+- type: OE14CookingRecipe
+  id: PiePumpkin
+  foodType: Pie
+  foodData:
+    name: oe14-soup-recipe-pie-name
+    desc: oe14-soup-recipe-pie-desc
+    visuals:
+    - sprite: _OE14/Objects/Consumable/Food/Pies/misc.rsi
+      state: meat
+    sliceProto: OE14FoodPiePiecePumpkin
+  requirements:
+  - !type:TagRequired
+    tags: 
+    - OE14Pumpkin

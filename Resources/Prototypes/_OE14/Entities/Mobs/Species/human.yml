@@ -1,0 +1,113 @@
+- type: entity
+  parent: OE14BaseMobSpeciesOrganic
+  id: OE14BaseMobHuman
+  name: Mr. Human
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: OE14Human
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Human/parts.rsi
+    state: full
+  - type: Body
+    prototype: OE14Human
+    requiredLegs: 2
+  - type: OE14SkillStorage
+    skillPoints:
+      Memory:
+        max: 5.5
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+    femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14BaseMobHuman
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobHumanDummy
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: HumanoidAppearance
+    species: OE14Human
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+    femaleDisplacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14MobHumanDummy

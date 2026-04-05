@@ -1,0 +1,175 @@
+# Modular Crafting Recipes
+# Anvil recipes for crafting modular parts and enhanced weapons/armor
+
+# === STAT CRYSTAL RECIPES ===
+
+- type: OE14Recipe
+  id: OE14RecipeModularCrystalStrength
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 8
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 2
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 1
+  result: OE14ModularCrystalStrength
+
+- type: OE14Recipe
+  id: OE14RecipeModularCrystalVitality
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 8
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 2
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 1
+  result: OE14ModularCrystalVitality
+
+- type: OE14Recipe
+  id: OE14RecipeModularCrystalDexterity
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 8
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 2
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 1
+  result: OE14ModularCrystalDexterity
+
+- type: OE14Recipe
+  id: OE14RecipeModularCrystalIntelligence
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 8
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 2
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 1
+  result: OE14ModularCrystalIntelligence
+
+# === WEAPON PART RECIPES ===
+
+- type: OE14Recipe
+  id: OE14RecipeModularBladeDamage
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 10
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 4
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 2
+  result: OE14ModularBladeDamage
+
+- type: OE14Recipe
+  id: OE14RecipeModularBladeSpeed
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 8
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 3
+    - !type:StackResource
+      stack: OE14WoodenPlanks
+      count: 2
+  result: OE14ModularBladeSpeed
+
+# === ARMOR PART RECIPES ===
+
+- type: OE14Recipe
+  id: OE14RecipeModularArmorPlateHeavy
+  tag: OE14RecipeAnvil
+  category: Armor
+  craftTime: 12
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 5
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 2
+  result: OE14ModularArmorPlateHeavy
+
+- type: OE14Recipe
+  id: OE14RecipeModularArmorPadding
+  tag: OE14RecipeAnvil
+  category: Armor
+  craftTime: 6
+  requirements:
+    - !type:StackResource
+      stack: OE14Cloth
+      count: 3
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 1
+  result: OE14ModularArmorPadding
+
+- type: OE14Recipe
+  id: OE14RecipeModularArmorEmbrace
+  tag: OE14RecipeAnvil
+  category: Armor
+  craftTime: 8
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 2
+    - !type:StackResource
+      stack: OE14Leather
+      count: 3
+  result: OE14ModularArmorEmbrace
+
+- type: OE14Recipe
+  id: OE14RecipeModularArmorWeave
+  tag: OE14RecipeAnvil
+  category: Armor
+  craftTime: 7
+  requirements:
+    - !type:StackResource
+      stack: OE14Leather
+      count: 4
+  result: OE14ModularArmorWeave
+
+# === MAGICAL PART RECIPES ===
+
+- type: OE14Recipe
+  id: OE14RecipeModularManaReduction
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 10
+  requirements:
+    - !type:StackResource
+      stack: OE14CopperBar
+      count: 3
+    - !type:StackResource
+      stack: OE14GlassSheet
+      count: 2
+  result: OE14ModularManaReduction
+
+- type: OE14Recipe
+  id: OE14RecipeModularManaAmplification
+  tag: OE14RecipeAnvil
+  category: Weapon
+  craftTime: 12
+  requirements:
+    - !type:StackResource
+      stack: OE14IronBar
+      count: 2
+    - !type:StackResource
+      stack: OE14GlassSheet
+      count: 4
+  result: OE14ModularManaAmplification

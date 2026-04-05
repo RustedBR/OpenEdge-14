@@ -1,0 +1,102 @@
+- type: entity
+  parent: CrateGeneric
+  id: OE14CrateDirtPitGrave
+  categories: [ ForkFiltered ]
+  name: dirt pit
+  description: "There's something buried here... or someone..."
+  components:
+  - type: Sprite
+    noRot: false
+    snapCardinals: true
+    sprite: _OE14/Structures/Storage/dirt_pit.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200 # discourage just beating the grave to break it open
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: OE14Digging
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14DirtBlock1:
+            min: 2
+            max: 3
+  - type: Fixtures
+    fixtures:
+      rune:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        hard: false
+        mask:
+          - ItemMask
+        layer:
+          - SlipLayer
+  - type: Physics
+    bodyType: Static
+  - type: Grave
+  - type: EntityStorage
+    airtight: true
+    isCollidableWhenOpen: false
+    closeSound:
+      collection: OE14Digging
+    openSound:
+      collection: OE14Digging
+  - type: Construction
+    graph: OE14CrateDirtPitGrave
+    node: OE14CrateDirtPitGrave
+
+- type: entity
+  parent: OE14CrateDirtPitGrave
+  id: OE14CrateDirtPitGraveFilled
+  suffix: Random filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: OE14TombstoneTable
+        rolls: !type:ConstantNumberSelector
+          value: 4
+
+- type: entityTable
+  id: OE14TombstoneTable
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector # Body parts
+      children:
+      - id: OE14TorsoZombie
+      - id: OE14LeftArmZombie
+      - id: OE14LeftFootZombie
+      - id: OE14LeftHandZombie
+      - id: OE14LeftLegZombie
+      - id: OE14RightArmZombie
+      - id: OE14RightFootZombie
+      - id: OE14RightHandZombie
+      - id: OE14RightLegZombie
+      - id: OE14HeadZombie
+        weight: 2
+      - id: OE14TorsoSkeleton
+      - id: OE14LeftArmSkeleton
+      - id: OE14LeftFootSkeleton
+      - id: OE14LeftHandSkeleton
+      - id: OE14LeftLegSkeleton
+      - id: OE14RightArmSkeleton
+      - id: OE14RightFootSkeleton
+      - id: OE14RightHandSkeleton
+      - id: OE14RightLegSkeleton
+      - id: OE14HeadSkeleton
+        weight: 2
+    - !type:GroupSelector # Rarities
+      weight: 0.2
+      children:
+      - !type:NestedSelector
+        tableId: OE14StationCrateLoot
+

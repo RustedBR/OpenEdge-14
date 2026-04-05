@@ -1,0 +1,24 @@
+<Document>
+# Playable Species
+
+CrystallEdge has seven playable species. Each starts with different base stats and receives free racial skills that define their role in the world.
+
+Stats range from [bold]1 to 10[/bold], with [bold]5[/bold] as the human baseline.
+
+## Species at a Glance
+
+[bold][textlink="Human" link="OE14_EN_Human"][/bold] — Balanced across all stats. The flexible choice — can excel in any direction with their 5 creation points.
+
+[bold][textlink="Elf" link="OE14_EN_Elf"][/bold] — Powerful mage with high vitality and massive mana, but nearly zero stamina. Very fragile in melee.
+
+[bold][textlink="Goblin" link="OE14_EN_Goblin"][/bold] — Exceptional agility and hard to stagger, but no mana at all. Built for physical hit-and-run.
+
+[bold][textlink="Silva" link="OE14_EN_Silva"][/bold] — Extreme vitality and good magic, but almost no strength. The natural healer.
+
+[bold][textlink="Tiefling" link="OE14_EN_Tiefling"][/bold] — High strength and magic, deeply tied to fire. Low stamina makes them vulnerable to knockdown.
+
+[bold][textlink="Carcat" link="OE14_EN_Carcat"][/bold] — Feline reflexes with exceptional agility, claws, and night vision. Limited magic capacity.
+
+[bold][textlink="Dwarf" link="OE14_EN_Dwarf"][/bold] — The toughest species with strong melee damage. Extremely slow and poor in magic, but nearly unstoppable in a brawl.
+
+</Document>

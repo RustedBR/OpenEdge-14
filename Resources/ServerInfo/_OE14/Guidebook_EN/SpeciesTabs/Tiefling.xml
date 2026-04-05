@@ -1,0 +1,32 @@
+<Document>
+# Tieflings
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobTiefling" Caption="Tiefling"/>
+</Box>
+
+The Tieflings are a race of humanoid demonoids that left the Fire Archipelago long ago. They are heavily populated throughout Sylate and have integrated into the cultures of all lands. Their infernal heritage gives them exceptional physical strength and a deep affinity for fire magic — at the cost of terrible stamina.
+
+## Attributes
+
+[bold]Scale: 1–10 | Effective values shown (includes free racial skills)[/bold]
+
+- [color=#e05050]Strength[/color] — [bold][color=#77dd77]9[/color][/bold] | Very high physical power. [color=#77dd77]Deals 40% more damage than a human in melee.[/color] (Base STR 7, +2 from free [color=#ffa500]Pyrokinetic[/color] skills)
+- [color=#50e050]Vitality[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Average health. [color=#c8c8c8]~100 HP[/color] before Critical, [color=#ff6961]~200 HP[/color] before Death.
+- [color=#50e0e0]Dexterity[/color] — [bold][color=#ff6961]2[/color][/bold] | Very low stamina. Only [color=#ff6961]~25 stamina[/color] before Stamina Crit — easy to stagger.
+- [color=#a050e0]Intelligence[/color] — [bold][color=#42aaf5]6[/color][/bold] | Above-average magical capacity. [color=#42aaf5]~119 mana[/color].
+
+Tieflings hit extremely hard and have solid magic — but their nearly nonexistent stamina is a major weakness. Opponents who focus on stamina damage can knock Tieflings down before they can strike back.
+
+## Link with Fire
+
+Tieflings have a deep infernal bond with flames:
+- Take [color=#77dd77]2x less damage from fire[/color], but [color=#ff6961]2x more damage from cold[/color]
+- Basic mana regeneration is slightly impaired, but taking fire damage [color=#77dd77]greatly speeds up mana regeneration[/color]
+- Frostbite causes [color=#ff6961]mana drain[/color]
+- Can slowly [color=#77dd77]regenerate damage from fire burns[/color]
+- Fire spells cost [color=#77dd77]40% less mana[/color], but all other spells cost [color=#ff6961]20% more mana[/color]
+
+Tieflings begin with free Basic and Advanced [color=#ffa500]Pyrokinesis[/color], granting +2 STR and unlocking powerful fire spells.
+
+</Document>

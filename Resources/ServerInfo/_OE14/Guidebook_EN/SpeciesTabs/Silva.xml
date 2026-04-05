@@ -1,0 +1,31 @@
+<Document>
+# Silva
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobSilva" Caption="Silva"/>
+</Box>
+
+The Silva are a race of humanoid plants living in deep relic forests. Emerging from the mother tree in the centre of their cities, the Silva rarely travel the world. They are the definitive healers of CrystallEdge — nearly impossible to kill, but incapable of any meaningful physical threat.
+
+## Attributes
+
+[bold]Scale: 1–10 | Effective values shown (includes free racial skills)[/bold]
+
+- [color=#e05050]Strength[/color] — [bold][color=#ff6961]1[/color][/bold] | Essentially no physical power. [color=#ff6961]Barely hurts anything in melee.[/color]
+- [color=#50e050]Vitality[/color] — [bold][color=#77dd77]9[/color][/bold] | Exceptional toughness. [color=#77dd77]~150 HP[/color] before Critical, [color=#ff6961]~300 HP[/color] before Death. (Base VIT 7, +2 from free [color=#77dd77]Healing[/color] skills)
+- [color=#50e0e0]Dexterity[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Average stamina. [color=#c8c8c8]~100 stamina[/color] before Stamina Crit.
+- [color=#a050e0]Intelligence[/color] — [bold][color=#42aaf5]7[/color][/bold] | Strong magical capacity. [color=#42aaf5]~138 mana[/color].
+
+Silva are the ultimate survivalists — their health pool is the second-highest of all species and their magic is strong. However, their negligible strength means they must rely entirely on spells and allies for offensive output.
+
+## Magical Photosynthesis
+
+Silva regenerate [protodata="OE14MobSilva" comp="OE14MagicEnergyPhotosynthesis" member="DaylightEnergy"/] mana while in sunlight. Without sunlight, mana regeneration stops completely.
+
+Silva can also drink water to restore small amounts of mana — life-giving moisture provides a useful alternative regeneration method.
+
+## Connection with Nature
+
+Silva begin with free Basic and Advanced [color=#77dd77]Vivification[/color] (Healing), granting +2 VIT and access to nature-based healing spells.
+
+</Document>

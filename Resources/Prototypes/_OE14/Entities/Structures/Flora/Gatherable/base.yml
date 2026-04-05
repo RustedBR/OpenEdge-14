@@ -1,0 +1,174 @@
+- type: entity
+  id: OE14GatherableBase
+  parent: BaseStructure
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: PlacementReplacement
+    key: OE14Plant
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: FloorTiles
+  - type: Transform
+  - type: InteractionOutline
+  - type: Physics
+    canCollide: false
+    bodyType: Static
+  - type: Damageable
+    damageContainer: Biological
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: OE14GrassGathering
+        params:
+          variation: 0.03
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 25
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTypeTrigger
+          damageType: Cellular
+          damage: 1
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - HalfWallLayer
+        layer:
+        - MidImpassable
+        - LowImpassable
+      fix2: #For melee or laser
+        hard: true
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+  - type: OE14PlantGatherable
+    toolWhitelist:
+      tags:
+        - OE14HerbalGathering
+      components:
+        - Sharp
+  - type: Appearance
+
+- type: entity
+  id: OE14GatherablePlantBase
+  parent: OE14GatherableBase
+  abstract: true
+  components:
+  - type: OE14PlantVisuals
+    growthSteps: 5
+    growState: "grow-"
+  - type: OE14Plant
+    resource: 30
+    energy: 30
+    growthLevel: 0
+    solution: plant
+  - type: SolutionContainerManager
+    solutions:
+      plant:
+        maxVol: 200
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+  - type: Food
+    delay: 1.5
+  - type: OE14WeatherRefillable
+    solution: plant
+  - type: RefillableSolution
+    solution: plant
+    maxRefill: 50
+  - type: ExaminableSolution
+    solution: plant
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: liq-
+    solutionName: plant
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger #Overkill
+          damage: 45
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTypeTrigger #Heat
+          damageType: Heat
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              OE14Ash1:
+                min: 0
+                max: 2
+      - trigger:
+          !type:DamageGroupTrigger #Brute
+          damageGroup: Brute
+          damage: 15
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              OE14FloraMaterial1:
+                min: 2
+                max: 3
+
+- type: entity
+  id: OE14GatherablePlantSingleHarvestBase
+  parent:
+  - OE14BaseFlammableSpreading
+  - OE14GatherablePlantBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Specific/Farming/seedbed.rsi
+  - type: OE14PlantMetabolizer
+    metabolizerId: Base
+  - type: OE14PlantEnergyFromLight
+    energy: 0.5
+    daytime: true
+  - type: OE14PlantVisuals
+    growthSteps: 6
+  - type: OE14PlantGrowing
+    energyCost: 0.25
+    resourceCost: 0.25
+    growthPerUpdate: 0.12 # 20 minute to full grow
+  - type: FireVisuals
+    sprite: _OE14/Effects/fire.rsi
+    normalState: full
+    alternateState: full2
+  - type: OE14PlantGatherable
+    deleteAfterHarvest: true
+
+- type: entity
+  id: OE14GatherablePlantMultiHarvestBase
+  parent: OE14GatherablePlantSingleHarvestBase
+  abstract: true
+  components:
+  - type: OE14PlantGrowing
+    growthPerUpdate: 0.06
+  - type: OE14PlantGatherable
+    deleteAfterHarvest: false
+

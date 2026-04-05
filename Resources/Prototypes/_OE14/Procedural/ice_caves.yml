@@ -1,0 +1,79 @@
+- type: biomeTemplate
+  id: OE14IceCavesFloor
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14Snowland
+    - !type:BiomeTileLayer
+      tile: OE14FloorIce
+      threshold: 0.0
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.1
+    #Entity
+    - !type:BiomeEntityLayer
+      threshold: 0.4
+      noise:
+        seed: 1
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - OE14FloorSnowDeepDeep
+      entities:
+        - OE14Snowdrift
+
+- type: biomeTemplate
+  id: OE14IceCavesGeneric
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14IceCavesFloor
+    #Walls
+    - !type:BiomeEntityLayer
+      threshold: -0.5
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.1
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorSnow
+        - OE14FloorSnowDeep
+        - OE14FloorSnowDeepDeep
+      entities:
+        - OE14WallSnow
+    - !type:BiomeEntityLayer
+      threshold: -0.2
+      invert: true
+      noise:
+        seed: 156
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.1
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorSnow
+        - OE14FloorSnowDeep
+        - OE14FloorSnowDeepDeep
+      entities:
+        - OE14WallStone
+    - !type:BiomeEntityLayer
+      threshold: -0.5
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.1
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorIce
+      entities:
+        - OE14WindowIceBlock
+

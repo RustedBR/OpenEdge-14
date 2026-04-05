@@ -1,0 +1,96 @@
+<Document>
+  # Magia
+
+  A magia em CrystallEdge flui através de [bold]Árvores de Habilidades[/bold] — disciplinas arcanas que concedem magias progressivamente mais poderosas conforme você avança nos níveis.
+
+  ## Como a Magia Funciona
+
+  Toda magia requer [color=#5EABEB]mana[/color] para ser lançada. Seu pool de mana é determinado pelo atributo [color=#a050e0]Inteligência[/color]:
+  - INT 5 = [color=#42aaf5]100 mana[/color]
+  - INT 10 = [color=#42aaf5]~194 mana[/color]
+  - INT 1 = [color=#ff6961]25 mana[/color] — mal dá para uma magia
+
+  Cada magia tem um [color=#5EABEB]custo de mana[/color], um [color=#5EABEB]tempo de recarga[/color], e a maioria requer um curto [color=#5EABEB]canal de conjuração[/color] antes de ativar. Levar dano durante o canal interrompe a conjuração.
+
+  O mana regenera passivamente com o tempo. Algumas raças têm mecânicas especiais de mana — [textlink="Silva" link="OE14_PT_Silva"] só regeneram mana sob luz solar, enquanto [textlink="Tieflings" link="OE14_PT_Tiefling"] regeneram mais rápido ao levar dano de fogo.
+
+  ## Árvores de Habilidades
+
+  Magias são desbloqueadas gastando pontos de habilidade em uma escola de magia. Cada árvore tem três níveis:
+
+  - [bold]Básico[/bold] — magias iniciais
+  - [bold]Avançado[/bold] — magias mais fortes, requer Básico
+  - [bold]Expert[/bold] — magias mais poderosas, requer Avançado
+
+  Pontos de habilidade são ganhos durante o jogo e gastos no menu de habilidades.
+
+  ## Escolas de Magia
+
+  Cada raça tem afinidade com uma escola específica e começa com os níveis Básico e Avançado já desbloqueados gratuitamente:
+
+  - [color=#ffa500]Pirocinese[/color] — Magia de fogo. Escola racial dos [textlink="Tieflings" link="OE14_PT_Tiefling"]. Queimadura, calor, devastação.
+  - [color=#5EABEB]Hidrossofia[/color] — Magia de água e gelo. Escola racial dos [textlink="Anões" link="OE14_EN_Dwarf"]. Congelamento, barreiras, sustentação.
+  - [color=#77dd77]Vivificação[/color] — Natureza e cura. Escola racial dos [textlink="Silva" link="OE14_PT_Silva"]. Restauração, crescimento, suporte.
+  - [color=#ffe269]Eletromancia[/color] — Magia de relâmpago. Escola racial dos [textlink="Carcats" link="OE14_PT_Carcat"]. Velocidade, choque, dano em cadeia.
+  - [color=#5EABEB]Metamagia[/color] — Maestria arcana. Escola racial dos [textlink="Elfos" link="OE14_PT_Elf"]. Eficiência de mana e amplificação de magias.
+
+  [textlink="Humanos" link="OE14_PT_Human"] não têm escola racial mas ganham pontos de habilidade extras, tornando-os aprendizes flexíveis. [textlink="Goblins" link="OE14_PT_Goblin"] têm mana quase zero (~25) — conjuração sustentada é impossível, mas uma única magia desesperada é tecnicamente possível.
+
+  ## Pergaminhos de Magia
+
+  Pergaminhos são itens consumíveis que concedem acesso temporário a uma magia. Use o pergaminho para lançar a magia — ele é destruído após o uso. Pergaminhos podem ser encontrados como saque ou comprados de comerciantes.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14SpellScrollFireball" Caption="Pergaminho: Bola de Fogo"/>
+    <GuideEntityEmbed Entity="OE14SpellScrollCureWounds" Caption="Pergaminho: Curar Ferimentos"/>
+    <GuideEntityEmbed Entity="OE14SpellScrollFreeze" Caption="Pergaminho: Congelar"/>
+    <GuideEntityEmbed Entity="OE14SpellScrollEarthWall" Caption="Pergaminho: Muralha de Terra"/>
+  </Box>
+
+  [bold]Pergaminhos disponíveis por escola:[/bold]
+  - [color=#ffa500]Pirocinese[/color]: Chama, Calor, Bola de Fogo, Onda de Fogo, Armadilha de Fogo
+  - [color=#5EABEB]Hidrossofia[/color]: Água, Cerveja, Adaga de Gelo, Flecha de Gelo, Congelar, Estilhaços de Gelo, Armadilha de Gelo
+  - [color=#f55faf]Ilusão[/color]: Esfera de Luz, Busca da Vida, Flash de Luz
+  - [color=#77dd77]Cura[/color]: Curar Ferimentos, Purificar Sangue, Curar Queimadura, Polimorfismo de Ovelha, Ressurreição
+  - [color=#56e5f5]Metamagia[/color]: Transferência de Mana
+  - [color=#70533f]Terra[/color]: Muralha de Terra
+  - [color=#ffe269]Elétrica[/color]: Armadilha Elétrica
+
+  [bold]Nota:[/bold] Algumas magias só estão disponíveis via pergaminhos e não podem ser aprendidas na árvore de habilidades. Ressurreição, por exemplo, é apenas via pergaminho — seu nó na árvore está indisponível. Magias de armadilha (Fogo, Gelo, Elétrica) e Muralha de Terra também são exclusivas de pergaminhos.
+
+  ## Equipamento Mágico
+
+  Alguns itens mágicos concedem magias quando equipados. Segurar um cajado ou artefato mágico adiciona suas magias à sua barra de ações (pressione Q para ver).
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MagicFireStaff" Caption="Cajado de Fogo"/>
+    <GuideEntityEmbed Entity="OE14MagicHealingStaff" Caption="Cajado de Cura"/>
+    <GuideEntityEmbed Entity="OE14ManaOperationGlove" Caption="Luva de Mana"/>
+  </Box>
+
+  [bold]Exemplos:[/bold]
+  - [bold]Cajados Mágicos[/bold] — concedem magias de sua escola (Cajado de Fogo concede Bola de Fogo, Calor, Criação de Chama)
+  - [bold]Luva de Mana[/bold] — concede Transferência de Mana, Consumo de Mana e Divisão Mágica Pequena
+  - [bold]Cajado Elétrico da Guarda[/bold] — concede Armadilha Elétrica e Raio
+
+  ## Raça e Interações com Mana
+
+  Algumas raças têm relações únicas com mana:
+  - [textlink="Tieflings" link="OE14_PT_Tiefling"] — magias de fogo custam [color=#77dd77]40% menos mana[/color]. Dano de gelo causa [color=#ff6961]drenagem de mana[/color].
+  - [textlink="Silva" link="OE14_PT_Silva"] — mana só regenera sob [color=#77dd77]luz solar[/color]. Beber água também restaura pequenas quantidades de mana.
+  - [textlink="Goblins" link="OE14_PT_Goblin"] — [color=#ff6961]mana quase zero (~25)[/color]. Mal dá para uma magia — conjuração sustentada é impossível.
+
+  ## Dicas
+
+  - Aproveite sua escola racial cedo — T1 e T2 gratuitos dão uma base sólida.
+  - Invista em [color=#a050e0]Inteligência[/color] se planeja conjurar múltiplas magias em combate.
+  - Lance de uma distância segura — canais podem ser interrompidos por dano.
+  - Diferentes escolas contra diferentes ameaças: fogo queima, gelo congela, relâmpago encadeia.
+
+  ## Sistemas Relacionados
+
+  - [textlink="Atributos" link="OE14_PT_CharacterStats"] — Inteligência determina seu pool de mana
+  - [textlink="Raças" link="OE14_PT_Species"] — afinidades raciais e mecânicas únicas de mana
+  - [textlink="Combate" link="OE14_PT_Combat"] — combinando magias e corpo a corpo efetivamente
+
+</Document>

@@ -1,0 +1,64 @@
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernHall
+  suffix: Tavern Hall
+  components:
+  - type: OE14Key
+    autoGenerateShape: TavernHall
+  localizationId: ent-OE14KeyTavernHall
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernStaff
+  suffix: Tavern Staff
+  components:
+  - type: OE14Key
+    autoGenerateShape: TavernStaff
+  localizationId: ent-OE14KeyTavernStaff
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernDormsAbstract
+  suffix: Abstract Tavern Dorms
+  components:
+  - type: OE14AbstractKey
+    group: TavernDorms
+  localizationId: ent-OE14KeyTavernDormsAbstract
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernDorms1
+  suffix: Tavern Dorms 1
+  components:
+  - type: OE14Key
+    autoGenerateShape: TavernDorms1
+  localizationId: ent-OE14KeyTavernDorms1
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernDorms2
+  suffix: Tavern Dorms 2
+  components:
+  - type: OE14Key
+    autoGenerateShape: TavernDorms2
+  localizationId: ent-OE14KeyTavernDorms2
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernDorms3
+  suffix: Tavern Dorms 3
+  components:
+  - type: OE14Key
+    autoGenerateShape: TavernDorms3
+  localizationId: ent-OE14KeyTavernDorms3
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernDorms4
+  suffix: Tavern Dorms 4
+  components:
+  - type: OE14Key
+    autoGenerateShape: TavernDorms4
+  localizationId: ent-OE14KeyTavernDorms4
+- type: entity
+  parent: OE14KeyCopperBlank
+  id: OE14KeyTavernDorms5
+  suffix: Tavern Dorms 5
+  components:
+  - type: OE14Key
+    autoGenerateShape: TavernDorms5
+  localizationId: ent-OE14KeyTavernDorms5

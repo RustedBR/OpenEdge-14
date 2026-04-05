@@ -1,0 +1,68 @@
+- type: Tag
+  id: OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14ClothingShoesArtifactSpeedboots
+  entity: OE14ClothingShoesArtifactSpeedboots
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14ClothingShoesArtifactFlightboots
+  entity: OE14ClothingShoesArtifactFlightboots
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14MagicFireStaff
+  entity: OE14MagicFireStaff
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14MagicHealingStaff
+  entity: OE14MagicHealingStaff
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14MagicShadowStaff
+  entity: OE14MagicShadowStaff
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14CrayonRainbow
+  entity: OE14CrayonRainbow
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14ClothingShoesArtifactFrogs
+  entity: OE14ClothingShoesArtifactFrogs
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14BowIceArtifact
+  entity: OE14BowIceArtifact
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14LockpickSkeletonArtifact
+  entity: OE14LockpickSkeletonArtifact
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+
+- type: uniqueSpawn
+  id: OE14ClothingCloakLurkerCape
+  entity: OE14ClothingCloakLurkerCape
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot
+  
+- type: uniqueSpawn
+  id: OE14SteelGobletBottomless
+  entity: OE14SteelGobletBottomless
+  tags:
+  - OE14UniqueSpawnDemiplanetLoot

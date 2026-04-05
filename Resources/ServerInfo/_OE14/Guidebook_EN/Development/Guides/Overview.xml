@@ -1,0 +1,24 @@
+<Document>
+# Development Guides
+
+Step-by-step guides for common development tasks in OpenEdge 14.
+
+## Available Guides
+
+- [textlink="Adding New Skills" link="OE14_DEV_Guide_Skills"] — create a new skill tree and progression
+- [textlink="Adding New Spells" link="OE14_DEV_Guide_Spells"] — define and implement a new spell action
+- [textlink="Adding New Jobs" link="OE14_DEV_Guide_Jobs"] — create a new job with salary and spawn point
+- [textlink="Adding New Species" link="OE14_DEV_Guide_Species"] — add a playable species with racial bonuses
+- [textlink="Database Migrations" link="OE14_DEV_Guide_Migrations"] — add or modify database schema safely
+- [textlink="Testing & Debugging" link="OE14_DEV_Guide_Testing"] — tips for testing your changes
+
+## Before You Start
+
+Make sure you understand the core architecture:
+- [textlink="Entity-Component-System" link="OE14_DEV_Arch_ECS"] — how the game is structured
+- [textlink="IoC Container" link="OE14_DEV_Arch_IoC"] — how systems access each other
+- [textlink="Event System" link="OE14_DEV_Arch_Events"] — how systems communicate
+
+Read CLAUDE.md in the repository root for project conventions and coding rules.
+
+</Document>

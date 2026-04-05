@@ -1,0 +1,68 @@
+- type: entity
+  id: OE14ActionSpellVampireHypnosys
+  parent: OE14ActionSpellBase
+  name: Hypnosis
+  description: You focus on the target, mesmerizing and lulling it to sleep.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.4
+  - type: OE14MagicEffectVampire
+  - type: OE14ActionManaCost
+    manaCost: 2.5
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneVampireHypnosis
+  - type: DoAfterArgs
+    delay: 1
+    breakOnMove: true
+    breakOnDamage: true
+    repeat: true
+  - type: Action
+    useDelay: 120
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: blood_moon
+  - type: TargetAction
+    range: 3
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectVampireHypnosis
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:ModifyStatusEffect
+          effectProto: OE14StatusEffectVampireForceSleep
+          type: Add
+          time: 4
+          refresh: true
+
+- type: entity
+  id: OE14RuneVampireHypnosis
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: red
+  - type: Sprite
+    layers:
+    - state: double_outer
+      color: red
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectVampireHypnosis
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    layers:
+    - state: electrified
+      color: red
+      shader: unshaded

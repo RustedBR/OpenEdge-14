@@ -1,0 +1,62 @@
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponShovel
+  parent:
+  - BaseItem
+  - OE14BaseWeaponChemical
+  - OE14BaseWeaponDestructible
+  - OE14BaseWeaponSelfDamage
+  - OE14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 1
+    range: 1.6
+    angle: 170
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Slash: 3
+    animation: OE14WeaponArcThrust
+    wideAnimation: OE14WeaponArcSlash
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.5
+    cPAnimationOffset: 1
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 5
+  - type: Wieldable
+  - type: Clothing
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - neck
+  - type: Shovel
+  - type: ToolTileCompatible
+  - type: Tool
+    qualities:
+    - OE14Digging
+    useSound:
+      collection: OE14Digging
+      params:
+        variation: 0.03
+        volume: 2
+  localizationId: ent-OE14BaseWeaponShovel
+- type: entity
+  parent: OE14BaseWeaponShovel
+  id: OE14WeaponShovelIron
+  name: iron shovel
+  description: A sturdy iron shovel, perfect for digging and not for combat.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Melee/Shovel/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 20
+      OE14Iron: 10
+  localizationId: ent-OE14WeaponShovelIron

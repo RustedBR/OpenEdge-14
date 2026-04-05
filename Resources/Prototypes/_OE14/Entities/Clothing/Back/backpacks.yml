@@ -1,0 +1,194 @@
+- type: entity
+  abstract: true
+  parent: OE14ClothingBackContainerBase
+  id: OE14ClothingBackBackpackBase
+  categories:
+  - ForkFiltered
+  localizationId: ent-OE14ClothingBackBackpackBase
+- type: entity
+  parent: OE14ClothingBackBackpackBase
+  id: OE14ClothingBackBackpackT0
+  name: Sack
+  suffix: backpack T0
+  description: A simple cloth sack with basic storage capacity. Lightweight but not
+    very secure.
+  components:
+  - type: Clothing
+    slots:
+    - back
+    - belt
+    equipDelay: 0.8
+    unequipDelay: 0.3
+  - type: Sprite
+    sprite: _OE14/Clothing/Back/Backpacks/backpack_t0.rsi
+  - type: Storage
+    grid:
+    - 0,0,4,2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 60
+  localizationId: ent-OE14ClothingBackBackpackT0
+- type: entity
+  parent: OE14ClothingBackBackpackT0
+  id: OE14ClothingBackBackpackT1
+  name: Backpack
+  suffix: backpack T1
+  description: A standard backpack with decent storage space. Perfect for everyday
+    use. It covers your back from blows!
+  components:
+  - type: Clothing
+    slots:
+    - back
+  - type: Sprite
+    sprite: _OE14/Clothing/Back/Backpacks/backpack_t1.rsi
+  - type: Storage
+    grid:
+    - 0,0,5,3
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Leather: 18
+      OE14Iron: 2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Heat: 0.9
+        Caustic: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  localizationId: ent-OE14ClothingBackBackpackT1
+- type: entity
+  parent: OE14ClothingBackBackpackT1
+  id: OE14ClothingBackBackpackT2
+  name: Extended Backpack
+  suffix: backpack T2
+  description: An expanded backpack with increased capacity. Ideal for longer trips.
+    It restricts movement, but it protects your back from blows and keeps you warm!
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Back/Backpacks/backpack_t2.rsi
+  - type: Storage
+    grid:
+    - 0,1,1,3
+    - 3,0,9,3
+    - 11,1,12,3
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Leather: 60
+      OE14Iron: 4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.9
+        Piercing: 0.95
+        Heat: 0.85
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.95
+  - type: HeldSpeedModifier
+  localizationId: ent-OE14ClothingBackBackpackT2
+- type: entity
+  parent: OE14ClothingBackBackpackT2
+  id: OE14ClothingBackBackpackT3
+  name: Traveler Backpack
+  suffix: backpack T3
+  description: A large, well-organized backpack designed for extensive traveling with
+    multiple compartments. It protects your back and neck from blows! But unfortunately,
+    it is not comfortable to run with.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Back/Backpacks/backpack_t3.rsi
+  - type: Storage
+    grid:
+    - 0,0,9,1
+    - 2,2,7,2
+    - 0,3,9,6
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Leather: 115
+      OE14Iron: 4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.7
+        Caustic: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: Clothing
+    equipDelay: 1.2
+    unequipDelay: 0.8
+  localizationId: ent-OE14ClothingBackBackpackT3
+- type: entity
+  parent: OE14ClothingBackBackpackT2
+  id: OE14ClothingBackBackpackReinforced
+  name: Reinforced Backpack
+  suffix: backpack T2
+  description: A durable backpack with reinforced stitching and materials for extra
+    protection of your belongings. It restricts movement, but it protects your back
+    from blows and keeps you warm!
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Back/Backpacks/backpack_t2_reinforced.rsi
+  - type: Storage
+    grid:
+    - 1,0,5,0
+    - 0,1,6,2
+    - 0,4,2,5
+    - 1,6,2,6
+    - 4,4,6,5
+    - 4,6,5,6
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Leather: 60
+      OE14Iron: 24
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.8
+        Piercing: 0.9
+        Heat: 0.85
+        Caustic: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.94
+  - type: HeldSpeedModifier
+  localizationId: ent-OE14ClothingBackBackpackReinforced
+- type: entity
+  parent: OE14ClothingBackBackpackT2
+  id: OE14ClothingBackBackpackCargo
+  name: Cargo Bag
+  suffix: backpack T2
+  description: A utilitarian cargo bag designed for heavy-duty use. Convenient for
+    carrying and storing work stuff.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Back/Backpacks/backpack_t2_cargo.rsi
+  - type: Storage
+    grid:
+    - 3,0,4,0
+    - 2,1,5,2
+    - 1,3,6,3
+    - 0,4,7,5
+    - 1,6,6,6
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Leather: 80
+      OE14Iron: 4
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.97
+  - type: HeldSpeedModifier
+  localizationId: ent-OE14ClothingBackBackpackCargo

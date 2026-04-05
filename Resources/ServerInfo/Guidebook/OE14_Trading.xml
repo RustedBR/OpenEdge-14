@@ -1,0 +1,62 @@
+<Document>
+  # Trading System
+
+  OpenEdge 14 features a dynamic economy where players can buy and sell items through trading platforms.
+
+  ## Trading Platforms
+
+  Trading platforms are special structures that allow players to conduct commerce. Different platforms offer different services.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14TradingPlatform" Caption="Trading Platform"/>
+    <GuideEntityEmbed Entity="OE14TradingSellingPlatform" Caption="Selling Platform"/>
+    <GuideEntityEmbed Entity="OE14GoldCoin1" Caption="Gold Coin"/>
+  </Box>
+
+  ## How to Use
+
+  ### Buying
+
+  Interact with a trading platform to view available positions or services. Pay with coins to unlock:
+  - [bold]Service positions[/bold] — unlock special NPC services
+  - [bold]Items[/bold] — direct purchases
+
+  The price is calculated based on the item's base value plus platform markup.
+
+  ### Selling
+
+  Place items on a [bold]selling platform[/bold]. The platform evaluates each item's value and calculates your balance.
+
+  [bold]Rules:[/bold]
+  - Only OE14 items can be sold (no vanilla items)
+  - Coins cannot be sold (prevents exploitation)
+  - Living things (mobs) cannot be sold
+  - Containers cannot be sold
+
+  ## Dynamic Pricing
+
+  Item prices are calculated automatically based on:
+  - [bold]Base item value[/bold] — inherent worth of the item
+  - [bold]Platform markup[/bold] — percentage added to transaction
+  - [bold]Supply and demand[/bold] — may vary by location
+
+  ## Reputation
+
+  Trading builds reputation with factions. Higher reputation:
+  - Unlocks better trading positions
+  - May provide discounts
+  - Enables special requests
+
+  ## Tips
+
+  - [bold]Compare prices[/bold] between platforms
+  - [bold]Sell in bulk[/bold] — some platforms offer better rates
+  - [bold]Build reputation[/bold] — unlocks more options
+  - [bold]Watch for demand[/bold] — certain items may be worth more
+
+  ## Related Systems
+
+  - [textlink="Economy" link="OE14Economy"] — overall economic system
+  - [textlink="Crafting" link="OE14Crafting"] — create items to sell
+
+</Document>

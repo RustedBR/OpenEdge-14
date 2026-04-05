@@ -1,0 +1,1 @@
+oe14-construction-step-condition-wall-required = Parede necessária.

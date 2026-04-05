@@ -1,0 +1,10 @@
+oe14-skill-req-prerequisite = Habilidade "{$name}" deve ser aprendida
+oe14-skill-req-species = Você deve ser da raça "{$name}"
+oe14-skill-req-notspecies = Você não deve ser da raça "{$name}"
+oe14-skill-req-vampire-clan = Você deve pertencer ao clã de vampiros "{$name}"
+oe14-skill-req-researched = Um estudo precisa ser feito na mesa de pesquisa
+oe14-skill-req-impossible = Incapaz de explorar durante a rodada no momento atual
+oe14-skill-req-god-follower-percentage = O número de seus seguidores deve ser maior que {$count}%
+oe14-skill-req-timegate = Disponível para estudo {$minute} minutos após o início da rodada. Minutos restantes: {$left}
+oe14-skill-req-timegate-disabled = Disponível para estudo {$minute} minutos após o início da rodada, mas as restrições de tempo estão desativadas.
+oe14-skill-req-vampire-tree-level = Você deve estar perto do coração do seu clã, pelo menos nível {$lvl}.

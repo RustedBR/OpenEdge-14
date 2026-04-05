@@ -1,0 +1,18 @@
+- type: entity
+  id: OE14MagicVisionStatusEffect
+  parent: MobStatusEffectBase
+  name: Magical vision
+  components:
+    - type: StatusEffect
+    - type: OE14MagicVisionStatusEffect
+
+- type: entity
+  id: OE14MetaMagicVisionSpellStatusEffect
+  parent: OE14MagicVisionStatusEffect
+  name: Magical vision spell
+  components:
+    - type: OE14EntityEffectsStatusEffect
+      effects:
+        - !type:OE14ManaChange
+          manaDelta: -5
+          safe: false

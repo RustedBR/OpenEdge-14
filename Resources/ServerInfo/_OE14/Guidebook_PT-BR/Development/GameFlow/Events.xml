@@ -1,0 +1,48 @@
+<Document>
+# Fluxo de Eventos & Ciclo de Vida
+
+Esta página cobre os eventos de ciclo de vida para entidades e sistemas no OpenEdge 14.
+
+## Eventos de Ciclo de Vida de Entidades
+
+<CodeBlock>
+Entidade spawnada -> MapInitEvent
+   |
+Componentes inicializados -> ComponentInit
+   |
+Entidade pronta para gameplay -> EntityInitializedMessage
+   |
+(gameplay acontece)
+   |
+Entidade marcada para deleção -> EntityTerminatingEvent
+   |
+Componentes removidos -> ComponentShutdown
+   |
+Entidade deletada
+</CodeBlock>
+
+## Eventos Chave de Ciclo de Vida
+
+[bold]ComponentInit[/bold] — chamado quando um componente é primeiro adicionado a uma entidade. Use para configuração única.
+
+[bold]MapInitEvent[/bold] — chamado quando uma entidade entra no mundo do jogo. Use para lógica de spawn.
+
+[bold]EntityTerminatingEvent[/bold] — chamado antes de uma entidade ser deletada. Use para limpeza.
+
+## Inicialização de Sistemas
+
+Sistemas inicializam na ordem em que são registrados. O método [mono]Initialize()[/mono] é chamado uma vez na inicialização:
+
+<CodeBlock>
+public override void Initialize()
+{
+    base.Initialize();
+    SubscribeLocalEvent<MyComponent, DamageEvent>(OnDamage);
+}
+</CodeBlock>
+
+## Conteúdo Em Construção
+
+Documentação completa de ciclo de vida de eventos coming soon. Veja [textlink="Sistema de Eventos" link="OE14_DEV_Arch_Events"] para a arquitetura geral de eventos.
+
+</Document>

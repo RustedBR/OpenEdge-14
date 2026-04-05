@@ -1,0 +1,27 @@
+- type: entity
+  id: OE14PlantCotton
+  parent: OE14GatherablePlantSingleHarvestBase
+  name: cotton
+  description: In a way, you're growing future clothes.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      offset: 0, 0.5
+      sprite: _OE14/Structures/Flora/Farm/cotton.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: OE14PlantGatherable
+    loot:
+      All: !type:AllSelector
+        children:
+        - id: OE14Cotton
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: OE14SeedCotton
+          rolls: !type:RangeNumberSelector
+            range: 1, 2
+

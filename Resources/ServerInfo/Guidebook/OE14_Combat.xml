@@ -1,0 +1,100 @@
+<Document>
+  # Combat System
+
+  Combat in OpenEdge 14 is real-time and skill-based. Success depends on your equipment, your character's skill levels, and your positioning.
+
+  ## Basic Combat
+
+  Click on an enemy to attack with your equipped weapon. Each weapon has an attack speed — faster weapons attack more frequently but deal less damage per hit, while slower weapons hit harder but leave you vulnerable between swings.
+
+  Keep an eye on your health bar. Retreat when low on health and use bandages or healing items to recover.
+
+  ## Weapon Types
+
+  [bold]Bladed weapons[/bold] — swords, daggers, and axes. High damage, good range. Some cause bleeding.
+
+  [bold]Blunt weapons[/bold] — clubs, maces, and hammers. Lower damage but can stun enemies and break armor.
+
+  [bold]Polearms[/bold] — spears and halberds. Long reach lets you attack from a safer distance.
+
+  [bold]Ranged weapons[/bold] — bows and thrown items. Attack from range but require ammunition.
+
+  ### Common Melee Weapons
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WeaponSwordIron" Caption="Iron Sword"/>
+    <GuideEntityEmbed Entity="OE14WeaponDaggerIron" Caption="Iron Dagger"/>
+    <GuideEntityEmbed Entity="OE14WeaponWarAxeIron" Caption="War Axe"/>
+  </Box>
+
+  ### Ranged Weapons
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14BowCombat" Caption="Combat Bow"/>
+    <GuideEntityEmbed Entity="OE14Arrow" Caption="Arrows"/>
+  </Box>
+
+  ### Shields
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WeaponShieldWooden" Caption="Wooden Shield"/>
+    <GuideEntityEmbed Entity="OE14WeaponTowerShieldWooden" Caption="Tower Shield"/>
+  </Box>
+
+  ### Healing Items
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14HerbalBandage1" Caption="Herbal Bandage"/>
+    <GuideEntityEmbed Entity="OE14Gauze1" Caption="Gauze"/>
+  </Box>
+
+  ## Status Effects
+
+  Many weapons and spells apply status effects on hit:
+
+  [color=#FF4500]Burning[/color] — deals damage over time. Extinguish with water or rolling.
+
+  [color=#00BFFF]Frozen[/color] — slows movement speed significantly. Warm up near a fire to recover faster.
+
+  [color=#7FFF00]Poisoned[/color] — deals damage over time, stacks with multiple applications. Use an antidote to cure.
+
+  [color=#8B0000]Bleeding[/color] — drains health slowly. Apply bandages to stop bleeding.
+
+  ## Character Stats in Combat
+
+  Your character's stats directly affect combat performance. Check your stats by pressing [bold]C[/bold].
+
+  - [color=#e05050]Strength[/color] — each point above 5 adds [bold]+10% physical damage[/bold]. Stat 10 = +50% (1.5x), Stat 1 = -50% (0.5x).
+  - [color=#50e050]Vitality[/color] — each point adds [bold]+/-12.5 HP[/bold] to your crit threshold. Stat 10 = 162 HP crit / 325 HP death.
+  - [color=#50e0e0]Dexterity[/color] — each point above 5 adds [bold]+25%[/bold] to your stamina knockdown threshold. Low DEX means a single burst staggers you. Stat 10 = 225, Stat 1 = 0 (falls instantly).
+  - [color=#a050e0]Intelligence[/color] — each point adds [bold]+/-25 mana[/bold]. Useful when combining spells and melee. Stat 10 = 225 mana.
+
+  Increasing your stats over time makes a significant difference in how long you survive and how hard you hit. See [textlink="Character Stats" link="OE14CharacterStats"] for a full breakdown.
+
+  ## Skill Progression
+
+  As you fight, your combat skills improve automatically. The more you use a weapon type, the better your character becomes with it. Higher skill levels increase damage dealt and reduce damage received.
+
+  Skills are saved between sessions. A veteran character is significantly more effective in combat than a new one.
+
+  [bold]Skill categories:[/bold]
+  - Melee: improves damage with all hand-to-hand weapons
+  - Defense: reduces incoming damage over time
+  - Magic: increases spell effectiveness and reduces mana costs
+
+  ## Tips
+
+  - Fight enemies at your level — taking on too-powerful foes early leads to quick death.
+  - Kite enemies by moving while attacking to avoid taking hits.
+  - Status effects can turn the tide of a fight — a frozen enemy cannot dodge.
+  - Work with other players — grouped combat is far more effective than solo.
+  - Always carry bandages and healing items before heading into dangerous areas.
+
+  ## Related Systems
+
+  - [textlink="Magic" link="OE14Magic"] — enhance your combat prowess with spells and magical buffs
+  - [textlink="Crafting" link="OE14Crafting"] — forge superior weapons and armor for your adventures
+  - [textlink="Economy" link="OE14Economy"] — sell rare enemy drops for profit and buy better equipment
+  - [textlink="Character Stats" link="OE14CharacterStats"] — invest in Strength and Vitality to become a more effective fighter
+
+</Document>

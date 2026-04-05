@@ -1,0 +1,17 @@
+- type: speechSounds
+  id: OE14Carcat
+  saySound:
+    path: /Audio/_OE14/Voice/Carcat/carcat_talk3.ogg
+  askSound:
+    path: /Audio/_OE14/Voice/Carcat/carcat_talk2.ogg
+  exclaimSound:
+    path: /Audio/_OE14/Voice/Carcat/carcat_talk1.ogg
+
+- type: speechSounds
+  id: OE14Goblin
+  saySound:
+   path: /Audio/_OE14/Voice/Goblin/goblin_talk3.ogg
+  askSound:
+    path: /Audio/_OE14/Voice/Goblin/goblin_talk2.ogg
+  exclaimSound:
+    path: /Audio/_OE14/Voice/Goblin/goblin_talk1.ogg

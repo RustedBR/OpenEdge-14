@@ -1,0 +1,61 @@
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponTwoHandedSword
+  parent:
+  - BaseItem
+  - OE14BaseWeaponChemical
+  - OE14BaseWeaponDestructible
+  - OE14BaseWeaponSelfDamage
+  - OE14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 0.6
+    range: 1.6
+    angle: 170
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Slash: 5.95
+    animation: OE14WeaponArcThrust
+    wideAnimation: OE14WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.5
+    cPAnimationOffset: 1
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 11.05
+  - type: OE14ComboBonusMeleeDamage
+    bonusDamage:
+      types:
+        Piercing: 8.5
+  - type: Wieldable
+  - type: Clothing
+    slots:
+    - neck
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+  localizationId: ent-OE14BaseWeaponTwoHandedSword
+- type: entity
+  parent: OE14BaseWeaponTwoHandedSword
+  id: OE14WeaponTwoHandedSwordIron
+  name: iron two-handed sword
+  description: A large and heavy two-handed sword. Heavy means reliable.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Melee/TwoHandedSword/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 10
+      OE14Iron: 30
+  - type: OE14ModularCraftStartPoint
+    startSlots:
+    - OE14ModularSlotGem
+    - OE14ModularSlotModification
+  - type: OE14StatBonus
+  localizationId: ent-OE14WeaponTwoHandedSwordIron

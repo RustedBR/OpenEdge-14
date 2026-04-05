@@ -1,0 +1,9 @@
+<Document>
+
+  # Toxinas de Monstros
+
+  Os monstros carregam diversas toxinas, e um aventureiro bem preparado deve saber quais monstros as possuem e o que elas fazem.
+
+  <GuideReagentGroupEmbed Group="OE14MonsterToxins"/>
+
+</Document>

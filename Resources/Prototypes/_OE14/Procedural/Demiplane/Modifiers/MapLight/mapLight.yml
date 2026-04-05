@@ -1,0 +1,100 @@
+- type: oe14LocationModifier
+  id: MapLightDarkness
+  levels:
+    min: 2
+    max: 10
+  generationWeight: 2
+  categories:
+    MapLight: 1
+  name: oe14-modifier-night
+  components:
+  - type: MapLight
+    ambientLightColor: "#000000"
+
+- type: oe14LocationModifier
+  id: MapLightDarkNight
+  levels:
+    min: 1
+    max: 10
+  categories:
+    MapLight: 1
+  name: oe14-modifier-night
+  components:
+  - type: MapLight
+    ambientLightColor: "#010714"
+
+# Open sky time entries
+
+- type: oe14LocationModifier
+  id: MapLightCycleDefault
+  levels:
+    min: 0
+    max: 10
+  categories:
+    MapLight: 1
+  generationWeight: 2
+  components:
+  - type: LightCycle
+
+- type: oe14LocationModifier
+  id: MapLightCycleCold
+  levels:
+    min: 0
+    max: 10
+  categories:
+    MapLight: 1
+  generationWeight: 2
+  requiredTags:
+  - OE14DemiplaneCold
+  components:
+  - type: LightCycle
+    originalColor: "#7bc2e0"
+  - type: MapLight
+    ambientLightColor: "#7bc2e0"
+
+- type: oe14LocationModifier
+  id: MapLightCycleHot
+  levels:
+    min: 0
+    max: 10
+  categories:
+    MapLight: 1
+  requiredTags:
+  - OE14DemiplaneHot
+  components:
+  - type: LightCycle
+    originalColor: "#ff8929"
+  - type: MapLight
+    ambientLightColor: "#ff8929"
+
+- type: oe14LocationModifier
+  id: MapLightCycleHot2
+  levels:
+    min: 0
+    max: 10
+  categories:
+    MapLight: 1
+  requiredTags:
+  - OE14DemiplaneHot
+  components:
+  - type: LightCycle
+    originalColor: "#d68787"
+  - type: MapLight
+    ambientLightColor: "#d68787"
+
+- type: oe14LocationModifier
+  id: CavesRoofHoles
+  levels:
+    min: 0
+    max: 10
+  generationProb: 0.8
+  categories:
+    MapLight: 0
+  requiredTags:
+  - OE14DemiplaneUnderground
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14NoRoofMarkerGodRays
+      count: 15
+      minGroupSize: 10
+      maxGroupSize: 30

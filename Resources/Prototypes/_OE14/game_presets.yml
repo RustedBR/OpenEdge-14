@@ -1,0 +1,66 @@
+- type: gamePreset
+  id: Secret
+  alias:
+    - secret
+    - sekrit
+  name: secret-title
+  showInVote: false
+  cP14Allowed: true
+  description: secret-description
+  rules:
+    - Secret
+
+- type: gamePreset
+  id: OE14Sandbox
+  alias:
+    - sandbox
+  name: sandbox-title
+  description: sandbox-description
+  showInVote: false
+  cP14Allowed: true
+  rules:
+    - OE14BasicStationEventScheduler
+    - Sandbox
+
+- type: gamePreset
+  id: OE14Peaceful
+  name: oe14-peaceful-title
+  description: oe14-peaceful-description
+  showInVote: true
+  cP14Allowed: true
+  rules:
+    - OE14BasicStationEventScheduler
+
+- type: gamePreset
+  id: OE14VampireClansBattleDouble
+  name: oe14-vampire-clans-battle
+  description: oe14-vampire-clans-description
+  showInVote: true
+  cP14Allowed: true
+  minPlayers: 20
+  maxPlayers: 29
+  rules:
+    - OE14BasicStationEventScheduler
+    - OE14GameRuleVampireClanBattleDouble
+
+- type: gamePreset
+  id: OE14VampireClansBattleTriple
+  name: oe14-vampire-clans-battle
+  description: oe14-vampire-clans-description
+  showInVote: true
+  cP14Allowed: true
+  minPlayers: 30
+  rules:
+    - OE14BasicStationEventScheduler
+    - OE14GameRuleVampireClanBattleTriple
+
+#- type: gamePreset
+#  id: OE14Survival
+#  name: oe14-gamemode-survival-title
+#  description: oe14-gamemode-survival-description
+#  showInVote: true
+#  cP14Allowed: true
+#  supportedMaps: ShipMapPool
+#  rules:
+#    - Sandbox
+#    - OE14CrashToWindlandsRule

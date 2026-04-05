@@ -1,0 +1,81 @@
+- type: entity
+  id: OE14WindowStoneBrick
+  parent: OE14WindowBase
+  name: stone brick window
+  description: A stone brick wall with a glass window in it.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/stone_bricks_window.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/stone_bricks_window.rsi
+    state: full
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14GlassShard:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: OE14WindowStoneBrickBroken
+  - type: Construction
+    graph: OE14WindowStoneBrick
+    node: OE14WindowStoneBrick
+
+- type: entity
+  id: OE14WindowFrameStoneBrick
+  name: stone brick window frame
+  parent: OE14BaseWindowFrame
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/stone_bricks_window_frame.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/stone_bricks_window_frame.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14RockStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14StoneBlock1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14WindowStoneBrick
+    node: OE14WindowFrameStoneBrick
+
+- type: entity
+  id: OE14WindowStoneBrickBroken
+  name: shattered stone brick window
+  parent:
+  - OE14BaseWindowFrameBroken
+  - OE14WindowFrameStoneBrick
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/stone_bricks_window_broken.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/stone_bricks_window_broken.rsi
+  - type: Construction
+    graph: OE14WindowStoneBrick
+    node: OE14WindowStoneBrickBroken

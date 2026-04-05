@@ -1,0 +1,40 @@
+<Document>
+# Fluxo de Rodada & Estados
+
+Uma rodada no OpenEdge 14 passa por vários estados gerenciados pelo sistema GameTicker.
+
+## Estados de Rodada
+
+<CodeBlock>
+PreRoundLobby  -> Jogadores esperam no lobby, selecionam personagens
+InRound        -> Gameplay ativo
+PostRound      -> Rodada terminada, resultados mostrados
+</CodeBlock>
+
+## Transições de Estado
+
+- [bold]PreRoundLobby -> InRound:[/bold] Quando jogadores suficientes estão prontos, ou admin força início
+- [bold]InRound -> PostRound:[/bold] Quando condição de vitória/derrota é acionada, ou admin termina rodada
+- [bold]PostRound -> PreRoundLobby:[/bold] Após delay, servidor reseta
+
+## Ouvindo Eventos de Rodada
+
+Sistemas podem reagir a mudanças de estado de rodada:
+
+<CodeBlock>
+private void OnRoundStart(RoundStartedEvent args)
+{
+    // Inicializa sistemas para nova rodada
+}
+
+private void OnRoundEnd(RoundEndedEvent args)
+{
+    // Limpa, calcula resultados
+}
+</CodeBlock>
+
+## Conteúdo Em Construção
+
+Documentação completa de fluxo de rodada coming soon.
+
+</Document>

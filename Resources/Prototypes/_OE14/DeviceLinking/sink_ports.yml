@@ -1,0 +1,5 @@
+- type: sinkPort
+  id: OE14PowerTarget
+  name: oe14-signal-port-name-power-target
+  description: oe14-signal-port-description-hold-power-target
+

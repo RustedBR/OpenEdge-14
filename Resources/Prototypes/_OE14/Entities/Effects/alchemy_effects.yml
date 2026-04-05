@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseFoam
+  id: OE14Mist
+  name: mist
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: Sprite
+    sprite: _OE14/Effects/mist.rsi
+    state: chemmist
+  - type: TimedDespawn
+    lifetime: 20
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: SolutionContainerManager
+    solutions:
+      solutionArea:
+        maxVol: 100
+  localizationId: ent-OE14Mist

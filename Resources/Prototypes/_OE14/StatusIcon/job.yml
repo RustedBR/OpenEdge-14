@@ -1,0 +1,94 @@
+- type: jobIcon
+  id: OE14JobIcon
+  abstract: true
+  priority: 1
+  locationPreference: Right
+  isShaded: true
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconAdventurer
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Adventurer
+  jobName: oe14-job-name-adventurer
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconAlchemist
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Alchemist
+  jobName: oe14-job-name-alchemist
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconApprentice
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Apprentice
+  jobName: oe14-job-name-apprentice
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconInnkeeper
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Innkeeper
+  jobName: oe14-job-name-innkeeper
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconGuardCommander
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: GuardCommander
+  jobName: oe14-job-name-guard-commander
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconGuard
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Guard
+  jobName: oe14-job-name-guard
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconInvestigator
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Investigator
+  jobName: oe14-job-name-investigator
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconMerchant
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Merchant
+  jobName: oe14-job-name-merchant
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconBlacksmith
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Blacksmith
+  jobName: oe14-job-name-blacksmith
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconGuildmaster
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: Guildmaster
+  jobName: oe14-job-name-guildmaster
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconGuildWorker
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_icons.rsi
+    state: GuildWorker
+  jobName: oe14-job-name-guildworker

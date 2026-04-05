@@ -1,0 +1,49 @@
+- type: constructionGraph
+  id: OE14WallStoneBrick
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14WallFrameStoneBrick
+          completed:
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: OE14Stone
+              amount: 2
+              doAfter: 5
+
+    - node: OE14WallFrameStoneBrick
+      entity: OE14WallFrameStonebrick
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14StoneBlock1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 4
+        - to: OE14WallStoneBrick
+          steps:
+            - material: OE14Stone
+              amount: 2
+              doAfter: 5
+
+    - node: OE14WallStoneBrick
+      entity: OE14WallStonebrick
+      edges:
+        - to: OE14WallFrameStoneBrick
+          steps:
+            - tool: OE14Hammering
+              doAfter: 2
+            - tool: Prying
+              doAfter: 4
+            - tool: OE14Hammering
+              doAfter: 6
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14StoneBlock1
+              amount: 2
+

@@ -1,0 +1,9 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: OE14BaseTownObjective
+  components:
+  - type: Objective
+    issuer: oe14-objective-issuer-town
+    difficulty: 1
+

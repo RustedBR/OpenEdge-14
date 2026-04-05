@@ -1,0 +1,89 @@
+
+# Head
+
+- type: loadoutGroup
+  id: OE14MerchantHead
+  name: oe14-loadout-merchant-head
+  minLimit: 0
+  loadouts:
+  - OE14ClothingHeadBowler
+
+- type: loadout
+  id: OE14ClothingHeadBowler
+  equipment:
+    head: OE14ClothingHeadBowler
+
+# Cloak
+
+- type: loadoutGroup
+  id: OE14MerchantCloak
+  name: oe14-loadout-merchant-cloak
+  loadouts:
+  - OE14ClothingCloakCommandantJacket
+
+- type: loadout
+  id: OE14ClothingCloakCommandantJacket
+  equipment:
+    cloak: OE14ClothingCloakCommandantJacket
+
+# OuterClothing
+
+- type: loadoutGroup
+  id: OE14MerchantOuterClothing
+  name: oe14-loadout-merchant-outer
+  minLimit: 0
+  loadouts:
+  - OE14ClothingOuterClothingMerchantWaistCoat
+
+- type: loadout
+  id: OE14ClothingOuterClothingMerchantWaistCoat
+  equipment:
+    outerClothing: OE14ClothingOuterClothingMerchantWaistCoat
+
+# Shirt
+
+- type: loadoutGroup
+  id: OE14MerchantShirt
+  name: oe14-loadout-merchant-shirt
+  loadouts:
+  - OE14ClothingShirtMerchant
+  - OE14ClothingShirtMerchantDress
+
+- type: loadout
+  id: OE14ClothingShirtMerchant
+  equipment:
+    shirt: OE14ClothingShirtMerchant
+
+- type: loadout
+  id: OE14ClothingShirtMerchantDress
+  equipment:
+    shirt: OE14ClothingShirtMerchantDress
+
+# Pants
+
+- type: loadoutGroup
+  id: OE14MerchantPants
+  name: oe14-loadout-merchant-pants
+  loadouts:
+  - OE14ClothingPantsAristocratic
+  - OE14ClothingPantsMerchantsPantaloons
+
+- type: loadout
+  id: OE14ClothingPantsMerchantsPantaloons
+  equipment:
+    pants: OE14ClothingPantsMerchantsPantaloons
+
+# Shoes
+
+- type: loadoutGroup
+  id: OE14MerchantShoes
+  name: oe14-loadout-merchant-shoes
+  loadouts:
+  - OE14ShoesAristocraticBlack
+  - OE14ClothingShoesSandals
+
+- type: loadout
+  id: OE14ClothingShoesSandals
+  equipment:
+    shoes: OE14ClothingShoesSandals
+

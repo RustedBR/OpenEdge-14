@@ -1,0 +1,24 @@
+- type: entity
+  id: OE14SpawnUniqueBase
+  abstract: true
+  parent: MarkerBase
+  categories:
+  - ForkFiltered
+  - Spawner
+  localizationId: ent-OE14SpawnUniqueBase
+- type: entity
+  name: random artifact spawner
+  id: OE14SpawnUniqueArtifact
+  parent: OE14SpawnUniqueBase
+  categories:
+  - DoNotMap
+  components:
+  - type: OE14UniqueLootSpawner
+    tag: OE14UniqueSpawnDemiplanetLoot
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Clothing/Shoes/flightboots.rsi
+      state: icon
+  localizationId: ent-OE14SpawnUniqueArtifact

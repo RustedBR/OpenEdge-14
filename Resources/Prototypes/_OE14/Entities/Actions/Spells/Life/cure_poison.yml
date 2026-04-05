@@ -1,0 +1,89 @@
+- type: entity
+  id: OE14ActionSpellBloodPurification
+  parent: OE14ActionSpellBase
+  name: Blood purification
+  description: You cleanse the target's blood of poisons and acids, and restore its volume slightly
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 10
+  - type: OE14ActionSpeaking
+    startSpeech: "Nella coda..."
+    endSpeech: "sta il veleno"
+  - type: OE14ActionTargetMobStatusRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneBloodPurification
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/healing.rsi
+      state: cure_poison
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: DoAfterArgs
+    delay: 1.5
+    breakOnDamage: true
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodPurification
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodPurification
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Poison: -10
+              Bloodloss: -10
+              Caustic: -10
+        - !type:Jitter
+        - !type:ModifyBloodLevel
+          amount: 25
+
+- type: entity
+  id: OE14RuneBloodPurification
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#79b330"
+      shader: unshaded
+    - state: double_outer
+      color: "#a1252f"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectBloodPurification
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollHealing
+  id: OE14SpellScrollBloodPurification
+  name: blood purification spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellBloodPurification

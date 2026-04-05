@@ -1,0 +1,17 @@
+oe14-tips-1 = Mantenha um olho na condição da sua arma! Você pode inspecionar para ver sua condição e afiação.
+oe14-tips-2 = Se sua arma estiver embaçada, você pode afiá-la com pedras de afiar.
+oe14-tips-3 = Algumas armas leves, como adagas ou foices, são eficazes para combate com duas armas.
+oe14-tips-4 = Inicialmente, você não sabe os nomes dos outros personagens! Mas você pode lembrar quaisquer nomes e apelidos deles através do menu de contexto.
+oe14-tips-5 = Como alquimista, se você misturar alguns reagentes juntos, você não pode mais separá-los! Procure as reações alquímicas corretas que permitirão editar sua solução.
+oe14-tips-6 = Como alquimista, lembre-se de manter seu caldeirão fora do fogão ou fogo. Sua poção pode transbordar, liberando uma nuvem de reagente.
+oe14-tips-7 = Como vampiro, se você tentar sugar a essência de sangue, mas não houver nenhuma no alvo, pode significar uma de duas coisas: Ou você está comendo outro vampiro, ou sua vítima já foi comida por outros vampiros.
+oe14-tips-8 = Se você ficar sem energia mágica, você ainda pode usar feitiços e gastar mana, mas isso causará danos a você e potencialmente deixará você inconsciente!
+oe14-tips-9 = Cuidado durante tempestades! Raios podem atingir qualquer pessoa ou coisa que não estiver sob cobertura. Pode causar incêndios massivos.
+oe14-tips-10 = Arbustos altos são bons para esconder seu personagem! Mas eles te tornam mais lento e fazem muito barulho se você se mover neles.
+oe14-tips-11 = Não se esqueça de trancar suas portas se você não quiser que ninguém entre!
+oe14-tips-12 = Você pode criar suas próprias chaves e fechaduras para garantir a privacidade do seu território! Para fazer isso, use arqués de chave e chaves de fenda!
+oe14-tips-13 = Dica número 13 não existe.
+oe14-tips-14 = Demiplanos podem ser muito perigosos, não negligencie consumíveis médicos e poções de alquimista.
+oe14-tips-15 = Você pode olhar dentro do cristal gigante conectando os demiplanos para ver o mapa inteiro das conexões de demiplanos atuais!
+oe14-tips-16 = A principal fonte de renda para aventureiros é a extração de matérias-primas dentro de dimensões de bolso conhecidas como demi-planos.
+oe14-tips-17 = O feitiço de visão mágica permite ver onde e quando feitiços foram usados! Investigadores podem usar isso para procurar criminosos.

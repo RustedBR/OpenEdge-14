@@ -1,0 +1,66 @@
+<Document>
+  # Sistema de Economia
+
+  A economia em OpenEdge 14 gira em torno de moedas físicas e um sistema de comércio. Dinheiro não é abstrato — moedas existem como itens reais no mundo que podem ser pegos, largados e roubados.
+
+  ## Moeda
+
+  Moedas são a moeda primária. Elas vêm em diferentes denominações e podem ser carregadas nos bolsos ou numa carteira. Examine uma pilha de moedas para ver seu valor total.
+
+  [bold]Denominações de Moedas (do menor para o maior valor):[/bold]
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14CopperCoin1" Caption="Moeda de Cobre"/>
+    <GuideEntityEmbed Entity="OE14SilverCoin1" Caption="Moeda de Prata"/>
+    <GuideEntityEmbed Entity="OE14GoldCoin1" Caption="Moeda de Ouro"/>
+    <GuideEntityEmbed Entity="OE14PlatinumCoin1" Caption="Moeda de Platina"/>
+  </Box>
+
+  Você ganha dinheiro por:
+  - Coletando seu [color=#f0c040]salário da função[/color] numa plataforma de pagamento
+  - [color=#f0c040]Vendendo itens[/color] em plataformas de comércio
+  - Colhendo e vendendo plantações e recursos
+
+  ## Salário
+
+  Toda função acumula um salário regular ao longo do tempo. Para coletá-lo, você deve visitar uma [bold]Plataforma de Pagamento[/bold] e interagir com ela — moedas são geradas lá para você pegar.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14SalaryPlatform" Caption="Plataforma de Salário"/>
+    <GuideEntityEmbed Entity="OE14TradingPlatform" Caption="Plataforma de Compra"/>
+    <GuideEntityEmbed Entity="OE14TradingSellingPlatform" Caption="Plataforma de Venda"/>
+  </Box>
+
+  Funções diferentes pagam valores diferentes. Verifique a seção de Funções para detalhes sobre o salário de cada cargo.
+
+  ## Plataformas de Comércio
+
+  Plataformas de comércio permitem comprar e vender itens. Os preços são calculados uma vez no início de cada rodada com uma flutuação aleatória e permanecem fixos durante toda a rodada — mudam novamente na próxima rodada.
+
+  Para vender um item, coloque-o na plataforma de venda e confirme a transação. Moedas serão dadas a você automaticamente.
+
+  Para comprar, navegue pelo estoque disponível e selecione o que deseja. O custo é deduzido das moedas que você carrega.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14TradingPlatform"/>
+    <GuideEntityEmbed Entity="OE14TradingSellingPlatform"/>
+  </Box>
+
+  [bold]Dicas:[/bold]
+  - Preços variam entre rodadas — o que vendeu bem na rodada anterior pode valer menos agora.
+  - Itens fabricados raros frequentemente alcançam preços melhores que matérias-primas.
+  - Mantenha moedas numa carteira para se organizar.
+
+  ## Agricultura e Recursos
+
+  Cultivar plantações e colher recursos é uma das formas mais confiáveis de ganhar dinheiro. Plante sementes, cuide das plantações e venda a colheita em plataformas de comércio.
+
+  Plantas rebrotam após cada colheita enquanto tiverem energia. Energia é gerada pela exposição à luz — uma planta deixada no escuro para de crescer. Não há limite rígido de colheitas; uma planta bem cuidada pode ser colhida indefinidamente.
+
+  ## Sistemas Relacionados
+
+  - [textlink="Crafting" link="OE14_PT_Crafting"] — crie itens de alto valor para vender com lucro máximo
+  - [textlink="Magia" link="OE14_PT_Magic"] — domine magia para assumir contratos mais difíceis
+  - [textlink="Combate" link="OE14_PT_Combat"] — adquira drops raros de inimigos derrotados
+
+</Document>

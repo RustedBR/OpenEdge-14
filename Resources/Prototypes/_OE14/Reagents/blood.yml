@@ -1,0 +1,237 @@
+- type: reagent
+  id: OE14Blood
+  group: OE14Precurser
+  name: oe14-reagent-name-blood
+  desc: oe14-reagent-desc-blood
+  flavor: OE14Metallic
+  color: "#800000"
+  recognizable: false
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+        damage:
+          groups:
+            Brute: -5
+
+- type: reagent
+  id: OE14BloodAnimal
+  group: OE14Precurser
+  name: oe14-reagent-name-blood-animal
+  desc: oe14-reagent-desc-blood-animal
+  flavor: OE14Metallic
+  color: "#802020"
+  recognizable: false
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+
+- type: reagent
+  id: OE14BloodVampire
+  group: OE14Precurser
+  name: oe14-reagent-name-blood-vampire
+  desc: oe14-reagent-desc-blood-vampire
+  flavor: OE14Metallic
+  color: "#800000"
+  recognizable: false
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  pricePerUnit: 0.45
+
+- type: reagent
+  id: OE14BloodTiefling
+  group: OE14Precurser
+  desc: oe14-reagent-desc-blood-tiefling
+  name: oe14-reagent-name-blood-tiefling
+  flavor: OE14Metallic
+  color: "#803300"
+  recognizable: false
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+        damage:
+          groups:
+            Burn: -5
+  pricePerUnit: 0.15
+
+- type: reagent
+  id: OE14BloodElf
+  group: OE14Precurser
+  desc: oe14-reagent-desc-blood-elf
+  name: oe14-reagent-name-blood-elf
+  flavor: OE14Metallic
+  color: "#80003e"
+  recognizable: false
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+    Medicine:
+      effects:
+      - !type:OE14ManaChange
+        manaDelta: 10
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+        safe: true
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+        damage:
+          groups:
+            Burn: -5
+  pricePerUnit: 0.25
+
+- type: reagent
+  id: OE14BloodGoblin
+  group: OE14Precurser
+  desc: oe14-reagent-desc-blood-goblin
+  name: oe14-reagent-name-blood-goblin
+  flavor: OE14Metallic
+  color: "#576e35"
+  recognizable: false
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+        damage:
+          groups:
+            Brute: -3
+            Burn: -3
+      - !type:MovespeedModifier
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+        statusLifetime: 1.5
+  pricePerUnit: 0.05
+
+- type: reagent
+  id: OE14BloodMonster
+  group: OE14Precurser
+  name: oe14-reagent-name-blood-monster
+  desc: oe14-reagent-desc-blood-monster
+  flavor: OE14Metallic
+  color: "#800058"
+  recognizable: false
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+      - !type:SatiateThirst
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: OE14Vampire
+        damage:
+          types:
+            OE14ManaDepletion: -5
+    Poison:
+      effects:
+      - !type:OE14ManaChange
+        manaDelta: 1
+      - !type:HealthChange
+        damage:
+          types:
+            OE14ManaDepletion: 1
+  pricePerUnit: 0.30

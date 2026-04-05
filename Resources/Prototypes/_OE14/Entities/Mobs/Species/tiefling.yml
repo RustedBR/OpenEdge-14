@@ -1,0 +1,155 @@
+- type: entity
+  parent: OE14BaseMobSpeciesOrganic
+  id: OE14BaseMobTiefling
+  name: Mr. Tiefling
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: OE14Tiefling
+  - type: OE14CharacterStats
+    strength: 7
+    vitality: 5
+    dexterity: 2
+    intelligence: 6
+  - type: Stamina
+    critThreshold: 25
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 125
+    energy: 125
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Tiefling/parts.rsi
+    state: full
+  - type: Body
+    prototype: OE14Tiefling
+    requiredLegs: 2
+  - type: Wagging
+  - type: Bloodstream
+    bloodReagent: OE14BloodTiefling
+  - type: Damageable
+    damageContainer: OE14Biological
+    damageModifierSet: OE14Tiefling
+  - type: PassiveDamage
+    damageCap: 80
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        Heat: -0.14
+        OE14ManaDepletion: -0.05
+      groups:
+        Brute: -0.05
+        Burn: -0.02
+        Toxin: -0.03
+  - type: OE14MagicEnergyDraw
+    energy: 0.75
+    delay: 3
+  - type: OE14MagicEnergyFromDamage
+    damage:
+      Heat: 1
+      Cold: -1
+  - type: OE14AuraImprint
+    imprintColor: '#e0762b'
+  - type: OE14SkillStorage
+    freeLearnedSkills:
+    - PyrokineticT1
+    - PyrokineticT2
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+    femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14BaseMobTiefling
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobTieflingDummy
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: HumanoidAppearance
+    species: OE14Tiefling
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+    femaleDisplacements:
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14MobTieflingDummy

@@ -1,0 +1,323 @@
+# Undead
+
+- type: entity
+  name: walking dead spawner
+  id: OE14SpawnMobUndeadZombieRandom
+  parent: MarkerBase
+  suffix: Random
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Species/Zombie/parts.rsi
+      state: full
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 60
+        children:
+        - id: OE14MobUndeadZombieGearEasy1
+        - id: OE14MobUndeadZombieGearEasy2
+        - id: OE14MobUndeadZombieGearEasy3
+        - id: OE14MobUndeadZombieGearEasy4
+        - id: OE14MobUndeadZombieGearEasy5
+
+# Animal
+
+- type: entity
+  name: rabbit spawner
+  id: OE14SpawnMobRabbit
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/rabbit.rsi
+      state: rabbit
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobRabbit
+
+- type: entity
+  name: pig spawner
+  id: OE14SpawnMobPig
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/pig.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobPig
+
+- type: entity
+  name: boar spawner
+  id: OE14SpawnMobBoar
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/boar.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobBoar
+
+- type: entity
+  name: frog spawner
+  id: OE14SpawnMobFrog
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/frog.rsi
+      state: frog
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobFrog
+
+- type: entity
+  name: sheep spawner
+  id: OE14SpawnMobSheep
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/sheep.rsi
+      state: sheep
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobSheep
+
+- type: entity
+  name: snail spawner
+  id: OE14SpawnMobSnail
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/snail.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobSnail
+
+- type: entity
+  name: cat spawner
+  id: OE14SpawnMobCatRandomColored
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  suffix: "Colored"
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/cat.rsi
+      state: lying
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobCatRandomColored
+
+- type: entity
+  name: cat spawner
+  id: OE14SpawnMobCatRandomColoredWithSpots
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  suffix: "Colored, Spotted"
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/cat.rsi
+      state: lying
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobCatRandomColoredWithSpots
+
+# Dino
+
+- type: entity
+  name: yumkaraptor spawner
+  id: OE14SpawnMobDinoYumkaraptor
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/dino.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobDinoYumkaraptor
+
+- type: entity
+  name: small hydra spawner
+  id: OE14SpawnMobDinoSmallHydra
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/hydra.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobDinoSmallHydra
+
+# Monster
+
+- type: entity
+  name: predatory mole spawner
+  id: OE14SpawnMobMonsterMole
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Monster/mole.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobMonsterMole
+
+- type: entity
+  name: spineguard spawner
+  id: OE14SpawnMobMonsterSpineguard
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Monster/spineguard.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobMonsterSpineguard
+
+- type: entity
+  name: bloodworm mosquitoes spawner
+  id: OE14SpawnMobMonsterMosquito
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Monster/mosquito.rsi
+      state: mosquitos
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobMonsterMosquito
+
+- type: entity
+  name: invisible whistler spawner
+  id: OE14SpawnMobMonsterInvisibleWhistler
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Monster/invisible_whistler.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobMonsterInvisibleWhistler
+
+- type: entity
+  name: flem spawner
+  id: OE14SpawnMobMonsterFlem
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Monster/flem.rsi
+      state: flem_live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobMonsterFlem
+
+- type: entity
+  name: cackle spawner
+  id: OE14SpawnMobMonsterCackle
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Monster/cackle.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobMonsterCackle
+
+- type: entity
+  name: fairy spawner
+  id: OE14SpawnMobFairy
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+   - type: Sprite
+     layers:
+     - sprite: Markers/cross.rsi
+       state: green
+     - sprite: _OE14/Mobs/Animals/fairy.rsi
+       state: fairy
+       color: "#42AAFF"
+   - type: ConditionalSpawner
+     prototypes:
+      - OE14MobFairy
+
+- type: entity
+  name: big bear spawner
+  id: OE14SpawnMobBigBear
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Mobs/Animals/bear.rsi
+      state: live
+  - type: ConditionalSpawner
+    prototypes:
+    - OE14MobBigBear

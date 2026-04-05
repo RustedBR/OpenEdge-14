@@ -1,0 +1,141 @@
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadBeretMercenary
+  name: mercenary beret
+  description: A large red wool hat decorated with a feather.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/beret_mercenary.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/beret_mercenary.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  - type: StaticPrice
+    price: 12.6
+  localizationId: ent-OE14ClothingHeadBeretMercenary
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadMetalHeadband
+  name: metall headband
+  description: The odds of it protecting you from a head shot are slim to none.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/metalheadband.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/metalheadband.rsi
+  localizationId: ent-OE14ClothingHeadMetalHeadband
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadTriangularHat
+  name: triangular hat
+  description: a big, pointy hat for those who like to look smart.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/triangularhat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/triangularhat.rsi
+  localizationId: ent-OE14ClothingHeadTriangularHat
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadTriangularHatGolden
+  name: golden triangular hat
+  description: a big, pointy hat for those who like to look smart. Decorated with
+    a gold hoop.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/triangularhat_golden.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/triangularhat_golden.rsi
+  localizationId: ent-OE14ClothingHeadTriangularHatGolden
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadChristmasHat
+  name: christmas hat
+  description: A festive red hat, nobody remembers why it is customary to wear it.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/christmas_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/christmas_hat.rsi
+  localizationId: ent-OE14ClothingHeadChristmasHat
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadHuntersHat
+  name: hunter's hat
+  description: A headdress revered by hunters on undead.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/hunter_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/hunter_hat.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 15
+  localizationId: ent-OE14ClothingHeadHuntersHat
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadGreenHuntersHat
+  name: green hunter's hat
+  description: A headdress revered by hunters on undead.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/green_hunter_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/green_hunter_hat.rsi
+  localizationId: ent-OE14ClothingHeadGreenHuntersHat
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadRedHuntersHat
+  name: red hunter's hat
+  description: A headdress revered by hunters on undead.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/red_hunter_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/red_hunter_hat.rsi
+  localizationId: ent-OE14ClothingHeadRedHuntersHat
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadJestersCap
+  name: jester's cap
+  description: You are the fun. You are noise. You are the jester.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/jesters_cap.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/jesters_cap.rsi
+  localizationId: ent-OE14ClothingHeadJestersCap
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadJagermeisterHat
+  name: jagermeister's hat
+  description: The mark of a professional in his field.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/jagermeister_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/jagermeister_hat.rsi
+  localizationId: ent-OE14ClothingHeadJagermeisterHat
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadStrawHat
+  name: straw hat
+  description: Easy to make, not too bad to lose.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/straw_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/straw_hat.rsi
+  localizationId: ent-OE14ClothingHeadStrawHat
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadKasaHat
+  name: farmer's hat
+  description: Welcome to the rice fields, adventurer!
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/General/kasa_hat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/General/kasa_hat.rsi
+  localizationId: ent-OE14ClothingHeadKasaHat

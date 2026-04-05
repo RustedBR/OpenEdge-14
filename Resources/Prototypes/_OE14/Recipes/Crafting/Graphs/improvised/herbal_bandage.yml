@@ -1,0 +1,14 @@
+- type: constructionGraph
+  id: OE14HerbBandage
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: oe14herbbandage
+      steps:
+      - material: OE14FloraMaterial
+        amount: 3
+        doAfter: 3
+
+  - node: oe14herbbandage
+    entity: OE14HerbalBandage1

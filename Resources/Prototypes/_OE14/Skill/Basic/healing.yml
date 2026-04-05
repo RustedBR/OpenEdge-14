@@ -1,0 +1,139 @@
+# T1
+
+- type: oe14Skill
+  id: HealingT1
+  skillUiPosition: 1, 0
+  tree: Healing
+  name: oe14-skill-life-t1-name
+  desc: oe14-skill-life-t1-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: heal
+  effects:
+  - !type:OE14AddStatBonus
+    stat: vitality
+
+- type: oe14Skill
+  id: OE14ActionSpellBloodPurification
+  skillUiPosition: 2, 6
+  tree: Healing
+  icon:
+    sprite: _OE14/Actions/Spells/healing.rsi
+    state: cure_poison
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellBloodPurification
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+  - !type:SpeciesBlacklist
+    species: OE14Skeleton
+
+- type: oe14Skill
+  id: OE14ActionSpellSheepPolymorph
+  skillUiPosition: 0, 4
+  tree: Healing
+  icon:
+    sprite: _OE14/Actions/Spells/misc.rsi
+    state: polymorph
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellSheepPolymorph
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+
+- type: oe14Skill
+  id: OE14ActionAirSaturation
+  skillUiPosition: 0, 6
+  tree: Healing
+  icon:
+    sprite: _OE14/Actions/Spells/healing.rsi
+    state: air_saturation
+  effects:
+  - !type:AddAction
+    action: OE14ActionAirSaturation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+
+# T2
+
+- type: oe14Skill
+  id: HealingT2
+  skillUiPosition: 7, 0
+  tree: Healing
+  name: oe14-skill-life-t2-name
+  desc: oe14-skill-life-t2-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: heal2
+  effects:
+  - !type:OE14AddStatBonus
+    stat: vitality
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT1
+
+- type: oe14Skill
+  id: OE14ActionSpellCureBurn
+  skillUiPosition: 6, 4
+  tree: Healing
+  icon:
+    sprite: _OE14/Actions/Spells/healing.rsi
+    state: cure_burn
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellCureBurn
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT2
+  - !type:SpeciesBlacklist
+    species: OE14Skeleton
+
+- type: oe14Skill
+  id: OE14ActionSpellCureWounds
+  skillUiPosition: 6, 6
+  tree: Healing
+  icon:
+    sprite: _OE14/Actions/Spells/healing.rsi
+    state: cure_wounds
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellCureWounds
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HealingT2
+  - !type:SpeciesBlacklist
+    species: OE14Skeleton
+
+# T3
+
+#- type: oe14Skill
+#  id: HealingT3
+#  skillUiPosition: 13, 0
+#  tree: Healing
+#  name: oe14-skill-life-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _OE14/Actions/skill_tree.rsi
+#    state: heal3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: HealingT2
+
+#- type: oe14Skill
+#  id: OE14ActionSpellResurrection
+#  skillUiPosition: 12, 4
+#  tree: Healing
+#  icon:
+#    sprite: _OE14/Actions/Spells/healing.rsi
+#    state: resurrection
+#  effects:
+#  - !type:AddAction
+#    action: OE14ActionSpellResurrection
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: HealingT3

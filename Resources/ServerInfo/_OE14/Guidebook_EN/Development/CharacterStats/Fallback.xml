@@ -1,0 +1,42 @@
+<Document>
+# Spell Fallback System
+
+The Spell Fallback System handles what happens when a spell grants a stat modifier that pushes the character's stat past its maximum.
+
+## The Problem
+
+If a character has INT 9 and a spell grants +2 INT, the effective stat would be 11 — but the cap is 10. The +1 overflow needs to go somewhere.
+
+## The Solution
+
+When a modifier causes overflow, the system:
+1. Caps the effective stat at MaxStat (10)
+2. Calculates the overflow amount
+3. Adds the overflow as AvailablePoints the player can spend
+
+<CodeBlock>
+// If adding a modifier would exceed MaxStat:
+int projected = (BaseStat + currentModifiers + newModifier);
+if (projected > MaxStat)
+{
+    int overflow = projected - MaxStat;
+    component.AvailablePoints += overflow;
+}
+</CodeBlock>
+
+## Spell Tier Interaction
+
+Each spell tier in a skill tree can add stat modifiers. When stacking multiple tiers, overflow accumulates incrementally.
+
+[bold]Example:[/bold]
+- Elf base INT: 8
+- T1 spell: +1 INT (effective: 9)
+- T2 spell: +1 INT (effective: 10, capped)
+- T3 spell: +1 INT (effective: 10, overflow: +1 available point)
+
+## Content Under Construction
+
+Full spell fallback documentation coming soon. Refer to the modifier source code:
+[mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+
+</Document>

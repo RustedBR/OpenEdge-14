@@ -1,0 +1,137 @@
+- type: entity
+  id: OE14VialSmallHealingBrute
+  parent: OE14VialSmall
+  name: brad's healing potion
+  suffix: Healing brute 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14HealingEffectHealBrute
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingBrute
+- type: entity
+  id: OE14VialSmallHealingPoison
+  parent: OE14VialSmall
+  name: brad's antidote potion
+  suffix: Healing poison 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14HealingEffectHealPoison
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingPoison
+- type: entity
+  id: OE14VialSmallHealingAirloss
+  parent: OE14VialSmall
+  name: brad's airloss healing potion
+  suffix: Healing airloss 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14HealingEffectHealAirloss
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingAirloss
+- type: entity
+  id: OE14VialSmallHealingBlood
+  parent: OE14VialSmall
+  name: brad's blood restoration potion
+  suffix: Blood restore 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14HealingEffectBloodRestore
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingBlood
+- type: entity
+  id: OE14VialSmallHealingMana
+  parent: OE14VialSmall
+  name: brad's mana potion
+  suffix: Mana restore 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14PositiveEffectHealMana
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingMana
+- type: entity
+  id: OE14VialSmallSpeedUp
+  parent: OE14VialSmall
+  name: brad's accseleration potion
+  suffix: Speed up 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14PositiveEffectSpeedUp
+          Quantity: 1
+  localizationId: ent-OE14VialSmallSpeedUp
+- type: entity
+  id: OE14VialSmallRainbow
+  parent: OE14VialSmall
+  name: brad's funny potion
+  suffix: Rainbow and Drunk 20%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 6
+        - ReagentId: OE14SideEffectRainbow
+          Quantity: 2
+        - ReagentId: OE14SideEffectDrunk
+          Quantity: 2
+  localizationId: ent-OE14VialSmallRainbow
+- type: entity
+  id: OE14VialSmallHealingManaDepletion
+  parent: OE14VialSmall
+  name: brad's mana-healing potion
+  suffix: Healing mana 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14HealingEffectHealManaDepletion
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingManaDepletion
+- type: entity
+  id: OE14BasicEffectConfuseAura
+  parent: OE14VialSmall
+  name: brad's aura confusion potion
+  suffix: Aura confusion 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 8
+        - ReagentId: OE14PositiveEffectConfuseAura
+          Quantity: 2
+  localizationId: ent-OE14BasicEffectConfuseAura

@@ -1,0 +1,406 @@
+- type: entity
+  parent: FoodProduceBase
+  id: OE14WildProduceBase
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+  - type: BadFood
+  - type: Item
+    size: Tiny
+  localizationId: ent-OE14WildProduceBase
+- type: entity
+  id: OE14BloodFlower
+  parent: OE14WildProduceBase
+  name: blood rose
+  description: Scarlet flowers growing where blood has been spilled.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/red_rose.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+  - type: FlavorProfile
+    flavors:
+    - OE14Metallic
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14BloodFlowerSap
+        Quantity: 10
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 14
+        reagents:
+        - ReagentId: OE14BloodFlowerSap
+          Quantity: 10
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+    - OE14BloodFlower
+  - type: Clothing
+    sprite: _OE14/Objects/Flora/Wild/red_rose.rsi
+    slots:
+    - mask
+    - head
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  localizationId: ent-OE14BloodFlower
+- type: entity
+  id: OE14AgaricMushroom
+  parent: OE14WildProduceBase
+  name: fly agaric
+  description: This poisonous mushroom can often be found near bodies of water or
+    other wet areas. It is not recommended for consumption.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/agaric.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+        base3: ''
+        base4: ''
+        base5: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14AgaricMushroom
+        Quantity: 3
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: OE14AgaricMushroom
+          Quantity: 3
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+  localizationId: ent-OE14AgaricMushroom
+- type: entity
+  id: OE14ChromiumSlime
+  parent: OE14WildProduceBase
+  name: chromium slime
+  description: This rare thick substance can be found in a stream of water as if it
+    has a mind of its own. When trying to change the slime itself - the slime changes
+    the reagent it interacts with.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/chromium_slime.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+        base3: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14ChromiumSlime
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: OE14ChromiumSlime
+          Quantity: 4
+  - type: Temperature
+    currentTemperature: 250
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
+  - type: OE14TemperatureTransformation
+    entries:
+    - temperatureRange: 100, 200
+      transformTo: OE14FoodChromiumJelly
+  localizationId: ent-OE14ChromiumSlime
+- type: entity
+  id: OE14WildSage
+  parent: OE14WildProduceBase
+  name: sage
+  description: Sage flowers. A good medicinal herb that works as a hallucinogen when
+    properly processed.
+  components:
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,1
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/wild_sage.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+        base3: ''
+        base4: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14WildSageSap
+        Quantity: 15
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 17
+        reagents:
+        - ReagentId: OE14WildSageSap
+          Quantity: 15
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+  - type: Temperature
+    currentTemperature: 290
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02
+  - type: OE14TemperatureTransformation
+    entries:
+    - temperatureRange: 400, 500
+      transformTo: OE14GroundSage
+  - type: Clothing
+    sprite: _OE14/Objects/Flora/Wild/wild_sage.rsi
+    slots:
+    - head
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  localizationId: ent-OE14WildSage
+- type: entity
+  id: OE14LumiMushroom
+  parent: OE14WildProduceBase
+  name: lumishroom
+  description: A faintly luminous mushroom. Often used by alchemists as a means of
+    concentrating solutions.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/lumishroom.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+        base3: ''
+        base4: ''
+        base5: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14LumiMushroom
+        Quantity: 4
+  - type: PointLight
+    color: '#36c98f'
+    radius: 1.2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: OE14LumiMushroom
+          Quantity: 4
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+  localizationId: ent-OE14LumiMushroom
+- type: entity
+  id: OE14BlueAmanita
+  parent: OE14WildProduceBase
+  name: blue Amanita
+  description: A sky blue flower known for its medicinal and magical properties.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/blue_amanita.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14BlueAmanita
+        Quantity: 5
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: OE14BlueAmanita
+          Quantity: 5
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+  - type: Clothing
+    sprite: _OE14/Objects/Flora/Wild/blue_amanita.rsi
+    slots:
+    - head
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  localizationId: ent-OE14BlueAmanita
+- type: entity
+  id: OE14Dayflin
+  parent: OE14WildProduceBase
+  name: yellow dayflin
+  description: A yellow sun flower that smells like melted milk. Can be processed
+    into a yellow dye.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/yellow_dayflin.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14YellowDayflinPulp
+        Quantity: 8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: OE14YellowDayflinPulp
+          Quantity: 8
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+    - OE14Dayflin
+  - type: Clothing
+    sprite: _OE14/Objects/Flora/Wild/yellow_dayflin.rsi
+    slots:
+    - head
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  localizationId: ent-OE14Dayflin
+- type: entity
+  id: OE14AirLily
+  parent: OE14WildProduceBase
+  name: air lily
+  description: A light, delicate and airy flower. It is said that its special properties
+    even allow it to breathe underwater...
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Flora/water_lilies.rsi
+    layers:
+    - state: lily_icon
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        lily_icon: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14AirLily
+        Quantity: 6
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: OE14AirLily
+          Quantity: 6
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+  localizationId: ent-OE14AirLily
+- type: entity
+  id: OE14SilverNeedle
+  parent: OE14WildProduceBase
+  name: silver needle
+  description: Bright orange berries of a frost-resistant plant. Widely used in medicine.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Flora/Wild/silver_needle.rsi
+    layers:
+    - state: base1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        base1: ''
+        base2: ''
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: OE14SilverNeedle
+        Quantity: 4
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: OE14SilverNeedle
+          Quantity: 4
+  - type: Tag
+    tags:
+    - OE14FitInMortar
+    - OE14AlchemicalHerbals
+  localizationId: ent-OE14SilverNeedle

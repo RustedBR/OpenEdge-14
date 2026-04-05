@@ -1,0 +1,16 @@
+- type: gameMapPool
+  id: DefaultMapPool
+  maps:
+   - Comoss
+   - Venicialis
+   #- Frigid_Coast
+
+- type: gameMapPool
+  id: DeathMatchMapPool
+  maps:
+  - MeteorArena
+  
+#- type: gameMapPool
+#  id: ShipMapPool
+#  maps:
+#   - NautilusShip

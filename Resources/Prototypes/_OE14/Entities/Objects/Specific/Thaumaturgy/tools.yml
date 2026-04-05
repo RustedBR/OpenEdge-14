@@ -1,0 +1,78 @@
+- type: entity
+  id: OE14RitualChalk
+  parent: BaseItem
+  name: ritual chalk
+  description: Quartz chalk, handy for drawing temporary ritual circles.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi
+    state: icon
+  - type: Item
+    sprite: _OE14/Objects/Specific/Thaumaturgy/ritual_chalk.rsi
+  localizationId: ent-OE14RitualChalk
+- type: entity
+  id: OE14ManaOperationGlove
+  parent:
+  - BaseItem
+  - OE14BaseWeaponLight
+  - OE14BaseWeaponShort
+  name: mana glove
+  description: 'An unsophisticated but aesthetically pleasing blend of technology
+    and magic crystals that allows you to operate with raw mana: siphoning it from
+    some objects and pumping it into others.'
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+    storedRotation: -45
+    sprite: _OE14/Objects/Specific/Thaumaturgy/powerline_gauntlet.rsi
+  - type: OE14MagicEnergyContainer
+    magicAlert: OE14MagicEnergy
+    maxEnergy: 50
+    energy: 0
+    unsafeSupport: false
+  - type: OE14MagicEnergyExaminable
+  - type: OE14SpellStorageAccessHolding
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellManaGift
+    - OE14ActionSpellManaConsume
+    - OE14ActionSpellMagicSplittingSmall
+  - type: ThrowingAngle
+    angle: 225
+  - type: MeleeWeapon
+    angle: 0
+    attackRate: 1.2
+    range: 1.2
+    wideAnimationRotation: 225
+    wideAnimation: OE14WeaponArcThrust
+    damage:
+      types:
+        Blunt: 5
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.25
+    cPAnimationOffset: -1.3
+  - type: StaticPrice
+    price: 25
+  - type: NetworkConfigurator
+  - type: ActivatableUI
+    key: enum.NetworkConfiguratorUiKey.List
+    inHandsOnly: true
+  - type: UserInterface
+    interfaces:
+      enum.NetworkConfiguratorUiKey.List:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Configure:
+        type: NetworkConfiguratorBoundUserInterface
+      enum.NetworkConfiguratorUiKey.Link:
+        type: NetworkConfiguratorBoundUserInterface
+  localizationId: ent-OE14ManaOperationGlove

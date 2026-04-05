@@ -1,0 +1,51 @@
+
+# Artisans
+
+- type: playTimeTracker
+  id: OE14JobApprentice
+
+- type: playTimeTracker
+  id: OE14JobAlchemist
+
+- type: playTimeTracker
+  id: OE14JobBlacksmith
+
+- type: playTimeTracker
+  id: OE14JobInnkeeper
+
+# Mercenary
+
+- type: playTimeTracker
+  id: OE14JobGuildmaster
+
+- type: playTimeTracker
+  id: OE14JobGuildWorker
+
+- type: playTimeTracker
+  id: OE14JobAdventurer
+
+# Guard
+
+- type: playTimeTracker
+  id: OE14JobGuardCommander
+
+- type: playTimeTracker
+  id: OE14JobGuard
+
+- type: playTimeTracker
+  id: OE14JobInvestigator
+
+# Trade guild
+
+- type: playTimeTracker
+  id: OE14JobCommandant
+
+- type: playTimeTracker
+  id: OE14JobMerchant
+
+# Gods
+- type: playTimeTracker
+  id: OE14GodMerkas
+
+- type: playTimeTracker
+  id: OE14GodLumera

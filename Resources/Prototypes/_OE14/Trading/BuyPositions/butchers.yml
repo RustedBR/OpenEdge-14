@@ -1,0 +1,206 @@
+# Reputation Level 0 - Common Meats
+- type: oe14TradingPosition
+  id: OE14FoodMeatLamb
+  faction: Butchers
+  uiPosition: 0
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: sheepmeat
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatLamb
+    count: 2
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatPig
+  faction: Butchers
+  uiPosition: 1
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: pig_meat1
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatPig
+    count: 2
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatRabbit
+  faction: Butchers
+  uiPosition: 2
+  priceMarkup: 10
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: rabbit_meat1
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatRabbit
+    count: 3
+
+# Reputation Level 1 - Special Meats
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatLambCutlet
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 0
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: cutlet
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatLambCutlet
+    count: 3
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatPigLeg
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 1
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: pig_meat5
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatPigLeg
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatBoar
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 2
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: pig_meat2
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatBoar
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatFrogLeg
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: frog_leg
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatFrogLeg
+    count: 4
+
+# Reputation Level 2 - Exotic Meats
+- type: oe14TradingPosition
+  id: OE14FoodMeatHydra
+  faction: Butchers
+  reputationLevel: 2
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: dino_meat2
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatHydra
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatMonster
+  faction: Butchers
+  reputationLevel: 2
+  uiPosition: 5
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: mole_meat1
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatMonster
+    count: 1
+
+
+# Reputation Level 3 - Rare Meats
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatDino
+  faction: Butchers
+  reputationLevel: 3
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: dino_meat1
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatDino
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatMonsterLeg
+  faction: Butchers
+  reputationLevel: 3
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: mole_meat5
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatMonsterLeg
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatFlemHead
+  faction: Butchers
+  reputationLevel: 3
+  uiPosition: 1
+  priceMarkup: 15
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: flem_head
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatFlemHead
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14FoodMeatFlemTorso
+  faction: Butchers
+  reputationLevel: 3
+  uiPosition: 2
+  priceMarkup: 10
+  icon:
+    sprite: _OE14/Objects/Consumable/Food/meat.rsi
+    state: flem_torso
+  service: !type:OE14BuyItemsService
+    product: OE14FoodMeatFlemTorso
+    count: 1
+
+
+# Hide
+
+- type: oe14TradingPosition
+  id: OE14ThinLeather
+  faction: Butchers
+  reputationLevel: 1
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Ingredients/hide.rsi
+    state: thin_hide1
+  service: !type:OE14BuyItemsService
+    product: OE14ThinLeather1
+
+- type: oe14TradingPosition
+  id: OE14Leather
+  faction: Butchers
+  reputationLevel: 2
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Ingredients/hide.rsi
+    state: hide1
+  service: !type:OE14BuyItemsService
+    product: OE14Leather1
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14RuggedLeather
+  faction: Butchers
+  reputationLevel: 3
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Ingredients/hide.rsi
+    state: rugged_hide1
+  service: !type:OE14BuyItemsService
+    product: OE14RuggedLeather1
+    count: 1

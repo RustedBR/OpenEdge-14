@@ -1,0 +1,25 @@
+- type: constructionGraph
+  id: OE14OrderBoard
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14OrderBoard
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 3
+
+    - node: OE14OrderBoard
+      entity: OE14OrderBoard
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 3

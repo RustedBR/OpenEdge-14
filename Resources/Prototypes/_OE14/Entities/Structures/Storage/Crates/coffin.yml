@@ -1,0 +1,49 @@
+- type: entity
+  parent:
+  - OE14ChestGeneric
+  - OE14BaseFlammable
+  id: OE14CrateCoffin
+  name: coffin
+  description: A comfortable and nice looking coffin to comfortably await your resurrection.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Storage/Crates/coffin.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: _OE14/Structures/Storage/Crates/coffin.rsi
+    state: base
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14CrateCoffin
+    node: OE14CrateCoffin
+    containers:
+    - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 30
+      OE14Cloth: 20
+  - type: EntityStorage
+    capacity: 1

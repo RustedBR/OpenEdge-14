@@ -1,0 +1,36 @@
+<Document>
+
+# Investigador
+
+<Box>
+<GuideEntityEmbed Entity="OE14ClothingCloakGuardInvestigator" Caption="Manto do Investigador"/>
+</Box>
+
+O Investigador opera dentro do departamento de Guardas, mas com um foco diferente: detecção em vez de patrulha. Usando visão mágica e habilidades analíticas, Investigadores descobrem contrabando escondido, rastreiam atividade mágica e constroem casos que Guardas comuns não conseguem desvendar.
+
+## Responsabilidades
+
+- Investigar crimes, roubos e atividades suspeitas
+- Detectar contrabando mágico e itens escondidos usando visão mágica
+- Entrevistar testemunhas e coletar evidências
+- Construir casos para apoiar decisões do Comandante da Guarda
+- Identificar usuários de magia operando fora da lei
+
+## Habilidades Únicas
+
+[bold][color=#5EABEB]Alternar Visão Mágica[/color][/bold] — revela auras mágicas em entidades e jogadores. Use isto para detectar itens enchantados, contrabando escondido e ferramentas mágicas ilegais.
+
+[bold][color=#5EABEB]Divisão Mágica[/color][/bold] — uma habilidade orientada para detecção usada para analisar propriedades mágicas de objetos.
+
+## Requisitos
+
+[bold]1 hora[/bold] no departamento de Guardas. Salário: [bold]75 moedas[/bold] por ciclo.
+
+## Dicas
+
+- Use [color=#5EABEB]Visão Mágica[/color] frequentemente — ela revela coisas que um Guarda padrão passaria
+- Document findings before acting — um Investigador precisa de evidências, não apenas suspeita
+- Coordene-se com o Comandante da Guarda antes de fazer qualquer prisão
+- Seu papel é inteligência e investigação, não patrulha — deixe Guardas lidarem com controle de multidão
+
+</Document>

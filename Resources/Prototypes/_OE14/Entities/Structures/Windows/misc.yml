@@ -1,0 +1,109 @@
+- type: entity
+  id: OE14WindowIceBlock
+  parent: OE14WindowBase
+  name: ice block
+  description: Smooth and translucent ice.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Windows/ice_block.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Windows/ice_block.rsi
+    state: full
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: InteractionPopup
+    interactSuccessString: popup-oe14crystal-ding
+    messagePerceivedByOthers: popup-oe14crystal-ding
+    interactSuccessSound:
+      collection: OE14CrystalDings
+      params:
+        variation: 0.03
+
+- type: entity
+  id: OE14WindowMagicIceBlock
+  name: magic ice block
+  description: Ice created by magic with a distinct purple hue.
+  categories: [ ForkFiltered ]
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _OE14/Structures/Windows/ice_block.rsi
+    color: "#5eabeb"
+  - type: Icon
+    sprite: _OE14/Structures/Windows/ice_block.rsi
+    state: full
+  - type: IconSmooth
+    key: OE14window
+    base: window
+  - type: PlacementReplacement
+    key: walls
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: Appearance
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 1000
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: GlassSmash
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.1
+    sprintSpeedModifier: 0.1
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Cold: 2
+  - type: DamageOnInteract
+    damage:
+      types:
+        Cold: 2
+  - type: DamageContacts
+    damage:
+      types:
+        Cold: 1

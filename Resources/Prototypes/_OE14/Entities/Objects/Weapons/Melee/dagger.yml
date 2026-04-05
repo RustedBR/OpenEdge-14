@@ -1,0 +1,105 @@
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponDagger
+  parent:
+  - BaseItem
+  - OE14BaseWeaponChemical
+  - OE14BaseWeaponDestructible
+  - OE14BaseWeaponSelfDamage
+  - OE14BaseWeaponSharp
+  - OE14BaseWeaponThrowable
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,0
+  - type: EmbeddableProjectile
+    offset: -0.15,-0.15
+    removalTime: 1.5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 3.4
+        Piercing: 6.8
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    autoAttack: true
+    attackRate: 2
+    range: 1
+    angle: 60
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Slash: 1.7
+        Piercing: 2.55
+    animation: OE14WeaponArcThrust
+    wideAnimation: OE14WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    cPAnimationLength: 0.15
+    cPAnimationOffset: 0.75
+  - type: Clothing
+    slots:
+    - belt
+    breakOnMove: false
+    equipDelay: 0.5
+    unequipDelay: 0.5
+  localizationId: ent-OE14BaseWeaponDagger
+- type: entity
+  parent: OE14BaseWeaponDagger
+  id: OE14WeaponDaggerIron
+  name: iron dagger
+  description: A standard dagger made of iron.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Melee/Dagger/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 10
+      OE14Iron: 5
+  - type: OE14ModularCraftStartPoint
+    startSlots:
+    - OE14ModularSlotGem
+    - OE14ModularSlotModification
+  - type: OE14StatBonus
+  localizationId: ent-OE14WeaponDaggerIron
+- type: entity
+  parent: OE14BaseWeaponDagger
+  id: OE14WeaponDaggerHatchet
+  name: hatchet
+  description: A small hatchet, commonly used as a kitchen utensil for preparing food.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Melee/Dagger/hatchet.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 10
+      OE14Iron: 10
+  - type: OE14ModularCraftStartPoint
+    startSlots:
+    - OE14ModularSlotGem
+    - OE14ModularSlotModification
+  - type: OE14StatBonus
+  localizationId: ent-OE14WeaponDaggerHatchet
+- type: entity
+  parent: OE14BaseWeaponDagger
+  id: OE14WeaponDaggerSickle
+  name: sickle
+  description: A curved blade used for harvesting crops, but can be deadly in skilled
+    hands.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Melee/Dagger/sickle.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 10
+      OE14Iron: 10
+  - type: OE14ModularCraftStartPoint
+    startSlots:
+    - OE14ModularSlotGem
+    - OE14ModularSlotModification
+  - type: OE14StatBonus
+  localizationId: ent-OE14WeaponDaggerSickle

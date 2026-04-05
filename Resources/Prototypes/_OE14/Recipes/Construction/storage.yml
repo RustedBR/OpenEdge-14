@@ -1,0 +1,121 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14CrateDirtPitGrave
+  graph: OE14CrateDirtPitGrave
+  startNode: start
+  targetNode: OE14CrateDirtPitGrave
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+    - !type:TileType
+      targets:
+        - OE14FloorDirt
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenChest
+  graph: OE14WoodenChest
+  startNode: start
+  targetNode: OE14WoodenChest
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14GoldChest
+  graph: OE14GoldChest
+  startNode: start
+  targetNode: OE14GoldChest
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14SmallWoodenCrate
+  graph: OE14SmallWoodenCrate
+  startNode: start
+  targetNode: OE14SmallWoodenCrate
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14LargeWoodenCrate
+  graph: OE14LargeWoodenCrate
+  startNode: start
+  targetNode: OE14LargeWoodenCrate
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14CrateCoffin
+  graph: OE14CrateCoffin
+  startNode: start
+  targetNode: OE14CrateCoffin
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14BaseBarrel
+  graph: OE14BaseBarrel
+  startNode: start
+  targetNode: OE14BaseBarrel
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: PlaceFree
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14CraneBarrel
+  graph: OE14CraneBarrel
+  startNode: start
+  targetNode: OE14CraneBarrel
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14CraneBarrelSmall
+  graph: OE14CraneBarrelSmall
+  startNode: start
+  targetNode: OE14CraneBarrelSmall
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

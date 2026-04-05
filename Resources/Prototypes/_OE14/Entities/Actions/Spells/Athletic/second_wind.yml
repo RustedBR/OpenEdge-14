@@ -1,0 +1,57 @@
+- type: entity
+  id: OE14ActionSpellSecondWind
+  parent: 
+  - OE14ActionSpellBase
+  - BaseMentalAction
+  name: Second wind
+  description: Through pain and blood, you find a second wind, instantly restoring your stamina.
+  components:
+  - type: Action
+    useDelay: 10
+    sound: null
+    icon:
+      sprite: _OE14/Actions/Spells/physical.rsi
+      state: second_wind
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectSecondWind
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:MovespeedModifier
+          walkSpeedModifier: 1.15
+          sprintSpeedModifier: 1.15
+          statusLifetime: 2
+        - !type:OE14StaminaChange
+          staminaDelta: 100
+        - !type:HealthChange
+          damage:
+            types:
+              Blunt: 20
+        - !type:ModifyStatusEffect
+          effectProto: StatusEffectStunned
+          time: 6
+          type: Remove
+
+- type: entity
+  id: OE14ImpactEffectSecondWind
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: circle_increase
+      color: "#b30713"
+      shader: unshaded
+  - type: EmitSoundOnSpawn
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_OE14/Effects/heartbeat.ogg
+  - type: PointLight
+    color: "#b30713"
+    radius: 2.0
+    energy: 2.0
+  - type: LightFade

@@ -1,0 +1,31 @@
+- type: job
+  id: OE14Apprentice
+  name: oe14-job-name-apprentice
+  description: oe14-job-desc-apprentice
+  playTimeTracker: OE14JobApprentice
+  startingGear: OE14ApprenticeGear
+  icon: "OE14JobIconApprentice"
+  supervisors: oe14-job-supervisors-command
+  special:
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - DwarfMining
+      - HomeDecor
+      - Tailors
+      - Horticulture
+      - Butchers
+      - Dairy
+    - !type:OE14LearnSkillsSpecial
+      skills:
+      #- CopperMelting
+      - AlchemyVision
+
+- type: startingGear
+  id: OE14ApprenticeGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+    - OE14EnergyCrystalMedium
+  equipment:
+    keys: OE14BaseKeyRing
+    belt: OE14WalletFilledTest

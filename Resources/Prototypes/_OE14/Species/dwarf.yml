@@ -1,0 +1,133 @@
+- type: species
+  id: OE14Dwarf
+  name: oe14-species-name-dwarf
+  roundStart: true
+  prototype: OE14MobDwarf
+  sprites: OE14MobDwarfSprites
+  markingLimits: MobHumanMarkingLimits
+  dollPrototype: OE14MobDwarfDummy
+  skinColoration: HumanToned
+  maleFirstNames: OE14_Names_Dwarf_Male_First #TODO
+  femaleFirstNames: OE14_Names_Dwarf_Female_First #TODO
+  lastNames: OE14_Names_Dwarf_Last #TODO
+  minAge: 18
+  maxAge: 350
+  youngAge: 100
+  oldAge: 175
+
+- type: speciesBaseSprites
+  id: OE14MobDwarfSprites
+  sprites:
+    Head: OE14MobDwarfHead
+    HeadTop: OE14MobDwarfMarkingMatchSkin
+    Hair: OE14MobDwarfAnyMarking
+    FacialHair: OE14MobDwarfAnyMarking
+    Snout: OE14MobDwarfMarkingMatchSkin
+    Tail: OE14MobDwarfMarkingMatchSkin
+    Chest: OE14MobDwarfTorso
+    Eyes: OE14MobDwarfEyes
+    LArm: OE14MobDwarfLArm
+    RArm: OE14MobDwarfRArm
+    LHand: OE14MobDwarfLHand
+    RHand: OE14MobDwarfRHand
+    LLeg: OE14MobDwarfLLeg
+    RLeg: OE14MobDwarfRLeg
+    LFoot: OE14MobDwarfLFoot
+    RFoot: OE14MobDwarfRFoot
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfEyes
+  baseSprite:
+    sprite: _OE14/Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfAnyMarking
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfHead
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfHeadMale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfHeadFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfTorso
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfTorsoMale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfTorsoFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfLLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfLArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfLHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfLFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfRLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfRArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfRHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobDwarfRFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: r_foot

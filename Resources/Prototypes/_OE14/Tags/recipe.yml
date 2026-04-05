@@ -1,0 +1,21 @@
+- type: Tag
+  id: OE14RecipeSewing
+
+- type: Tag
+  id: OE14RecipeCooking
+
+- type: Tag
+  id: OE14RecipeWorkbench
+
+- type: Tag
+  id: OE14RecipeAnvil
+
+- type: Tag
+  id: OE14RecipeMeltingFurnace
+
+- type: Tag
+  id: OE14RecipeLeatherWorking
+
+- type: Tag
+  id: OE14RecipeVampire
+  

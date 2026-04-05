@@ -1,0 +1,59 @@
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadGuildBeret
+  name: guild beret
+  description: A welcoming sign of care and responsibility.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/guild_beret.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/guild_beret.rsi
+  localizationId: ent-OE14ClothingHeadGuildBeret
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadGuildBeretRed
+  name: red guild beret
+  description: A welcoming sign of care and responsibility. This one is associated
+    with hunting and fighting.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/red_guild_beret.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/red_guild_beret.rsi
+  localizationId: ent-OE14ClothingHeadGuildBeretRed
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadGuildBeretYellow
+  name: yellow guild beret
+  description: A welcoming sign of care and responsibility. This one is associated
+    with gathering and mining.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/yellow_guild_beret.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/yellow_guild_beret.rsi
+  localizationId: ent-OE14ClothingHeadGuildBeretYellow
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadGuildBeretBlue
+  name: blue guild beret
+  description: A welcoming sign of care and responsibility. This one is associated
+    with creating and building.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/blue_guild_beret.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/blue_guild_beret.rsi
+  localizationId: ent-OE14ClothingHeadGuildBeretBlue
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadGuildBeretGreen
+  name: green guild beret
+  description: A welcoming sign of care and responsibility. This one is associated
+    with speaking and teaching.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/green_guild_beret.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/GuildWorker/green_guild_beret.rsi
+  localizationId: ent-OE14ClothingHeadGuildBeretGreen

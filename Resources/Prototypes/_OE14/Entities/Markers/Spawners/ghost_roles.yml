@@ -1,0 +1,23 @@
+- type: entity
+  id: SpawnPointGhostRat
+  name: ghost role spawn point
+  description: A ghost role for a rat
+  suffix: Rat
+  categories: [ ForkFiltered ]
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: oe14-ghost-role-information-name-rat
+    description: oe14-ghost-role-information-description-rat
+    rules: oe14-ghost-role-information-rules-pet
+    allowMovement: true
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: OE14MobRat
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _OE14/Mobs/Pets/rat.rsi
+        state: rat

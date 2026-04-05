@@ -1,0 +1,70 @@
+- type: entity
+  id: OE14ActionSpellIceArrow
+  parent: OE14ActionSpellBase
+  name: Ice arrow
+  description: You create a temporary sharp ice arrow that can be used as a disposable bow projectile.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 7
+  - type: OE14ActionSpeaking
+    startSpeech: "Sagitta glaciei..."
+    endSpeech: "in manu mea"
+  - type: OE14ActionFreeHandsRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneWaterCreation
+  - type: DoAfterArgs
+    delay: 0.5
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/water.rsi
+      state: ice_arrow
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectWaterCreation
+      - !type:OE14SpellSpawnInHandEntity
+        spawns:
+        - OE14IceArrow
+
+- type: entity
+  parent: OE14BaseSpellScrollWater
+  id: OE14SpellScrollIceArrow
+  name: ice arrow spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellIceArrow
+
+- type: entity
+  id: OE14IceArrow
+  parent: OE14ArrowBase
+  name: ice arrow
+  description: A sharp ice arrow created with magic. It melts and will soon disappear, but you can shoot it once with your bow.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Ranged/Projectiles/ice_arrow.rsi
+    layers: 
+    - state: icon
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 15
+        Cold: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: TimedDespawn
+    lifetime: 240

@@ -1,0 +1,43 @@
+<Document>
+# Network Implementation (Character Stats)
+
+This page covers how character stats are synchronized between server and client.
+
+## AutoNetworkedField
+
+Stat fields that clients need to display use the [mono]AutoNetworkedField[/mono] attribute:
+
+<CodeBlock>
+[DataField, AutoNetworkedField]
+public int EffectiveStrength { get; set; }
+
+[DataField, AutoNetworkedField]
+public Dictionary<ModifierSource, int> StrengthModifiers { get; set; } = new();
+</CodeBlock>
+
+When the server updates these fields, all connected clients automatically receive the new values.
+
+## What Gets Synced
+
+- Effective stat values (for display in the character window)
+- Modifier dictionaries (so client can show the breakdown)
+- Available points (for the stat spending UI)
+
+## What Stays Server-Only
+
+- Base stat validation logic
+- Overflow calculation
+- Database persistence
+
+## Client UI Update
+
+When the client receives an updated stat component, the character window refreshes automatically. The UI reads from the networked fields to show:
+- Current effective value
+- Modifier breakdown by source
+- Available points remaining
+
+## Content Under Construction
+
+Full network implementation documentation coming soon. See [textlink="Network Synchronization" link="OE14_DEV_Arch_Netcode"] for the general networking architecture.
+
+</Document>

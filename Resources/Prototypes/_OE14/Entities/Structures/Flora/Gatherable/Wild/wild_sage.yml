@@ -1,0 +1,26 @@
+- type: entity
+  id: OE14GatherableWildSage
+  parent: OE14GatherableBase
+  name: wild sage
+  description: Root of this ubiquitous medicinal plant not bad at healing physical injuries, and inducing coughing.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _OE14/Structures/Flora/Wild/wild_sage.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+  - type: OE14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: !type:GroupSelector
+        children:
+        - id: OE14WildSage
+

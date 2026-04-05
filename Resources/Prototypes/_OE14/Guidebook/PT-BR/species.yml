@@ -1,0 +1,55 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Species
+  name: Raças Jogáveis
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Species.xml"
+  children:
+  - OE14_PT_Human
+  - OE14_PT_Silva
+  - OE14_PT_Elf
+  - OE14_PT_Tiefling
+  - OE14_PT_Goblin
+  - OE14_PT_Carcat
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Human
+  name: Humano
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Human.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Silva
+  name: Silva
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Silva.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Elf
+  name: Elfo
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Elf.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Tiefling
+  name: Tiefling
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Tiefling.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Goblin
+  name: Goblin
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Goblin.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Carcat
+  name: Carcat
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Carcat.xml"
+  filterEnabled: True

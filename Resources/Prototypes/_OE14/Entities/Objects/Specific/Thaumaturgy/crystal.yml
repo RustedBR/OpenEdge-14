@@ -1,0 +1,42 @@
+- type: entity
+  id: OE14EnergyCrystalBase
+  parent: BaseItem
+  abstract: true
+  description: A crystal shard capable of storing magical energy.
+  categories:
+  - ForkFiltered
+  components:
+  - type: OE14MagicEnergyCrystal
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Thaumaturgy/crystal.rsi
+  - type: OE14MagicEnergyContainer
+  - type: OE14MagicEnergyExaminable
+  - type: Tag
+    tags:
+    - OE14EnergyCrystal
+  - type: StaticPrice
+    price: 15
+  localizationId: ent-OE14EnergyCrystalBase
+- type: entity
+  id: OE14EnergyCrystalMedium
+  parent: OE14EnergyCrystalBase
+  name: energyshard
+  suffix: Full
+  components:
+  - type: Sprite
+    layers:
+    - state: medium
+  - type: OE14MagicEnergyContainer
+    energy: 50
+    maxEnergy: 50
+  localizationId: ent-OE14EnergyCrystalMedium
+- type: entity
+  id: OE14EnergyCrystalMediumEmpty
+  parent: OE14EnergyCrystalMedium
+  suffix: Empty
+  components:
+  - type: OE14MagicEnergyContainer
+    energy: 0
+  localizationId: ent-OE14EnergyCrystalMediumEmpty

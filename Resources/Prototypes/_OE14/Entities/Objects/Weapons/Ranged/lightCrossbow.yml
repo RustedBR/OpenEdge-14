@@ -1,0 +1,65 @@
+- type: entity
+  id: OE14BaseLightCrossbow
+  name: light crossbow
+  parent: BaseItem
+  categories: [ ForkFiltered ]
+  description: A small, compact crossbow that is comfortable to hold with one hand. Not too accurate on the reverse side.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Ranged/light_crossbow.rsi
+    layers:
+    - state: unwielded
+      map: [ base ]
+  - type: Item
+    size: Normal
+  - type: Clothing
+    equipDelay: 0.45
+    unequipDelay: 0.45
+    sprite: _OE14/Objects/Weapons/Ranged/light_crossbow.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - belt
+  - type: UseDelay
+    delay: 1
+  - type: Gun
+    fireRate: 1
+    minAngle: 15
+    maxAngle: 35
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      collection: BulletMiss
+    soundEmpty: null
+  - type: ItemSlots
+    slots:
+      projectiles:
+        name: Projectiles
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
+        whitelist:
+          tags:
+          - OE14CrossbowBolt
+  - type: ContainerContainer
+    containers:
+      projectiles: !type:ContainerSlot
+  - type: ContainerAmmoProvider
+    container: projectiles
+  - type: Appearance
+  - type: ItemMapper
+    mapLayers:
+      unwielded-arrow:
+        whitelist:
+          tags:
+            - OE14CrossbowBolt
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 10
+      OE14Iron: 30
+      OE14Cloth: 5
+  - type: OE14ModularCraftStartPoint
+    startSlots:
+      - OE14ModularSlotGem
+      - OE14ModularSlotModification
+  - type: OE14StatBonus

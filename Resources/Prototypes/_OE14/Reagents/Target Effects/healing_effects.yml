@@ -1,0 +1,162 @@
+# T1 / Simple healing effects
+- type: reagent
+  id: OE14HealingEffectHealBrute
+  name: oe14-reagent-name-basic-heal-brute
+  desc: oe14-reagent-desc-basic-heal-brute
+  group: OE14HealingEffect
+  flavor: OE14Metallic
+  color: "#e31010"
+  physicalDesc: oe14-reagent-physical-desc-scarlet
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:ModifyBleedAmount
+        amount: -2
+      - !type:EvenHealthChange
+        damage:
+          Brute: -6
+  pricePerUnit: 3.0  # 2×Life (0.4) + Order (0.25) + Water (0.1) = 1.05 → x3 for balance
+
+- type: reagent
+  id: OE14HealingEffectHealHeat
+  name: oe14-reagent-name-basic-heal-heat
+  desc: oe14-reagent-desc-basic-heal-heat
+  group: OE14HealingEffect
+  flavor: OE14Stinging
+  color: "#BF361E"
+  physicalDesc: oe14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 295
+        amount: -5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          min: 295
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
+  pricePerUnit: 3.5  # 1×Life (0.2) + 1×Fire (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x4.375
+
+- type: reagent
+  id: OE14HealingEffectHealCold
+  name: oe14-reagent-name-basic-heal-cold
+  desc: oe14-reagent-desc-basic-heal-cold
+  group: OE14HealingEffect
+  flavor: OE14Stinging
+  color: "#a3511a"
+  physicalDesc: oe14-reagent-physical-desc-sparkling
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        amount: 5000
+      - !type:PopupMessage
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        type: Local
+        visualType: Medium
+        messages: [ "leporazine-effect-temperature-adjusting" ]
+        probability: 0.1
+  pricePerUnit: 4.0  # 1×Life (0.2) + 1×Frost (0.2) + 1×Order (0.25) + Water (0.1) = 0.75 → x5.33
+
+- type: reagent
+  id: OE14HealingEffectHealPoison
+  name: oe14-reagent-name-basic-heal-poison
+  desc: oe14-reagent-desc-basic-heal-poison
+  group: OE14HealingEffect
+  flavor: OE14Bitterly
+  color: "#82ba3d"
+  physicalDesc: oe14-reagent-physical-desc-viscous
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -10
+  pricePerUnit: 3.5  # 1×Life (0.2) + 1×Poison (0.2) + 1×Order (0.25) + Water (0.1) = 0.75 → x4.66
+
+- type: reagent
+  id: OE14HealingEffectHealAirloss
+  name: oe14-reagent-name-basic-heal-airloss
+  desc: oe14-reagent-desc-basic-heal-airloss
+  group: OE14HealingEffect
+  flavor: fizzy
+  color: "#e6f4f5"
+  worksOnTheDead: true
+  physicalDesc: reagent-physical-desc-milky
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -10
+  pricePerUnit: 4.0  # 1×Life (0.2) + 1×Air (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x5
+
+- type: reagent
+  id: OE14HealingEffectHealManaDepletion
+  name: oe14-reagent-name-basic-heal-manadepletion
+  desc: oe14-reagent-desc-basic-heal-manadepletion
+  group: OE14HealingEffect
+  flavor: OE14Bitterly
+  color: "#2d4d79"
+  physicalDesc: oe14-reagent-physical-desc-viscous
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.05
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            OE14ManaDepletion: -10
+  pricePerUnit: 3.0  # 1×Life (0.2) + 2×Energia (0.4) + Water (0.1) = 0.7 → x4.28
+
+- type: reagent
+  id: OE14HealingEffectBloodRestore
+  name: oe14-reagent-name-basic-blood-restore
+  desc: oe14-reagent-desc-basic-blood-restore
+  group: OE14HealingEffect
+  flavor: OE14Metallic
+  color: "#e31010"
+  worksOnTheDead: true
+  physicalDesc: oe14-reagent-physical-desc-scarlet
+  metabolisms:
+    Poison:
+      metabolismRate: 0.05
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 20
+      - !type:HealthChange
+        damage:
+          types:
+            Bloodloss: -5
+  pricePerUnit: 4.0  # 1×Life (0.2) + 1×Water (0.25) + 1×Order (0.25) + Water (0.1) = 0.8 → x5

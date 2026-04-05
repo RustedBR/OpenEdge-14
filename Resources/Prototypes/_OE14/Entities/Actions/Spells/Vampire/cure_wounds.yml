@@ -1,0 +1,56 @@
+- type: entity
+  id: OE14ActionSpellVampireCureWounds
+  parent: OE14ActionSpellBase
+  name: Cure blood
+  description: You heal the target from any kind of damage.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 12
+  - type: OE14MagicEffectVampire
+  - type: OE14ActionSkillPointCost
+    skillPoint: Blood
+    count: 0.1
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneVampireHypnosis
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: wound_heal
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: DoAfterArgs
+    delay: 1.5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodEssence
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodEssence
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Slash: -15
+              Blunt: -15
+              Piercing: -15
+              Poison: -15
+              Bloodloss: -15
+              Caustic: -15
+              Cold: -15
+              Heat: -15
+              Shock: -15
+        - !type:Jitter
+        - !type:ModifyBleedAmount
+          amount: -25

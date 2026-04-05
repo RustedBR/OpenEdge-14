@@ -1,0 +1,15 @@
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconGodMerkas
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_god_icons.rsi
+    state: Merkas
+  jobName: oe14-job-name-god-merkas
+
+- type: jobIcon
+  parent: OE14JobIcon
+  id: OE14JobIconGodLumera
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/job_god_icons.rsi
+    state: Lumera
+  jobName: oe14-job-name-god-lumera

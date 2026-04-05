@@ -1,0 +1,58 @@
+- type: alert
+  id: OE14MagicEnergy
+  icons:
+  - sprite: /Textures/_OE14/Interface/Alerts/empty.rsi
+    state: empty
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana0
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana1
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana2
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana3
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana4
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana5
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana6
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana7
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana8
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi
+    state: mana9
+  - sprite: /Textures/_OE14/Interface/Alerts/mana.rsi #TODO: Without this dublication, alerts never be fully null
+    state: mana9
+  name: oe14-alerts-magic-energy-name
+  description: oe14-alerts-magic-energy-desc
+  minSeverity: 0
+  maxSeverity: 11
+
+- type: alert
+  id: OE14VampireStarving
+  category: Hunger
+  icons:
+  - sprite: /Textures/_OE14/Interface/Alerts/vampire_hunger.rsi
+    state: starving
+  name: alerts-starving-name
+  description: alerts-starving-desc
+
+- type: alert
+  id: OE14VampirePeckish
+  category: Hunger
+  icons:
+  - sprite: /Textures/_OE14/Interface/Alerts/vampire_hunger.rsi
+    state: peckish
+  name: alerts-hunger-name
+  description: alerts-hunger-desc
+
+- type: alert
+  id: OE14DivineOffer
+  icons:
+  - sprite: /Textures/_OE14/Interface/Alerts/divine_offer.rsi
+    state: offer
+  name: oe14-alert-offer
+  description: oe14-alert-offer-desc
+  clickEvent: !type:OE14BreakDivineOfferEvent

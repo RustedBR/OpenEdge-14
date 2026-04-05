@@ -1,0 +1,87 @@
+- type: entity
+  id: OE14StatusEffectMagicArmor
+  parent: MobStatusEffectBase
+  components:
+  - type: StatusEffect
+  - type: StatusEffectAlert
+    alert: OE14MagicArmor
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _OE14/Effects/Magic/cast_rune.rsi
+    noRot: true
+    layers:
+    - state: sphere
+      shader: unshaded
+      color: '#5096d4'
+    - state: circle_increase
+      sprite: _OE14/Effects/Magic/cast_impact.rsi
+      shader: unshaded
+      color: '#74eaf2'
+  - type: PointLight
+    radius: 2.5
+    energy: 0.9
+    color: '#5096d4'
+  - type: OE14DamageModifierStatusEffect
+    globalDefence: 0.6
+  localizationId: ent-OE14StatusEffectMagicArmor
+- type: entity
+  id: OE14StatusEffectGlowing
+  name: glowing
+  components:
+  - type: StatusEffect
+  - type: StatusEffectAlert
+    alert: OE14Glowing
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _OE14/Effects/Magic/sphere_of_light.rsi
+    offset: 0, 1
+    noRot: true
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: PointLight
+    radius: 5.0
+    energy: 1
+    color: '#efedff'
+  localizationId: ent-OE14StatusEffectGlowing
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: OE14StatusEffectVampireForceSleep
+  name: forced sleep
+  components:
+  - type: StatusEffectAlert
+    alert: OE14VampireSleeping
+  - type: ForcedSleepingStatusEffect
+  - type: StunnedStatusEffect
+  - type: KnockdownStatusEffect
+  localizationId: ent-OE14StatusEffectVampireForceSleep
+- type: entity
+  id: MobStatusEffectMagicAuraConfused
+  name: confused aura
+  components:
+  - type: StatusEffect
+  - type: StatusEffectAlert
+    alert: OE14ConfusedAura
+  - type: OE14HideMagicAuraStatusEffect
+- type: entity
+  id: OE14StatusEffectVuln
+  name: vulnerability
+  components:
+  - type: StatusEffect
+  - type: StatusEffectAlert
+    alert: OE14Vuln
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _OE14/Effects/Magic/cast_impact.rsi
+    noRot: true
+    layers:
+    - state: particles_down
+      shader: unshaded
+      color: '#a81e33'
+  - type: PointLight
+    radius: 2.5
+    energy: 0.9
+    color: '#a81e33'
+  - type: OE14DamageModifierStatusEffect
+    globalDefence: 1.4
+  localizationId: ent-OE14StatusEffectVuln

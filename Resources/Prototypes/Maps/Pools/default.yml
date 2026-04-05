@@ -1,0 +1,4 @@
+- type: gameMapPool
+  id: NOOE14DefaultMapPool
+  maps:
+  - Dev

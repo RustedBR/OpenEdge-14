@@ -1,0 +1,42 @@
+- type: entity
+  parent: OE14IronDoor
+  id: OE14IronDoorGuardGuildmaster
+  suffix: Guildmaster
+  components:
+  - type: OE14Lock
+    autoGenerateShape: Guildmaster
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorGuardGuildmaster
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorAdventureGuild
+  suffix: Adventure guild
+  components:
+  - type: OE14Lock
+    autoGenerateShape: AdventureGuild
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorAdventureGuild
+- type: entity
+  parent: OE14WoodenDoorAdventureGuild
+  id: OE14WoodenDoorAdventureGuildOpen
+  suffix: Adventure guild Open
+  components:
+  - type: Lock
+    locked: false
+  localizationId: ent-OE14WoodenDoorAdventureGuildOpen
+- type: entity
+  parent:
+  - OE14WoodenDoorAdventureGuild
+  - OE14WoodenDoorMirrored
+  id: OE14WoodenDoorAdventureGuildMirrored
+  suffix: Adventure guild, Mirrored
+  localizationId: ent-OE14WoodenDoorAdventureGuildMirrored
+- type: entity
+  parent:
+  - OE14WoodenDoorAdventureGuildOpen
+  - OE14WoodenDoorMirrored
+  id: OE14WoodenDoorAdventureGuildMirroredOpen
+  suffix: Adventure guild, Mirrored, Open
+  localizationId: ent-OE14WoodenDoorAdventureGuildMirroredOpen

@@ -1,0 +1,44 @@
+- type: marking
+  id: OE14ElfEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Elf ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/elf_ears.rsi
+      state: ears1
+
+- type: marking
+  id: OE14ElfEars2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Elf ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/elf_ears.rsi
+      state: ears2
+
+- type: marking
+  id: OE14ElfEars3
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Elf ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/elf_ears.rsi
+      state: ears3
+
+- type: marking
+  id: OE14ElfEars3Broken
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Elf ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/elf_ears.rsi
+      state: ears3_broken
+
+- type: marking
+  id: OE14ElfEars4
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Elf ]
+  sprites:
+  - sprite: _OE14/Mobs/Customization/elf_ears.rsi
+    state: ears4

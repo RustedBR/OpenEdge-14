@@ -1,0 +1,22 @@
+- type: entity
+  parent: OE14ClothingCloakBase
+  id: OE14ClothingCloakBone
+  name: bone cloak
+  description: A brutal cloak for brutal skeletons.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/bone_cloak.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/bone_cloak.rsi
+  localizationId: ent-OE14ClothingCloakBone
+- type: entity
+  parent: OE14ClothingCloakBone
+  id: OE14ClothingCloakBoneMage
+  name: bone armor with cloak
+  description: The leader's cloak, for the leader's skeleton!
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Cloak/bone_mage_cloak.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Cloak/bone_mage_cloak.rsi
+  localizationId: ent-OE14ClothingCloakBoneMage

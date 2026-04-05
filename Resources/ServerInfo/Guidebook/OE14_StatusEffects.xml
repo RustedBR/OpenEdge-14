@@ -1,0 +1,64 @@
+<Document>
+  # Status Effects
+
+  Status effects are temporary conditions applied to characters through spells or other abilities. They modify behavior, stats, or provide special effects.
+
+  ## How Status Effects Work
+
+  Status effects are applied by certain spells and last for a specific duration. When the duration expires, the effect is removed automatically.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MagicVisionStatusEffect" Caption="Magic Vision"/>
+  </Box>
+
+  ## Applying Status Effects
+
+  Most status effects are applied through [bold]spells[/bold]. When you cast a spell that applies a status effect:
+
+  1. The spell hits the target
+  2. Status effect is added with a duration
+  3. Effect modifies the target's abilities
+  4. When duration expires, normal abilities return
+
+  ## Available Status Effects
+
+  ### Magic Vision
+  - [bold]Description:[/bold] Allows the caster to see magical auras and entities
+  - [bold]Applied by:[/bold] Mana Vision spell
+  - [bold]Duration:[/bold] While active (toggle spell)
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MetaMagicVisionSpellStatusEffect" Caption="Mana Vision Spell"/>
+  </Box>
+
+  ### Mana Armor
+  - [bold]Description:[/bold] Consumes mana to reduce incoming damage
+  - [bold]Applied by:[/bold] Mana Armor spell
+  - [bold]Effect:[/bold] -5 mana per hit taken
+
+  ## Base Game Status Effects
+
+  OpenEdge also inherits standard SS14 status effects:
+
+  - [bold]Stunned:[/bold] Cannot move or act
+  - [bold]Knockdown:[/bold] Knocked to the ground
+  - [bold]Slowed:[/bold] Reduced movement speed
+  - [bold]Forced Sleeping:[/bold] Unconscious (magical sleep)
+
+  ## Tips
+
+  - [bold]Watch your status icons[/bold] — they show active effects
+  - [bold]Some effects can be cured[/bold] by waiting or using items
+  - [bold]Enemy status effects[/bold] can be exploited — stun them before attacking!
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14HerbalBandage1" Caption="Herbal Bandage"/>
+    <GuideEntityEmbed Entity="OE14VialSmallHealingPoison" Caption="Antidote Potion"/>
+  </Box>
+
+  ## Related Systems
+
+  - [textlink="Magic" link="OE14Magic"] — spells that apply status effects
+  - [textlink="Combat" link="OE14Combat"] — status effects in combat
+
+</Document>

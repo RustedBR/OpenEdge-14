@@ -1,0 +1,51 @@
+- type: entity
+  id: OE14ActionMoleSpellSubterraneanLeap
+  name: Subterranean leap
+  description: Make a subterranean leap, quickly approaching the victim.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: -1.0
+  - type: OE14ActionManaCost
+    manaCost: 5
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14ImpactEffectDigging
+  - type: Action
+    useDelay: 8
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/gib3.ogg
+    icon:
+      sprite: _OE14/Actions/Spells/earth.rsi
+      state: subterranean_leap
+  - type: DoAfterArgs
+    breakOnMove: false
+    breakOnDamage: false
+    hidden: true
+    delay: 0.5
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10
+  - type: WorldTargetAction
+    event: !type:OE14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectDigging
+      effects:
+      - !type:OE14SpellCasterTeleport
+        needVision: false
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectDigging
+
+- type: entity
+  id: OE14ImpactEffectDigging
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _OE14/Effects/material_splash.rsi
+    layers:
+    - state: dirt1
+

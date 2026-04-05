@@ -1,0 +1,72 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Alchemy
+  name: Alchemy
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/Alchemy.xml"
+  children:
+  - OE14_EN_Precurser
+  - OE14_EN_ThaumaturgyEssence
+  - OE14_EN_TargetEffects
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Precurser
+  name: Precursers
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Precurser.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_ThaumaturgyEssence
+  name: Thaumaturgic essences
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Essence.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_TargetEffects
+  name: Target alchemical solutions
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/TargetEffects.xml"
+  children:
+  - OE14_EN_HealingEffects
+  - OE14_EN_DamageEffects
+  - OE14_EN_PositiveEffects
+  - OE14_EN_NegativeEffects
+  - OE14_EN_SideEffects
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_HealingEffects
+  name: Healing solutions
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/HealingEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_DamageEffects
+  name: Damaging solutions
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/DamageEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_PositiveEffects
+  name: Positive solutions
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/PositiveEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_NegativeEffects
+  name: Negative solutions
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/NegativeEffects.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_SideEffects
+  name: Contaminants
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/AlchemistTabs/AlchemyTabs/Effects/SideEffects.xml"
+  filterEnabled: True

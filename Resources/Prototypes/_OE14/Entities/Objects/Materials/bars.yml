@@ -1,0 +1,244 @@
+- type: entity
+  id: OE14CopperBar1
+  parent: BaseItem
+  name: copper bar
+  suffix: 1
+  description: A heavy, slightly green, piece of refined copper
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/copper_bar.rsi
+    layers:
+    - state: bar
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14CopperBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 10
+  localizationId: ent-OE14CopperBar1
+- type: entity
+  id: OE14CopperBar5
+  parent: OE14CopperBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14CopperBar5
+- type: entity
+  id: OE14CopperBar10
+  parent: OE14CopperBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14CopperBar10
+- type: entity
+  id: OE14IronBar1
+  parent: BaseItem
+  name: iron bar
+  suffix: 1
+  description: A heavy piece of refined iron
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/iron_bar.rsi
+    layers:
+    - state: bar
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14IronBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  localizationId: ent-OE14IronBar1
+- type: entity
+  id: OE14IronBar5
+  parent: OE14IronBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14IronBar5
+- type: entity
+  id: OE14IronBar10
+  parent: OE14IronBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14IronBar10
+- type: entity
+  id: OE14BrassBar1
+  parent: BaseItem
+  name: brass bar
+  suffix: 1
+  description: The best friend for magotechnology. The secrets of its production are
+    hidden.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/brass_bar.rsi
+    layers:
+    - state: bar
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14BrassBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Brass: 10
+  localizationId: ent-OE14BrassBar1
+- type: entity
+  id: OE14BrassBar5
+  parent: OE14BrassBar1
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14BrassBar5
+- type: entity
+  id: OE14BrassBar10
+  parent: OE14BrassBar1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14BrassBar10
+- type: entity
+  id: OE14GoldBar1
+  parent: BaseItem
+  name: gold bar
+  description: A warm to the touch, soft piece of refined gold.
+  categories:
+  - ForkFiltered
+  - DoNotMap
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/gold_bar.rsi
+    layers:
+    - state: bar
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14GoldBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 10
+  localizationId: ent-OE14GoldBar1
+- type: entity
+  id: OE14GoldBar5
+  parent: OE14GoldBar1
+  categories:
+  - DoNotMap
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14GoldBar5
+- type: entity
+  id: OE14GoldBar10
+  parent: OE14GoldBar1
+  categories:
+  - DoNotMap
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14GoldBar10
+- type: entity
+  id: OE14MithrilBar1
+  parent: BaseItem
+  name: mithril bar
+  description: A warm to the touch, soft piece of refined mithril.
+  categories:
+  - ForkFiltered
+  - DoNotMap
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/mithril_bar.rsi
+    layers:
+    - state: bar
+      map:
+      - base
+  - type: Appearance
+  - type: Stack
+    stackType: OE14MithrilBar
+    count: 1
+    baseLayer: base
+    layerStates:
+    - bar
+    - bar_2
+    - bar_3
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Mithril: 10
+  localizationId: ent-OE14MithrilBar1
+- type: entity
+  id: OE14MithrilBar5
+  parent: OE14MithrilBar1
+  categories:
+  - DoNotMap
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+  localizationId: ent-OE14MithrilBar5
+- type: entity
+  id: OE14MithrilBar10
+  parent: OE14MithrilBar1
+  categories:
+  - DoNotMap
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14MithrilBar10

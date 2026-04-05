@@ -1,0 +1,21 @@
+- type: soundCollection
+  id: FrogsSlippers
+  files:
+  - /Audio/_OE14/Effects/Footsteps/frogs_slippers1.ogg
+  - /Audio/_OE14/Effects/Footsteps/frogs_slippers2.ogg
+  - /Audio/_OE14/Effects/Footsteps/frogs_slippers3.ogg
+
+- type: soundCollection
+  id: OE14Slippers
+  files:
+  - /Audio/_OE14/Effects/Footsteps/slippers1.ogg
+  - /Audio/_OE14/Effects/Footsteps/slippers2.ogg
+  - /Audio/_OE14/Effects/Footsteps/slippers3.ogg
+
+- type: soundCollection
+  id: OE14StepBones
+  files:
+  - /Audio/_OE14/Effects/Footsteps/bones1.ogg
+  - /Audio/_OE14/Effects/Footsteps/bones2.ogg
+  - /Audio/_OE14/Effects/Footsteps/bones3.ogg
+  - /Audio/_OE14/Effects/Footsteps/bones4.ogg

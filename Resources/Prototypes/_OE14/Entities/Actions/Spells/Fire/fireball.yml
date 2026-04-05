@@ -1,0 +1,105 @@
+- type: entity
+  id: OE14ActionSpellFireball
+  parent: OE14ActionSpellBase
+  name: Fireball
+  description: An effective method of destruction - an explosive fireball
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.3
+  - type: OE14ActionManaCost
+    manaCost: 20
+  - type: OE14ActionSpeaking
+    startSpeech: "Quaeso, quemdam inter vos quaero... "
+    endSpeech: "A pila!"
+  - type: OE14ActionFreeHandsRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneFireball
+  - type: OE14ActionDangerous
+  - type: DoAfterArgs
+    delay: 2.5
+  - type: Action
+    useDelay: 25
+    icon:
+      sprite: _OE14/Actions/Spells/fire.rsi
+      state: fireball
+  - type: TargetAction
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:OE14WorldTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnUser
+        spawns:
+        - OE14ImpactEffectFireball
+      - !type:OE14SpellProjectile
+        prototype: OE14Fireball
+
+- type: entity
+  id: OE14RuneFireball
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+    - state: medium_circle
+      color: "#fdda5d"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectFireball
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: OE14Fireball
+  parent: BulletRocket
+  name: fireball
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#E25822"
+    radius: 2.0
+    energy: 5.0
+  - type: Projectile
+    damage:
+      types:
+        Heat: 10
+  - type: IgnitionSource
+    temperature: 400
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.35
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: Explosive
+    explosionType: FireBomb
+    totalIntensity: 15
+    intensitySlope: 1
+    maxIntensity: 6
+    canCreateVacuum: false
+
+- type: entity
+  parent: OE14BaseSpellScrollFire
+  id: OE14SpellScrollFireball
+  name: fireball spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellFireball
+

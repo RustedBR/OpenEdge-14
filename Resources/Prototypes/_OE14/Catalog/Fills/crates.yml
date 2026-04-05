@@ -1,0 +1,150 @@
+- type: entity
+  id: OE14SmallWoodenCrateFilled
+  parent:
+  - OE14SmallWoodenCrate
+  suffix: Filled, Tools and Fluff
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: OE14StationCrateLootTools
+        rolls: !type:RangeNumberSelector
+          range: 1, 5
+
+- type: entity
+  id: OE14LargeWoodenCrateFilled
+  suffix: Filled, Tools and Fluff
+  parent:
+  - OE14LargeWoodenCrate
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: OE14StationCrateLoot
+
+- type: entityTable
+  id: OE14StationCrateLoot
+  table: !type:AllSelector
+    children:
+    # Tools
+    - !type:NestedSelector
+      tableId: OE14StationCrateLootTools
+      rolls: !type:RangeNumberSelector
+        range: 4, 5
+    # Fluff
+    - !type:NestedSelector
+      tableId: OE14StationCrateLootFluff
+      prob: 0.5
+      rolls: !type:RangeNumberSelector
+        range: 4, 5
+
+- type: entityTable
+  id: OE14StationCrateLootTools
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: OE14Screwdriver
+        weight: 2
+      - id: OE14BaseWrench
+        weight: 2
+      - id: OE14Scissors
+      - id: OE14Torch
+      - id: OE14Lighter
+      - id: OE14KeyFile
+      - id: OE14LockCopper
+        weight: 0.3
+
+
+      - !type:GroupSelector
+        children:
+        - id: OE14FluteInstrument
+        - id: OE14LyraInstrument
+        - id: OE14LuteInstrument
+        - id: OE14Candle
+      - !type:GroupSelector
+        children:
+        - id: OE14CrystalLampBlueEmpty
+        - id: OE14CrystalLampOrangeEmpty
+      - id: OE14Rope
+      - id: OE14EnergyCrystalMediumEmpty
+      - id: OE14BookTieflingGambit
+        weight: 0.3 # too often
+      - id: OE14d20Dice
+      - id: OE14d6Dice
+      - id: OE14CopperCoin5
+        weight: 0.5
+      - !type:NestedSelector
+        tableId: OE14RandomVials
+
+- type: entityTable
+  id: OE14StationCrateLootFluff
+  table: !type:GroupSelector
+    children:
+    - id: OE14PaperFolderBlue
+    - id: OE14PaperFolderRed
+    - id: OE14PenFeather
+    - id: OE14FoodPotato
+    - id: OE14FoodOnion
+    - id: OE14Cloth10
+    - id: OE14CrayonWhite
+    # Cheeese!
+    - !type:GroupSelector
+      children:
+      - id: OE14FoodBlueCheeseWheel
+        weight: 0.1
+      - id: OE14FoodAgedCheeseWheel
+        weight: 0.05
+      - id: OE14FoodAgedCheesePart
+        weight: 0.3
+      - id: OE14FoodBlueCheesePart
+        weight: 0.5
+      - id: OE14FoodCheeseSlice
+      weight: 0.3 # groop chance
+    - id: OE14FoodBlueCheeseSlice
+      weight: 0.4
+    - id: OE14FoodAgedCheeseSlice
+      weight: 0.3
+    - !type:GroupSelector
+      children:
+      - id: OE14ClothingCloakGreen
+      - id: OE14ClothingCloakWhite
+      - id: OE14ClothingCloakFurcapeBlack
+      - id: OE14ClothingCloakFurcapeBlue
+      - id: OE14ClothingCloakRitualAttireLeather
+      - id: OE14ClothingHeadBeretMercenary
+      - id: OE14ClothingPantsMercenaryTrousers
+      - id: OE14ClothingShirtMercenary
+      - id: OE14ClothingShirtYellowWizardDress
+    - !type:GroupSelector
+      children:
+      - id: OE14DyeYellow
+      - id: OE14DyeGreen
+      - id: OE14DyeRed
+      - id: OE14DyePurple
+      - id: OE14DyeBlack
+      - id: OE14DyeBlue
+    - !type:GroupSelector
+      children:
+      - id: OE14BloodFlower
+      - id: OE14AgaricMushroom
+      - id: OE14ChromiumSlime
+        weight: 0.5
+      - id: OE14WildSage
+      - id: OE14LumiMushroom
+      - id: OE14BlueAmanita
+      - id: OE14Dayflin
+      - id: OE14AirLily
+
+- type: entityTable
+  id: OE14RandomVials
+  table: !type:GroupSelector
+    children:
+    - id: OE14VialSmall
+    - id: OE14VialTiny
+    - id: OE14GreenBottle
+    - id: OE14GreenBottle2
+    - id: OE14BlueBottle
+    - id: OE14OrangeBottle
+    - id: OE14RedBottle
+

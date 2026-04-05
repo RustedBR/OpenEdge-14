@@ -1,0 +1,9 @@
+<Document>
+
+# Soluções Venenosas
+
+Opostos das soluções curativas, causam dano a criaturas vivas.
+
+<GuideReagentGroupEmbed Group="OE14DamageEffect"/>
+
+</Document>

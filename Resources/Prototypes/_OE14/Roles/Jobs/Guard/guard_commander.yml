@@ -1,0 +1,34 @@
+- type: job
+  id: OE14GuardCommander
+  setPreference: true
+  name: oe14-job-name-guard-commander
+  description: oe14-job-desc-guard-commander
+  playTimeTracker: OE14JobGuardCommander
+  startingGear: OE14GuardCommanderGear
+  icon: "OE14JobIconGuardCommander"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  canBeAntag: false
+  supervisors: oe14-job-supervisors-command
+  weight: 2
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: OE14Guard
+      time: 10980 # 3 hours
+  special:
+    #- !type:OE14LearnSkillsSpecial
+    #  skills:
+    #  - SwordMastery
+    - !type:AddComponentSpecial
+      components:
+      - type: OE14SalaryCounter
+        salary: 200
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - Guards
+
+- type: startingGear
+  id: OE14GuardCommanderGear
+  equipment:
+    keys: OE14KeyRingGuardCommander
+    belt: OE14WalletFilledTest

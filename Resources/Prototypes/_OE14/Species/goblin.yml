@@ -1,0 +1,166 @@
+- type: species
+  id: OE14Goblin
+  name: oe14-species-name-goblin
+  roundStart: true
+  prototype: OE14MobGoblin
+  sprites: OE14MobGoblinSprites
+  markingLimits: OE14MobGoblinMarkingLimits
+  dollPrototype: OE14MobGoblinDummy
+  skinColoration: VoxFeathers
+  defaultSkinTone: "#74964d"
+  maleFirstNames: OE14_Names_Goblin_Male_First
+  femaleFirstNames: OE14_Names_Goblin_Female_First
+  naming: First
+  minAge: 18
+  maxAge: 70
+  youngAge: 25
+  oldAge: 55
+
+- type: speciesBaseSprites
+  id: OE14MobGoblinSprites
+  sprites:
+    Head: OE14MobGoblinHead
+    HeadTop: OE14MobGoblinMarkingMatchSkin
+    Hair: OE14MobGoblinAnyMarking
+    FacialHair: OE14MobGoblinAnyMarking
+    Snout: OE14MobGoblinMarkingMatchSkin
+    Chest: OE14MobGoblinTorso
+    Eyes: OE14MobGoblinEyes
+    LArm: OE14MobGoblinLArm
+    RArm: OE14MobGoblinRArm
+    LHand: OE14MobGoblinLHand
+    RHand: OE14MobGoblinRHand
+    LLeg: OE14MobGoblinLLeg
+    RLeg: OE14MobGoblinRLeg
+    LFoot: OE14MobGoblinLFoot
+    RFoot: OE14MobGoblinRFoot
+
+- type: markingPoints
+  id: OE14MobGoblinMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+      onlyWhitelisted: true
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ OE14GoblinNose ]
+      onlyWhitelisted: true
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ OE14GoblinEars ]
+      onlyWhitelisted: true
+    Chest:
+      points: 1
+      required: false
+      onlyWhitelisted: true
+    Legs:
+      points: 2
+      required: false
+      onlyWhitelisted: true
+    Arms:
+      points: 2
+      required: false
+      onlyWhitelisted: true
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinEyes
+  baseSprite:
+    sprite: _OE14/Mobs/Customization/eyes.rsi
+    state: goblin_eyes
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinAnyMarking
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinHead
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinHeadMale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinHeadFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinTorso
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinTorsoMale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinTorsoFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinLLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinLArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinLHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinLFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinRLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinRArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinRHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobGoblinRFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Goblin/parts.rsi
+    state: r_foot

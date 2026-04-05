@@ -1,0 +1,125 @@
+- type: entity
+  name: fairy
+  parent: OE14SimpleMobBase
+  id: OE14MobFairy
+  description: It glows, squeaks and considers itself very important. It seems that ordinary weapons are incapable of killing her, and only the dissipation of magic will help.
+  categories: [ ForkFiltered, HideSpawnMenu ] #Disable spawn in spawmenu
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 6
+  - type: Sprite
+    drawdepth: Mobs
+    color: "#42AAFF"
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: fairy
+      sprite: _OE14/Mobs/Animals/fairy.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 7.5
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fairy
+      Dead:
+        Base: dead
+  - type: Bloodstream
+    bloodReagent: OE14BloodAnimal
+    bloodMaxVolume: 0.1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 6
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_OE14/Effects/fairy_cry.ogg
+          params:
+            volume: -2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PointLight
+    color: "#42AAFF"
+    radius: 1.35
+  - type: SpamEmitSound
+    minInterval: 1
+    maxInterval: 4
+    sound:
+      collection: OE14Fairy
+      params:
+        volume: -8
+        variation: 0.125
+        pitch: 1.1
+  - type: SoundWhileAlive
+  - type: OE14MagicEnergyContainer
+    magicAlert: OE14MagicEnergy
+    maxEnergy: 300
+    energy: 1
+    unsafeSupport: true
+  - type: OE14MagicEnergyDraw
+    energy: -10
+    delay: 5
+    safe: true # infinity mana sucking
+  - type: OE14MagicUnsafeDamage
+  - type: HTN
+    rootTask:
+      task: OE14ApproachEnemyCompound
+    blackboard:
+      VisionRadius: !type:Single
+        5
+      AggroVisionRadius: !type:Single
+        5
+  - type: NpcFactionMember
+    factions:
+    - OE14Monster
+  - type: NPCUseActionOnTarget
+    actionId: OE14ActionFairyManaConsume
+  - type: Damageable
+    damageContainer: OE14Spectral
+
+
+- type: entity
+  id: OE14ActionFairyManaConsume
+  name: Fairy Mana consume
+  description: You absorb a small amount of mana from the target.
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/meta.rsi
+    state: mana_consume
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/meta.rsi
+      state: mana_consume
+  - type: TargetAction
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - OE14MagicEnergyContainer
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaConsume
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaConsume
+      - !type:OE14SpellConsumeManaEffect
+        safe: false
+        mana: 0.5

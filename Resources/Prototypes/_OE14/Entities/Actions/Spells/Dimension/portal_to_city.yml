@@ -1,0 +1,41 @@
+- type: entity
+  id: OE14ActionSpellPortalToCity
+  parent: OE14ActionSpellBase
+  name: Portal to city
+  description: You open a portal leading to a city that will last for one minute.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 30
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14ImpactEffectShadowStep
+  - type: OE14ActionFreeHandsRequired
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    breakOnMove: true
+    delay: 2
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: _OE14/Actions/Spells/dimension.rsi
+      state: demi_arrow
+  - type: TargetAction
+    range: 3
+  - type: WorldTargetAction
+    event: !type:OE14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectShadowStep
+      effects:
+      - !type:OE14SpellTeleportToCity
+
+- type: entity
+  parent: OE14BaseSpellScrollDimension
+  id: OE14BaseSpellScrollPortalToCity
+  name: city portal spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellPortalToCity

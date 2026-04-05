@@ -1,0 +1,50 @@
+<Document>
+# Spell Mechanics
+
+This page describes how spells are cast, how their effects are applied, and how the system resolves spell interactions.
+
+## Spell Components
+
+Spells in OpenEdge 14 use the action system. Each spell is an action entity with:
+- A mana cost (validated before casting)
+- An effect (damage, heal, buff, etc.)
+- A cooldown
+- Stat requirements (minimum INT for some spells)
+
+## Casting Flow
+
+<CodeBlock>
+1. Player activates spell action
+   |
+2. OE14ActionManaCostSystem validates mana
+   |
+3. If insufficient mana: reject, show message
+   |
+4. Deduct mana cost
+   |
+5. Apply spell effect
+   |
+6. Start cooldown timer
+</CodeBlock>
+
+## Spell Storage
+
+Spells are added to the action bar when an item with OE14SpellStorage is equipped:
+
+<CodeBlock>
+- type: entity
+  id: WandOfFire
+  components:
+    - type: OE14SpellStorage
+      spells:
+        - FireBolt
+        - FireBall
+</CodeBlock>
+
+## Content Under Construction
+
+Full spell mechanics documentation coming soon. Key system files:
+[mono]Content.Shared/_OE14/Magic/OE14ActionManaCostComponent.cs[/mono]
+[mono]Content.Server/_OE14/Magic/OE14ActionManaCostSystem.cs[/mono]
+
+</Document>

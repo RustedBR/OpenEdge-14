@@ -1,0 +1,45 @@
+- type: entity
+  id: OE14BaseAlchemyBomb
+  parent: OE14VialSmall
+  categories: [ ForkFiltered ]
+  name: alchemical bomb
+  description: A vial of liquid that explodes with an alchemical reagent cloud when thrown.
+  components:
+  - type: Spillable
+    solution: none #Disable spillable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:OE14AreaEffectBehavior
+        solution: vial
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14GlassShard:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    noRot: false
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: bomb
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 10
+      OE14Gold: 7

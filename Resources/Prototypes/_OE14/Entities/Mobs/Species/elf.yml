@@ -1,0 +1,203 @@
+- type: entity
+  parent: OE14BaseMobSpeciesOrganic
+  id: OE14BaseMobElf
+  name: Mr. Elf
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: OE14Elf
+  - type: OE14CharacterStats
+    strength: 6
+    vitality: 6
+    dexterity: 1
+    intelligence: 7
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      112: Critical
+      225: Dead
+  - type: Stamina
+    critThreshold: 0
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 80
+    damage:
+      types:
+        OE14ManaDepletion: -0.1
+      groups:
+        Brute: -0.07
+        Burn: -0.05
+        Toxin: -0.03
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: full
+  - type: Body
+    prototype: OE14Elf
+    requiredLegs: 2
+  - type: Bloodstream
+    bloodReagent: OE14BloodElf
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 150
+    energy: 150
+  - type: OE14MagicEnergyDraw
+    energy: 0
+    delay: 3
+  - type: OE14SkillStorage
+    freeLearnedSkills:
+    - MetamagicT1
+    - MetamagicT2
+    - OE14ActionSpellManaTrance
+  - type: OE14AuraImprint
+    imprintLength: 10
+    imprintColor: '#42aaf5'
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+    femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14BaseMobElf
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobElfDummy
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: HumanoidAppearance
+    species: OE14Elf
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: male_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+    femaleDisplacements:
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_cloak
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Elf/displacement.rsi
+            state: female_shirt
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: female_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: female_neck
+  localizationId: ent-OE14MobElfDummy

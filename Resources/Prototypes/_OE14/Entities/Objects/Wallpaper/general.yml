@@ -1,0 +1,121 @@
+- type: entity
+  id: OE14BaseWallpaper
+  abstract: true
+  parent: BaseItem
+  description: Thin paper wallpaper. You can glue them on the walls from different
+    sides, or peel them off with any sharp object.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: _OE14/Structures/Wallpaper/icons.rsi
+  - type: Stack
+    count: 30
+  localizationId: ent-OE14BaseWallpaper
+- type: entity
+  id: OE14WallpaperBlack
+  parent: OE14BaseWallpaper
+  name: wallpaper "inkwell black"
+  components:
+  - type: Sprite
+    state: black
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_black.rsi
+  - type: Stack
+    stackType: OE14WallpaperBlack
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 5
+  localizationId: ent-OE14WallpaperBlack
+- type: entity
+  id: OE14WallpaperGreen
+  parent: OE14BaseWallpaper
+  name: wallpaper "green orthogonality"
+  components:
+  - type: Sprite
+    state: green
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_green.rsi
+  - type: Stack
+    stackType: OE14WallpaperGreen
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 5
+  localizationId: ent-OE14WallpaperGreen
+- type: entity
+  id: OE14WallpaperPurple
+  parent: OE14BaseWallpaper
+  name: wallpaper "purple glory"
+  components:
+  - type: Sprite
+    state: purple
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_purple.rsi
+  - type: Stack
+    stackType: OE14WallpaperPurple
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 5
+  localizationId: ent-OE14WallpaperPurple
+- type: entity
+  id: OE14WallpaperRed
+  parent: OE14BaseWallpaper
+  name: wallpaper "burgundy"
+  components:
+  - type: Sprite
+    state: red
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_red.rsi
+  - type: Stack
+    stackType: OE14WallpaperRed
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 5
+  localizationId: ent-OE14WallpaperRed
+- type: entity
+  id: OE14WallpaperWhite
+  parent: OE14BaseWallpaper
+  name: wallpaper "flowers on white"
+  components:
+  - type: Sprite
+    state: white
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_white.rsi
+  - type: Stack
+    stackType: OE14WallpaperWhite
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 5
+  localizationId: ent-OE14WallpaperWhite
+- type: entity
+  id: OE14WallpaperWhite2
+  parent: OE14BaseWallpaper
+  name: wallpaper "pure white"
+  components:
+  - type: Sprite
+    state: white2
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_white2.rsi
+  - type: Stack
+    stackType: OE14WallpaperWhite2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 5
+  localizationId: ent-OE14WallpaperWhite2
+- type: entity
+  id: OE14WallpaperYellow
+  parent: OE14BaseWallpaper
+  name: wallpaper "solar rhythm"
+  components:
+  - type: Sprite
+    state: yellow
+  - type: OE14Wallpaper
+    rsiPath: _OE14/Structures/Wallpaper/wallpaper_yellow.rsi
+  - type: Stack
+    stackType: OE14WallpaperYellow
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 5
+  localizationId: ent-OE14WallpaperYellow

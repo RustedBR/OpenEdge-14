@@ -1,0 +1,67 @@
+- type: gameMap
+  id: Comoss
+  mapName: "Comoss island"
+  mapPath: /Maps/_OE14/comoss.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Comoss:
+      stationProto: OE14BaseExpedition
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Comoss island"
+        - type: StationJobs
+          availableJobs:
+            #Mercenary
+            OE14Guildmaster: [1, 1]
+            OE14GuildWorker: [3, 3]
+            OE14Adventurer: [ -1, -1 ]
+            #Artisans
+            OE14Apprentice: [ 5, 5 ]
+            OE14Alchemist: [ 2, 2 ]
+            #OE14Blacksmith: [ 2, 2 ]
+            OE14Innkeeper: [ 3, 4 ]
+            OE14Merchant: [2, 2]
+            #Guard
+            OE14Guard: [4, 4]
+            OE14Investigator: [2, 2]
+            OE14GuardCommander: [1, 1]
+        - type: OE14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_OE14/comoss_d.yml
+        - type: OE14StationKeyDistribution
+          keys:
+          - Alchemy1
+          - Alchemy2
+          - Blacksmith1
+          - Blacksmith2
+          - Shop1
+          - Shop2
+          - PersonalHouse1
+          - PersonalHouse2
+          - PersonalHouse3
+          - PersonalHouse4
+          #- PersonalHouse5 -free to build
+          - PersonalHouse6
+          - PersonalHouse7
+          - PersonalHouse8
+          - PersonalHouse9
+          - PersonalHouse10
+        - type: OE14StationProceduralLocation
+          location: ComossIsland
+          modifiers:
+          - DemiplaneArcSingle
+          - RaidSpawners
+          - Rabbits
+          - Boar
+          - Marble
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - OE14CrystalQuartzOrder
+          - Quartz
+          - FlyAgaric
+          - WildSage

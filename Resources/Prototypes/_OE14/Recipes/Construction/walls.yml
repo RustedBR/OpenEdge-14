@@ -1,0 +1,143 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenWall
+  graph: OE14WallWooden
+  startNode: start
+  targetNode: OE14WallWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenWallBirch
+  graph: OE14WallWoodenBirch
+  startNode: start
+  targetNode: OE14WallWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WoodenWallSpruce
+  graph: OE14WallWoodenSpruce
+  startNode: start
+  targetNode: OE14WallWoodenSpruce
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WallWoodenPalisade
+  graph: OE14WallWoodenPalisade
+  startNode: start
+  targetNode: OE14WallWoodenPalisade
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WindowWooden
+  graph: OE14WindowWooden
+  startNode: start
+  targetNode: OE14WindowWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WindowWoodenBirch
+  graph: OE14WindowWooden
+  startNode: start
+  targetNode: OE14WindowWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WallDirt
+  graph: OE14WallDirt
+  startNode: start
+  targetNode: WallDirt
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WallStoneBrick
+  graph: OE14WallStoneBrick
+  startNode: start
+  targetNode: OE14WallStoneBrick
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WindowStoneBrick
+  graph: OE14WindowStoneBrick
+  startNode: start
+  targetNode: OE14WindowStoneBrick
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WallMarbleBrick
+  graph: OE14WallMarbleBrick
+  startNode: start
+  targetNode: OE14WallMarbleBrick
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14WindowMarbleBrick
+  graph: OE14WindowMarbleBrick
+  startNode: start
+  targetNode: OE14WindowMarbleBrick
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+

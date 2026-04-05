@@ -1,0 +1,45 @@
+- type: entity
+  id: OE14RandomDirtLootSpawner
+  name: dirt spawner
+  parent: OE14DirtEffect
+  categories:
+  - ForkFiltered
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - OE14DirtBlock1
+    chance: 1
+    deleteSpawnerAfterSpawn: false
+  localizationId: ent-OE14RandomDirtLootSpawner
+- type: entity
+  id: OE14RandomStoneLootSpawner
+  name: dirt spawner
+  parent: OE14DirtEffect
+  categories:
+  - ForkFiltered
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - OE14StoneBlock1
+    chance: 1
+    deleteSpawnerAfterSpawn: false
+  localizationId: ent-OE14RandomStoneLootSpawner
+- type: entity
+  id: OE14RandomSnowLootSpawner
+  name: snow spawner
+  parent: OE14SnowEffect
+  categories:
+  - ForkFiltered
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - OE14Snowball
+    chance: 1
+    deleteSpawnerAfterSpawn: false
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_OE14/Effects/snowball.ogg
+      params:
+        variation: 0.25
+        volume: 15
+  localizationId: ent-OE14RandomSnowLootSpawner

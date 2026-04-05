@@ -1,0 +1,67 @@
+- type: oe14Location
+  id: SwampCaves
+  name: oe14-demiplane-location-cave-grass
+  icon:
+    sprite: _OE14/Interface/Misc/demiplane_locations.rsi
+    state: swamp_caves
+  levels:
+    min: 1
+    max: 10
+  locationConfig: OE14SwampGeode
+  tags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneHerbals
+  - OE14DemiplaneUnderground
+  - OE14DemiplaneWater
+  - OE14DemiplaneAnimalsSwamp
+  components:
+  - type: Biome
+    template: OE14CavesIndestructibleFill
+  - type: Roof
+  - type: OE14SetGridRooved
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+
+- type: dungeonConfig
+  id: OE14SwampGeode
+  layers:
+  # Masks
+  - !type:NoiseDistanceDunGen
+    size: 90, 90
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.9
+    layers:
+    - tile: OE14FloorSand
+      threshold: 0.50
+      noise:
+        frequency: 0.010
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  - !type:NoiseDistanceDunGen
+    size: 60, 60
+    distanceConfig: !type:DunGenEuclideanSquaredDistance
+      blendWeight: 0.7
+    layers:
+    - tile: OE14FloorGrass
+      threshold: 0.50
+      noise:
+        frequency: 0.030
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        octaves: 5
+        lacunarity: 2
+        gain: 0.5
+  # Biomes
+  - !type:OE14BiomeDunGen
+    biomeTemplate: OE14SwampFill
+    tileMask:
+    - OE14FloorGrass
+  - !type:OE14BiomeDunGen
+    biomeTemplate: OE14CavesGeneric
+    tileMask:
+    - OE14FloorSand

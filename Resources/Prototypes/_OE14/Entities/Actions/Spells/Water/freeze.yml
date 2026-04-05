@@ -1,0 +1,80 @@
+- type: entity
+  id: OE14ActionSpellFreeze
+  parent: OE14ActionSpellBase
+  name: Freeze
+  description: You begin to severely cool down the target, slowing its movement speed.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.8
+  - type: OE14ActionManaCost
+    manaCost: 7
+  - type: OE14ActionSpeaking
+    startSpeech: "Vos adepto frigus..."
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RunePlantFreeze
+  - type: OE14ActionDangerous
+  - type: DoAfterArgs
+    repeat: true
+    breakOnDamage: true
+    delay: 1.5
+    distanceThreshold: 5
+  - type: Action
+    useDelay: 15
+    icon:
+      sprite: _OE14/Actions/Spells/water.rsi
+      state: freeze
+  - type: TargetAction
+    range: 5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectFreeze
+      - !type:OE14AdjustAllSolutionThermalEnergy
+        delta: -1200 # One full use cools 100u from ~300k to ~250k
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:MovespeedModifier
+          walkSpeedModifier: 0.5
+          sprintSpeedModifier: 0.5
+          statusLifetime: 2
+        - !type:AdjustTemperature
+          amount: -12000
+        - !type:ExtinguishReaction
+
+- type: entity
+  id: OE14ImpactEffectFreeze
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: circle_decrease
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: OE14RunePlantFreeze
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5eabeb"
+  - type: Sprite
+    layers:
+    - state: medium_circle
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollWater
+  id: OE14SpellScrollFreeze
+  name: freeze spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellFreeze

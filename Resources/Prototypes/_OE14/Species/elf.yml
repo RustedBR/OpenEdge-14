@@ -1,0 +1,196 @@
+- type: species
+  id: OE14Elf
+  name: oe14-species-name-elf
+  roundStart: true
+  prototype: OE14MobElf
+  sprites: OE14MobElfSprites
+  markingLimits: OE14MobElfMarkingLimits
+  dollPrototype: OE14MobElfDummy
+  skinColoration: OE14Elf
+  maleFirstNames: OE14_Names_Elf_Male_First
+  femaleFirstNames: OE14_Names_Elf_Female_First
+  lastNames: OE14_Names_Elf_Last
+  minAge: 18
+  maxAge: 900
+  youngAge: 100
+  oldAge: 700
+
+- type: speciesBaseSprites
+  id: OE14MobElfSprites
+  sprites:
+    Head: OE14MobElfHead
+    HeadTop: OE14MobElfMarkingMatchSkin
+    Hair: OE14MobElfAnyMarking
+    FacialHair: OE14MobElfAnyMarking
+    Snout: OE14MobElfMarkingMatchSkin
+    Tail: OE14MobElfMarkingMatchSkin
+    Chest: OE14MobElfTorso
+    Eyes: OE14MobElfEyes
+    LArm: OE14MobElfLArm
+    RArm: OE14MobElfRArm
+    LHand: OE14MobElfLHand
+    RHand: OE14MobElfRHand
+    LLeg: OE14MobElfLLeg
+    RLeg: OE14MobElfRLeg
+    LFoot: OE14MobElfLFoot
+    RFoot: OE14MobElfRFoot
+
+- type: markingPoints
+  id: OE14MobElfMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ OE14ElfEars ]
+    Chest:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: OE14MobElfEyes
+  baseSprite:
+    sprite: _OE14/Mobs/Customization/eyes.rsi
+    state: eyes
+
+- type: humanoidBaseSprite
+  id: OE14MobElfAnyMarking
+
+- type: humanoidBaseSprite
+  id: OE14MobElfMarkingMatchSkin
+  markingsMatchSkin: true
+
+- type: humanoidBaseSprite
+  id: OE14MobElfHead
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: OE14MobElfHeadFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: OE14MobElfTorso
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: OE14MobElfTorsoFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLLegFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLArmFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLHandFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobElfLFootFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRLeg
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRLegFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRArm
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: r_arm
+
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRArmFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRHand
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRHandFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRFoot
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/parts.rsi
+    state: r_foot
+
+- type: humanoidBaseSprite
+  id: OE14MobElfRFootFemale
+  baseSprite:
+    sprite: _OE14/Mobs/Species/Elf/female_parts.rsi
+    state: r_foot

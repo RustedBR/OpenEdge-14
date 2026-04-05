@@ -1,0 +1,74 @@
+- type: loadoutGroup
+  id: OE14AdventureEquip
+  name: oe14-loadout-adventurers-equip
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - OE14BowCombat
+  - OE14WeaponDaggerIron
+  - OE14WeaponSwordIron
+  - OE14WeaponSkimitarIron
+  - OE14WeaponSpearIron
+  - OE14WeaponWarHammerIron
+  - OE14WeaponTwoHandedSwordIron
+  - OE14WeaponWarAxeIron
+
+- type: loadout
+  id: OE14BowCombat
+  dummyEntity: OE14BowCombat
+  equipment:
+    belt2: OE14ClothingBeltQuiverArrows
+    neck: OE14BowCombat
+
+- type: loadout
+  id: OE14WeaponDaggerIron
+  dummyEntity: OE14WeaponDaggerIron
+  equipment:
+    belt2: OE14WeaponDaggerIron
+  storage:
+    back:
+    - OE14WeaponDaggerIron
+    - OE14WeaponDaggerIron
+    - OE14WeaponDaggerIron
+
+- type: loadout
+  id: OE14WeaponSwordIron
+  dummyEntity: OE14WeaponSwordIron
+  equipment:
+    neck: OE14WeaponShieldWooden
+  inhand:
+    - OE14WeaponSwordIron
+
+- type: loadout
+  id: OE14WeaponSkimitarIron
+  dummyEntity: OE14WeaponSkimitarIron
+  equipment:
+    neck: OE14WeaponSkimitarIron
+  inhand:
+    - OE14WeaponSkimitarIron
+
+- type: loadout
+  id: OE14WeaponSpearIron
+  dummyEntity: OE14WeaponSpearIron
+  equipment:
+    neck: OE14WeaponSpearIron
+
+- type: loadout
+  id: OE14WeaponWarHammerIron
+  dummyEntity: OE14WeaponWarHammerIron
+  equipment:
+    neck: OE14WeaponTowerShieldWooden
+  inhand:
+  - OE14WeaponWarHammerIron
+
+- type: loadout
+  id: OE14WeaponTwoHandedSwordIron
+  dummyEntity: OE14WeaponTwoHandedSwordIron
+  equipment:
+    neck: OE14WeaponTwoHandedSwordIron
+
+- type: loadout
+  id: OE14WeaponWarAxeIron
+  dummyEntity: OE14WeaponWarAxeIron
+  equipment:
+    neck: OE14WeaponWarAxeIron

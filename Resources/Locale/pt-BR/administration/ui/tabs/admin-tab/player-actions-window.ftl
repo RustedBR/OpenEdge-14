@@ -1,0 +1,11 @@
+admin-player-actions-window-title = Painel de Ações do Jogador
+admin-player-actions-window-ban = Painel de Banimento
+admin-player-actions-window-admin-ghost = Fantasma Admin
+admin-player-actions-window-teleport = Teletransportar
+admin-player-actions-window-permissions = Painel de Permissões
+admin-player-actions-window-announce = Anunciar
+admin-player-actions-window-shuttle = (Re)chamar Shuttle
+admin-player-actions-window-admin-logs = Logs de Admin
+admin-player-actions-window-admin-notes = Notas de Admin
+admin-player-actions-window-admin-fax = Fax de Admin
+admin-player-actions-window-admin-chat = Chat de Admin

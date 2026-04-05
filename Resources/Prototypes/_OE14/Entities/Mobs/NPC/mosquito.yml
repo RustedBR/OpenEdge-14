@@ -1,0 +1,78 @@
+- type: entity
+  id: OE14MobMonsterMosquito
+  parent: [ OE14SimpleMobBase, FlyingMobBase ]
+  name: bloodworm mosquitoes
+  description: A bloodthirsty swarm of small mosquitoes just waiting for a soft flesh for a bloody feast. They seem to only disperse from heat or cold.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: OE14ApproachEnemyCompound
+    blackboard:
+      VisionRadius: !type:Single
+        8
+      AggroVisionRadius: !type:Single
+        7
+  - type: NpcFactionMember
+    factions:
+    - OE14Monster
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - sprite: _OE14/Mobs/Monster/mosquito.rsi
+      state: mosquitos
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 5
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+        - Opaque
+  - type: ReplacementAccent
+    accent: xeno
+  - type: Damageable
+    damageContainer: OE14Biological
+    damageModifierSet: OE14LittleInsects
+  - type: Appearance
+  - type: DamageContacts
+    damage:
+      types:
+        Piercing: 1
+        Bloodloss: 1
+    ignoreWhitelist:
+      tags:
+      - OE14Mosquito
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.9
+    sprintSpeedModifier: 0.9
+    ignoreWhitelist:
+      tags:
+      - OE14Mosquito
+  - type: MovementIgnoreGravity
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2
+    friction: 0.5
+    acceleration: 3
+  - type: AmbientSound
+    volume: -1
+    range: 8
+    sound:
+      path: /Audio/_OE14/Animals/swarm.ogg
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: MeleeSound
+    soundGroups:
+      Burn:
+        path: /Audio/_OE14/Animals/swarm_hit.ogg

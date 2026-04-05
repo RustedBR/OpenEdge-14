@@ -1,0 +1,440 @@
+- type: entity
+  parent: BaseItem
+  id: OE14BaseVial
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 1
+  - type: OE14SolutionTemperature
+  - type: MixableSolution
+    solution: vial
+  - type: FitsInDispenser
+    solution: vial
+  - type: RefillableSolution
+    solution: vial
+  - type: DrainableSolution
+    solution: vial
+  - type: ExaminableSolution
+    solution: vial
+  - type: DrawableSolution
+    solution: vial
+  - type: InjectableSolution
+    solution: vial
+  - type: SolutionItemStatus
+    solution: vial
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Drink
+    solution: vial
+  - type: Spillable
+    solution: vial
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: Injector
+    solutionName: vial
+    injectOnly: false
+    ignoreMobs: true
+    transferAmounts:
+    - 1
+    - 5
+    - 10
+    currentTransferAmount: 5
+    toggleState: 1 # draw
+  - type: Tag
+    tags:
+    - OE14Vial
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: ItemSlots
+
+- type: entity
+  parent: OE14BaseVial
+  id: OE14BaseVialFragile
+  abstract: true
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -4
+      - !type:SpillBehavior
+        solution: vial
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14GlassShard:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 10 # glass resistance set reduces damage. Need to land twice (w/o hitting wall)
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 2
+    damage:
+      types:
+        Blunt: 5
+
+# Vials
+
+- type: entity
+  id: OE14VialTiny
+  parent: OE14BaseVialFragile
+  name: tiny vial
+  description: A fragile glass vial to hold a tiny amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_tiny.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_tiny.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 5
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 10
+
+- type: entity
+  id: OE14VialTinyReinforced
+  parent: OE14BaseVial
+  name: reinforced tiny vial
+  description: A reinforced glass vial to hold a tiny amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_tiny.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_tiny.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 5
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 10
+      OE14Copper: 10
+
+- type: entity
+  id: OE14VialSmall
+  parent: OE14BaseVialFragile
+  name: small vial
+  description: A fragile glass vial to hold a small amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 20
+
+- type: entity
+  id: OE14VialSmallReinforced
+  parent: OE14BaseVial
+  name: reinforced small vial
+  description: A reinforced glass vial to hold a small amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 10
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 20
+      OE14Copper: 10
+
+- type: entity
+  id: OE14VialMedium
+  parent: OE14BaseVialFragile
+  name: medium vial
+  description: A fragile glass vial to hold a medium amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_medium.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: vial
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+    sprite: _OE14/Objects/Specific/Alchemy/vial_medium.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 50
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 40
+
+- type: entity
+  id: OE14VialMediumReinforced
+  parent: OE14BaseVial
+  name: reinforced medium vial
+  description: A reinforced glass vial to hold a medium amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_medium.rsi
+    layers:
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: vial
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+    sprite: _OE14/Objects/Specific/Alchemy/vial_medium.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 50
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 40
+      OE14Copper: 10
+
+- type: entity
+  id: OE14VialStar
+  parent: OE14BaseVialFragile
+  name: star vial
+  description: A fragile glass vial in the shape of a star, an unusual but symbolic shape.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_star.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_star.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 20
+
+- type: entity
+  id: OE14VialStarReinforced
+  parent: OE14BaseVial
+  name: reinforced star vial
+  description: A reinforced glass star-shaped vial to hold a small amount of liquid.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_star.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_star.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 20
+      OE14Copper: 10
+
+- type: entity
+  id: OE14VialSkull
+  parent: OE14BaseVialFragile
+  name: skull vial
+  description: A fragile skull-shaped vial in which to conveniently store poisonous liquids.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_skull.rsi
+    layers:
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_skull.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 20
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 25
+
+- type: entity
+  id: OE14VialSkullReinforced
+  parent: OE14BaseVial
+  name: reinforced skull vial
+  description: A skull-shaped reinforced glass vial to hold a small amount of liquid, now the poison is sure not to accidentally spill onto your skin.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Alchemy/vial_skull.rsi
+    layers:
+      - state: reinforcement_back
+      - state: vial
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: reinforcement
+      - state: label
+        visible: false
+        map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Item
+    size: Tiny
+    sprite: _OE14/Objects/Specific/Alchemy/vial_skull.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 20
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Glass: 25
+      OE14Copper: 10

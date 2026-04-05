@@ -1,0 +1,111 @@
+- type: oe14LocationModifier
+  id: Quartz
+  levels:
+    min: 0
+    max: 2
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14CrystalQuartz
+      count: 30
+      minGroupSize: 1
+      maxGroupSize: 5
+
+- type: oe14LocationModifier
+  id: OE14CrystalQuartzEarth
+  levels:
+    min: 2
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - OE14DemiplaneUnderground
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14CrystalQuartzEarth
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: oe14LocationModifier
+  id: OE14CrystalQuartzFire
+  levels:
+    min: 2
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - OE14DemiplaneHot
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14CrystalQuartzFire
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: oe14LocationModifier
+  id: OE14CrystalQuartzWater
+  levels:
+    min: 2
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - OE14DemiplaneWater
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14CrystalQuartzWater
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: oe14LocationModifier
+  id: OE14CrystalQuartzAir
+  levels:
+    min: 2
+    max: 10
+  generationWeight: 0.1
+  requiredTags:
+  - OE14DemiplaneOpenSky
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14CrystalQuartzAir
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: oe14LocationModifier
+  id: OE14CrystalQuartzOrder
+  levels:
+    min: 2
+    max: 10
+  generationWeight: 0.1
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14CrystalQuartzOrder
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2
+
+- type: oe14LocationModifier
+  id: OE14CrystalQuartzChaos
+  levels:
+    min: 2
+    max: 10
+  generationWeight: 0.1
+  categories:
+    Reward: 0.15
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14CrystalQuartzChaos
+      count: 15
+      minGroupSize: 1
+      maxGroupSize: 2

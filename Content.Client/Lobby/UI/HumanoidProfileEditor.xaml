@@ -1,0 +1,274 @@
+<BoxContainer xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
+         xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+         xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
+         HorizontalExpand="True">
+        <!-- Left side -->
+        <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
+            <!-- Middle container -->
+            <BoxContainer Orientation="Horizontal" SeparationOverride="10" HorizontalExpand="True">
+                <!-- Name box-->
+                <BoxContainer Orientation="Vertical">
+                    <ui:HighlightedContainer>
+                        <BoxContainer Orientation="Vertical">
+                            <ui:HighlightedContainer>
+                                <BoxContainer Orientation="Vertical">
+                                    <BoxContainer Orientation="Horizontal" VerticalExpand="True">
+                                        <Label Text="{Loc 'humanoid-profile-editor-name-label'}" />
+                                        <LineEdit Name="NameEdit" MinSize="270 0" VerticalAlignment="Center" Margin="5 0 0 0" />
+                                        <Button Name="NameRandomize" Text="{Loc 'humanoid-profile-editor-name-random-button'}" />
+                                    </BoxContainer>
+                                    <Button Name="RandomizeEverythingButton" HorizontalAlignment="Center"
+                                            HorizontalExpand="False" MaxWidth="256"
+                                            Text="{Loc 'humanoid-profile-editor-randomize-everything-button'}" />
+                                    <RichTextLabel Name="WarningLabel" HorizontalExpand="False"
+                                                   VerticalExpand="True" MaxWidth="425"
+                                                   HorizontalAlignment="Left" />
+                                </BoxContainer>
+                            </ui:HighlightedContainer>
+                        </BoxContainer>
+                    </ui:HighlightedContainer>
+                </BoxContainer>
+                <!-- Import/Export -->
+                <BoxContainer Orientation="Vertical" MinSize="60 0" HorizontalExpand="True" HorizontalAlignment="Right">
+                    <ui:HighlightedContainer Name="ProfileHighlight">
+                        <BoxContainer Orientation="Vertical">
+                            <Button Name="SaveButton" Text="{Loc 'humanoid-profile-editor-save-button'}"/>
+                            <Button Name="ResetButton" Disabled="True" Text="{Loc 'humanoid-profile-editor-reset-button'}"/>
+                            <Button Name="ImportButton" Text="{Loc 'humanoid-profile-editor-import-button'}"/>
+                            <Button Name="ExportButton" Text="{Loc 'humanoid-profile-editor-export-button'}"/>
+                            <Button Name="ExportImageButton" Text="{Loc 'humanoid-profile-editor-export-image-button'}"/>
+                            <Button Name="OpenImagesButton" Text="{Loc 'humanoid-profile-editor-open-image-button'}"/>
+                        </BoxContainer>
+                    </ui:HighlightedContainer>
+                </BoxContainer>
+            </BoxContainer>
+            <Control MinHeight="10" />
+            <!-- tabContainer -->
+            <TabContainer Name="TabContainer" VerticalExpand="True">
+                <BoxContainer Orientation="Vertical">
+                    <ScrollContainer VerticalExpand="True">
+                        <!-- appearanceList -->
+                        <BoxContainer Orientation="Vertical">
+                            <BoxContainer Margin="10" Orientation="Vertical" HorizontalExpand="True">
+                                <!-- Species -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-species-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3"
+                                                   VerticalAlignment="Center"
+                                                   ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Age -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <LineEdit Name="AgeEdit" MinSize="40 0" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Sex -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-sex-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <OptionButton Name="SexButton" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Pronouns -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-pronouns-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Show clothing -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-clothing'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <Button Name="ShowClothes" Pressed="True" ToggleMode="True" Text="{Loc 'humanoid-profile-editor-clothing-show'}" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Spawn Priority -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Text="{Loc 'humanoid-profile-editor-spawn-priority-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                            </BoxContainer>
+                            <!-- Skin -->
+                            <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical">
+                                <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
+                                <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" />
+                                <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
+                            </BoxContainer>
+                            <!-- Hair -->
+                            <BoxContainer Margin="10" Orientation="Horizontal">
+                                <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" />
+                                <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" />
+                            </BoxContainer>
+                            <!-- Eyes -->
+                            <BoxContainer Margin="10" Orientation="Vertical">
+                                <Label Text="{Loc 'humanoid-profile-editor-eyes-label'}" />
+                                <humanoid:EyeColorPicker Name="EyeColorPicker" />
+                            </BoxContainer>
+                        </BoxContainer>
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Orientation="Vertical">
+                    <!-- Jobs -->
+                    <OptionButton Name="PreferenceUnavailableButton" />
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Name="JobList" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Orientation="Vertical" Margin="10">
+                    <!-- Antags -->
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Name="AntagList" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <BoxContainer Orientation="Vertical" Margin="10">
+                    <!-- Traits -->
+                    <ScrollContainer VerticalExpand="True">
+                        <BoxContainer Name="TraitsList" Orientation="Vertical" />
+                    </ScrollContainer>
+                </BoxContainer>
+                <ScrollContainer Name="OE14StatsTab" VerticalExpand="True">
+                    <BoxContainer Orientation="Vertical" Margin="10">
+                        <!-- Heading -->
+                        <Label Text="{Loc 'oe14-stats-tab-character-stats'}" HorizontalAlignment="Center"
+                               Margin="0 0 0 6" StyleClasses="LabelHeading"/>
+
+                        <!-- Header row with available points -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 0 0 4">
+                            <Label Name="OE14AvailablePointsLabel" Text="{Loc 'oe14-stats-tab-points-available'}" FontColorOverride="#f0c050" MinWidth="120" Access="Public"/>
+                            <Label Text="{Loc 'oe14-stats-tab-current'}" FontColorOverride="#888888" MinWidth="60"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Text="{Loc 'oe14-stats-tab-mod-sources'}" FontColorOverride="#888888" HorizontalAlignment="Right" MinWidth="80"/>
+                            <Label Text="" MinWidth="28"/>
+                        </BoxContainer>
+
+                        <!-- STR -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                            <Label Text="{Loc 'oe14-stat-strength'}" FontColorOverride="#d4a84b" MinWidth="35"/>
+                            <Label MinWidth="8"/>
+                            <BoxContainer Name="OE14StrBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                            <Label MinWidth="8"/>
+                            <Label Text="" FontColorOverride="#999999" Name="OE14StrengthBaseLabel" Access="Public" MinWidth="20"/>
+                            <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                            <Label Text="" FontColorOverride="#d4a84b" Name="OE14StrengthValue" Access="Public" MinWidth="20"/>
+                            <Label MinWidth="20"/>
+                            <BoxContainer Name="OE14StrengthModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                            <Button Name="OE14StrPlus" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Margin="4 0 2 0"/>
+                            <Button Name="OE14StrMinus" Text="{Loc 'oe14-stat-minus'}" MinWidth="28" Access="Public"/>
+                        </BoxContainer>
+
+                        <!-- VIT -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                            <Label Text="{Loc 'oe14-stat-vitality'}" FontColorOverride="#e05050" MinWidth="35"/>
+                            <Label MinWidth="8"/>
+                            <BoxContainer Name="OE14VitBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                            <Label MinWidth="8"/>
+                            <Label Text="" FontColorOverride="#999999" Name="OE14VitalityBaseLabel" Access="Public" MinWidth="20"/>
+                            <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                            <Label Text="" FontColorOverride="#e05050" Name="OE14VitalityValue" Access="Public" MinWidth="20"/>
+                            <Label MinWidth="20"/>
+                            <BoxContainer Name="OE14VitalityModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                            <Button Name="OE14VitPlus" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Margin="4 0 2 0"/>
+                            <Button Name="OE14VitMinus" Text="{Loc 'oe14-stat-minus'}" MinWidth="28" Access="Public"/>
+                        </BoxContainer>
+
+                        <!-- DEX -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                            <Label Text="{Loc 'oe14-stat-dexterity'}" FontColorOverride="#50c878" MinWidth="35"/>
+                            <Label MinWidth="8"/>
+                            <BoxContainer Name="OE14DexBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                            <Label MinWidth="8"/>
+                            <Label Text="" FontColorOverride="#999999" Name="OE14DexterityBaseLabel" Access="Public" MinWidth="20"/>
+                            <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                            <Label Text="" FontColorOverride="#50c878" Name="OE14DexterityValue" Access="Public" MinWidth="20"/>
+                            <Label MinWidth="20"/>
+                            <BoxContainer Name="OE14DexterityModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                            <Button Name="OE14DexPlus" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Margin="4 0 2 0"/>
+                            <Button Name="OE14DexMinus" Text="{Loc 'oe14-stat-minus'}" MinWidth="28" Access="Public"/>
+                        </BoxContainer>
+
+                        <!-- INT -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 3 0 0" VerticalAlignment="Center">
+                            <Label Text="{Loc 'oe14-stat-intelligence'}" FontColorOverride="#5090e0" MinWidth="35"/>
+                            <Label MinWidth="8"/>
+                            <BoxContainer Name="OE14IntBarSlot" MinWidth="200" MaxWidth="200" MinHeight="12" Access="Public"/>
+                            <Label MinWidth="8"/>
+                            <Label Text="" FontColorOverride="#999999" Name="OE14IntelligenceBaseLabel" Access="Public" MinWidth="20"/>
+                            <Label Text="→" FontColorOverride="#666666" MinWidth="12" HorizontalAlignment="Center"/>
+                            <Label Text="" FontColorOverride="#5090e0" Name="OE14IntelligenceValue" Access="Public" MinWidth="20"/>
+                            <Label MinWidth="20"/>
+                            <BoxContainer Name="OE14IntelligenceModContainer" Orientation="Horizontal" Access="Public" MinWidth="120"/>
+                            <Button Name="OE14IntPlus" Text="{Loc 'oe14-stat-plus'}" MinWidth="28" Access="Public" Margin="4 0 2 0"/>
+                            <Button Name="OE14IntMinus" Text="{Loc 'oe14-stat-minus'}" MinWidth="28" Access="Public"/>
+                        </BoxContainer>
+
+                        <!-- Derived values -->
+                        <Control MinHeight="8" />
+                        <!-- HP with current and thresholds -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 6 0 0" HorizontalExpand="True">
+                            <Label Text="HP" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Name="OE14DerivedHP" Text="100" FontColorOverride="#e05050" HorizontalAlignment="Right" Access="Public"/>
+                        </BoxContainer>
+                        <BoxContainer Orientation="Horizontal" Margin="0 0 0 3" HorizontalExpand="True">
+                            <Label MinWidth="80"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Text="- 75 crit / - 150 dead" FontColorOverride="#888888"
+                                   HorizontalAlignment="Right" Access="Public"
+                                   Name="OE14DerivedHPThresholds"/>
+                        </BoxContainer>
+                        <!-- Stamina: Current / Max -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 3" HorizontalExpand="True">
+                            <Label Text="Stamina" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Name="OE14DerivedStamina" Text="100 / 100" FontColorOverride="#50c878" HorizontalAlignment="Right" Access="Public"/>
+                        </BoxContainer>
+                        <BoxContainer Orientation="Horizontal" Margin="0 0 0 3" HorizontalExpand="True">
+                            <Label MinWidth="80"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Name="OE14DerivedStaminaSlow" Text="slow at - 25 / Knockdown at - 100" FontColorOverride="#888888" HorizontalAlignment="Right" Access="Public"/>
+                        </BoxContainer>
+
+                        <!-- Mana: Current mana / Max mana -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 3" HorizontalExpand="True">
+                            <Label Text="Mana" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Name="OE14DerivedMana" Text="100" FontColorOverride="#5090e0" HorizontalAlignment="Right" Access="Public"/>
+                        </BoxContainer>
+                        <BoxContainer Orientation="Horizontal" Margin="0 0 0 3" HorizontalExpand="True">
+                            <Label MinWidth="80"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Name="OE14DerivedManaRegen" Text="1.0/3s" FontColorOverride="#5090e0" HorizontalAlignment="Right" Access="Public"/>
+                            <Label Text="regen" FontColorOverride="#555555" Margin="4 0 0 0"/>
+                        </BoxContainer>
+
+                        <!-- Damage -->
+                        <BoxContainer Orientation="Horizontal" Margin="0 3" HorizontalExpand="True">
+                            <Label Text="Damage" FontColorOverride="#ffffff" StyleClasses="LabelBig"/>
+                            <Label HorizontalExpand="True"/>
+                            <Label Name="OE14DerivedDamage" Text="1.00x" FontColorOverride="#d4a84b" HorizontalAlignment="Right" Access="Public"/>
+                            <Label Text="multiplier" FontColorOverride="#555555" Margin="4 0 0 0"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </ScrollContainer>
+                <BoxContainer Name="MarkingsTab" Orientation="Vertical" Margin="10">
+                    <!-- Markings -->
+                    <ScrollContainer VerticalExpand="True">
+                        <humanoid:MarkingPicker Name="Markings" IgnoreCategories="Hair,FacialHair" />
+                    </ScrollContainer>
+                </BoxContainer>
+            </TabContainer>
+        </BoxContainer>
+        <!-- Right side -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Center">
+            <SpriteView Name="SpriteView" Scale="8 8" Margin="4" SizeFlagsStretchRatio="1" />
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5">
+                <Button Name="SpriteRotateLeft" Text="◀" StyleClasses="OpenRight" />
+                <cc:VSeparator Margin="2 0 3 0" />
+                <Button Name="SpriteRotateRight" Text="▶" StyleClasses="OpenLeft" />
+            </BoxContainer>
+        </BoxContainer>
+</BoxContainer>

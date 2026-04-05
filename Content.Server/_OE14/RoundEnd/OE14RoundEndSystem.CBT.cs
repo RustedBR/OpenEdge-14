@@ -1,0 +1,175 @@
+using Content.Server.GameTicking;
+using Content.Shared.CCVar;
+using Robust.Shared.Audio;
+using Robust.Shared.Console;
+
+namespace Content.Server._OE14.RoundEnd;
+
+public sealed partial class OE14RoundEndSystem
+{
+    [Dependency] private readonly IConsoleHost _consoleHost = default!;
+    [Dependency] private readonly GameTicker _ticker = default!;
+
+    private TimeSpan _nextUpdateTime = TimeSpan.Zero;
+    private readonly TimeSpan _updateFrequency = TimeSpan.FromSeconds(60f);
+
+    private bool _enabled;
+
+    private void InitCbt()
+    {
+        _enabled = _cfg.GetCVar(CCVars.OE14ClosedBetaTest);
+        _cfg.OnValueChanged(CCVars.OE14ClosedBetaTest,
+            _ => { _enabled = _cfg.GetCVar(CCVars.OE14ClosedBetaTest); },
+            true);
+    }
+
+    // Вы можете сказать: Эд, ты ебанулся? Это же лютый щиткод!
+    // И я вам отвечу: Да. Но сама система ограничения времени работы сервера - временная штука на этап разработки, которая будет удалена.
+    // Мне просто лень каждый раз запускать и выключать сервер ручками.
+    private void UpdateCbt(float _)
+    {
+        if (!_enabled || _timing.CurTime < _nextUpdateTime)
+            return;
+
+        _nextUpdateTime = _timing.CurTime + _updateFrequency;
+        var now = DateTime.UtcNow.AddHours(0);
+
+        OpenWeekendRule(now);
+        LanguageRule(now);
+        LimitPlaytimeRule(now);
+        ApplyAnnouncements(now);
+    }
+
+    private void OpenWeekendRule(DateTime now)
+    {
+        var whitelistEnabled = _cfg.GetCVar(CCVars.WhitelistEnabled);
+        var isOpenWeekend = now.DayOfWeek is DayOfWeek.Saturday || now.DayOfWeek is DayOfWeek.Sunday;
+
+        if (isOpenWeekend && whitelistEnabled)
+        {
+            _cfg.SetCVar(CCVars.WhitelistEnabled, false);
+        }
+        else if (!isOpenWeekend && !whitelistEnabled)
+        {
+            _cfg.SetCVar(CCVars.WhitelistEnabled, true);
+        }
+    }
+
+    private void LanguageRule(DateTime now)
+    {
+        var curLang = _cfg.GetCVar(CCVars.Language);
+
+        var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
+
+        if (ruDays && curLang != "ru-RU")
+        {
+            _cfg.SetCVar(CCVars.Language, "ru-RU");
+
+            _chatSystem.DispatchGlobalAnnouncement(
+                "WARNING: The server changes its language to Russian. For the changes to apply to your device, reconnect to the server.",
+                announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                sender: "Server"
+            );
+        }
+        else if (!ruDays && curLang != "en-US")
+        {
+            _cfg.SetCVar(CCVars.Language, "en-US");
+
+            _chatSystem.DispatchGlobalAnnouncement(
+                "WARNING: The server changes its language to English. For the changes to apply to your device, reconnect to the server.",
+                announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                sender: "Server"
+            );
+        }
+    }
+
+    private void LimitPlaytimeRule(DateTime now)
+    {
+        var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
+
+        var isWeekend = now.DayOfWeek is DayOfWeek.Saturday || now.DayOfWeek is DayOfWeek.Sunday;
+
+        var allowedRuPlaytime = isWeekend ? now.Hour is >= 13 and < 17 : now.Hour is >= 15 and < 19;
+        var allowedEngPlaytime = isWeekend ? now.Hour is >= 17 and < 21 : now.Hour is >= 19 and < 23;
+        var isMonday = now.DayOfWeek is DayOfWeek.Monday;
+
+        if (((ruDays && allowedRuPlaytime) || (!ruDays && allowedEngPlaytime)) && !isMonday)
+        {
+            if (_ticker.Paused)
+                _ticker.TogglePause();
+        }
+        else
+        {
+            if (_ticker.RunLevel == GameRunLevel.InRound)
+                _roundEnd.EndRound();
+
+            if (!_ticker.Paused)
+                _ticker.TogglePause();
+        }
+    }
+
+    private void ApplyAnnouncements(DateTime now)
+    {
+        var ruDays = now.DayOfWeek is DayOfWeek.Tuesday || now.DayOfWeek is DayOfWeek.Thursday || now.DayOfWeek is DayOfWeek.Saturday;
+
+        var timeMap = new (int Hour, int Minute, System.Action Action)[]
+        {
+            (18, 45, () =>
+            {
+                if (!ruDays)
+                    return;
+
+                _chatSystem.DispatchGlobalAnnouncement(
+                    Loc.GetString("oe14-cbt-close-15m"),
+                    announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                    sender: "Server"
+                );
+            }),
+            (19, 0, () =>
+            {
+                if (!ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("endround");
+            }),
+            (19, 2, () =>
+            {
+                if (!ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("golobby");
+            }),
+            (20, 45, () =>
+            {
+                if (ruDays)
+                    return;
+
+                _chatSystem.DispatchGlobalAnnouncement(
+                    Loc.GetString("oe14-cbt-close-15m"),
+                    announcementSound: new SoundPathSpecifier("/Audio/Effects/beep1.ogg"),
+                    sender: "Server"
+                );
+            }),
+            (20, 58, () =>
+            {
+                if (ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("endround");
+            }),
+            (21, 00, () =>
+            {
+                if (ruDays)
+                    return;
+
+                _consoleHost.ExecuteCommand("golobby");
+            }),
+        };
+
+        foreach (var (hour, minute, action) in timeMap)
+        {
+            if (now.Hour == hour && now.Minute == minute)
+                action.Invoke();
+        }
+    }
+}

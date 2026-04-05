@@ -1,0 +1,339 @@
+<Document>
+# Event System
+
+The Event System is how different systems communicate without being tightly coupled. One system emits an event, and other systems listen and react.
+
+## Why Events?
+
+### Without Events (Tightly Coupled)
+<CodeBlock>
+// Bad: CombatSystem directly calls HealthSystem
+var health = _entityManager.GetComponent<HealthComponent>(target);
+health.Health -= damage;
+
+// Now CombatSystem depends on HealthSystem
+// If HealthSystem changes, CombatSystem might break
+// Hard to test CombatSystem in isolation
+</CodeBlock>
+
+### With Events (Loosely Coupled)
+<CodeBlock>
+// Good: CombatSystem emits event
+var damageEvent = new DamageEvent(target, damage);
+RaiseLocalEvent(target, damageEvent);
+
+// HealthSystem listens for DamageEvent
+// CombatSystem doesn't know or care who listens
+// Easy to add new listeners without changing CombatSystem
+</CodeBlock>
+
+## How Events Work
+
+<CodeBlock>
+System A emits:
+  |
+DamageEvent created
+  |
+All listeners are called:
+  - HealthSystem listens -> Applies damage
+  - AudioSystem listens -> Plays hit sound
+  - ParticleSystem listens -> Shows blood effect
+  - StatusEffectSystem listens -> Applies bleeding
+  |
+Event processing complete
+</CodeBlock>
+
+Each system does its job, independently.
+
+## Creating an Event
+
+<CodeBlock>
+// In Content.Shared/_OE14/Events/
+public sealed class DamageEvent : EntityEventArgs
+{
+    public EntityUid Target { get; }
+    public int Damage { get; }
+    public EntityUid? Source { get; }
+
+    public DamageEvent(EntityUid target, int damage, EntityUid? source = null)
+    {
+        Target = target;
+        Damage = damage;
+        Source = source;
+    }
+}
+</CodeBlock>
+
+Events are simple data containers that hold information about what happened.
+
+## Raising (Emitting) an Event
+
+<CodeBlock>
+public class CombatSystem : EntitySystem
+{
+    [Dependency] private readonly EntityManager _entityManager = default!;
+
+    public void AttackEnemy(EntityUid attacker, EntityUid target, int damage)
+    {
+        // Calculate actual damage
+        int actualDamage = CalculateDamage(attacker, target, damage);
+
+        // Emit event
+        var damageEvent = new DamageEvent(target, actualDamage, attacker);
+        RaiseLocalEvent(target, damageEvent);
+
+        // Rest of attack logic
+    }
+}
+</CodeBlock>
+
+[mono]RaiseLocalEvent(entity, event)[/mono] tells the framework: "Hey, something happened to this entity!"
+
+## Listening to Events
+
+<CodeBlock>
+public class HealthSystem : EntitySystem
+{
+    [Dependency] private readonly EntityManager _entityManager = default!;
+
+    // This method is called when DamageEvent is raised
+    private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+    {
+        // Apply damage
+        entity.Comp.Health -= args.Damage;
+
+        // Stop if health went negative
+        if (entity.Comp.Health <= 0)
+            entity.Comp.Health = 0;
+    }
+}
+</CodeBlock>
+
+The framework automatically calls [mono]OnDamage[/mono] whenever DamageEvent is raised.
+
+## Event Handler Naming Convention
+
+Handler methods follow a pattern:
+<CodeBlock>
+private void On<EventName>(<Entity>, ref <EventName>)
+{
+    // Handle the event
+}
+</CodeBlock>
+
+Examples:
+- [mono]OnDamage[/mono] for DamageEvent
+- [mono]OnDeath[/mono] for DeathEvent
+- [mono]OnSpellCast[/mono] for SpellCastEvent
+
+## Multiple Systems Listening
+
+Multiple systems can listen to the same event:
+
+<CodeBlock>
+// In HealthSystem
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    entity.Comp.Health -= args.Damage;
+}
+
+// In AudioSystem
+private void OnDamage(Entity<AudioComponent> entity, ref DamageEvent args)
+{
+    PlaySound("hit.wav");
+}
+
+// In ParticleSystem
+private void OnDamage(Entity<SpriteComponent> entity, ref DamageEvent args)
+{
+    ShowBloodEffect(entity);
+}
+
+// In StatusEffectSystem
+private void OnDamage(Entity<StatusEffectComponent> entity, ref DamageEvent args)
+{
+    if (args.Damage > 20)
+        ApplyStatusEffect(entity, "Bleeding");
+}
+</CodeBlock>
+
+When DamageEvent is raised:
+1. HealthSystem applies damage
+2. AudioSystem plays sound
+3. ParticleSystem shows effect
+4. StatusEffectSystem applies bleed
+
+All independently!
+
+## Event Propagation
+
+Events propagate through entity hierarchy:
+
+<CodeBlock>
+Child entity takes damage
+  |
+OnDamage called for child
+  |
+Event bubbles up to parent
+  |
+OnDamage called for parent
+  |
+Event continues bubbling
+</CodeBlock>
+
+You can stop propagation:
+<CodeBlock>
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    entity.Comp.Health -= args.Damage;
+    args.Handled = true;  // <- Stop propagation
+}
+</CodeBlock>
+
+## Event Performance
+
+Events are very efficient:
+- Zero allocation for event handlers (uses method pointers)
+- Events processed immediately (no queue)
+- Handler lookup is O(1) with caching
+
+Safe to raise hundreds of events per frame!
+
+## Real Example: Combat Flow
+
+<CodeBlock>
+// CombatSystem raises event
+public void AttackEnemy(EntityUid attacker, EntityUid target)
+{
+    int baseDamage = 20;
+    int actualDamage = CalculateModifiers(attacker, baseDamage);
+
+    var damageEvent = new DamageEvent(target, actualDamage, attacker);
+    RaiseLocalEvent(target, damageEvent);
+}
+
+// HealthSystem listens
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    entity.Comp.Health -= args.Damage;
+
+    if (entity.Comp.Health <= 0)
+    {
+        var deathEvent = new DeathEvent(args.Source);
+        RaiseLocalEvent(entity, deathEvent);  // Chain events!
+    }
+}
+
+// DeathSystem listens
+private void OnDeath(Entity<ActorComponent> entity, ref DeathEvent args)
+{
+    RemoveEntity(entity);
+}
+
+// LootSystem listens
+private void OnDeath(Entity<LootableComponent> entity, ref DeathEvent args)
+{
+    DropLoot(entity);
+}
+
+// AudioSystem listens
+private void OnDeath(Entity<AudioComponent> entity, ref DeathEvent args)
+{
+    PlaySound("death.wav");
+}
+</CodeBlock>
+
+Single attack triggers multiple reactions through events!
+
+## Filtered Events
+
+Events can be filtered to specific components:
+
+<CodeBlock>
+// Only call this if entity has HealthComponent
+private void OnDamage(Entity<HealthComponent> entity, ref DamageEvent args)
+{
+    // Only entities with HealthComponent reach here
+}
+
+// Only call if entity has ArmorComponent
+private void OnDamage(Entity<ArmorComponent> entity, ref DamageEvent args)
+{
+    // Reduce damage based on armor
+    args.Damage *= (1 - entity.Comp.ArmorRating);
+}
+</CodeBlock>
+
+Framework automatically calls the right handler based on component!
+
+## Directed vs Broadcast Events
+
+### Directed (To One Entity)
+<CodeBlock>
+RaiseLocalEvent(entity, new DamageEvent(...));  // Only this entity gets it
+</CodeBlock>
+
+### Broadcast (To Everyone)
+<CodeBlock>
+RaiseLocalEvent(new GlobalEventArgs());  // All systems get it
+</CodeBlock>
+
+Most events are directed to a specific entity.
+
+## Best Practices
+
+[bold]DO:[/bold]
+- Emit events for important changes
+- Let multiple systems listen independently
+- Name events clearly (DamageEvent, DeathEvent, etc.)
+- Keep event data minimal and relevant
+- Chain events when needed (death triggers loot drop)
+
+[bold]DON'T:[/bold]
+- Create huge event payloads (network them efficiently)
+- Have events call back into emitter (circular logic)
+- Emit events every frame for continuous data (use components)
+- Make systems depend on event order
+
+## Event Examples in OpenEdge
+
+[bold]DamageEvent[/bold] — emitted by CombatSystem, listened by HealthSystem, StatusEffectSystem, AudioSystem
+
+[bold]DeathEvent[/bold] — emitted by HealthSystem, listened by LootSystem, AudioSystem, UISystem
+
+[bold]SpellCastEvent[/bold] — emitted by SpellSystem, listened by ManaSystem, AudioSystem, ParticleSystem
+
+[bold]ItemPickupEvent[/bold] — emitted by InventorySystem, listened by AudioSystem, UISystem
+
+[bold]StatModifierEvent[/bold] — emitted by CharacterStatsSystem, listened by UISystem, ValidationSystem
+
+## Debugging Events
+
+### Problem: Handler not being called
+1. Check: Is the handler method named [mono]On[EventName][/mono]?
+2. Check: Does it accept [mono]Entity\<ComponentType\>[/mono] and [mono]ref EventType[/mono]?
+3. Check: Is the event actually being raised with [mono]RaiseLocalEvent[/mono]?
+
+### Problem: Event called twice
+1. Check: Are multiple systems handling the same event?
+2. Check: Is event being raised twice?
+3. Check: Is propagation disabled ([mono]args.Handled = true[/mono])?
+
+## Navigation
+
+- Want to communicate between systems? Use events
+- Need to prevent cheating? Validate in event handlers
+- Want to add a new system? Listen to relevant events
+- Debugging a mechanic? Check what events are being raised
+
+## Summary
+
+- [bold]Events[/bold] decouple systems
+- [bold]RaiseLocalEvent[/bold] emits an event
+- [bold]On[EventName] method[/bold] handles events
+- [bold]Multiple listeners[/bold] react independently
+- [bold]Very efficient[/bold] even at high frequency
+
+Events are the communication backbone of OpenEdge 14!
+
+</Document>

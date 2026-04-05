@@ -1,0 +1,75 @@
+- type: oe14LocationModifier
+  id: IceTrapInvisible
+  levels:
+    min: 3
+    max: 10
+  categories:
+    Danger: 0.1
+  blacklistTags:
+  - OE14DemiplaneHot
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14SpawnMagicIceTrapInvisible
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: oe14LocationModifier
+  id: IceTrapPermanent
+  levels:
+    min: 3
+    max: 10
+  categories:
+    Danger: 0.1
+  blacklistTags:
+  - OE14DemiplaneHot
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14SpawnMagicIceTrapPermanent
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: oe14LocationModifier
+  id: FireTrapPermanent
+  levels:
+    min: 5
+    max: 10
+  categories:
+    Danger: 0.15
+  blacklistTags:
+  - OE14DemiplaneCold
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14SpawnMagicFireTrapPermanent
+      count: 6
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: oe14LocationModifier
+  id: ElectricTrapInvisible
+  levels:
+    min: 2
+    max: 10
+  categories:
+    Danger: 0.1
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14SpawnMagicElectricTrapInvisible
+      count: 5
+      minGroupSize: 1
+      maxGroupSize: 1
+
+- type: oe14LocationModifier
+  id: ElectricTrapPermanent
+  levels:
+    min: 2
+    max: 10
+  categories:
+    Danger: 0.1
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14SpawnMagicElectricTrapPermanent
+      count: 10
+      minGroupSize: 1
+      maxGroupSize: 1

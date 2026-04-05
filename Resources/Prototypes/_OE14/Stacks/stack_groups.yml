@@ -1,0 +1,9 @@
+- type: OE14StackGroup
+  id: WoodenPlanks
+  name: oe14-stack-group-wooden-planks-any
+  stacks:
+  - OE14WoodenPlanks
+  - OE14BirchWoodenPlanks
+  - OE14LucensWoodenPlanks
+  - OE14SpruceWoodenPlanks
+

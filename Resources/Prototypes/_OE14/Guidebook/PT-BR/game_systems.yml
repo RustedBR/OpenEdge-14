@@ -1,0 +1,73 @@
+# OpenEdge 14 Game Systems - Portuguese Guidebook Entries
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_GameSystems
+  name: Sistemas do Jogo
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/GettingStarted.xml"
+  children:
+  - OE14_PT_Magic
+  - OE14_PT_Crafting
+  - OE14_PT_Economy
+  - OE14_PT_Combat
+  - OE14_PT_CharacterStats
+  - OE14_PT_Skill
+  - OE14_PT_Trading
+  - OE14_PT_StatusEffects
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_Magic
+  name: Magia
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/Magic.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_Crafting
+  name: Crafting
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/Crafting.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_Economy
+  name: Economia
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/Economy.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_Combat
+  name: Combate
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/Combat.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_CharacterStats
+  name: Atributos
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/CharacterStats.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_Skill
+  name: Habilidades
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/Skill.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_Trading
+  name: Comércio
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/Trading.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_StatusEffects
+  name: Efeitos de Status
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/StatusEffects.xml"

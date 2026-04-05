@@ -1,0 +1,102 @@
+- type: entity
+  id: OE14ActionSpellManaGift
+  parent: OE14ActionSpellBase
+  name: Mana transfer
+  description: You can transfer a small amount of your magical energy to a target entity or magical object.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 10
+    canModifyManacost: false
+  - type: DoAfterArgs
+    repeat: true
+    breakOnMove: true
+    delay: 1
+    breakOnDamage: true
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneManaGift
+  - type: Action
+    useDelay: 2
+    icon:
+      sprite: _OE14/Actions/Spells/meta.rsi
+      state: mana_gift
+  - type: TargetAction
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - OE14MagicEnergyContainer
+      - OE14MagicEnergyCrystalSlot
+    canTargetSelf: true
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaGift
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaGift
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:OE14ManaChange
+          manaDelta: 10
+          safe: false
+
+- type: entity
+  id: OE14ActionSpellManaGiftElf
+  parent: OE14ActionSpellManaGift
+  name: Carefull mana transfer
+  description: You transfer mana at a tremendous rate without dealing damage to the target.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 20
+  - type: EntityTargetAction
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaGift
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:OE14ManaChange
+          manaDelta: 20
+          safe: true
+
+- type: entity
+  id: OE14RuneManaGift
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5096d4"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#5096d4"
+      shader: unshaded
+    - state: double_outer
+      color: "#5096d4"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectManaGift
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5096d4"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollMeta
+  id: OE14SpellScrollManaGift
+  name: mana gift spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellManaGift
+

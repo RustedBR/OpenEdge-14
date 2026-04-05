@@ -1,0 +1,51 @@
+- type: OE14Recipe
+  id: OE14FoodMeatLamb
+  tag: OE14RecipeCooking
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodMeatLambSlice
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14FoodEgg
+  result: OE14FoodMeatLambCutlet
+
+- type: OE14Recipe
+  id: OE14FoodDoughLarge
+  tag: OE14RecipeCooking
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodDoughMedium
+    count: 4
+  result: OE14FoodDoughLarge
+
+- type: OE14Recipe
+  id: OE14FoodDoughMedium
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Wheat
+    count: 1
+  result: OE14FoodDoughMedium
+
+- type: OE14Recipe
+  id: OE14FoodDoughMediumFlat
+  tag: OE14RecipeCooking
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodDoughMedium
+    count: 1
+  result: OE14FoodDoughMediumFlat
+
+- type: OE14Recipe
+  id: OE14HalloweenPumpkin
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodPumpkin
+    count: 1
+  result: OE14HalloweenPumpkin

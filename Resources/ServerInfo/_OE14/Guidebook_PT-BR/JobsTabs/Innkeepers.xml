@@ -1,0 +1,78 @@
+<Document>
+  # Taberneiro
+
+  O taberneiro é uma função que permanece principalmente dentro da cidade. As responsabilidades de um taberneiro incluem principalmente jardinagem, bar e culinária. Taberneiros também frequentemente espalham fofocas e rumores pela cidade, pagam aventureiros para coletar carnes exóticas e materiais para a hospedaria, e garantem que a hospedaria permaneça limpa e organizada.
+
+  Dentro da hospedaria, um taberneiro terá acesso a três áreas principais:
+
+  ## O Jardim
+
+  O jardim, ou fazenda, é um ativo importante para qualquer chef. Alguns canteiros podem ser encontrados aqui, junto com um poço e alguns suprimentos básicos.
+  Para começar a agricultura, localize a mesa de suprimentos no jardim. Geralmente, um caixote contém uma variedade de sementes, enquanto uma mesa guarda ferramentas de agricultura como um balde e uma enxada. Pegue uma variedade de sementes e use-a no chão para plantá-la. Aguarde um tempo, depois use qualquer ferramenta afiada (como uma foice ou adaga) para colher a plantação completamente crescida.
+
+  Para manter suas plantações vivas por um período prolongado, certifique-se de regá-las frequentemente. Manter as plantas saudáveis é mais fácil com o feitiço [bold][color=#77dd77]Crescimento Vegetal[/color][/bold] da árvore de Vivificação, que restaura a água, nutrientes e saúde de uma planta.
+  <Box>
+    <GuideEntityEmbed Entity="OE14StoneWell"/>
+  </Box>
+
+  Se todos os seus canteiros estiverem cheio e a demanda ainda for alta, você pode usar uma enxada para arar solo adicional. Considere fazer um saco de sementes se planeja expandir sua fazenda.
+
+  Além de cultivar alimentos, algodão também pode ser cultivado. O algodão pode ser usado para tecer tecidos e roupas para as pessoas, proporcionando uma fonte adicional de renda para a hospedaria. Para fazer isso, colete um pouco de algodão, encontre algumas tábuas de madeira e crie uma banca de alfaiate.
+  <Box>
+      <GuideEntityEmbed Entity="OE14WorkbenchSewing"/>
+      <GuideEntityEmbed Entity="OE14Cotton"/>
+  </Box>
+
+  ## O Porão
+
+  O porão é extremamente popular entre os clientes. Vários barris podem ser encontrados aqui que dispensam álcool. Pegue um copo, certifique-se de estar bebendo de um barril e lucre. Por esta razão, porém, os clientes podem tentar invadir o porão através das cavernas em que ele é construído. Verificar o porão frequentemente pode manter toda a sua bebida valiosa segura. No caso de algum bandido quebrar seus barris, o álcool pode ser limpo e colocado em um novo barril. Os clientes certamente apreciarão seu novo "coquetel".
+  <GuideEntityEmbed Entity="OE14CraneBarrel"/>
+
+  Um porão típico também contém algumas mesas e tochas, bem como um barril de água. As mesas geralmente guardam copos extras. Cuidado para não servir muito alcohol de uma vez... a menos que seu estimado cliente seja um anão.
+
+  ## A Cozinha
+
+  A maior parte do tempo de um taberneiro é passada na cozinha. Primeiro, colete materiais: corte ou encontre algumas madeira para tábuas, comece a plantar culturas, localize itens de comida reserva e pegue suas ferramentas. Um bom chef reconhecerá o valor de uma adaga ou uma foice — ambos normalmente fornecidos a um taberneiro — que podem ser usados para colher plantas, cortar comida em fatias e afastar clientes turbulentos.
+
+  Vamos começar cozinhando algo simples: uma salada verde. Comece plantando repolho, abóbora e pepino. Quando as plantações estiverem prontas, leve-as para a cozinha. Vá para sua mesa de culinária e encontre a receita de salada verde. Você pode notar que a receita requer ingredientes fatiados — simplesmente use sua faca para prepará-los. Em seguida, encontre um prato (geralmente alguns são armazenados perto dos fornos). Uma vez que todos os ingredientes estiverem perto da mesa, você pode começar a montar a salada.
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodCabbageSlice"/>
+    <GuideEntityEmbed Entity="OE14FoodCucumber"/>
+    <GuideEntityEmbed Entity="OE14FoodPumpkinSlice"/>
+    <GuideEntityEmbed Entity="OE14PlateWooden"/>
+  </Box>
+
+
+  A salada verde é fácil de fazer porque não requer aquecimento. No entanto, quase todos os outros pratos precisarão ser cozidos usando o furnace. Para usá-lo, coloque 2-3 tábuas de madeira dentro para manter o fogo queimando por tempo suficiente. Acenda o fogo com o feitiço [bold][color=#ffa500]Criar Chama[/color][/bold] ou uma pedra de isqueiro e pederneira. Em seguida, coloque o item não cozido sobre o furnace — depois de acendê-lo — para que comece a cozinhar. Remova a comida prontamente, ou ela queimará em cinzas não comestíveis (que você pode tentar vender, mas não vai bem). O feitiço [bold][color=#5EABEB]Congelar[/color][/bold] pode impedir um furnace de desperdiçar combustível entre as sessões de cozimento. O feitiço [bold][color=#ffa500]Aquecer[/color][/bold] pode cozinhar instantaneamente comida para os clientes sem o risco de queimá-la em cinzas ou usar combustível de madeira. Copos e pratos podem ser feitos em uma banca usando a madeira economizada.
+  <Box>
+      <GuideEntityEmbed Entity="OE14ActionSpellHeat"/>
+      <GuideEntityEmbed Entity="OE14ActionSpellFlameCreation"/>
+      <GuideEntityEmbed Entity="OE14ActionSpellFreeze"/>
+  </Box>
+
+  <Box>
+      <GuideEntityEmbed Entity="OE14Furnace"/>
+      <GuideEntityEmbed Entity="OE14WorkbenchCooking"/>
+      <GuideEntityEmbed Entity="OE14Workbench"/>
+  </Box>
+
+  ## Clientes
+
+  Na cozinha, há uma pequena janela de pedidos para clientes. É altamente recomendado que você crie um pequeno menu usando papel e uma caneta-tinteiro, listando os pratos que oferece e seus preços. Os preços são definidos pelo taberneiro, mas os clientes apreciarão opções acessíveis.
+
+  Atraia clientes com serviços adicionais como música de bardo, ofertas especiais ou qualquer truque único que você conseguirinventar. Note que as pessoas frequentemente esperam ser pagas pelo seu trabalho! Bardos também precisam ganhar dinheiro.
+
+  No caso de sua deliciosa culinária ou suas generosas porções de cerveja fazerem um cliente vomitar, um esfregão pode ser encontrado perto das escadas do porão. Mergulhe o esfregão dentro de um de seus barris de água e limpe a bagunça. Cuidado para não servir água do seu balde de limpeza — clientes geralmente não apreciam o gosto de vômito.
+  <Box>
+    <GuideEntityEmbed Entity="OE14BarrelWater"/>
+  </Box>
+
+  ## Requisitos
+
+  Nenhum — Taberneiro está aberto a qualquer jogador.
+
+  ## Mais Detalhes
+
+  Para receitas de culinária detalhadas e técnicas avançadas, veja [textlink="Culinária" link="OE14_EN_Cooking"].
+
+</Document>

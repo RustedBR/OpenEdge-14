@@ -1,0 +1,18 @@
+- type: job
+  id: OE14Adventurer
+  name: oe14-job-name-adventurer
+  description: oe14-job-desc-adventurer
+  playTimeTracker: OE14JobAdventurer
+  startingGear: OE14AdventurerGear
+  icon: "OE14JobIconAdventurer"
+  supervisors: oe14-job-supervisors-guildmaster
+
+- type: startingGear
+  id: OE14AdventurerGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+    - OE14EnergyCrystalMedium
+  equipment:
+    keys: OE14BaseKeyRing
+    belt: OE14WalletFilledTest

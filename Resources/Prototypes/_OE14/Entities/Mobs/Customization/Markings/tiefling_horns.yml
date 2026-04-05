@@ -1,0 +1,110 @@
+- type: marking
+  id: OE14TieflingHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn1
+
+- type: marking
+  id: OE14TieflingHorns2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn2
+
+- type: marking
+  id: OE14TieflingHorns3
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn3
+
+- type: marking
+  id: OE14TieflingHorns3Broken
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn3_broken
+
+- type: marking
+  id: OE14TieflingHorns4
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn4
+
+- type: marking
+  id: OE14TieflingHorns5
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn5
+
+- type: marking
+  id: OE14TieflingHorns5Broken
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn5_broken
+
+- type: marking
+  id: OE14TieflingHorns6
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn6
+
+- type: marking
+  id: OE14TieflingHorns7
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn7
+
+- type: marking
+  id: OE14TieflingHorns8
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn8
+
+- type: marking
+  id: OE14TieflingHorns9
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  sprites:
+  - sprite: _OE14/Mobs/Customization/tiefling_horns.rsi
+    state: horn9
+

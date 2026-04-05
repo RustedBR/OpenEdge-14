@@ -1,0 +1,104 @@
+- type: entity
+  parent: OE14DrinkBaseMug
+  id: OE14DrinkBaseGoblet
+  name: goblet
+  description: A metal goblet for those who want to drink exquisitely.
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+  localizationId: ent-OE14DrinkBaseGoblet
+- type: entity
+  parent: OE14DrinkBaseGoblet
+  id: OE14SteelGobletIron
+  name: iron goblet
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+    - state: iron_goblet
+    - map:
+      - enum.SolutionContainerLayers.Fill
+      state: fill-5
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  localizationId: ent-OE14SteelGobletIron
+- type: entity
+  parent: OE14DrinkBaseGoblet
+  id: OE14SteelGobletCopper
+  name: copper goblet
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+    - state: copper_goblet
+    - map:
+      - enum.SolutionContainerLayers.Fill
+      state: fill-5
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 10
+  localizationId: ent-OE14SteelGobletCopper
+- type: entity
+  parent: OE14DrinkBaseGoblet
+  id: OE14SteelGobletGold
+  name: gold goblet
+  description: A goblet made of solid gold to show how rich its owner is.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+    - state: gold_goblet
+    - map:
+      - enum.SolutionContainerLayers.Fill
+      state: fill-5
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 10
+  localizationId: ent-OE14SteelGobletGold
+- type: entity
+  parent: OE14DrinkBaseGoblet
+  id: OE14SteelGobletBottomless
+  name: bottomless goblet
+  description: A jeweled goblet enchanted to have no bottom, fit for a never ending
+    king's banquet.
+  categories:
+  - DoNotMap
+  suffix: Artifact
+  components:
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: bottomless-fill-
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/goblet.rsi
+    layers:
+    - state: bottomless_goblet
+    - map:
+      - enum.SolutionContainerLayers.Fill
+      state: bottomless-fill-2
+      visible: false
+  - type: SolutionContainerManager
+    solutions:
+      mug:
+        maxVol: 1000
+  - type: Injector
+    solutionName: mug
+    injectOnly: false
+    ignoreMobs: true
+    toggleState: 1
+  - type: StaticPrice
+    price: 120
+  localizationId: ent-OE14SteelGobletBottomless

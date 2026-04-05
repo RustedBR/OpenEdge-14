@@ -1,0 +1,22 @@
+- type: entity
+  name: snail timed spawner
+  id: OE14SpawnTimedMobSnail
+  parent: MarkerBase
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: blue
+    - sprite: _OE14/Mobs/Animals/snail.rsi
+      state: live
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - OE14MobSnail
+    chance: 0.5
+    intervalSeconds: 540
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  localizationId: ent-OE14SpawnTimedMobSnail

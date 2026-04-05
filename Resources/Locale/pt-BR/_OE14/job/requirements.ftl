@@ -1,0 +1,1 @@
+oe14-role-req-sponsor-feature-req = Você deve ter pelo menos o papel "{$role}" no servidor do discord para acessar isto.

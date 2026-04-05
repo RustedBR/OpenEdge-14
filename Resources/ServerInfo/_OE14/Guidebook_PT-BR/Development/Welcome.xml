@@ -1,0 +1,148 @@
+<Document>
+# Bem-vindo ao Desenvolvimento do OpenEdge 14
+
+OpenEdge 14 é um RPG sandbox de fantasia medieval construído sobre o motor [bold]Space Station 14[/bold] e alimentado pelo [bold]RobustToolbox[/bold]. Esta seção é um guia completo para desenvolvedores trabalhando no projeto.
+
+Se você está adicionando novos recursos, corrigindo bugs, ou entendendo como o jogo funciona, você encontrará documentação detalhada aqui sobre arquitetura, sistemas e padrões de implementação.
+
+## O Que Você Encontrará Aqui
+
+### Arquitetura & Design
+
+[textlink="Arquitetura & Design" link="OE14_DEV_Architecture"] — Aprenda como o OpenEdge 14 é construído:
+- [textlink="Entity-Component-System" link="OE14_DEV_Arch_ECS"] (ECS) — o padrão de arquitetura central
+- [textlink="Recipiente IoC" link="OE14_DEV_Arch_IoC"] — injeção de dependência e resolução de serviços
+- [textlink="Sincronização de Rede" link="OE14_DEV_Arch_Netcode"] — como cliente e servidor permanecem em sincronia
+- [textlink="Sistema de Eventos" link="OE14_DEV_Arch_Events"] — como sistemas se comunicam
+- [textlink="Sistema de Modificadores" link="OE14_DEV_Arch_Modifiers"] — modificadores de atributos e efeitos
+
+### Sistema de Atributos do Personagem
+
+[textlink="Sistema de Atributos do Personagem" link="OE14_DEV_CharacterStats"] — Mergulhe fundo em como os atributos do personagem funcionam:
+- [textlink="Fórmulas e Cálculos de Atributos" link="OE14_DEV_Stats_Formulas"] — a matemática por trás dos atributos
+- [textlink="Modificadores de Atributos & Overflow" link="OE14_DEV_Stats_Modifiers"] — como modificadores se acumulam e transbordam
+- [textlink="Sistema de Fallback de Magias" link="OE14_DEV_Stats_Fallback"] — como magias interagem com limites de atributos
+- [textlink="Implementação de Rede" link="OE14_DEV_Stats_Network"] — como atributos sincronizam para o cliente
+- [textlink="Exemplos de Código" link="OE14_DEV_Stats_Code"] — implementações reais
+
+### Sistema de Habilidades & Magias
+
+[textlink="Sistema de Habilidades & Magias" link="OE14_DEV_Skills"] — Entenda como magias e habilidades funcionam:
+- [textlink="Árvores de Habilidades & Distribuição" link="OE14_DEV_Skills_Trees"] — alocação de pontos e progressão
+- [textlink="Mecânicas de Magias" link="OE14_DEV_Skills_Mechanics"] — conjuração, efeitos e resolução
+- [textlink="Sistema de Mana" link="OE14_DEV_Skills_Mana"] — pools de mana e regeneração
+- [textlink="Criando Habilidades Customizadas" link="OE14_DEV_Skills_Custom"] — como adicionar novas habilidades
+
+### Fluxo do Jogo
+
+[textlink="Fluxo do Jogo" link="OE14_DEV_GameFlow"] — Aprenda o ciclo de vida de uma rodada e do jogador:
+- [textlink="Fluxo de Rodada & Estados" link="OE14_DEV_Flow_Rounds"] — PreRoundLobby, InRound, PostRound
+- [textlink="Spawn do Jogador & Carregamento" link="PC14_DEV_Flow_Spawn"] — criação e inicialização do personagem
+- [textlink="Ferramentas & Comandos de Admin" link="OE14_DEV_Flow_Admin"] — sistema de admin e ferramentas
+- [textlink="Fluxo de Eventos & Ciclo de Vida" link="OE14_DEV_Flow_Events"] — ciclo de vida de entidades e sistemas
+
+### Referência de Sistemas
+
+[textlink="Referência de Sistemas" link="OE14_DEV_SystemReference"] — Referência rápida para sistemas principais:
+- [textlink="Sistema OE14CharacterStats" link="OE14_DEV_SysRef_Stats"]
+- [textlink="Sistemas de Magia & Magias" link="OE14_DEV_SysRef_Magic"]
+- [textlink="Sistemas de Crafting" link="OE14_DEV_SysRef_Crafting"]
+- [textlink="Sistema Economia" link="OE14_DEV_SysRef_Economy"]
+- [textlink="Sistema de Combate" link="OE14_DEV_SysRef_Combat"]
+- [textlink="Outros Sistemas" link="OE14_DEV_SysRef_Other"]
+
+### Guias de Desenvolvimento
+
+[textlink="Guias de Desenvolvimento" link="OE14_DEV_Guides"] — Guias passo a passo para tarefas comuns:
+- [textlink="Adicionando Novas Habilidades" link="OE14_DEV_Guide_Skills"]
+- [textlink="Adicionando Novas Magias" link="OE14_DEV_Guide_Spells"]
+- [textlink="Adicionando Novos Trabalhos" link="OE14_DEV_Guide_Jobs"]
+- [textlink="Adicionando Novas Espécies" link="OE14_DEV_Guide_Species"]
+- [textlink="Migrações de Banco de Dados" link="OE14_DEV_Guide_Migrations"]
+- [textlink="Testes & Debugging" link="OE14_DEV_Guide_Testing"]
+
+## Início Rápido para Novos Desenvolvedores
+
+1. [bold]Configure seu ambiente[/bold] — veja CLAUDE.md na raiz do repositório
+2. [bold]Leia Arquitetura & Design[/bold] — [textlink="Arquitetura & Design" link="OE14_DEV_Architecture"] — entenda ECS e como o projeto é estruturado
+3. [bold]Escolha um sistema[/bold] — [textlink="Referência de Sistemas" link="OE14_DEV_SystemReference"] tem documentação para cada sistema principal
+4. [bold]Siga um guia[/bold] — [textlink="Guias de Desenvolvimento" link="OE14_DEV_Guides"] tem instruções passo a passo para tarefas comuns
+5. [bold]Consulte o código[/bold] — todas as páginas incluem exemplos de código e caminhos de arquivos
+
+## Tarefas Comuns
+
+[bold]Eu quero adicionar uma nova magia...[/bold]
+Leia [textlink="Adicionando Novas Magias" link="OE14_DEV_Guide_Spells"] e [textlink="Mecânicas de Magias" link="OE14_DEV_Skills_Mechanics"]
+
+[bold]Eu quero entender por que meu modificador de atributo está sendo limitado...[/bold]
+Leia [textlink="Sistema de Fallback de Magias" link="OE14_DEV_Stats_Fallback"] e [textlink="Modificadores de Atributos & Overflow" link="OE14_DEV_Stats_Modifiers"]
+
+[bold]Eu quero sincronizar dados entre servidor e cliente...[/bold]
+Leia [textlink="Sincronização de Rede" link="OE14_DEV_Arch_Netcode"]
+
+[bold]Eu quero adicionar um novo trabalho...[/bold]
+Leia [textlink="Adicionando Novos Trabalhos" link="OE14_DEV_Guide_Jobs"]
+
+[bold]Eu preciso corrigir um bug no sistema de economia...[/bold]
+Leia [textlink="Sistema Economia" link="OE14_DEV_SysRef_Economy"]
+
+## Como Este Guia Está Estruturado
+
+Cada página é projetada para ser:
+- [bold]Autocontida[/bold] — pode ser lida em qualquer ordem
+- [bold]Prática[/bold] — inclui exemplos de código e caminhos de arquivos
+- [bold]Vinculada[/bold] — referências a páginas relacionadas
+- [bold]Acessível[/bold] — escrita para desenvolvedores de todos os níveis de experiência (embora assuma conhecimento de C# e .NET)
+
+## Filosofia de Design
+
+OpenEdge 14 segue estes princípios:
+
+[bold]Entity-Component-System[/bold] — cada "coisa" no mundo é uma Entidade com Componentes, processada por Sistemas
+
+[bold]Dirigido por Eventos[/bold] — sistemas se comunicam através de eventos, não chamadas diretas
+
+[bold]Rede Primeiro[/bold] — todo estado significativo é sincronizado entre servidor e cliente
+
+[bold]Baseado em Modificadores[/bold] — mudanças temporárias (bônus de atributos, efeitos) usam um sistema de modificadores, não mutação direta
+
+[bold]Configuração YAML[/bold] — conteúdo do jogo é definido em YAML legível por humanos, não hardcoded
+
+Entender estes princípios tornará a base de código muito mais fácil de navegar.
+
+## Notas de Performance
+
+- O jogo roda a 60 ticks por segundo
+- Atualizações de rede são limitadas e em lote
+- Sistemas iteram sobre entidades correspondentes com eficiência
+- Evite alocar novos objetos em loops frequentes
+- Use pool de objetos para entidades frequentemente criadas/destruídas
+
+## Contribuindo
+
+Ao adicionar novos sistemas ou recursos:
+1. [bold]Siga padrões existentes[/bold] — se sistemas similares existem, corresponda sua estrutura
+2. [bold]Documente seu trabalho[/bold] — deixe comentários para lógica complexa
+3. [bold]Teste completamente[/bold] — tanto localmente quanto com outros desenvolvedores
+4. [bold]Atualize este guia[/bold] — adicione páginas ou exemplos se você criar novos sistemas
+
+## Referências Externas
+
+Como OpenEdge 14 é baseado em Space Station 14, alguns conceitos vêm do upstream:
+
+- [bold]RobustToolbox[/bold] — motor central (documentação SS14)
+- [bold]Space Station 14[/bold] — framework base do jogo (github.com/space-wizards/space-station-14)
+- [bold].NET 9[/bold] — linguagem de programação e runtime
+
+Este guia foca em implementações específicas do OpenEdge.
+
+## Perguntas?
+
+- Verifique a [bold]Referência de Sistemas[/bold] para seu sistema específico
+- Veja os [bold]Guias de Desenvolvimento[/bold] para instruções passo a passo
+- Leia [bold]Arquitetura & Design[/bold] se precisar de conceitos fundamentais
+- Verifique CLAUDE.md na raiz do repositório para convenções do projeto
+
+Boa sorte, e bem-vindo ao desenvolvimento!
+
+</Document>

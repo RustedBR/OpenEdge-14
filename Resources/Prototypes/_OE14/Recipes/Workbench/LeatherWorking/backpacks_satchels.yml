@@ -1,0 +1,133 @@
+# Satchels (heavy on straps)
+- type: OE14Recipe
+  id: OE14ClothingBackSatchelT0
+  tag: OE14RecipeLeatherWorking
+  category: Satchels
+  priority: 4
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 4 # 40u OE14Cloth ~~~ OE14Cloth (10u)
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 2 # 10u OE14Cloth ~~~ 1/2 OE14Cloth (5u)
+  - !type:ProtoIdResource
+    protoId: OE14IronBuckle
+    count: 1 # 2u OE14Iron ~~~ 1/5 iron bar (10u)
+  result: OE14ClothingBackSatchelT0
+
+- type: OE14Recipe
+  id: OE14ClothingBackSatchelT1
+  tag: OE14RecipeLeatherWorking
+  category: Satchels
+  priority: 3
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: OE14ThinLeather
+    count: 3 # 15u OE14Leather ~~~ OE14ThinLeather (5u)
+  - !type:ProtoIdResource
+    protoId: OE14IronBuckle
+    count: 3 # 6u OE14Iron ~~~ 1/5 iron bar (10u)
+  result: OE14ClothingBackSatchelT1
+
+- type: OE14Recipe
+  id: OE14ClothingBackSatchelT2
+  tag: OE14RecipeLeatherWorking
+  category: Satchels
+  priority: 2
+  craftTime: 6
+  requirements:
+  - !type:StackResource
+    stack: OE14ThinLeather
+    count: 3 # 15u OE14Leather ~~~ OE14ThinLeather (5u)
+  - !type:StackResource
+    stack: OE14Leather
+    count: 3 # 30u OE14Leather ~~~ OE14Leather (10u)
+  - !type:ProtoIdResource
+    protoId: OE14IronBuckle
+    count: 5 # 10u OE14Iron ~~~ 1/5 iron bar (10u)
+  result: OE14ClothingBackSatchelT2
+
+- type: OE14Recipe
+  id: OE14ClothingBackSatchelT3
+  tag: OE14RecipeLeatherWorking
+  category: Satchels
+  priority: 1
+  craftTime: 10
+  requirements:
+  - !type:StackResource
+    stack: OE14Leather
+    count: 3 # 30u OE14Leather ~~~ OE14Leather (10u)
+  - !type:StackResource
+    stack: OE14RuggedLeather
+    count: 2 # 50u OE14Leather ~~~ OE14RuggedLeather (25u)
+  - !type:ProtoIdResource
+    protoId: OE14IronBuckle
+    count: 7 # 14u OE14Iron ~~~ 1/5 iron bar (10u)
+  result: OE14ClothingBackSatchelT3
+
+# ======================================
+# Upgrade Recipes with Material Tracking
+# ======================================
+
+# Satchel T1 Upgrade (Leather Inheritance)
+- type: OE14Recipe
+  id: OE14ClothingBackSatchelT1_Upgrade
+  tag: OE14RecipeLeatherWorking
+  category: SatchelUpgrade
+  priority: 3
+  craftTime: 6
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14ClothingBackSatchelT0  # 40u cloth
+    count: 1
+  - !type:StackResource
+    stack: OE14ThinLeather        # +15u OE14Leather (3x5u)
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14IronBuckle
+    count: 3 # 6u OE14Iron ~~~ 1/5 iron bar (10u)
+  result: OE14ClothingBackSatchelT1
+  # Total Materials: 40u cloth + 15u Leather
+
+# Satchel T2 Upgrade (Leather Optimization)
+- type: OE14Recipe
+  id: OE14ClothingBackSatchelT2_Upgrade
+  tag: OE14RecipeLeatherWorking
+  category: SatchelUpgrade
+  priority: 2
+  craftTime: 8
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14ClothingBackSatchelT1  # 15u (thin)
+    count: 1
+  - !type:StackResource
+    stack: OE14Leather            # +30u OE14Leather (3x10u)
+    count: 3
+  - !type:ProtoIdResource
+    protoId: OE14IronBuckle
+    count: 2 # 4u OE14Iron ~~~ 1/5 iron bar (10u)
+  result: OE14ClothingBackSatchelT2
+  # Total Leather: 15u + 30u = 45u
+
+# Satchel T3 Upgrade (Rugged Transition)
+- type: OE14Recipe
+  id: OE14ClothingBackSatchelT3_Upgrade
+  tag: OE14RecipeLeatherWorking
+  category: SatchelUpgrade
+  priority: 1
+  craftTime: 12
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14ClothingBackSatchelT2  # 15u + 30u = 45u
+    count: 1
+  - !type:StackResource
+    stack: OE14RuggedLeather       # +50u OE14Leather (2x25u)
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14IronBuckle
+    count: 2 # 4u OE14Iron ~~~ 1/5 iron bar (10u)
+  result: OE14ClothingBackSatchelT3
+  # Total Leather: 45u + 50u = 95u

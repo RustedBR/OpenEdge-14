@@ -1,0 +1,105 @@
+- type: entity
+  parent: BaseItem
+  id: OE14BaseKey
+  abstract: true
+  categories:
+  - ForkFiltered
+  name: key
+  description: A small, intricate piece of metal that opens some locks. Don't give
+    it to anyone!
+  components:
+  - type: Tag
+    tags:
+    - OE14Key
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _OE14/Objects/keys.rsi
+  - type: OE14Key
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_OE14/Items/key_drop.ogg
+      params:
+        variation: 0.05
+  localizationId: ent-OE14BaseKey
+- type: entity
+  parent: OE14BaseKey
+  id: OE14KeyCopperBlank
+  components:
+  - type: Sprite
+    state: key_copper
+  - type: OE14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 10
+  localizationId: ent-OE14KeyCopperBlank
+- type: entity
+  parent: OE14BaseKey
+  id: OE14KeyIronBlank
+  components:
+  - type: Sprite
+    state: key_iron
+  - type: OE14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  localizationId: ent-OE14KeyIronBlank
+- type: entity
+  parent: OE14BaseKey
+  id: OE14KeyGoldBlank
+  components:
+  - type: Sprite
+    state: key_gold
+  - type: OE14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 10
+  localizationId: ent-OE14KeyGoldBlank
+- type: entity
+  parent: OE14BaseKey
+  id: OE14KeyMithrilBlank
+  components:
+  - type: Sprite
+    state: key_mithril
+  - type: OE14Key
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Mithril: 10
+  localizationId: ent-OE14KeyMithrilBlank
+- type: entity
+  parent: OE14KeyMithrilBlank
+  id: OE14KeyUniversal
+  name: omni key
+  suffix: Universal
+  categories:
+  - ForkFiltered
+  - DoNotMap
+  components:
+  - type: OE14Key
+  - type: OE14KeyUniversal
+  localizationId: ent-OE14KeyUniversal

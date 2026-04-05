@@ -1,0 +1,276 @@
+- type: entity
+  id: OE14BarrelSolution
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Appearance
+  - type: DrainableSolution
+    solution: barrel
+  - type: MixableSolution
+    solution: barrel
+  - type: RefillableSolution
+    solution: barrel
+  - type: DrawableSolution
+    solution: barrel
+  - type: Drink
+    solution: barrel
+
+- type: entity
+  id: OE14BaseBarrel
+  parent:
+  - BaseStructureDynamic
+  - OE14BarrelSolution
+  - OE14BaseFlammable
+  name: wooden barrel
+  suffix: Empty
+  description: The simplest design for storing liquids.
+  categories: [ ForkFiltered ]
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {visible: false}
+          False: {visible: true}
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _OE14/Structures/Furniture/Barrels/barrel.rsi
+    noRot: true
+    layers:
+      - state: barrel_open
+      - state: liq1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: barrel
+        map: ["enum.OpenableVisuals.Layer"]
+  - type: Transform
+    noRot: true
+  - type: Physics
+  - type: Construction
+    graph: OE14BaseBarrel
+    node: OE14BaseBarrel
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Piercing
+        damage: 5
+      behaviors:
+      - !type:SolutionExplosionBehavior
+        solution: barrel
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:SpillBehavior
+        solution: barrel
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        maxVol: 300
+  - type: OE14WeatherRefillable
+    solution: barrel
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq
+  - type: ExaminableSolution
+    solution: barrel
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 30
+
+- type: entity
+  id: OE14BarrelWater
+  parent: OE14BaseBarrel
+  suffix: Water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: Water
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelBlood
+  parent: OE14BaseBarrel
+  suffix: Blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14Blood
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelBloodTiefling
+  parent: OE14BaseBarrel
+  suffix: Tiefling Blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14BloodTiefling
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelBloodElf
+  parent: OE14BaseBarrel
+  suffix: Elf Blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14BloodElf
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelBloodGoblin
+  parent: OE14BaseBarrel
+  suffix: Goblin Blood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14BloodGoblin
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelBloodFlowerSap
+  parent: OE14BaseBarrel
+  suffix: Bloodflower sap
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14BloodFlowerSap
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelAgaricMushroom
+  parent: OE14BaseBarrel
+  suffix: Agaric mushroom
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14AgaricMushroom
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelChromiumSlime
+  parent: OE14BaseBarrel
+  suffix: Chromium Slime
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14ChromiumSlime
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelWildSageSap
+  parent: OE14BaseBarrel
+  suffix: Wild Sage sap
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14WildSageSap
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelGroundQuartz
+  parent: OE14BaseBarrel
+  suffix: Ground Quartz
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14GroundQuartz
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelLumiMushroom
+  parent: OE14BaseBarrel
+  suffix: LumiShroom
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14LumiMushroom
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelDayflin
+  parent: OE14BaseBarrel
+  suffix: Dayflin
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14YellowDayflinPulp
+          Quantity: 300
+
+- type: entity
+  id: OE14BarrelAirLily
+  parent: OE14BaseBarrel
+  suffix: Air Lily
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      barrel:
+        reagents:
+        - ReagentId: OE14AirLily
+          Quantity: 300

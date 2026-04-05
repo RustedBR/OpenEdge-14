@@ -1,0 +1,27 @@
+- type: constructionGraph
+  id: OE14Mannequin
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14mannequin
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+              doAfter: 3
+    - node: OE14mannequin
+      entity: OE14Mannequin
+      edges:
+        - to: start
+          completed:
+            - !type:EmptyAllContainers
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 2
+          steps:
+            - tool: OE14Hammering
+              doAfter: 3

@@ -1,0 +1,146 @@
+# Simple recipes made from T0 and T1 essences and water
+# T1
+# The result is always 75% empty solution
+
+- type: reaction
+  id: OE14WaterBrewingHealBrute
+  minTemp: 500
+  priority: 1
+  reactants:
+    OE14EssenceLife:
+      amount: 2
+    OE14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectEmoteCough: 1
+    OE14HealingEffectHealBrute: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingHealHeat
+  minTemp: 500
+  priority: 2
+  reactants:
+    OE14EssenceLife:
+      amount: 1
+    OE14EssenceFire:
+      amount: 1
+    OE14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectEmoteCough: 1
+    OE14HealingEffectHealHeat: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingHealCold
+  minTemp: 500
+  priority: 2
+  reactants:
+    OE14EssenceLife:
+      amount: 1
+    OE14EssenceFrost:
+      amount: 1
+    OE14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectEmoteCough: 1
+    OE14HealingEffectHealCold: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingHealPoison
+  minTemp: 500
+  priority: 2
+  reactants:
+    OE14EssenceLife:
+      amount: 1
+    OE14EssencePoison:
+      amount: 1
+    OE14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectEmoteCough: 1
+    OE14HealingEffectHealPoison: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingHealAirloss
+  minTemp: 500
+  priority: 2
+  reactants:
+    OE14EssenceLife:
+      amount: 1
+    OE14EssenceAir:
+      amount: 1
+    OE14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectEmoteCough: 1
+    OE14HealingEffectHealAirloss: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingBloodRestore
+  minTemp: 500
+  priority: 2
+  reactants:
+    OE14EssenceLife:
+      amount: 1
+    OE14EssenceWater:
+      amount: 1
+    OE14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectRainbow: 1
+    OE14HealingEffectBloodRestore: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingHealManaDepletion
+  minTemp: 500
+  priority: 1
+  reactants:
+    OE14EssenceLife:
+      amount: 1
+    OE14EssenceEnergia:
+      amount: 2
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectDrunk: 1
+    OE14HealingEffectHealManaDepletion: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150

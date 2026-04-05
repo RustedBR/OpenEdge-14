@@ -1,0 +1,7 @@
+- type: contrabandSeverity
+  id: OE14Minor
+  examineText: oe14-contraband-examine-text-OE14Minor
+
+- type: contrabandSeverity
+  id: OE14Major
+  examineText: oe14-contraband-examine-text-OE14Major

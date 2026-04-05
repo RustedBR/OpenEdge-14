@@ -1,0 +1,175 @@
+- type: entity
+  id: OE14LaddersDownBase
+  name: stairway down
+  abstract: true
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  description: The dark depths of the underworld are calling you.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: /Textures/_OE14/Structures/Dungeon/ladders.rsi
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.48,-0.48,0.48,-0.05"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
+  - type: Portal
+    canTeleportToOtherMaps: true
+    randomTeleport: false
+    arrivalSound: /Audio/_OE14/Effects/wood_up_stairs.ogg
+    departureSound: /Audio/_OE14/Effects/wood_down_stairs.ogg
+
+- type: entity
+  parent: OE14LaddersDownBase
+  id: OE14LaddersUpBase
+  abstract: true
+  categories: [ ForkFiltered, HideSpawnMenu ]
+  name: stairway up
+  description: A way out of the dark underworld into the overworld.
+  components:
+  - type: Sprite
+    sprite: /Textures/_OE14/Structures/Dungeon/ladders_up.rsi
+    drawdepth: Mobs
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.48,0.48,0.48,0.05"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
+  - type: PointLight
+    color: White
+    radius: 3
+    energy: 1
+    netsync: false
+  - type: Portal
+    arrivalSound: /Audio/_OE14/Effects/wood_down_stairs.ogg
+    departureSound: /Audio/_OE14/Effects/wood_up_stairs.ogg
+
+# Basic stone
+- type: entity
+  parent: OE14LaddersDownBase
+  id: OE14LaddersDownStone
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: stone
+
+- type: entity
+  parent: OE14LaddersUpBase
+  id: OE14LaddersUpStone
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: stone
+
+
+- type: entity
+  parent: OE14LaddersDownStone
+  id: OE14LaddersDownStoneAutoLink
+  suffix: Stone
+  components:
+  - type: OE14ZLevelAutoPortal
+    zLevelOffset: -1 # Go into deep
+    otherSideProto: OE14LaddersUpStone
+
+- type: entity
+  parent: OE14LaddersUpStone
+  id: OE14LaddersUpStoneAutoLink
+  suffix: Stone
+  components:
+  - type: OE14ZLevelAutoPortal
+    zLevelOffset: 1 # Go onto surface
+    otherSideProto: OE14LaddersDownStone
+
+
+# Wood
+- type: entity
+  parent: OE14LaddersDownBase
+  id: OE14LaddersDownWood
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: wood
+
+- type: entity
+  parent: OE14LaddersUpBase
+  id: OE14LaddersUpWood
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: wood
+
+
+- type: entity
+  parent: OE14LaddersDownWood
+  id: OE14LaddersDownWoodAutoLink
+  suffix: Wood
+  components:
+  - type: OE14ZLevelAutoPortal
+    zLevelOffset: -1 # Go into deep
+    otherSideProto: OE14LaddersUpWood
+
+- type: entity
+  parent: OE14LaddersUpWood
+  id: OE14LaddersUpWoodAutoLink
+  suffix: Wood
+  components:
+  - type: OE14ZLevelAutoPortal
+    zLevelOffset: 1 # Go onto surface
+    otherSideProto: OE14LaddersDownWood
+
+
+# Marble
+- type: entity
+  parent: OE14LaddersDownBase
+  id: OE14LaddersDownMarble
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: marble
+
+- type: entity
+  parent: OE14LaddersUpBase
+  id: OE14LaddersUpMarble
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: marble
+
+
+- type: entity
+  parent: OE14LaddersDownMarble
+  id: OE14LaddersDownMarbleAutoLink
+  suffix: Marble
+  components:
+  - type: OE14ZLevelAutoPortal
+    zLevelOffset: -1 # Go into deep
+    otherSideProto: OE14LaddersUpMarble
+
+- type: entity
+  parent: OE14LaddersUpMarble
+  id: OE14LaddersUpMarbleAutoLink
+  suffix: Marble
+  components:
+  - type: OE14ZLevelAutoPortal
+    zLevelOffset: 1 # Go onto surface
+    otherSideProto: OE14LaddersDownMarble

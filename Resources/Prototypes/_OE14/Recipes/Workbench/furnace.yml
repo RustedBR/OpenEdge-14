@@ -1,0 +1,172 @@
+- type: OE14Recipe
+  id: OE14CopperBar1
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:MaterialResource
+    material: OE14Copper
+    count: 10
+  result: OE14CopperBar1
+
+- type: OE14Recipe
+  id: OE14IronBar1
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:MaterialResource
+    material: OE14Iron
+    count: 10
+  result: OE14IronBar1
+
+- type: OE14Recipe
+  id: OE14GoldBar1
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:MaterialResource
+    material: OE14Gold
+    count: 10
+  result: OE14GoldBar1
+
+- type: OE14Recipe
+  id: OE14MithrilBar1
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:MaterialResource
+    material: OE14Mithril
+    count: 10
+  result: OE14MithrilBar1
+
+- type: OE14Recipe
+  id: OE14GlassSheet1
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14CrystalShardQuartz
+    count: 1
+  result: OE14GlassSheet1
+
+- type: OE14Recipe
+  id: OE14GlassSheetShard1
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  category: Materials
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14GlassShard
+    count: 2
+  result: OE14GlassSheet1
+
+- type: OE14Recipe
+  id: OE14VialTiny
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 1
+  result: OE14VialTiny
+
+- type: OE14Recipe
+  id: OE14VialTinyReinforced
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 1
+  result: OE14VialTinyReinforced
+
+- type: OE14Recipe
+  id: OE14VialSmall
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 2
+  result: OE14VialSmall
+
+- type: OE14Recipe
+  id: OE14VialSmallReinforced
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 2
+  result: OE14VialSmallReinforced
+
+- type: OE14Recipe
+  id: OE14VialMedium
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 4
+  result: OE14VialMedium
+
+- type: OE14Recipe
+  id: OE14VialMediumReinforced
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 4
+  result: OE14VialMediumReinforced
+
+- type: OE14Recipe
+  id: OE14VialStar
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 2
+  result: OE14VialStar
+
+- type: OE14Recipe
+  id: OE14VialStarReinforced
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 1
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 2
+  result: OE14VialStarReinforced
+
+- type: OE14Recipe
+  id: OE14BaseAlchemyBomb
+  tag: OE14RecipeMeltingFurnace
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 9
+  - !type:StackResource
+    stack: OE14GoldBar
+    count: 1
+  result: OE14BaseAlchemyBomb
+  resultCount: 3
+

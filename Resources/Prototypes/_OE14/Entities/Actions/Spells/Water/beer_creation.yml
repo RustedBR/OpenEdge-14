@@ -1,0 +1,88 @@
+- type: entity
+  id: OE14ActionSpellBeerCreation
+  parent: OE14ActionSpellBase
+  name: Beer creation
+  description: A secret spell that materializes beer from pure mana.
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: beer_creation
+  - type: OE14ActionManaCost
+    manaCost: 20
+  - type: OE14ActionSpeaking
+    startSpeech: "beer..."
+    endSpeech: "Arriva la birra"
+  - type: OE14ActionFreeHandsRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneBeerCreation
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/water.rsi
+      state: beer_creation
+  - type: DoAfterArgs
+    delay: 1
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBeerCreation
+      - !type:OE14SpellSpawnInHandEntity
+        spawns:
+        - OE14LiquidDropBeer
+
+- type: entity
+  id: OE14RuneBeerCreation
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#5eabeb"
+  - type: Sprite
+    layers:
+    - state: medium_line
+      color: "#9e522c"
+      shader: unshaded
+    - state: medium_circle
+      color: "#5eabeb"
+      shader: unshaded
+
+- type: entity
+  id: OE14LiquidDropBeer
+  parent: OE14LiquidDropWater
+  categories: [ ForkFiltered ]
+  suffix: Beer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drop:
+        maxVol: 10
+        reagents:
+        - ReagentId: OE14MagicBeer
+          Quantity: 10
+
+- type: entity
+  id: OE14ImpactEffectBeerCreation
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5eabeb"
+      shader: unshaded
+    - state: particles_down
+      color: "#9e522c"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollWater
+  id: OE14SpellScrollBeerCreation
+  name: beer creation spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellBeerCreation

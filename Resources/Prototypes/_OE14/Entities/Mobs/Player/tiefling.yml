@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  parent: OE14BaseMobTiefling
+  id: OE14MobTiefling
+  localizationId: ent-OE14MobTiefling

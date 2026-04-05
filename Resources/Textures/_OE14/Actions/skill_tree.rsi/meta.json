@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Created by TheShuEd",
+  "states": [
+    {
+      "name": "athletic"
+    },
+    {
+      "name": "athletic2"
+    },
+    {
+      "name": "athletic3"
+    },
+    {
+      "name": "dimension"
+    },
+    {
+      "name": "heal"
+    },
+    {
+      "name": "heal2"
+    },
+    {
+      "name": "heal3"
+    },
+    {
+      "name": "light"
+    },
+    {
+      "name": "light2"
+    },
+    {
+      "name": "light3"
+    },
+    {
+      "name": "martial"
+    },
+    {
+      "name": "meta"
+    },
+    {
+      "name": "meta2"
+    },
+    {
+      "name": "meta3"
+    },
+    {
+      "name": "pyro"
+    },
+    {
+      "name": "pyro2"
+    },
+    {
+      "name": "pyro3"
+    },
+    {
+      "name": "water"
+    },
+    {
+      "name": "water2"
+    },
+    {
+      "name": "water3"
+    },
+    {
+      "name": "electro"
+    },
+    {
+      "name": "electro2"
+    },
+    {
+      "name": "electro3"
+    }
+  ]
+}

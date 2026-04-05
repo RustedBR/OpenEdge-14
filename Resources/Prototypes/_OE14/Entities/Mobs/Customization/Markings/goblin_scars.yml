@@ -1,0 +1,150 @@
+- type: marking
+  id: OE14GoblinScarCheekLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_cheek_left
+
+- type: marking
+  id: OE14GoblinScarCheekRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_cheek_right
+
+- type: marking
+  id: OE14GoblinScarChestLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_chest_left
+
+- type: marking
+  id: OE14GoblinScarChestRight
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_chest_right
+
+- type: marking
+  id: OE14GoblinScarCutLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_cut_left
+
+- type: marking
+  id: OE14GoblinScarCutRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_cut_right
+
+- type: marking
+  id: OE14GoblinScarEyeLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_eye_left
+
+- type: marking
+  id: OE14GoblinScarEyeRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_eye_right
+
+- type: marking
+  id: OE14GoblinScarEyebrowLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_eyebrow_left
+
+- type: marking
+  id: OE14GoblinScarEyebrowRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_eyebrow_right
+
+- type: marking
+  id: OE14GoblinScarHalfFaceLeft
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_half_face_left
+
+- type: marking
+  id: OE14GoblinScarHalfFaceRight
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_half_face_right
+
+- type: marking
+  id: OE14GoblinScarNearRibLeft
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_near_rib_left
+
+- type: marking
+  id: OE14GoblinScarNearRibRight
+  bodyPart: Chest
+  markingCategory: Chest
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_near_rib_right
+
+- type: marking
+  id: OE14GoblinScarNose
+  bodyPart: Head
+  markingCategory: Head
+  followSkinColor: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_scars.rsi
+      state: scar_nose
+

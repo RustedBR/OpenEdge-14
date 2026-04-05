@@ -1,0 +1,23 @@
+- type: entity
+  id: OE14Lighthouse
+  parent: BaseStructure
+  name: lighthouse
+  description: Light in the darkness.
+  categories:
+  - ForkFiltered
+  components:
+  - type: OE14PvsOverride
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/bonfire.rsi
+    layers:
+    - state: burning
+      shader: unshaded
+  - type: PointLight
+    castShadows: false
+    radius: 50
+    energy: 5.0
+    mask: /Textures/_OE14/Effects/LightMasks/lighthouse_cone.png
+  - type: RotatingLight
+    speed: 15
+  localizationId: ent-OE14Lighthouse

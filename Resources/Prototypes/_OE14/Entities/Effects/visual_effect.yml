@@ -1,0 +1,158 @@
+- type: entity
+  id: OE14MeleeCritEffect
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: Sprite
+    sprite: _OE14/Effects/sparks.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - state: 1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        1: ''
+        2: ''
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: Tag
+    tags:
+    - HideContextMenu
+  localizationId: ent-OE14MeleeCritEffect
+- type: entity
+  id: OE14DirtEffect
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: Sprite
+    sprite: _OE14/Effects/material_splash.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - state: dirt1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        dirt1: ''
+        dirt2: ''
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: AnimationPlayer
+  - type: EmitSoundOnSpawn
+    sound:
+      collection: OE14Digging
+  localizationId: ent-OE14DirtEffect
+- type: entity
+  id: OE14SnowEffect
+  parent: OE14DirtEffect
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: snow1
+      map:
+      - random
+  - type: RandomSprite
+    available:
+    - random:
+        snow1: ''
+        snow2: ''
+  localizationId: ent-OE14SnowEffect
+- type: entity
+  id: OE14DustEffect
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    drawdepth: Items
+    sprite: _OE14/Effects/dust.rsi
+    state: dust
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: AnimationPlayer
+  localizationId: ent-OE14DustEffect
+- type: entity
+  id: OE14MagicBeam1
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: Sprite
+    sprite: /Textures/_OE14/Effects/Beams/magic.rsi
+    drawdepth: Effects
+    layers:
+    - state: magic1
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: Beam
+  - type: TimedDespawn
+    lifetime: 3
+  - type: Tag
+    tags:
+    - HideContextMenu
+  localizationId: ent-OE14MagicBeam1
+- type: entity
+  id: OE14ElectrifiedEffect
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: Sprite
+    sprite: Effects/electricity.rsi
+    drawdepth: Effects
+    layers:
+    - state: electrified
+      shader: unshaded
+  - type: Physics
+    canCollide: false
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+    - HideContextMenu
+  localizationId: ent-OE14ElectrifiedEffect
+- type: entity
+  id: OE14BloodMoonCurseEffect
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: Sprite
+    noRot: true
+    color: '#FFFFFF33'
+    sprite: /Textures/_OE14/Effects/Magic/blood_moon_curse.rsi
+    drawdepth: Effects
+    layers:
+    - state: icon
+  - type: Physics
+    canCollide: false
+  - type: Tag
+    tags:
+    - HideContextMenu
+  localizationId: ent-OE14BloodMoonCurseEffect
+- type: entity
+  id: OE14LiquidDropDummy
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Misc/liquid_drop.rsi
+    layers:
+    - state: liq-1
+  localizationId: ent-OE14LiquidDropDummy

@@ -1,0 +1,177 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: OE14ClothingShoesBase
+  categories:
+  - ForkFiltered
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - FEET
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Normal
+  - type: ProtectedFromStepTriggers
+  localizationId: ent-OE14ClothingShoesBase
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesBlack
+  name: simple black boots
+  description: They won't hold moisture, but it's better than going barefoot.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/black.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/black.rsi
+  localizationId: ent-OE14ClothingShoesBlack
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesAristocraticBlack
+  name: aristocratic black boots
+  description: They're expensive enough that you don't want to go caving in them.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/aristocratic_black.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/aristocratic_black.rsi
+  localizationId: ent-OE14ClothingShoesAristocraticBlack
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesSandals
+  name: sandals
+  description: Sandals made of rough leather and metal fastenings
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/sandals.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/sandals.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: OE14Slippers
+      params:
+        volume: -8
+        variation: 0.07
+  localizationId: ent-OE14ClothingShoesSandals
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesArtifactFlightboots
+  name: flight boots
+  categories:
+  - DoNotMap
+  suffix: Artifact
+  description: Enchanted boots that allow their wearer to walk through the air a short
+    distance from the ground. It looks extremely spectacular!
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/flightboots.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/flightboots.rsi
+  - type: AntiGravityClothing
+  - type: ClothingSpeedModifier
+    walkModifier: 2
+    sprintModifier: 2
+  - type: StaticPrice
+    price: 300
+  localizationId: ent-OE14ClothingShoesArtifactFlightboots
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesArtifactSpeedboots
+  name: hermes boots
+  categories:
+  - DoNotMap
+  suffix: Artifact
+  description: Enchanted boots that allow their wearer to walk through the air a short
+    distance from the ground. It looks extremely spectacular!
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/speedboots.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/speedboots.rsi
+  - type: OE14SpellStorageAccessWearing
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellMagicalAcceleration
+  - type: StaticPrice
+    price: 400
+  localizationId: ent-OE14ClothingShoesArtifactSpeedboots
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesLongLeatherBoots
+  name: long leather boots
+  description: the perfect tool for kicking left and right
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/long_leather_boots.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/long_leather_boots.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Leather: 5
+      OE14Cloth: 5
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: OE14ThinLeather1
+      amount: 1
+  localizationId: ent-OE14ClothingShoesLongLeatherBoots
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesJestersRingers
+  name: jester's ringers
+  description: Everyone around you should know that you exist, buddy.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/jesters_ringers.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/jesters_ringers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepJester
+      params:
+        variation: 0.07
+  localizationId: ent-OE14ClothingShoesJestersRingers
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesArtifactFrogs
+  name: frog's slippers
+  categories:
+  - DoNotMap
+  suffix: Artifact
+  description: For wednesday's lovers.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/frogs_slippers.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/frogs_slippers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FrogsSlippers
+      params:
+        variation: 0.07
+  - type: NoSlip
+  - type: StaticPrice
+    price: 500
+  localizationId: ent-OE14ClothingShoesArtifactFrogs
+- type: entity
+  parent: OE14ClothingShoesBase
+  id: OE14ClothingShoesPinkSlippers
+  name: pink slippers
+  description: Pink slippers made of the rarest pink llama fur. Despite its peculiar
+    appearance, it is a very expensive shoe.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Shoes/pink_slippers.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Shoes/pink_slippers.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: OE14Slippers
+      params:
+        volume: -9
+        variation: 0.07
+  - type: StaticPrice
+    price: 100
+  localizationId: ent-OE14ClothingShoesPinkSlippers

@@ -1,0 +1,124 @@
+# # Explorer Backpacks (heavy on buckles)
+# - type: OE14Recipe
+#   id: OE14ClothingBackExplorerBackpackT0
+#   tag: OE14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 4
+#   craftTime: 4
+#   requirements:
+#   - !type:StackResource
+#     stack: OE14Cloth
+#     count: 3 # 30u OE14Cloth ~~~ OE14Cloth (10u)
+#   result: OE14ClothingBackExplorerBackpackT0
+
+# - type: OE14Recipe
+#   id: OE14ClothingBackExplorerBackpackT1
+#   tag: OE14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 3
+#   craftTime: 4
+#   requirements:
+#   - !type:StackResource
+#     stack: OE14ThinLeather
+#     count: 3 # 15u OE14Leather ~~~ OE14ThinLeather (5u)
+#   - !type:ProtoIdResource
+#     protoId: OE14IronBuckle
+#     count: 8 # 16u OE14Iron ~~~ 1/5 iron bar (10u)
+#   result: OE14ClothingBackExplorerBackpackT1
+
+# - type: OE14Recipe
+#   id: OE14ClothingBackExplorerBackpackT2
+#   tag: OE14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 2
+#   craftTime: 6
+#   requirements:
+#   - !type:StackResource
+#     stack: OE14ThinLeather
+#     count: 3 # 15u OE14Leather ~~~ OE14ThinLeather (5u)
+#   - !type:StackResource
+#     stack: OE14Leather
+#     count: 3 # 30u OE14Leather ~~~ OE14Leather (10u)
+#   - !type:ProtoIdResource
+#     protoId: OE14IronBuckle
+#     count: 10 # 20u OE14Iron ~~~ 1/5 iron bar (10u)
+#   result: OE14ClothingBackExplorerBackpackT2
+
+# - type: OE14Recipe
+#   id: OE14ClothingBackExplorerBackpackT3
+#   tag: OE14RecipeLeatherWorking
+#   category: Explorers
+#   priority: 1
+#   craftTime: 10
+#   requirements:
+#   - !type:StackResource
+#     stack: OE14Leather
+#     count: 3 # 30u OE14Leather ~~~ OE14Leather (10u)
+#   - !type:StackResource
+#     stack: OE14RuggedLeather
+#     count: 2 # 50u OE14Leather ~~~ OE14RuggedLeather (25u)
+#   - !type:ProtoIdResource
+#     protoId: OE14IronBuckle
+#     count: 10 # 20u OE14Iron ~~~ 1/5 iron bar (10u)
+#   result: OE14ClothingBackExplorerBackpackT3
+
+# # ======================================
+# # Upgrade Recipes with Material Tracking
+# # ======================================
+
+# # Explorer T1 Upgrade (Leather Carryover)
+# - type: OE14Recipe
+#   id: OE14ClothingBackExplorerBackpackT1_Upgrade
+#   tag: OE14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 3
+#   craftTime: 6
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: OE14ClothingBackExplorerBackpackT0  # 60u cloth (6u)
+#     count: 1
+#   - !type:StackResource
+#     stack: OE14ThinLeather                 # +15u OE14Leather (3x5u)
+#     count: 1
+#   - !type:ProtoIdResource
+#     protoId: OE14IronBuckle
+#     count: 8 # 16u OE14Iron ~~~ 1/5 iron bar (10u)
+#   result: OE14ClothingBackExplorerBackpackT1
+#   # Total Leather: 60u (cloth) + 15u = 75u
+
+# # Explorer T2 Upgrade (Leather Accumulation)
+# - type: OE14Recipe
+#   id: OE14ClothingBackExplorerBackpackT2_Upgrade
+#   tag: OE14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 2
+#   craftTime: 8
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: OE14ClothingBackExplorerBackpackT1  # 15u (thin)
+#     count: 1
+#   - !type:StackResource
+#     stack: OE14Leather                     # +30u OE14Leather (3x10u)
+#     count: 3
+#   - !type:ProtoIdResource
+#     protoId: OE14IronBuckle
+#     count: 2 # 4u OE14Iron ~~~ 1/5 iron bar (10u)
+#   result: OE14ClothingBackExplorerBackpackT2
+#   # Total Leather: 15u + 30u = 45u
+
+# # Explorer T3 Upgrade (Rugged Premium)
+# - type: OE14Recipe
+#   id: OE14ClothingBackExplorerBackpackT3_Upgrade
+#   tag: OE14RecipeLeatherWorking
+#   category: ExplorerUpgrade
+#   priority: 1
+#   craftTime: 12
+#   requirements:
+#   - !type:ProtoIdResource
+#     protoId: OE14ClothingBackExplorerBackpackT2  # 15u + 30u = 45u
+#     count: 1
+#   - !type:StackResource
+#     stack: OE14RuggedLeather               # +50u OE14Leather (2x25u)
+#     count: 2
+#   result: OE14ClothingBackExplorerBackpackT3
+#   # Total Leather: 45u + 50u = 95u

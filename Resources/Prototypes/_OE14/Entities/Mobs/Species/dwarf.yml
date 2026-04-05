@@ -1,0 +1,87 @@
+- type: entity
+  parent: OE14BaseMobSpeciesOrganic
+  id: OE14BaseMobDwarf
+  name: Mr. Dwarf
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: OE14Dwarf
+  - type: OE14CharacterStats
+    strength: 7
+    vitality: 7
+    dexterity: 2
+    intelligence: 4
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      125: Critical
+      250: Dead
+  - type: Stamina
+    critThreshold: 25
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 75
+    energy: 75
+  - type: OE14SkillStorage
+    freeLearnedSkills:
+    - HydrosophistryT1
+    - HydrosophistryT2
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Dwarf/parts.rsi
+    state: full
+  - type: OE14AuraImprint
+    imprintColor: '#91898d'
+  - type: Body
+    prototype: OE14Dwarf
+    requiredLegs: 2
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Dwarf/displacement.rsi
+            state: shoes
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Dwarf/displacement.rsi
+            state: pants
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+  localizationId: ent-OE14BaseMobDwarf
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobDwarfDummy
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: HumanoidAppearance
+    species: OE14Dwarf
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Dwarf/displacement.rsi
+            state: shoes
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Dwarf/displacement.rsi
+            state: pants
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+  localizationId: ent-OE14MobDwarfDummy

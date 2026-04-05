@@ -1,0 +1,17 @@
+- type: entity
+  id: OE14RandomSpawnerGatherAgaricShroom
+  name: agaric shroom spawner
+  parent: MarkerBase
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _OE14/Structures/Flora/Wild/agaric.rsi
+      state: world1
+  - type: RandomSpawner
+    prototypes:
+    - OE14GatherableFlyAgaric
+    chance: 0.05
+  localizationId: ent-OE14RandomSpawnerGatherAgaricShroom

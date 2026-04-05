@@ -1,0 +1,43 @@
+<Document>
+# Implementação de Rede (Atributos do Personagem)
+
+Esta página cobre como atributos de personagem são sincronizados entre servidor e cliente.
+
+## AutoNetworkedField
+
+Campos de atributos que clientes precisam exibir usam o atributo [mono]AutoNetworkedField[/mono]:
+
+<CodeBlock>
+[DataField, AutoNetworkedField]
+public int EffectiveStrength { get; set; }
+
+[DataField, AutoNetworkedField]
+public Dictionary<ModifierSource, int> StrengthModifiers { get; set; } = new();
+</CodeBlock>
+
+Quando o servidor atualiza esses campos, todos os clientes conectados automaticamente recebem os novos valores.
+
+## O Que É Sincronizado
+
+- Valores de atributos efetivos (para exibição na janela de personagem)
+- Dicionários de modificadores (para cliente poder mostrar o detalhamento)
+- Pontos disponíveis (para a UI de gasto de atributos)
+
+## O Que Fica Apenas no Servidor
+
+- Lógica de validação de atributo base
+- Cálculo de overflow
+- Persistência de banco de dados
+
+## Atualização de UI do Cliente
+
+Quando o cliente recebe um componente de atributos atualizado, a janela de personagem atualiza automaticamente. A UI lê dos campos networkados para mostrar:
+- Valor efetivo atual
+- Detalhamento de modificadores por fonte
+- Pontos disponíveis restantes
+
+## Conteúdo Em Construção
+
+Documentação completa de implementação de rede coming soon. Veja [textlink="Sincronização de Rede" link="OE14_DEV_Arch_Netcode"] para a arquitetura geral de networking.
+
+</Document>

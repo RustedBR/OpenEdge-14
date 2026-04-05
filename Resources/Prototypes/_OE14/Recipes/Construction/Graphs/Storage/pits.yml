@@ -1,0 +1,17 @@
+- type: constructionGraph
+  id: OE14CrateDirtPitGrave
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14CrateDirtPitGrave
+          steps:
+            - material: OE14Dirt
+              amount: 3
+              doAfter: 5
+
+    - node: OE14CrateDirtPitGrave
+      entity: OE14CrateDirtPitGrave
+

@@ -1,0 +1,56 @@
+- type: entity
+  id: OE14BaseGameRule
+  parent: BaseGameRule
+  abstract: true
+  components:
+  - type: GameRule
+    cP14Allowed: true
+
+- type: entity
+  id: OE14RoundObjectivesRule
+  parent: OE14BaseGameRule
+  components:
+  - type: OE14PersonalObjectivesRule
+    roleObjectives:
+      OE14Adventurer:
+      - OE14PersonalCurrencyCollectObjectiveGroup
+      OE14Alchemist:
+      - OE14PersonalCurrencyCollectObjectiveGroup
+      OE14Apprentice:
+      - OE14PersonalCurrencyCollectObjectiveGroup
+      OE14Blacksmith:
+      - OE14PersonalCurrencyCollectObjectiveGroup
+      OE14Innkeeper:
+      - OE14PersonalCurrencyCollectObjectiveGroup
+
+# crashing
+
+#- type: entity
+#  id: OE14CrashToWindlandsRule
+#  parent: OE14BaseGameRule
+#  components:
+#  - type: OE14CrashingShipRule
+#  - type: OE14ExpeditionToWindlandsRule
+#    modifiers:
+#    - WeatherInfinityStorm
+#    - MapLightCycleDefault
+#    - Ruins
+#    - Geodes
+
+# event schedulers
+
+- type: entity
+  id: OE14BasicStationEventScheduler
+  parent: OE14BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: OE14BasicGameRulesTable
+
+- type: entityTable
+  id: OE14BasicGameRulesTable
+  table: !type:AllSelector
+    children:
+      - !type:NestedSelector
+        tableId: OE14BasicCalmEventsTable
+

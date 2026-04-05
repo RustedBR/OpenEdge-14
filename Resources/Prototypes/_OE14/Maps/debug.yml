@@ -1,0 +1,30 @@
+- type: gameMap
+  id: Empty
+  mapName: Empty
+  mapPath: /Maps/Test/empty.yml
+  minPlayers: 0
+  stations:
+    Empty:
+      stationProto: StandardStationArena
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Empty"
+        - type: StationJobs
+          availableJobs:
+            OE14Adventurer: [ -1, -1 ]
+            #OE14Captain: [ -1, -1 ]
+
+- type: gameMap
+  id: Dev
+  mapName: Dev
+  mapPath: /Maps/_OE14/dev_map.yml
+  minPlayers: 0
+  stations:
+    Dev:
+      stationProto: OE14BaseExpedition
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Dev"
+        - type: StationJobs
+          availableJobs:
+            OE14Adventurer: [ -1, -1 ]

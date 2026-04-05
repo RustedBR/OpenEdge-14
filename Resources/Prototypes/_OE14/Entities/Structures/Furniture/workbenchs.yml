@@ -1,0 +1,173 @@
+- type: entity
+  parent:
+  - BaseStructure
+  id: OE14BaseWorkbench
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Furniture/workbench.rsi
+    state: filler
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/workbench.rsi
+    state: filler
+  - type: ActivatableUI
+    key: enum.OE14WorkbenchUiKey.Key
+    requiresComplex: true
+    singleUser: true
+  - type: Climbable
+  - type: Clickable
+  - type: OE14Workbench
+    craftSpeed: 1
+  - type: InteractionOutline
+  - type: UserInterface
+    interfaces:
+      enum.OE14WorkbenchUiKey.Key:
+        type: OE14WorkbenchBoundUserInterface
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 2
+  - type: PlaceableSurface
+  - type: OE14WorkbenchPlaceableProvider
+  - type: ItemPlacer
+    maxEntities: 0
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask: # tables should collide with other tables
+        - TableMask
+        layer:
+        - TableLayer
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+
+- type: entity
+  parent:
+  - OE14BaseWorkbench
+  - OE14BaseFlammable
+  id: OE14Workbench
+  name: workbench
+  description: Table for the production of various basic tools.
+  components:
+  - type: Sprite
+    state: workbench
+  - type: Icon
+    state: workbench
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: FireVisuals
+    sprite: _OE14/Effects/fire.rsi
+    normalState: full
+  - type: Construction
+    graph: OE14Workbench
+    node: OE14Workbench
+  - type: OE14Workbench
+    recipeTags:
+    - OE14RecipeWorkbench
+
+- type: entity
+  id: OE14WorkbenchCooking
+  parent:
+  - OE14BaseWorkbench
+  - OE14BaseFlammable
+  name: cooking table
+  suffix: Workbench
+  description: A table to work with food. Time to cook!
+  components:
+  - type: Sprite
+    state: cooking_table
+  - type: Icon
+    state: cooking_table
+  - type: Construction
+    graph: OE14WorkbenchCooking
+    node: OE14WorkbenchCooking
+  - type: OE14Workbench
+    craftSound:
+      collection: OE14Sawing #TODO
+    recipeTags:
+    - OE14RecipeCooking
+
+- type: entity
+  id: OE14WorkbenchSewing
+  parent:
+  - OE14BaseWorkbench
+  - OE14BaseFlammable
+  name: sewing table
+  suffix: Clothing Workbench
+  description: A table with embroidery tools to create different clothing and materials.
+  components:
+  - type: Sprite
+    state: sewing_table
+  - type: Icon
+    state: sewing_table
+  - type: Construction
+    graph: OE14WorkbenchSewing
+    node: OE14WorkbenchSewing
+  - type: OE14Workbench
+    craftSound:
+      collection: OE14Sawing #TODO
+    recipeTags:
+    - OE14RecipeSewing
+
+- type: entity
+  id: OE14WorkbenchLeather
+  parent:
+  - OE14BaseWorkbench
+  - OE14BaseFlammable
+  name: tanner table
+  suffix: Leather Workbench
+  description: Table for leather processing and creation of leather goods.
+  components:
+  - type: Sprite
+    state: tanner_table
+  - type: Icon
+    state: tanner_table
+  - type: Construction
+    graph: OE14WorkbenchLeather
+    node: OE14WorkbenchLeather
+  - type: OE14Workbench
+    craftSound:
+      collection: OE14Sawing # TODO OE14Leather?
+    recipeTags:
+    - OE14RecipeLeatherWorking

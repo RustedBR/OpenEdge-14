@@ -1,0 +1,14 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Rules
+  name: guide-entry-rules
+  ruleEntry: true
+  text: "/ServerInfo/_OE14/Rules/OE14_Rules.xml"
+  children:
+  - OE14RulesEN
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14RulesEN
+  name: "(EN) Server rules"
+  text: "/ServerInfo/_OE14/Rules/OE14_Rules_EN.xml"

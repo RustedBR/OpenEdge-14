@@ -1,0 +1,33 @@
+<Document>
+# Árvores de Habilidades & Distribuição
+
+Árvores de habilidades definem os caminhos de progressão disponíveis para cada espécie. Cada árvore contém tiers de habilidades que devem ser aprendidos em ordem.
+
+## Estrutura da Árvore
+
+<CodeBlock>
+Árvore: Piromancia
+  T1: FireBolt       (1 ponto)
+  T2: FireBall       (2 pontos, requer T1)
+  T3: Inferno        (3 pontos, requer T2)
+</CodeBlock>
+
+## Espécies & Árvores
+
+Cada espécie tem acesso a diferentes árvores de habilidades:
+- [bold]Humanos[/bold] — Árvores de Artesanato (ferreiro, alquimia, etc.)
+- [bold]Elfos[/bold] — Árvores de Magia (Piromancia, Hidrosafia, etc.)
+- [bold]Anões[/bold] — Árvores de combate e artesanato
+
+## Alocação de Pontos
+
+Personagens recebem pontos na criação do personagem e através do jogo. Pontos são gastos para desbloquear tiers de habilidades.
+
+[bold]Importante:[/bold] Gastar pontos em habilidades pode conceder modificadores de atributos. Esses modificadores contam para o limite do atributo, então overflow é possível. Veja [textlink="Sistema de Fallback de Magias" link="OE14_DEV_Stats_Fallback"] para detalhes.
+
+## Conteúdo Em Construção
+
+Documentação completa de árvores de habilidades coming soon. As definições de habilidades estão em:
+[mono]Resources/Prototypes/_OE14/Skills/[/mono]
+
+</Document>

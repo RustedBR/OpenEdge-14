@@ -1,0 +1,74 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "en-US"
+  id: OE14_EN
+  name: Welcome to CrystallEdge
+  text: "/ServerInfo/_OE14/Guidebook_EN/Welcome.xml"
+  children:
+  - OE14_EN_Species
+  - OE14_EN_Jobs
+  - OE14GameSystems
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "en-US"
+  id: OE14_DEVELOPMENT
+  name: Development
+  text: "/ServerInfo/_OE14/Guidebook_EN/Development/Welcome.xml"
+  children:
+  - OE14_DEV_Architecture
+  - OE14_DEV_CharacterStats
+  - OE14_DEV_Skills
+  - OE14_DEV_GameFlow
+  - OE14_DEV_SystemReference
+  - OE14_DEV_Guides
+  - OE14OpenCodeGuide
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14GameSystems
+  locFilter: "en-US"
+  name: Game Systems
+  text: "/ServerInfo/Guidebook/OE14_GettingStarted.xml"
+  children:
+  - OE14Magic
+  - OE14Crafting
+  - OE14Smithing
+  - OE14Economy
+  - OE14Combat
+  - OE14CharacterStats
+  - OE14Skill
+  - OE14Trading
+  - OE14StatusEffects
+  - OE14_EN_Locks_and_Keys
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14Smithing
+  name: Smithing
+  text: "/ServerInfo/_OE14/Guidebook_EN/Smithing.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT
+  name: Bem-vindo ao CrystallEdge
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Welcome.xml"
+  children:
+  - OE14_PT_Species
+  - OE14_PT_Jobs
+  - OE14_PT_GameSystems
+
+- type: guideEntry
+  openEdgeAllowed: true
+  locFilter: "pt-BR"
+  id: OE14_PT_DEVELOPMENT
+  name: Desenvolvimento
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Development/Welcome.xml"
+  children:
+  - OE14_PT_DEV_Architecture
+  - OE14_PT_DEV_CharacterStats
+  - OE14_PT_DEV_Skills
+  - OE14_PT_DEV_GameFlow
+  - OE14_PT_DEV_SystemReference
+  - OE14_PT_DEV_Guides

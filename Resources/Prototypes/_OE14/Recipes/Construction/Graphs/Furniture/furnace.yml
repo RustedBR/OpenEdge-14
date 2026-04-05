@@ -1,0 +1,28 @@
+- type: constructionGraph
+  id: OE14Furnace
+  start: start
+  graph:
+    - node: start
+      actions:
+      - !type:DestroyEntity {}
+      edges:
+        - to: OE14Furnace
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: OE14IronBar
+              amount: 3
+              doAfter: 4
+    - node: OE14Furnace
+      entity: OE14Furnace
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 2
+        - tool: Prying
+          doAfter: 4
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14IronBar1
+          amount: 3

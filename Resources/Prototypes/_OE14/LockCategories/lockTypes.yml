@@ -1,0 +1,229 @@
+# Tavern
+
+- type: OE14LockType
+  id: TavernHall
+  complexity: 3
+  name: oe14-lock-shape-tavern-hall
+
+- type: OE14LockType
+  id: TavernStaff
+  complexity: 3
+  name: oe14-lock-shape-tavern-staff
+
+- type: OE14LockType
+  id: TavernDorms1
+  group: TavernDorms
+  complexity: 3
+  name: oe14-lock-shape-tavern-dorm1
+
+- type: OE14LockType
+  id: TavernDorms2
+  group: TavernDorms
+  complexity: 3
+  name: oe14-lock-shape-tavern-dorm2
+
+- type: OE14LockType
+  id: TavernDorms3
+  group: TavernDorms
+  complexity: 3
+  name: oe14-lock-shape-tavern-dorm3
+
+- type: OE14LockType
+  id: TavernDorms4
+  group: TavernDorms
+  complexity: 3
+  name: oe14-lock-shape-tavern-dorm4
+
+- type: OE14LockType
+  id: TavernDorms5
+  group: TavernDorms
+  complexity: 3
+  name: oe14-lock-shape-tavern-dorm5
+
+# Artisans
+
+- type: OE14LockType
+  id: Alchemy1
+  group: Alchemist
+  complexity: 5
+  name: oe14-lock-shape-alchemist1
+
+- type: OE14LockType
+  id: Alchemy2
+  group: Alchemist
+  complexity: 5
+  name: oe14-lock-shape-alchemist2
+
+- type: OE14LockType
+  id: Alchemy3
+  group: Alchemist
+  complexity: 5
+  name: oe14-lock-shape-alchemist3
+
+- type: OE14LockType
+  id: Blacksmith1
+  group: Blacksmith
+  complexity: 5
+  name: oe14-lock-shape-blacksmith1
+
+- type: OE14LockType
+  id: Blacksmith2
+  group: Blacksmith
+  complexity: 5
+  name: oe14-lock-shape-blacksmith2
+
+- type: OE14LockType
+  id: Blacksmith3
+  group: Blacksmith
+  complexity: 5
+  name: oe14-lock-shape-blacksmith3
+
+- type: OE14LockType
+  id: ShopPublic
+  complexity: 3
+  name: oe14-lock-shape-merchant-public
+
+- type: OE14LockType
+  id: Shop1
+  group: Merchant
+  complexity: 5
+  name: oe14-lock-shape-merchant1
+
+- type: OE14LockType
+  id: Shop2
+  group: Merchant
+  complexity: 5
+  name: oe14-lock-shape-merchant2
+
+- type: OE14LockType
+  id: Shop3
+  group: Merchant
+  complexity: 5
+  name: oe14-lock-shape-merchant3
+
+# Personal house
+
+- type: OE14LockType
+  id: PersonalHouse1
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse1
+
+- type: OE14LockType
+  id: PersonalHouse2
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse2
+
+- type: OE14LockType
+  id: PersonalHouse3
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse3
+
+- type: OE14LockType
+  id: PersonalHouse4
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse4
+
+- type: OE14LockType
+  id: PersonalHouse5
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse5
+
+- type: OE14LockType
+  id: PersonalHouse6
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse6
+
+- type: OE14LockType
+  id: PersonalHouse7
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse7
+
+- type: OE14LockType
+  id: PersonalHouse8
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse8
+
+- type: OE14LockType
+  id: PersonalHouse9
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse9
+
+- type: OE14LockType
+  id: PersonalHouse10
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse10
+
+- type: OE14LockType
+  id: PersonalHouse11
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse11
+
+- type: OE14LockType
+  id: PersonalHouse12
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse12
+
+- type: OE14LockType
+  id: PersonalHouse13
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse13
+
+- type: OE14LockType
+  id: PersonalHouse14
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse14
+
+- type: OE14LockType
+  id: PersonalHouse15
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse15
+
+- type: OE14LockType
+  id: PersonalHouse16
+  group: PersonalHouse
+  complexity: 3
+  name: oe14-lock-shape-personalhouse16
+
+# Guard
+
+- type: OE14LockType
+  id: CityGate
+  complexity: 5
+  name: oe14-lock-shaper-guard-city-gate
+
+- type: OE14LockType
+  id: GuardBarracks
+  complexity: 5
+  name: oe14-lock-shaper-guard-barracks
+
+- type: OE14LockType
+  id: GuardCommander
+  complexity: 7
+  name: oe14-lock-shaper-guard-commander
+
+# Adventure Guild
+
+- type: OE14LockType
+  id: Guildmaster
+  complexity: 6
+  name: oe14-lock-shape-guildmaster
+
+- type: OE14LockType
+  id: AdventureGuild
+  complexity: 4
+  name: oe14-lock-shape-adventure-guild

@@ -1,0 +1,74 @@
+- type: entity
+  name: wood bench
+  id: OE14BenchWood
+  parent:
+  - SeatBase
+  - OE14BaseFlammable
+  description: A bench carved from wood, a comfortable part of the interior designed for sitting and relaxing.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Wood
+  - type: Rotatable
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/bench.rsi
+    layers:
+    - state: wooden
+  - type: Physics
+    bodyType: Static
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 2
+  - type: Construction
+    graph: OE14BenchWood
+    node: OE14BenchWood
+
+- type: entity
+  id: OE14BenchWoodBirch
+  parent: OE14BenchWood
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/bench.rsi
+    layers:
+    - state: birch
+  - type: Construction
+    graph: OE14BenchWood
+    node: OE14BenchWoodBirch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 2

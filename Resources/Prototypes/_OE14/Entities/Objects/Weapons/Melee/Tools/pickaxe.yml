@@ -1,0 +1,64 @@
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponPickaxe
+  parent:
+  - BaseItem
+  - OE14BaseWeaponChemical
+  - OE14BaseWeaponDestructible
+  - OE14BaseWeaponSelfDamage
+  - OE14BaseWeaponSharp
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MeleeWeapon
+    attackRate: 1
+    range: 1.6
+    angle: 90
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Piercing: 3
+        Structural: 4
+    animation: OE14WeaponArcSlash
+    wideAnimation: OE14WeaponArcSlash
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.5
+    cPAnimationOffset: 1
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 6
+        Structural: 20
+  - type: Wieldable
+  - type: Clothing
+    breakOnMove: false
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - neck
+  - type: Tool
+    qualities:
+    - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+  localizationId: ent-OE14BaseWeaponPickaxe
+- type: entity
+  parent: OE14BaseWeaponPickaxe
+  id: OE14WeaponPickaxeIron
+  name: iron pickaxe
+  description: A sturdy iron pickaxe, perfect for mining and not for combat.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Melee/Pickaxe/iron.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 20
+      OE14Iron: 20
+  localizationId: ent-OE14WeaponPickaxeIron

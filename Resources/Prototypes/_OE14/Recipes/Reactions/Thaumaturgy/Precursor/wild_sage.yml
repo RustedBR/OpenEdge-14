@@ -1,0 +1,30 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14WildSageSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14WildSageSap:
+      amount: 1
+  products:
+    OE14EssenceEarth: 0.5
+    OE14EssenceOrder: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+- type: reaction
+  id: OE14WildSageAdmixture1
+  minTemp: 500
+  reactants:
+    OE14WildSageSap:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14HealingEffectHealManaDepletion:
+      amount: 1
+  products:
+    OE14SideEffectRainbow: 2
+    OE14SideEffectEmoteCough: 1
+

@@ -1,0 +1,61 @@
+- type: entity
+  id: OE14ActionSpellKick
+  parent: OE14ActionSpellBase
+  name: Kick
+  description: You perform an epic leg kick at your chosen object, pushing it away from you.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.4
+  - type: OE14ActionStaminaCost
+    stamina: 40
+  - type: OE14ActionEmoting
+    startEmote: oe14-kick-emote-start
+    endEmote: oe14-kick-emote
+  - type: OE14ActionDangerous
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    distanceThreshold: 1.5
+    delay: 0.5
+  - type: Action
+    useDelay: 5
+    sound: null
+    icon:
+      sprite: _OE14/Actions/Spells/physical.rsi
+      state: kick
+  - type: TargetAction
+    range: 1
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Body
+      - Item
+      - Anchorable
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellKnockdown
+      - !type:OE14SpellThrowFromUser
+        distance: 1.5
+        throwPower: 5
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14DustEffectKickSound
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          ignoreResistances: false
+          damage:
+            types:
+              Blunt: 5
+
+- type: entity
+  id: OE14DustEffectKickSound
+  parent: OE14DustEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: EmitSoundOnSpawn
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        pitch: 1

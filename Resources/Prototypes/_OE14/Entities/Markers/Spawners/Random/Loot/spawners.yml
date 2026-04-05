@@ -1,0 +1,22 @@
+- type: entityTable
+  id: OE14TableBureaucracy
+  table: !type:GroupSelector
+    children:
+    # Common
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - id: OE14Paper
+    # Rare
+    - !type:GroupSelector
+      weight: 20
+      children:
+      - id: OE14PaperFolderBlue
+      - id: OE14PaperFolderRed
+      - id: OE14PenFeather
+    # Very rare
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: OE14Inkwell
+

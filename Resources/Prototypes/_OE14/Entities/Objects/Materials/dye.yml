@@ -1,0 +1,90 @@
+- type: entity
+  id: OE14BaseDye
+  parent: BaseItem
+  abstract: true
+  name: dye
+  description: A bright, colorful dye used to paint various things.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/dye.rsi
+  - type: StaticPrice
+    price: 6
+  localizationId: ent-OE14BaseDye
+- type: entity
+  id: OE14DyeRed
+  parent: OE14BaseDye
+  name: red dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: '#bd2b26'
+  - type: StaticPrice
+    price: 4
+  localizationId: ent-OE14DyeRed
+- type: entity
+  id: OE14DyeYellow
+  parent: OE14BaseDye
+  name: yellow dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: '#ffe269'
+  - type: StaticPrice
+    price: 3.5
+  localizationId: ent-OE14DyeYellow
+- type: entity
+  id: OE14DyeBlue
+  parent: OE14BaseDye
+  name: blue dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: '#5eabeb'
+  - type: StaticPrice
+    price: 8.6
+  localizationId: ent-OE14DyeBlue
+- type: entity
+  id: OE14DyeGreen
+  parent: OE14BaseDye
+  name: green dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: '#85903e'
+  localizationId: ent-OE14DyeGreen
+- type: entity
+  id: OE14DyePurple
+  parent: OE14BaseDye
+  name: purple dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: '#8241cc'
+  - type: StaticPrice
+    price: 4.4
+  localizationId: ent-OE14DyePurple
+- type: entity
+  id: OE14DyeBlack
+  parent: OE14BaseDye
+  name: black dye
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: powder
+      color: '#242329'
+  localizationId: ent-OE14DyeBlack

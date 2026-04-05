@@ -1,0 +1,136 @@
+- type: entity
+  id: OE14BaseRoof
+  categories: [ ForkFiltered ]
+  abstract: true
+  name: roof
+  description: A roof over your head to protect you from the heat of the sun or the weather.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: PlacementReplacement
+    key: OE14Roof
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Transform
+    anchored: true
+  - type: BlockWeather
+  - type: OE14Roof
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _OE14/Structures/Roof/test.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Roof/test.rsi
+    state: full
+  - type: IconSmooth
+    key: OE14roof
+    base: roof
+  - type: IsRoof
+  - type: SunShadowCast
+  - type: WallMount
+    arc: 360
+
+- type: entity
+  parent:
+  - OE14BaseRoof
+  - OE14BaseFlammableSpreading
+  id: OE14RoofWooden
+  name: wooden roof
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Roof/wooden.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Roof/wooden.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14RoofWooden
+    node: OE14RoofWooden
+
+- type: entity
+  id: OE14RoofWoodenBirch
+  parent: OE14RoofWooden
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Roof/birch.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Roof/birch.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14RoofWooden
+    node: OE14RoofWoodenBirch
+
+- type: entity
+  parent:
+  - OE14BaseRoof
+  id: OE14RoofStone
+  name: stone roof
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Roof/stone.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Roof/stone.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14RoofStone
+    node: OE14RoofStone
+
+- type: entity
+  parent:
+  - OE14BaseRoof
+  id: OE14RoofRemover
+  name: roof remover debug
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Roof/stone.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Roof/stone.rsi
+  - type: TimedDespawn
+    lifetime: 2

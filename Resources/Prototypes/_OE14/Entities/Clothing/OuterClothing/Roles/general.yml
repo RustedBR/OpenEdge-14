@@ -1,0 +1,109 @@
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterFoldableBase
+  id: OE14ClothingOuterClothingGreenVest
+  name: green vest
+  description: Stylish green vest with gold buttons.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/green.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/green.rsi
+  localizationId: ent-OE14ClothingOuterClothingGreenVest
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterFoldableBase
+  id: OE14ClothingOuterClothingRedVest
+  name: red vest
+  description: Stylish red vest with gold flecks.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/red.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/red.rsi
+  localizationId: ent-OE14ClothingOuterClothingRedVest
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterFoldableBase
+  id: OE14ClothingOuterClothingBrownVest1
+  name: brown vest
+  description: A simple, decent leather vest. It's kind of stylish.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/brown.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/brown.rsi
+  localizationId: ent-OE14ClothingOuterClothingBrownVest1
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterClothingBase
+  id: OE14ClothingOuterClothingBrownVest2
+  name: brown vest with clasps
+  description: The same plain brown leather vest, but with clasps.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/brown_2.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/brown_2.rsi
+  localizationId: ent-OE14ClothingOuterClothingBrownVest2
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterClothingBase
+  id: OE14ClothingOuterClothingBrownVest3
+  name: lightweight leather vest
+  description: Two flaps of leather connected by a belt from below.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/brown_3.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/brown_3.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: OE14ThinLeather1
+      amount: 1
+  localizationId: ent-OE14ClothingOuterClothingBrownVest3
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterClothingBase
+  id: OE14ClothingOuterClothingJagermeisterWaistcoat
+  name: jagermeister's waistcoat
+  description: Doesn't interfere with movement, looks restrained. Time to go hunting.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/jagermeister_waistcoat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/jagermeister_waistcoat.rsi
+  localizationId: ent-OE14ClothingOuterClothingJagermeisterWaistcoat
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterFoldableBase
+  id: OE14ClothingOuterClothingGreenVest2
+  name: green vest
+  description: Stylish green vest with gold buttons.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/green_2.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/green_2.rsi
+  localizationId: ent-OE14ClothingOuterClothingGreenVest2
+- type: entity
+  parent:
+  - ClothingSlotBase
+  - OE14ClothingOuterFoldableBase
+  id: OE14ClothingOuterClothingPurple
+  name: purple vest
+  description: Stylish purple vest.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/purple.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/OuterClothing/Roles/General/purple.rsi
+  localizationId: ent-OE14ClothingOuterClothingPurple

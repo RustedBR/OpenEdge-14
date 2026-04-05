@@ -1,0 +1,23 @@
+- type: damageContainer
+  id: OE14Biological
+  supportedGroups:
+    - Brute
+    - Burn
+    - Toxin
+    - Genetic
+    - Airloss
+    - OE14Magic
+
+- type: damageContainer
+  id: OE14BiologicalAnaerobic
+  supportedGroups:
+  - Brute
+  - Burn
+  - Toxin
+  - Genetic
+  - OE14Magic
+
+- type: damageContainer
+  id: OE14Spectral
+  supportedGroups:
+  - OE14Magic

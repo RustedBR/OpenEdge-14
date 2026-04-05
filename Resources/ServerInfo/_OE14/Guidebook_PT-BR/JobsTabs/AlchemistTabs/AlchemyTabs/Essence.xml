@@ -1,0 +1,41 @@
+<Document>
+
+# Essências Taumatúrgicas
+
+As menores unidades da existência. Obtendo-as ao dividir itens e substâncias, e combinando-as em formas mais complexas, você pode usá-las para criar as poções alquímicas que precisa.
+
+## As 6 essências básicas:
+<Box>
+<GuideEntityEmbed Entity="OE14EssenceAir"/>
+<GuideEntityEmbed Entity="OE14EssenceWater"/>
+<GuideEntityEmbed Entity="OE14EssenceFire"/>
+<GuideEntityEmbed Entity="OE14EssenceOrder"/>
+<GuideEntityEmbed Entity="OE14EssenceChaos"/>
+<GuideEntityEmbed Entity="OE14EssenceEarth"/>
+</Box>
+<GuideReagentGroupEmbed Group="OE14MagicEssenceT0"/>
+
+## Essências de primeira combinação:
+<Box>
+<GuideEntityEmbed Entity="OE14EssenceFrost"/>
+<GuideEntityEmbed Entity="OE14EssenceLight"/>
+<GuideEntityEmbed Entity="OE14EssenceMotion"/>
+<GuideEntityEmbed Entity="OE14EssenceCycle"/>
+<GuideEntityEmbed Entity="OE14EssenceEnergia"/>
+<GuideEntityEmbed Entity="OE14EssenceVoid"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="OE14EssencePoison"/>
+<GuideEntityEmbed Entity="OE14EssenceLife"/>
+<GuideEntityEmbed Entity="OE14EssenceCrystal"/>
+</Box>
+<GuideReagentGroupEmbed Group="OE14MagicEssenceT1"/>
+
+## Essências de segunda combinação:
+<Box>
+<GuideEntityEmbed Entity="OE14EssenceMagic"/>
+<GuideEntityEmbed Entity="OE14EssenceBeast"/>
+</Box>
+<GuideReagentGroupEmbed Group="OE14MagicEssenceT2"/>
+
+</Document>

@@ -1,0 +1,41 @@
+- type: entity
+  id: OE14Bonfire
+  parent: OE14BaseFireplace
+  name: bonfire
+  description: A pile of logs stacked together, ready to burst into flames at the slightest spark.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Structures/Furniture/bonfire.rsi
+    layers:
+      - state: base
+      - state: full-1
+        visible: false
+      - map: ["enum.StorageFillLayers.Fill"]
+  - type: Construction
+    graph: OE14Bonfire
+    node: OE14Bonfire
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 20
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+  - type: StorageFillVisualizer
+    maxFillLevels: 2
+    fillBaseName: full
+  - type: FireVisuals
+    sprite: _OE14/Structures/Furniture/bonfire.rsi
+    normalState: burning
+  - type: Storage
+    grid:
+    - 0,0,2,1
+    whitelist:
+      tags:
+      - OE14FireplaceFuel

@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: OE14Doorknob
+  files:
+  - /Audio/_OE14/Structures/doorknob_1.ogg
+  - /Audio/_OE14/Structures/doorknob_2.ogg

@@ -1,0 +1,32 @@
+<Document>
+
+# Aprendiz
+
+<Box>
+<GuideEntityEmbed Entity="OE14ClothingCloakAlchemist" Caption="Manto do Aprendiz"/>
+</Box>
+
+O Aprendiz é o ponto de entrada no departamento de Artesãos. Sem a experiência necessária para se especializar, um Aprendiz trabalha em todas as disciplinas de fabricação — assistindo alquimistas, ferreiros e alfaiates igualmente. O papel recompensa a curiosidade e a disposição para aprender.
+
+## Responsabilidades
+
+- Assistir artesãos especializados com seu trabalho
+- Coletar e classificar materiais brutos para fabricação
+- Aprender o básico de alquimia, ferraria e alfaiataria
+- Lidar com tarefas que artesãos experientes não têm tempo para fazer
+
+## Habilidades Iniciais
+
+Aprendizes começam com [bold]AlchemyVision[/bold] — a mesma habilidade usada por Alquimistas para identificar propriedades mágicas em reagentes. Isso faz dos Aprendizes ajudantes naturais no laboratório desde o primeiro dia.
+
+## Requisitos
+
+Nenhum — o papel de Aprendiz está aberto a todos os jogadores sem requisito de tempo de jogo. É o trabalho inicial ideal para anyone interested in the Artesão department.
+
+## Dicas
+
+- Coordene-se with the Alquimista to handle ingredient collection and sorting
+- Use o guia de [textlink="Fabricação" link="OE14Crafting"] para aprender o que você pode fazer
+- Estude [textlink="Alquimia" link="OE14_EN_Alchemy"] — your AlchemyVision skill makes the laboratory accessible immediately
+
+</Document>

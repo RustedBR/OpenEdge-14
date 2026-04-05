@@ -1,0 +1,83 @@
+- type: entity
+  id: OE14ActionSpellSheepPolymorph
+  parent: OE14ActionSpellBase
+  name: Sheep polymorph
+  description: You curse the target, turning it into a silly sheep for a short period of time.
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/misc.rsi
+    state: polymorph
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 30
+  - type: OE14ActionSpeaking
+    startSpeech: "Pascam et custodiam..."
+    endSpeech: "pecora tua"
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneSheepPolymorph
+  - type: OE14ActionTargetMobStatusRequired
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: _OE14/Actions/Spells/misc.rsi
+      state: polymorph
+  - type: TargetAction
+    range: 3
+    interactOnMiss: false
+  - type: DoAfterArgs
+    delay: 1.5
+    breakOnDamage: true
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectSheepPolymorph
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectSheepPolymorph
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Polymorph
+          prototype: OE14Sheep
+
+- type: entity
+  id: OE14RuneSheepPolymorph
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#8532a8"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#8532a8"
+      shader: unshaded
+    - state: double_outer
+      color: "#db35c8"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectSheepPolymorph
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#db35c8"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollHealing
+  id: OE14SpellScrollSheepPolymorph
+  name: sheep polymorph spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellSheepPolymorph

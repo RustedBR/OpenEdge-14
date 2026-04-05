@@ -1,0 +1,43 @@
+<Document>
+
+# Profissões
+
+Cada jogador aparece com uma profissão que determina seu equipamento inicial e salário. Sua profissão molda como você interage com o mundo — alguns lutam, alguns fabricam, alguns servem.
+
+## Departamento de Mercenários
+
+[bold][textlink="Aventureiros" link="OE14_EN_JobAdventurer"][/bold] — Exploradores e caçadores que se aventuram em territórios perigosos para coletar materiais raros e recursos derivados de monstros. Alto risco, alta recompensa.
+
+[bold][textlink="Trabalhador da Guilda" link="OE14_EN_JobGuildWorker"][/bold] — Membros experientes da Guilda de Mercenários que passaram do trabalho de campo para operações. Em vez de se aventurar para lutar contra monstros, os Trabalhadores da Guilda mantêm a guilda funcionando — gerenciando recursos, rastreando contratos e garantindo que os Aventureiros tenham o que precisam antes de partir. Requer 2 horas como Aventureiro.
+
+[bold][textlink="Mestre da Guilda" link="OE14_EN_JobGuildmaster"][/bold] — O líder da Guilda de Mercenários. Define contratos, gerencia a equipe e representa os interesses da guilda. Requer 5 horas como Aventureiro.
+
+## Departamento de Artesãos
+
+[bold][textlink="Mercador" link="OE14_EN_JobMerchant"][/bold] — Comerciantes com acesso a todas as facções da cidade. O único trabalho que pode comprar e vender em todos os mercados. Requer 1 hora de tempo de jogo.
+
+[bold][textlink="Alquimista" link="OE14_EN_JobAlchemist"][/bold] — Preparadores de poções, venenos e reagentes. Alquimistas transformam ingredientes brutos em soluções poderosas que podem curar, prejudicar ou alterar o mundo.
+
+[bold][textlink="Taberneiro" link="OE14_EN_JobInnkeeper"][/bold] — Cozinheiros, bartenders e anfitriões que mantêm a cidade alimentada e o centro social funcionando. Agricultura, fermentação e culinária são o核心 desta função.
+
+[bold][textlink="Aprendiz" link="OE14_EN_JobApprentice"][/bold] — Fabricantes de nível inicial que assistem em todas as disciplinas de Artesão. Nenhuma experiência necessária — o ponto de partida ideal para artesãos aspirantes.
+
+## Departamento de Guardas
+
+[bold][textlink="Guarda" link="OE14_EN_JobGuard"][/bold] — Força policial da cidade. Patrulhe, responda a crimes e mantenha a ordem. Nenhuma experiência necessária.
+
+[bold][textlink="Investigador" link="OE14_EN_JobInvestigator"][/bold] — Detetives aprimorados magicamente que descobrem contrabando escondido e investigam crimes usando visão e feitiços de detecção. Requer 1 hora no departamento de Guardas.
+
+[bold][textlink="Comandante da Guarda" link="OE14_EN_JobGuardCommander"][/bold] — Líder do departamento de Guardas. Coordena patrulhamentos, direciona respostas e detém autoridade sobre o departamento. Requer 3 horas no departamento de Guardas.
+
+## Patronos
+
+[textlink="Patronos" link="OE14_EN_Patrons"] — Guardiões espirituais e seus seguidores. Patronos concedem bênçãos àqueles que prestam homenagem em seus altares.
+
+## Começando
+
+Quando você aparecer, verifique seu inventário ([bold]I[/bold]) para seu equipamento inicial. Cada trabalho fornece diferentes ferramentas e consumíveis.
+
+Seu salário chega ao longo do tempo em moedas físicas — mantenha uma bolsa com você para não perdê-las ao receber dano.
+
+</Document>

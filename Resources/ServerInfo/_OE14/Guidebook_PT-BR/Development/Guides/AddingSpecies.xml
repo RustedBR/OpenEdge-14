@@ -1,0 +1,61 @@
+<Document>
+# Adicionando Novas Espécies
+
+Este guia cobre como criar uma nova espécie jogável no OpenEdge 14.
+
+## Etapa 1: Criar o Prototype de Espécie
+
+Definições de espécies vivem em [mono]Resources/Prototypes/_OE14/Species/[/mono]:
+
+<CodeBlock>
+- type: speciesBase
+  id: OE14Goblin
+  name: species-name-goblin
+  roundStart: true
+  prototype: MobGoblinSpecies
+  sprites: GoblinSprites
+  skinColorsAllowed: false
+  defaultSkinTone: "#6B8E23"
+</CodeBlock>
+
+## Etapa 2: Criar o Prototype de Entidade
+
+<CodeBlock>
+- type: entity
+  id: MobGoblinSpecies
+  parent: BaseMobSpecies
+  components:
+    - type: OE14CharacterStats
+      baseStrength: 4
+      baseVitality: 4
+      baseDexterity: 7
+      baseIntelligence: 5
+    - type: OE14SkillTree
+      trees:
+        - GoblinCunning
+        - GoblinStealth
+</CodeBlock>
+
+## Etapa 3: Adicionar Modificadores Raciais
+
+Se a espécie tem bônus de atributos innatos, configure-os no CharacterStats ou via habilidades que se aplicam automaticamente no spawn.
+
+## Etapa 4: Adicionar Localização
+
+<CodeBlock>
+species-name-goblin = Goblin
+species-description-goblin = Criaturas pequenas e astutas com alta agilidade.
+</CodeBlock>
+
+## Etapa 5: Testar
+
+1. Inicie a criação de personagem
+2. Selecione a nova espécie
+3. Verifique atributos e árvores de habilidades aparecem corretamente
+4. Spawn e verifique bônus raciais são aplicados
+
+## Conteúdo Em Construção
+
+Guia completo com configuração de sprites e mais exemplos coming soon.
+
+</Document>

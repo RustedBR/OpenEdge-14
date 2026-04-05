@@ -1,0 +1,36 @@
+<Document>
+# Goblins
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobGoblin" Caption="Goblin"/>
+</Box>
+
+Goblins are a race of stunted goblinoids that have settled en masse throughout Sylate. Although the other races are prejudiced against them, goblins rarely try to cause trouble on purpose. What they lack in magic, they more than compensate for with speed, endurance, and an almost supernatural resistance to stamina drain.
+
+## Attributes
+
+[bold]Scale: 1–10 | Effective values shown (includes free racial skills)[/bold]
+
+- [color=#e05050]Strength[/color] — [bold][color=#77dd77]6[/color][/bold] | Above-average physical power. Hits harder than a human in melee.
+- [color=#50e050]Vitality[/color] — [bold][color=#77dd77]6[/color][/bold] | Decent health. [color=#77dd77]~112 HP[/color] before Critical, [color=#ff6961]~225 HP[/color] before Death.
+- [color=#50e0e0]Dexterity[/color] — [bold][color=#77dd77]9[/color][/bold] | Exceptional agility. [color=#77dd77]~200 stamina[/color] before Stamina Crit — extremely hard to stagger. (Base DEX 7, +2 from free [color=#c8c8c8]Athletic[/color] skills)
+- [color=#a050e0]Intelligence[/color] — [bold][color=#ff6961]1[/color][/bold] | Extremely limited magical potential. Only [color=#ff6961]~25 mana[/color] — barely enough for a single spell.
+
+Goblins are built for hit-and-run physical combat. They are very hard to knock down and recover fast — but their complete absence of mana makes magic entirely inaccessible.
+
+## Small but Swift
+
+Goblins have a reduced hitbox, making them harder to land hits on. Their compact frame also means:
+- [color=#ff6961]All incoming damage increased by 20%[/color] — their small size makes each blow hurt more
+- Poisons, however, do [color=#77dd77]50% less damage[/color]
+- Others find it easier to grab goblins; goblins find large objects harder to pull
+
+## Smallness of Soul
+
+Nature was not generous with goblins when it comes to magic:
+- [color=#ff6961]Near-zero mana (~25).[/color] Barely enough for one spell — sustained casting is impossible.
+- Mana regeneration rate is [color=#77dd77]1.5x faster[/color] than other races — though with so little mana, it matters little in practice.
+
+Goblins begin with free Basic and Advanced [color=#c8c8c8]Athletic[/color], granting +2 DEX.
+
+</Document>

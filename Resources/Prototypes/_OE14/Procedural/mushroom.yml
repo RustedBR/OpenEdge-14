@@ -1,0 +1,146 @@
+- type: biomeTemplate
+  id: OE14CavesMushroomFloor
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14CavesFloor
+    - !type:BiomeTileLayer
+      tile: OE14FloorMycelium
+      threshold: 0
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+    - !type:BiomeTileLayer
+      tile: OE14FloorMyceliumLight
+      threshold: 0.45
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.05
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+
+- type: biomeTemplate
+  id: OE14CavesMushroom
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14CavesMushroomFloor
+    #Walls
+    - !type:BiomeEntityLayer
+      threshold: -0.75
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.05
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorMycelium
+        - OE14FloorMyceliumLight
+        - OE14FloorCobblestone
+      entities:
+        - OE14WallStone
+    - !type:BiomeEntityLayer
+      threshold: -0.79
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.05
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorDirt
+      entities:
+        - OE14WallDirt
+      #Mazy mini tunenls
+    - !type:BiomeEntityLayer
+      threshold: 0.40
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        frequency: 0.13
+        lacunarity: 1.50
+        fractalType: Ridged
+        octaves: 1
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorMycelium
+        - OE14FloorMyceliumLight
+        - OE14FloorCobblestone
+      entities:
+        - OE14RoofRemover #Lol, i just wanna air here. TODO: fix
+     # Rare Trees
+    - !type:BiomeEntityLayer
+      threshold: 0.8
+      noise:
+        seed: 0
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - OE14FloorMycelium
+        - OE14FloorMyceliumLight
+      entities:
+        - OE14MushroomTree1
+        - OE14MushroomTree2
+        - OE14MushroomTree3
+        - OE14MushroomTree4
+
+# Subbiomes
+
+- type: biomeTemplate
+  id: OE14MushroomCaveForest # Лес
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14CavesMushroom
+    - !type:BiomeEntityLayer # More Trees
+      threshold: 0.2
+      noise:
+        seed: 4
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - OE14FloorMycelium
+        - OE14FloorMyceliumLight
+      entities:
+        - OE14MushroomTree1
+        - OE14MushroomTree2
+        - OE14MushroomTree3
+        - OE14MushroomTree4
+        - OE14MushroomTree1
+        - OE14MushroomTree2
+        - OE14MushroomTree3
+        - OE14MushroomTree4
+        - OE14MushroomTree1Glowing
+        - OE14MushroomTree2Glowing
+        - OE14MushroomTree3Glowing
+        - OE14MushroomTree4Glowing
+
+- type: biomeTemplate
+  id: OE14MushroomsCaveResult
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14CavesMushroom
+    - !type:BiomeMetaLayer
+      template: OE14MushroomCaveForest
+      threshold: 0.2
+      noise:
+        seed: 18
+        frequency: 0.02
+        fractalType: None

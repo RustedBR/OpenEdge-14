@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  parent: OE14BaseMobSilva
+  id: OE14MobSilva
+  localizationId: ent-OE14MobSilva

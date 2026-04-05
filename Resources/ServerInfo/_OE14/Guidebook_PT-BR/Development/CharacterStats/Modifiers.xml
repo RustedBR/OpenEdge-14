@@ -1,0 +1,51 @@
+<Document>
+# Modificadores de Atributos & Overflow
+
+Esta página cobre como modificadores de atributos se acumulam, como overflow é tratado, e como o sistema rastreia de qual fonte veio cada bônus.
+
+## Enum ModifierSource
+
+Cada modificador tem uma fonte que identifica de onde veio:
+
+<CodeBlock>
+public enum ModifierSource
+{
+    Spell,   // De magias ativas ou árvores de magias
+    Spend,   // De gastar pontos de criação de personagem
+    Item,    // De itens equipados
+    Buff,    // De efeitos de buff temporários
+    Racial,  // De bônus innatos raciais
+    Other
+}
+</CodeBlock>
+
+## Como Modificadores se Acumulam
+
+Todas as fontes de modificador se somam:
+
+<CodeBlock>
+AtributoEfetivo = AtributoBase + Modificadores[Spell] + Modificadores[Item] + Modificadores[Buff] + ...
+</CodeBlock>
+
+O resultado é limitado a AtributoMáximo (10).
+
+## Tratamento de Overflow
+
+Quando modificadores empurram um atributo além do limite, o overflow é retornado como pontos de personagem disponíveis:
+
+<CodeBlock>
+Overflow = (AtributoBase + TotalModificadores) - AtributoMáximo
+PontosDisponíveis += Overflow
+</CodeBlock>
+
+Isso garante que nenhum bônus seja "desperdiçado" — valor de modificador em excesso se torna pontos que você pode gastar em outro lugar.
+
+## Validação
+
+O servidor valida gastos de pontos contra o [bold]atributo efetivo[/bold] (base + modificadores), não apenas o atributo base. Isso previne gastar pontos em um atributo que já está limitado por modificadores.
+
+## Conteúdo Em Construção
+
+Documentação detalhada de API coming soon. Veja [textlink="Sistema de Modificadores" link="OE14_DEV_Arch_Modifiers"] para a visão geral arquitetural.
+
+</Document>

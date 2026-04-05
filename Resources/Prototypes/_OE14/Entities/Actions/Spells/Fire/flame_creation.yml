@@ -1,0 +1,153 @@
+- type: entity
+  id: OE14ActionSpellFlameCreation
+  parent: OE14ActionSpellBase
+  name: Flame creation
+  description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 5
+  - type: OE14ActionSpeaking
+    startSpeech: "Et conteret ignis..."
+    endSpeech: "in manu mea"
+  - type: OE14ActionFreeHandsRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneFlameCreation
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/fire.rsi
+      state: flame_creation
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    delay: 1
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectFlameCreation
+      - !type:OE14SpellSpawnInHandEntity
+        spawns:
+        - OE14FlameCreationArtificialFlame
+
+- type: entity
+  id: OE14RuneFlameCreation
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectFlameCreation
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: OE14FlameCreationArtificialFlame
+  parent:
+  - BaseItem
+  - ItemHeftyBase
+  name: artificial flame
+  description: A magically created artificial flame burning directly into the air. Not a bad light source, or a weapon if you throw it in someone's face.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Item
+    size: Ginormous
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: TimedDespawn
+    lifetime: 120 # 2 min
+  - type: Sprite
+    sprite: _OE14/Objects/Misc/artificial_flame.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: PointLight
+    color: "#eea911"
+    energy: 0.5
+    radius: 2.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        hard: true
+        mask:
+        - ItemMask
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 3
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+          params:
+            variation: 0.250
+            volume: -12
+  - type: ThrowingAngle
+    angle: 0
+  - type: LandAtCursor
+  - type: OE14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5 # 2 hits
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Heat: 12
+  - type: MeleeWeapon
+    attackRate: 1.8
+    wideAnimationRotation: 225
+    wideAnimation: OE14WeaponArcSlash
+    damage:
+      types:
+        Heat: 8
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -12
+    cPAnimationLength: 0.15
+  - type: OE14DelayedIgnitionSource
+    enabled: true
+
+- type: entity
+  parent: OE14BaseSpellScrollFire
+  id: OE14SpellScrollFlameCreation
+  name: flame creation spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellFlameCreation
+

@@ -1,0 +1,35 @@
+<Document>
+
+# Patronos
+
+Patronos são um papel de jogo único representando espíritos incorpóreos capazes de ajudar ou prejudicar mortais.
+
+## Lore
+
+Mortais acreditam que patronos são deuses. Isso não é verdade. Deuses verdadeiros não têm interesse no que acontece em Silite. No entanto, as crenças, desejos, medos e emoções dos mortais podem criar "espíritos patronais" — entidades de energia incorpórea que assumem a forma e os poderes associados ao que os mortais acreditam.
+
+Tais entidades podem ser descritas como parasitas energéticos ou simbiontes — sugar constantemente energia de seus seguidores, eles podem existir e, em retorno, ajudá-los com seus problemas de vida.
+
+Mas se aqueles que acreditam no espírito patrono morrerem ou o rejeitarem, o espírito, privado de energia, morre gradualmente.
+
+Por isso, patronos tentam com todas as suas forças expandir sua influência, porque quanto mais pessoas sabem sobre eles e acreditam neles, mais forte o espírito se torna,ganhando mais oportunidades para influenciar o mundo.
+
+## Área de influência
+
+Patronos divinos não são onipotentes e só podem agir dentro de sua área de influência. Na maioria das vezes, a área de influência de um patrono é fornecida por coisas associadas a eles: altares, seus próprios seguidores, ou qualquer coisa diretamente relacionada ao seu poder.
+
+Fora de sua área de influência, patronos divinos só podem observar silenciosamente.
+
+## Estátuas primordiais e seguidores
+
+Cada patrono tem uma âncora conectando-os ao mundo real. Na maioria das vezes, estas são estátuas primordiais retratando esse deus.
+
+Qualquer ser inteligente pode se tornar um seguidor de um deus tocando em uma estátua primordial e fazendo um acordo com o patrono. Isso estabelece um "canal de comunicação". O seguidor fornece ao patrono uma zona de influência ao seu redor, permitindo que o patrono se comunique com o seguidor a qualquer momento ou influencie o ambiente ao redor deles.
+
+O "canal" entre o seguidor e o patrono pode ser cortado a qualquer momento, seja renegando o patrono ou expulsando o seguidor. Uma vez que um ser inteligente cortou sua conexão com o patrono, ele nunca pode retornar a ele naquela rodada.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14AltarPrimordialGodLumera"/>
+</Box>
+
+</Document>

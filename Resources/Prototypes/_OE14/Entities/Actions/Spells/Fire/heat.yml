@@ -1,0 +1,75 @@
+- type: entity
+  id: OE14ActionSpellHeat
+  parent: OE14ActionSpellBase
+  name: Heat
+  description: You start to heat the target up a lot, burning it from the inside.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.8
+  - type: OE14ActionManaCost
+    manaCost: 7
+  - type: OE14ActionSpeaking
+    startSpeech: "Vos adepto calidum..."
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneHeat
+  - type: OE14ActionDangerous
+  - type: Action
+    useDelay: 4
+    icon:
+      sprite: _OE14/Actions/Spells/fire.rsi
+      state: heat
+  - type: DoAfterArgs
+    hidden: true
+    repeat: true
+    distanceThreshold: 5
+  - type: TargetAction
+    range: 8
+    interactOnMiss: false
+  - type: EntityTargetAction
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectHeat
+      - !type:OE14AdjustAllSolutionThermalEnergy
+        delta: 2500
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:AdjustTemperature
+          amount: 20000
+        - !type:ExtinguishReaction
+
+- type: entity
+  id: OE14ImpactEffectHeat
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: circle_increase
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  id: OE14RuneHeat
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#eea911"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollFire
+  id: OE14SpellScrollHeat
+  name: heat spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellHeat

@@ -1,0 +1,17 @@
+oe14-tips-1 = Keep an eye on the condition of your weapon! You can inspect it to see its condition and sharpness.
+oe14-tips-2 = If your weapon is dull, you can sharpen it with sharpening stones.
+oe14-tips-3 = Some light weapons, such as daggers or sickles, are effective for dual wield combat.
+oe14-tips-4 = Initially, you don't know the names of the other characters! But you can remember any names and nicknames for them via the context menu.
+oe14-tips-5 = As an alchemist, if you mix some reagents together, you can no longer separate them! Look for the right alchemical reactions that will allow you to edit your solution.
+oe14-tips-6 = As an alchemist, remember to keep your cauldron off the stove or fire. Your potion may boil over, releasing a reagent cloud.
+oe14-tips-7 = As a vampire, if you try to suck out the essence of blood but there is none at the target, it can mean one of two things: Either you are eating another vampire, or your victim has already been eaten by other vampires.
+oe14-tips-8 = If you run out of magic energy, you can still use spells and spend mana, but it will damage you and potentially render you unconscious!
+oe14-tips-9 = Be careful during thunderstorms! Lightning can strike anyone and anything that is not under cover. It can cause massive fires.
+oe14-tips-10 = Tall bushes are good for hiding your character! But they slow you down a lot and make a lot of noise if you move in them.
+oe14-tips-11 = Don't forget to lock your doors if you don't want anyone to get in!
+oe14-tips-12 = You can create your own keys and locks to ensure the privacy of your territory! To do this, use key files and screwdrivers!
+oe14-tips-13 = Tip number 13 does not exist.
+oe14-tips-14 = Demiplanes can be very dangerous, don't neglect medical consumables and alchemist potions.
+oe14-tips-15 = You can look inside the giant crystal connecting the demiplanes to see the entire current map of demiplane connections!
+oe14-tips-16 = The main source of income for adventurers is the extraction of raw resources within pocket dimensions known as demi-planes.
+oe14-tips-17 = The magic vision spell allows you to see where and when spells were used! Investigators can use this to search for criminals.

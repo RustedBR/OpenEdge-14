@@ -1,0 +1,24 @@
+- type: entity
+  parent: OE14KeyIronBlank
+  id: OE14KeyCityGate
+  suffix: City Gate
+  components:
+  - type: OE14Key
+    autoGenerateShape: CityGate
+  localizationId: ent-OE14KeyCityGate
+- type: entity
+  parent: OE14KeyIronBlank
+  id: OE14KeyGuardBarracks
+  suffix: Guard Barracks
+  components:
+  - type: OE14Key
+    autoGenerateShape: GuardBarracks
+  localizationId: ent-OE14KeyGuardBarracks
+- type: entity
+  parent: OE14KeyMithrilBlank
+  id: OE14KeyGuardCommander
+  suffix: Guard Commander
+  components:
+  - type: OE14Key
+    autoGenerateShape: GuardCommander
+  localizationId: ent-OE14KeyGuardCommander

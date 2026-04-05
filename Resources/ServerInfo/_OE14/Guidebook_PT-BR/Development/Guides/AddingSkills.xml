@@ -1,0 +1,79 @@
+<Document>
+# Adicionando Novas Habilidades
+
+Este guia walkthrough você através de adicionar uma nova árvore de habilidades ao OpenEdge 14.
+
+## Visão Geral
+
+Uma árvore de habilidades consiste em:
+1. Prototypes de habilidades (definem tiers e o que concedem)
+2. Atualização de prototype de espécie (adiciona a árvore a uma espécie)
+3. Modificadores de atributos opcionais
+
+## Etapa 1: Criar Prototypes de Habilidades
+
+Crie um novo arquivo em [mono]Resources/Prototypes/_OE14/Skills/[/mono]:
+
+<CodeBlock>
+- type: OE14SkillPrototype
+  id: MySkillT1
+  name: My Skill I
+  tier: 1
+  pointCost: 1
+  grants:
+    - SpellMyAbility
+  statModifiers:
+    Strength: 1
+
+- type: OE14SkillPrototype
+  id: MySkillT2
+  name: My Skill II
+  tier: 2
+  pointCost: 2
+  requires: MySkillT1
+  grants:
+    - SpellMyBetterAbility
+  statModifiers:
+    Strength: 1
+
+- type: OE14SkillPrototype
+  id: MySkillT3
+  name: My Skill III
+  tier: 3
+  pointCost: 3
+  requires: MySkillT2
+  grants:
+    - SpellMyBestAbility
+  statModifiers:
+    Strength: 1
+</CodeBlock>
+
+## Etapa 2: Adicionar a Espécie
+
+Encontre o prototype de espécie em [mono]Resources/Prototypes/_OE14/Species/[/mono] e adicione a árvore de habilidades:
+
+<CodeBlock>
+- type: OE14CharacterStats
+  id: HumanStats
+  skillTrees:
+    - id: ExistingTree
+    - id: MyNewSkillTree  # Adicione aqui
+</CodeBlock>
+
+## Etapa 3: Definir as Magias
+
+Para cada magia concedida pela habilidade, veja [textlink="Adicionando Novas Magias" link="OE14_DEV_Guide_Spells"].
+
+## Etapa 4: Testar
+
+1. Compile: [mono]dotnet build[/mono]
+2. Inicie servidor e cliente
+3. Crie um personagem com a espécie atualizada
+4. Abra a árvore de habilidades e verifique os tiers estão visíveis
+5. Gaste pontos e verifique a magia aparece na barra de ações
+
+## Conteúdo Em Construção
+
+Guia mais detalhado com exemplos completos coming soon.
+
+</Document>

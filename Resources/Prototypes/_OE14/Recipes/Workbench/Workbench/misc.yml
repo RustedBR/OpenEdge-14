@@ -1,0 +1,266 @@
+- type: OE14Recipe
+  id: OE14Bucket
+  tag: OE14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 3
+  - !type:ProtoIdResource
+    protoId: OE14Rope
+    count: 1
+  result: OE14Bucket
+
+- type: OE14Recipe
+  id: OE14BucketLucens
+  tag: OE14RecipeWorkbench
+  category: Tools
+  craftTime: 2
+  requirements:
+  - !type:StackResource
+    stack: OE14LucensWoodenPlanks
+    count: 3
+  - !type:ProtoIdResource
+    protoId: OE14Rope
+    count: 1
+  result: OE14BucketLucens
+
+- type: OE14Recipe
+  id: OE14HandLabeler
+  tag: OE14RecipeWorkbench
+  category: Tools
+  craftTime: 3
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  - !type:ProtoIdResource
+    protoId: OE14CrayonWhite
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14CrayonBlack
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14PenFeather
+    count: 1
+  result: OE14HandLabeler
+
+- type: OE14Recipe
+  id: OE14WoodenBeerMug
+  tag: OE14RecipeWorkbench
+  craftTime: 3
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: OE14WoodenBeerMug
+
+- type: OE14Recipe
+  id: OE14SmokingPipe
+  tag: OE14RecipeWorkbench
+  craftTime: 3
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: OE14SmokingPipe
+
+- type: OE14Recipe
+  id: OE14PlateWooden
+  tag: OE14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: OE14PlateWooden
+
+- type: OE14Recipe
+  id: OE14BowlWooden
+  tag: OE14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: OE14BowlWooden
+
+- type: OE14Recipe
+  id: OE14Lighter
+  tag: OE14RecipeWorkbench
+  category: Tools
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: OE14Stone
+    count: 2
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14Lighter
+
+- type: OE14Recipe
+  id: OE14Bow
+  tag: OE14RecipeWorkbench
+  category: Weapon
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 4
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 1
+  result: OE14BowCombat
+
+- type: OE14Recipe
+  id: OE14CrayonWhite
+  tag: OE14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+  - !type:ProtoIdResource
+    protoId: OE14CrystalShardQuartz
+  result: OE14CrayonWhite
+
+- type: OE14Recipe
+  id: OE14CrayonRed
+  tag: OE14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: OE14DyeRed
+  result: OE14CrayonRed
+
+- type: OE14Recipe
+  id: OE14CrayonBlue
+  tag: OE14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: OE14DyeBlue
+  result: OE14CrayonBlue
+
+- type: OE14Recipe
+  id: OE14CrayonYellow
+  tag: OE14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: OE14DyeYellow
+  result: OE14CrayonYellow
+
+- type: OE14Recipe
+  id: OE14CrayonGreen
+  tag: OE14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: OE14DyeGreen
+  result: OE14CrayonGreen
+
+- type: OE14Recipe
+  id: OE14CrayonPurple
+  tag: OE14RecipeWorkbench
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14CrayonWhite
+  - !type:ProtoIdResource
+    protoId: OE14DyePurple
+  result: OE14CrayonPurple
+
+- type: OE14Recipe
+  id: OE14Screwdriver
+  tag: OE14RecipeWorkbench
+  category: Tools
+  craftTime: 1
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14CrossboltIron
+  result: OE14Screwdriver
+
+- type: OE14Recipe
+  id: OE14FluteInstrument
+  tag: OE14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 1
+  result: OE14FluteInstrument
+
+- type: OE14Recipe
+  id: OE14LyraInstrument
+  tag: OE14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 3
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 2
+  result: OE14LyraInstrument
+
+- type: OE14Recipe
+  id: OE14LuteInstrument
+  tag: OE14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 4
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 1
+  result: OE14LuteInstrument
+
+- type: OE14Recipe
+  id: OE14OpenSign
+  tag: OE14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:StackGroupResource
+    group: WoodenPlanks
+    count: 2
+  result: OE14OpenSign
+
+- type: OE14Recipe
+  id: OE14RopeFromCloth
+  tag: OE14RecipeWorkbench
+  craftTime: 4
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 2
+  result: OE14Rope
+
+- type: OE14Recipe
+  id: OE14JackOLantern
+  tag: OE14RecipeWorkbench
+  craftTime: 2
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14HalloweenPumpkin
+    count: 1
+  - !type:ProtoIdResource
+    protoId: OE14Candle
+    count: 1
+  result: OE14JackOLanternVariant2

@@ -1,0 +1,50 @@
+<Document>
+# Mecânicas de Magias
+
+Esta página descreve como magias são conjuradas, como seus efeitos são aplicados, e como o sistema resolve interações de magias.
+
+## Componentes de Magias
+
+Magias no OpenEdge 14 usam o sistema de ações. Cada magia é uma entidade de ação com:
+- Um custo de mana (validado antes de conjurar)
+- Um efeito (dano, cura, buff, etc.)
+- Um cooldown
+- Requisitos de atributos (INT mínima para algumas magias)
+
+## Fluxo de Conjuração
+
+<CodeBlock>
+1. Jogador ativa ação de magia
+   |
+2. OE14ActionManaCostSystem valida mana
+   |
+3. Se mana insuficiente: rejeita, mostra mensagem
+   |
+4. Deduz custo de mana
+   |
+5. Aplica efeito de magia
+   |
+6. Inicia timer de cooldown
+</CodeBlock>
+
+## Armazenamento de Magias
+
+Magias são adicionadas à barra de ações quando um item com OE14SpellStorage é equipado:
+
+<CodeBlock>
+- type: entity
+  id: WandOfFire
+  components:
+    - type: OE14SpellStorage
+      spells:
+        - FireBolt
+        - FireBall
+</CodeBlock>
+
+## Conteúdo Em Construção
+
+Documentação completa de mecânicas de magias coming soon. Arquivos de sistema chave:
+[mono]Content.Shared/_OE14/Magic/OE14ActionManaCostComponent.cs[/mono]
+[mono]Content.Server/_OE14/Magic/OE14ActionManaCostSystem.cs[/mono]
+
+</Document>

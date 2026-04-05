@@ -1,0 +1,219 @@
+- type: oe14TradingRequest
+  id: OE14HealingEffectHealBrute
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14HealingEffectHealBrute
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14DamageEffectDamageBrute
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14DamageEffectDamageBrute
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14HealingEffectHealHeat
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14HealingEffectHealHeat
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14DamageEffectDamageHeat
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14DamageEffectDamageHeat
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14HealingEffectHealCold
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14HealingEffectHealCold
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14DamageEffectDamageCold
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14DamageEffectDamageCold
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14HealingEffectHealPoison
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14HealingEffectHealPoison
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14DamageEffectDamagePoison
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14DamageEffectDamagePoison
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14HealingEffectHealAirloss
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14HealingEffectHealAirloss
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14DamageEffectDamageAirloss
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14DamageEffectDamageAirloss
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14HealingEffectHealManaDepletion
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14HealingEffectHealManaDepletion
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14DamageEffectDamageManaDepletion
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14DamageEffectDamageManaDepletion
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14HealingEffectBloodRestore
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14HealingEffectBloodRestore
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14DamageEffectBloodAbsorption
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14DamageEffectBloodAbsorption
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14PositiveEffectSatiateHunger
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14PositiveEffectSatiateHunger
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14PositiveEffectSatiateThirst
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14PositiveEffectSatiateThirst
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14PositiveEffectHealMana
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14PositiveEffectHealMana
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14NegativeEffectDamageMana
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14NegativeEffectDamageMana
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14PositiveEffectHealStam
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14PositiveEffectHealStam
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14NegativeEffectDamageStam
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14NegativeEffectDamageStam
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14PositiveEffectSpeedUp
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14PositiveEffectSpeedUp
+    amount: 10
+    purity: 0.75
+
+- type: oe14TradingRequest
+  id: OE14NegativeEffectSpeedDown
+  possibleFactions:
+  - BradPotions
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14NegativeEffectSpeedDown
+    amount: 10
+    purity: 0.75

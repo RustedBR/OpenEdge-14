@@ -1,0 +1,1 @@
+tentacle-ability-use-popup = {CAPITALIZE(THE($entity))} enfia seus tentáculos no solo!

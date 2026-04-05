@@ -1,0 +1,41 @@
+- type: htnCompound
+  id: OE14MeleeWeaponlessCombatCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: OE14BeforeMeleeAttackTargetWeaponlessCompound
+
+- type: htnCompound
+  id: OE14BeforeMeleeAttackTargetWeaponlessCompound
+  branches:
+    - preconditions:
+        - !type:BuckledPrecondition
+          isBuckled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnbuckleOperator
+            shutdownState: TaskFinished
+
+    - preconditions:
+        - !type:PulledPrecondition
+          isPulled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnPullOperator
+            shutdownState: TaskFinished
+
+    - preconditions:
+        - !type:InContainerPrecondition
+          isInContainer: true
+      tasks:
+        - !type:HTNCompoundTask
+          task: EscapeCompound
+
+    # Melee combat (unarmed or otherwise)
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetCompound
+

@@ -1,0 +1,26 @@
+- type: OE14Recipe
+  id: OE14CandelabraBloodIgnited
+  tag: OE14RecipeVampire
+  craftTime: 1
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14BloodTiefling
+    amount: 10
+    purity: 0.8
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 1
+  result: OE14CandelabraBloodIgnited
+  resultCount: 1
+
+- type: OE14Recipe
+  id: OE14CandleBloodIgnited
+  tag: OE14RecipeVampire
+  craftTime: 1
+  requirements:
+  - !type:SolutionResource
+    reagent: OE14BloodTiefling
+    amount: 10
+    purity: 0.8
+  result: OE14CandleBloodIgnited
+  resultCount: 1 

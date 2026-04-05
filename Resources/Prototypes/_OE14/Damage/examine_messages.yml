@@ -1,0 +1,5 @@
+﻿- type: localizedDataset
+  id: OE14WeaponMessages
+  values:
+    prefix: oe14-damageable-weapon-
+    count: 4

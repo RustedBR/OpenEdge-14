@@ -1,0 +1,26 @@
+- type: constructionGraph
+  id: OE14WoodenBed
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WoodenBed
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 2
+            - material: OE14Cloth
+              amount: 1
+              doAfter: 2
+        - to: OE14BirchWoodenBed
+          steps:
+          - material: OE14BirchWoodenPlanks
+            amount: 2
+          - material: OE14Cloth
+            amount: 1
+            doAfter: 2
+    - node: OE14WoodenBed
+      entity: OE14WoodenBed
+    - node: OE14BirchWoodenBed
+      entity: OE14BirchWoodenBed

@@ -1,0 +1,100 @@
+# Simple recipes made from T0 and T1 essences and water
+# T1
+# The result is always 75% empty solution
+
+- type: reaction
+  id: OE14WaterBrewingSatiateHunger
+  minTemp: 500
+  priority: 2
+  reactants:
+    OE14EssenceBeast:
+      amount: 2
+    OE14EssenceLife:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectEmoteCough: 1
+    OE14PositiveEffectSatiateHunger: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingSatiateThirst
+  minTemp: 500
+  priority: 1
+  reactants:
+    OE14EssenceWater:
+      amount: 1
+    OE14EssenceLife:
+      amount: 1
+    Water:
+      amount: 2
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectRainbow: 1
+    OE14PositiveEffectSatiateThirst: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingHealMana
+  minTemp: 500
+  priority: 1
+  reactants:
+    OE14EssenceEnergia:
+      amount: 2
+    OE14EssenceMotion:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14HealingEffectHealManaDepletion: 1
+    OE14PositiveEffectHealMana: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingHealStam
+  minTemp: 500
+  priority: 1
+  reactants:
+    OE14EssenceLife:
+      amount: 1
+    OE14EssenceMotion:
+      amount: 1
+    OE14EssenceAir:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectDrunk: 1
+    OE14PositiveEffectHealStam: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14WaterBrewingSpeedUp
+  minTemp: 500
+  priority: 2
+  reactants:
+    OE14EssenceMotion:
+      amount: 2
+    OE14EssenceOrder:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 2
+    OE14SideEffectJitter: 1
+    OE14PositiveEffectSpeedUp: 1
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150

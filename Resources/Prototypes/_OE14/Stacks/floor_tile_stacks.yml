@@ -1,0 +1,128 @@
+- type: stack
+  id: OE14FloorTileFoundation
+  name: oe14-tiles-foundation
+  spawn: OE14FloorTileFoundation
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: foundation }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileMarbleBrick
+  name: oe14-tiles-stonebricks-marble
+  spawn: OE14FloorTileMarbleBrick
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: marble }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileMarbleSmallbricks
+  name: oe14-tiles-stonebricks-marble
+  spawn: OE14FloorTileMarbleSmallbricks
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: marble_smallbricks }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileOakWoodplanks
+  name: oe14-tiles-oak-woodplanks
+  spawn: OE14FloorTileOakWoodplanks
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: oak_woodplanks }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileOakWoodplanksBig
+  name: oe14-tiles-oak-woodplanks-big
+  spawn: OE14FloorTileOakWoodplanksBig
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: oak_woodplanks_big }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileOakWoodplanksCruciform
+  name: oe14-tiles-oak-woodplanks-cruciform
+  spawn: OE14FloorTileOakWoodplanksCruciform
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: oak_woodplanks_cruciform }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileOakWoodplanksStairs
+  name: oe14-tiles-oak-woodplanks-stairways
+  spawn: OE14FloorTileOakWoodplanksStairs
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: oak_woodplanks_stairways }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileStonebricks
+  name: oe14-tiles-stonebricks
+  spawn: OE14FloorTileStonebricks
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: stonebrick }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileStonebricksSmallCarved
+  name: oe14-tiles-stonebricks-small-carved1
+  spawn: OE14FloorTileStonebricksSmallCarved
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: stonebrick_small_carved }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileStonebricksSmallCarved2
+  name: oe14-tiles-stonebricks-small-carved2
+  spawn: OE14FloorTileStonebricksSmallCarved2
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: stonebrick_small_carved2 }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileStonebricksSquareCarved
+  name: oe14-tiles-stonebricks-square-carved
+  spawn: OE14FloorTileStonebricksSquareCarved
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: stonebrick_square_carved }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileBirchWoodplanks
+  name: oe14-tiles-birch-woodplanks
+  spawn: OE14FloorTileOakWoodplanks
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: birch_woodplanks }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileBirchWoodplanksBig
+  name: oe14-tiles-birch-woodplanks-big
+  spawn: OE14FloorTileBirchWoodplanksBig
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: birch_woodplanks_big }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileBirchWoodplanksCruciform
+  name: oe14-tiles-birch-woodplanks-cruciform
+  spawn: OE14FloorTileBirchWoodplanksCruciform
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: birch_woodplanks_cruciform }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileBirchWoodplanksStairs
+  name: oe14-tiles-birch-woodplanks-stairways
+  spawn: OE14FloorTileBirchWoodplanksStairs
+  icon: { sprite: _OE14/Objects/Tile/tile.rsi, state: birch_woodplanks_stairways }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileGrassBag
+  name: oe14-tiles-grass
+  spawn: OE14FloorTileGrassBag
+  icon: { sprite: _OE14/Objects/Specific/Farming/grass_seeds.rsi, state: grass }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileGrassBagLight
+  name: oe14-tiles-grass-light
+  spawn: OE14FloorTileGrassBagLight
+  icon: { sprite: _OE14/Objects/Specific/Farming/grass_seeds.rsi, state: grass2 }
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorTileGrassBagTall
+  name: oe14-tiles-grass-tall
+  spawn: OE14FloorTileGrassBagTall
+  icon: { sprite: _OE14/Objects/Specific/Farming/grass_seeds.rsi, state: grass3 }
+  maxCount: 30
+
+
+

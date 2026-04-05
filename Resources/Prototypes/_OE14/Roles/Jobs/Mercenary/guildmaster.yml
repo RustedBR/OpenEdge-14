@@ -1,0 +1,34 @@
+- type: job
+  id: OE14Guildmaster
+  setPreference: true
+  name: oe14-job-name-guildmaster
+  description: oe14-job-desc-guildmaster
+  playTimeTracker: OE14JobGuildmaster
+  startingGear: OE14GuildmasterGear
+  icon: "OE14JobIconGuildmaster"
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  canBeAntag: false
+  supervisors: oe14-job-supervisors-command
+  weight: 3
+  requirements:
+    #- !type:RoleTimeRequirement
+    #  role: OE14JobGuildWorker
+    #  time: 7200 # 2 hours
+    - !type:RoleTimeRequirement
+      role: OE14JobAdventurer
+      time: 18000 # 5 hours
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: OE14SalaryCounter
+        salary: 200
+
+- type: startingGear
+  id: OE14GuildmasterGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+  equipment:
+    belt: OE14WalletFilledTest
+    keys: OE14KeyRingGuildmaster

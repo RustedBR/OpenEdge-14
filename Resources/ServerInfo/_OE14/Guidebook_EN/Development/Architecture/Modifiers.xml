@@ -1,0 +1,337 @@
+<Document>
+# Modifier System
+
+The Modifier System handles temporary stat changes from spells, items, buffs, and effects. It's how stat bonuses work without mutating base values.
+
+## The Core Problem
+
+### Without Modifiers (Bad)
+<CodeBlock>
+// Base stat
+int baseStr = 8;
+
+// Player casts spell: +2 STR
+baseStr += 2;  // baseStr = 10
+
+// Player drinks potion: +1 STR
+baseStr += 1;  // baseStr = 11
+
+// Spell ends, need to remove it
+baseStr -= 2;  // baseStr = 9
+
+// Wait, was it +2? Or was there another bonus?
+// Chaos! Can't track sources!
+</CodeBlock>
+
+### With Modifiers (Good)
+<CodeBlock>
+int baseStr = 8;
+
+// Player casts spell: +2 STR
+modifiers[ModifierSource.Spell] = 2;
+
+// Player drinks potion: +1 STR
+modifiers[ModifierSource.Item] = 1;
+
+// Effective STR = 8 + 2 + 1 = 11
+
+// Spell ends, remove that source
+modifiers.Remove(ModifierSource.Spell);
+
+// Effective STR = 8 + 1 = 9
+
+// Clear tracking of what bonuses come from what!
+</CodeBlock>
+
+Much better!
+
+## How It Works
+
+### Three Layers
+
+<CodeBlock>
+Base Stat (Immutable)
+    8
+    |
++ Modifiers (Temporary)
+    + 2 (Spell: Metamagic)
+    + 1 (Item: Ring)
+    = +3 total
+    |
+= Effective Stat (Calculated)
+    8 + 3 = 11
+</CodeBlock>
+
+The base stat never changes. All bonuses are tracked separately.
+
+### Data Structure
+
+<CodeBlock>
+public sealed partial class OE14CharacterStatsComponent : Component
+{
+    [DataField]
+    public int BaseStrength { get; set; } = 5;  // Never changes
+
+    [DataField, AutoNetworkedField]
+    public Dictionary<ModifierSource, int> StrengthModifiers { get; set; } = new();
+    // { Spell: 2, Item: 1, Buff: 0, ... }
+
+    [DataField, AutoNetworkedField]
+    public int EffectiveStrength { get; set; } = 5;  // Calculated
+}
+</CodeBlock>
+
+## Modifier Sources
+
+Each bonus tracks where it came from:
+
+<CodeBlock>
+public enum ModifierSource
+{
+    Spell,   // From equipped magical items
+    Spend,   // From spending character points
+    Item,    // From wearing equipment
+    Buff,    // From temporary effects
+    Racial,  // From racial bonuses
+    Other
+}
+</CodeBlock>
+
+This lets you debug: "Why is my INT so high? Show me where the +3 comes from!"
+
+## Adding Modifiers
+
+<CodeBlock>
+// Spell gives +2 INT
+component.IntModifiers[ModifierSource.Spell] += 2;
+RecalculateEffectiveStats(component);
+
+// Item gives +1 VIT
+component.VitalityModifiers[ModifierSource.Item] += 1;
+RecalculateEffectiveStats(component);
+
+// Racial bonus: +1 DEX (from Goblin)
+component.DexterityModifiers[ModifierSource.Racial] += 1;
+RecalculateEffectiveStats(component);
+</CodeBlock>
+
+### The Recalculation
+
+<CodeBlock>
+private void RecalculateEffectiveStats(OE14CharacterStatsComponent component)
+{
+    // STR: Base + all modifiers
+    component.EffectiveStrength = component.BaseStrength
+        + component.StrengthModifiers.Values.Sum();
+
+    // Cap at 10
+    component.EffectiveStrength = Math.Min(component.EffectiveStrength, MaxStat);
+}
+</CodeBlock>
+
+## Overflow Protection
+
+What happens if modifiers exceed the stat cap?
+
+### Without Overflow Protection
+<CodeBlock>
+Base INT: 8
+Metamagic spell: +2
+Spell effect: +2
+= 12 (exceeds max of 10)
+</CodeBlock>
+
+The +2 overflow is wasted!
+
+### With Overflow Protection
+<CodeBlock>
+Base INT: 8
+Modifiers: +2 +2 = +4
+Effective INT: min(8+4, 10) = 10
+Overflow: 4 - 2 = 2
+Available Points: +2 (compensation!)
+</CodeBlock>
+
+When you overflow, you get compensation points to spend elsewhere!
+
+## Removing Modifiers
+
+<CodeBlock>
+// Spell ends, remove spell bonus
+component.StrengthModifiers.Remove(ModifierSource.Spell);
+RecalculateEffectiveStats(component);
+
+// Multiple sources? Only remove the specific one
+component.StrengthModifiers[ModifierSource.Spell] = 0;
+RecalculateEffectiveStats(component);
+
+// Clear all modifiers of one type
+var spells = component.StrengthModifiers.Where(x => x.Key == ModifierSource.Spell);
+foreach (var mod in spells)
+    component.StrengthModifiers.Remove(mod.Key);
+RecalculateEffectiveStats(component);
+</CodeBlock>
+
+## Real Example: Spell Cast
+
+<CodeBlock>
+public void CastMetaMagic(EntityUid caster)
+{
+    var stats = _entityManager.GetComponent<OE14CharacterStatsComponent>(caster);
+
+    // Check: Can player cast? (validates against effective stat)
+    if (stats.EffectiveIntelligence < MinINTToCast)
+    {
+        _chat.SendMessage("Not enough intelligence!");
+        return;  // Reject
+    }
+
+    // Apply spell bonus
+    stats.IntModifiers[ModifierSource.Spell] =
+        stats.IntModifiers.GetValueOrDefault(ModifierSource.Spell) + 2;
+    RecalculateEffectiveStats(stats);
+
+    // Check overflow
+    if (stats.EffectiveIntelligence >= MaxStat)
+    {
+        int overflow = stats.IntModifiers.Values.Sum() - (MaxStat - stats.BaseIntelligence);
+        stats.AvailablePoints += overflow;
+    }
+
+    // UI shows: "INT: 8 -> 10 (+2 Spell)"
+}
+</CodeBlock>
+
+## Displaying Modifiers
+
+<CodeBlock>
+Base Stat: 8
+Effective Stat: 11
+
+Breakdown:
+  + 2 (Spell: Metamagic)
+  + 1 (Item: Mage Ring)
+  = +3 total
+
+Display format: "INT: 8 -> 11 (+2 Spell, +1 Item)"
+</CodeBlock>
+
+Players can always see where bonuses come from.
+
+## Stat Caps
+
+Different stats have different caps:
+
+<CodeBlock>
+const int MinStat = 1;
+const int MaxStat = 10;
+const int NeutralStat = 5;
+</CodeBlock>
+
+All stats are capped at 10. If modifiers exceed:
+<CodeBlock>
+Modifiers: +3
+Effective: min(8+3, 10) = 10
+Overflow: +1 (becomes available point)
+</CodeBlock>
+
+## Stacking Modifiers
+
+Multiple sources stack:
+
+<CodeBlock>
+Base VIT: 7
+
+// Spell: +2
+modifiers[Spell] = 2;
+// Effective: 7 + 2 = 9
+
+// Item: +1
+modifiers[Item] = 1;
+// Effective: 7 + 2 + 1 = 10
+
+// Buff: +1
+modifiers[Buff] = 1;
+// Effective: 7 + 2 + 1 + 1 = 11 -> capped at 10
+// Overflow: 1 -> available point
+</CodeBlock>
+
+No "highest buff wins" complexity. Everything stacks and overflows together.
+
+## Performance
+
+Modifiers are efficient:
+- Dictionary lookup is O(1)
+- Recalculation is O(n) where n = number of modifier sources (usually fewer than 10)
+- Network sync is automatic with the AutoNetworkedField attribute
+- No allocations after initial setup
+
+Safe to update every frame if needed.
+
+## Best Practices
+
+[bold]DO:[/bold]
+- Always track which source added a modifier
+- Recalculate effective stat after changes
+- Check overflow and grant compensation points
+- Validate against effective stat (not base)
+- Use modifiers for ALL temporary bonuses
+
+[bold]DON'T:[/bold]
+- Modify base stat directly
+- Mix base and modifier calculations
+- Forget to handle overflow
+- Apply same modifier twice
+- Leave old modifiers lingering (clean up)
+
+## Real-World Example: Elf with Spells
+
+<CodeBlock>
+Elf base INT: 7
+
+Spell 1: Metamagic T1 (+1 INT)
+  Modifiers: { Spell: 1 }
+  Effective: 7 + 1 = 8
+
+Spell 2: Metamagic T2 (+1 INT)
+  Modifiers: { Spell: 2 }
+  Effective: 7 + 2 = 9
+
+Spell 3: Metamagic T3 (+1 INT)
+  Modifiers: { Spell: 3 }
+  Effective: 7 + 3 = 10 (capped)
+
+Item: Mage Ring (+1 INT)
+  Modifiers: { Spell: 3, Item: 1 }
+  Effective: min(7 + 3 + 1, 10) = 10
+  Overflow: 1 (available point granted)
+
+Buff: Blessing (+2 INT)
+  Modifiers: { Spell: 3, Item: 1, Buff: 2 }
+  Effective: min(7 + 3 + 1 + 2, 10) = 10
+  Overflow: 3 -> 2 available points
+
+Display: "INT: 7 -> 10 (+3 Spell, +1 Item, +2 Buff, overflow: 3)"
+</CodeBlock>
+
+Perfect transparency!
+
+## Navigation
+
+- Want to add a stat bonus? Use modifiers
+- Confused about overflow? Read [textlink="Spell Fallback System" link="OE14_DEV_Stats_Fallback"]
+- Need to understand calculations? Read [textlink="Stat Formulas" link="OE14_DEV_Stats_Formulas"]
+- Implementing a system? Use modifiers for all temporary bonuses
+
+## Summary
+
+- [bold]Base Stat[/bold] — immutable, starting value
+- [bold]Modifiers[/bold] — temporary bonuses from spells, items, buffs
+- [bold]Effective Stat[/bold] — base + sum of modifiers (capped at 10)
+- [bold]Tracking[/bold] — each modifier source is recorded
+- [bold]Overflow[/bold] — excess beyond cap becomes available points
+- [bold]Syncing[/bold] — AutoNetworkedField keeps clients in sync
+
+This system powers all stat bonuses in OpenEdge 14!
+
+</Document>

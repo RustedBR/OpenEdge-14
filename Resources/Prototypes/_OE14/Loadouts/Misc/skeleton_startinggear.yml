@@ -1,0 +1,125 @@
+
+# TIER 0
+
+- type: startingGear
+  id: OE14MobSkeletonCloset
+  equipment:
+    pants: OE14ClothingPantsLoincloth
+
+- type: startingGear
+  id: OE14MobSkeletonWizardTownRaid
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBoneArmor
+    cloak: OE14ClothingCloakBoneMage
+    head: OE14ClothingHeadTriangularHatGolden
+    shirt: OE14ClothingShirtCottonBlack
+    pants: OE14ClothingPantsBrown
+    shoes: OE14ClothingShoesLongLeatherBoots
+
+# TIER 1
+
+- type: startingGear
+  id: OE14MobSkeletonHalberdT1
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBoneArmor
+    cloak: OE14ClothingCloakBone
+    shirt: OE14ClothingShirtWarriorsGarbDress
+    pants: OE14ClothingPantsLoincloth
+    shoes: OE14ClothingShoesSandals
+    neck: OE14WeaponTwoHandedSwordIron
+
+- type: startingGear
+  id: OE14MobSkeletonSwordT1
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBoneArmor
+    cloak: OE14ClothingCloakBone
+    pants: OE14ClothingPantsLoincloth
+    shirt: OE14ClothingShirtWarriorsGarbDress
+    shoes: OE14ClothingShoesSandals
+    head: OE14ClothingHeadMetalHeadband
+    belt: OE14WeaponSwordIron
+    neck: OE14WeaponShieldWooden
+
+- type: startingGear
+  id: OE14MobSkeletonDodgerT1
+  equipment:
+    mask: OE14ClothingMaskSinner
+    pants: OE14ClothingPantsLoincloth
+    belt: OE14WeaponDaggerIron
+    belt2: OE14WeaponSkimitarIron
+
+- type: startingGear
+  id: OE14MobSkeletonArcherT1
+  equipment:
+    shirt: OE14ClothingShirtWarriorsGarbDress
+    pants: OE14ClothingPantsLoincloth
+    neck: OE14BowCombat
+    belt: OE14ClothingBeltQuiverArrows
+
+# TIER 2
+
+- type: startingGear
+  id: OE14MobSkeletonHalberdT2
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBoneArmorUpgrade
+    cloak: OE14ClothingCloakBone
+    mask: OE14ClothingMaskSteelMask
+    shirt: OE14ClothingShirtWarriorsGarbDress
+    pants: OE14ClothingPantsLoincloth
+    shoes: OE14ClothingShoesSandals
+    neck: OE14WeaponWarAxeIron
+
+- type: startingGear
+  id: OE14MobSkeletonSwordT2
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBoneArmorUpgrade
+    cloak: OE14ClothingCloakBone
+    mask: OE14ClothingMaskSteelMask
+    shirt: OE14ClothingShirtWarriorsGarbDress
+    pants: OE14ClothingPantsLoincloth
+    shoes: OE14ClothingShoesSandals
+    belt: OE14WeaponSwordIron
+    neck: OE14WeaponShieldWooden
+
+- type: startingGear
+  id: OE14MobSkeletonDodgerT2
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBoneArmor
+    mask: OE14ClothingMaskBoneHornedMask
+    pants: OE14ClothingPantsLoincloth
+    shoes: OE14ClothingShoesSandals
+    belt: OE14WeaponSkimitarIron
+    belt2: OE14WeaponSkimitarIron
+
+- type: startingGear
+  id: OE14MobSkeletonArcherT2
+  equipment:
+    head: OE14ClothingHeadHuntersHat
+    mask: OE14ClothingMaskNeckerchief
+    shirt: OE14ClothingShirtCottonBlack
+    pants: OE14ClothingPantsBrown
+    neck: OE14BowCombat
+    belt: OE14ClothingBeltQuiverArrows
+    belt2: OE14WeaponSwordIron # change to Rapier when it will be added
+    shoes: OE14ClothingShoesLongLeatherBoots
+
+- type: startingGear
+  id: OE14MobSkeletonWizardT2
+  equipment:
+    outerClothing: OE14ClothingOuterClothingBoneArmor
+    cloak: OE14ClothingCloakBoneMage
+    head: OE14ClothingHeadTriangularHatGolden
+    shirt: OE14ClothingShirtCottonBlack
+    pants: OE14ClothingPantsBrown
+    shoes: OE14ClothingShoesLongLeatherBoots
+    belt: OE14WeaponSwordIron # change to Rapier when it will be added
+
+- type: startingGear
+  id: OE14MobSkeletonBardT2
+  equipment:
+    head: OE14ClothingHeadBeretMercenary
+    shirt: OE14ClothingShirtMercenary
+    pants: OE14ClothingPantsMercenaryTrousers
+    shoes: OE14ClothingShoesAristocraticBlack
+    neck: SkeletonGuitarInstrument
+

@@ -1,0 +1,39 @@
+- type: entity
+  id: OE14RoofMarker
+  name: Roof enable Marker
+  categories:
+  - ForkFiltered
+  parent: MarkerBase
+  components:
+  - type: SetRoof
+    value: true
+  - type: Sprite
+    layers:
+    - state: green
+      shader: unshaded
+  localizationId: ent-OE14RoofMarker
+- type: entity
+  id: OE14NoRoofMarker
+  name: Roof disable Marker
+  categories:
+  - ForkFiltered
+  parent: MarkerBase
+  components:
+  - type: SetRoof
+    value: false
+  - type: Sprite
+    layers:
+    - state: red
+      shader: unshaded
+  localizationId: ent-OE14NoRoofMarker
+- type: entity
+  parent: OE14NoRoofMarker
+  id: OE14NoRoofMarkerGodRays
+  suffix: God Rays (5%)
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - OE14GodRays
+    chance: 0.05
+    deleteSpawnerAfterSpawn: false
+  localizationId: ent-OE14NoRoofMarkerGodRays

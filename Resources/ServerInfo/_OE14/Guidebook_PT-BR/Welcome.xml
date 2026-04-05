@@ -1,0 +1,45 @@
+﻿<Document>
+# Bem-vindo ao CrystallEdge
+
+CrystallEdge é um RPG multiplayer de fantasia medieval. Você divide um mundo vivo com outros jogadores — cooperate, negocie, lute e forje seu próprio caminho.
+
+## Por Onde Começar
+
+[bold]Escolha sua espécie.[/bold] Cada raça tem diferentes forças, fraquezas e habilidades raciais. Veja [textlink="Espécies Jogáveis" link="OE14_EN_Species"] para compará-las.
+
+[bold]Escolha sua profissão.[/bold] Sua profissão determina seu equipamento inicial e salário. Cada profissão abre diferentes portas para como você joga a rodada.
+
+[bold]Gaste seus pontos de atributo.[/bold] Na criação do personagem você recebe 3 pontos para distribuir entre Força, Vitalidade, Destreza e Inteligência. Escolha com base no seu estilo de jogo.
+
+## Controles Principais
+
+- [bold]C[/bold] — Menu do personagem (atributos, breakdown de modificadores)
+- [bold]I[/bold] — Inventário
+- [bold]Q[/bold] — Barra de ações (feitiços aparecem aqui quando você equip um item mágico)
+- [bold]Botão direito do mouse[/bold] — Menu de contexto (examinar, pegar, interagir, atacar)
+
+## Mantendo-se Vivo
+
+Sua [color=#e05050]barra de vida[/color] aparece na parte inferior da tela. Quando chega a zero você entra em estado crítico — você precisa de ajuda rápido.
+
+- Carregue [bold]bandagens[/bold] para parar sangramento
+- Coma e beba para manter stamina
+- Se estiver em desvantagem, [bold]corra[/bold] — recuar não é uma falha
+
+## Os Quatro Atributos
+
+[color=#e05050]Força[/color] — dano físico. FOR 5 é neutro (1.0x). Maior significa golpes mais fortes.
+
+[color=#50e050]Vitalidade[/color] — vida máxima. VIT 5 = 100 HP até crítico. Cada ponto adiciona ou subtrai 12.5 HP.
+
+[color=#50e0e0]Destreza[/color] — stamina (resistência a knockdown). DEX 5 = 100 stamina. Acabar a stamina faz você cair no chão.
+
+[color=#a050e0]Inteligência[/color] — mana. INT 5 = 100 mana. Sem mana, feitiços não podem ser conjurados.
+
+## Dicas
+
+- [bold]Examine tudo[/bold] — clique com botão direito em itens para ler o que eles fazem
+- [bold]Moedas são físicas[/bold] — mantenha-as em uma bolsa para não perdê-las ao receber dano
+- [bold]Morte não é o fim[/bold] — você renasce. Use o tempo para pensar no que fazer diferente
+
+</Document>

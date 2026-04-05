@@ -1,0 +1,21 @@
+- type: oe14TradingRequest
+  id: ThaumaturgyDimensit
+  possibleFactions:
+  - Thaumaturgy
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14DimensitCrystal
+    count: 5
+
+# 30 minutes
+
+- type: oe14TradingRequest
+  id: ThaumaturgyGoldAmulet
+  possibleFactions:
+  - Thaumaturgy
+  - Tailors
+  fromMinutes: 30
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14ClothingCloakAmuletGold
+    count: 2

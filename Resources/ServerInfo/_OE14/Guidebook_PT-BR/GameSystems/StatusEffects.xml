@@ -1,0 +1,64 @@
+<Document>
+  # Efeitos de Status
+
+  Efeitos de status são condições temporárias aplicadas a personagens através de magias ou outras habilidades. Eles modificam comportamento, atributos ou fornecem efeitos especiais.
+
+  ## Como Funcionam os Efeitos de Status
+
+  Efeitos de status são aplicados por certas magias e duram por um tempo específico. Quando a duração expira, o efeito é removido automaticamente.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MagicVisionStatusEffect" Caption="Visão Mágica"/>
+  </Box>
+
+  ## Aplicando Efeitos de Status
+
+  A maioria dos efeitos de status é aplicada através de [bold]magias[/bold]. Quando você conjura uma magia que aplica um efeito de status:
+
+  1. A magia acerta o alvo
+  2. Efeito de status é adicionado com uma duração
+  3. Efeito modifica as habilidades do alvo
+  4. Quando a duração expira, habilidades normais retornam
+
+  ## Efeitos de Status Disponíveis
+
+  ### Visão Mágica
+  - [bold]Descrição:[/bold] Permite ao conjurador ver auras e entidades mágicas
+  - [bold]Aplicado por:[/bold] Magia Visão de Mana
+  - [bold]Duração:[/bold] Enquanto ativo (magia alternável)
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MetaMagicVisionSpellStatusEffect" Caption="Magia Visão de Mana"/>
+  </Box>
+
+  ### Armadura de Mana
+  - [bold]Descrição:[/bold] Consome mana para reduzir dano recebido
+  - [bold]Aplicado por:[/bold] Magia Armadura de Mana
+  - [bold]Efeito:[/bold] -5 mana por golpe recebido
+
+  ## Efeitos de Status do Jogo Base
+
+  OpenEdge também herda efeitos de status padrão do SS14:
+
+  - [bold]Atordoado:[/bold] Não pode mover ou agir
+  - [bold]Derrubado:[/bold] Nocauteado no chão
+  - [bold]Desacelerado:[/bold] Velocidade de movimento reduzida
+  - [bold]Sono Forçado:[/bold] Inconsciente (sono mágico)
+
+  ## Dicas
+
+  - [bold]Observe seus ícones de status[/bold] — mostram efeitos ativos
+  - [bold]Alguns efeitos podem ser curados[/bold] esperando ou usando itens
+  - [bold]Efeitos de status inimigos[/bold] podem ser explorados — atordoe-os antes de atacar!
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14HerbalBandage1" Caption="Bandagem de Ervas"/>
+    <GuideEntityEmbed Entity="OE14VialSmallHealingPoison" Caption="Poção Antídoto"/>
+  </Box>
+
+  ## Sistemas Relacionados
+
+  - [textlink="Magia" link="OE14_PT_Magic"] — magias que aplicam efeitos de status
+  - [textlink="Combate" link="OE14_PT_Combat"] — efeitos de status em combate
+
+</Document>

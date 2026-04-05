@@ -1,0 +1,221 @@
+# Contains Flora and fauna, like flower, roots, mushrooms, etc,
+
+# Flower based
+
+- type: reagent
+  id: OE14BloodFlowerSap
+  group: OE14Precurser
+  name: oe14-reagent-name-bloodflowersap
+  desc: oe14-reagent-desc-bloodflowersap
+  flavor: OE14Metallic
+  color: "#5c1f0a"
+  physicalDesc: oe14-reagent-physical-desc-ferrous
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  pricePerUnit: 0.40
+
+- type: reagent
+  id: OE14YellowDayflinPulp
+  group: OE14Precurser
+  name: oe14-reagent-name-yellow-dayflin-pulp
+  desc: oe14-reagent-desc-yellow-dayflin-pulp
+  flavor: OE14Sweetly
+  color: "#ffe269"
+  physicalDesc: oe14-reagent-physical-desc-pureed
+  pricePerUnit: 0.35
+
+- type: reagent
+  id: OE14AirLily
+  group: OE14Precurser
+  name: oe14-reagent-name-air-lily-juice
+  desc: oe14-reagent-desc-air-lily-juice
+  flavor: fizzy
+  color: "#92cae0"
+  physicalDesc: reagent-physical-desc-milky
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: -2
+      - !type:Emote
+        showInChat: false
+        emote: Cough
+        probability: 0.3
+  pricePerUnit: 0.62
+
+- type: reagent
+  id: OE14WildSageSap
+  group: OE14Precurser
+  name: oe14-reagent-name-wild-sage-sap
+  desc: oe14-reagent-desc-wild-sage-sap
+  flavor: OE14Sweetly
+  color: "#b06bc7"
+  physicalDesc: oe14-reagent-physical-desc-cloudy
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Blunt: -1
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 3
+        refresh: false
+  pricePerUnit: 0.44
+
+# Fungus based
+
+- type: reagent
+  id: OE14AgaricMushroom
+  group: OE14Precurser
+  name: oe14-reagent-name-agaric-shroom
+  desc: oe14-reagent-desc-agaric-shroom
+  flavor: OE14Bitterly
+  color: "#89a195"
+  physicalDesc: oe14-reagent-physical-desc-colorless
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1.5
+      - !type:ChemVomit
+        probability: 0.02
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false
+  pricePerUnit: 0.46
+
+- type: reagent
+  id: OE14LumiMushroom
+  group: OE14Precurser
+  name: oe14-reagent-name-lumi-shroom
+  desc: oe14-reagent-desc-lumi-shroom
+  flavor: OE14Vomit
+  color: "#36c98f"
+  physicalDesc: oe14-reagent-physical-desc-colorless
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.5
+      - !type:ChemVomit
+        probability: 0.04
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 6
+        refresh: false
+  pricePerUnit: 0.94
+
+- type: reagent
+  id: OE14BlueAmanita
+  group: OE14Precurser
+  name: oe14-reagent-name-blue-amanita
+  desc: oe14-reagent-desc-blue-amanita
+  flavor: OE14Magic
+  color: "#6bb4bf"
+  physicalDesc: oe14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:OE14ManaChange
+        manaDelta: 0.5
+      - !type:HealthChange
+        damage:
+          types:
+            OE14ManaDepletion: -0.5
+  pricePerUnit: 0.86
+
+- type: reagent
+  id: OE14SilverNeedle
+  group: OE14Precurser
+  name: oe14-reagent-name-silver-needle
+  desc: oe14-reagent-desc-silver-needle
+  flavor: bitter
+  color: "#c2834c"
+  physicalDesc: oe14-reagent-physical-desc-iridescent
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: -1
+  pricePerUnit: 1.20
+
+# Slime based
+
+- type: reagent
+  id: OE14ChromiumSlime
+  group: OE14Precurser
+  name: oe14-reagent-name-chromium-slime
+  desc: oe14-reagent-desc-chromium-slime
+  flavor: OE14Vomit
+  color: "#3b4872"
+  physicalDesc: oe14-reagent-physical-desc-colorless
+  slipData:
+    requiredSlipSpeed: 3.5
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateThirst
+      - !type:ChemVomit
+        probability: 0.05
+  pricePerUnit: 2.20
+
+# Inorganic
+
+- type: reagent
+  id: OE14GroundQuartz
+  group: OE14Precurser
+  name: oe14-reagent-name-grounded-quartz
+  desc: oe14-reagent-desc-grounded-quartz
+  flavor: OE14Quartz
+  color: "#9aa6ad"
+  physicalDesc: oe14-reagent-physical-desc-colorless
+  pricePerUnit: 0.15
+
+- type: reagent
+  id: OE14WhistlerPoison
+  group: OE14Precurser
+  name: oe14-reagent-name-whistler-poison
+  desc: oe14-reagent-desc-whistler-poison
+  flavor: OE14VerySweet
+  color: "#6bb4bf"
+  physicalDesc: reagent-physical-desc-powdery
+  metabolisms:
+    Narcotic:
+      effects:
+      - !type:Emote
+        emote: Yawn
+        showInChat: true
+        probability: 0.2
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: OE14WhistlerPoison
+          min: 8
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add
+  pricePerUnit: 3.52

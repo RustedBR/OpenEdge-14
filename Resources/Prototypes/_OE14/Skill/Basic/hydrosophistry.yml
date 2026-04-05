@@ -1,0 +1,137 @@
+# T1
+
+- type: oe14Skill
+  id: HydrosophistryT1
+  skillUiPosition: 1, 0
+  tree: Hydrosophistry
+  name: oe14-skill-water-t1-name
+  desc: oe14-skill-water-t1-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: water
+  effects:
+  - !type:OE14AddStatBonus
+    stat: strength
+
+- type: oe14Skill
+  id: OE14ActionSpellWaterCreation
+  skillUiPosition: 1, 4
+  tree: Hydrosophistry
+  icon:
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: water_creation
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellWaterCreation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+
+- type: oe14Skill
+  id: OE14ActionSpellBeerCreation
+  skillUiPosition: 1, 8
+  tree: Hydrosophistry
+  learnCost: 0
+  icon:
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: beer_creation
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellBeerCreation
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: OE14ActionSpellWaterCreation
+  - !type:SpeciesWhitelist
+    species: OE14Dwarf
+
+- type: oe14Skill
+  id: OE14ActionSpellIceDagger
+  skillUiPosition: 0, 6
+  tree: Hydrosophistry
+  icon:
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: ice_dagger
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellIceDagger
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+
+- type: oe14Skill
+  id: OE14ActionSpellIceArrow
+  skillUiPosition: 2, 6
+  tree: Hydrosophistry
+  icon:
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: ice_arrow
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellIceArrow
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+
+# T2
+
+- type: oe14Skill
+  id: HydrosophistryT2
+  skillUiPosition: 7, 0
+  tree: Hydrosophistry
+  name: oe14-skill-water-t2-name
+  desc: oe14-skill-water-t2-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: water2
+  effects:
+  - !type:OE14AddStatBonus
+    stat: strength
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT1
+
+- type: oe14Skill
+  id: OE14ActionSpellFreeze
+  skillUiPosition: 6, 4
+  tree: Hydrosophistry
+  icon:
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: freeze
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellFreeze
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT2
+
+- type: oe14Skill
+  id: OE14ActionSpellIceShards
+  skillUiPosition: 8, 4
+  tree: Hydrosophistry
+  icon:
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: ice_shards
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellIceShards
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT2
+
+# T3
+
+#- type: oe14Skill
+#  id: HydrosophistryT3
+#  skillUiPosition: 13, 0
+#  tree: Hydrosophistry
+#  name: oe14-skill-water-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _OE14/Actions/skill_tree.rsi
+#    state: water3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: HydrosophistryT2
+

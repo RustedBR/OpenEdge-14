@@ -1,0 +1,132 @@
+- type: entity
+  abstract: true
+  id: OE14BaseEssenceNode
+  categories: [ ForkFiltered ]
+  name: essence node
+  description: A natural accumulation of magical essence.
+  components:
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: _OE14/Objects/Specific/Thaumaturgy/essence.rsi
+    layers:
+    - state: node
+      shader: unshaded
+  - type: Timer
+  - type: TimedSpawner
+    chance: 0.75
+    intervalSeconds: 15
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
+  - type: PointLight
+
+- type: entity
+  name: random essence node spawner
+  id: OE14SpawnEssenceNodeRandom
+  parent: MarkerBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: green
+    - sprite: _OE14/Objects/Specific/Thaumaturgy/essence.rsi
+      state: node
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 60
+        children:
+        - id: OE14EssenceNodeEarth
+        - id: OE14EssenceNodeFire
+        - id: OE14EssenceNodeWater
+        - id: OE14EssenceNodeAir
+        - id: OE14EssenceNodeOrder
+        - id: OE14EssenceNodeChaos
+
+# Basic 6
+
+- type: entity
+  parent: OE14BaseEssenceNode
+  id: OE14EssenceNodeEarth
+  suffix: terra
+  components:
+  - type: PointLight
+    color: "#1cea42"
+  - type: Sprite
+    color: "#1cea42"
+  - type: TimedSpawner
+    prototypes:
+    - OE14EssenceEarth
+
+- type: entity
+  parent: OE14BaseEssenceNode
+  id: OE14EssenceNodeFire
+  suffix: ignis
+  components:
+  - type: PointLight
+    color: "#d9741c"
+  - type: Sprite
+    color: "#d9741c"
+  - type: TimedSpawner
+    prototypes:
+    - OE14EssenceFire
+
+- type: entity
+  parent: OE14BaseEssenceNode
+  id: OE14EssenceNodeWater
+  suffix: aqua
+  components:
+  - type: PointLight
+    color: "#1c94d9"
+  - type: Sprite
+    color: "#1c94d9"
+  - type: TimedSpawner
+    prototypes:
+    - OE14EssenceWater
+
+- type: entity
+  parent: OE14BaseEssenceNode
+  id: OE14EssenceNodeAir
+  suffix: aer
+  components:
+  - type: PointLight
+    color: "#fdfe86"
+  - type: Sprite
+    color: "#fdfe86"
+  - type: TimedSpawner
+    prototypes:
+    - OE14EssenceAir
+
+- type: entity
+  parent: OE14BaseEssenceNode
+  id: OE14EssenceNodeOrder
+  suffix: ordo
+  components:
+  - type: PointLight
+    color: "#d9d9d9"
+  - type: Sprite
+    color: "#d9d9d9"
+  - type: TimedSpawner
+    prototypes:
+    - OE14EssenceOrder
+
+- type: entity
+  parent: OE14BaseEssenceNode
+  id: OE14EssenceNodeChaos
+  suffix: perditio
+  components:
+  - type: PointLight
+    color: "#4d4d4d"
+  - type: Sprite
+    color: "#4d4d4d"
+  - type: TimedSpawner
+    prototypes:
+    - OE14EssenceChaos
+
+# Complex tier 1
+
+#TODO
+

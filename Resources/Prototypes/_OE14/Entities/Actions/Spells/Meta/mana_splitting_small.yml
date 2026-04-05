@@ -1,0 +1,41 @@
+- type: entity
+  id: OE14ActionSpellMagicSplittingSmall
+  parent: OE14ActionSpellBase
+  name: Small magic splitting
+  description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.7
+  - type: OE14ActionManaCost
+    manaCost: 10
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneMagicSplitting
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/meta.rsi
+      state: counter_spell_small
+  - type: DoAfterArgs
+    delay: 1
+    breakOnDamage: true
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - OE14MagicEnergyContainer
+      - ExaminableSolution
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectMagicSplitting
+      effects:
+      - !type:OE14SpellMixSolution
+        reactionTypes:
+        - OE14MagicSplitting
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:OE14ManaChange
+          manaDelta: -5
+          safe: false

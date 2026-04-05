@@ -1,0 +1,35 @@
+
+# Cloak
+
+- type: loadoutGroup
+  id: OE14InvestigatorCloak
+  name: oe14-loadout-investigator-cloak
+  loadouts:
+  - OE14ClothingCloakGuardInvestigator
+
+- type: loadout
+  id: OE14ClothingCloakGuardInvestigator
+  equipment:
+    cloak: OE14ClothingCloakGuardInvestigator
+
+
+# Head
+
+- type: loadoutGroup
+  id: OE14InvestigatorHead
+  name: oe14-loadout-investigator-head
+  minLimit: 1
+  loadouts:
+  - OE14ClothingHeadGuardInvestigatorHelmet
+  - OE14ClothingHeadGuardFedora
+  - OE14ClothingHeadGuardTriangular
+
+- type: loadout
+  id: OE14ClothingHeadGuardTriangular
+  equipment:
+    head: OE14ClothingHeadGuardTriangular
+
+- type: loadout
+  id: OE14ClothingHeadGuardInvestigatorHelmet
+  equipment:
+    head: OE14ClothingHeadGuardInvestigatorHelmet

@@ -1,0 +1,1 @@
+oe14-latejoin-arrival-announcement = {$character} ({$job}) has arrived in town!

@@ -1,0 +1,33 @@
+<Document>
+# Referência de Sistemas de Magia & Magias
+
+Referência rápida para os sistemas de magia e magias no OpenEdge 14.
+
+## Componentes Chave
+
+[bold]OE14SpellStorageComponent[/bold] — anexado a itens; mantém uma lista de IDs de ações de magias que são concedidos quando o item é equipado.
+
+[bold]OE14ActionManaCostComponent[/bold] — anexado a ações de magias; define o custo de mana e valida mana antes da magia atirar.
+
+[bold]OE14MagicEnergyComponent[/bold] — anexado a personagens; rastreia mana atual e máxima.
+
+## Fluxo de Magia
+
+1. Jogador equipa item com [mono]OE14SpellStorage[/mono]
+2. Magias são adicionadas à barra de ações
+3. Jogador ativa magia
+4. [mono]OE14ActionManaCostSystem[/mono] verifica mana
+5. Se suficiente: deduz mana, magia atira
+6. Se não: rejeita com mensagem
+
+## Localização dos Arquivos
+
+- [mono]Content.Shared/_OE14/Magic/[/mono]
+- [mono]Content.Server/_OE14/Magic/[/mono]
+- [mono]Resources/Prototypes/_OE14/Magic/[/mono]
+
+## Conteúdo Em Construção
+
+Referência completa do sistema de magia coming soon. Veja [textlink="Mecânicas de Magias" link="OE14_DEV_Skills_Mechanics"] para a visão geral conceitual.
+
+</Document>

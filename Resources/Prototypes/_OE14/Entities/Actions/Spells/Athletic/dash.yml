@@ -1,0 +1,23 @@
+- type: entity
+  id: OE14ActionSpellDash
+  parent: OE14ActionSpellBase
+  name: Dash
+  description: You make a quick dash to the chosen position to quickly close the distance or dodge danger.
+  components:
+  - type: OE14ActionStaminaCost
+    stamina: 20
+  - type: Action
+    sound: null
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/physical.rsi
+      state: dash
+  - type: TargetAction
+    checkCanAccess: false
+    range: 10 #Thats not dash range, thats interaction clickable zone range
+  - type: WorldTargetAction
+    event: !type:OE14WorldTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellDash
+        speed: 20
+        range: 3.5

@@ -1,0 +1,703 @@
+- type: entity
+  id: OE14MobRabbit
+  parent: OE14SimpleMobBase
+  name: rabbit
+  description: A little fluffy rabbit. I could eat it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: NpcFactionMember
+    factions:
+    - OE14PeacefulAnimals
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _OE14/Mobs/Animals/rabbit.rsi
+      state: rabbit
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 8
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - OE14Rabbit
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - OE14Rabbit
+    offspring:
+    - id: OE14MobRabbit
+      maxAmount: 2
+  - type: ReproductivePartner
+  - type: Speech
+    speechVerb: SmallMob
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 1
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 5
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rabbit
+      Dead:
+        Base: rabbit_dead
+  - type: Butcherable
+    spawned:
+    - id: OE14FoodMeatRabbit
+      amount: 4
+    - id: OE14ThinLeather1
+      amount: 1
+      maxAmount: 2
+    - id: OE14Fur
+      amount: 1
+      prob: 0.75
+  - type: Bloodstream
+    bloodMaxVolume: 50
+    bloodReagent: OE14BloodAnimal
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: oe14-petting-success-rabbit
+    interactFailureString: oe14-petting-failure-rabbit
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/fox_squeak.ogg
+
+- type: entity
+  id: OE14MobPig
+  parent: OE14SimpleMobBase
+  name: pig
+  description: An omnivorous and unpretentious animal that is sure to make juicy cuts of meat.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: NpcFactionMember
+    factions:
+    - OE14PeacefulAnimals
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _OE14/Mobs/Animals/pig.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 150
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - OE14Pig
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - OE14Pig
+    offspring:
+    - id: OE14MobPig
+      maxAmount: 2
+  - type: ReproductivePartner
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 2
+        Slash: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: OE14FoodMeatPig
+      amount: 3
+    - id: OE14FoodMeatPig
+      amount: 1
+      prob: 0.5
+    - id: OE14FoodMeatPigLeg
+      amount: 1
+    - id: OE14FoodMeatPigLeg
+      amount: 1
+      prob: 0.3
+    - id: OE14Leather1
+      amount: 1
+      maxAmount: 3
+    - id: OE14Bone1
+      amount: 2
+      maxAmount: 3
+  - type: Bloodstream
+    bloodMaxVolume: 150
+    bloodReagent: OE14BloodAnimal
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: ReplacementAccent
+    accent: pig
+  - type: InteractionPopup
+    successChance: 0.7
+    interactSuccessString: petting-success-pig
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/pig_oink.ogg
+
+- type: entity
+  id: OE14MobBoar
+  parent: OE14MobPig
+  name: boar
+  description: A distant relative of pigs, same pros, but unlike its peaceful relatives, will definitely try to pick you up on its fangs if you show aggression towards it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _OE14/Mobs/Animals/boar.rsi
+      state: live
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 5
+        Slash: 2
+  - type: Tag
+    tags:
+    - OE14Boar
+  - type: Butcherable
+    spawned:
+    - id: OE14FoodMeatBoar
+      amount: 4
+    - id: OE14Leather1
+      amount: 2
+      maxAmount: 4
+    - id: OE14ScrapLeather
+      amount: 1
+      maxAmount: 3
+      prob: 0.5
+    - id: OE14RuggedLeather1
+      amount: 1
+      prob: 0.1
+    - id: OE14CheapFur
+      amount: 1
+      prob: 0.25
+    - id: OE14Bone1
+      amount: 2
+      maxAmount: 4
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - OE14Boar
+    offspring:
+    - id: OE14MobBoar
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4.5
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: FactionException
+  - type: InteractionPopup
+    successChance: 0.2
+    interactSuccessString: petting-success-pig
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/pig_oink.ogg
+
+- type: entity
+  name: frog
+  parent: OE14SimpleMobBase
+  id: OE14MobFrog
+  description: Green and constantly jumping frog, and perhaps thanks to it mosquitoes have not completely filled the marshes.
+  categories: [ ForkFiltered ]
+  components:
+  - type: NpcFactionMember
+    factions:
+    - OE14Neutrals
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      sprite: _OE14/Mobs/Animals/frog.rsi
+      state: frog
+  - type: Clothing
+    quickEquip: false
+    sprite: _OE14/Mobs/Animals/frog_helmet.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: frog_moving
+    noMovementLayers:
+      movement:
+        state: frog_blinks
+  - type: Item
+    size: Normal
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: Speech
+    speechVerb: SmallMob
+  - type: Appearance
+  - type: Physics
+  - type: FloorOcclusion
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: frog
+      Dead:
+        Base: frog_dead
+  - type: Butcherable
+    butcherDelay: 2
+    spawned:
+    - id: OE14FoodMeatFrogLeg
+      amount: 2
+    - id: OE14ScrapLeather
+      amount: 1
+      prob: 0.5
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 0
+  - type: InteractionPopup
+    successChance: 0.6
+    interactSuccessString: petting-success-frog
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/frog_ribbit.ogg
+  - type: CanEscapeInventory
+  - type: Bloodstream
+    bloodMaxVolume: 30
+    bloodReagent: OE14BloodAnimal
+  - type: Tag
+    tags:
+    - OE14Mosquito
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 60
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  - type: SpamEmitSound
+    minInterval: 10
+    maxInterval: 20
+    sound:
+      collection: OE14Frog
+      params:
+        volume: -8
+        variation: 0.125
+  - type: SoundWhileAlive
+
+- type: entity
+  id: OE14MobSheep
+  parent: OE14SimpleMobBase
+  name: sheep
+  description: White and fluffy as a cloud sheep.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
+  - type: NpcFactionMember
+    factions:
+    - OE14PeacefulAnimals
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _OE14/Mobs/Animals/sheep.rsi
+      state: sheep
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+    - OE14Sheep
+  - type: Reproductive
+    partnerWhitelist:
+      tags:
+      - OE14Sheep
+    offspring:
+    - id: OE14MobSheep
+      maxAmount: 1
+  - type: ReproductivePartner
+  - type: Speech
+    speechSounds: Goat
+    speechVerb: Goat
+  - type: Vocal
+    sounds:
+      Female: Goat
+      Male: Goat
+      Unsexed: Goat
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 5
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 4
+    baseSprintSpeed : 4
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: sheep
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: OE14FoodMeatLamb
+      amount: 4
+    - id: OE14String # As long as there are no mechanics to shearing wool, the only way to get string.
+      amount: 4
+      maxAmount: 16
+    - id: OE14ThinLeather1
+      amount: 2
+      maxAmount: 5
+    - id: OE14ScrapLeather
+      amount: 1
+      maxAmount: 5
+      prob: 0.3
+    - id: OE14Bone1
+      amount: 1
+      maxAmount: 2
+  - type: Bloodstream
+    bloodMaxVolume: 150
+    bloodReagent: OE14BloodAnimal
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-goat
+    interactFailureString: petting-failure-goat
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/goat_bah.ogg
+
+- type: entity
+  id: OE14MobBigBear
+  parent: OE14SimpleMobBase
+  name: big bear
+  description: A big, angry-looking bear. Maybe he didn't get enough sleep.
+  categories: [ ForkFiltered ]
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - OE14AggressiveAnimals
+  #- type: NPCUseActionOnTarget # TODO: add support for non-target actions
+  #  actionId: OE14ActionBearSpellSprint
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      sprite: _OE14/Mobs/Animals/bear.rsi
+      state: live
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 350
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Appearance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    angle: 0
+    attackRate: 0.8
+    animation: WeaponArcClaw
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Structural: 60
+        Piercing: 5
+        Slash: 6
+        Blunt: 5
+    bluntStaminaDamageFactor: 2.0
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: live
+      Dead:
+        Base: dead
+  - type: Stamina
+    critThreshold: 300
+  - type: Butcherable
+    spawned:
+    - id: OE14FoodMeatBoar # TODO
+      amount: 5
+    - id: OE14RuggedLeather1
+      amount: 2
+      maxAmount: 5
+    - id: OE14ScrapLeather
+      amount: 2
+      maxAmount: 6
+      prob: 0.5
+    - id: OE14GoodFur
+      amount: 1
+    - id: OE14Bone1
+      amount: 8
+      maxAmount: 10
+  - type: Bloodstream
+    bloodMaxVolume: 350
+    bloodReagent: OE14BloodAnimal
+  - type: Puller
+    needsHands: false
+  - type: Tag
+    tags:
+    - FootstepSound
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Vocal
+    sounds:
+      Unsexed: OE14Bear
+  - type: SpamEmitSound
+    minInterval: 20
+    maxInterval: 40
+    sound:
+      collection: OE14Bear
+      params:
+        volume: -2
+        variation: 0.125
+  - type: SoundWhileAlive
+
+- type: entity
+  id: OE14MobSnail
+  parent: OE14SimpleMobBase
+  name: snail
+  description: A small and slow snail. It seems that any touch could crush it.
+  categories: [ ForkFiltered ]
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: oe14-ghost-role-information-name-snail
+    description: oe14-ghost-role-information-description-snail
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: GhostTakeoverAvailable
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: MouseCompound
+  - type: NpcFactionMember
+    factions:
+      - OE14PeacefulAnimals
+  - type: Sprite
+    drawdepth: SmallMobs
+    layers:
+    - sprite: _OE14/Mobs/Animals/snail.rsi
+      state: live
+  - type: Item
+    size: Tiny
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 20
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: Speech
+    speechVerb: SmallMob
+  - type: ReplacementAccent
+    accent: mouse
+  - type: Food
+  - type: Thirst
+    baseDecayRate: 0.01
+  - type: Hunger
+    baseDecayRate: 0.01
+  - type: Body
+    prototype: null
+  - type: Respirator
+    minSaturation: 5.0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+  - type: CombatMode
+    combatToggleAction: ActionCombatModeToggleOff
+  - type: Bloodstream
+    bloodMaxVolume: 10
+    bloodReagent: OE14BloodAnimal
+  - type: CanEscapeInventory
+  - type: BadFood
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: NoSlip
+  - type: Slippery
+  - type: StepTrigger
+    requiredTriggeredSpeed: 1
+  - type: TriggerOnStepTrigger
+  - type: RandomChanceTriggerCondition
+    successChance: 0.3
+  - type: GibOnTrigger
+  - type: ProtectedFromStepTriggers
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          OE14FoodSnailShell:
+            min: 1
+            max: 1
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 3
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Slash
+        damage: 5
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 9
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          OE14Ash1:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact

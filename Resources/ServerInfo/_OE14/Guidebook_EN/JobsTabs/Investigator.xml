@@ -1,0 +1,35 @@
+<Document>
+# Investigator
+
+<Box>
+<GuideEntityEmbed Entity="OE14ClothingCloakGuardInvestigator" Caption="Investigator's Cloak"/>
+</Box>
+
+The Investigator operates within the Guard department but with a different focus: detection over patrol. Using magical vision and analytical skills, Investigators uncover hidden contraband, trace magical activity, and build cases that ordinary Guards cannot crack.
+
+## Responsibilities
+
+- Investigate crimes, theft, and suspicious activity
+- Detect magical contraband and hidden items using magic vision
+- Interview witnesses and gather evidence
+- Build cases to support Guard Commander decisions
+- Identify magic-users operating outside the law
+
+## Unique Skills
+
+[bold][color=#5EABEB]Toggle Magic Vision[/color][/bold] — reveals magical auras on entities and players. Use this to spot enchanted items, hidden contraband, and illegal magical tools.
+
+[bold][color=#5EABEB]Magic Splitting[/color][/bold] — a detection-oriented ability used to analyze the magical properties of objects.
+
+## Requirements
+
+[bold]1 hour[/bold] in the Guard department. Salary: [bold]75 coins[/bold] per cycle.
+
+## Tips
+
+- Use [color=#5EABEB]Magic Vision[/color] frequently — it reveals things a standard Guard would walk past
+- Document findings before acting — an Investigator needs evidence, not just suspicion
+- Coordinate with the Guard Commander before making any arrest
+- Your role is intelligence and investigation, not patrol — let Guards handle crowd control
+
+</Document>

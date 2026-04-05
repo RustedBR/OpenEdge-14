@@ -1,0 +1,91 @@
+- type: entity
+  id: OE14GuildSignRed
+  name: red guild sign
+  description: A small sign to indicate a desk related to red quests.
+  parent: 
+  - BaseItem
+  - OE14BaseFlammable
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Objects/Misc/guild_signs.rsi
+    state: red
+  - type: Item
+    size: Small
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 6
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14Ash1:
+            min: 1
+            max: 2
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 1
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 20
+
+- type: entity
+  id: OE14GuildSignYellow
+  name: yellow guild sign
+  description: A small sign to indicate a desk related to yellow quests.
+  parent: 
+  - OE14GuildSignRed
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Objects/Misc/guild_signs.rsi
+    state: yellow
+
+- type: entity
+  id: OE14GuildSignBlue
+  name: blue guild sign
+  description: A small sign to indicate a desk related to blue quests.
+  parent: 
+  - OE14GuildSignRed
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Objects/Misc/guild_signs.rsi
+    state: blue
+
+- type: entity
+  id: OE14GuildSignGreen
+  name: green guild sign
+  description: A small sign to indicate a desk related to green quests.
+  parent: 
+  - OE14GuildSignRed
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _OE14/Objects/Misc/guild_signs.rsi
+    state: green

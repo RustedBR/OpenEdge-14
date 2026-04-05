@@ -1,0 +1,194 @@
+- type: entity
+  id: OE14BaseBiomeSpawner
+  name: biome spawner
+  description: Spawns of various biomes on the map.
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  categories:
+  - ForkFiltered
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Sprite
+    snapCardinals: true
+    drawdepth: BelowFloor
+    sprite: _OE14/Markers/biome.rsi
+  - type: OE14BiomeSpawner
+    deleteBlacklist:
+      components:
+      - Portal
+      - MindContainer
+  - type: PlacementReplacement
+    key: OE14BiomeSpawner
+  localizationId: ent-OE14BaseBiomeSpawner
+- type: entity
+  id: OE14BiomeSpawnerGrassland
+  parent: OE14BaseBiomeSpawner
+  suffix: T0 Resources, Grassland
+  components:
+  - type: Sprite
+    layers:
+    - state: grass
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14GrasslandComossResources
+  localizationId: ent-OE14BiomeSpawnerGrassland
+- type: entity
+  id: OE14BiomeSpawnerCave
+  parent: OE14BaseBiomeSpawner
+  suffix: T0 Resources, Cave Tunnels
+  components:
+  - type: Sprite
+    layers:
+    - state: cave
+    - sprite: _OE14/Structures/Flora/Rocks/rocks_small.rsi
+      state: rock0
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14CavesComossResources
+  localizationId: ent-OE14BiomeSpawnerCave
+- type: entity
+  id: OE14BiomeSpawnerCaveEmpty
+  parent: OE14BaseBiomeSpawner
+  suffix: Cave Open
+  components:
+  - type: Sprite
+    layers:
+    - state: cave
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14CavesFloor
+  localizationId: ent-OE14BiomeSpawnerCaveEmpty
+- type: entity
+  id: OE14BiomeSpawnerCaveGeneric
+  parent: OE14BaseBiomeSpawner
+  suffix: Cave Generic
+  components:
+  - type: Sprite
+    layers:
+    - state: cave
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14CavesGeneric
+  localizationId: ent-OE14BiomeSpawnerCaveGeneric
+- type: entity
+  id: OE14BiomeSpawnerForest
+  parent: OE14BaseBiomeSpawner
+  suffix: Forest
+  components:
+  - type: Sprite
+    layers:
+    - state: forest
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14GrasslandHills
+  localizationId: ent-OE14BiomeSpawnerForest
+- type: entity
+  id: OE14BiomeSpawnerSnowland
+  parent: OE14BaseBiomeSpawner
+  suffix: Snowland
+  components:
+  - type: Sprite
+    layers:
+    - state: snow
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14SnowlandTestResult
+  localizationId: ent-OE14BiomeSpawnerSnowland
+- type: entity
+  id: OE14BiomeSpawnerSwamp
+  parent: OE14BaseBiomeSpawner
+  suffix: Swamp
+  components:
+  - type: Sprite
+    layers:
+    - state: forest
+    - sprite: _OE14/Tiles/Water/water.rsi
+      state: full
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14SwampFill
+  localizationId: ent-OE14BiomeSpawnerSwamp
+- type: entity
+  id: OE14BiomeSpawnerFrozenSwamp
+  parent: OE14BaseBiomeSpawner
+  suffix: Frozen swamp
+  components:
+  - type: Sprite
+    layers:
+    - state: snow
+    - sprite: _OE14/Tiles/Water/water.rsi
+      state: full
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14SnowlandSwamp
+  localizationId: ent-OE14BiomeSpawnerFrozenSwamp
+- type: entity
+  id: OE14BiomeSpawnerFrozenCave
+  parent: OE14BaseBiomeSpawner
+  suffix: Frozen cave
+  components:
+  - type: Sprite
+    layers:
+    - state: snow
+      color: blue
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14IceCavesGeneric
+  localizationId: ent-OE14BiomeSpawnerFrozenCave
+- type: entity
+  id: OE14BiomeSpawnerLeafMaze
+  parent: OE14BaseBiomeSpawner
+  suffix: Leaf maze
+  components:
+  - type: Sprite
+    layers:
+    - state: snow
+      color: green
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14LeafMaze
+  localizationId: ent-OE14BiomeSpawnerLeafMaze
+- type: entity
+  id: OE14BiomeSpawnerMarbleCave
+  parent: OE14BaseBiomeSpawner
+  suffix: Marble cave
+  components:
+  - type: Sprite
+    layers:
+    - state: cave
+    - state: frame
+    - sprite: _OE14/Objects/Materials/marble_block.rsi
+      state: stone_3
+  - type: OE14BiomeSpawner
+    biome: OE14MarbleCaves
+  localizationId: ent-OE14BiomeSpawnerMarbleCave
+- type: entity
+  id: OE14BiomeSpawnerWastelands
+  parent: OE14BaseBiomeSpawner
+  suffix: Wastelands
+  components:
+  - type: Sprite
+    layers:
+    - state: dirt
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14Wastelands
+  localizationId: ent-OE14BiomeSpawnerWastelands
+- type: entity
+  id: OE14BiomeSpawnerCavesMushroom
+  parent: OE14BaseBiomeSpawner
+  suffix: Mushroom cave
+  components:
+  - type: Sprite
+    layers:
+    - state: cave
+    - sprite: _OE14/Structures/Flora/Wild/agaric.rsi
+      state: world4
+    - state: frame
+  - type: OE14BiomeSpawner
+    biome: OE14MushroomsCaveResult
+  localizationId: ent-OE14BiomeSpawnerCavesMushroom

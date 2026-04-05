@@ -1,0 +1,68 @@
+<Document>
+# Testes & Debugging
+
+Dicas e técnicas para testar suas mudanças no OpenEdge 14.
+
+## Iniciando o Ambiente de Desenvolvimento
+
+<CodeBlock>
+# Mate qualquer servidor existente
+killall Content.Server
+
+# Compile primeiro
+dotnet build -c Release
+
+# Inicie o servidor (modo dev)
+bash runserver.sh
+
+# Inicie o cliente (terminal separado)
+bash runclient.sh
+</CodeBlock>
+
+[bold]Ordem importa:[/bold] Sempre mate o servidor antes de compilar. Travamentos de arquivo durante build causarão erros.
+
+## Cenários de Teste Comuns
+
+### Testando Atributos do Personagem
+1. Crie um personagem, gaste pontos
+2. Abra a janela de personagem (tecla C)
+3. Verifique valores de atributos e exibição de modificadores
+
+### Testando Magias
+1. Aprenda a habilidade relevante
+2. Equipe item com OE14SpellStorage (se aplicável)
+3. Verifique magia aparece na barra de ações
+4. Conjuna magia e verifique dedução de mana
+5. Verifique efeito no alvo
+
+### Testando Crafting
+1. Colete materiais necessários
+2. Aproxime-se do workbench
+3. Abra UI de crafting
+4. Verifique receita está visível e craftável
+
+## Dicas de Debugging
+
+[bold]Erros de parser no guidebook:[/bold] Verifique XML para sintaxe proibida — colchetes angulares em texto, três backticks, chaves fora de CodeBlock, markdown bold (**text**).
+
+[bold]Rede não sincronizando:[/bold] Verifique o campo tem o atributo AutoNetworkedField.
+
+[bold]Magia não aparecendo:[/bold] Verifique habilidade está vinculada à magia, e entidade de magia existe.
+
+[bold]Servidor não inicia (porta 1212):[/bold]
+<CodeBlock>
+lsof -ti:1212 | xargs kill -9
+</CodeBlock>
+
+## Locais de Logs
+
+Logs do servidor outputam para console. Para erros de parser do guidebook, procure por:
+<CodeBlock>
+[Guidebook] Encountered error while generating markup controls
+</CodeBlock>
+
+## Conteúdo Em Construção
+
+Guia de testes completo com exemplos de testes automatizados coming soon.
+
+</Document>

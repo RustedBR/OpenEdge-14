@@ -1,0 +1,120 @@
+- type: entity
+  id: OE14MobSlimeBase
+  parent: OE14SimpleMobBase
+  name: slime
+  description: A clot of semi-intelligent slime sensitive to the elemental elements. And happy to slime the skin off your face.
+  components:
+  - type: HTN
+    rootTask:
+      task: OE14MonsterCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+      VisionRadius: !type:Single
+        12
+      AggroVisionRadius: !type:Single
+        8
+  - type: NPCUseActionOnTarget
+    actionId: OE14ActionSpellSlimeJump
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _OE14/Mobs/Monster/slime.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: base
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: jump
+    noMovementLayers:
+      movement:
+        state: base
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.30
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: NpcFactionMember
+    factions:
+    - OE14Slimes
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 2
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+      params:
+        volume: 3
+  - type: Damageable
+    damageContainer: OE14BiologicalAnaerobic
+    damageModifierSet: OE14Slime
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+        path: /Audio/Weapons/punch3.ogg
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 5
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-slimes
+    interactFailureString: petting-failure-generic
+  - type: Speech
+    speechVerb: Slime
+    speechSounds: Slime
+  - type: TypingIndicator
+    proto: slime
+  - type: ReplacementAccent
+    accent: slimes
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        maxVol: 50
+        reagents:
+        - ReagentId: OE14ChromiumSlime
+          Quantity: 20
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 30
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # TODO: shouldn't be openable by others
+  # TODO: custom sound for opening and closing--shouldn't be a chest
+  # TODO: allow player-controlled slime to open its own storage?
+  - type: EntityStorage
+    isCollidableWhenOpen: true
+    enteringOffset: 0, 0
+    capacity: 2
+    showContents: true
+    occludesLight: false
+  - type: Tag
+    tags:
+    - FootstepSound
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: OE14OreCopper1
+          - id: OE14OreIron1
+          - id: OE14ScrapCopper
+          - id: OE14ScrapIron
+          - id: OE14CopperCoin1
+            weight: 3
+          - id: OE14Bone1

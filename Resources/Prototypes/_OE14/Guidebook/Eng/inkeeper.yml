@@ -1,0 +1,14 @@
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_EN_Cooking
+  name: Cooking
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/InnkeeperTabs/Cooking.xml"
+  children:
+  - OE14_ENG_First_dish
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_ENG_First_dish
+  name: Your first dish
+  text: "/ServerInfo/_OE14/Guidebook_EN/JobsTabs/InnkeeperTabs/First_dish.xml"
+  filterEnabled: True

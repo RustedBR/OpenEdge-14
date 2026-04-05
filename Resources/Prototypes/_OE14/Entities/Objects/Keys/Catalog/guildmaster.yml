@@ -1,0 +1,16 @@
+- type: entity
+  parent: OE14KeyGoldBlank
+  id: OE14KeyGuildmaster
+  suffix: Guildmaster
+  components:
+  - type: OE14Key
+    autoGenerateShape: Guildmaster
+  localizationId: ent-OE14KeyGuildmaster
+- type: entity
+  parent: OE14KeyGoldBlank
+  id: OE14KeyAdventureGuild
+  suffix: Adventure Guild
+  components:
+  - type: OE14Key
+    autoGenerateShape: AdventureGuild
+  localizationId: ent-OE14KeyAdventureGuild

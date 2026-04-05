@@ -1,0 +1,76 @@
+- type: entity
+  id: OE14FloraMaterial1
+  parent: BaseItem
+  name: flora material
+  description: An organic material used for medicinal or construction purposes.
+  suffix: 1
+  categories:
+  - ForkFiltered
+  components:
+  - type: Appearance
+  - type: Item
+    size: Normal
+  - type: Stack
+    stackType: OE14FloraMaterial
+    count: 1
+    baseLayer: base
+    layerStates:
+    - grass_material1
+    - grass_material2
+    - grass_material3
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/flora.rsi
+    layers:
+    - state: grass_material1
+      map:
+      - base
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      OE14FloraMaterial: 10
+  localizationId: ent-OE14FloraMaterial1
+- type: entity
+  id: OE14FloraMaterial10
+  parent: OE14FloraMaterial1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14FloraMaterial10
+- type: entity
+  id: OE14CompostMaterial1
+  parent: BaseItem
+  name: compost
+  description: It was once a beautiful and vibrant plant, or food. Now it's a stinking
+    pile of decaying organic matter.
+  suffix: 1
+  categories:
+  - ForkFiltered
+  components:
+  - type: Appearance
+  - type: Item
+    size: Normal
+  - type: Stack
+    stackType: OE14Compost
+    count: 1
+    baseLayer: base
+    layerStates:
+    - compost1
+    - compost2
+    - compost3
+  - type: Sprite
+    sprite: _OE14/Objects/Materials/compost.rsi
+    layers:
+    - state: compost1
+      map:
+      - base
+  - type: Material
+  localizationId: ent-OE14CompostMaterial1
+- type: entity
+  id: OE14CompostMaterial10
+  parent: OE14CompostMaterial1
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+  localizationId: ent-OE14CompostMaterial10

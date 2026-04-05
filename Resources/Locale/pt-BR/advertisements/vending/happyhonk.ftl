@@ -1,0 +1,14 @@
+﻿advertisement-happyhonk-1 = Honk! Honk! Por que não pedir uma Refeição Happy Honk hoje?
+advertisement-happyhonk-2 = Palhaços merecem um abraço, se ver um seja certo de mostrar sua apreciação.
+advertisement-happyhonk-3 = Se encontrar o Golden Honker então rez para os deuses, você é uma pessoa sortuda.
+advertisement-happyhonk-4 = Happy Honk: é uma refeição, é um negócio, tem umbrinquedo de plástico que vai te fazer gritar.
+advertisement-happyhonk-5 = O que é preto e branco e vermelho por todo lugar? O mimo e ela morreu de trauma craniano blunt.
+advertisement-happyhonk-6 = Quantos oficiais de segurança são necessários para te prender? Três, um para te espancar até a morte, um para algemar e um para despejar seu corpo na manutenção.
+advertisement-happyhonk-7 = Happy Honk não é responsável pela qualidade da comida colocada dentro de nossas caixas de Refeição Happy Honk.
+advertisement-happyhonk-8 = Por que não pedir nossa Refeição Happy Honk do Mimo Edição Limitada?
+advertisement-happyhonk-9 = Happy Honk é uma marca registrada da Honk! co. e é muito superior à Robust Nukie Food corp.
+advertisement-happyhonk-10 = Nossas Refeições Happy Honk certamente oferecem uma grande surpresa!
+thankyou-happyhonk-1 = Honk!
+thankyou-happyhonk-2 = Honk honk!
+thankyou-happyhonk-3 = Vá compartilhar a diversão! Honk!
+thankyou-happyhonk-4 = Vá fazer as pessoas escorregarem! Honk!

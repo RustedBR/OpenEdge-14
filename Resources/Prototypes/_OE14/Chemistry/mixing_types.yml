@@ -1,0 +1,7 @@
+- type: mixingCategory
+  id: OE14MagicSplitting
+  verbText: oe14-mixing-verb-magic-splitting
+  icon:
+    sprite: _OE14/Actions/Spells/meta.rsi
+    state: counter_spell
+

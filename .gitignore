@@ -1,0 +1,41 @@
+# Build results
+bin/
+obj/
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# VS
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build files
+*.pdb
+*.log
+
+# Runtime
+.local
+.cache
+__pycache__/
+
+# OS
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Project specific
+bin/
+obj/
+.csproj.user

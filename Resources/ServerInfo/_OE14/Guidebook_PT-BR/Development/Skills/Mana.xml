@@ -1,0 +1,43 @@
+<Document>
+# Sistema de Mana
+
+O Sistema de Mana (MagicEnergy) gerencia o pool de mana de um personagem — quanto eles têm, quanto magias custam, e como ele se regenera.
+
+## Pool de Mana
+
+O tamanho máximo do pool de mana é determinado pelo atributo Inteligência:
+- Mana base vem do padrão do componente MagicEnergy
+- Cada ponto de INT acima do valor neutro adiciona mana bônus
+- Modificadores de INT também afetam o bônus
+
+## Custos de Magias
+
+Cada ação de magia define seu custo de mana via o componente OE14ActionManaCost:
+
+<CodeBlock>
+- type: entity
+  id: SpellFireBolt
+  components:
+    - type: OE14ActionManaCost
+      cost: 10
+</CodeBlock>
+
+Antes da magia atirar, o sistema verifica:
+1. O conjurador tem um componente MagicEnergy?
+2. Mana atual >= custo da magia?
+3. Se sim: deduz e conjura. Se não: rejeita.
+
+## Regeneração
+
+Mana regenera ao longo do tempo a uma taxa fixa. A taxa não é afetada por atributos na implementação atual.
+
+## Arquivos Chave
+
+- [mono]Content.Shared/_OE14/Magic/MagicEnergy/OE14MagicEnergyComponent.cs[/mono]
+- [mono]Content.Server/_OE14/Magic/OE14ActionManaCostSystem.cs[/mono]
+
+## Conteúdo Em Construção
+
+Documentação completa do sistema de mana coming soon.
+
+</Document>

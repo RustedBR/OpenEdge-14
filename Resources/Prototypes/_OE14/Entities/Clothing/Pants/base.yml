@@ -1,0 +1,32 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: OE14ClothingPantsBase
+  categories: [ ForkFiltered ]
+  description: Pants to cover my thighs from the cold.
+  components:
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    slots:
+    - pants
+  - type: Sprite
+    state: icon
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: OE14Cloth1
+      amount: 1
+
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsDress
+  abstract: true
+  description: A roomy, feminine skirt
+  components:
+  - type: Clothing
+    equipDelay: 1.5
+    unequipDelay: 1
+    slots:
+    - pants
+

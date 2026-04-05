@@ -1,0 +1,13 @@
+oe14-trade-faction-contracts = Guilda Comercial de Zellasian
+oe14-trade-faction-victoria-gardens = Jardins Victoria
+oe14-trade-faction-brad-potions = Poções Maravilhosas de Brad
+oe14-trade-faction-dwarf-mining = Ramo de Mineração 'Aço Anão'
+oe14-trade-faction-thaumaturgy = Academia de Taumaturgia
+oe14-trade-faction-home-decor = Lar Aconchegante
+oe14-trade-faction-horticulture = Consórcio de Horticultura
+oe14-trade-faction-butchers = União de Mestres Açougueiros
+oe14-trade-faction-dairy = Laticínios do Úbere Dourado
+oe14-trade-faction-tailors = Guilda de Alfaiates Seda & Agulha
+oe14-trade-faction-guard = Guarda Imperial
+oe14-trade-faction-vampire-market = Toca do Vampiro
+oe14-trade-faction-helmir-child = Filhos de Helmir

@@ -1,0 +1,38 @@
+- type: entity
+  id: OE14BaseWrench
+  parent:
+  - BaseItem
+  - OE14BaseWeaponDestructible
+  name: wrench
+  description: 'A common tool for assembly and disassembly. Remember: lefty latchy,
+    righty removey.'
+  components:
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/wrench_drop.ogg
+  - type: Tag
+    tags:
+    - Wrench
+  - type: Sprite
+    sprite: _OE14/Objects/Tools/wrench.rsi
+    state: icon
+  - type: Item
+    sprite: _OE14/Objects/Tools/wrench.rsi
+    storedRotation: 45
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    attackRate: 1.5
+    damage:
+      types:
+        Blunt: 2
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    qualities:
+    - Anchoring
+    useSound:
+      path: /Audio/Items/ratchet.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  localizationId: ent-OE14BaseWrench

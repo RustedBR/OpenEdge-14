@@ -1,0 +1,55 @@
+- type: constructionGraph
+  id: OE14WoodenCabinet
+  start: start
+  graph:
+    - node: start
+      actions:
+      - !type:DestroyEntity {}
+      edges:
+        - to: OE14WoodenCabinet
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 2
+    - node: OE14WoodenCabinet
+      entity: OE14WoodenCabinet
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 3
+
+- type: constructionGraph
+  id: OE14IronCabinet
+  start: start
+  graph:
+    - node: start
+      actions:
+      - !type:DestroyEntity {}
+      edges:
+        - to: OE14IronCabinet
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: OE14IronBar
+              amount: 3
+              doAfter: 4
+    - node: OE14IronCabinet
+      entity: OE14IronCabinet
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 2
+        - tool: Prying
+          doAfter: 4
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14IronBar1
+          amount: 3

@@ -1,0 +1,11 @@
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadWreath
+  name: floral wreath
+  description: A simple flower decoration. That's so sweet.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Produced/wreath.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Produced/wreath.rsi
+  localizationId: ent-OE14ClothingHeadWreath

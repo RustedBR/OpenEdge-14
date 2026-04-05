@@ -1,0 +1,68 @@
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorMerchantShopPublic
+  suffix: Merchant public shop
+  components:
+  - type: OE14Lock
+    autoGenerateShape: ShopPublic
+  - type: Lock
+    locked: false
+  localizationId: ent-OE14WoodenDoorMerchantShopPublic
+- type: entity
+  parent:
+  - OE14WoodenDoorMerchantShopPublic
+  - OE14WoodenDoorMirrored
+  id: OE14WoodenDoorMerchantShopPublicMirrored
+  suffix: Merchant public shop, Mirrored
+  localizationId: ent-OE14WoodenDoorMerchantShopPublicMirrored
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorMerchantShop1
+  suffix: Merchant shop 1
+  components:
+  - type: OE14Lock
+    autoGenerateShape: Shop1
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorMerchantShop1
+- type: entity
+  parent:
+  - OE14WoodenDoorMerchantShop1
+  - OE14WoodenDoorMirrored
+  id: OE14WoodenDoorMerchantShopMirrored1
+  suffix: Merchant shop 1, Mirrored
+  localizationId: ent-OE14WoodenDoorMerchantShopMirrored1
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorMerchantShop2
+  suffix: Merchant shop 2
+  components:
+  - type: OE14Lock
+    autoGenerateShape: Shop2
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorMerchantShop2
+- type: entity
+  parent:
+  - OE14WoodenDoorMerchantShop2
+  - OE14WoodenDoorMirrored
+  id: OE14WoodenDoorMerchantShopMirrored2
+  suffix: Merchant shop 2, Mirrored
+  localizationId: ent-OE14WoodenDoorMerchantShopMirrored2
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorMerchantShop3
+  suffix: Merchant shop 3
+  components:
+  - type: OE14Lock
+    autoGenerateShape: Shop3
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorMerchantShop3
+- type: entity
+  parent:
+  - OE14WoodenDoorMerchantShop3
+  - OE14WoodenDoorMirrored
+  id: OE14WoodenDoorMerchantShopMirrored3
+  suffix: Merchant shop 3, Mirrored
+  localizationId: ent-OE14WoodenDoorMerchantShopMirrored3

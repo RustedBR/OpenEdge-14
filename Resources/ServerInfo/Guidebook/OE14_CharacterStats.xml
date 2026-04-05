@@ -1,0 +1,108 @@
+<Document>
+# Character Stats
+
+Your character has four core attributes that influence how effective you are in different situations. Open the character menu with [bold]C[/bold] to see your current stat values.
+
+Stats range from [bold]1 to 10[/bold]. Stat [bold]5[/bold] is the neutral value — no bonus or penalty.
+
+## Strength
+
+[color=#e05050]Strength[/color] determines how hard you hit in physical combat.
+
+Stat 5 = no bonus (1.0x), Stat 10 = [bold]+50% damage[/bold] (1.5x), Stat 1 = [bold]-50% damage[/bold] (0.5x).
+
+The scale is slightly asymmetric: each point above 5 adds +10%, while each point below 5 subtracts 12.5%.
+
+## Vitality
+
+[color=#50e050]Vitality[/color] determines how much damage you can take before going down.
+
+Each point above or below 5 changes your health by [bold]+/-12.5 HP[/bold] (crit threshold).
+
+Stat 5 = 100 HP to crit / 200 to die, Stat 10 = 162 HP / 325 to die, Stat 1 = 50 HP / 100 to die.
+
+## Dexterity
+
+[color=#50e0e0]Dexterity[/color] determines how much stamina damage you can absorb before being [bold]knocked to the ground[/bold].
+
+Stamina damage accumulates from sprinting, taking hits, and other exertion. When it reaches your [bold]knockdown threshold[/bold], you fall and are briefly stunned. It recovers over time.
+
+Each point above or below 5 changes your threshold by [bold]+/-25%[/bold].
+
+Stat 5 = 100, Stat 10 = 225 (very hard to knock down), Stat 1 = 0 (falls instantly).
+
+## Intelligence
+
+[color=#a050e0]Intelligence[/color] determines how much mana you have available for casting spells.
+
+Each point above or below 5 changes mana by [bold]+/-18.75[/bold].
+
+Stat 5 = 100 mana, Stat 10 = [bold]~194 mana[/bold], Stat 1 = [bold]25 mana[/bold] (minimum — barely enough for one spell).
+
+## Stat Summary
+
+| Stat | Neutral (5) | Max (10) | Min (1) |
+|---|---|---|---|
+| Strength | 1.0x dmg | 1.5x dmg | 0.5x dmg |
+| Vitality | 100 HP crit | 162 HP crit | 50 HP crit |
+| Dexterity | 100 knockdown | 225 knockdown | 0 (falls instantly) |
+| Intelligence | 100 mana | ~194 mana | 25 mana |
+
+## Stats by Race
+
+Each playable race starts with different stat values, reflecting their strengths and weaknesses. Some races have min-max designs, excelling in one stat but struggling in another. Free racial skills provide additional stat bonuses.
+
+### Race Stats Table
+
+| Race | STR | VIT | DEX | INT | Free Skills | Notes |
+|---|---|---|---|---|---|---|
+| [bold]Human[/bold] ⭐ | 5 | 5 | 5 | 5 | None | Balanced, 5 spendable points |
+| [bold]Elf[/bold] | 6 | 6 | 1 | 7⭐ | Metamagic T1/T2 +INT | Master mage, fragile (INT effective 9) |
+| [bold]Goblin[/bold] | 6 | 6 | 7⭐ | 1 | Athletic T1/T2 +DEX | Nimble hunter, near-zero mana (DEX effective 9) |
+| [bold]Silva[/bold] | 1 | 7⭐ | 5 | 7 | Healing T1/T2 +VIT | Nature healer, weak fighter (VIT effective 9) |
+| [bold]Tiefling[/bold] | 7⭐ | 5 | 2 | 6 | Pyrokinetic T1/T2 +STR | Fire wielder, low stamina (STR effective 9) |
+| [bold]Carcat[/bold] | 5 | 5 | 7⭐ | 3 | Electromancy T1/T2 +DEX | Feline reflexes, very limited mana (DEX effective 9) |
+| [bold]Dwarf[/bold] | 7⭐ | 7⭐ | 2 | 4 | Hydrosophistry T1/T2 +VIT | Tough and strong, very slow (VIT effective 9) |
+
+⭐ = Stat advantage (highest in that category or received free skill bonus)
+
+## Stat Modifiers
+
+In addition to your base stats, temporary [bold]stat modifiers[/bold] can be gained from equipped skills, spells, or items. These modify your effective stats without changing your base values.
+
+Your [bold]effective stat[/bold] is calculated as: [bold]Base Stat + All Modifiers[/bold].
+
+For example, an Elf with INT 8 who equips a Metamagic skill (+2 INT) has an effective INT of 10 (8 + 2).
+
+<Box>
+  <GuideEntityEmbed Entity="OE14ModularCrystalStrength" Caption="+1 STR Crystal"/>
+  <GuideEntityEmbed Entity="OE14ModularCrystalVitality" Caption="+1 VIT Crystal"/>
+  <GuideEntityEmbed Entity="OE14ModularCrystalDexterity" Caption="+1 DEX Crystal"/>
+  <GuideEntityEmbed Entity="OE14ModularCrystalIntelligence" Caption="+1 INT Crystal"/>
+</Box>
+
+### Modifier Overflow Protection
+
+If a modifier would push your effective stat above 10, the system grants you [bold]available stat points[/bold] as compensation instead of wasting the modifier bonus.
+
+Example: Elf INT 8 gains a +3 modifier spell. Instead of capping at 10 wasted, you get: effective INT capped at 10, plus 1 bonus available point (the overflow of 11 - 10 = 1).
+
+## Spending Stat Points
+
+At character creation you receive [bold]3 points[/bold] to distribute freely across any stats. The character creator shows your base race stats, the bonus you are adding, and the final value.
+
+During gameplay, additional points can be earned through progression and spent from the Character menu ([bold]C[/bold]).
+
+### Point Spending Rules
+
+- Stats max out at [bold]10[/bold]
+- You [bold]cannot spend a point[/bold] on a stat that is already at [bold]10 (effective value including modifiers)[/bold]
+- If you have equipment with stat modifiers that push you to 10 effective, you must remove it before spending more points on that stat
+- Points spent increase your base stat by 1
+
+## Related Systems
+
+- [textlink="Combat" link="OE14Combat"] — Strength and Vitality directly affect your combat effectiveness
+- [textlink="Magic" link="OE14Magic"] — Intelligence determines how many spells you can cast before running dry
+
+</Document>

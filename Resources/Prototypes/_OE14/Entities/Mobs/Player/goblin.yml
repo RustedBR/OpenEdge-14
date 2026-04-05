@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  parent: OE14BaseMobGoblin
+  id: OE14MobGoblin
+  localizationId: ent-OE14MobGoblin

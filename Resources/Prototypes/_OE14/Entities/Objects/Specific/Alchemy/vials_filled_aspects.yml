@@ -1,0 +1,72 @@
+- type: entity
+  id: OE14VialMediumEarthEssence
+  parent: OE14VialMedium
+  suffix: Terra
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14EssenceEarth
+          Quantity: 50
+  localizationId: ent-OE14VialMediumEarthEssence
+- type: entity
+  id: OE14VialMediumFireEssence
+  parent: OE14VialMedium
+  suffix: Ignis
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14EssenceFire
+          Quantity: 50
+  localizationId: ent-OE14VialMediumFireEssence
+- type: entity
+  id: OE14VialMediumWaterEssence
+  parent: OE14VialMedium
+  suffix: Aqua
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14EssenceWater
+          Quantity: 50
+  localizationId: ent-OE14VialMediumWaterEssence
+- type: entity
+  id: OE14VialMediumAirEssence
+  parent: OE14VialMedium
+  suffix: Aer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14EssenceAir
+          Quantity: 50
+  localizationId: ent-OE14VialMediumAirEssence
+- type: entity
+  id: OE14VialMediumOrderEssence
+  parent: OE14VialMedium
+  suffix: Ordo
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14EssenceOrder
+          Quantity: 50
+  localizationId: ent-OE14VialMediumOrderEssence
+- type: entity
+  id: OE14VialMediumChaosEssence
+  parent: OE14VialMedium
+  suffix: Perditio
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14EssenceChaos
+          Quantity: 50
+  localizationId: ent-OE14VialMediumChaosEssence

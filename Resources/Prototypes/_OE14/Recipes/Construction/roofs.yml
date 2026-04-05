@@ -1,0 +1,39 @@
+- type: construction
+  openEdgeAllowed: true
+  id: OE14RoofWooden
+  graph: OE14RoofWooden
+  startNode: start
+  targetNode: OE14RoofWooden
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+  - !type:OE14NoRoofInTile
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14RoofWoodenBirch
+  graph: OE14RoofWooden
+  startNode: start
+  targetNode: OE14RoofWoodenBirch
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+  - !type:OE14NoRoofInTile
+
+- type: construction
+  openEdgeAllowed: true
+  id: OE14RoofStone
+  graph: OE14RoofStone
+  startNode: start
+  targetNode: OE14RoofStone
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+  - !type:OE14NoRoofInTile
+

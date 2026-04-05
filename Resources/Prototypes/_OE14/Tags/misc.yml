@@ -1,0 +1,107 @@
+- type: Tag
+  id: OE14Key
+
+- type: Tag
+  id: OE14Coin
+
+- type: Tag
+  id: OE14CrossbowBolt
+
+- type: Tag
+  id: OE14CartridgeBulletRifle
+
+- type: Tag
+  id: OE14FireplaceFuel
+
+- type: Tag
+  id: OE14HerbalGathering
+
+- type: Tag
+  id: OE14FitInMortar
+
+- type: Tag
+  id: OE14Pestle
+
+- type: Tag
+  id: OE14Bottles
+
+- type: Tag
+  id: OE14AmbientWater
+
+- type: Tag
+  id: OE14AmbientForest
+
+- type: Tag
+  id: OE14AmbientLurker
+
+- type: Tag
+  id: OE14InkwellFittable
+
+- type: Tag
+  id: OE14Rabbit
+
+- type: Tag
+  id: OE14Rat
+
+- type: Tag
+  id: OE14RatWearable
+
+- type: Tag
+  id: OE14Pig
+
+- type: Tag
+  id: OE14Boar
+
+- type: Tag
+  id: OE14Mosquito
+
+- type: Tag
+  id: OE14Torch
+
+- type: Tag
+  id: OE14SpellScroll
+
+- type: Tag
+  id: OE14Arrow
+
+- type: Tag
+  id: OE14FarmFood
+
+- type: Tag
+  id: OE14FarmSeed
+
+- type: Tag
+  id: OE14AlchemicalHerbals
+
+- type: Tag
+  id: OE14Lighter
+
+- type: Tag
+  id: OE14Scissors
+
+- type: Tag
+  id: OE14SharpeningStone
+
+- type: Tag
+  id: OE14Vial
+
+- type: Tag
+  id: OE14BloodFlower
+
+- type: Tag
+  id: OE14Dayflin
+
+- type: Tag
+  id: OE14Sheep
+
+- type: Tag
+  id: OE14Lockpick
+
+- type: Tag
+  id: OE14RaidLeader
+
+- type: Tag
+  id: OE14EnergyCrystal
+
+- type: Tag
+  id: OE14BigCrossbowBolt

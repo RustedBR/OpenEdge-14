@@ -1,0 +1,160 @@
+- type: entity
+  parent:
+  - OE14BaseMobSpecies
+  - MobFlammable
+  id: OE14BaseMobSkeleton
+  name: Mr. Skeleton
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: OE14Skeleton
+  - type: Sprite
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "pants" ]
+    - map: [ "shoes" ]
+    - map: [ "shirt" ]
+    - map: [ "enum.HumanoidVisualLayers.LHand" ]
+    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "gloves" ]
+    - map: [ "ears" ]
+    - map: [ "outerClothing" ]
+    - map: [ "cloak" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "belt2" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "vampire_fangs" ]
+      sprite: _OE14/Mobs/Species/Vampire/fangs.rsi
+      state: human
+      visible: false #Skeleton vampire? Lol?
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#555555AA"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+    state: full
+  - type: Body
+    prototype: OE14Skeleton
+    requiredLegs: 2
+    gibSound: /Audio/Effects/bone_rattle.ogg
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      70: 0.7
+      90: 0.5
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 80
+    damage:
+      types:
+        OE14ManaDepletion: -0.05
+      groups:
+        Brute: -0.07
+        Burn: -0.05
+        Toxin: -0.03
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 130
+        restitution: 0.0
+        mask:
+          - MobMask
+        layer:
+          - MobLayer
+  - type: OE14AuraImprint
+    imprintColor: "#a81b5d"
+  - type: Damageable
+    damageContainer: OE14BiologicalAnaerobic
+    damageModifierSet: OE14Skeleton
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:GibBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14Bone1:
+            min: 2
+            max: 4
+  - type: Vocal
+    sounds:
+      Male: Skeleton
+      Female: Skeleton
+      Unsexed: Skeleton
+  - type: SkeletonAccent
+  - type: FireVisuals
+    alternateState: Standing #TODO - custom visuals
+  - type: ContainerContainer
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck
+  - type: TransferMindOnGib
+  - type: GhostTakeoverAvailable
+  - type: OE14DemiplaneBlockInteractions
+
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobSkeletonDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HumanoidAppearance
+    species: OE14Skeleton
+  - type: Inventory
+    templateId: OE14Human
+    displacements:
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Human/displacement.rsi
+            state: male_neck
+          48:
+            sprite: _OE14/Mobs/Species/Human/displacement48.rsi
+            state: male_neck

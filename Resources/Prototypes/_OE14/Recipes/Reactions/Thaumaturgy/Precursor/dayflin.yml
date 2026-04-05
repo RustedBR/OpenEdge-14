@@ -1,0 +1,71 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14DayflinSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14YellowDayflinPulp:
+      amount: 1
+  products:
+    OE14EssenceFire: 0.5
+    OE14EssenceMotion: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+- type: reaction
+  id: OE14DayflinAdmixture1
+  minTemp: 500
+  reactants:
+    OE14YellowDayflinPulp:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14PositiveEffectSatiateThirst:
+      amount: 1
+  products:
+    OE14PositiveEffectSpeedUp: 2
+    OE14SideEffectJitter: 1
+
+- type: reaction
+  id: OE14DayflinAdmixture2
+  minTemp: 500
+  reactants:
+    OE14YellowDayflinPulp:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14PositiveEffectSatiateHunger:
+      amount: 1
+  products:
+    OE14PositiveEffectSpeedUp: 2
+    OE14SideEffectJitter: 1
+
+- type: reaction
+  id: OE14DayflinAdmixture3
+  minTemp: 500
+  reactants:
+    OE14YellowDayflinPulp:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14PositiveEffectHealStam:
+      amount: 1
+  products:
+    OE14NegativeEffectDamageStam: 2
+    OE14SideEffectJitter: 1
+
+- type: reaction
+  id: OE14DayflinAdmixture4
+  minTemp: 500
+  reactants:
+    OE14YellowDayflinPulp:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14NegativeEffectDamageStam:
+      amount: 1
+  products:
+    OE14PositiveEffectHealStam: 2
+    OE14SideEffectJitter: 1

@@ -1,0 +1,50 @@
+- type: oe14LocationModifier
+  id: DemiplaneDecor
+  generationProb: 0
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14AstralCorrosion
+      count: 15
+      minGroupSize: 3
+      maxGroupSize: 10
+    - !type:OE14OreDunGen
+      entityMask:
+      - OE14WallStone
+      - OE14WallDirt
+      - OE14WallSnow
+      entity: OE14WallDimensit
+      count: 5
+      minGroupSize: 3
+      maxGroupSize: 5
+
+- type: oe14LocationModifier
+  id: RaidSpawners
+  generationProb: 0
+  layers:
+    - !type:OE14OreDunGen
+      entity: OE14VentCritterMarker
+      tileMask:
+      - OE14FloorSand
+      - OE14FloorBase
+      - OE14FloorSnow
+      count: 8
+      minGroupSize: 3
+      maxGroupSize: 3
+
+- type: oe14LocationModifier
+  id: OE14DemiplanEnterRoom
+  generationProb: 0
+  layers:
+    - !type:OE14RoomsDunGen
+      count: 2
+      tags:
+      - OE14DemiplanEnterRoom
+
+- type: oe14LocationModifier
+  id: DemiplaneArcSingle
+  generationProb: 0
+  layers:
+    - !type:OE14RoomsDunGen
+      count: 1
+      tags:
+      - OE14DemiplanArcRoom

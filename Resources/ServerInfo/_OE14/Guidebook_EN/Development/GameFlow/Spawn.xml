@@ -1,0 +1,41 @@
+<Document>
+# Player Spawn & Loading
+
+This page describes how players join the game and how their characters are initialized.
+
+## Spawn Flow
+
+<CodeBlock>
+Player connects
+  |
+Character selection screen (lobby)
+  |
+Player selects species and spends creation points
+  |
+Round starts (or player joins mid-round)
+  |
+SpawnSystem creates entity at spawn point
+  |
+Species components added (racial stats, skills)
+  |
+Character stats applied (base stats + racial modifiers)
+  |
+Player gains control of entity
+</CodeBlock>
+
+## Character Creation Points
+
+During character creation, players receive points to spend on stats. The number of points is configured in the server settings.
+
+After spending, racial modifiers are applied on top of the base stats. This can cause overflow if racial bonuses push a stat past the cap.
+
+## Known Issue
+
+Players may spawn as a random character instead of their saved profile when using the dev map. This is a known bug related to how the dev map handles character loading. See the Known Issues section in project memory.
+
+## Content Under Construction
+
+Full spawn documentation coming soon. Key files:
+[mono]Content.Server/GameTicking/GameTicker.Spawning.cs[/mono]
+
+</Document>

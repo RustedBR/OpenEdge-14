@@ -1,0 +1,36 @@
+
+# ================
+# Leather belts crafting
+
+- type: OE14Recipe
+  id: OE14ClothingBeltQuiverRecipe
+  tag: OE14RecipeLeatherWorking
+  category: Belts
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14Leather
+    count: 2 # 20u leather
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 4 # 20u cloth
+  result: OE14ClothingBeltQuiver
+  # Cost: (20×1.2) + (20×0.3) = 24 + 6 = 30 copper coins
+
+- type: OE14Recipe
+  id: OE14ClothingBeltPouchPotionsRecipe
+  tag: OE14RecipeLeatherWorking
+  category: Belts
+  craftTime: 1
+  requirements:
+  - !type:StackResource
+    stack: OE14Leather
+    count: 1 # 10u leather
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 1 # 10u cloth
+  - !type:ProtoIdResource
+    protoId: OE14String
+    count: 4 # 20u cloth
+  result: OE14ClothingBeltPouchPotions
+  # Cost: (15×1.2) + (20×0.3) + (10×0.3) = 12 + 6 + 3 = 21 copper coins

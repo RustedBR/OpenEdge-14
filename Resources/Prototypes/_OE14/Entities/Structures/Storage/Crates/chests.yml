@@ -1,0 +1,127 @@
+- type: entity
+  parent:
+  - OE14ChestGeneric
+  - OE14BaseFlammable
+  id: OE14WoodenChest
+  name: wooden chest
+  description: A simple wooden chest for easy storage of junk.
+  components:
+  - type: Icon
+    sprite: _OE14/Structures/Storage/Crates/chest.rsi
+    state: icon
+  - type: Sprite
+    sprite: _OE14/Structures/Storage/Crates/chest.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 3
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14WoodenChest
+    node: OE14WoodenChest
+    containers:
+    - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 50
+      OE14Iron: 10
+
+- type: entity
+  parent: OE14WoodenChest
+  id: OE14WoodenChestOld
+  name: old wooden chest
+  description: An old chest. It has seen a lot.
+  components:
+  - type: Icon
+    sprite: _OE14/Structures/Storage/Crates/chest_old.rsi
+    state: icon
+  - type: Sprite
+    sprite: _OE14/Structures/Storage/Crates/chest_old.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 3
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent:
+  - OE14ChestGeneric
+  - OE14BaseFlammable
+  id: OE14GoldChest
+  name: gold chest
+  description: Someone spent a lot of money and effort to decorate this chest with gold. It didn't make the chest more functional, but it did make it beautiful.
+  components:
+  - type: Icon
+    sprite: _OE14/Structures/Storage/Crates/chest_gold.rsi
+    state: icon
+  - type: Sprite
+    sprite: _OE14/Structures/Storage/Crates/chest_gold.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 3
+            max: 5
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: OE14GoldChest
+    node: OE14GoldChest
+    containers:
+    - entity_storage
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 50
+      OE14Iron: 10
+      OE14Gold: 10

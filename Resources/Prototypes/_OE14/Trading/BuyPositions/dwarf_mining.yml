@@ -1,0 +1,126 @@
+
+# Rep 0
+
+- type: oe14TradingPosition
+  id: OE14OreCopper5
+  faction: DwarfMining
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Materials/copper_ore.rsi
+    state: ore2
+  service: !type:OE14BuyItemsService
+    product: OE14OreCopper5
+
+- type: oe14TradingPosition
+  id: OE14CrystalShardQuartz
+  faction: DwarfMining
+  uiPosition: 1
+  priceMarkup: 3
+  icon:
+    sprite: _OE14/Structures/Flora/Crystal/crystal_shard.rsi
+    state: shard3
+  service: !type:OE14BuyItemsService
+    product: OE14CrystalShardQuartz
+
+- type: oe14TradingPosition
+  id: OE14Screwdriver
+  faction: DwarfMining
+  uiPosition: 3
+  icon:
+    sprite: _OE14/Objects/Tools/screwdriver.rsi
+    state: screwdriver
+  service: !type:OE14BuyItemsService
+    product: OE14Screwdriver
+
+- type: oe14TradingPosition
+  id: OE14BaseWrench
+  faction: DwarfMining
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Tools/wrench.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14BaseWrench
+
+- type: oe14TradingPosition
+  id: OE14BaseSharpeningStone
+  faction: DwarfMining
+  uiPosition: 5
+  icon:
+    sprite: _OE14/Objects/sharpening_stone.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14BaseSharpeningStone
+
+# Rep 1
+
+- type: oe14TradingPosition
+  id: OE14OreIron5
+  faction: DwarfMining
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Materials/iron_ore.rsi
+    state: ore2
+  service: !type:OE14BuyItemsService
+    product: OE14OreIron5
+
+- type: oe14TradingPosition #TODO: replace with copper pickaxe when those get added
+  id: OE14WeaponPickaxeIron
+  faction: DwarfMining
+  reputationLevel: 1
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Weapons/Melee/Pickaxe/iron.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14WeaponPickaxeIron
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14Lighter
+  faction: DwarfMining
+  reputationLevel: 1
+  uiPosition: 5
+  priceMarkup: 5
+  icon:
+    sprite: _OE14/Objects/Tools/flint.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14Lighter
+
+# Rep 2
+
+- type: oe14TradingPosition
+  id: OE14OreGold5
+  faction: DwarfMining
+  reputationLevel: 2
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Materials/gold_ore.rsi
+    state: ore2
+  service: !type:OE14BuyItemsService
+    product: OE14OreGold5
+
+#- type: oe14TradingPosition
+#  id: OE14OreMithril5
+#  faction: DwarfMining
+#  reputationLevel: 2
+#  uiPosition: 1
+#  icon:
+#    sprite: _OE14/Objects/Materials/mithril_ore.rsi
+#    state: ore2
+#  service: !type:OE14BuyItemsService
+#    product: OE14OreMithril5
+
+- type: oe14TradingPosition
+  id: OE14BaseSharpeningStoneStructure
+  faction: DwarfMining
+  reputationLevel: 2
+  priceMarkup: 5
+  uiPosition: 5
+  icon:
+    sprite: _OE14/Structures/Specific/Blacksmith/sharpening_stone.rsi
+    state: base
+  service: !type:OE14BuyItemsService
+    product: OE14BaseSharpeningStoneStructure

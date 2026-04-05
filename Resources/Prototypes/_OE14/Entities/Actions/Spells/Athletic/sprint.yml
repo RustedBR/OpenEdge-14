@@ -1,0 +1,34 @@
+- type: entity
+  id: OE14ActionSpellSprint
+  parent: OE14ActionSpellBase
+  name: Sprint
+  description: At the cost of heavy stamina expenditure, you accelerate significantly in movement.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 1.3
+  - type: OE14ActionStaminaCost
+    stamina: 2.0
+  - type: DoAfterArgs
+    hidden: true
+    repeat: true
+    delay: 0.25
+  - type: Action
+    useDelay: 2
+    sound: null
+    icon:
+      sprite: _OE14/Actions/Spells/physical.rsi
+      state: sprint
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14DustEffect
+
+- type: entity
+  id: OE14ActionBearSpellSprint
+  parent: OE14ActionSpellSprint
+  description: Catch up and rip, every predator can accelerate and catch up with its prey.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 1.8

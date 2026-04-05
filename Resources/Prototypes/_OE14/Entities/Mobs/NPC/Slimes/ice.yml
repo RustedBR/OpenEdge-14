@@ -1,0 +1,119 @@
+- type: entity
+  id: OE14MobSlimeIce
+  parent: OE14MobSlimeBase
+  name: ice slime
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: base
+      color: "#0cb1f7"
+      shader: unshaded
+  - type: PointLight
+    color: "#0cb1f7"
+    energy: 5
+    radius: 1.8
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        maxVol: 50
+        reagents:
+        - ReagentId: OE14ChromiumSlime
+          Quantity: 20
+        - ReagentId: OE14EssenceFrost
+          Quantity: 30
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3
+        Cold: 3
+  - type: OE14SpellEffectOnHit
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:OE14SpellSpawnEntityOnTarget
+      spawns:
+      - OE14ImpactEffectFreeze
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.75
+        sprintSpeedModifier: 0.75
+        statusLifetime: 2
+      - !type:AdjustTemperature
+        amount: -6000
+      - !type:ExtinguishReaction
+  - type: Damageable
+    damageModifierSet: OE14SlimeIce
+  - type: Temperature
+    coldDamage:
+      types:
+        Cold: 0
+    heatDamage:
+      types:
+        Heat: 3
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            OE14AreaEntityEffectSlimeFroze:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: OE14OreCopper1
+          - id: OE14OreIron1
+          - id: OE14ScrapCopper
+          - id: OE14ScrapIron
+          - id: OE14Snowball
+          - id: OE14CopperCoin1
+
+- type: entity
+  id: OE14AreaEntityEffectSlimeFroze
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#0cb1f7"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _OE14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#0cb1f7"
+      scale: 2, 2
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: OE14AreaEntityEffect
+    range: 2
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:OE14SpellSpawnEntityOnTarget
+      spawns:
+      - OE14ImpactEffectFreeze
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.5
+        sprintSpeedModifier: 0.5
+        statusLifetime: 5
+      - !type:AdjustTemperature
+        amount: -82000
+      - !type:ExtinguishReaction

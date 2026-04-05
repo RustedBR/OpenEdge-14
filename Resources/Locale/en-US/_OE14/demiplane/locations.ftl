@@ -1,0 +1,9 @@
+oe14-demiplane-location-cave = Caves
+oe14-demiplane-location-cave-grass = Overgrown caves
+oe14-demiplane-location-cave-magma = Flaming caves
+oe14-demiplane-location-grassland-island = Green Island
+oe14-demiplane-location-ice-cave = Ice caves
+oe14-demiplane-location-snow-island = Snowy island
+oe14-demiplane-location-leaf-maze = Leaf maze
+oe14-demiplane-location-wastelands = Wasteland
+oe14-demiplane-location-mushroom-caves = Mushroom caves

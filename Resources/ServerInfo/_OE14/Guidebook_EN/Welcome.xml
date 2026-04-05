@@ -1,0 +1,45 @@
+﻿<Document>
+# Welcome to CrystallEdge
+
+CrystallEdge is a medieval fantasy multiplayer RPG. You share a living world with other players — cooperate, trade, fight, and forge your own path.
+
+## Where to Start
+
+[bold]Pick your species.[/bold] Each race has different strengths, weaknesses, and racial abilities. See [textlink="Playable Species" link="OE14_EN_Species"] to compare them.
+
+[bold]Pick your job.[/bold] Your job determines your starting equipment and salary. Each job opens different doors for how you play the round.
+
+[bold]Spend your stat points.[/bold] At character creation you receive 3 points to distribute across Strength, Vitality, Dexterity, and Intelligence. Choose based on your playstyle.
+
+## Core Controls
+
+- [bold]C[/bold] — Character menu (stats, modifier breakdown)
+- [bold]I[/bold] — Inventory
+- [bold]Q[/bold] — Action bar (spells appear here when you equip a magical item)
+- [bold]Right-click[/bold] — Context menu (examine, pick up, interact, attack)
+
+## Staying Alive
+
+Your [color=#e05050]health bar[/color] appears at the bottom of the screen. When it reaches zero you enter a critical state — you need help fast.
+
+- Carry [bold]bandages[/bold] to stop bleeding
+- Eat and drink to maintain stamina
+- If outmatched, [bold]run[/bold] — retreating is not a failure
+
+## The Four Stats
+
+[color=#e05050]Strength[/color] — physical damage. STR 5 is neutral (1.0x). Higher means harder hits.
+
+[color=#50e050]Vitality[/color] — maximum health. VIT 5 = 100 HP to critical. Each point adds or subtracts 12.5 HP.
+
+[color=#50e0e0]Dexterity[/color] — stamina (knockdown resistance). DEX 5 = 100 stamina. Running out drops you to the ground.
+
+[color=#a050e0]Intelligence[/color] — mana pool. INT 5 = 100 mana. Without mana, spells cannot be cast.
+
+## Tips
+
+- [bold]Examine everything[/bold] — right-click items to read what they do
+- [bold]Coins are physical[/bold] — keep them in a pouch so you don't drop them when hit
+- [bold]Death is not the end[/bold] — you respawn. Use the time to think about what to do differently
+
+</Document>

@@ -1,0 +1,28 @@
+- type: job
+  id: OE14GuildWorker
+  name: oe14-job-name-guildworker
+  description: oe14-job-desc-guildworker
+  playTimeTracker: OE14JobGuildWorker
+  startingGear: OE14GuildWorkerGear
+  icon: "OE14JobIconGuildWorker"
+  supervisors: oe14-job-supervisors-guildmaster
+  weight: 2
+  requirements:
+    - !type:RoleTimeRequirement
+      role: OE14JobAdventurer
+      time: 7200 # 2 hours
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: OE14SalaryCounter
+        salary: 50
+
+- type: startingGear
+  id: OE14GuildWorkerGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+    - OE14EnergyCrystalMedium
+  equipment:
+    keys: OE14KeyRingGuildworker
+    belt: OE14WalletFilledTest

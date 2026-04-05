@@ -1,0 +1,134 @@
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponChemical
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 4
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionInjectOnEmbed
+    transferAmount: 2
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 2
+
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponThrowable
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 10
+  - type: DamageOnLand
+    damage:
+      types:
+        Piercing: 10
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.40,-0.30
+            - -0.30,-0.40
+            - 0.40,0.30
+            - 0.30,0.40
+        density: 10
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponLight
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponShort
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: MeleeWeapon
+    range: 1.0 # 1.5 standart
+    cPAnimationOffset: -0.75
+
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponSharp
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: Sharp
+  - type: OE14Sharpened
+  - type: OE14SharpeningStone
+  - type: UseDelay
+  - type: Tool
+    qualities:
+      - Slicing
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
+  - type: Utensil
+    types:
+      - Knife
+  - type: OE14WallpaperRemover
+  - type: Execution
+
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponDestructible
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: ExaminableDamage
+    messages: OE14WeaponMessages
+  - type: DamageExaminable
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: OE14MeleeParriable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponSelfDamage
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: OE14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 0.5 # 100 hits
+
+- type: entity
+  abstract: true
+  id: OE14BaseWeaponExecution
+  categories: [ HideSpawnMenu, ForkFiltered ]
+  components:
+  - type: Execution
+    internalMeleeExecutionMessage: "oe14-execution-popup-melee-initial-internal"
+    externalMeleeExecutionMessage: "oe14-execution-popup-melee-initial-external"
+    completeInternalMeleeExecutionMessage: "oe14-execution-popup-melee-complete-internal"
+    completeExternalMeleeExecutionMessage: "oe14-execution-popup-melee-complete-external"
+    internalSelfExecutionMessage: "oe14-execution-popup-self-initial-internal"
+    externalSelfExecutionMessage: "oe14-execution-popup-self-initial-external"
+    completeInternalSelfExecutionMessage: "oe14-execution-popup-self-complete-internal"
+    completeExternalSelfExecutionMessage: "oe14-execution-popup-self-complete-external"

@@ -1,0 +1,122 @@
+- type: constructionGraph
+  id: OE14Seat
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14ChairWooden
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: OE14ChairWoodenBirch
+          steps:
+          - material: OE14BirchWoodenPlanks
+            amount: 2
+            doAfter: 2
+    - node: OE14ChairWooden
+      entity: OE14ChairWooden
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 2
+    - node: OE14ChairWoodenBirch
+      entity: OE14ChairWoodenBirch
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14BirchWoodenPlanks1
+          amount: 2
+
+- type: constructionGraph
+  id: OE14BenchWood
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14BenchWood
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 3
+              doAfter: 2
+        - to: OE14BenchWoodBirch
+          steps:
+          - material: OE14BirchWoodenPlanks
+            amount: 3
+            doAfter: 2
+    - node: OE14BenchWood
+      entity: OE14BenchWood
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 3
+    - node: OE14BenchWoodBirch
+      entity: OE14BenchWoodBirch
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14BirchWoodenPlanks1
+          amount: 3
+
+- type: constructionGraph
+  id: OE14Stool
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14StoolWooden
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 2
+              doAfter: 1
+        - to: OE14StoolBirch
+          steps:
+          - material: OE14BirchWoodenPlanks
+            amount: 2
+            doAfter: 1
+    - node: OE14StoolWooden
+      entity: OE14StoolWooden
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 2
+    - node: OE14StoolBirch
+      entity: OE14StoolBirch
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14BirchWoodenPlanks1
+          amount: 2

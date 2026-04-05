@@ -1,0 +1,43 @@
+<Document>
+# Mana System
+
+The Mana System (MagicEnergy) manages a character's mana pool — how much they have, how spells cost it, and how it regenerates.
+
+## Mana Pool
+
+The maximum mana pool size is determined by the Intelligence stat:
+- Base mana comes from the MagicEnergy component default
+- Each point of INT above the neutral value adds bonus mana
+- INT modifiers also affect the bonus
+
+## Spell Costs
+
+Each spell action defines its mana cost via the OE14ActionManaCost component:
+
+<CodeBlock>
+- type: entity
+  id: SpellFireBolt
+  components:
+    - type: OE14ActionManaCost
+      cost: 10
+</CodeBlock>
+
+Before the spell fires, the system checks:
+1. Does the caster have a MagicEnergy component?
+2. Is current mana >= spell cost?
+3. If yes: deduct and cast. If no: reject.
+
+## Regeneration
+
+Mana regenerates over time at a fixed rate. The rate is not affected by stats in the current implementation.
+
+## Key Files
+
+- [mono]Content.Shared/_OE14/Magic/MagicEnergy/OE14MagicEnergyComponent.cs[/mono]
+- [mono]Content.Server/_OE14/Magic/OE14ActionManaCostSystem.cs[/mono]
+
+## Content Under Construction
+
+Full mana system documentation coming soon.
+
+</Document>

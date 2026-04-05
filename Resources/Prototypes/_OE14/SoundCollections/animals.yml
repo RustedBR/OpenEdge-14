@@ -1,0 +1,37 @@
+- type: soundCollection
+  id: OE14Dinosaurs
+  files:
+  - /Audio/_OE14/Animals/dino1.ogg
+  - /Audio/_OE14/Animals/dino2.ogg
+  - /Audio/_OE14/Animals/dino3.ogg
+
+- type: soundCollection
+  id: OE14Frog
+  files:
+  - /Audio/_OE14/Animals/frog1.ogg
+  - /Audio/_OE14/Animals/frog2.ogg
+  - /Audio/_OE14/Animals/frog3.ogg
+
+- type: soundCollection
+  id: OE14Flem
+  files:
+  - /Audio/_OE14/Animals/flem1.ogg
+  - /Audio/_OE14/Animals/flem2.ogg
+  - /Audio/_OE14/Animals/flem3.ogg
+  - /Audio/_OE14/Effects/bubbles.ogg
+
+- type: soundCollection
+  id: OE14Fairy
+  files:
+  - /Audio/_OE14/Animals/fairy1.ogg
+  - /Audio/_OE14/Animals/fairy2.ogg
+  - /Audio/_OE14/Animals/fairy3.ogg
+  - /Audio/_OE14/Animals/fairy4.ogg
+  - /Audio/_OE14/Animals/fairy5.ogg
+  - /Audio/_OE14/Animals/fairy6.ogg
+
+- type: soundCollection
+  id: OE14Bear
+  files:
+  - /Audio/_OE14/Animals/bear1.ogg
+  - /Audio/_OE14/Animals/bear2.ogg

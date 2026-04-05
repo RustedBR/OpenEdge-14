@@ -1,0 +1,25 @@
+- type: antag
+  id: OE14DemiplaneAntag
+  name: oe14-role-type-demiplane-antag-name
+  antagonist: true
+  setPreference: false
+  objective: oe14-ghost-role-information-rules-demiplane
+
+- type: antag
+  id: OE14Vampire
+  name: oe14-roles-antag-vampire-name
+  antagonist: true
+  setPreference: true
+  objective: oe14-roles-antag-vampire-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 7200 # 2h
+  #guides: TODO
+
+- type: antag
+  id: OE14BloodMoonCursed
+  name: oe14-roles-antag-blood-moon-cursed-name
+  antagonist: true
+  setPreference: false
+  objective: oe14-roles-antag-blood-moon-cursed-objective
+

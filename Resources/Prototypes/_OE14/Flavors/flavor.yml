@@ -1,0 +1,128 @@
+# Basic
+
+- type: flavor
+  id: OE14Metallic
+  flavorType: Base
+  description: oe14-flavor-base-metallic
+
+- type: flavor
+  id: OE14Invigorating
+  flavorType: Base
+  description: oe14-flavor-base-invigorating
+
+- type: flavor
+  id: OE14Bitterly
+  flavorType: Base
+  description: oe14-flavor-base-bitterly
+
+- type: flavor
+  id: OE14Sweetly
+  flavorType: Base
+  description: oe14-flavor-base-sweetly
+
+- type: flavor
+  id: OE14Stinging
+  flavorType: Base
+  description: oe14-flavor-base-stinging
+
+- type: flavor
+  id: OE14Magic
+  flavorType: Base
+  description: oe14-flavor-base-magic
+
+- type: flavor
+  id: OE14Salty
+  flavorType: Base
+  description: oe14-flavor-base-salt
+
+- type: flavor
+  id: OE14VerySweet
+  flavorType: Base
+  description: oe14-flavor-base-very-sweet
+
+# Complex
+
+- type: flavor
+  id: OE14Water
+  flavorType: Complex
+  description: oe14-flavor-complex-water
+
+- type: flavor
+  id: OE14Vomit
+  flavorType: Complex
+  description: oe14-flavor-complex-vomit
+
+- type: flavor
+  id: OE14Quartz
+  flavorType: Complex
+  description: oe14-flavor-complex-quartz
+
+- type: flavor
+  id: OE14beer
+  flavorType: Complex
+  description: oe14-flavor-complex-beer
+
+- type: flavor
+  id: OE14dwarfbeer
+  flavorType: Complex
+  description: oe14-flavor-complex-dwarfbeer
+
+- type: flavor
+  id: OE14gerbil
+  flavorType: Complex
+  description: oe14-flavor-complex-gerbil
+
+- type: flavor
+  id: OE14breeze
+  flavorType: Complex
+  description: oe14-flavor-complex-breeze
+
+- type: flavor
+  id: OE14blowLaw
+  flavorType: Complex
+  description: oe14-flavor-complex-blowlaw
+
+- type: flavor
+  id: OE14wine
+  flavorType: Complex
+  description: oe14-flavor-complex-wine
+
+- type: flavor
+  id: OE14zellasianPleasure
+  flavorType: Complex
+  description: oe14-flavor-complex-zellasian-pleasure
+
+- type: flavor
+  id: OE14leeks
+  flavorType: Complex
+  description: oe14-flavor-complex-leeks
+
+- type: flavor
+  id: OE14durandate
+  flavorType: Complex
+  description: oe14-flavor-complex-durandate
+
+- type: flavor
+  id: OE14ale
+  flavorType: Complex
+  description: oe14-flavor-complex-ale
+
+- type: flavor
+  id: OE14bloodyTear
+  flavorType: Complex
+  description: oe14-flavor-complex-bloody-tear
+
+- type: flavor
+  id: OE14bottomless
+  flavorType: Complex
+  description: oe14-flavor-complex-bottomless
+
+- type: flavor
+  id: OE14cucumber
+  flavorType: Complex
+  description: oe14-flavor-complex-cucumber
+
+- type: flavor
+  id: OE14HotPotato
+  flavorType: Complex
+  description: oe14-flavor-complex-hot-potato

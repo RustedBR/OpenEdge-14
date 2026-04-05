@@ -1,0 +1,1 @@
+window-taking-damage = [color=orange]Está suportando pressão![/color]

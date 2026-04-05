@@ -1,0 +1,49 @@
+- type: body
+  id: OE14Zombie
+  name: zombie
+  root: torso
+  slots:
+    head:
+      part: OE14HeadZombie
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: TorsoHuman
+      connections:
+      - right_arm
+      - left_arm
+      - right_leg
+      - left_leg
+      organs:
+        heart: OrganHumanHeart
+        lungs: OrganHumanLungs
+        stomach: OrganHumanStomach
+        liver: OrganHumanLiver
+        kidneys: OrganHumanKidneys
+    right_arm:
+      part: OE14RightArmZombie
+      connections:
+      - right_hand
+    left_arm:
+      part: OE14LeftArmZombie
+      connections:
+      - left_hand
+    right_hand:
+      part: OE14RightHandZombie
+    left_hand:
+      part: OE14LeftHandZombie
+    right_leg:
+      part: OE14RightLegZombie
+      connections:
+      - right_foot
+    left_leg:
+      part: OE14LeftLegZombie
+      connections:
+      - left_foot
+    right_foot:
+      part: OE14RightFootZombie
+    left_foot:
+      part: OE14LeftFootZombie

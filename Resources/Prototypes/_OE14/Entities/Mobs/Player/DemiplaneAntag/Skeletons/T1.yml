@@ -1,0 +1,189 @@
+- type: entity
+  id: OE14MobUndeadSkeletonDemiplaneT1
+  parent: OE14BaseMobSkeleton
+  name: skeleton
+  abstract: true
+  components:
+  - type: OE14NightVision
+  - type: NpcFactionMember
+    factions:
+    - OE14Monster
+
+- type: entity
+  id: OE14MobUndeadSkeletonHalberdT1
+  parent: OE14MobUndeadSkeletonDemiplaneT1
+  categories: [ ForkFiltered ]
+  suffix: Halebard T1
+  components:
+  - type: Loadout
+    prototypes:
+    - OE14MobSkeletonHalberdT1
+  - type: OE14SkillStorage
+    skillPoints:
+      Memory:
+        max: 0 
+    #freeLearnedSkills:
+    #- SwordMastery
+  - type: OE14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - OE14ActionSpellKick
+
+- type: entity
+  id: OE14MobUndeadSkeletonSwordT1
+  parent: OE14MobUndeadSkeletonDemiplaneT1
+  categories: [ ForkFiltered ]
+  suffix: Sword T1
+  components:
+  - type: Loadout
+    prototypes:
+    - OE14MobSkeletonSwordT1
+  - type: OE14SkillStorage
+    skillPoints:
+      Memory:
+        max: 0 
+    #freeLearnedSkills:
+    #- SwordMastery
+  - type: OE14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - OE14ActionSpellKick
+
+- type: entity
+  id: OE14MobUndeadSkeletonDodgerT1
+  parent: OE14MobUndeadSkeletonDemiplaneT1
+  categories: [ ForkFiltered ]
+  suffix: Dodger T1
+  components:
+  - type: Loadout
+    prototypes:
+    - OE14MobSkeletonDodgerT1
+  - type: OE14SkillStorage
+    skillPoints:
+      Memory:
+        max: 0
+    freeLearnedSkills:
+    #- SkimitarMastery
+    - AthleticT1
+    - AthleticT2
+    - OE14ActionSpellKick
+    - OE14ActionSpellSprint
+
+- type: entity
+  id: OE14MobUndeadSkeletonArcherT1
+  parent: OE14MobUndeadSkeletonDemiplaneT1
+  categories: [ ForkFiltered ]
+  suffix: Archer T1
+  components:
+  - type: Loadout
+    prototypes:
+    - OE14MobSkeletonArcherT1
+  - type: OE14SpellStorage
+    grantAccessToSelf: true
+    spells:
+    - OE14ActionSpellSprint
+  - type: OE14SkillStorage
+    skillPoints:
+      Memory:
+        max: 1
+    freeLearnedSkills:
+    - HydrosophistryT1
+    learnedSkills:
+    - OE14ActionSpellIceArrow
+
+- type: entity
+  id: OE14SpawnPointGhostDemiplaneSkeletonT1
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton random T1
+  categories: [ ForkFiltered ]
+  parent: MarkerBase
+  components:
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 15
+        children:
+        - id: SpawnPointGhostDemiplaneSkeletonArcherT1
+      - !type:GroupSelector
+        weight: 20
+        children:
+        - id: SpawnPointGhostDemiplaneSkeletonHalberdT1
+      - !type:GroupSelector
+        weight: 60
+        children:
+        - id: SpawnPointGhostDemiplaneSkeletonSwordT1
+        - id: SpawnPointGhostDemiplaneSkeletonDodgerT1
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+        state: full
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonHalberdT1
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Halebard T1
+  categories: [ ForkFiltered ]
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: oe14-ghost-role-information-name-skeleton
+    allowMovement: true
+    description: oe14-ghost-role-information-description-skeleton
+    rules: oe14-ghost-role-information-rules-demiplane
+    mindRoles:
+    - OE14MindRoleDemiplaneAntag
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: OE14MobUndeadSkeletonHalberdT1
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: _OE14/Mobs/Species/Skeleton/parts.rsi
+        state: full
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonSwordT1
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Sword T1
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberdT1
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: OE14MobUndeadSkeletonSwordT1
+  - type: GhostRole
+    name: oe14-ghost-role-information-name-skeleton
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonDodgerT1
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Dodger T1
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberdT1
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: OE14MobUndeadSkeletonDodgerT1
+  - type: GhostRole
+    name: oe14-ghost-role-information-name-skeleton
+
+- type: entity
+  id: SpawnPointGhostDemiplaneSkeletonArcherT1
+  name: ghost role spawn point
+  description: A ghost role for a bloodthirsty and cunning skeleton.
+  suffix: skeleton Archer T1
+  categories: [ ForkFiltered ]
+  parent: SpawnPointGhostDemiplaneSkeletonHalberdT1
+  components:
+  - type: GhostRoleMobSpawner
+    prototype: OE14MobUndeadSkeletonArcherT1
+  - type: GhostRole
+    name: oe14-ghost-role-information-name-skeleton
+

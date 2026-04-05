@@ -1,0 +1,48 @@
+- type: marking
+  id: OE14TieflingTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/tiefling_tails.rsi
+      state: tail
+
+- type: marking
+  id: OE14TieflingTailSpades
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Tiefling ]
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/tiefling_tails.rsi
+      state: tail_spades
+
+
+
+
+# Animation
+
+- type: marking
+  id: OE14TieflingTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/tiefling_tails.rsi
+      state: tail_waggin
+
+- type: marking
+  id: OE14TieflingTailSpadesAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  followSkinColor: true
+  forcedColoring: true
+  sprites:
+    - sprite: _OE14/Mobs/Customization/tiefling_tails.rsi
+      state: tail_spades_waggin

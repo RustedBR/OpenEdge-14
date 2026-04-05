@@ -1,0 +1,70 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14GroundQuartzSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14GroundQuartz:
+      amount: 1
+  products:
+    OE14EssenceCrystal: 0.5
+    OE14EssenceOrder: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+# Idea: Clear all gimmick useless solutions
+
+- type: reaction
+  id: OE14GroundQuartzAdmixture1
+  minTemp: 500
+  reactants:
+    OE14GroundQuartz:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14SideEffectJitter:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 3
+
+- type: reaction
+  id: OE14GroundQuartzAdmixture2
+  minTemp: 500
+  reactants:
+    OE14GroundQuartz:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14SideEffectDrunk:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 3
+
+- type: reaction
+  id: OE14GroundQuartzAdmixture3
+  minTemp: 500
+  reactants:
+    OE14GroundQuartz:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14SideEffectEmoteCough:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 3
+
+- type: reaction
+  id: OE14GroundQuartzAdmixture4
+  minTemp: 500
+  reactants:
+    OE14GroundQuartz:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14SideEffectRainbow:
+      amount: 1
+  products:
+    OE14SideEffectEmpty: 3
+

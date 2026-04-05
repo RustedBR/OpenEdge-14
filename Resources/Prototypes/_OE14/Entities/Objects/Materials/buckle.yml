@@ -1,0 +1,25 @@
+- type: entity
+  id: OE14IngredientBase
+  parent: BaseItem
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    size: Tiny
+  localizationId: ent-OE14IngredientBase
+- type: entity
+  id: OE14IronBuckle
+  parent: OE14IngredientBase
+  name: iron buckle
+  description: A sturdy metal buckle for fastening straps and belts.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Ingredients/buckle.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 2
+  - type: StaticPrice
+    price: 2
+  localizationId: ent-OE14IronBuckle

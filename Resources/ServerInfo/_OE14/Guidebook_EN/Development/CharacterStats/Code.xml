@@ -1,0 +1,57 @@
+<Document>
+# Code Examples (Character Stats)
+
+This page contains reference implementations for working with the OE14CharacterStats system.
+
+## Adding a Stat Modifier from a Spell
+
+<CodeBlock>
+// In your spell system
+private void ApplySpellStatBonus(EntityUid target, int intBonus)
+{
+    if (!TryComp<OE14CharacterStatsComponent>(target, out var stats))
+        return;
+
+    // Add modifier
+    stats.IntModifiers[ModifierSource.Spell] =
+        stats.IntModifiers.GetValueOrDefault(ModifierSource.Spell) + intBonus;
+
+    // Recalculate and sync
+    _statsSystem.RecalculateStats(target, stats);
+}
+</CodeBlock>
+
+## Reading Effective Stats
+
+<CodeBlock>
+// Check if player meets stat requirement
+private bool HasEnoughIntelligence(EntityUid player, int required)
+{
+    if (!TryComp<OE14CharacterStatsComponent>(player, out var stats))
+        return false;
+
+    return stats.EffectiveIntelligence >= required;
+}
+</CodeBlock>
+
+## Removing a Modifier
+
+<CodeBlock>
+// When spell effect ends
+private void RemoveSpellBonus(EntityUid target)
+{
+    if (!TryComp<OE14CharacterStatsComponent>(target, out var stats))
+        return;
+
+    stats.IntModifiers.Remove(ModifierSource.Spell);
+    _statsSystem.RecalculateStats(target, stats);
+}
+</CodeBlock>
+
+## Content Under Construction
+
+More code examples coming soon. The full implementation is in:
+[mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+[mono]Content.Server/_OE14/CharacterStats/OE14ServerCharacterStatsSystem.cs[/mono]
+
+</Document>

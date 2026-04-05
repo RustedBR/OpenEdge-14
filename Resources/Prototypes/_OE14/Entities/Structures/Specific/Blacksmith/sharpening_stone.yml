@@ -1,0 +1,63 @@
+- type: entity
+  id: OE14BaseSharpeningStoneStructure
+  name: stationary sharpening stone
+  description: A strong, durable sharpening stone capable of sharpening weapons without much damage to them.
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  components:
+  - type: Anchorable
+  - type: Clickable
+  - type: UseDelay
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _OE14/Structures/Specific/Blacksmith/sharpening_stone.rsi
+    state: base
+  - type: PlaceableSurface
+  - type: ItemPlacer
+    whitelist:
+      components:
+        - OE14Sharpened
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TabletopMachineMask
+        layer:
+        - Impassable
+        - MidImpassable
+        - LowImpassable
+        hard: false
+      fix2:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask:
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassCrack
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: OE14SharpeningStone
+    sharpnessHeal: 0.1
+    targetDamage:
+      types:
+        blunt: 0.5
+  - type: StaticPrice
+    price: 15
+

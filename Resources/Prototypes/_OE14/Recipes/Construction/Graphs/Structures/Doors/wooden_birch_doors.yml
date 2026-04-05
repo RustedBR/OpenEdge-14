@@ -1,0 +1,127 @@
+- type: constructionGraph
+  id: OE14WoodenBirchDoor
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WoodenBirchDoorFrame
+          steps:
+            - material: OE14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: OE14WoodenBirchDoorFrame
+      entity: OE14WoodenBirchDoorFrame
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 4
+        - to: OE14WoodenBirchDoorFrameMirrored
+          steps:
+            - tool: OE14Hammering
+              doAfter: 1
+        - to: OE14WoodenBirchDoor
+          steps:
+            - material: OE14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: OE14WoodenBirchDoorWindowed
+          steps:
+            - material: OE14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: OE14WoodenBirchDoorFrameMirrored
+      entity: OE14WoodenBirchDoorFrameMirrored
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Prying
+              doAfter: 4
+        - to: OE14WoodenBirchDoorFrame
+          steps:
+            - tool: OE14Hammering
+              doAfter: 1
+        - to: OE14WoodenBirchDoorMirrored
+          steps:
+            - material: OE14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+        - to: OE14WoodenBirchDoorWindowedMirrored
+          steps:
+            - material: OE14BirchWoodenPlanks
+              amount: 2
+              doAfter: 2
+
+    - node: OE14WoodenBirchDoor
+      entity: OE14WoodenBirchDoor
+      edges:
+        - to: OE14WoodenBirchDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4
+
+    - node: OE14WoodenBirchDoorMirrored
+      entity: OE14WoodenBirchDoorMirrored
+      edges:
+        - to: OE14WoodenBirchDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4
+
+    - node: OE14WoodenBirchDoorWindowed
+      entity: OE14WoodenBirchDoorWindowed
+      edges:
+        - to: OE14WoodenBirchDoorFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4
+
+    - node: OE14WoodenBirchDoorWindowedMirrored
+      entity: OE14WoodenBirchDoorWindowedMirrored
+      edges:
+        - to: OE14WoodenBirchDoorFrameMirrored
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14BirchWoodenPlanks1
+              amount: 2
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Prying
+              doAfter: 4

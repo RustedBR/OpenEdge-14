@@ -1,0 +1,42 @@
+- type: entity
+  abstract: true
+  parent:
+  - OE14ClothingMaskBase
+  - OE14BaseMajorContraband
+  id: OE14ClothingMaskVampireVoiceBase
+  description: This mask reeks of blood. Effectively conceals the identity of the
+    wearer.
+  suffix: Voice mask
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: IdentityBlocker
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Leather: 10
+  localizationId: ent-OE14ClothingMaskVampireVoiceBase
+- type: entity
+  parent: OE14ClothingMaskVampireVoiceBase
+  id: OE14ClothingMaskVampireVoiceDevourers
+  name: bloody bone mask
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/vampire_devourers.rsi
+  localizationId: ent-OE14ClothingMaskVampireVoiceDevourers
+- type: entity
+  parent: OE14ClothingMaskVampireVoiceBase
+  id: OE14ClothingMaskVampireVoiceNightChildrens
+  name: mysterious black mask
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/vampire_night_childrens.rsi
+  localizationId: ent-OE14ClothingMaskVampireVoiceNightChildrens
+- type: entity
+  parent: OE14ClothingMaskVampireVoiceBase
+  id: OE14ClothingMaskVampireVoiceUnnameable
+  name: frightening white mask
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Masks/vampire_unnameable.rsi
+  localizationId: ent-OE14ClothingMaskVampireVoiceUnnameable

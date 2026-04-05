@@ -1,0 +1,51 @@
+# Head
+
+- type: loadoutGroup
+  id: OE14AlchemistHead
+  name: oe14-loadout-alchemist-head
+  minLimit: 0
+  loadouts:
+  - OE14ClothingHeadAlchemistBandana
+  - OE14ClothingHeadAlchemistBeret
+
+- type: loadout
+  id: OE14ClothingHeadAlchemistBandana
+  equipment:
+    head: OE14ClothingHeadAlchemistBandana
+
+- type: loadout
+  id: OE14ClothingHeadAlchemistBeret
+  equipment:
+    head: OE14ClothingHeadAlchemistBeret
+
+# Cloak
+
+- type: loadoutGroup
+  id: OE14AlchemistCloak
+  name: oe14-loadout-alchemist-cloak
+  loadouts:
+  - OE14ClothingCloakAlchemist
+  - OE14ClothingCloakAlchemistMantle
+
+- type: loadout
+  id: OE14ClothingCloakAlchemist
+  equipment:
+    cloak: OE14ClothingCloakAlchemist
+
+- type: loadout
+  id: OE14ClothingCloakAlchemistMantle
+  equipment:
+    cloak: OE14ClothingCloakAlchemistMantle
+
+# Belt
+
+- type: loadoutGroup
+  id: OE14AlchemistBelt
+  name: oe14-loadout-alchemist-belt
+  loadouts:
+  - OE14ClothingBeltPouchPotions
+
+- type: loadout
+  id: OE14ClothingBeltPouchPotions
+  equipment:
+    belt2: OE14ClothingBeltPouchPotions

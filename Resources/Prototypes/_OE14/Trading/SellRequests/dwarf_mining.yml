@@ -1,0 +1,77 @@
+- type: oe14TradingRequest
+  id: DwarfMiningCopper
+  possibleFactions:
+  - DwarfMining
+  requirements:
+  - !type:StackResource
+    stack: OE14CopperBar
+    count: 10
+
+- type: oe14TradingRequest
+  id: DwarfMiningIron
+  possibleFactions:
+  - DwarfMining
+  requirements:
+  - !type:StackResource
+    stack: OE14IronBar
+    count: 10
+
+- type: oe14TradingRequest
+  id: DwarfMiningDirt
+  possibleFactions:
+  - DwarfMining
+  requirements:
+  - !type:StackResource
+    stack: OE14Dirt
+    count: 30
+
+- type: oe14TradingRequest
+  id: DwarfMiningStone
+  possibleFactions:
+  - DwarfMining
+  requirements:
+  - !type:StackResource
+    stack: OE14Stone
+    count: 30
+
+- type: oe14TradingRequest
+  id: DwarfMiningTorch
+  possibleFactions:
+  - DwarfMining
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Torch
+    count: 10
+
+- type: oe14TradingRequest
+  id: OE14GlassSheet
+  possibleFactions:
+  - DwarfMining
+  requirements:
+  - !type:StackResource
+    stack: OE14GlassSheet
+    count: 20
+
+# 30 minutes
+
+- type: oe14TradingRequest
+  id: DwarfMiningGold
+  possibleFactions:
+  - DwarfMining
+  fromMinutes: 30
+  requirements:
+  - !type:StackResource
+    stack: OE14GoldBar
+    count: 10
+
+# 60 minutes
+
+- type: oe14TradingRequest
+  id: DwarfMiningMithril
+  possibleFactions:
+  - DwarfMining
+  fromMinutes: 60
+  requirements:
+  - !type:StackResource
+    stack: OE14MithrilBar
+    count: 10

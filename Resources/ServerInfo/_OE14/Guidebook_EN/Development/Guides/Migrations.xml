@@ -1,0 +1,65 @@
+<Document>
+# Database Migrations
+
+This guide covers how to create Entity Framework Core migrations for OpenEdge 14.
+
+## When You Need a Migration
+
+- Adding a new database table
+- Adding a column to an existing table
+- Modifying a column (type, nullable, default)
+- Adding indexes or relationships
+
+## Migration Files
+
+EF Core requires [bold]two files[/bold] per migration:
+1. [mono]TIMESTAMP_MigrationName.cs[/mono] — the migration logic (Up/Down methods)
+2. [mono]TIMESTAMP_MigrationName.Designer.cs[/mono] — auto-generated snapshot
+
+[bold]Important:[/bold] The Designer.cs file must exist. If you generate the main file manually, you must also create the Designer.cs. Missing this file causes the migration to fail silently.
+
+## Creating a Migration
+
+<CodeBlock>
+# From the project root
+dotnet ef migrations add MigrationName --project Content.Server
+</CodeBlock>
+
+If EF tools are not installed:
+<CodeBlock>
+dotnet tool install --global dotnet-ef
+</CodeBlock>
+
+## Migration Structure
+
+[bold]Migration file (Up method):[/bold]
+<CodeBlock>
+protected override void Up(MigrationBuilder migrationBuilder)
+{
+    migrationBuilder.AddColumn<int>(
+        name: "BaseStrength",
+        table: "CharacterStats",
+        nullable: false,
+        defaultValue: 5);
+}
+</CodeBlock>
+
+[bold]Down method (rollback):[/bold]
+<CodeBlock>
+protected override void Down(MigrationBuilder migrationBuilder)
+{
+    migrationBuilder.DropColumn(
+        name: "BaseStrength",
+        table: "CharacterStats");
+}
+</CodeBlock>
+
+## Known Issue
+
+When creating migrations manually (without dotnet ef), the Designer.cs must be generated from the ModelSnapshot template. Missing this file causes a known error where the migration appears to exist but doesn't apply on a fresh database. See CLAUDE.md errors section for details.
+
+## Content Under Construction
+
+Full migration documentation with Designer.cs template coming soon.
+
+</Document>

@@ -1,0 +1,185 @@
+- type: entity
+  parent: BaseItem
+  abstract: true
+  id: OE14CandleBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Tag
+    tags:
+    - Candle
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+  - type: ExtinguishOnInteract
+    extinguishAttemptSound:
+      path: /Audio/Items/candle_blowing.ogg
+      params:
+        variation: 0.05
+        volume: 10
+  - type: UseDelay
+  - type: OE14DelayedIgnitionSource
+  - type: OE14IgnitionModifier
+    ignitionTimeModifier: 0.5
+    hideCaution: true
+  - type: Flammable
+    fireSpread: false
+    canResistFire: false
+    alwaysCombustible: true
+    canExtinguish: true
+    firestacksOnIgnite: 15.0
+    firestackFade: -0
+    damage:
+      types:
+        Heat: 0
+  - type: StaticPrice
+    price: 3
+
+- type: entity
+  id: OE14Candle
+  parent: OE14CandleBase
+  name: candle
+  description: A thin wick threaded through fat.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _OE14/Objects/Misc/candles.rsi
+    layers:
+      - state: small1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        small1: ""
+        small2: ""
+        small3: ""
+  - type: Item
+    size: Small
+  - type: FireVisuals
+    sprite: _OE14/Objects/Misc/candles.rsi
+    normalState: small_fire
+  #- type: ToggleableLightVisuals #TODO inhands
+  #  spriteLayer: null
+  #  inhandVisuals:
+  #    left:
+  #    - state: inhand-left-flame
+  #      shader: unshaded
+  #    right:
+  #    - state: inhand-right-flame
+  #      shader: unshaded
+  - type: Damageable
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Flammable
+    firestacksOnIgnite: 2
+
+- type: entity
+  parent: OE14Candle
+  id: OE14CandleIgnited
+  suffix: Ignited
+  components:
+  - type: OE14AutoIgnite
+    startStack: 2
+
+#Candelabra
+
+- type: entity
+  id: OE14Candelabra
+  parent: OE14CandleBase
+  name: candelabra
+  description: Several candles, beautifully placed on a metal support.
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    noRot: true
+    offset: 0,0.2
+    drawdepth: Mobs
+    sprite: _OE14/Objects/Misc/candelabra.rsi
+    layers:
+      - state: triple
+  - type: Item
+    size: Normal
+  - type: FireVisuals
+    sprite: _OE14/Objects/Misc/candelabra.rsi
+    normalState: triple_fire
+  - type: Damageable
+    damageModifierSet: OE14Metallic
+  #- type: ToggleableLightVisuals #TODO inhands
+  #  spriteLayer: null
+  #  inhandVisuals:
+  #    left:
+  #    - state: inhand-left-flame
+  #      shader: unshaded
+  #    right:
+  #    - state: inhand-right-flame
+  #      shader: unshaded
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14ScrapIron:
+            min: 1
+            max: 1
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10 # 1 iron bar
+  - type: Flammable
+    firestacksOnIgnite: 4
+
+- type: entity
+  parent: OE14Candelabra
+  id: OE14CandelabraIgnited
+  suffix: Ignited
+  components:
+  - type: OE14AutoIgnite
+    startStack: 4
+
+- type: entity
+  parent: OE14CandelabraIgnited
+  id: OE14CandelabraBloodIgnited
+  suffix: Vampire, DO NOT MAP
+  categories: [ ForkFiltered, DoNotMap ]
+  name: candelabra of crimson candles
+  components:
+  - type: Sprite
+    layers:
+      - state: blood
+  - type: FireVisuals
+    lightColor: "#ff1100"
+    normalState: blood_fire
+
+- type: entity
+  parent: OE14CandleIgnited
+  id: OE14CandleBloodIgnited
+  suffix: Vampire, DO NOT MAP
+  categories: [ ForkFiltered, DoNotMap ]
+  name: crimson candle
+  components:
+  - type: Sprite
+    layers:
+      - state: blood1
+        map: ["random"]
+  - type: FireVisuals
+    lightColor: "#ff1100"
+    normalState: blood_fire
+  - type: RandomSprite
+    available:
+    - random:
+        blood1: ""
+        blood2: ""
+        blood3: ""

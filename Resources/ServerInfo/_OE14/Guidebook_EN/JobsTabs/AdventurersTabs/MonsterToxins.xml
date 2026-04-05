@@ -1,0 +1,9 @@
+<Document>
+
+  # Monster Toxins
+
+  Monsters carry a variety of toxins. A well-prepared adventurer should know what monsters have these and what they do.
+
+  <GuideReagentGroupEmbed Group="OE14MonsterToxins"/>
+
+</Document>

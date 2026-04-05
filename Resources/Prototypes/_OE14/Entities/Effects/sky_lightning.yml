@@ -1,0 +1,130 @@
+- type: entity
+  id: OE14SkyLightning
+  categories: [ ForkFiltered ]
+  name: sky lighting
+  save: false
+  components:
+  - type: Sprite
+    sprite: _OE14/Effects/sky_lightning.rsi
+    drawdepth: Mobs
+    noRot: true
+    offset: 0,2.5
+    layers:
+      - state: bombom
+        shader: unshaded
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: PointLight
+    color: "#73efff"
+    enabled: true
+    radius: 50
+    energy: 8
+    netsync: false
+  - type: LightFade
+    duration: 1
+  - type: OE14PvsOverride
+  - type: OE14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:Electrocute
+        electrocuteTime: 6
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 30
+      - !type:FlammableReaction
+        multiplier: 2.5
+      - !type:AdjustTemperature
+        amount: 30000
+      - !type:Ignite
+  - type: TriggerOnSpawn
+  - type: FlashOnTrigger
+    range: 4
+  - type: OE14FarSound
+    closeSound:
+      path: /Audio/_OE14/Ambience/Lightning/lightning_close1.ogg
+      params:
+        variation: 0.2
+        maxDistance: 20
+        volume: 20
+    farSound:
+      collection: OE14LightningFar
+      params:
+        variation: 0.2
+
+- type: entity
+  id: OE14SkyLightningPurple
+  parent: OE14SkyLightning
+  suffix: Purple
+  components:
+  - type: PointLight
+    color: "#8f42ff"
+  - type: Sprite
+    color: "#8f42ff"
+  - type: OE14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:Electrocute
+        electrocuteTime: 3
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 0
+  - type: OE14FarSound
+    closeSound:
+      path: /Audio/_OE14/Ambience/Lightning/lightning_close1.ogg
+      params:
+        variation: 0.2
+        maxDistance: 20
+        volume: 10
+    farSound:
+      collection: OE14LightningFar
+      params:
+        variation: 0.2
+        volume: -5
+
+- type: entity
+  id: OE14SkyLightningRed
+  parent: OE14SkyLightning
+  suffix: Red
+  components:
+  - type: PointLight
+    color: "#f7112c"
+  - type: Sprite
+    color: "#f7112c"
+  - type: OE14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:OE14SpellThrowFromUser
+      throwPower: 4
+      distance: 0.5
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:Electrocute
+        electrocuteTime: 3
+      - !type:HealthChange
+        damage:
+          types:
+            Shock: 0
+  - type: OE14FarSound
+    closeSound:
+      path: /Audio/_OE14/Ambience/Lightning/lightning_close1.ogg
+      params:
+        variation: 0.2
+        maxDistance: 20
+        volume: 10
+    farSound:
+      collection: OE14LightningFar
+      params:
+        variation: 0.2
+        volume: -5
+  - type: FlashOnTrigger
+    range: 2
+

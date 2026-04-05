@@ -1,0 +1,64 @@
+- type: entity
+  id: OE14ActionSpellMagicalAcceleration
+  parent: OE14ActionSpellBase
+  name: Magical acceleration
+  description: At the cost of magic energy, you significantly accelerate your movement speed
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 1.3
+  - type: OE14ActionManaCost
+    manaCost: 3
+  - type: DoAfterArgs
+    hidden: true
+    repeat: true
+    delay: 0.25
+  - type: Action
+    useDelay: 2
+    icon:
+      sprite: _OE14/Actions/Spells/misc.rsi
+      state: magical_acceleration
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14MagicAccelerationDustEffect
+
+- type: entity
+  id: OE14MagicAccelerationDustEffect
+  parent: OE14DustEffect
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    drawdepth: Items
+    sprite: _OE14/Effects/dust.rsi
+    layers:
+    - state: dust
+      shader: unshaded
+      color: "#4097bd"
+  - type: PointLight
+    color: "#4097bd"
+
+- type: entity
+  parent: OE14BaseSpellScrollHealing
+  id: OE14SpellScrollMagicalAcceleration
+  name: magical accseleration spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellMagicalAcceleration
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            OE14Ash1:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+

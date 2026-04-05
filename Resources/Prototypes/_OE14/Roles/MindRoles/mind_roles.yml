@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: OE14MindRoleDemiplaneAntag
+  name: Demiplane antag role
+  components:
+  - type: MindRole
+    roleType: OE14DemiplaneAntagonist
+    antagPrototype: OE14DemiplaneAntag
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: OE14MindRoleVampire
+  categories: [ ForkFiltered ]
+  name: Vampire role
+  components:
+  - type: MindRole
+    antagPrototype: OE14Vampire
+    roleType: TeamAntagonist
+    exclusiveAntag: true
+  - type: OE14VampireRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: OE14MindRoleBloodMoonCursed
+  categories: [ ForkFiltered ]
+  name: Blood moon cursed role
+  components:
+  - type: MindRole
+    antagPrototype: OE14BloodMoonCursed
+    roleType: SoloAntagonist
+    exclusiveAntag: false
+

@@ -1,0 +1,107 @@
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsTrouserWhite
+  name: white trouser
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/Trousers/white.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/Trousers/white.rsi
+  localizationId: ent-OE14ClothingPantsTrouserWhite
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsTrouserDarkBlue
+  name: dark trouser
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/Trousers/dark_blue.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/Trousers/dark_blue.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 25
+  - type: StaticPrice
+    price: 8.6
+  localizationId: ent-OE14ClothingPantsTrouserDarkBlue
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsLoincloth
+  name: loincloth
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/loincloth.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/loincloth.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: OE14ThinLeather1
+      amount: 1
+  localizationId: ent-OE14ClothingPantsLoincloth
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsMercenaryTrousers
+  name: mercenary trousers
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/Trousers/trousers_mercenary.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Cloth: 25
+  - type: StaticPrice
+    price: 12.6
+  localizationId: ent-OE14ClothingPantsMercenaryTrousers
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsGreen
+  name: green pants
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/green.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/green.rsi
+  localizationId: ent-OE14ClothingPantsGreen
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsBrown
+  name: brown pants
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/brown.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/brown.rsi
+  localizationId: ent-OE14ClothingPantsBrown
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsJestersPantaloons
+  name: jester's pantaloons
+  description: It's like regular pantaloons. But you can be seen from two miles away.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/Trousers/jesters_pantaloons.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/Trousers/jesters_pantaloons.rsi
+  localizationId: ent-OE14ClothingPantsJestersPantaloons
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsJagermeisterTrousers
+  name: jagermeister's trousers
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/jagermeister_trousers.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/jagermeister_trousers.rsi
+  localizationId: ent-OE14ClothingPantsJagermeisterTrousers
+- type: entity
+  parent: OE14ClothingPantsBase
+  id: OE14ClothingPantsHakama
+  name: hakama
+  description: Traditional long pants of a traveler from distant lands.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Pants/hakama.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Pants/hakama.rsi
+  localizationId: ent-OE14ClothingPantsHakama

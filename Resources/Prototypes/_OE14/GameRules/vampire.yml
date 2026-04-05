@@ -1,0 +1,147 @@
+- type: entity
+  parent: OE14BaseGameRule
+  id: OE14GameRuleVampireClanBattleTriple
+  components:
+  - type: OE14VampireRule
+  - type: GameRule
+    minPlayers: 30
+  - type: SubGamemodes
+    rules:
+    - id: OE14GameRuleVampireClanUnnameable
+    - id: OE14GameRuleVampireClanDevourers
+    - id: OE14GameRuleVampireClanNightChildrens
+
+- type: entity
+  parent: OE14BaseGameRule
+  id: OE14GameRuleVampireClanBattleDouble
+  components:
+  - type: OE14VampireRule
+  - type: GameRule
+    minPlayers: 20
+  - type: SubGamemodes
+    rules:
+    - id: OE14GameRuleVampireClanDevourers
+    - id: OE14GameRuleVampireClanNightChildrens
+
+- type: entity
+  parent: OE14BaseGameRule
+  id: OE14GameRuleVampireClanUnnameable
+  components:
+  - type: AntagObjectives
+    objectives:
+    - OE14VampireObjectiveBloodPurity
+    - OE14VampireObjectiveDefenseVillage
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ OE14Vampire ]
+      min: 1
+      max: 3
+      playerRatio: 2
+      lateJoinAdditional: true
+      mindRoles:
+      - OE14MindRoleVampire
+      components:
+      - type: OE14Vampire
+        faction: Unnameable
+      - type: OE14ShowVampireFaction
+        faction: Unnameable
+      - type: Hunger
+        hungerThresholdAlerts:
+          Peckish: OE14VampirePeckish
+          Starving: OE14VampireStarving
+          Dead: OE14VampireStarving
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -3
+      briefing:
+        text: oe14-roles-antag-vampire-briefing-unnameable
+        color: "#630f24"
+        sound: "/Audio/_OE14/Ambience/Antag/vampire.ogg"
+
+- type: entity
+  parent: OE14BaseGameRule
+  id: OE14GameRuleVampireClanDevourers
+  components:
+  - type: AntagObjectives
+    objectives:
+    - OE14VampireObjectiveBloodPurity
+    - OE14VampireObjectiveDefenseVillage
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ OE14Vampire ]
+      min: 1
+      max: 3
+      playerRatio: 2
+      lateJoinAdditional: true
+      mindRoles:
+      - OE14MindRoleVampire
+      components:
+      - type: OE14Vampire
+        faction: Devourers
+      - type: OE14ShowVampireFaction
+        faction: Devourers
+      - type: Hunger
+        hungerThresholdAlerts:
+          Peckish: OE14VampirePeckish
+          Starving: OE14VampireStarving
+          Dead: OE14VampireStarving
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -3
+      briefing:
+        text: oe14-roles-antag-vampire-briefing-devourers
+        color: "#630f24"
+        sound: "/Audio/_OE14/Ambience/Antag/vampire.ogg"
+
+- type: entity
+  parent: OE14BaseGameRule
+  id: OE14GameRuleVampireClanNightChildrens
+  components:
+  - type: AntagObjectives
+    objectives:
+    - OE14VampireObjectiveBloodPurity
+    - OE14VampireObjectiveDefenseVillage
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    definitions:
+    - prefRoles: [ OE14Vampire ]
+      min: 1
+      max: 3
+      playerRatio: 2
+      lateJoinAdditional: true
+      mindRoles:
+      - OE14MindRoleVampire
+      components:
+      - type: OE14Vampire
+        faction: NightChildrens
+      - type: OE14ShowVampireFaction
+        faction: NightChildrens
+      - type: Hunger
+        hungerThresholdAlerts:
+          Peckish: OE14VampirePeckish
+          Starving: OE14VampireStarving
+          Dead: OE14VampireStarving
+        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+      - type: PassiveDamage
+        allowedStates:
+        - Alive
+        - Critical
+        damage:
+          groups:
+            Brute: -3
+      briefing:
+        text: oe14-roles-antag-vampire-briefing-night-childrens
+        color: "#630f24"
+        sound: "/Audio/_OE14/Ambience/Antag/vampire.ogg"

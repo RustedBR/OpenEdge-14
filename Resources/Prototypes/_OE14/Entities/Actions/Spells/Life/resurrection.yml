@@ -1,0 +1,98 @@
+- type: entity
+  id: OE14ActionSpellResurrection
+  parent: OE14ActionSpellBase
+  name: Resurrection
+  description: You're trying to put the soul back into the body.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.2
+  - type: OE14ActionManaCost
+    manaCost: 100
+  - type: OE14ActionTargetMobStatusRequired
+    allowedStates:
+    - Dead
+  - type: OE14ActionSpeaking
+    startSpeech: "Redi animam meam..."
+    endSpeech: "Eu rezei por ti"
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneResurrection
+  - type: Action
+    icon:
+      sprite: _OE14/Actions/Spells/healing.rsi
+      state: resurrection
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: DoAfterArgs
+    delay: 5
+    breakOnMove: true
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectResurrection
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectResurrection
+      - !type:OE14SpellResurrectionEffect
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:ChemVomit
+          probability: 0.25
+        - !type:Emote
+          showInChat: false
+          emote: Cough
+          probability: 0.3
+        - !type:HealthChange
+          damage:
+            types:
+              Asphyxiation: -500
+              Bloodloss: -100
+        - !type:Jitter
+
+- type: entity
+  id: OE14RuneResurrection
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#366357"
+      shader: unshaded
+    - state: medium_circle
+      color: "#55877a"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectResurrection
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: "#55877a"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollHealing
+  id: OE14SpellScrollResurrection
+  name: resurrection spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellResurrection
+  - type: StaticPrice
+    price: 17
+

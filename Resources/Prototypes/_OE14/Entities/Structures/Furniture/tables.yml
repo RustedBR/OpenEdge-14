@@ -1,0 +1,277 @@
+- type: entity
+  parent:
+  - BaseStructure
+  id: OE14TableBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask: # tables should collide with other tables
+        - TableMask
+        layer:
+        - TableLayer
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/picaxe2.ogg
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHull
+  - type: Climbable
+  - type: PlaceableSurface
+
+- type: entity
+  parent:
+  - OE14TableBase
+  - OE14BaseFlammable
+  id: OE14WoodenTableBase
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 1
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+  - type: FireVisuals
+    sprite: _OE14/Effects/fire.rsi
+    normalState: full
+
+- type: entity
+  parent: OE14WoodenTableBase
+  id: OE14TableWoodenFrame
+  name: wooden table frame
+  description: Base for any wooden table
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Furniture/Tables/wood.rsi
+    state: frame
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/wood.rsi
+    state: frame
+  - type: Construction
+    graph: OE14TableWooden
+    node: OE14TableWoodenFrame
+
+- type: entity
+  parent: OE14TableWoodenFrame
+  id: OE14TableWoodenBirchFrame
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Furniture/Tables/birch.rsi
+    state: frame
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/birch.rsi
+    state: frame
+  - type: Construction
+    graph: OE14TableWooden
+    node: OE14TableWoodenBirchFrame
+
+- type: entity
+  parent: OE14WoodenTableBase
+  id: OE14TableWooden
+  name: wooden table
+  description: A simple table made of boards.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/Tables/wood.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/wood.rsi
+    state: full
+  - type: Construction
+    graph: OE14TableWooden
+    node: OE14TableWooden
+  - type: IconSmooth
+    key: state
+    base: state
+
+- type: entity
+  parent: OE14TableWooden
+  id: OE14TableWoodenBirch
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/Tables/birch.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/birch.rsi
+    state: full
+  - type: Construction
+    graph: OE14TableWooden
+    node: OE14TableWoodenBirch
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: OE14WoodenTableBase
+  id: OE14TableWoodenRound
+  name: round wooden table
+  description: A simple table made of boards.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Furniture/Tables/wood.rsi
+    state: round
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/wood.rsi
+    state: round
+  - type: Construction
+    graph: OE14TableWoodenRound
+    node: OE14TableWoodenRound
+
+- type: entity
+  parent: OE14WoodenTableBase
+  id: OE14TableWoodenBirchRound
+  name: round birch table
+  description: A simple table made of boards.
+  components:
+  - type: Sprite
+    snapCardinals: true
+    sprite: _OE14/Structures/Furniture/Tables/birch.rsi
+    state: round
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/birch.rsi
+    state: round
+  - type: Construction
+    graph: OE14TableWoodenBirchRound
+    node: OE14TableWoodenBirchRound
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 40
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: OE14TableWooden
+  id: OE14TableWoodenCounter
+  name: wooden counter
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/Tables/wood_counter.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/wood_counter.rsi
+    state: full
+  - type: Construction
+    graph: OE14TableWooden
+    node: OE14TableWoodenCounter
+
+- type: entity
+  parent: OE14TableWoodenBirch
+  id: OE14TableWoodenBirchCounter
+  name: birch counter
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/Tables/birch_counter.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/birch_counter.rsi
+    state: full
+  - type: Construction
+    graph: OE14TableWooden
+    node: OE14TableWoodenBirchCounter
+
+- type: entity
+  parent: OE14TableBase
+  id: OE14TableMarble
+  name: marble table
+  description: Exquisite white marble table.
+  components:
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: OE14Rock
+  - type: Sprite
+    sprite: _OE14/Structures/Furniture/Tables/marble.rsi
+  - type: Icon
+    sprite: _OE14/Structures/Furniture/Tables/marble.rsi
+    state: full
+  - type: IconSmooth
+    key: state
+    base: state
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepFloor
+

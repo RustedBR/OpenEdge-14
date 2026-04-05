@@ -1,0 +1,36 @@
+<Document>
+# Dwarves
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobDwarf" Caption="Dwarf"/>
+</Box>
+
+Dwarves are a stout and tenacious people, carved from the same stone as the mountains they call home. Short in stature but immense in endurance, they have built civilizations in places no other race would dare to settle. Their connection to the arcane is limited, but their bodies can withstand punishment that would kill lesser beings.
+
+## Attributes
+
+[bold]Scale: 1–10 | Effective values shown (includes free racial skills)[/bold]
+
+- [color=#e05050]Strength[/color] — [bold][color=#77dd77]7[/color][/bold] | High physical power. Hits harder than humans in melee.
+- [color=#50e050]Vitality[/color] — [bold][color=#77dd77]9[/color][/bold] | Exceptional toughness. [color=#77dd77]~150 HP[/color] before Critical, [color=#ff6961]~300 HP[/color] before Death. (Base VIT 7, +2 from free [color=#5EABEB]Hydrosophistry[/color] skills)
+- [color=#50e0e0]Dexterity[/color] — [bold][color=#ff6961]2[/color][/bold] | Very low stamina. Only [color=#ff6961]~25 stamina[/color] before Stamina Crit — easy to stagger despite their toughness.
+- [color=#a050e0]Intelligence[/color] — [bold][color=#ffa500]4[/color][/bold] | Limited magical potential. Only [color=#42aaf5]~81 mana[/color].
+
+Dwarves are the premier frontline fighters of CrystallEdge. They can absorb enormous amounts of damage while dealing solid melee blows — but their near-zero stamina makes them easy to stagger, and their poor intelligence limits magic to basic spells.
+
+## Born to Endure
+
+The dwarven constitution is legendary:
+- Highest base health pool tied only with Silva (after racial skills)
+- Strong melee output from natural high strength
+- Exceptionally resistant to sustained combat damage
+
+## Magical and Physical Limitations
+
+The arcane arts do not come naturally to dwarves:
+- [color=#ff6961]Limited mana (~75)[/color] — only basic spells are reliably within reach without heavy INT investment
+- [color=#ff6961]Very low stamina (~25)[/color] — a single burst of stamina attacks can floor even a Dwarf
+
+Dwarves begin with free Basic and Advanced [color=#5EABEB]Hydrosophistry[/color], granting +2 VIT and access to water-based abilities.
+
+</Document>

@@ -1,0 +1,75 @@
+- type: OE14RecipeCategory
+  id: FloorTile
+  name: oe14-recipe-category-tile
+
+- type: OE14RecipeCategory
+  id: Tools
+  name: oe14-recipe-category-tool
+
+- type: OE14RecipeCategory
+  id: Materials
+  name: oe14-recipe-category-materials
+
+- type: OE14RecipeCategory
+  id: Weapon
+  name: oe14-recipe-category-weapon
+
+- type: OE14RecipeCategory
+  id: Armor
+  name: oe14-recipe-category-armor
+
+- type: OE14RecipeCategory
+  id: Carpet
+  name: oe14-recipe-category-carpet
+
+- type: OE14RecipeCategory
+  id: Wallpaper
+  name: oe14-recipe-category-wallpaper
+
+- type: OE14RecipeCategory
+  id: Clothing
+  name: oe14-recipe-category-clothing
+
+# =====================================
+# Leather Working
+- type: OE14RecipeCategory
+  id: Backpacks
+  name: oe14-recipe-category-backpack
+  priority: 8
+
+- type: OE14RecipeCategory
+  id: Satchels
+  name: oe14-recipe-category-backpack-satchel
+  priority: 7
+
+# - type: OE14RecipeCategory # TODO need sprites =(
+#   id: Explorers
+#   name: oe14-recipe-category-backpack-explorer
+#  priority: 6
+
+- type: OE14RecipeCategory
+  id: BackpackUpgrade
+  name: oe14-recipe-category-backpack-upgrade
+  priority: 5
+
+- type: OE14RecipeCategory
+  id: SatchelUpgrade
+  name: oe14-recipe-category-backpack-satchel-upgrade
+  priority: 4
+
+# - type: OE14RecipeCategory
+#   id: ExplorerUpgrade
+#   name: oe14-recipe-category-backpack-explorer-upgrade
+#  priority: 3
+
+- type: OE14RecipeCategory
+  id: Belts
+  name: oe14-recipe-category-belt
+  priority: 2
+
+- type: OE14RecipeCategory
+  id: LeatherWorking
+  name: oe14-recipe-category-leather
+  priority: 1
+
+# =====================================

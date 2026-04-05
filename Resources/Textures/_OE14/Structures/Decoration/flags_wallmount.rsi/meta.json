@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "By Max Gab",
+  "size": {
+    "x": 32,
+    "y": 96
+  },
+  "states": [
+    {
+      "name": "fill_bank",
+      "directions": 4
+    },
+    {
+      "name": "fill_guard",
+      "directions": 4
+    },
+    {
+      "name": "fill_mercenary",
+      "directions": 4
+    },
+    {
+      "name": "icon_anvil",
+      "directions": 4
+    },
+    {
+      "name": "icon_coin",
+      "directions": 4
+    },
+    {
+      "name": "icon_crates",
+      "directions": 4
+    },
+    {
+      "name": "icon_potion",
+      "directions": 4
+    },
+    {
+      "name": "icon_safe",
+      "directions": 4
+    },
+    {
+      "name": "icon_shield",
+      "directions": 4
+    },
+    {
+      "name": "icon_ship",
+      "directions": 4
+    },
+    {
+      "name": "icon_star",
+      "directions": 4
+    },
+    {
+      "name": "icon_swords",
+      "directions": 4
+    },
+    {
+      "name": "icon_tavern",
+      "directions": 4
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+<Document>
+# Network Synchronization (Netcode)
+
+Network synchronization keeps the server and client perfectly in sync. When something changes on the server, it automatically updates on every connected client.
+
+## The Problem We're Solving
+
+### Without Networking
+- Only one player (not multiplayer)
+- Changes only exist on your computer
+- Other players don't see what you do
+- Total chaos
+
+### With Networking
+- Multiple players see the same world
+- When you move, others see you move
+- When you take damage, health bar updates for everyone
+- Server is the source of truth
+
+## How It Works: AutoNetworkedField
+
+The simplest way to sync data is with the [mono]AutoNetworkedField[/mono] attribute:
+
+<CodeBlock>
+public sealed partial class HealthComponent : Component
+{
+    [DataField]
+    public float Health { get; set; } = 100f;
+
+    [DataField, AutoNetworkedField]  // <- This line syncs to client!
+    public float MaxHealth { get; set; } = 100f;
+}
+</CodeBlock>
+
+When [mono]MaxHealth[/mono] changes on the server:
+1. Server sets [mono]health.MaxHealth = 150[/mono]
+2. AutoNetworkedField detects the change
+3. Network message sent to all clients
+4. Clients update their copy
+5. UI refreshes automatically
+
+[bold]No manual code needed![/bold]
+
+## When to Use AutoNetworkedField
+
+[bold]Use AutoNetworkedField for:[/bold]
+- Simple properties that change occasionally
+- Stat values (HP, mana, stats)
+- Component flags (isVisible, isLocked)
+- Status information (onFire, frozen)
+- Any bool, int, float, string that clients need to see
+
+[bold]Don't use AutoNetworkedField for:[/bold]
+- Huge arrays (network bandwidth issue)
+- Local-only data (animation state that doesn't need syncing)
+- Data that changes every frame (physics might be better)
+- Sensitive info (don't send passwords!)
+
+## Real Example: Stat Synchronization
+
+Here's how character stats sync to the client:
+
+<CodeBlock>
+public sealed partial class OE14CharacterStatsComponent : Component
+{
+    [DataField]
+    public int BaseStrength { get; set; } = 5;
+
+    [DataField, AutoNetworkedField]  // <- Syncs to client
+    public int EffectiveStrength { get; set; } = 5;
+
+    [DataField, AutoNetworkedField]  // <- Syncs to client
+    public Dictionary<ModifierSource, int> StrengthModifiers { get; set; } = new();
+}
+</CodeBlock>
+
+When server calculates new modifiers:
+1. Server: updates [mono]StrengthModifiers[/mono]
+2. Network: Message sent to all clients
+3. Client: Receives and updates its copy
+4. UI: Shows "STR: 5 -> 7 (+2 Spell)"
+
+Automatic! No manual network code!
+
+## Server Authority
+
+[bold]CRITICAL:[/bold] The server is always right. Clients can predict, but server values are canonical.
+
+<CodeBlock>
+Player clicks to attack:
+  |
+Client predicts attack (shows swinging animation)
+  |
+Client sends attack request to server
+  |
+Server validates: "Is this player allowed to attack? Is target in range?"
+  |
+Server accepts or rejects attack
+  |
+Server calculates actual damage: 20
+  |
+Server updates defender's health: 100 -> 80
+  |
+AutoNetworkedField syncs Health to all clients
+  |
+Clients see correct health value: 80 (not client's predicted 82)
+</CodeBlock>
+
+[bold]Why:[/bold] Prevents cheating. Players can't modify their client to take no damage.
+
+## Network Update Frequency
+
+### How Often Do Updates Happen?
+
+Components are networked at a fixed rate (usually 30 updates per second):
+
+<CodeBlock>
+Server Frame:   60 ticks/sec
+Network Update: 30 packets/sec
+Client Sees:    Smooth interpolated position
+</CodeBlock>
+
+This balances accuracy and bandwidth.
+
+### Bandwidth Considerations
+
+Only [bold]changed[/bold] data is sent:
+
+<CodeBlock>
+Frame 1: Player moves from X=10 to X=12
+  -> Send "Position changed to 12"
+
+Frame 2: Player moves from X=12 to X=14
+  -> Send "Position changed to 14"
+
+Frame 3: Player stands still (no change)
+  -> Send nothing! (bandwidth saved)
+</CodeBlock>
+
+## Network Prediction and Interpolation
+
+Clients don't just wait for server updates. They predict ahead:
+
+<CodeBlock>
+Server: "Player at X=100, velocity=5"
+  |
+Client predicts: Next frame will be X=105
+  |
+Client predicts: Frame after X=110
+  |
+Client shows: Player smoothly moving
+  |
+Server: "Correction: Player at X=108 (slightly different)"
+  |
+Client: "Adjust interpolation to match server"
+</CodeBlock>
+
+Result: Smooth gameplay even with 100ms network delay!
+
+## Event Network Synchronization
+
+Not all data fits in AutoNetworkedField. Sometimes you need events:
+
+<CodeBlock>
+// Server-side
+public override void Update(float frameTime)
+{
+    // Player took damage
+    var damageEvent = new DamageEvent(target, 10);
+    RaiseLocalEvent(target, damageEvent);
+}
+</CodeBlock>
+
+This automatically syncs to client because it's a networked event type.
+
+## Preventing Network Cheating
+
+Never trust the client. Always validate on server:
+
+<CodeBlock>
+// Bad - trusts client
+public void CastSpell(EntityUid spellId)
+{
+    _spellSystem.Cast(spellId);  // What if client sends invalid spell ID?
+}
+
+// Good - validates on server
+public void CastSpell(EntityUid spellId)
+{
+    var player = GetCurrentPlayer();
+    if (!player.HasSpell(spellId))
+        return;  // Reject
+
+    if (player.Mana < GetManaCost(spellId))
+        return;  // Reject
+
+    _spellSystem.Cast(spellId);  // Now it's safe
+}
+</CodeBlock>
+
+Server checks:
+- Does player have this spell?
+- Does player have enough mana?
+- Is player allowed to cast (not stunned, silenced)?
+- Is target in range?
+
+## Network Visibility
+
+Some data should only go to certain clients:
+
+<CodeBlock>
+// Only send health to the owner (not other players)
+[DataField, AutoNetworkedField(Access = ViewAccessLevel.Private)]
+public int Health { get; set; }
+
+// Send to everyone
+[DataField, AutoNetworkedField(Access = ViewAccessLevel.Public)]
+public string Name { get; set; }
+
+// Only send to admins
+[DataField, AutoNetworkedField(Access = ViewAccessLevel.Admin)]
+public int DebugValue { get; set; }
+</CodeBlock>
+
+Prevents leaking sensitive information.
+
+## Debugging Network Issues
+
+### Problem: Data not syncing
+1. Check: Is the field marked with the AutoNetworkedField attribute?
+2. Check: Is the component on a networked entity?
+3. Check: Is the property public?
+4. Fix: Add AutoNetworkedField to the property
+
+### Problem: Clients out of sync
+1. Server is crashing/restarting
+2. Network packets being dropped
+3. Client prediction too aggressive
+
+### Problem: Network bandwidth too high
+1. Too many AutoNetworkedFields updating every frame
+2. Solution: Only network critical data
+3. Use events for one-time notifications
+
+## Best Practices
+
+[bold]DO:[/bold]
+- Mark networked fields with the AutoNetworkedField attribute
+- Always validate on server
+- Only sync data that players need to see
+- Assume network will be unreliable (handle lag)
+
+[bold]DON'T:[/bold]
+- Trust client data for important decisions
+- Send huge arrays over network
+- Update non-networked fields for gameplay logic
+- Assume instant network updates
+
+## Example: Player Takes Damage
+
+<CodeBlock>
+1. Client sends: "Player clicked attack on enemy"
+   |
+2. Server receives, validates, calculates damage (20)
+   |
+3. Server updates: health.Health = 80 (was 100)
+   |
+4. AutoNetworkedField detects change
+   |
+5. Network message: "Health changed to 80"
+   |
+6. All clients receive update
+   |
+7. Clients update: health.Health = 80
+   |
+8. UI refreshes: Health bar shows 80/100
+   |
+9. Every player in game sees the correct health
+</CodeBlock>
+
+All automatic!
+
+## Navigation
+
+- Need to sync a component field? Use the AutoNetworkedField attribute
+- Want to send one-time messages? Use networked events
+- Worried about cheating? Always validate on server
+- Optimize bandwidth? Only sync critical data
+
+## Summary
+
+- [bold]Server is authority[/bold] — server values are always correct
+- [bold]AutoNetworkedField[/bold] — automatic synchronization
+- [bold]Client prediction[/bold] — smooth gameplay despite latency
+- [bold]Event networking[/bold] — one-time messages to clients
+- [bold]Validation[/bold] — always verify on server
+
+The framework handles most networking for you. Just mark your fields and let it work!
+
+</Document>

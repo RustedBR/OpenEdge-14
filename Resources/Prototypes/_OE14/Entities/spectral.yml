@@ -1,0 +1,30 @@
+# Entities that are entirely magical and can be destroyed by dispelling magic.
+- type: entity
+  id: OE14SpectralBase
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: OE14MagicEnergyContainer
+    magicAlert: OE14MagicEnergy
+    maxEnergy: 1
+    energy: 1
+    unsafeSupport: true
+  - type: OE14MagicUnsafeDamage
+    damagePerEnergy:
+      types:
+        OE14ManaDepletion: 1
+  - type: Damageable
+    damageContainer: OE14Spectral
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: 6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

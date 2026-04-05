@@ -1,0 +1,36 @@
+- type: stack
+  id: OE14CopperCoin
+  name: oe14-stack-copper-coin
+  spawn: OE14CopperCoin1
+  icon:
+    sprite: /Textures/_OE14/Objects/Economy/cp_coin.rsi
+    state: coin1
+  maxCount: 10
+
+- type: stack
+  id: OE14SilverCoin
+  name: oe14-stack-silver-coin
+  spawn: OE14SilverCoin1
+  icon:
+    sprite: /Textures/_OE14/Objects/Economy/sp_coin.rsi
+    state: coin1
+  maxCount: 10
+
+- type: stack
+  id: OE14GoldCoin
+  name: oe14-stack-gold-coin
+  spawn: OE14GoldCoin1
+  icon:
+    sprite: /Textures/_OE14/Objects/Economy/gp_coin.rsi
+    state: coin1
+  maxCount: 10
+
+- type: stack
+  id: OE14PlatinumCoin
+  name: oe14-stack-platinum-coin
+  spawn: OE14PlatinumCoin1
+  icon:
+    sprite: /Textures/_OE14/Objects/Economy/pp_coin.rsi
+    state: coin1
+  maxCount: 10
+

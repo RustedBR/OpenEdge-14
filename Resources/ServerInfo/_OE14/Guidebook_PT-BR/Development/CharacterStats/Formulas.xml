@@ -1,0 +1,48 @@
+<Document>
+# Fórmulas e Cálculos de Atributos
+
+Esta página documenta a matemática por trás de como atributos de personagem afetam o jogo no OpenEdge 14.
+
+## Ranges de Atributos
+
+Todos os quatro atributos (FOR, VIT, DES, INT) usam o mesmo range:
+- [bold]Mínimo:[/bold] 1
+- [bold]Máximo:[/bold] 10
+- [bold]Padrão (sem gastos):[/bold] 5
+
+## Como Atributos Afetam o Jogo
+
+### Força (FOR)
+- Aumenta dano corpo a corpo e capacidade de carregar
+- Cada ponto acima de 5 adiciona bônus de dano corpo a corpo
+- Afeta uso de stamina em combate
+
+### Vitalidade (VIT)
+- Aumenta vida máxima (MobThresholds)
+- Cada ponto adiciona vida ao pool máximo
+- Afeta regeneração de stamina
+
+### Destreza (DES)
+- Afeta velocidade de ataque e chance de esquiva
+- Multiplicador DES aplicado a delays de ação
+- DES mais alta = ações mais rápidas
+
+### Inteligência (INT)
+- Aumenta mana máxima (MagicEnergy)
+- Necessária para conjuração de magias de alto nível
+- Afeta poder de magias
+
+## Fórmula de Atributo Efetivo
+
+<CodeBlock>
+AtributoEfetivo = min(AtributoBase + soma(Modificadores), AtributoMáximo)
+</CodeBlock>
+
+Onde [mono]Modificadores[/mono] é um dicionário de fonte -> pares de valor de bônus.
+
+## Conteúdo Em Construção
+
+Documentação detalhada de fórmulas coming soon. Por agora, consulte a fonte:
+[mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+
+</Document>

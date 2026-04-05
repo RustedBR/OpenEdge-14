@@ -1,0 +1,86 @@
+- type: OE14Recipe
+  id: OE14SeedWheat
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Wheat
+    count: 1
+  result: OE14SeedWheat
+  resultCount: 3
+
+- type: OE14Recipe
+  id: OE14SeedTomato
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodTomatoes
+    count: 1
+  result: OE14SeedTomato
+  resultCount: 3
+
+- type: OE14Recipe
+  id: OE14SeedCabbage
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodCabbage
+    count: 1
+  result: OE14SeedCabbage
+  resultCount: 3
+
+- type: OE14Recipe
+  id: OE14SeedPumpkin
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodPumpkin
+    count: 1
+  result: OE14SeedPumpkin
+  resultCount: 3
+
+- type: OE14Recipe
+  id: OE14SeedCucumber
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodCucumber
+    count: 1
+  result: OE14SeedCucumber
+
+- type: OE14Recipe
+  id: OE14SeedPepper
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14FoodPepper
+    count: 1
+  result: OE14SeedPepper
+  resultCount: 2
+
+- type: OE14Recipe
+  id: OE14SeedSage
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14WildSage
+    count: 1
+  result: OE14SeedSage
+  resultCount: 2
+
+- type: OE14Recipe
+  id: OE14SeedCotton
+  tag: OE14RecipeCooking
+  craftTime: 1
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Cotton
+    count: 1
+  result: OE14SeedCotton
+  resultCount: 2

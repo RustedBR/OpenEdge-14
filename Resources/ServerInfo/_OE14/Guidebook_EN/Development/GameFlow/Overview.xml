@@ -1,0 +1,39 @@
+<Document>
+# Game Flow
+
+This section covers how a round works from start to finish, and how players move through the game lifecycle.
+
+## What This Section Covers
+
+- [textlink="Round Flow & States" link="OE14_DEV_Flow_Rounds"] — the states a round goes through
+- [textlink="Player Spawn & Loading" link="OE14_DEV_Flow_Spawn"] — how players join and initialize
+- [textlink="Admin Tools & Commands" link="OE14_DEV_Flow_Admin"] — tools available to administrators
+- [textlink="Event Flow & Lifecycle" link="OE14_DEV_Flow_Events"] — entity and system lifecycle events
+
+## High-Level Flow
+
+<CodeBlock>
+Server starts
+  |
+Players connect (lobby)
+  |
+Round starts
+  |
+Players spawn with their characters
+  |
+Gameplay (events, combat, economy, etc.)
+  |
+Round ends
+  |
+Post-round summary
+  |
+Restart or new round
+</CodeBlock>
+
+## Key Systems
+
+- [mono]GameTicker[/mono] — controls round state transitions
+- [mono]SpawnSystem[/mono] — handles player spawn logic
+- [mono]AdminSystem[/mono] — provides admin commands
+
+</Document>

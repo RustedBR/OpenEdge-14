@@ -1,0 +1,41 @@
+- type: job
+  id: OE14Alchemist
+  name: oe14-job-name-alchemist
+  description: oe14-job-desc-alchemist
+  playTimeTracker: OE14JobAlchemist
+  startingGear: OE14AlchemistGear
+  icon: "OE14JobIconAlchemist"
+  supervisors: oe14-job-supervisors-command
+  canBeAntag: false
+  special:
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - VictoriaGardens
+      - BradPotions
+      - Thaumaturgy
+      - HomeDecor
+      - Horticulture
+    - !type:OE14LearnSkillsSpecial
+      skills:
+      - AlchemyVision
+      - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: OE14Artisan
+      time: 7200 # 2 hours
+    - !type:TraitsRequirement
+      inverted: true
+      traits:
+      - OE14ManaWasting
+
+- type: startingGear
+  id: OE14AlchemistGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+    - OE14EnergyCrystalMedium
+  equipment:
+    belt: OE14WalletFilledTest
+    keys: OE14KeyRingAlchemist
+    neck: OE14MagicHealingStaff
+

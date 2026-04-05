@@ -1,0 +1,39 @@
+<Document>
+# Fluxo do Jogo
+
+Esta seção cobre como uma rodada funciona do início ao fim, e como jogadores passam pelo ciclo de vida do jogo.
+
+## O Que Esta Seção Cobre
+
+- [textlink="Fluxo de Rodada & Estados" link="OE14_DEV_Flow_Rounds"] — os estados que uma rodada passa
+- [textlink="Spawn do Jogador & Carregamento" link="OE14_DEV_Flow_Spawn"] — como jogadores ingressam e inicializam
+- [textlink="Ferramentas & Comandos de Admin" link="OE14_DEV_Flow_Admin"] — ferramentas disponíveis para administradores
+- [textlink="Fluxo de Eventos & Ciclo de Vida" link="OE14_DEV_Flow_Events"] — eventos de ciclo de vida de entidades e sistemas
+
+## Fluxo de Alto Nível
+
+<CodeBlock>
+Servidor inicia
+   |
+Jogadores conectam (lobby)
+   |
+Rodada inicia
+   |
+Jogadores spawnam com seus personagens
+   |
+Gameplay (eventos, combate, economia, etc.)
+   |
+Rodada termina
+   |
+Resumo pós-rodada
+   |
+Reinicia ou nova rodada
+</CodeBlock>
+
+## Sistemas Chave
+
+- [mono]GameTicker[/mono] — controla transições de estado de rodada
+- [mono]SpawnSystem[/mono] — gerencia lógica de spawn de jogadores
+- [mono]AdminSystem[/mono] — fornece comandos de admin
+
+</Document>

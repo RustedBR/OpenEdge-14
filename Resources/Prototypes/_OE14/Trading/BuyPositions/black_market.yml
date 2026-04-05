@@ -1,0 +1,9 @@
+- type: oe14TradingPosition
+  id: OE14BasicEffectConfuseAura
+  faction: VampireMarket
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14BasicEffectConfuseAura

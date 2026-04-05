@@ -1,0 +1,44 @@
+- type: entity
+  id: OE14BaseExpedition
+  categories: [ HideSpawnMenu ]
+  parent:
+  - BaseStation
+  - BaseStationAllEventsEligible
+  - BaseStationJobsSpawning
+  - BaseStationAlertLevels
+  - BaseStationRecords # Required for lobby manifest + cryo leave
+  - OE14BaseStationCommonObjectives
+  - OE14BaseStationEconomy
+  - OE14BaseStationDemiplanes
+  #- OE14BaseStationGods
+
+- type: entity
+  id: OE14BaseStationCommonObjectives
+  abstract: true
+  components:
+    - type: OE14StationCommonObjectives
+
+- type: entity
+  id: OE14BaseStationEconomy
+  abstract: true
+  components:
+    - type: OE14StationEconomy
+
+- type: entity
+  id: OE14BaseStationDemiplanes
+  abstract: true
+  components:
+    - type: OE14StationDemiplaneMap
+
+#- type: entity
+#  id: OE14BaseStationGods
+#  abstract: true
+#  components:
+#    - type: OE14StationRandomJobs
+#      entries:
+#      - jobs:
+#        - OE14GodMerkas
+#        - OE14GodLumera
+#        count:
+#          min: 2
+#          max: 2

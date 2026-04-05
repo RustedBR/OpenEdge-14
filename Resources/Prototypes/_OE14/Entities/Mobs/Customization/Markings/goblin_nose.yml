@@ -1,0 +1,33 @@
+- type: marking
+  id: OE14GoblinNose
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_nose.rsi
+      state: nose1
+
+- type: marking
+  id: OE14GoblinNose2
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_nose.rsi
+      state: nose2
+
+- type: marking
+  id: OE14GoblinNose3
+  bodyPart: Snout
+  markingCategory: Snout
+  followSkinColor: true
+  forcedColoring: true
+  speciesRestriction: [ OE14Goblin ]
+  sprites:
+    - sprite: _OE14/Mobs/Customization/goblin_nose.rsi
+      state: nose3
+

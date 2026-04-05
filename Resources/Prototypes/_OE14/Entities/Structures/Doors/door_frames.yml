@@ -1,0 +1,140 @@
+- type: entity
+  parent: BaseStructure
+  id: OE14BaseDoorFrame
+  categories: [ ForkFiltered ]
+  abstract: true
+  components:
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
+
+- type: entity
+  parent: OE14BaseDoorFrame
+  id: OE14WoodenDoorFrame
+  name: wooden door frame
+  description: An unfinished wooden door.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Doors/wooden_frame.rsi
+    drawdepth: Mobs
+    state: closed
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14WoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: OE14WoodenDoor
+    node: OE14WoodenDoorFrame
+
+- type: entity
+  parent: OE14WoodenDoorFrame
+  id: OE14WoodenDoorFrameMirrored
+  components:
+  - type: Sprite
+    state: closed_mirrored
+  - type: Construction
+    graph: OE14WoodenDoor
+    node: OE14WoodenDoorFrameMirrored
+
+- type: entity
+  parent: OE14BaseDoorFrame
+  id: OE14WoodenBirchDoorFrame
+  name: wooden birch door frame
+  description: An unfinished wooden birch door.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Doors/wooden_birch_frame.rsi
+    drawdepth: Mobs
+    state: closed
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14WoodStructural
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14BirchWoodenPlanks1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: OE14WoodenBirchDoor
+    node: OE14WoodenBirchDoorFrame
+
+- type: entity
+  parent: OE14WoodenBirchDoorFrame
+  id: OE14WoodenBirchDoorFrameMirrored
+  components:
+  - type: Sprite
+    state: closed_mirrored
+  - type: Construction
+    graph: OE14WoodenBirchDoor
+    node: OE14WoodenBirchDoorFrameMirrored
+
+- type: entity
+  parent: OE14BaseDoorFrame
+  id: OE14IronDoorFrame
+  name: iron door frame
+  description: An unfinished iron door.
+  components:
+  - type: Sprite
+    sprite: _OE14/Structures/Doors/iron_frame.rsi
+    drawdepth: Mobs
+    state: closed
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: OE14Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OE14IronBar1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Construction
+    graph: OE14IronDoor
+    node: OE14IronDoorFrame
+
+- type: entity
+  parent: OE14IronDoorFrame
+  id: OE14IronDoorFrameMirrored
+  components:
+  - type: Sprite
+    state: closed_mirrored
+  - type: Construction
+    graph: OE14IronDoor
+    node: OE14IronDoorFrameMirrored
+

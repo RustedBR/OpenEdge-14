@@ -1,0 +1,52 @@
+<Document>
+# Cooking Recipes
+
+Complete list of cooking transformations. Each item shows its input state and the temperature required to transform it.
+
+## Temperature Guide
+
+- [bold]Raw → Cooked:[/bold] 400K
+- [bold]Cooked → Burnt:[/bold] 500K+
+
+## Dough Transformations
+
+[bold]Large Dough → Bread:[/bold] 400-500K
+[bold]Bread → Ash:[/bold] 500K+
+
+<Box>
+  <GuideEntityEmbed Entity="OE14FoodBread" Caption="Bread"/>
+</Box>
+
+## Meat Transformations
+
+Various meats can be cooked into different dishes:
+
+[bold]Raw Meat → Cooked Meat:[/bold] 400K
+[bold]Cooked Meat → Burnt Meat:[/bold] 500K+
+
+<Box>
+  <GuideEntityEmbed Entity="OE14FoodMeatLamb" Caption="Raw Lamb"/>
+  <GuideEntityEmbed Entity="OE14FoodMeatLambCooked" Caption="Cooked Lamb"/>
+</Box>
+
+## Vegetable Transformations
+
+[bold]Raw Vegetables → Cooked Vegetables:[/bold] 400K
+[bold]Cooked Vegetables → Burnt Vegetables:[/bold] 500K+
+
+## Egg Transformations
+
+<Box>
+  <GuideEntityEmbed Entity="OE14FoodEgg" Caption="Raw Egg"/>
+  <GuideEntityEmbed Entity="OE14FoodEggCooked" Caption="Cooked Egg"/>
+</Box>
+
+## General Tips
+
+- [bold]Watch the pot[/bold] — cooking is automatic once correct temperature is reached
+- [bold]Use appropriate heat sources[/bold] — too much heat burns, too little doesn't cook
+- [bold]Some recipes need multiple ingredients[/bold] — check the workbench
+
+Back to [textlink="Cooking" link="OE14Cooking"] main page.
+
+</Document>

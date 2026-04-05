@@ -1,0 +1,46 @@
+
+# Splitting: Applying magical dispel to split precursor into essences.
+
+- type: reaction
+  id: OE14AgaricShroomSplitting
+  requiredMixerCategories:
+  - OE14MagicSplitting
+  reactants:
+    OE14AgaricMushroom:
+      amount: 1
+  products:
+    OE14EssencePoison: 0.5
+    OE14EssenceEarth: 0.5
+
+# Admixture: By adding raw precursor to a potion with target solutions, we can reduce the amount of empty solution by modifying the target solutions.
+
+# invert Brute treatment into poison and back
+
+- type: reaction
+  id: OE14AgaricShroomAdmixture1
+  minTemp: 500
+  reactants:
+    OE14AgaricMushroom:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14HealingEffectHealBrute:
+      amount: 1
+  products:
+    OE14DamageEffectDamageBrute: 2
+    OE14SideEffectRainbow: 1
+
+- type: reaction
+  id: OE14AgaricShroomAdmixture2
+  minTemp: 500
+  reactants:
+    OE14AgaricMushroom:
+      amount: 1
+    OE14SideEffectEmpty:
+      amount: 1
+    OE14DamageEffectDamageBrute:
+      amount: 1
+  products:
+    OE14HealingEffectHealBrute: 2
+    OE14SideEffectRainbow: 1
+

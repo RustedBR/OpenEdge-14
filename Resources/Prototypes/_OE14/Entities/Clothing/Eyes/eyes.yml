@@ -1,0 +1,150 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: OE14ClothingEyesBase
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Normal
+  - type: Clothing
+    equipDelay: 0.4
+    unequipDelay: 0
+    slots:
+    - eyes
+  localizationId: ent-OE14ClothingEyesBase
+- type: entity
+  parent: OE14ClothingEyesBase
+  id: OE14ClothingEyesMonocle
+  name: monocle
+  description: Aristocratic, fancy.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Eyes/monocle.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Eyes/monocle.rsi
+  - type: VisionCorrection
+  localizationId: ent-OE14ClothingEyesMonocle
+- type: entity
+  parent: OE14ClothingEyesBase
+  id: OE14ClothingEyesGlasses
+  name: glasses
+  description: Aristocratic, fancy.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _OE14/Clothing/Eyes/glasses.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Eyes/glasses.rsi
+  - type: VisionCorrection
+  localizationId: ent-OE14ClothingEyesGlasses
+- type: entity
+  parent: OE14ClothingEyesBase
+  id: OE14ClothingEyesAlchemyGlasses
+  name: alchemy glasses
+  description: Special magic infused glasses that allow you to clearly see the composition
+    of any mixtures.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _OE14/Clothing/Eyes/alchemy_glasses.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Eyes/alchemy_glasses.rsi
+  - type: SolutionScanner
+  - type: StaticPrice
+    price: 30
+  - type: GuideHelp
+    guides:
+    - OE14_RU_Alchemy
+    - OE14_EN_Alchemy
+  - type: VisionCorrection
+  localizationId: ent-OE14ClothingEyesAlchemyGlasses
+- type: entity
+  parent: OE14ClothingEyesBase
+  id: OE14ClothingEyesAlchemyMonocle
+  name: alchemy monocle
+  description: Special magic infused monocle that allow you to clearly see the composition
+    of any mixtures.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Eyes/alchemy_monocle.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Eyes/alchemy_monocle.rsi
+  - type: SolutionScanner
+  - type: StaticPrice
+    price: 30
+  - type: GuideHelp
+    guides:
+    - OE14_RU_Alchemy
+    - OE14_EN_Alchemy
+  - type: VisionCorrection
+  localizationId: ent-OE14ClothingEyesAlchemyMonocle
+- type: entity
+  parent: OE14ClothingEyesBase
+  id: OE14ClothingEyesThaumaturgyGlasses
+  name: thaumaturgy glasses
+  description: Goggles that allow you to scan magical items and creatures to clearly
+    see the amount of energy left in them.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _OE14/Clothing/Eyes/thaumaturgy_glasses.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Eyes/thaumaturgy_glasses.rsi
+  - type: OE14MagicEssenceScanner
+  - type: VisionCorrection
+  localizationId: ent-OE14ClothingEyesThaumaturgyGlasses
+- type: entity
+  parent: OE14ClothingEyesBase
+  id: OE14ClothingEyesEyePatch
+  name: eye patch
+  description: Hides the mutilation of the eyes.
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-flip-verb
+    foldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+    foldedHeldPrefix: flipped
+  - type: Sprite
+    sprite: _OE14/Clothing/Eyes/eye_patch.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Eyes/eye_patch.rsi
+  localizationId: ent-OE14ClothingEyesEyePatch
+- type: entity
+  parent: OE14ClothingEyesBase
+  id: OE14ClothingEyesMerchantMonocle
+  name: merchant's monocle
+  description: High-quality magnifiyng monocle infused with magic to help you determine
+    the exact price of any item.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Eyes/merchant_monocle.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Eyes/merchant_monocle.rsi
+  - type: OE14PriceScanner
+  - type: StaticPrice
+    price: 30
+  - type: VisionCorrection
+  localizationId: ent-OE14ClothingEyesMerchantMonocle

@@ -1,0 +1,42 @@
+<Document>
+
+# Thaumaturgical essences
+
+Minimal units of being. By obtaining them from splitting items and precursers, and folding them into more complex variants, you can use them to create the alchemical potions you require.
+
+## Basic 6 essences:
+<Box>
+<GuideEntityEmbed Entity="OE14EssenceAir"/>
+<GuideEntityEmbed Entity="OE14EssenceWater"/>
+<GuideEntityEmbed Entity="OE14EssenceFire"/>
+<GuideEntityEmbed Entity="OE14EssenceOrder"/>
+<GuideEntityEmbed Entity="OE14EssenceChaos"/>
+<GuideEntityEmbed Entity="OE14EssenceEarth"/>
+</Box>
+
+<GuideReagentGroupEmbed Group="OE14MagicEssenceT0"/>
+
+## First Compound Essences:
+<Box>
+<GuideEntityEmbed Entity="OE14EssenceFrost"/>
+<GuideEntityEmbed Entity="OE14EssenceLight"/>
+<GuideEntityEmbed Entity="OE14EssenceMotion"/>
+<GuideEntityEmbed Entity="OE14EssenceCycle"/>
+<GuideEntityEmbed Entity="OE14EssenceEnergia"/>
+<GuideEntityEmbed Entity="OE14EssenceVoid"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="OE14EssencePoison"/>
+<GuideEntityEmbed Entity="OE14EssenceLife"/>
+<GuideEntityEmbed Entity="OE14EssenceCrystal"/>
+</Box>
+<GuideReagentGroupEmbed Group="OE14MagicEssenceT1"/>
+
+## Second Compound Essences:
+<Box>
+<GuideEntityEmbed Entity="OE14EssenceMagic"/>
+<GuideEntityEmbed Entity="OE14EssenceBeast"/>
+</Box>
+<GuideReagentGroupEmbed Group="OE14MagicEssenceT2"/>
+
+</Document>

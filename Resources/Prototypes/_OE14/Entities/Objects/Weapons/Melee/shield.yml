@@ -1,0 +1,96 @@
+- type: entity
+  id: OE14BaseWeaponShield
+  abstract: true
+  parent:
+  - BaseItem
+  - OE14BaseWeaponDestructible
+  - OE14BaseWeaponSelfDamage
+  name: shield
+  description: A wooden shield capable of withstanding multiple blows.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Blocking
+    passiveBlockFraction: 0.4
+    activeBlockFraction: 0.8
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.75
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.5
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: MeleeWeapon
+    resetOnHandSelected: false
+    angle: 60
+    attackRate: 1
+    wideAnimationRotation: 0
+    animation: OE14WeaponArcThrust
+    wideAnimation: OE14WeaponArcThrust
+    damage:
+      types:
+        Blunt: 3
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.6
+    cPAnimationOffset: 0.5
+  - type: Damageable
+    damageContainer: Shield
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 150
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              OE14WoodenPlanks1:
+                min: 1
+                max: 2
+
+- type: entity
+  parent: OE14BaseWeaponShield
+  id: OE14WeaponShieldWooden
+  name: wooden shield
+  description: A wooden shield capable of withstanding multiple blows.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Melee/Shield/shield.rsi
+    state: icon
+  - type: PhysicalComposition
+    materialComposition:
+      OE14WoodenPlanks: 30
+      OE14Iron: 20
+  - type: OE14ModularCraftStartPoint
+    startSlots:
+      - OE14ModularSlotGem
+      - OE14ModularSlotModification
+  - type: OE14StatBonus

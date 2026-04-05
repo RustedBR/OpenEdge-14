@@ -1,0 +1,25 @@
+- type: entity
+  id: OE14PlantCabbage
+  parent: OE14GatherablePlantSingleHarvestBase
+  name: cabbage
+  description: You see a cabbage in front of you. Perhaps you were born in one.
+  components:
+  - type: Sprite
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      sprite: _OE14/Structures/Flora/Farm/cabbage.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: OE14PlantGatherable
+    loot:
+      All: !type:AllSelector
+        children:
+        - id: OE14FoodCabbage
+          rolls: !type:RangeNumberSelector
+            range: 6, 8
+        - id: OE14SeedCabbage
+          rolls: !type:RangeNumberSelector
+            range: 1, 2
+

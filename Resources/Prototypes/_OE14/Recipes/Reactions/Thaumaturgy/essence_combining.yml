@@ -1,0 +1,157 @@
+# Combine 1
+
+- type: reaction
+  id: OE14EssenceFrost
+  minTemp: 600
+  reactants:
+    OE14EssenceFire:
+      amount: 1
+    OE14EssenceChaos:
+      amount: 1
+  products:
+    OE14EssenceFrost: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceLight
+  minTemp: 600
+  reactants:
+    OE14EssenceFire:
+      amount: 1
+    OE14EssenceAir:
+      amount: 1
+  products:
+    OE14EssenceLight: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceMotion
+  minTemp: 600
+  reactants:
+    OE14EssenceOrder:
+      amount: 1
+    OE14EssenceAir:
+      amount: 1
+  products:
+    OE14EssenceMotion: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceCycle
+  minTemp: 600
+  reactants:
+    OE14EssenceOrder:
+      amount: 1
+    OE14EssenceChaos:
+      amount: 1
+  products:
+    OE14EssenceCycle: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceEnergia
+  minTemp: 600
+  reactants:
+    OE14EssenceOrder:
+      amount: 1
+    OE14EssenceFire:
+      amount: 1
+  products:
+    OE14EssenceEnergia: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceVoid
+  minTemp: 600
+  reactants:
+    OE14EssenceChaos:
+      amount: 1
+    OE14EssenceAir:
+      amount: 1
+  products:
+    OE14EssenceVoid: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssencePoison
+  minTemp: 600
+  reactants:
+    OE14EssenceChaos:
+      amount: 1
+    OE14EssenceWater:
+      amount: 1
+  products:
+    OE14EssencePoison: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceLife
+  minTemp: 600
+  reactants:
+    OE14EssenceEarth:
+      amount: 1
+    OE14EssenceWater:
+      amount: 1
+  products:
+    OE14EssenceLife: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceCrystal
+  minTemp: 600
+  reactants:
+    OE14EssenceOrder:
+      amount: 1
+    OE14EssenceEarth:
+      amount: 1
+  products:
+    OE14EssenceCrystal: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+# Complex tier 2
+
+- type: reaction
+  id: OE14EssenceMagic
+  minTemp: 600
+  reactants:
+    OE14EssenceVoid:
+      amount: 1
+    OE14EssenceEnergia:
+      amount: 1
+  products:
+    OE14EssenceMagic: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150
+
+- type: reaction
+  id: OE14EssenceBeast
+  minTemp: 600
+  reactants:
+    OE14EssenceMotion:
+      amount: 1
+    OE14EssenceLife:
+      amount: 1
+  products:
+    OE14EssenceBeast: 2
+  effects:
+  - !type:OE14AffectSolutionTemperature
+    addTemperature: -150

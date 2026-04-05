@@ -1,0 +1,122 @@
+- type: entity
+  id: OE14MobGodBase
+  parent:
+  - Incorporeal
+  - BaseMob
+  - OE14MobMagical
+  name: god
+  description: The supreme entity formed from the beliefs, desires, and fears of the human race.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _OE14/Mobs/Demigods/temp_icons.rsi
+    color: "#ffffff99"
+  - type: PointLight
+    energy: 2
+    radius: 10
+    softness: 1
+    castShadows: false
+  - type: Input
+    context: "ghost"
+  - type: Spectral
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
+    friction: 0.5
+    acceleration: 3
+  - type: NoSlip
+  - type: Eye
+    drawFov: false
+    visMask:
+      - Normal
+      - Ghost
+  - type: Visibility
+    layer: 2 #ghost vis layer
+  - type: ContentEye
+    maxZoom: 1.2, 1.2
+  - type: Speech
+    speechVerb: Ghost
+  - type: OE14ReligionVision
+  - type: OE14MagicEnergyContainer
+    magicAlert: OE14MagicEnergy
+    maxEnergy: 500
+    energy: 500
+    unsafeSupport: true
+  - type: Damageable
+    damageContainer: OE14Spectral
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/eye_close.ogg
+          params:
+            volume: -6
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: OE14MagicUnsafeDamage
+    damagePerEnergy:
+      types:
+        OE14ManaDepletion: 1
+  - type: OE14ZLevelMover
+  - type: UserInterface
+    interfaces:
+      enum.OE14ReligionEntityUiKey.Key:
+        type: OE14ReligionEntityBoundUserInterface
+
+- type: entity
+  parent: OE14MobGodBase
+  id: OE14MobGodMerkas
+  name: Merkas
+  categories: [ HideSpawnMenu ]
+  description: Merkas is the god of purity and healing. In his presence, decay is destroyed. He does not save — he purifies. Those who remain can start anew.
+  components:
+  - type: Sprite
+    layers:
+    - state: merkas
+      shader: unshaded
+  - type: PointLight
+    color: "#9bf2b5"
+  - type: OE14SkillStorage
+    availableSkillTrees:
+    - GodMerkas
+  - type: OE14ReligionEntity
+    religion: Merkas
+  - type: OE14ReligionVision
+    shaderColor:  0.02, 0.36, 0.05
+
+- type: entity
+  parent: OE14MobGodBase
+  id: OE14MobGodLumera
+  name: Lumera
+  description: The goddess of the night and the night sky. Her stars hold so many secrets, which she protects with her wings.
+  components:
+  - type: Sprite
+    layers:
+    - state: lumera
+      shader: unshaded
+  - type: PointLight
+    color: "#4367ba"
+  - type: OE14SkillStorage
+    availableSkillTrees:
+    - GodLumera
+  - type: OE14ReligionEntity
+    religion: Lumera
+  - type: OE14ReligionVision
+    shaderColor:  0.29, 0.66, 0.87
+  #- type: IntrinsicUI
+  #  uis:
+  #    enum.OE14ReligionEntityUiKey.Key:
+  #      toggleAction: OE14ActionSpellGodLumeraWarp
+  #- type: OE14ReligionSpeaker
+  #  speaker: OE14LumeraSpeakImpact
+  - type: OE14PriceScanner
+  - type: SolutionScanner

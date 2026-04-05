@@ -1,0 +1,86 @@
+- type: entity
+  id: OE14GuideSpellDisplayBase
+  name: spell display
+  description: A visual representation of a spell action
+  abstract: true
+  categories:
+  - HideSpawnMenu
+  save: false
+  components:
+  - type: Transform
+  - type: Sprite
+    noRot: true
+    drawDepth: Items
+  localizationId: ent-OE14GuideSpellDisplayBase
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellFlameCreation
+  name: Flame Creation
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: flame_creation
+  localizationId: ent-OE14GuideSpellFlameCreation
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellHeat
+  name: Heat
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: heat
+  localizationId: ent-OE14GuideSpellHeat
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellCureWounds
+  name: Cure Wounds
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/healing.rsi
+    state: cure_wounds
+  localizationId: ent-OE14GuideSpellCureWounds
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellWaterCreation
+  name: Water Creation
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: water_creation
+  localizationId: ent-OE14GuideSpellWaterCreation
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellIceShards
+  name: Ice Shards
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: ice_shards
+  localizationId: ent-OE14GuideSpellIceShards
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellEarthWall
+  name: Earth Wall
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/earth.rsi
+    state: earth_wall
+  localizationId: ent-OE14GuideSpellEarthWall
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellShadowGrab
+  name: Shadow Grab
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/dimension.rsi
+    state: shadow_grab
+  localizationId: ent-OE14GuideSpellShadowGrab
+- type: entity
+  parent: OE14GuideSpellDisplayBase
+  id: OE14GuideSpellSphereOfLight
+  name: Sphere of Light
+  components:
+  - type: Sprite
+    sprite: _OE14/Actions/Spells/light.rsi
+    state: sphere_of_light
+  localizationId: ent-OE14GuideSpellSphereOfLight

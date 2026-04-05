@@ -1,0 +1,102 @@
+<Document>
+# OpenCode Development Guide
+
+This guide explains how to use OpenCode for developing OpenEdge 14.
+
+## What is OpenCode?
+
+OpenCode is an AI coding assistant similar to Claude Code, but with some unique features:
+
+- [bold]Background Processes[/bold]: Run server and long tasks without blocking
+- [bold]Custom Commands[/bold]: Slash commands for common tasks
+- [bold]Skills[/bold]: Automated workflows for specific tasks
+
+## Installing OpenCode
+
+### 1. Install OpenCode
+
+[code]npm install -g opencode[/code]
+
+Or download from [bold]https://opencode.ai[/bold]
+
+### 2. Configure Plugins
+
+Add to [code]~/.config/opencode/opencode.json[/code]:
+
+[code]{
+  "plugin": [
+    "@howaboua/opencode-background-process@latest",
+    "@jredeker/opencode-morph-fast-apply@latest"
+  ]
+}[/code]
+
+## Starting a Development Session
+
+[code]cd /home/rusted/Git/OpenEdge-14
+opencode[/code]
+
+OpenCode will automatically read CLAUDE.md and .ai/ files for context.
+
+## Available Commands
+
+| Command | Description |
+|---------|-------------|
+| /build | Build project (Release) |
+| /server | Start game server |
+| /kill-server | Stop game server |
+| /doctor | Run diagnostics |
+| /review | Review code for bugs |
+| /plan | Switch to plan mode |
+
+## Running the Server
+
+### Option 1: Background (Recommended)
+
+In OpenCode, simply say: [bold]"start server"[/bold]
+
+The server will run in background without blocking your conversation.
+
+### Option 2: Manual Terminal
+
+[code]bash runserver.sh[/code]
+
+## Checking Server Status
+
+In OpenCode, use:
+
+- [bold]"show server logs"[/bold] - View recent server output
+- [bold]"check server status"[/bold] - See if server is running
+- [bold]"stop server"[/bold] - Kill the running server
+
+## Tips for Development
+
+1. [bold]Use Plan Mode[/bold] for complex tasks - Press Shift+Tab
+2. [bold]Use Background Processes[/bold] for server and builds
+3. [bold]Check Logs[/bold] frequently when testing features
+4. [bold]Run /build[/bold] before making commits
+5. [bold]Use /review[/bold] before submitting changes
+
+## Troubleshooting
+
+### Server Won't Start
+
+- Kill existing process: [code]killall Content.Server[/code]
+- Check port: [code]lsof -ti:1212 | xargs kill -9[/code]
+
+### OpenCode Not Responding
+
+- Press Escape to stop generation
+- Use /clear to reset conversation
+
+### Plugin Not Working
+
+- Restart OpenCode
+- Check plugins are in [code]~/.config/opencode/opencode.json[/code]
+
+## Next Steps
+
+- Read CLAUDE.md for project context
+- Check .ai/errors.md for known issues
+- Use /doctor to verify project health
+
+</Document>

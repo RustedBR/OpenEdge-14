@@ -1,0 +1,88 @@
+- type: entity
+  name: green bottle
+  parent: OE14BaseVialFragile
+  id: OE14GreenBottle
+  suffix: Empty
+  categories:
+  - ForkFiltered
+  description: A green bottle perfect for drinking beer.
+  components:
+  - type: Openable
+    sound:
+      collection: bottleOpenSounds
+    closeable: true
+    closeSound:
+      collection: bottleCloseSounds
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          true:
+            state: icon_open
+          false:
+            state: icon_empty
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/green2_bottle.rsi
+    layers:
+    - state: fill-1
+      map:
+      - enum.SolutionContainerLayers.Fill
+      visible: false
+    - state: icon
+      map:
+      - enum.OpenableVisuals.Layer
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 20
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: fill-
+  localizationId: ent-OE14GreenBottle
+- type: entity
+  name: blue bottle
+  parent: OE14GreenBottle
+  id: OE14BlueBottle
+  description: A blue vial perfect for drinking whiskey.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/blue_bottle.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+  localizationId: ent-OE14BlueBottle
+- type: entity
+  name: green bottle
+  parent: OE14GreenBottle
+  id: OE14GreenBottle2
+  description: Just a little green vial.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/green_bottle.rsi
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        maxVol: 15
+  localizationId: ent-OE14GreenBottle2
+- type: entity
+  name: orange bottle
+  parent: OE14GreenBottle
+  id: OE14OrangeBottle
+  description: Just a orange bottle.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/orange_bottle.rsi
+  localizationId: ent-OE14OrangeBottle
+- type: entity
+  name: red bottle
+  parent: OE14GreenBottle
+  id: OE14RedBottle
+  description: A red bottle perfect for drinking wine.
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Drinks/red_bottle.rsi
+  localizationId: ent-OE14RedBottle

@@ -1,0 +1,79 @@
+- type: constructionGraph
+  id: OE14WoodenChest
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WoodenChest
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 5
+              doAfter: 2
+            - material: OE14IronBar
+              amount: 1
+              doAfter: 2
+
+    - node: OE14WoodenChest
+      entity: OE14WoodenChest
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: OE14IronBar1
+              amount: 1
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Screwing
+              doAfter: 1
+            - tool: Prying
+              doAfter: 3
+
+- type: constructionGraph
+  id: OE14GoldChest
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14GoldChest
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 5
+              doAfter: 2
+            - material: OE14IronBar
+              amount: 1
+              doAfter: 2
+            - material: OE14GoldBar
+              amount: 1
+              doAfter: 2
+
+    - node: OE14GoldChest
+      entity: OE14GoldChest
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 2
+            - !type:SpawnPrototype
+              prototype: OE14IronBar1
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: OE14GoldBar1
+              amount: 1
+          conditions:
+          - !type:Locked
+            locked: false
+          steps:
+            - tool: Screwing
+              doAfter: 1
+            - tool: Prying
+              doAfter: 5

@@ -1,0 +1,148 @@
+- type: entity
+  id: OE14MagicHealingStaff
+  parent:
+  - BaseItem
+  - OE14BaseWeaponDestructible
+  name: magic healing staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into healing spells.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/healing_staff.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    equipDelay: 1
+    unequipDelay: 1
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/healing_staff.rsi
+    quickEquip: false
+    breakOnMove: false
+    slots:
+    - neck
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.55
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: OE14MeleeSelfDamage
+    damageToSelf:
+      types:
+        Blunt: 1 # 50 hits
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: MeleeWeapon
+    angle: 100
+    attackRate: 1.3
+    range: 1.3
+    wideAnimationRotation: 135
+    wideAnimation: OE14WeaponArcSlash
+    damage:
+      types:
+        Blunt: 2.55
+    soundHit:
+      collection: MetalThud
+    cPAnimationLength: 0.3
+    cPAnimationOffset: 1.3
+  - type: OE14SpellStorageAccessHolding
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellCureWounds
+    - OE14ActionSpellCureBurn
+    - OE14ActionSpellBloodPurification
+  - type: OE14MagicEnergyExaminable
+  - type: OE14MagicEnergyContainer
+    energy: 80
+    maxEnergy: 80
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  id: OE14MagicShadowStaff
+  parent: OE14MagicHealingStaff
+  name: magic shadow staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into shadow spells.
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellShadowStep
+    - OE14ActionSpellShadowGrab
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
+  - type: Clothing
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/shadow_staff.rsi
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  id: OE14MagicFireStaff
+  parent: OE14MagicShadowStaff
+  name: magic fire staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into fire spells.
+  categories: [ DoNotMap ]
+  suffix: Artifact
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellFireball
+    - OE14ActionSpellHeat
+    - OE14ActionSpellFlameCreation
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
+  - type: Clothing
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/fire_staff.rsi
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  id: OE14MagicGuardElectroStaff
+  parent: OE14MagicShadowStaff
+  name: guards electric staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into eletric spells.
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellElectricTrap
+    - OE14ActionSpellLightningStrike
+    - OE14ActionSpellLightningStrikeSmall
+    - OE14ActionSpellLightningStrikeSmall
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/guard_electro_staff.rsi
+  - type: Clothing
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/guard_electro_staff.rsi
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  id: OE14MagicDruidStaff
+  parent: OE14MagicHealingStaff
+  name: magic druid staff
+  description: A long, half-tech, half-magic stick designed to convert magical energy into spells.
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellCureWounds
+  - type: Sprite
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/druid_staff.rsi
+  - type: Clothing
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/druid_staff.rsi
+  - type: OE14MagicEnergyContainer
+    energy: 0
+    maxEnergy: 30
+  - type: OE14MagicManacostModify
+    globalModifier: 0.9
+  - type: StaticPrice
+    price: 20

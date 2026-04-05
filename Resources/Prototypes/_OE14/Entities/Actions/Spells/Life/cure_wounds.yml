@@ -1,0 +1,86 @@
+- type: entity
+  id: OE14ActionSpellCureWounds
+  parent: OE14ActionSpellBase
+  name: Cure wounds
+  description: You heal the target from physical damage
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 10
+  - type: DoAfterArgs
+    delay: 1.5
+    breakOnDamage: true
+  - type: OE14ActionSpeaking
+    startSpeech: "Et curabuntur..."
+    endSpeech: "vulnera tua"
+  - type: OE14ActionTargetMobStatusRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneCureWounds
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/healing.rsi
+      state: cure_wounds
+  - type: TargetAction
+    range: 7
+    interactOnMiss: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectCureWounds
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectCureWounds
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:HealthChange
+          damage:
+            types:
+              Slash: -10
+              Blunt: -10
+              Piercing: -10
+        - !type:Jitter
+        - !type:ModifyBleedAmount
+          amount: -5
+
+- type: entity
+  id: OE14RuneCureWounds
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#328643"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectCureWounds
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#79b330"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollHealing
+  id: OE14SpellScrollCureWounds
+  name: cure wounds spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellCureWounds

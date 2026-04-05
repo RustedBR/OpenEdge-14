@@ -1,0 +1,25 @@
+- type: constructionGraph
+  id: OE14WallWoodenPalisade
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: OE14WallWoodenPalisade
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 4
+              doAfter: 2
+    - node: OE14WallWoodenPalisade
+      entity: OE14WallWoodenPalisade
+      edges:
+      - to: start
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 4
+        - !type:DeleteEntity {}
+        steps:
+        - tool: Prying
+          doAfter: 6

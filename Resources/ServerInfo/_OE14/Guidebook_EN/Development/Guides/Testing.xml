@@ -1,0 +1,68 @@
+<Document>
+# Testing & Debugging
+
+Tips and techniques for testing your changes in OpenEdge 14.
+
+## Starting the Dev Environment
+
+<CodeBlock>
+# Kill any existing server
+killall Content.Server
+
+# Build first
+dotnet build -c Release
+
+# Start server (dev mode)
+bash runserver.sh
+
+# Start client (separate terminal)
+bash runclient.sh
+</CodeBlock>
+
+[bold]Order matters:[/bold] Always kill the server before building. File locks during build will cause errors.
+
+## Common Test Scenarios
+
+### Testing Character Stats
+1. Create a character, spend points
+2. Open character window (C key)
+3. Verify stat values and modifier display
+
+### Testing Spells
+1. Learn the relevant skill
+2. Equip item with OE14SpellStorage (if applicable)
+3. Verify spell appears in action bar
+4. Cast spell and verify mana deduction
+5. Verify effect on target
+
+### Testing Crafting
+1. Gather required materials
+2. Approach workbench
+3. Open crafting UI
+4. Verify recipe is visible and craftable
+
+## Debugging Tips
+
+[bold]Parser errors in guidebook:[/bold] Check XML for forbidden syntax — angle brackets in text, triple backticks, curly braces outside CodeBlock, markdown bold (**text**).
+
+[bold]Network not syncing:[/bold] Verify the field has the AutoNetworkedField attribute.
+
+[bold]Spell not appearing:[/bold] Verify skill is linked to spell, and spell entity exists.
+
+[bold]Server won't start (port 1212):[/bold]
+<CodeBlock>
+lsof -ti:1212 | xargs kill -9
+</CodeBlock>
+
+## Log Locations
+
+Server logs output to console. For guidebook parser errors, look for:
+<CodeBlock>
+[Guidebook] Encountered error while generating markup controls
+</CodeBlock>
+
+## Content Under Construction
+
+Full testing guide with automated test examples coming soon.
+
+</Document>

@@ -1,0 +1,32 @@
+<Document>
+
+# Comandante da Guarda
+
+<Box>
+<GuideEntityEmbed Entity="OE14ClothingCloakGuardCommander" Caption="Manto do Comandante"/>
+</Box>
+
+O Comandante da Guarda lidera o departamento de Guardas. Eles definem rotas de patrulha, coordenam respostas a ameaças e fazem julgamentos autoritivos sobre crimes que requerem patentes acima de um Guarda padrão. O manto do Comandante é uma marca de autoridade reconhecida em todo o assentamento.
+
+## Responsabilidades
+
+- Liderar e organizar o departamento de Guardas
+- Definir rotas de patrulha e prioridades para Guardas e o Investigador
+- Tomar decisões autoritativas sobre prisões e punições
+- Responder a ameaças sérias junto com os Guardas
+- Reportar incidentes importantes à administração
+
+## Requisitos
+
+[bold]3 horas[/bold] no departamento de Guardas. Salário: [bold]200 moedas[/bold] por ciclo.
+
+Sua chegada como Comandante da Guarda é anunciada à administração.
+
+## Dicas
+
+- Brief your Guardas at the start of the round — assign zones and tasks early
+- Um Comandante visível constrói moral entre a Guarda e desencoraja criminosos
+- Work closely with the [bold]Investigador[/bold] on complex cases
+- Use [textlink="Combate" link="OE14Combat"] as your combat reference
+
+</Document>

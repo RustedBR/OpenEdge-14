@@ -1,0 +1,53 @@
+<Document>
+
+# Adventurer
+
+The Adventurer is one of the available game roles, focused on obtaining resources for the settlement through risky ventures. Your primary goal is to explore dangerous areas, defeat monsters, and collect valuable loot to sell for profit.
+
+Adventurers are the backbone of the economy — without adventurers to gather rare materials and hunt dangerous creatures, society would collapse. Your courage and combat skills are highly valued.
+
+## Core Skills for Adventurers
+
+- [textlink="Combat" link="OE14Combat"] — master weapon techniques and fighting tactics
+- [textlink="Magic" link="OE14Magic"] — learn spells to enhance your survivability
+- [textlink="Economy" link="OE14Economy"] — understand item values and market trends
+- [textlink="Crafting" link="OE14Crafting"] — create or improve your own equipment
+
+## Ways to Make Money
+
+### Hunting Monsters
+
+Monsters drop valuable loot: rare essences, crafting materials, and unique components. Sell these to innkeepers, alchemists, and crafters.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14WeaponDaggerHatchet"/>
+</Box>
+
+### Gathering Resources
+
+Explore for:
+- Rare herbs and plants (sell to alchemists)
+- Crafting components (sell to crafters)
+- Magical essences (high-value trade items)
+- Ancient artifacts (for treasure hunters)
+
+### Completing Tasks
+
+Offer your services to NPCs and players:
+- Guard caravans on dangerous roads
+- Retrieve lost items from monster lairs
+- Clear areas of dangerous creatures
+- Hunt specific monsters for bounties
+
+## Important Notes
+
+- Always carry healing items before venturing out
+- Work with other adventurers for dangerous quests
+- Learn [textlink="Monster Toxins" link="OE14_EN_Monster_Toxins"] to identify dangerous creatures
+- Scout areas thoroughly before committing to a fight
+
+## Requirements
+
+None — Adventurer is the default starting job, open to all players.
+
+</Document>

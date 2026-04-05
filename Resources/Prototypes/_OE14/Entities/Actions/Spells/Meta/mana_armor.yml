@@ -1,0 +1,36 @@
+- type: entity
+  id: OE14ActionSpellMagicArmor
+  parent: OE14ActionSpellBase
+  name: Magic Armor
+  description: You surround the target with a short-lived magical barrier that absorbs some of the damage it receives.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.5
+  - type: OE14ActionManaCost
+    manaCost: 15
+  - type: DoAfterArgs
+    delay: 1.0
+    breakOnDamage: true
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneManaTrance
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/meta.rsi
+      state: magic_armor
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+      - Item
+      - Anchorable
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectManaGift
+      - !type:OE14SpellApplyStatusEffect
+        statusEffect: OE14StatusEffectMagicArmor
+        duration: 20

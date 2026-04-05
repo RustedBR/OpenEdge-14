@@ -1,0 +1,185 @@
+# Reputation Level 0 - Basic Herbs & Tools
+- type: oe14TradingPosition
+  id: OE14VialBloodFlowerSap
+  faction: Horticulture
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/red_rose.rsi
+    state: base2
+  service: !type:OE14BuyItemsService
+    product: OE14VialBloodFlowerSap
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14VialWildSageSap
+  faction: Horticulture
+  uiPosition: 1
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/wild_sage.rsi
+    state: base4
+  service: !type:OE14BuyItemsService
+    product: OE14VialWildSageSap
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14VialYellowDayflinPulp
+  faction: Horticulture
+  uiPosition: 2
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/yellow_dayflin.rsi
+    state: base1
+  service: !type:OE14BuyItemsService
+    product: OE14VialYellowDayflinPulp
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14CrystalLampBlueEmpty
+  faction: Horticulture
+  uiPosition: 6
+  icon:
+    sprite: _OE14/Objects/Tools/crystal_lamp.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14CrystalLampBlueEmpty
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14WoodenPlanks10
+  faction: Horticulture
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Materials/wood.rsi
+    state: planks_2
+  service: !type:OE14BuyItemsService
+    product: OE14WoodenPlanks10
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14PottedPlant1
+  faction: Horticulture
+  reputationLevel: 0
+  uiPosition: 9
+  icon:
+    sprite: _OE14/Structures/Furniture/flowerpots.rsi
+    state: plant1
+  service: !type:OE14BuyItemsService
+    product: OE14PottedPlant1
+
+- type: oe14TradingPosition
+  id: OE14PottedPlant3
+  faction: Horticulture
+  reputationLevel: 0
+  uiPosition: 10
+  icon:
+    sprite: _OE14/Structures/Furniture/flowerpots.rsi
+    state: plant3
+  service: !type:OE14BuyItemsService
+    product: OE14PottedPlant3
+
+# Reputation Level 1 - Advanced Herbs & Tools
+- type: oe14TradingPosition
+  id: OE14VialBlueAmanita
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/blue_amanita.rsi
+    state: base1
+  service: !type:OE14BuyItemsService
+    product: OE14VialBlueAmanita
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14VialLumiMushroom
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 1
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/lumishroom.rsi
+    state: base3
+  service: !type:OE14BuyItemsService
+    product: OE14VialLumiMushroom
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14VialAgaricMushroom
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 2
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/agaric.rsi
+    state: base3
+  service: !type:OE14BuyItemsService
+    product: OE14VialAgaricMushroom
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14CrystalLampOrangeEmpty
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 6
+  icon:
+    sprite: _OE14/Objects/Tools/crystal_lamp.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14CrystalLampOrangeEmpty
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14BirchWoodenPlanks10
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 7
+  icon:
+    sprite: _OE14/Objects/Materials/wood_birch.rsi
+    state: planks_2
+  service: !type:OE14BuyItemsService
+    product: OE14BirchWoodenPlanks10
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14PottedPlant2
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 9
+  icon:
+    sprite: _OE14/Structures/Furniture/flowerpots.rsi
+    state: plant2
+  service: !type:OE14BuyItemsService
+    product: OE14PottedPlant2
+
+- type: oe14TradingPosition
+  id: OE14PottedPlant4
+  faction: Horticulture
+  reputationLevel: 1
+  uiPosition: 10
+  icon:
+    sprite: _OE14/Structures/Furniture/flowerpots.rsi
+    state: plant4
+  service: !type:OE14BuyItemsService
+    product: OE14PottedPlant4
+
+# Reputation Level 2 - Rare Herbs
+- type: oe14TradingPosition
+  id: OE14VialSilverNeedle
+  faction: Horticulture
+  reputationLevel: 2
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/silver_needle.rsi
+    state: base1
+  service: !type:OE14BuyItemsService
+    product: OE14VialSilverNeedle
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14VialChromiumSlime
+  faction: Horticulture
+  reputationLevel: 2
+  uiPosition: 1
+  icon:
+    sprite: _OE14/Objects/Flora/Wild/chromium_slime.rsi
+    state: base3
+  service: !type:OE14BuyItemsService
+    product: OE14VialChromiumSlime
+    count: 1

@@ -1,0 +1,63 @@
+- type: oe14Location
+  id: VenicialistFort
+  icon:
+    sprite: _OE14/Interface/Misc/demiplane_locations.rsi
+    state: caves
+  locationConfig: OE14VenicialistFort
+  generationProb: 0 #Special location for map only
+  tags:
+  - OE14DemiplaneOres
+  - OE14DemiplaneOpenSky
+  - OE14DemiplanePeacefulAnimals
+  - OE14DemiplaneCold
+  components:
+  - type: MapLight
+    ambientLightColor: "#BFEEFFFF"
+  - type: OE14CloudShadows
+  - type: Biome
+    template: OE14IceOceanFill
+  - type: SunShadow
+  - type: SunShadowCycle
+  - type: Roof
+
+- type: dungeonConfig
+  id: OE14VenicialistFort
+  layers:
+    # Masks
+    - !type:NoiseDistanceDunGen
+      size: 220, 220
+      distanceConfig: !type:DunGenEuclideanSquaredDistance
+        blendWeight: 0.8
+      layers:
+      - tile: OE14FloorGrass
+        threshold: 0.50
+        noise:
+          frequency: 0.010
+          noiseType: OpenSimplex2
+          fractalType: FBm
+          octaves: 5
+          lacunarity: 2
+          gain: 0.5
+    - !type:NoiseDistanceDunGen
+      size: 140, 140
+      distanceConfig: !type:DunGenEuclideanSquaredDistance
+        blendWeight: 0.7
+      layers:
+      - tile: OE14FloorBase
+        threshold: 0.50
+        noise:
+          frequency: 0.010
+          noiseType: OpenSimplex2
+          fractalType: FBm
+          octaves: 5
+          lacunarity: 2
+          gain: 0.5
+    # Biomes
+    - !type:OE14BiomeDunGen
+      biomeTemplate: OE14IceCavesGeneric
+      tileMask:
+      - OE14FloorBase
+    - !type:OE14BiomeDunGen
+      biomeTemplate: OE14SnowlandTestResult
+      tileMask:
+      - OE14FloorGrass

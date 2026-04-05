@@ -1,0 +1,22 @@
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadAlchemistBandana
+  name: alchemist's bandana
+  description: Hides your hair from chemical fumes
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Alchemist/bandana.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Alchemist/bandana.rsi
+  localizationId: ent-OE14ClothingHeadAlchemistBandana
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadAlchemistBeret
+  name: alchemist's beret
+  description: You seem very smart.
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Alchemist/beret.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Alchemist/beret.rsi
+  localizationId: ent-OE14ClothingHeadAlchemistBeret

@@ -1,0 +1,292 @@
+# Damage/Armor/Magic Modular Parts
+# These parts modify weapons and armor with damage, protection, and magical effects
+
+# === WEAPON DAMAGE PARTS (2) ===
+
+- type: entity
+  id: OE14ModularBladeDamage
+  name: Damage Blade
+  description: A sharp blade component that increases weapon damage.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartBladeDamage
+      doAfter: 1.5
+      addPrice: 25
+    - type: Sprite
+      sprite: _OE14/Objects/Tools/wrench.rsi
+      state: icon
+      color: "#ff8c00"
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 150
+    - type: StaticPrice
+      price: 100
+
+- type: modularPart
+  id: OE14ModularPartBladeDamage
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularBladeDamage
+  destroyProb: 0.2
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditMeleeWeapon
+      bonusDamage:
+        types:
+          Slash: 2
+          Piercing: 2
+          Blunt: 1
+
+- type: entity
+  id: OE14ModularBladeSpeed
+  name: Speed Hilt
+  description: A reinforced hilt component that increases attack speed.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartBladeSpeed
+      doAfter: 1.5
+      addPrice: 25
+    - type: Sprite
+      sprite: _OE14/Objects/Tools/scissors.rsi
+      state: icon
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 100
+        Wood: 50
+    - type: StaticPrice
+      price: 80
+
+- type: modularPart
+  id: OE14ModularPartBladeSpeed
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularBladeSpeed
+  destroyProb: 0.25
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditMeleeWeapon
+      attackRateMultiplier: 1.15
+
+# === ARMOR PROTECTION PARTS (2) ===
+
+- type: entity
+  id: OE14ModularArmorPlateHeavy
+  name: Heavy Armor Plate
+  description: A thick steel plate that provides excellent protection against physical damage.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartArmorPlateHeavy
+      doAfter: 1.5
+      addPrice: 30
+    - type: Sprite
+      sprite: _OE14/Objects/Weapons/Melee/Shield/shield.rsi
+      state: icon
+      color: "#a9a9a9"
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 200
+    - type: StaticPrice
+      price: 120
+
+- type: modularPart
+  id: OE14ModularPartArmorPlateHeavy
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularArmorPlateHeavy
+  destroyProb: 0.15
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditArmor
+      modifiers:
+        coefficients:
+          Blunt: 0.85
+          Slash: 0.90
+          Piercing: 0.80
+
+- type: entity
+  id: OE14ModularArmorPadding
+  name: Protective Padding
+  description: Soft padding that reduces impact force.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartArmorPadding
+      doAfter: 1.5
+      addPrice: 20
+    - type: Sprite
+      sprite: _OE14/Objects/Tools/rope.rsi
+      state: icon
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Cloth: 100
+    - type: StaticPrice
+      price: 60
+
+- type: modularPart
+  id: OE14ModularPartArmorPadding
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularArmorPadding
+  destroyProb: 0.25
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditArmor
+      modifiers:
+        coefficients:
+          Blunt: 0.92
+          Slash: 0.92
+          Piercing: 0.92
+
+# === MOBILITY PARTS (2) ===
+
+- type: entity
+  id: OE14ModularArmorEmbrace
+  name: Light Embrace
+  description: A lightweight frame that reduces movement penalty.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartArmorEmbrace
+      doAfter: 1.5
+      addPrice: 22
+    - type: Sprite
+      sprite: _OE14/Objects/Tools/rope.rsi
+      state: icon
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Steel: 80
+        Cloth: 50
+    - type: StaticPrice
+      price: 70
+
+- type: modularPart
+  id: OE14ModularPartArmorEmbrace
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularArmorEmbrace
+  destroyProb: 0.20
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditClothingSpeed
+      walkModifier: 1.05
+      sprintModifier: 1.05
+
+- type: entity
+  id: OE14ModularArmorWeave
+  name: Agile Weave
+  description: A tight weave pattern that enhances mobility.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartArmorWeave
+      doAfter: 1.5
+      addPrice: 20
+    - type: Sprite
+      sprite: _OE14/Objects/Tools/broom.rsi
+      state: icon
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Cloth: 150
+    - type: StaticPrice
+      price: 75
+
+- type: modularPart
+  id: OE14ModularPartArmorWeave
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularArmorWeave
+  destroyProb: 0.20
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditClothingSpeed
+      walkModifier: 1.08
+      sprintModifier: 1.10
+
+# === MAGICAL PARTS (2) ===
+
+- type: entity
+  id: OE14ModularManaReduction
+  name: Mana Conduit
+  description: A crystal structure that reduces spell casting cost.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartManaReduction
+      doAfter: 1.5
+      addPrice: 28
+    - type: Sprite
+      sprite: _OE14/Objects/Tools/crystal_lamp.rsi
+      state: icon
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 120
+    - type: StaticPrice
+      price: 110
+
+- type: modularPart
+  id: OE14ModularPartManaReduction
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularManaReduction
+  destroyProb: 0.20
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditManacostModify
+      globalModifier: 0.90
+
+- type: entity
+  id: OE14ModularManaAmplification
+  name: Mana Amplifier
+  description: An enhanced crystal structure for greater magical effect.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartManaAmplification
+      doAfter: 1.5
+      addPrice: 35
+    - type: Sprite
+      sprite: _OE14/Objects/Tools/torch.rsi
+      state: icon
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 200
+    - type: StaticPrice
+      price: 150
+
+- type: modularPart
+  id: OE14ModularPartManaAmplification
+  slots:
+    - OE14ModularSlotModification
+  sourceEntity: OE14ModularManaAmplification
+  destroyProb: 0.15
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:EditManacostModify
+      globalModifier: 0.85

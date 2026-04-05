@@ -1,0 +1,63 @@
+- type: gameMap
+  id: Venicialis
+  mapName: "Venicialis fort"
+  mapPath: /Maps/_OE14/venicialis.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 0
+  stations:
+    Venicialis:
+      stationProto: OE14BaseExpedition
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Venicialis fort"
+        - type: StationJobs
+          availableJobs:
+            #Mercenary
+            OE14Guildmaster: [1, 1]
+            OE14GuildWorker: [2, 2]
+            OE14Adventurer: [ -1, -1 ]
+            #Artisans
+            OE14Apprentice: [ 3, 3 ]
+            OE14Alchemist: [ 2, 2 ]
+            #OE14Blacksmith: [ 2, 2 ]
+            OE14Innkeeper: [ 2, 3 ]
+            OE14Merchant: [2, 2]
+            #Guard
+            OE14Guard: [4, 4]
+            OE14Investigator: [2, 2]
+            OE14GuardCommander: [1, 1]
+        - type: OE14StationZLevels
+          defaultMapLevel: 0
+          levels:
+            -1:
+              path: /Maps/_OE14/venicialis_d.yml
+        - type: OE14StationKeyDistribution
+          keys:
+          - Alchemy1
+          - Alchemy2
+          - Blacksmith1
+          - Blacksmith2
+          - Shop1
+          - Shop2
+          - PersonalHouse1
+          - PersonalHouse2
+          - PersonalHouse3
+          - PersonalHouse4
+          - PersonalHouse5
+          - PersonalHouse6
+        - type: OE14StationProceduralLocation
+          location: VenicialistFort
+          modifiers:
+          - DemiplaneArcSingle
+          - RaidSpawners
+          - CopperOre
+          - CopperOre
+          - CoalOre
+          - OE14CrystalQuartzWater
+          - Quartz
+          - Ruins
+          - Boar
+          - Rabbits
+          - LumiShroom
+          - SilverNeedle

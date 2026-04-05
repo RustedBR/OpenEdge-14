@@ -1,0 +1,73 @@
+- type: entity
+  parent: BaseItem
+  id: OE14BaseLockpick
+  name: iron lockpick
+  description: A thief's tool that, with proper skill and skill, allows you to pick
+    any lock.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    storedRotation: -90
+  - type: Sprite
+    sprite: _OE14/Objects/keys.rsi
+    state: lockpick_iron
+  - type: OE14Lockpick
+    health: 10
+  - type: Tag
+    tags:
+    - OE14Lockpick
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  localizationId: ent-OE14BaseLockpick
+- type: entity
+  parent: OE14BaseLockpick
+  id: OE14LockpickMithril
+  name: mithril lockpick
+  components:
+  - type: OE14Lockpick
+    health: 50
+  - type: Sprite
+    state: lockpick_mithril
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Mithril: 10
+  localizationId: ent-OE14LockpickMithril
+- type: entity
+  parent: OE14BaseLockpick
+  id: OE14LockpickSkeletonArtifact
+  name: lockpick skeleton
+  description: A lockpick made from the bone of an unknown creature, it can open anything...
+    though not immediately.
+  categories:
+  - DoNotMap
+  suffix: Artifact
+  components:
+  - type: OE14Lockpick
+    health: 1000
+  - type: Sprite
+    state: lockpick_skeleton
+  - type: StaticPrice
+    price: 400
+  localizationId: ent-OE14LockpickSkeletonArtifact
+- type: entity
+  parent: BaseItem
+  id: OE14KeyFile
+  name: key file
+  description: A file, ideal for sharpening keys, and reshaping them.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Item
+    storedRotation: 45
+  - type: Sprite
+    sprite: _OE14/Objects/keys.rsi
+    state: file
+  - type: OE14KeyFile
+  - type: UseDelay
+    delay: 1.0
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  localizationId: ent-OE14KeyFile

@@ -1,0 +1,308 @@
+- type: entity
+  parent: OE14BaseMobSpeciesOrganic
+  id: OE14BaseMobCarcat
+  name: Mr. Cat
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.HumanoidVisualLayers.Chest
+    - map:
+      - enum.HumanoidVisualLayers.Head
+    - map:
+      - enum.HumanoidVisualLayers.Snout
+    - map:
+      - enum.HumanoidVisualLayers.Eyes
+    - map:
+      - vampire_fangs
+      sprite: _OE14/Mobs/Species/Vampire/fangs.rsi
+      state: carcat
+      visible: false
+    - map:
+      - enum.HumanoidVisualLayers.RArm
+    - map:
+      - enum.HumanoidVisualLayers.LArm
+    - map:
+      - enum.HumanoidVisualLayers.RLeg
+    - map:
+      - enum.HumanoidVisualLayers.LLeg
+    - shader: StencilClear
+      sprite: _OE14/Mobs/Species/Human/parts.rsi
+      state: l_leg
+    - shader: StencilMask
+      map:
+      - enum.HumanoidVisualLayers.StencilMask
+      sprite: Mobs/Customization/masking_helpers.rsi
+      state: unisex_full
+      visible: false
+    - map:
+      - enum.HumanoidVisualLayers.LFoot
+    - map:
+      - enum.HumanoidVisualLayers.RFoot
+    - map:
+      - pants
+    - map:
+      - shoes
+    - map:
+      - shirt
+    - map:
+      - enum.HumanoidVisualLayers.LHand
+    - map:
+      - enum.HumanoidVisualLayers.RHand
+    - map:
+      - gloves
+    - map:
+      - ears
+    - map:
+      - outerClothing
+    - map:
+      - cloak
+    - map:
+      - eyes
+    - map:
+      - belt
+    - map:
+      - belt2
+    - map:
+      - neck
+    - map:
+      - back
+    - map:
+      - enum.HumanoidVisualLayers.FacialHair
+    - map:
+      - enum.HumanoidVisualLayers.Hair
+    - map:
+      - enum.HumanoidVisualLayers.HeadSide
+    - map:
+      - enum.HumanoidVisualLayers.HeadTop
+    - map:
+      - enum.HumanoidVisualLayers.Tail
+    - map:
+      - mask
+    - map:
+      - head
+    - map:
+      - pocket1
+    - map:
+      - pocket2
+    - map:
+      - enum.HumanoidVisualLayers.Handcuffs
+      color: '#ffffff'
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+  - type: HumanoidAppearance
+    species: OE14Carcat
+  - type: OE14CharacterStats
+    strength: 5
+    vitality: 5
+    dexterity: 7
+    intelligence: 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: Stamina
+    critThreshold: 175
+  - type: OE14MagicEnergyContainer
+    maxEnergy: 50
+    energy: 50
+  - type: OE14SkillStorage
+    freeLearnedSkills:
+    - ElectromancyT1
+    - ElectromancyT2
+  - type: FireVisuals
+    alternateState: Carcat_burning
+  - type: Icon
+    sprite: _OE14/Mobs/Species/Carcat/parts.rsi
+    state: full
+  - type: Vocal
+    sounds:
+      Male: OE14UnisexCarcat
+      Female: OE14UnisexCarcat
+      Unsexed: OE14UnisexCarcat
+  - type: Speech
+    speechSounds: OE14Carcat
+  - type: MessyDrinker
+    spillChance: 0.3
+  - type: Wagging
+  - type: Body
+    prototype: OE14Carcat
+    requiredLegs: 2
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  - type: OE14NightVision
+  - type: FootstepModifier
+    footstepSoundCollection: null
+  - type: OE14AuraImprint
+    imprintColor: '#9e7e5d'
+  - type: Inventory
+    templateId: OE14Carcat
+    speciesId: carcat
+    displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      back:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: eyes
+      head:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+          48:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: gloves
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
+          49:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
+  - type: Hands
+    leftHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_left
+    rightHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_right
+  localizationId: ent-OE14BaseMobCarcat
+- type: entity
+  parent: OE14BaseSpeciesDummy
+  id: OE14MobCarcatDummy
+  categories:
+  - HideSpawnMenu
+  components:
+  - type: HumanoidAppearance
+    species: OE14Carcat
+  - type: Inventory
+    templateId: OE14Carcat
+    speciesId: carcat
+    displacements:
+      belt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      cloak:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      back:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: cloak
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: eyes
+      head:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+          48:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: mask
+      pants:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: pants
+      shirt:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: shirt
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+            state: gloves
+      neck:
+        sizeMaps:
+          32:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
+          49:
+            sprite: _OE14/Mobs/Species/Carcat/displacement48.rsi
+            state: neck
+  - type: Hands
+    leftHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_left
+    rightHandDisplacement:
+      sizeMaps:
+        32:
+          sprite: _OE14/Mobs/Species/Carcat/displacement.rsi
+          state: hands_right
+  localizationId: ent-OE14MobCarcatDummy

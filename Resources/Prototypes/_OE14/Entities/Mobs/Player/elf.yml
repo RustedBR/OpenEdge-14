@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  parent: OE14BaseMobElf
+  id: OE14MobElf
+  localizationId: ent-OE14MobElf

@@ -1,0 +1,88 @@
+- type: entity
+  parent: OE14ClothingHeadBase
+  id: OE14ClothingHeadGuardBase
+  abstract: true
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.9
+        Heat: 0.95
+  localizationId: ent-OE14ClothingHeadGuardBase
+- type: entity
+  parent: OE14ClothingHeadGuardBase
+  id: OE14ClothingHeadGuardHelmet
+  name: guard's helmet
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Guard/helmet.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Guard/helmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+  localizationId: ent-OE14ClothingHeadGuardHelmet
+- type: entity
+  parent: OE14ClothingHeadGuardBase
+  id: OE14ClothingHeadGuardCorinthianHelmet
+  name: corinthian helmet
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Guard/corinthian_helmet.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Guard/corinthian_helmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+  localizationId: ent-OE14ClothingHeadGuardCorinthianHelmet
+- type: entity
+  parent: OE14ClothingHeadGuardBase
+  id: OE14ClothingHeadGuardCap
+  name: guard's cap
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Guard/guard_cap.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Guard/guard_cap.rsi
+  localizationId: ent-OE14ClothingHeadGuardCap
+- type: entity
+  parent: OE14ClothingHeadGuardBase
+  id: OE14ClothingHeadGuardFedora
+  name: guard's fedora
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Guard/guard_fedora.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Guard/guard_fedora.rsi
+  localizationId: ent-OE14ClothingHeadGuardFedora
+- type: entity
+  parent: OE14ClothingHeadGuardBase
+  id: OE14ClothingHeadGuardTriangular
+  name: guard's triangular hat
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Guard/guard_triangularhat.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Guard/guard_triangularhat.rsi
+  localizationId: ent-OE14ClothingHeadGuardTriangular
+- type: entity
+  parent: OE14ClothingHeadGuardBase
+  id: OE14ClothingHeadGuardInvestigatorHelmet
+  name: investigator helmet
+  components:
+  - type: Sprite
+    sprite: _OE14/Clothing/Head/Roles/Guard/investigator_helmet.rsi
+  - type: Clothing
+    sprite: _OE14/Clothing/Head/Roles/Guard/investigator_helmet.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+  localizationId: ent-OE14ClothingHeadGuardInvestigatorHelmet

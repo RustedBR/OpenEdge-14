@@ -1,0 +1,66 @@
+- type: entity
+  parent: OE14FloorTileBase
+  id: OE14FloorTileGrassBagBase
+  description: A bag of grass seed. A pinch of natural magic and the dirt is covered with a beautiful lawn in the blink of an eye!
+  abstract: true
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Specific/Farming/grass_seeds.rsi
+  - type: Item
+    sprite: _OE14/Objects/Tile/tile.rsi
+    size: Tiny
+  - type: Stack
+    count: 1
+  - type: FloorTile
+    placeTileSound:
+      collection: OE14GrassGathering
+      params:
+        variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+
+- type: entity
+  parent: OE14FloorTileGrassBagBase
+  id: OE14FloorTileGrassBag
+  name: grass bag
+  components:
+  - type: Sprite
+    state: grass2
+  - type: FloorTile
+    outputs:
+      - OE14FloorGrass
+  - type: Stack
+    stackType: OE14FloorTileGrassBag
+
+- type: entity
+  parent: OE14FloorTileGrassBagBase
+  id: OE14FloorTileGrassBagLight
+  name: light grass bag
+  components:
+  - type: Sprite
+    state: grass
+  - type: FloorTile
+    outputs:
+      - OE14FloorGrassLight
+  - type: Stack
+    stackType: OE14FloorTileGrassBagLight
+
+- type: entity
+  parent: OE14FloorTileGrassBagBase
+  id: OE14FloorTileGrassBagTall
+  name: tall grass bag
+  components:
+  - type: Sprite
+    state: grass3
+  - type: FloorTile
+    outputs:
+      - OE14FloorGrassTall
+  - type: Stack
+    stackType: OE14FloorTileGrassBagTall

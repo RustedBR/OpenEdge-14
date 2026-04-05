@@ -1,0 +1,22 @@
+<Document>
+
+# Soluções Alquímicas Alvo
+
+Usando combinações de essências taumatúrgicas nas proporções corretas, é possível criar diversas substâncias alquímicas — de poderosos medicamentos a venenos letais:
+
+## Curativas
+<GuideReagentGroupEmbed Group="OE14HealingEffect"/>
+
+## Venenos
+<GuideReagentGroupEmbed Group="OE14DamageEffect"/>
+
+## Efeitos positivos
+<GuideReagentGroupEmbed Group="OE14PositiveEffect"/>
+
+## Efeitos negativos
+<GuideReagentGroupEmbed Group="OE14NegativeEffect"/>
+
+## Contaminantes
+<GuideReagentGroupEmbed Group="OE14SideEffect"/>
+
+</Document>

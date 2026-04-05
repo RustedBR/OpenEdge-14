@@ -1,0 +1,67 @@
+- type: constructionGraph
+  id: OE14WallmountTorch
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WallmountTorch
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 1
+              doAfter: 1
+            - material: OE14Cloth
+              amount: 1
+              doAfter: 1
+
+    - node: OE14WallmountTorch
+      entity: OE14WallmountTorch
+
+- type: constructionGraph
+  id: OE14FloorTorch
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14FloorTorch
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 1
+              doAfter: 1
+            - material: OE14Cloth
+              amount: 1
+              doAfter: 1
+
+    - node: OE14FloorTorch
+      entity: OE14FloorTorch
+
+- type: constructionGraph
+  id: OE14WallmountLampEmpty
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14WallmountLampEmpty
+          steps:
+            - material: OE14CopperBar
+              amount: 3
+              doAfter: 3
+
+    - node: OE14WallmountLampEmpty
+      entity: OE14WallmountLampEmpty
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 4
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14CopperBar1
+          amount: 3

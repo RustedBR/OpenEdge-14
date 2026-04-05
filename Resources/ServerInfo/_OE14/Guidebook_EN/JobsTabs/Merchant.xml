@@ -1,0 +1,32 @@
+<Document>
+# Merchant
+
+<Box>
+<GuideEntityEmbed Entity="OE14ClothingHeadBowler" Caption="Bowler Hat"/>
+</Box>
+
+Merchants are the economic backbone of CrystallEdge. They buy and sell goods across every trading faction in the city — from potion shops to blacksmiths, from the butcher's guild to the guard's armory. A skilled merchant knows the price of everything and uses that knowledge to profit.
+
+## Responsibilities
+
+- Trade goods between factions and players
+- Identify price differences and arbitrage opportunities
+- Negotiate with other players as a middleman
+- Stock supplies that other jobs need
+
+## Trading Access
+
+Merchants have access to [bold]all trading factions[/bold] in the city. No other job has this breadth of market access. This makes the Merchant uniquely powerful for building wealth through commerce.
+
+## Requirements
+
+[bold]1 hour[/bold] of total playtime required. No trait restrictions.
+
+## Tips
+
+- Check prices across factions before buying anything
+- Other players will pay a premium for goods they cannot easily access themselves
+- Keep a pouch with coins so you don't drop them when hit
+- The [textlink="Economy" link="OE14Economy"] section covers trading mechanics in detail
+
+</Document>

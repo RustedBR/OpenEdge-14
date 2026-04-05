@@ -1,0 +1,91 @@
+- type: entity
+  parent: BaseItem
+  id: OE14BaseLock
+  abstract: true
+  categories:
+  - ForkFiltered
+  name: lock
+  description: A small device customized only for a specific key shape. Attach it
+    to doors or chests that have no lock and feel the spirit of security.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _OE14/Objects/keys.rsi
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/welder_drop.ogg
+      params:
+        variation: 0.05
+  - type: OE14Lock
+    canEmbedded: true
+  localizationId: ent-OE14BaseLock
+- type: entity
+  parent: OE14BaseLock
+  id: OE14LockCopper
+  components:
+  - type: Sprite
+    state: lock_copper
+  - type: OE14Lock
+    lockShape:
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Copper: 10
+  localizationId: ent-OE14LockCopper
+- type: entity
+  parent: OE14BaseLock
+  id: OE14LockIron
+  components:
+  - type: Sprite
+    state: lock_iron
+  - type: OE14Lock
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  localizationId: ent-OE14LockIron
+- type: entity
+  parent: OE14BaseLock
+  id: OE14LockGold
+  components:
+  - type: Sprite
+    state: lock_gold
+  - type: OE14Lock
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Gold: 10
+  localizationId: ent-OE14LockGold
+- type: entity
+  parent: OE14BaseLock
+  id: OE14LockMithril
+  components:
+  - type: Sprite
+    state: lock_mithril
+  - type: OE14Lock
+    lockShape:
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+    - 2
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Mithril: 10
+  localizationId: ent-OE14LockMithril

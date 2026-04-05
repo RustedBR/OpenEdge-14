@@ -1,0 +1,48 @@
+<Document>
+# Event Flow & Lifecycle
+
+This page covers the lifecycle events for entities and systems in OpenEdge 14.
+
+## Entity Lifecycle Events
+
+<CodeBlock>
+Entity spawned -> MapInitEvent
+  |
+Components initialized -> ComponentInit
+  |
+Entity ready for gameplay -> EntityInitializedMessage
+  |
+(gameplay happens)
+  |
+Entity marked for deletion -> EntityTerminatingEvent
+  |
+Components removed -> ComponentShutdown
+  |
+Entity deleted
+</CodeBlock>
+
+## Key Lifecycle Events
+
+[bold]ComponentInit[/bold] — called when a component is first added to an entity. Use for one-time setup.
+
+[bold]MapInitEvent[/bold] — called when an entity enters the game world. Use for spawn logic.
+
+[bold]EntityTerminatingEvent[/bold] — called before an entity is deleted. Use for cleanup.
+
+## System Initialization
+
+Systems initialize in the order they are registered. The [mono]Initialize()[/mono] method is called once at startup:
+
+<CodeBlock>
+public override void Initialize()
+{
+    base.Initialize();
+    SubscribeLocalEvent<MyComponent, DamageEvent>(OnDamage);
+}
+</CodeBlock>
+
+## Content Under Construction
+
+Full event lifecycle documentation coming soon. See [textlink="Event System" link="OE14_DEV_Arch_Events"] for the general event architecture.
+
+</Document>

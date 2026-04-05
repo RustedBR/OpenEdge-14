@@ -1,0 +1,223 @@
+<Document>
+# Architecture & Design
+
+OpenEdge 14 is built on several core architectural patterns that determine how the game works. Understanding these patterns is crucial for effective development.
+
+## The Big Picture
+
+<CodeBlock>
+[Robust Toolbox - .NET Engine]
+    |
+[Entity-Component-System (ECS)]
+    |
+[IoC Container - Dependency Injection]
+    |
+[Event-Driven Communication]
+    |
+[Network Synchronization Layer]
+    |
+[OpenEdge 14 Systems & Gameplay]
+</CodeBlock>
+
+## Five Core Architectural Concepts
+
+1. [textlink="Entity-Component-System (ECS)" link="OE14_DEV_Arch_ECS"]
+
+[bold]What it is:[/bold] A design pattern where the world is made up of [bold]Entities[/bold] that have [bold]Components[/bold], and [bold]Systems[/bold] that process those components.
+
+[bold]Why we use it:[/bold]
+- Flexible composition — combine components to create any type of object
+- Efficient processing — systems only iterate over relevant entities
+- Easy to test — systems are pure logic, easily mockable
+- Supports networking — each component can be networked independently
+
+[bold]Example:[/bold]
+- Entity: A player character
+- Components: HealthComponent, InventoryComponent, TransformComponent, CharacterStatsComponent
+- System: HealthSystem processes damage from HealthComponent
+
+2. [textlink="IoC Container" link="OE14_DEV_Arch_IoC"]
+
+[bold]What it is:[/bold] A registry of [bold]services[/bold] (systems, managers, utilities) that can be accessed globally via [mono]IoCManager.Resolve\<T\>()[/mono].
+
+[bold]Why we use it:[/bold]
+- Decoupled code — components don't need to know about concrete implementations
+- Dependency injection — services are provided, not created
+- Easy mocking for tests
+- Prevents tight coupling
+
+[bold]Example:[/bold]
+<CodeBlock>
+var entityManager = IoCManager.Resolve<IEntityManager>();
+var actionSystem = IoCManager.Resolve<ActionBlockerSystem>();
+</CodeBlock>
+
+3. [textlink="Network Synchronization" link="OE14_DEV_Arch_Netcode"]
+
+[bold]What it is:[/bold] A system that automatically keeps server and client in sync by transmitting component changes.
+
+[bold]Why we use it:[/bold]
+- Multiplayer support — all players see the same world
+- Server authority — server is always correct, client interpolates
+- Bandwidth efficient — only changed data is transmitted
+- Transparent — marked with the AutoNetworkedField attribute
+
+[bold]Example:[/bold]
+<CodeBlock>
+[DataField, AutoNetworkedField]
+public int Health { get; set; }  // Syncs to client automatically
+</CodeBlock>
+
+4. [textlink="Event System" link="OE14_DEV_Arch_Events"]
+
+[bold]What it is:[/bold] A publish-subscribe system where systems emit events, and other systems listen and react.
+
+[bold]Why we use it:[/bold]
+- Loose coupling — systems don't call each other directly
+- Flexibility — new reactions can be added without changing core logic
+- Composability — complex behaviors from simple event chains
+- Clear intent — what's happening is obvious from events
+
+[bold]Example:[/bold]
+- Event: DamageEvent (entity took X damage)
+- Listeners: HealthSystem (apply damage), CombatLogSystem (log the hit), StatusEffectSystem (apply bleeding)
+
+5. [textlink="Modifier System" link="OE14_DEV_Arch_Modifiers"]
+
+[bold]What it is:[/bold] A system for applying temporary stat changes (bonuses) from various sources without mutating base values.
+
+[bold]Why we use it:[/bold]
+- Composability — multiple sources can add bonuses
+- Tracking — know which source each bonus came from
+- Overflow protection — handled when modifiers exceed limits
+- Reusability — same system for spells, items, buffs, etc.
+
+[bold]Example:[/bold]
+- Base Stat: INT = 8
+- Modifiers: +2 from Metamagic spell, +1 from item bonus
+- Effective: INT = 11 (capped at 10, overflow = 1)
+- Display: "INT: 8 -> 10 (+3 Spell, overflow: 1)"
+
+## The Three Layers
+
+### Layer 1: Content Layer
+
+[bold]What goes here:[/bold] YAML prototypes, item definitions, spell definitions, job definitions
+
+[bold]Located:[/bold] [mono]Resources/Prototypes/_OE14/[/mono]
+
+[bold]Change frequency:[/bold] Very often (balancing, new items, etc.)
+
+[bold]Example:[/bold]
+<CodeBlock>
+- type: entity
+  id: IronSword
+  components:
+    - type: MeleeWeapon
+      damage: 25
+</CodeBlock>
+
+### Layer 2: System Layer
+
+[bold]What goes here:[/bold] C# systems that process game logic
+
+[bold]Located:[/bold] [mono]Content.Server/_OE14/Systems/[/mono] and [mono]Content.Shared/_OE14/[/mono]
+
+[bold]Change frequency:[/bold] Moderately (adding features, fixing bugs)
+
+[bold]Example:[/bold]
+<CodeBlock>
+public class CombatSystem : EntitySystem
+{
+    public override void Update(float frameTime)
+    {
+        // Process combat events
+    }
+}
+</CodeBlock>
+
+### Layer 3: Framework Layer
+
+[bold]What goes here:[/bold] RobustToolbox engine code (don't modify!)
+
+[bold]Located:[/bold] [mono]RobustToolbox/[/mono] subdirectory
+
+[bold]Change frequency:[/bold] Never (we use it as-is)
+
+[bold]Example:[/bold] Entity manager, component registration, network serialization
+
+## Data Flow: How the Game Works
+
+### A Simple Example: Attacking an Enemy
+
+<CodeBlock>
+1. Player clicks enemy (Input)
+   |
+2. ActionBlockerSystem checks if action is allowed (can player act?)
+   |
+3. CombatSystem processes attack
+   |
+4. Calculates damage: base damage + STR bonus - armor
+   |
+5. Creates DamageEvent with damage amount
+   |
+6. HealthSystem listens to DamageEvent
+   |
+7. Applies damage to enemy HealthComponent
+   |
+8. HealthComponent value changes (Health -= damage)
+   |
+9. AutoNetworkedField syncs new Health value to client
+   |
+10. Client receives update, displays new health bar
+   |
+11. If health <= 0:
+    - DeathEvent emitted
+    - PhysicsSystem disables movement
+    - AnimationSystem plays death animation
+    - LootSystem creates dropped items
+</CodeBlock>
+
+Each step is independent and uses events to communicate.
+
+## Key Terminology
+
+- [bold]Entity[/bold] — An object in the world (player, item, NPC, effect)
+- [bold]Component[/bold] — A data container attached to an entity (health, position, inventory)
+- [bold]System[/bold] — Logic that processes entities with certain components
+- [bold]Service[/bold] — A global manager (EntityManager, TransformSystem, etc.)
+- [bold]Event[/bold] — A message sent when something happens (damage, death, pickup)
+- [bold]Modifier[/bold] — A temporary stat bonus from spells, items, or effects
+- [bold]Network[/bold] — Syncing state between server and client
+- [bold]Prototype[/bold] — YAML definition of an entity or item
+
+## Important Design Principles
+
+### Server Authority
+The server is always right. Clients can predict and interpolate, but server values are canonical. Never trust client input for critical decisions.
+
+### Network Efficiency
+Only sync changes. Don't re-send data that hasn't changed. Batch updates when possible.
+
+### No Magic Numbers
+Use named enums and constants. A health value of 50 should be a named constant.
+
+### Separation of Concerns
+Systems should do one thing well. Don't mix combat logic with UI code.
+
+### Composition Over Inheritance
+Use components to add behavior, not class hierarchies. Much more flexible.
+
+## Next Steps
+
+Choose a concept to dive deeper into:
+
+- [textlink="Read ECS System" link="OE14_DEV_Arch_ECS"] — understanding entity/component/system
+- [textlink="Read IoC Container" link="OE14_DEV_Arch_IoC"] — resolving services
+- [textlink="Read Network Sync" link="OE14_DEV_Arch_Netcode"] — syncing with client
+- [textlink="Read Event System" link="OE14_DEV_Arch_Events"] — creating custom logic
+- [textlink="Read Modifier System" link="OE14_DEV_Arch_Modifiers"] — adding stat bonuses
+
+Or jump to [textlink="System Reference" link="OE14_DEV_SystemReference"] for a specific system.
+
+</Document>

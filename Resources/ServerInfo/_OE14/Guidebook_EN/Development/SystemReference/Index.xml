@@ -1,0 +1,27 @@
+<Document>
+# System Reference
+
+Quick reference for all major OpenEdge 14 systems. Each entry links to detailed documentation.
+
+## Core Systems
+
+- [textlink="OE14CharacterStats System" link="OE14_DEV_SysRef_Stats"] — STR/VIT/DEX/INT stats, modifiers, and point spending
+- [textlink="Magic & Spell Systems" link="OE14_DEV_SysRef_Magic"] — spells, mana, spell storage
+- [textlink="Crafting Systems" link="OE14_DEV_SysRef_Crafting"] — workbench, cooking, modular crafting
+- [textlink="Economy System" link="OE14_DEV_SysRef_Economy"] — currency, salary, trading platform
+- [textlink="Combat System" link="OE14_DEV_SysRef_Combat"] — melee, damage, skills
+- [textlink="Other Systems" link="OE14_DEV_SysRef_Other"] — farming, status effects, demiplane, vampire
+
+## Quick Lookup
+
+[bold]I want to add stat bonuses[/bold] — see OE14CharacterStats System and [textlink="Modifier System" link="OE14_DEV_Arch_Modifiers"]
+
+[bold]I want to add a new spell[/bold] — see Magic & Spell Systems and [textlink="Adding New Spells" link="OE14_DEV_Guide_Spells"]
+
+[bold]I want to add a crafting recipe[/bold] — see Crafting Systems and [textlink="Adding New Skills" link="OE14_DEV_Guide_Skills"]
+
+[bold]I want to add a new item to the shop[/bold] — see Economy System
+
+[bold]I want to add a status effect[/bold] — see Other Systems
+
+</Document>

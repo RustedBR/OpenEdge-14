@@ -1,0 +1,27 @@
+- type: job
+  id: OE14Innkeeper
+  name: oe14-job-name-innkeeper
+  description: oe14-job-desc-innkeeper
+  playTimeTracker: OE14JobInnkeeper
+  startingGear: OE14InnkeeperGear
+  icon: "OE14JobIconInnkeeper"
+  supervisors: oe14-job-supervisors-command
+  special:
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - VictoriaGardens
+      - HomeDecor
+      - Butchers
+      - Dairy
+    - !type:OE14LearnSkillsSpecial
+      skills:
+      - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
+
+- type: startingGear
+  id: OE14InnkeeperGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+  equipment:
+    belt: OE14WalletFilledTest
+    keys: OE14KeyRingInnkeeper

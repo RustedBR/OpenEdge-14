@@ -1,0 +1,51 @@
+- type: entity
+  id: OE14ActionSpellVampireBloodStep
+  parent: OE14ActionSpellBase
+  name: Blood step
+  description: A step through the gash of reality that allows you to cover a small of distance quickly
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.4
+  - type: OE14MagicEffectVampire
+  - type: OE14ActionManaCost
+    manaCost: 30
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14ImpactEffectBloodStep
+  - type: DoAfterArgs
+    delay: 0.5
+    hidden: true
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: blood_step
+  - type: TargetAction
+    checkCanAccess: true
+    range: 10
+  - type: WorldTargetAction
+    event: !type:OE14WorldTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodStep
+      effects:
+      - !type:OE14SpellCasterTeleport
+        needVision: true
+
+- type: entity
+  id: OE14ImpactEffectBloodStep
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: wave_up
+      color: red
+      unshaded: true
+  - type: LightFade
+    duration: 1.5
+  - type: PointLight
+    color: "#d60032"
+    radius: 4.0
+    energy: 3.0

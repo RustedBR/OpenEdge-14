@@ -1,0 +1,78 @@
+- type: constructionGraph
+  id: OE14BaseBarrel
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14BaseBarrel
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 3
+    - node: OE14BaseBarrel
+      entity: OE14BaseBarrel
+      edges:
+      - to: start
+        steps:
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 3
+
+- type: constructionGraph
+  id: OE14CraneBarrel
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14CraneBarrel
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 5
+              doAfter: 3
+    - node: OE14CraneBarrel
+      entity: OE14CraneBarrel
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 2
+        - tool: Prying
+          doAfter: 5
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 5
+
+- type: constructionGraph
+  id: OE14CraneBarrelSmall
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14CraneBarrelSmall
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 3
+              doAfter: 3
+    - node: OE14CraneBarrelSmall
+      entity: OE14CraneBarrelSmall
+      edges:
+      - to: start
+        steps:
+        - tool: Screwing
+          doAfter: 1
+        - tool: Prying
+          doAfter: 2
+        completed:
+        - !type:SpawnPrototype
+          prototype: OE14WoodenPlanks1
+          amount: 3

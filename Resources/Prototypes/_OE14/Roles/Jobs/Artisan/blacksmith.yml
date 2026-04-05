@@ -1,0 +1,40 @@
+- type: job
+  id: OE14Blacksmith
+  name: oe14-job-name-blacksmith
+  description: oe14-job-desc-blacksmith
+  playTimeTracker: OE14JobBlacksmith
+  startingGear: OE14BlacksmithGear
+  icon: "OE14JobIconBlacksmith"
+  supervisors: oe14-job-supervisors-command
+  setPreference: false
+  canBeAntag: false
+  special:
+    - !type:OE14AddTradingReputationSpecial
+      factions:
+      - DwarfMining
+      - Thaumaturgy
+      - HomeDecor
+      - Butchers # For leather
+      - Tailors
+    - !type:OE14LearnSkillsSpecial
+      skills:
+      #- CopperMelting
+      #- IronMelting
+      #- GoldMelting
+      #- GlassMelting
+      #- MithrilMelting
+      - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: OE14Artisan
+      time: 3600 # 1 hours
+
+- type: startingGear
+  id: OE14BlacksmithGear
+  storage:
+    back:
+    - OE14EnergyCrystalMedium
+    - OE14EnergyCrystalMedium
+  equipment:
+    belt: OE14WalletFilledTest
+    keys: OE14KeyRingBlacksmith

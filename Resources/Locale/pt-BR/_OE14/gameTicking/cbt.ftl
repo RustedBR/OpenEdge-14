@@ -1,0 +1,1 @@
+oe14-cbt-close-15m = AVISO: O servidor encerrará automaticamente a rodada após 15 minutos

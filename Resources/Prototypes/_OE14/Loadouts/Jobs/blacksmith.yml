@@ -1,0 +1,32 @@
+# Cloak
+
+- type: loadoutGroup
+  id: OE14BlacksmithCloak
+  name: oe14-loadout-blacksmith-cloak
+  loadouts:
+  - OE14ClothingCloakBlacksmithArpon
+
+- type: loadout
+  id: OE14ClothingCloakBlacksmithArpon
+  equipment:
+    cloak: OE14ClothingCloakBlacksmithArpon
+
+# Gloves
+
+- type: loadoutGroup
+  id: OE14BlacksmithGloves
+  name: oe14-loadout-blacksmith-gloves
+  loadouts:
+  - OE14ClothingGlovesBlacksmith
+  - OE14ClothingGlovesGirdles
+
+- type: loadout
+  id: OE14ClothingGlovesBlacksmith
+  equipment:
+    gloves: OE14ClothingGlovesBlacksmith
+
+- type: loadout
+  id: OE14ClothingGlovesGirdles
+  equipment:
+    gloves: OE14ClothingGlovesGirdles
+

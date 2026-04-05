@@ -1,0 +1,48 @@
+<Document>
+
+# Fechaduras
+
+Fechaduras são itens craftáveis da Bigorna do Ferreiro. Seu propósito é trancar qualquer bisbilhotagem indesejada em baús ou prevenir acesso em portas.
+
+## Tipos de Fechaduras
+
+Existem quatro versões de fechaduras disponíveis nos seguintes metais:
+- Cobre (3 pinos)
+- Ferro (5 pinos)
+- Ouro (6 pinos)
+- Mithril (7 pinos)
+
+## Obtendo Fechaduras
+
+Existem duas formas de obter fechaduras:
+- Craftando via Ferreiro (Requer uma barra de metal do metal desejado e conhecimento da habilidade de Fundição de Metais)
+OU
+- Se faltando os materiais ou habilidades necessários, você pode pedir a outro ferreiro para craftar um para você.
+
+## Editando uma Fechadura
+
+Uma vez craftada uma fechadura, todos os pinos são definidos como 2 por padrão.
+
+Uma chave de fenda é necessária para editar os pinos de um valor de -2 a 2. Elas podem ser obtidas via mesa de banca com os seguintes materiais: 1 Cabo de Madeira e 1 Virote de Balestra de Ferro.
+
+Segure a chave de fenda na mão ativa e clique com botão direito na fechadura, passe o mouse sobre a opção "Editar Fechadura" e então clique em "Editar Pino:#" para definir sua combinação desejada.
+
+## Chaves
+
+Uma chave é necessária para operar a fechadura. O material da chave precisa ser idêntico à fechadura, pois os pinos devem corresponder para operar a fechadura.
+
+## Obtendo Chaves
+
+Obter uma chave é feito da mesma forma que obter uma fechadura. Seja por Ferreiro com os materiais e habilidades necessários ou pedindo a outro ferreiro para criar.
+
+## Editando Chaves
+
+Todas as chaves recém-feitas da bigorna começam no valor padrão de 2 em todos os pinos.
+
+Para editar as chaves, um item chamado "Lima de Chave" é necessário. Você pode craftar uma na bigorna pelo custo de uma Barra de Ferro. (Requer conhecimento de Fundição de Ferro)
+
+Segure a Lima de Chave na mão ativa e clique com botão direito na chave, passe o mouse sobre a opção "Modificar Chave" e então clique em "Editar Pino:#" para definir a combinação desejada, preferencialmente a mesma combinação da fechadura.
+
+Você só pode ir de 2 a -2 de uma vez. Se você errar, você precisará obter outra chave.
+
+</Document>

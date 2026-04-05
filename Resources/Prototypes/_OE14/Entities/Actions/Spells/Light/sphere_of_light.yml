@@ -1,0 +1,72 @@
+- type: entity
+  id: OE14ActionSpellSphereOfLight
+  parent: OE14ActionSpellBase
+  name: Sphere of Light
+  description: Materialization of a bright and safe light source.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 10
+  - type: OE14ActionSpeaking
+    startSpeech: "Appare in manu tua..."
+    endSpeech: "sphaera lucis"
+  - type: OE14ActionFreeHandsRequired
+  - type: OE14ActionDoAfterVisuals
+    proto: OE14RuneSphereOfLight
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: _OE14/Actions/Spells/light.rsi
+      state: sphere_of_light
+  - type: DoAfterArgs
+    delay: 0.5
+  - type: TargetAction
+    range: 5
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+      - Item
+      - Anchorable
+    event: !type:OE14EntityTargetModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectSphereOfLight
+      - !type:OE14SpellApplyStatusEffect
+        statusEffect: OE14StatusEffectGlowing
+        duration: 120
+
+- type: entity
+  id: OE14RuneSphereOfLight
+  parent: OE14BaseMagicRune
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: PointLight
+    color: "#efedff"
+  - type: Sprite
+    layers:
+    - state: sun
+      color: "#efedff"
+      shader: unshaded
+
+- type: entity
+  id: OE14ImpactEffectSphereOfLight
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#efedff"
+      shader: unshaded
+
+- type: entity
+  parent: OE14BaseSpellScrollLight
+  id: OE14SpellScrollSphereOfLight
+  name: sphere of light spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellSphereOfLight

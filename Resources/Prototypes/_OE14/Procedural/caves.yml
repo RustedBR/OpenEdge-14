@@ -1,0 +1,150 @@
+- type: biomeTemplate
+  id: OE14CavesEmpty
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: OE14FloorBase
+    - !type:BiomeTileLayer
+      tile: OE14FloorCobblestone
+      threshold: 0.3
+      noise:
+        seed: 14
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.2
+    - !type:BiomeTileLayer
+      tile: OE14FloorDirt
+      threshold: 0.3
+      noise:
+        seed: 18
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 0.1
+
+
+- type: biomeTemplate
+  id: OE14CavesFloor
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14CavesEmpty
+    #Entity
+    - !type:BiomeEntityLayer
+      threshold: 0.4
+      noise:
+        seed: 1
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 2
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorDirt
+        - OE14FloorCobblestone
+      entities:
+        - OE14RockSmall
+
+- type: biomeTemplate
+  id: OE14CavesGeneric
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14CavesFloor
+    #Walls
+    - !type:BiomeEntityLayer
+      threshold: -0.75
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.05
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorCobblestone
+      entities:
+        - OE14WallStone
+    - !type:BiomeEntityLayer
+      threshold: -0.79
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.05
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorDirt
+      entities:
+        - OE14WallDirt
+    #Rivers
+    - !type:BiomeEntityLayer
+      threshold: 0.60
+      noise:
+        seed: 3
+        noiseType: OpenSimplex2
+        frequency: 0.05
+        lacunarity: 1.50
+        fractalType: Ridged
+        octaves: 1
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorDirt
+        - OE14FloorCobblestone
+      entities:
+        - OE14FloorWater
+
+- type: biomeTemplate
+  id: OE14CavesComossResources
+  layers:
+    - !type:BiomeMetaLayer
+      template: OE14CavesFloor
+    - !type:BiomeEntityLayer # lumishrooms
+      threshold: 0.8
+      noise:
+        seed: 8
+        noiseType: OpenSimplex2
+        fractalType: Ridged
+        frequency: 0.045
+        octaves: 3
+        lacunarity: 1.8
+        gain: 0.7
+        domainWarpType: OpenSimplex2
+        domainWarpAmp: 120
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorCobblestone
+      entities:
+        - OE14GatherableLumiMushroom
+    #Walls
+    - !type:BiomeEntityLayer
+      threshold: -0.75
+      invert: true
+      noise:
+        seed: 0
+        noiseType: Perlin
+        fractalType: Ridged
+        octaves: 1
+        frequency: 0.05
+        gain: 0.5
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorDirt
+        - OE14FloorCobblestone
+      entities:
+        - OE14WallStone
+    #Copper
+    - !type:BiomeEntityLayer
+      threshold: 0.75
+      noise:
+        seed: 20
+        noiseType: OpenSimplex2
+        fractalType: FBm
+        frequency: 1.75
+      allowedTiles:
+        - OE14FloorBase
+        - OE14FloorDirt
+        - OE14FloorCobblestone
+      entities:
+        - OE14WallStoneCopperOre
+

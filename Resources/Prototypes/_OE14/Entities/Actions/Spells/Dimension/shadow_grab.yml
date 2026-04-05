@@ -1,0 +1,58 @@
+- type: entity
+  id: OE14ActionSpellShadowGrab
+  parent: OE14ActionSpellBase
+  name: Shadow grab
+  description: You attract a ghostly hand that draws an object or entity to you
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 20
+  - type: OE14ActionFreeHandsRequired
+  - type: Action
+    useDelay: 5
+    icon:
+      sprite: _OE14/Actions/Spells/dimension.rsi
+      state: shadow_grab
+  - type: DoAfterArgs
+    breakOnHandChange: false
+    delay: 0.5
+  - type: TargetAction
+    range: 10
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - Item
+    canTargetSelf: false
+    event: !type:OE14EntityTargetModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectShadowStep
+      - !type:OE14SpellSpawnEntityOnUser
+        spawns:
+        - OE14ImpactEffectShadowGrab
+      effects:
+      - !type:OE14SpellThrowToUser
+        throwPower: 10
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectShadowStep
+
+- type: entity
+  id: OE14ImpactEffectShadowGrab
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    layers:
+    - state: particles_up
+      color: "#5e427e"
+
+- type: entity
+  parent: OE14BaseSpellScrollDimension
+  id: OE14SpellScrollShadowGrab
+  name: shadow grab spell scroll
+  components:
+  - type: OE14SpellStorage
+    spells:
+    - OE14ActionSpellShadowGrab

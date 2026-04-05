@@ -1,0 +1,148 @@
+<Document>
+# Welcome to OpenEdge 14 Development
+
+OpenEdge 14 is a medieval fantasy sandbox RPG built on the [bold]Space Station 14[/bold] engine and powered by [bold]RobustToolbox[/bold]. This section is a comprehensive guide for developers working on the project.
+
+Whether you're adding new features, fixing bugs, or understanding how the game works, you'll find detailed documentation here about architecture, systems, and implementation patterns.
+
+## What You'll Find Here
+
+### Architecture & Design
+
+[textlink="Architecture & Design" link="OE14_DEV_Architecture"] — Learn how OpenEdge 14 is built:
+- [textlink="Entity-Component-System" link="OE14_DEV_Arch_ECS"] (ECS) — the core architecture pattern
+- [textlink="IoC Container" link="OE14_DEV_Arch_IoC"] — dependency injection and service resolution
+- [textlink="Network Synchronization" link="OE14_DEV_Arch_Netcode"] — how client and server stay in sync
+- [textlink="Event System" link="OE14_DEV_Arch_Events"] — how systems communicate
+- [textlink="Modifier System" link="OE14_DEV_Arch_Modifiers"] — stat and effect modifiers
+
+### Character Stats System
+
+[textlink="Character Stats System" link="OE14_DEV_CharacterStats"] — Deep dive into how character stats work:
+- [textlink="Stat Formulas & Calculations" link="OE14_DEV_Stats_Formulas"] — the math behind stats
+- [textlink="Stat Modifiers & Overflow" link="OE14_DEV_Stats_Modifiers"] — how modifiers stack and overflow
+- [textlink="Spell Fallback System" link="OE14_DEV_Stats_Fallback"] — how spells interact with stat limits
+- [textlink="Network Implementation" link="OE14_DEV_Stats_Network"] — how stats sync to client
+- [textlink="Code Examples" link="OE14_DEV_Stats_Code"] — actual implementations
+
+### Skill & Spell System
+
+[textlink="Skill & Spell System" link="OE14_DEV_Skills"] — Understand how spells and skills work:
+- [textlink="Skill Trees & Distribution" link="OE14_DEV_Skills_Trees"] — point allocation and progression
+- [textlink="Spell Mechanics" link="OE14_DEV_Skills_Mechanics"] — casting, effects, and resolution
+- [textlink="Mana System" link="OE14_DEV_Skills_Mana"] — mana pools and regeneration
+- [textlink="Creating Custom Skills" link="OE14_DEV_Skills_Custom"] — how to add new skills
+
+### Game Flow
+
+[textlink="Game Flow" link="OE14_DEV_GameFlow"] — Learn the lifecycle of a round and player:
+- [textlink="Round Flow & States" link="OE14_DEV_Flow_Rounds"] — PreRoundLobby, InRound, PostRound
+- [textlink="Player Spawn & Loading" link="OE14_DEV_Flow_Spawn"] — character creation and initialization
+- [textlink="Admin Tools & Commands" link="OE14_DEV_Flow_Admin"] — admin system and tooling
+- [textlink="Event Flow & Lifecycle" link="OE14_DEV_Flow_Events"] — entity and system lifecycle
+
+### System Reference
+
+[textlink="System Reference" link="OE14_DEV_SystemReference"] — Quick reference for major systems:
+- [textlink="OE14CharacterStats System" link="OE14_DEV_SysRef_Stats"]
+- [textlink="Magic & Spell Systems" link="OE14_DEV_SysRef_Magic"]
+- [textlink="Crafting Systems" link="OE14_DEV_SysRef_Crafting"]
+- [textlink="Economy System" link="OE14_DEV_SysRef_Economy"]
+- [textlink="Combat System" link="OE14_DEV_SysRef_Combat"]
+- [textlink="Other Systems" link="OE14_DEV_SysRef_Other"]
+
+### Development Guides
+
+[textlink="Development Guides" link="OE14_DEV_Guides"] — Step-by-step guides for common tasks:
+- [textlink="Adding New Skills" link="OE14_DEV_Guide_Skills"]
+- [textlink="Adding New Spells" link="OE14_DEV_Guide_Spells"]
+- [textlink="Adding New Jobs" link="OE14_DEV_Guide_Jobs"]
+- [textlink="Adding New Species" link="OE14_DEV_Guide_Species"]
+- [textlink="Database Migrations" link="OE14_DEV_Guide_Migrations"]
+- [textlink="Testing & Debugging" link="OE14_DEV_Guide_Testing"]
+
+## Quick Start for New Developers
+
+1. [bold]Set up your environment[/bold] — see CLAUDE.md in the repository root
+2. [bold]Read Architecture & Design[/bold] — [textlink="Architecture & Design" link="OE14_DEV_Architecture"] — understand ECS and how the project is structured
+3. [bold]Pick a system[/bold] — [textlink="System Reference" link="OE14_DEV_SystemReference"] has documentation for each major system
+4. [bold]Follow a guide[/bold] — [textlink="Development Guides" link="OE14_DEV_Guides"] has step-by-step instructions for common tasks
+5. [bold]Reference the code[/bold] — all pages include code examples and file paths
+
+## Common Tasks
+
+[bold]I want to add a new spell...[/bold]
+Read [textlink="Adding New Spells" link="OE14_DEV_Guide_Spells"] and [textlink="Spell Mechanics" link="OE14_DEV_Skills_Mechanics"]
+
+[bold]I want to understand why my stat modifier is being capped...[/bold]
+Read [textlink="Spell Fallback System" link="OE14_DEV_Stats_Fallback"] and [textlink="Stat Modifiers & Overflow" link="OE14_DEV_Stats_Modifiers"]
+
+[bold]I want to sync data between server and client...[/bold]
+Read [textlink="Network Synchronization" link="OE14_DEV_Arch_Netcode"]
+
+[bold]I want to add a new job...[/bold]
+Read [textlink="Adding New Jobs" link="OE14_DEV_Guide_Jobs"]
+
+[bold]I need to fix a bug in the economy system...[/bold]
+Read [textlink="Economy System" link="OE14_DEV_SysRef_Economy"]
+
+## How This Guidebook is Structured
+
+Each page is designed to be:
+- [bold]Self-contained[/bold] — can read in any order
+- [bold]Practical[/bold] — includes code examples and file paths
+- [bold]Linked[/bold] — references to related pages
+- [bold]Accessible[/bold] — written for developers of all experience levels (though assumes C# and .NET knowledge)
+
+## Design Philosophy
+
+OpenEdge 14 follows these principles:
+
+[bold]Entity-Component-System[/bold] — every "thing" in the world is an Entity with Components, processed by Systems
+
+[bold]Event-Driven[/bold] — systems communicate through events, not direct calls
+
+[bold]Network-First[/bold] — all significant state is synchronized between server and client
+
+[bold]Modifier-Based[/bold] — temporary changes (stat bonuses, effects) use a modifier system, not direct mutation
+
+[bold]YAML Configuration[/bold] — game content is defined in human-readable YAML, not hardcoded
+
+Understanding these principles will make the codebase much easier to navigate.
+
+## Performance Notes
+
+- The game runs at 60 ticks per second
+- Network updates are throttled and batched
+- Systems iterate over matching entities efficiently
+- Avoid allocating new objects in hot loops
+- Use object pooling for frequently created/destroyed entities
+
+## Contributing
+
+When adding new systems or features:
+1. [bold]Follow existing patterns[/bold] — if similar systems exist, match their structure
+2. [bold]Document your work[/bold] — leave comments for complex logic
+3. [bold]Test thoroughly[/bold] — both locally and with other developers
+4. [bold]Update this guidebook[/bold] — add pages or examples if you create new systems
+
+## External References
+
+Since OpenEdge 14 is based on Space Station 14, some concepts come from upstream:
+
+- [bold]RobustToolbox[/bold] — core engine (SS14 documentation)
+- [bold]Space Station 14[/bold] — base game framework (github.com/space-wizards/space-station-14)
+- [bold].NET 9[/bold] — programming language and runtime
+
+This guidebook focuses on OpenEdge-specific implementations.
+
+## Questions?
+
+- Check the [bold]System Reference[/bold] for your specific system
+- Look at [bold]Development Guides[/bold] for step-by-step instructions
+- Read [bold]Architecture & Design[/bold] if you need fundamental concepts
+- Check CLAUDE.md in the repository root for project conventions
+
+Good luck, and welcome to development!
+
+</Document>

@@ -1,0 +1,54 @@
+- type: entity
+  id: OE14ActionSpellVampirePower3
+  parent: OE14ActionSpellBase
+  name: Impulse
+  description: By unleashing the power of your ancient vampire clan, you repel everyone and everything around you, stunning them for a long time.
+  components:
+  - type: OE14ActionDoAfterSlowdown
+    speedMultiplier: 0.4
+  - type: OE14MagicEffectVampire
+  - type: OE14ActionManaCost
+    manaCost: 50
+  - type: OE14ActionDangerous
+  - type: Action
+    useDelay: 60
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: power_kick_3
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_OE14/Effects/essence_consume.ogg
+  - type: DoAfterArgs
+    delay: 1.5
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      effects:
+      - !type:OE14SpellSpawnEntityOnUser
+        spawns:
+        - OE14ImpactEffectVampireKick #TODO
+      - !type:OE14SpellArea
+        range: 2
+        maxTargets: 16
+        affectCaster: false
+        whitelist:
+          components:
+          - Body
+          - Item
+          - Anchorable
+        effects:
+        - !type:OE14SpellApplyEntityEffect
+          effects:
+          - !type:Paralyze
+            paralyzeTime: 2
+        - !type:OE14SpellThrowFromUser
+          throwPower: 15
+        - !type:OE14SpellSpawnEntityOnTarget
+          clientside: true
+          spawns:
+          - OE14ImpactEffectBloodStep
+        - !type:OE14SpellApplyEntityEffect
+          effects:
+          - !type:HealthChange
+            ignoreResistances: false
+            damage:
+              types:
+                Blunt: 10

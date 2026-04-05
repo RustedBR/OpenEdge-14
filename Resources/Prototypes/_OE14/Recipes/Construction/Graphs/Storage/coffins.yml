@@ -1,0 +1,32 @@
+- type: constructionGraph
+  id: OE14CrateCoffin
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14CrateCoffin
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: OE14WoodenPlanks
+              amount: 3
+              doAfter: 2
+            - material: OE14Cloth
+              amount: 2
+              doAfter: 2
+    - node: OE14CrateCoffin
+      entity: OE14CrateCoffin
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 3
+            - !type:SpawnPrototype
+              prototype: OE14Cloth1
+              amount: 2

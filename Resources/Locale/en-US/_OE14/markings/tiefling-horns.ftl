@@ -1,0 +1,11 @@
+marking-OE14TieflingHorns = Winding
+marking-OE14TieflingHorns2 = Diligence
+marking-OE14TieflingHorns3 = Vertical of Power
+marking-OE14TieflingHorns3Broken = Broken Vertical
+marking-OE14TieflingHorns4 = Change
+marking-OE14TieflingHorns5 = The Devil
+marking-OE14TieflingHorns5Broken = Broken Devil
+marking-OE14TieflingHorns6 = Lamb
+marking-OE14TieflingHorns7 = Horny horns
+marking-OE14TieflingHorns8 = Crown
+marking-OE14TieflingHorns9 = Unicorn

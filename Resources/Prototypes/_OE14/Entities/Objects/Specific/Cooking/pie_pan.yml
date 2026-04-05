@@ -1,0 +1,75 @@
+- type: entity
+  id: OE14PlatePie
+  parent: OE14CookerBase
+  name: pie plate
+  description: A mould for making a delicious pie.
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Consumable/Food/Pies/plate.rsi
+    layers:
+    - state: iron
+    - map:
+      - oe14_foodLayers
+    - map:
+      - enum.StorageFillLayers.Fill
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: PhysicalComposition
+    materialComposition:
+      OE14Iron: 10
+  - type: OE14FoodCooker
+    foodType: Pie
+    solutionId: cooker
+  - type: OE14FoodHolder
+    foodType: Pie
+    solutionId: cooker
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,2
+    cP14Ignorelist:
+      components:
+      - OE14FoodHolder
+      - FoodSequenceStartPoint
+      - Sharp
+      - OE14Sharpened
+  - type: Appearance
+  - type: StorageFillVisualizer
+    maxFillLevels: 3
+    fillBaseName: raw
+  - type: SolutionContainerManager
+    solutions:
+      cooker:
+        maxVol: 50
+  - type: AmbientSound
+    sound:
+      path: /Audio/_OE14/Ambience/pan_frying.ogg
+  - type: GenericVisualizer
+    visuals:
+      enum.OE14CookingVisuals.Cooking:
+        cook:
+          true:
+            visible: true
+          false:
+            visible: false
+      enum.OE14CookingVisuals.Burning:
+        burn:
+          true:
+            visible: true
+          false:
+            visible: false
+  - type: Edible
+    edible: Food
+    transferAmount: 2.5
+    solution: cooker
+    trash:
+    - OE14PlatePie
+  - type: Spillable
+    solution: cooker
+  - type: SolutionContainerVisuals
+  - type: SliceableFood
+  localizationId: ent-OE14PlatePie

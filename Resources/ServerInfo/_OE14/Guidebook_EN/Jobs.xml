@@ -1,0 +1,42 @@
+<Document>
+# Jobs & Professions
+
+Each player spawns with a job that determines their starting equipment and salary. Your job shapes how you interact with the world — some fight, some craft, some serve.
+
+## Mercenary Department
+
+[bold][textlink="Adventurers" link="OE14_EN_JobAdventurer"][/bold] — Explorers and hunters who venture into dangerous territory to gather rare materials and monster-derived resources. High risk, high reward.
+
+[bold][textlink="Guild Worker" link="OE14_EN_JobGuildWorker"][/bold] — Experienced guild members who manage operations, supplies, and logistics at the guild base. Requires 2 hours as Adventurer.
+
+[bold][textlink="Guildmaster" link="OE14_EN_JobGuildmaster"][/bold] — The leader of the Mercenary Guild. Sets contracts, manages the team, and represents the guild's interests. Requires 5 hours as Adventurer.
+
+## Artisan Department
+
+[bold][textlink="Merchant" link="OE14_EN_JobMerchant"][/bold] — Traders with access to every faction in the city. The only job that can buy and sell across all markets. Requires 1 hour of playtime.
+
+[bold][textlink="Alchemist" link="OE14_EN_JobAlchemist"][/bold] — Brewers of potions, poisons, and reagents. Alchemists transform raw ingredients into powerful solutions that can heal, harm, or alter the world.
+
+[bold][textlink="Innkeeper" link="OE14_EN_JobInnkeeper"][/bold] — Cooks, bartenders, and hosts who keep the settlement fed and the social hub running. Farming, brewing, and cooking are the core of this role.
+
+[bold][textlink="Apprentice" link="OE14_EN_JobApprentice"][/bold] — Entry-level crafters who assist across all Artisan disciplines. No experience required — the ideal starting point for aspiring artisans.
+
+## Guard Department
+
+[bold][textlink="Guard" link="OE14_EN_JobGuard"][/bold] — Law enforcement of the settlement. Patrol, respond to crimes, and maintain order. No experience required.
+
+[bold][textlink="Investigator" link="OE14_EN_JobInvestigator"][/bold] — Magic-enhanced detectives who uncover hidden contraband and investigate crimes using vision and detection spells. Requires 1 hour in the Guard department.
+
+[bold][textlink="Guard Commander" link="OE14_EN_JobGuardCommander"][/bold] — Leader of the Guard department. Coordinates patrols, directs responses, and holds authority over the department. Requires 3 hours in the Guard department.
+
+## Patrons
+
+[bold][textlink="Patrons" link="OE14_EN_Patrons"][/bold] — Spiritual guardians and their followers. Patrons grant boons to those who pay homage at their altars.
+
+## Starting Out
+
+When you spawn, check your inventory ([bold]I[/bold]) for your starting equipment. Each job provides different tools and consumables.
+
+Your salary arrives over time in physical coins — keep a pouch on you so you don't drop them when taking damage.
+
+</Document>

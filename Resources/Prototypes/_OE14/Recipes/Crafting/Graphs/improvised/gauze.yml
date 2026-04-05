@@ -1,0 +1,14 @@
+- type: constructionGraph
+  id: OE14Gauze
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: oe14gauze
+      steps:
+      - material: OE14Cloth
+        amount: 2
+        doAfter: 3
+
+  - node: oe14gauze
+    entity: OE14Gauze1

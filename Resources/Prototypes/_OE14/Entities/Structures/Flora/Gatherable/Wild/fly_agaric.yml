@@ -1,0 +1,31 @@
+- type: entity
+  id: OE14GatherableFlyAgaric
+  parent: OE14GatherableBase
+  name: fly agaric
+  description: This poisonous mushroom can often be found near bodies of water or other wet areas. It is not recommended for consumption.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _OE14/Structures/Flora/Wild/agaric.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+        world4: ""
+        world5: ""
+        world6: ""
+  - type: OE14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: !type:GroupSelector
+        children:
+        - id: OE14AgaricMushroom
+        - id: OE14MobMonsterMyconideFlyagaric
+          weight: 0.08
+

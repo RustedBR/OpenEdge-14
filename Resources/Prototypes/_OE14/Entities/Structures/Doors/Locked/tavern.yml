@@ -1,0 +1,84 @@
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorTavernStaff
+  suffix: Tavern Staff
+  components:
+  - type: OE14Lock
+    autoGenerateShape: TavernStaff
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorTavernStaff
+- type: entity
+  parent:
+  - OE14WoodenDoorTavernStaff
+  - OE14WoodenDoorMirrored
+  id: OE14WoodenDoorTavernStaffMirrored
+  suffix: Tavern Staff, Mirrored
+  localizationId: ent-OE14WoodenDoorTavernStaffMirrored
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorTavernDorms1
+  suffix: Tavern Dorms 1
+  components:
+  - type: OE14Lock
+    autoGenerateShape: TavernDorms1
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorTavernDorms1
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorTavernDorms2
+  suffix: Tavern Dorms 2
+  components:
+  - type: OE14Lock
+    autoGenerateShape: TavernDorms2
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorTavernDorms2
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorTavernDorms3
+  suffix: Tavern Dorms 3
+  components:
+  - type: OE14Lock
+    autoGenerateShape: TavernDorms3
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorTavernDorms3
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorTavernDorms4
+  suffix: Tavern Dorms 4
+  components:
+  - type: OE14Lock
+    autoGenerateShape: TavernDorms4
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorTavernDorms4
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorTavernDorms5
+  suffix: Tavern Dorms 5
+  components:
+  - type: OE14Lock
+    autoGenerateShape: TavernDorms5
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorTavernDorms5
+- type: entity
+  parent: OE14WoodenDoorWindowed
+  id: OE14WoodenDoorWindowedTavernHall
+  suffix: Tavern Hall
+  components:
+  - type: OE14Lock
+    autoGenerateShape: TavernHall
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorWindowedTavernHall
+- type: entity
+  parent:
+  - OE14WoodenDoorWindowedTavernHall
+  - OE14WoodenDoorWindowedMirrored
+  id: OE14WoodenDoorTavernHallMirrored
+  suffix: Tavern Hall, Mirrored
+  localizationId: ent-OE14WoodenDoorTavernHallMirrored

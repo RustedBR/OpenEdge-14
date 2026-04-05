@@ -1,0 +1,133 @@
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetAlchemist
+  suffix: Alchemist, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14GuidebookAlchemy
+      - id: OE14ClothingCloakAlchemist
+        prob: 0.6
+      - id: OE14ClothingHeadAlchemistBeret
+        prob: 0.6
+      - id: OE14ClothingHeadAlchemistBandana
+        prob: 0.6
+
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetMerchant
+  suffix: Merchant, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14ClothingHeadBowler
+        prob: 0.5
+      - id: OE14ClothingPantsAristocratic
+        prob: 0.5
+      - id: OE14ClothingShirtMerchant
+        prob: 0.5
+      - id: OE14ClothingEyesMonocle
+        prob: 0.2
+      - id: OE14ClothingEyesGlasses
+        prob: 0.3
+
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetCommandant
+  suffix: Commandant, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14ClothingCloakCommandantJacket
+        prob: 1
+      - id: OE14ClothingHeadBowlerGolden
+        prob: 0.5
+      - id: OE14ClothingPantsAristocratic
+        prob: 0.5
+      - id: OE14ClothingShirtMerchant
+        prob: 0.5
+      - id: OE14ClothingEyesMonocle
+        prob: 0.2
+      - id: OE14ClothingEyesGlasses
+        prob: 0.3
+
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetBlacksmith
+  suffix: Blacksmith, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14ClothingCloakBlacksmithArpon
+        prob: 1
+      - id: OE14ClothingGlovesBlacksmith
+        prob: 0.8
+
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetGuard
+  suffix: Guard, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14GuidebookImperialLaws
+      - id: OE14ClothingHeadGuardHelmet
+        prob: 0.7
+      - id: OE14ClothingPantsGuardsChainmailSkirt
+        prob: 0.7
+      - id: OE14ClothingShirtGuardsChainmailShirtB
+        prob: 0.7
+      - id: OE14ClothingCloakGuardBlue
+        prob: 0.5
+
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetInvestigator
+  suffix: Investigator, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14GuidebookImperialLaws
+      - id: OE14ClothingHeadGuardHelmet
+        prob: 0.7
+      - id: OE14ClothingPantsGuardsChainmailSkirt
+        prob: 0.7
+      - id: OE14ClothingShirtGuardsChainmailShirtB
+        prob: 0.7
+      - id: OE14ClothingCloakGuardInvestigator
+        prob: 1
+      - id: OE14ManaOperationGlove
+        prob: 1
+
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetGuardCommander
+  suffix: Guard Commander, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14TradeContractGuards
+      - id: OE14GuidebookImperialLaws
+      - id: OE14ClothingHeadGuardHelmet
+        prob: 0.7
+      - id: OE14ClothingPantsGuardsChainmailSkirt
+        prob: 0.7
+      - id: OE14ClothingShirtGuardsChainmailShirtB
+        prob: 0.7
+      - id: OE14ClothingCloakGuardCommander
+        prob: 1
+      - id: OE14StampGuardCommander
+
+- type: entity
+  parent: OE14WoodenCabinet
+  id: OE14WoodenCabinetGuildmaster
+  suffix: Guildmaster, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: OE14ClothingCloakGuildmasterCape
+        prob: 1
+      - id: OE14ClothingShirtCottonWhite
+        prob: 1
+      - id: OE14ClothingOuterClothingGreenVest
+        prob: 0.6

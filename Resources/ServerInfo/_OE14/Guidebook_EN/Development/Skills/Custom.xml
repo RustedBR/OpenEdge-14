@@ -1,0 +1,53 @@
+<Document>
+# Creating Custom Skills
+
+This page guides you through adding a new skill tree and spells to OpenEdge 14.
+
+## Step 1: Define the Spell Action
+
+Create the spell entity prototype in [mono]Resources/Prototypes/_OE14/Magic/Spells/[/mono]:
+
+<CodeBlock>
+- type: entity
+  id: SpellMyNewSpell
+  name: My New Spell
+  components:
+    - type: InstantAction
+    - type: OE14ActionManaCost
+      cost: 15
+    - type: OE14Spell
+      # Add spell-specific components here
+</CodeBlock>
+
+## Step 2: Define the Skill
+
+Create the skill prototype in [mono]Resources/Prototypes/_OE14/Skills/[/mono]:
+
+<CodeBlock>
+- type: OE14SkillPrototype
+  id: MyNewSkill
+  name: My New Skill
+  tier: 1
+  pointCost: 1
+  grants:
+    - SpellMyNewSpell
+  statModifiers:
+    Intelligence: 1  # Optional stat bonus
+</CodeBlock>
+
+## Step 3: Add to a Tree
+
+Add your skill to an existing tree or create a new one in the species prototype.
+
+## Step 4: Test
+
+1. Build and run the server
+2. Create a character with the species that has this tree
+3. Spend points to unlock the skill
+4. Verify the spell appears in the action bar
+
+## Content Under Construction
+
+Step-by-step guide with full code examples coming soon. See [textlink="Adding New Spells" link="OE14_DEV_Guide_Spells"] for a more complete walkthrough.
+
+</Document>

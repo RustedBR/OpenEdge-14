@@ -1,0 +1,28 @@
+
+- type: lobbyBackground
+  id: Beginning
+  background: /Textures/_OE14/LobbyScreens/beginning.webp
+
+- type: lobbyBackground
+  id: TypicalAlchemistDay
+  background: /Textures/_OE14/LobbyScreens/typicalAlchemistDay.webp
+
+- type: lobbyBackground
+  id: Tiefling
+  background: /Textures/_OE14/LobbyScreens/tiefling.webp
+
+- type: lobbyBackground
+  id: WeRich
+  background: /Textures/_OE14/LobbyScreens/we_rich.webp
+
+- type: lobbyBackground
+  id: GobWay
+  background: /Textures/_OE14/LobbyScreens/gob_way.webp
+
+- type: lobbyBackground
+  id: Angel
+  background: /Textures/_OE14/LobbyScreens/angel.webp
+
+- type: lobbyBackground
+  id: Carcatoro
+  background: /Textures/_OE14/LobbyScreens/carcatoro.webp

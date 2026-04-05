@@ -1,0 +1,63 @@
+<Document>
+  # Skill System
+
+  The Skill System allows characters to specialize in different combat and magic styles. Each skill tree provides unique bonuses and abilities.
+
+  ## Skill Trees
+
+  Skill trees define what abilities a character can learn. Your species determines which trees you have access to. For example, Elves start with the Metamagic tree for magic enhancement.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MetamagicT1" Caption="Metamagic Tier 1"/>
+    <GuideEntityEmbed Entity="OE14MetamagicT2" Caption="Metamagic Tier 2"/>
+  </Box>
+
+  ## How to Gain Skill Points
+
+  Skill points are the currency for learning new abilities. There are two types of skill points:
+
+  [bold]Memory Points[/bold] — used by all standard skill trees (Pyrokinetic, Healing, Metamagic, etc.). Currently these cannot be obtained from items and are only granted through special events or progression.
+
+  [bold]Blood Essence[/bold] — used exclusively by the Vampire skill tree. Vampires gain Blood points by:
+  - Being selected as a vampire antagonist (start with 2 Blood points)
+  - Consuming [bold]Blood Essence[/bold] items
+  - Gathering essence from victims
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14BloodEssence" Caption="Blood Essence"/>
+  </Box>
+
+  Different skill trees require different point types. Most trees use Memory, while the Vampire tree uses Blood.
+
+  ## Learning Skills
+
+  Open your character menu (press C) and navigate to the Skills tab. Available skills appear in the tree. Click on a skill to learn it if you have enough points.
+
+  [bold]Requirements:[/bold]
+  - Available skill points (Memory for standard trees, Blood for Vampire)
+  - Skill must be in an available tree (determined by species)
+  - Some skills require prerequisites (previous skills in the tree)
+
+  ## Free Skills (Species Bonus)
+
+  Some species have innate skills that are learned automatically at character creation. These skills are free and do not require skill points.
+
+  [bold]Example:[/bold]
+  - Elf: Metamagic T1 and T2 provide +1 Intelligence bonus each
+  - These apply automatically when the character spawns
+
+  ## Skill Effects
+
+  Skills can provide various bonuses:
+  - [bold]Stat Modifiers:[/bold] +1 to Strength, Vitality, Dexterity, or Intelligence
+  - [bold]Special Abilities:[/bold] Unique combat or magic effects
+
+  [bold]Note:[/bold] Stat modifiers from skills contribute to your effective stats and may cause overflow if they push your stat above 10. In such cases, you receive bonus available points instead.
+
+  ## Related Systems
+
+  - [textlink="Character Stats" link="OE14CharacterStats"] — stats affected by skills
+  - [textlink="Combat" link="OE14Combat"] — combat skills for damage bonuses
+  - [textlink="Magic" link="OE14Magic"] — magic skills enhance spellcasting
+
+</Document>

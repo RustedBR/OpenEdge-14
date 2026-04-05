@@ -1,0 +1,53 @@
+<Document>
+
+# Aventureiro
+
+O Aventureiro é uma das funções de jogo disponíveis, focado em obter recursos para o assentamento através de empreendimentos arriscados. Seu objetivo principal é explorar áreas perigosas, derrotar monstros e coletar pilhagens valiosas para vender por lucro.
+
+Os Aventureiros são a espinha dorsal da economia — sem aventureiros para coletar materiais raros e caçar criaturas perigosas, a sociedade entraria em colapso. Sua coragem e habilidades de combate são altamente valorizadas.
+
+## Habilidades Centrais para Aventureiros
+
+- [textlink="Combate" link="OE14Combat"] — domine técnicas de armas e táticas de luta
+- [textlink="Magia" link="OE14Magic"] — aprenda feitiços para melhorar sua survivibilidade
+- [textlink="Economia" link="OE14Economy"] — entenda valores de itens e tendências do mercado
+- [textlink="Fabricação" link="OE14Crafting"] — crie ou melhore seu próprio equipamento
+
+## Formas de Ganhar Dinheiro
+
+### Caçando Monstros
+
+Monstros dropam pilhagens valiosas: essências raras, materiais de fabricação e componentes únicos. Venda-os para taberneiros, alquimistas e artesãos.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14WeaponDaggerHatchet"/>
+</Box>
+
+### Coletando Recursos
+
+Explore para:
+- Ervas e plantas raras (venda para alquimistas)
+- Componentes de fabricação (venda para artesãos)
+- Essências mágicas (itens de comércio de alto valor)
+- Artefatos antigos (para caçadores de tesouros)
+
+### Completando Tarefas
+
+Ofereça seus serviços para NPCs e jogadores:
+- Proteja caravanas em estradas perigosas
+- Recupere itens perdidos de covis de monstros
+- Limpe áreas de criaturas perigosas
+- Caça monstros específicos por recompensas
+
+## Notas Importantes
+
+- Sempre carregue itens de cura antes de se aventurar
+- Trabalhe com outros aventureiros para missões perigosas
+- Aprenda sobre [textlink="Toxinas de Monstros" link="OE14_EN_Monster_Toxins"] para identificar criaturas perigosas
+- Explore áreas completamente antes de se comprometer com uma luta
+
+## Requisitos
+
+Nenhum — Aventureiro é o trabalho inicial padrão, aberto a todos os jogadores.
+
+</Document>

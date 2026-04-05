@@ -1,0 +1,24 @@
+<Document>
+# Sistema de Atributos do Personagem
+
+O sistema OE14CharacterStats gerencia os quatro atributos centrais que definem as capacidades de um personagem: [bold]Força (FOR)[/bold], [bold]Vitalidade (VIT)[/bold], [bold]Destreza (DES)[/bold], e [bold]Inteligência (INT)[/bold].
+
+## O Que Esta Seção Cobre
+
+- [textlink="Fórmulas e Cálculos de Atributos" link="OE14_DEV_Stats_Formulas"] — a matemática por trás de como atributos afetam o jogo
+- [textlink="Modificadores de Atributos & Overflow" link="OE14_DEV_Stats_Modifiers"] — como bônus temporários se acumulam e transbordam
+- [textlink="Sistema de Fallback de Magias" link="OE14_DEV_Stats_Fallback"] — como magias interagem com limites de atributos
+- [textlink="Implementação de Rede" link="OE14_DEV_Stats_Network"] — como atributos sincronizam entre servidor e cliente
+- [textlink="Exemplos de Código" link="OE14_DEV_Stats_Code"] — implementações de referência
+
+## Arquivos Chave
+
+- [mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsComponent.cs[/mono]
+- [mono]Content.Server/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+- [mono]Content.Client/_OE14/CharacterStats/OE14CharacterStatsUISystem.cs[/mono]
+
+## Visão Rápida
+
+Cada atributo varia de 1 a 10. Atributos são definidos durante a criação do personagem e podem ser modificados por magias, itens e buffs durante o jogo. O atributo efetivo é sempre [bold]base + modificadores[/bold], limitado a 10.
+
+</Document>

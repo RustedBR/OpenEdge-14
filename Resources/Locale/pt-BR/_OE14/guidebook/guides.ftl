@@ -1,0 +1,1 @@
+oe14-guidebook-random-variations-title = Produtos aleatórios

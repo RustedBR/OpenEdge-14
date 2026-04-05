@@ -1,0 +1,89 @@
+- type: oe14TradingRequest
+  id: BradPotionsWildSage
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14WildSage
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsAirLily
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14AirLily
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsChromiumSlime
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14ChromiumSlime
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsAgaricMushroom
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14AgaricMushroom
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsDayflin
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14Dayflin
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsBloodFlower
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14BloodFlower
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsSilverNeedle
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14SilverNeedle
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsLumiMushroom
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14LumiMushroom
+    count: 5
+
+- type: oe14TradingRequest
+  id: BradPotionsBlueAmanita
+  possibleFactions:
+  - BradPotions
+  - Horticulture
+  requirements:
+  - !type:ProtoIdResource
+    protoId: OE14BlueAmanita
+    count: 5

@@ -1,0 +1,47 @@
+- type: stack
+  id: OE14FloorCarpetRed
+  name: oe14-stack-red-carpet
+  spawn: OE14FloorCarpetItemRed1
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorCarpetBlue
+  name: oe14-stack-blue-carpet
+  spawn: OE14FloorCarpetItemBlue1
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorCarpetCyan
+  name: oe14-stack-cyan-carpet
+  spawn: OE14FloorCarpetItemCyan1
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorCarpetGreen
+  name: oe14-stack-green-carpet
+  spawn: OE14FloorCarpetItemGreen1
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorCarpetOrange
+  name: oe14-stack-orange-carpet
+  spawn: OE14FloorCarpetItemOrange1
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorCarpetPurple
+  name: oe14-stack-purple-carpet
+  spawn: OE14FloorCarpetItemPurple1
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorCarpetBlack
+  name: oe14-stack-black-carpet
+  spawn: OE14FloorCarpetItemBlack1
+  maxCount: 30
+
+- type: stack
+  id: OE14FloorCarpetYellow
+  name: oe14-stack-yellow-carpet
+  spawn: OE14FloorCarpetItemYellow1
+  maxCount: 30

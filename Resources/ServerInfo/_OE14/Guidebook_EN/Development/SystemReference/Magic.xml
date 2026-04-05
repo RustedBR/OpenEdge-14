@@ -1,0 +1,33 @@
+<Document>
+# Magic & Spell Systems Reference
+
+Quick reference for the magic and spell systems in OpenEdge 14.
+
+## Key Components
+
+[bold]OE14SpellStorageComponent[/bold] — attached to items; holds a list of spell action IDs that are granted when the item is equipped.
+
+[bold]OE14ActionManaCostComponent[/bold] — attached to spell actions; defines the mana cost and validates mana before the spell fires.
+
+[bold]OE14MagicEnergyComponent[/bold] — attached to characters; tracks current and maximum mana.
+
+## Spell Flow
+
+1. Player equips item with [mono]OE14SpellStorage[/mono]
+2. Spells are added to action bar
+3. Player activates spell
+4. [mono]OE14ActionManaCostSystem[/mono] checks mana
+5. If sufficient: deducts mana, spell fires
+6. If not: rejects with message
+
+## File Locations
+
+- [mono]Content.Shared/_OE14/Magic/[/mono]
+- [mono]Content.Server/_OE14/Magic/[/mono]
+- [mono]Resources/Prototypes/_OE14/Magic/[/mono]
+
+## Content Under Construction
+
+Full magic system reference coming soon. See [textlink="Spell Mechanics" link="OE14_DEV_Skills_Mechanics"] for the conceptual overview.
+
+</Document>

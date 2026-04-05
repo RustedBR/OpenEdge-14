@@ -1,0 +1,14 @@
+- type: oe14SkillTree
+  id: GodMerkas
+  name: oe14-job-name-god-merkas
+  desc: oe14-job-desc-god-merkas
+  skillType: Memory
+  color: "#51cf72"
+
+- type: oe14SkillTree
+  id: GodLumera
+  name: oe14-job-name-god-lumera
+  desc: oe14-job-desc-god-lumera
+  skillType: Memory
+  color: "#5632a8"
+  parallax: Default

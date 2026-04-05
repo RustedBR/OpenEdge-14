@@ -1,0 +1,51 @@
+<Document>
+# Stat Modifiers & Overflow
+
+This page covers how stat modifiers stack, how overflow is handled, and how the system tracks which source each bonus comes from.
+
+## ModifierSource Enum
+
+Each modifier has a source that identifies where it came from:
+
+<CodeBlock>
+public enum ModifierSource
+{
+    Spell,   // From active spells or spell trees
+    Spend,   // From spending character creation points
+    Item,    // From equipped items
+    Buff,    // From temporary buff effects
+    Racial,  // From racial innate bonuses
+    Other
+}
+</CodeBlock>
+
+## How Modifiers Stack
+
+All modifier sources sum together:
+
+<CodeBlock>
+EffectiveStat = BaseStat + Modifiers[Spell] + Modifiers[Item] + Modifiers[Buff] + ...
+</CodeBlock>
+
+The result is capped at MaxStat (10).
+
+## Overflow Handling
+
+When modifiers push a stat past the cap, the overflow is returned as available character points:
+
+<CodeBlock>
+Overflow = (BaseStat + TotalModifiers) - MaxStat
+AvailablePoints += Overflow
+</CodeBlock>
+
+This ensures no bonus is "wasted" — excess modifier value becomes points you can spend elsewhere.
+
+## Validation
+
+The server validates point-spending against the [bold]effective stat[/bold] (base + modifiers), not just the base stat. This prevents spending points on a stat that is already capped by modifiers.
+
+## Content Under Construction
+
+Detailed API documentation coming soon. See [textlink="Modifier System" link="OE14_DEV_Arch_Modifiers"] for the architectural overview.
+
+</Document>

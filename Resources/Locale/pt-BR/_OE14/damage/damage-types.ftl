@@ -1,0 +1,1 @@
+oe14-damage-type-manadepletion = Esgotamento de mana

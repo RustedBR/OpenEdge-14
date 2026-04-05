@@ -1,0 +1,27 @@
+<Document>
+# Skill & Spell System
+
+The Skill and Spell System defines how characters learn and use abilities. Skills are organized in trees, and each skill grants spells or stat bonuses when learned.
+
+## What This Section Covers
+
+- [textlink="Skill Trees & Distribution" link="OE14_DEV_Skills_Trees"] — point allocation and tree progression
+- [textlink="Spell Mechanics" link="OE14_DEV_Skills_Mechanics"] — how spells are cast, their effects, and resolution
+- [textlink="Mana System" link="OE14_DEV_Skills_Mana"] — mana pools, costs, and regeneration
+- [textlink="Creating Custom Skills" link="OE14_DEV_Skills_Custom"] — step-by-step guide to adding new skills
+
+## Key Concepts
+
+- Skills are defined in YAML prototypes
+- Each skill is part of a tree (e.g., Pyromancy, Hydrosophistry, Craftsmanship)
+- Skills have tiers: T1 (basic) to T3 (advanced)
+- Learning a skill costs character points
+- Some skills grant stat modifiers in addition to spells
+
+## Key Files
+
+- [mono]Resources/Prototypes/_OE14/Skills/[/mono]
+- [mono]Content.Shared/_OE14/Skills/OE14SkillComponent.cs[/mono]
+- [mono]Content.Server/_OE14/Skills/OE14SkillSystem.cs[/mono]
+
+</Document>

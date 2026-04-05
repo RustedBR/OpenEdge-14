@@ -1,0 +1,29 @@
+- type: factionIcon
+  abstract: true
+  id: OE14VampireFaction
+  priority: 11
+  locationPreference: Left
+  showTo:
+    components:
+    - OE14Vampire
+
+- type: factionIcon
+  id: OE14VampireNightChildrens
+  parent: OE14VampireFaction
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/vampire_icons.rsi
+    state: NightChildrens
+
+- type: factionIcon
+  id: OE14VampireUnnameable
+  parent: OE14VampireFaction
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/vampire_icons.rsi
+    state: Unnameable
+
+- type: factionIcon
+  id: OE14VampireDevourers
+  parent: OE14VampireFaction
+  icon:
+    sprite: /Textures/_OE14/Interface/Misc/vampire_icons.rsi
+    state: Devourers

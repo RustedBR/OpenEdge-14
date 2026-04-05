@@ -1,0 +1,30 @@
+- type: OE14Recipe
+  id: OE14ClothingMaskVampireVoiceDevourers
+  tag: OE14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateDevourers
+  requirements:
+  - !type:StackResource
+    stack: OE14ThinLeather
+    count: 2
+  result: OE14ClothingMaskVampireVoiceDevourers
+  resultCount: 1
+
+- type: OE14Recipe
+  id: OE14ClothingCloakVampireDevourers
+  tag: OE14RecipeVampire
+  category: Clothing
+  craftTime: 1
+  requiredSkills:
+  - VampireTransmutateDevourers
+  requirements:
+  - !type:StackResource
+    stack: OE14Cloth
+    count: 4
+  - !type:StackResource
+    stack: OE14BloodEssence
+    count: 1
+  result: OE14ClothingCloakVampireDevourers
+  resultCount: 1

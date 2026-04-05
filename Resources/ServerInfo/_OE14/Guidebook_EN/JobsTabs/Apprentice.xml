@@ -1,0 +1,31 @@
+<Document>
+# Apprentice
+
+<Box>
+<GuideEntityEmbed Entity="OE14ClothingCloakAlchemist" Caption="Apprentice's Cloak"/>
+</Box>
+
+The Apprentice is the entry point into the Artisan department. Without the experience required to specialize, an Apprentice works across all crafting disciplines — assisting alchemists, smiths, and tailors alike. The role rewards curiosity and a willingness to learn.
+
+## Responsibilities
+
+- Assist specialized artisans with their work
+- Gather and sort raw materials for crafting
+- Learn the basics of alchemy, smithing, and tailoring
+- Handle tasks that experienced artisans don't have time for
+
+## Starting Skills
+
+Apprentices begin with [bold]AlchemyVision[/bold] — the same skill used by Alchemists to identify magical properties in reagents. This makes Apprentices natural helpers in the laboratory from day one.
+
+## Requirements
+
+None — the Apprentice role is open to all players with no playtime requirement. It is the ideal starting job for anyone interested in the Artisan department.
+
+## Tips
+
+- Coordinate with the Alchemist to handle ingredient collection and sorting
+- Use the [textlink="Crafting" link="OE14Crafting"] guide to learn what you can make
+- Study [textlink="Alchemy" link="OE14_EN_Alchemy"] — your AlchemyVision skill makes the laboratory accessible immediately
+
+</Document>

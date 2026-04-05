@@ -1,0 +1,33 @@
+- type: entity
+  id: OE14ActionSpellBloodEssenceCreation
+  parent: OE14ActionSpellBase
+  name: Form the essence of blood
+  description: You extract the essence of life stolen from other beings from your body to pass on to other vampires or use in rituals.
+  components:
+  - type: OE14ActionManaCost
+    manaCost: 15
+  - type: OE14ActionSkillPointCost
+    skillPoint: Blood
+    count: 1
+  - type: DoAfterArgs
+    delay: 2.5
+  - type: Action
+    useDelay: 1
+    icon:
+      sprite: _OE14/Actions/Spells/vampire.rsi
+      state: essence_create
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_OE14/Effects/essence_consume.ogg
+  - type: InstantAction
+    event: !type:OE14InstantModularEffectEvent
+      telegraphyEffects:
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+      effects:
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14ImpactEffectBloodEssence
+      - !type:OE14SpellSpawnInHandEntity
+        spawns:
+        - OE14BloodEssence

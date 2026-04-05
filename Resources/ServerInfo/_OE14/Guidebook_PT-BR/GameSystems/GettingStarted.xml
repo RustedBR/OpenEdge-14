@@ -1,0 +1,79 @@
+<Document>
+  # Bem-vindo ao OpenEdge 14
+
+  OpenEdge 14 é um RPG medieval de multijogador construído sobre o motor Space Station 14. Você compartilha o mundo com outros jogadores em tempo real — coopere, negocie, lute e sobreviva juntos.
+
+  Esta seção cobre os sistemas principais. Use os links na barra lateral para ler sobre cada um em detalhes.
+
+
+  ## Primeiros Passos
+
+  Quando você aparecer, terá uma função e um local inicial. Reserve um momento para olhar ao redor antes de agir.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobHuman" Caption="Seu Personagem"/>
+    <GuideEntityEmbed Entity="OE14WeaponSwordIron" Caption="Arma Inicial"/>
+    <GuideEntityEmbed Entity="OE14CopperCoin1" Caption="Moedas Iniciais"/>
+  </Box>
+
+  [bold]Abra seu inventário[/bold] com [bold]I[/bold] — verifique com quais itens você começa. Funções diferentes começam com equipamentos diferentes.
+
+  [bold]Abra sua barra de ações[/bold] com [bold]Q[/bold] — se estiver segurando um item mágico, suas magias aparecerão aqui.
+
+  [bold]Abra o menu de personagem[/bold] com [bold]C[/bold] — mostra os atributos do seu personagem: Força, Vitalidade, Destreza e Inteligência.
+
+  [bold]Clique com o botão direito[/bold] em objetos e personagens para ver opções de contexto: pegar, examinar, interagir, atacar.
+
+
+  ## Sobrevivência
+
+  Sua [color=#e05050]barra de vida[/color] aparece na parte inferior da tela. Se chegar a zero, você estará criticamente ferido e morrerá sem ajuda.
+
+  - Carregue [bold]bandagens[/bold] para estancar sangramentos.
+  - Coma e beba regularmente para manter a stamina.
+  - Evite lutar contra inimigos muito fortes para seu equipamento atual.
+  - Se estiver em perigo, [bold]corra[/bold] — não há vergonha em recuar.
+
+
+  ## Sistemas Principais
+
+  [bold]Magia[/bold] — equipe cajados mágicos para ganhar magias. Lance-as usando mana da barra de ações.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14MagicFireStaff" Caption="Cajado Mágico"/>
+    <GuideEntityEmbed Entity="OE14SpellScrollFireball" Caption="Pergaminho de Magia"/>
+  </Box>
+
+  [bold]Crafting[/bold] — use bancadas para construir itens, cozinhe alimentos sobre fogueiras e monte armas personalizadas a partir de componentes.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Workbench" Caption="Bancada de Trabalho"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchAnvil" Caption="Bigorna"/>
+  </Box>
+
+  [bold]Economia[/bold] — ganhe moedas do salário da sua função, venda bens nas plataformas de comércio e cultive plantações para lucro.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14GoldCoin1" Caption="Moeda de Ouro"/>
+    <GuideEntityEmbed Entity="OE14TradingPlatform" Caption="Plataforma de Comércio"/>
+  </Box>
+
+  [bold]Combate[/bold] — lute com armas corpo a corpo, aplique efeitos de status e melhore suas habilidades com a prática.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WeaponWarAxeIron" Caption="Machado de Guerra"/>
+    <GuideEntityEmbed Entity="OE14HerbalBandage1" Caption="Bandagem de Ervas"/>
+  </Box>
+
+  [bold]Atributos[/bold] — seus valores de Força, Vitalidade, Destreza e Inteligência afetam dano, vida, stamina e mana.
+
+
+  ## Dicas para Novos Jogadores
+
+  - [bold]Leia as descrições dos itens[/bold] — examine os itens para aprender o que fazem antes de usá-los.
+  - [bold]Fale com outros jogadores[/bold] — veteranos geralmente ajudam iniciantes.
+  - [bold]Mantenha sua função[/bold] no início — sua função lhe dá ferramentas e salário para começar.
+  - [bold]Morte não é o fim[/bold] — você reaparece após um tempo. Use o tempo para pensar no que deu errado.
+  - [bold]Moedas são físicas[/bold] — guarde-as numa bolsa para não perdê-las ao levar dano.
+
+</Document>

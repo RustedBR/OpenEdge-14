@@ -1,0 +1,34 @@
+- type: entity
+  id: OE14GatherableLumiMushroom
+  parent: OE14GatherableBase
+  name: lumishroom
+  description: A faintly luminous mushroom. Often used by alchemists as a means of concentrating solutions.
+  suffix: Gatherable
+  components:
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _OE14/Structures/Flora/Wild/lumishroom.rsi
+    layers:
+      - state: world1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        world1: ""
+        world2: ""
+        world3: ""
+        world4: ""
+        world5: ""
+        world6: ""
+  - type: PointLight
+    color: "#36c98f"
+    radius: 1.5
+  - type: OE14PlantGatherable
+    deleteAfterHarvest: true
+    loot:
+      All: !type:GroupSelector
+        children:
+        - id: OE14LumiMushroom
+        - id: OE14MobMonsterMyconideLumish
+          weight: 0.08
+

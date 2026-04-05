@@ -1,0 +1,35 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: OE14ClothingOuterClothingBase
+  categories: [ ForkFiltered ]
+  components:
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2
+    slots:
+    - outerClothing
+  - type: Sprite
+    state: icon
+
+- type: entity
+  abstract: true
+  parent: [ OE14ClothingOuterClothingBase, BaseFoldable ]
+  id: OE14ClothingOuterFoldableBase
+  components:
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-zip-verb
+    foldVerbText: fold-unzip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: open
+    foldedHeldPrefix: open
+  - type: Sprite
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon-open
+      map: ["foldedLayer"]
+      visible: false
+

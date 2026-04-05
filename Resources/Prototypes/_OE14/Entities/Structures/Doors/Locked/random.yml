@@ -1,0 +1,50 @@
+- type: entity
+  parent: OE14WoodenDoor
+  id: OE14WoodenDoorRandomLocked
+  suffix: Random Locked (Complex 3)
+  components:
+  - type: OE14Lock
+    autoGenerateRandomShape: 3
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorRandomLocked
+- type: entity
+  parent: OE14WoodenDoorWindowed
+  id: OE14WoodenDoorWindowedRandomLocked
+  suffix: Random Locked (Complex 3)
+  components:
+  - type: OE14Lock
+    autoGenerateRandomShape: 3
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14WoodenDoorWindowedRandomLocked
+- type: entity
+  parent: OE14IronDoor
+  id: OE14IronDoorRandomLocked
+  suffix: Random Locked (Complex 5)
+  components:
+  - type: OE14Lock
+    autoGenerateRandomShape: 5
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorRandomLocked
+- type: entity
+  parent: OE14IronDoorWindowed
+  id: OE14IronDoorWindowedRandomLocked
+  suffix: Random Locked (Complex 5)
+  components:
+  - type: OE14Lock
+    autoGenerateRandomShape: 5
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14IronDoorWindowedRandomLocked
+- type: entity
+  parent: OE14FenceGateBigIron
+  id: OE14FenceGateBigIronRandomLocked
+  suffix: Random Locked (Complex 5)
+  components:
+  - type: OE14Lock
+    autoGenerateRandomShape: 5
+  - type: Lock
+    locked: true
+  localizationId: ent-OE14FenceGateBigIronRandomLocked

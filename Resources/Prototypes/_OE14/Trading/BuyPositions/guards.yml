@@ -1,0 +1,45 @@
+# Rep 0
+
+- type: oe14TradingPosition
+  id: OE14TradeContractGuards
+  faction: Guards
+  uiPosition: 0
+  icon:
+    sprite: _OE14/Objects/Specific/Economy/trade_contracts.rsi
+    state: guard
+  service: !type:OE14BuyItemsService
+    product: OE14TradeContractGuards
+
+- type: oe14TradingPosition
+  id: Bola
+  faction: Guards
+  uiPosition: 3
+  priceMarkup: 10
+  icon:
+    sprite: Objects/Weapons/Throwable/bola.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: Bola
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14RopeGuards
+  faction: Guards
+  uiPosition: 4
+  icon:
+    sprite: _OE14/Objects/Tools/rope.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14Rope
+    count: 1
+
+- type: oe14TradingPosition
+  id: OE14MagicGuardElectroStaff
+  faction: Guards
+  uiPosition: 5
+  icon:
+    sprite: _OE14/Objects/Weapons/Magic/TwoHandedStaff/guard_electro_staff.rsi
+    state: icon
+  service: !type:OE14BuyItemsService
+    product: OE14MagicGuardElectroStaff
+    count: 1

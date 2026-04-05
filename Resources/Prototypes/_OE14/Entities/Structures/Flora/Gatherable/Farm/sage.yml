@@ -1,0 +1,27 @@
+- type: entity
+  id: OE14PlantSage
+  parent: OE14GatherablePlantSingleHarvestBase
+  name: sage
+  description: Medicinal sage. Some love it for its medicinal properties, others for its narcotic properties. Which side are you on?
+  components:
+  - type: Sprite
+    layers:
+    - state: liq-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+    - state: grow-1
+      sprite: _OE14/Structures/Flora/Farm/sage.rsi
+      map: ["enum.PlantVisualLayers.Base"]
+  - type: OE14PlantVisuals
+    growthSteps: 4
+  - type: OE14PlantGatherable
+    loot:
+      All: !type:AllSelector
+        children:
+        - id: OE14WildSage
+          rolls: !type:RangeNumberSelector
+            range: 4, 6
+        - id: OE14SeedSage
+          rolls: !type:RangeNumberSelector
+            range: 1, 2
+

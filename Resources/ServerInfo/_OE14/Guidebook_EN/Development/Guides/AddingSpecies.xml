@@ -1,0 +1,61 @@
+<Document>
+# Adding New Species
+
+This guide covers how to create a new playable species in OpenEdge 14.
+
+## Step 1: Create the Species Prototype
+
+Species definitions live in [mono]Resources/Prototypes/_OE14/Species/[/mono]:
+
+<CodeBlock>
+- type: speciesBase
+  id: OE14Goblin
+  name: species-name-goblin
+  roundStart: true
+  prototype: MobGoblinSpecies
+  sprites: GoblinSprites
+  skinColorsAllowed: false
+  defaultSkinTone: "#6B8E23"
+</CodeBlock>
+
+## Step 2: Create the Entity Prototype
+
+<CodeBlock>
+- type: entity
+  id: MobGoblinSpecies
+  parent: BaseMobSpecies
+  components:
+    - type: OE14CharacterStats
+      baseStrength: 4
+      baseVitality: 4
+      baseDexterity: 7
+      baseIntelligence: 5
+    - type: OE14SkillTree
+      trees:
+        - GoblinCunning
+        - GoblinStealth
+</CodeBlock>
+
+## Step 3: Add Racial Modifiers
+
+If the species has innate stat bonuses, configure them in the CharacterStats or via skills that auto-apply at spawn.
+
+## Step 4: Add Localization
+
+<CodeBlock>
+species-name-goblin = Goblin
+species-description-goblin = Small, cunning creatures with high agility.
+</CodeBlock>
+
+## Step 5: Test
+
+1. Start character creation
+2. Select the new species
+3. Verify stats and skill trees appear correctly
+4. Spawn and verify racial bonuses are applied
+
+## Content Under Construction
+
+Full guide with sprite setup and more examples coming soon.
+
+</Document>

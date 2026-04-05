@@ -1,0 +1,64 @@
+- type: oe14TradingFaction
+  id: ContractGuild
+  name: oe14-trade-faction-contracts
+  roundStart: 1
+
+- type: oe14TradingFaction
+  id: VictoriaGardens
+  color: "#67db67"
+  name: oe14-trade-faction-victoria-gardens
+
+- type: oe14TradingFaction
+  id: BradPotions
+  color: "#ad67db"
+  name: oe14-trade-faction-brad-potions
+
+- type: oe14TradingFaction
+  id: DwarfMining
+  color: "#b05a3e"
+  name: oe14-trade-faction-dwarf-mining
+
+- type: oe14TradingFaction
+  id: Thaumaturgy
+  color: "#a43ae0"
+  name: oe14-trade-faction-thaumaturgy
+
+- type: oe14TradingFaction
+  id: HomeDecor
+  color: "#95f542"
+  name: oe14-trade-faction-home-decor
+
+- type: oe14TradingFaction
+  id: Horticulture
+  color: "#3cb371"
+  name: oe14-trade-faction-horticulture
+
+- type: oe14TradingFaction
+  id: Butchers
+  color: "#c93756"
+  name: oe14-trade-faction-butchers
+
+- type: oe14TradingFaction
+  id: Dairy
+  color: "#f5f5dc"
+  name: oe14-trade-faction-dairy
+
+- type: oe14TradingFaction
+  id: Tailors
+  color: "#d67fd6"
+  name: oe14-trade-faction-tailors
+
+- type: oe14TradingFaction
+  id: Guards
+  color: "#385573"
+  name: oe14-trade-faction-guard
+
+- type: oe14TradingFaction
+  id: HelmirChild
+  color: "#cc0707"
+  name: oe14-trade-faction-helmir-child
+
+- type: oe14TradingFaction
+  id: VampireMarket
+  color: "#6b1934"
+  name: oe14-trade-faction-vampire-market

@@ -1,0 +1,167 @@
+# Stat Bonus Modular Parts
+# These parts add +1 to specific stats when attached to weapons/armor.
+# Reutilizes crystal sprites from Alchemy for consistency across jobs.
+
+# === STRENGTH CRYSTAL (+1 STR) ===
+# Uses Fire essence shard appearance (ignis = strength)
+
+- type: entity
+  id: OE14ModularCrystalStrength
+  name: Strength Essence Shard
+  description: A glowing orange crystal infused with the essence of fire. When attached to a weapon, it enhances raw physical power.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartStrengthCrystal
+      doAfter: 1.5
+      addPrice: 15
+    - type: Sprite
+      sprite: _OE14/Structures/Flora/Crystal/crystal_shard.rsi
+      state: shard0
+      color: "#d9741c"
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 100
+    - type: StaticPrice
+      price: 50
+
+- type: modularPart
+  id: OE14ModularPartStrengthCrystal
+  slots:
+    - OE14ModularSlotGem
+  sourceEntity: OE14ModularCrystalStrength
+  destroyProb: 0.3
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:AddComponents
+      override: true
+      components:
+      - type: OE14StatBonus
+        statBonuses:
+          strength: 1
+
+# === VITALITY CRYSTAL (+1 VIT) ===
+# Uses Earth essence shard appearance (terra = life/vitality)
+
+- type: entity
+  id: OE14ModularCrystalVitality
+  name: Vitality Essence Shard
+  description: A pulsing green crystal infused with the essence of earth. When attached to armor, it enhances endurance and health.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartVitalityCrystal
+      doAfter: 1.5
+      addPrice: 15
+    - type: Sprite
+      sprite: _OE14/Structures/Flora/Crystal/crystal_shard.rsi
+      state: shard1
+      color: "#1cea42"
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 100
+    - type: StaticPrice
+      price: 50
+
+- type: modularPart
+  id: OE14ModularPartVitalityCrystal
+  slots:
+    - OE14ModularSlotGem
+  sourceEntity: OE14ModularCrystalVitality
+  destroyProb: 0.3
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:AddComponents
+      override: true
+      components:
+      - type: OE14StatBonus
+        statBonuses:
+          vitality: 1
+
+# === DEXTERITY CRYSTAL (+1 DEX) ===
+# Uses Water/Air essence shard appearance (aqua = fluidity/speed)
+
+- type: entity
+  id: OE14ModularCrystalDexterity
+  name: Dexterity Essence Shard
+  description: A shimmering blue crystal infused with the essence of water. When attached to weapons, it enhances speed and reflexes.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartDexterityCrystal
+      doAfter: 1.5
+      addPrice: 15
+    - type: Sprite
+      sprite: _OE14/Structures/Flora/Crystal/crystal_shard.rsi
+      state: shard2
+      color: "#1c94d9"
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 100
+    - type: StaticPrice
+      price: 50
+
+- type: modularPart
+  id: OE14ModularPartDexterityCrystal
+  slots:
+    - OE14ModularSlotGem
+  sourceEntity: OE14ModularCrystalDexterity
+  destroyProb: 0.3
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:AddComponents
+      override: true
+      components:
+      - type: OE14StatBonus
+        statBonuses:
+          dexterity: 1
+
+# === INTELLIGENCE CRYSTAL (+1 INT) ===
+# Uses Magic essence shard appearance (praecantatio = magic/intellect)
+
+- type: entity
+  id: OE14ModularCrystalIntelligence
+  name: Intelligence Essence Shard
+  description: A shining purple crystal infused with the essence of magic. When attached to staffs or armor, it enhances magical power and focus.
+  parent: BaseItem
+  components:
+    - type: OE14ModularCraftPart
+      possibleParts:
+        - OE14ModularPartIntelligenceCrystal
+      doAfter: 1.5
+      addPrice: 15
+    - type: Sprite
+      sprite: _OE14/Structures/Flora/Crystal/crystal_shard.rsi
+      state: shard3
+      color: "#5497d6"
+    - type: Item
+      size: Small
+    - type: PhysicalComposition
+      materialComposition:
+        Glass: 100
+    - type: StaticPrice
+      price: 50
+
+- type: modularPart
+  id: OE14ModularPartIntelligenceCrystal
+  slots:
+    - OE14ModularSlotGem
+  sourceEntity: OE14ModularCrystalIntelligence
+  destroyProb: 0.3
+  modifiers:
+    - !type:InvalidateExamine
+    - !type:AddComponents
+      override: true
+      components:
+      - type: OE14StatBonus
+        statBonuses:
+          intelligence: 1

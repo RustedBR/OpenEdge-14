@@ -1,0 +1,42 @@
+<Document>
+# Sistema de Fallback de Magias
+
+O Sistema de Fallback de Magias trata o que acontece quando uma magia concede um modificador de atributo que empurra o atributo do personagem além do máximo.
+
+## O Problema
+
+Se um personagem tem INT 9 e uma magia concede +2 INT, o atributo efetivo seria 11 — mas o limite é 10. O +1 de overflow precisa ir para algum lugar.
+
+## A Solução
+
+Quando um modificador causa overflow, o sistema:
+1. Limita o atributo efetivo em AtributoMáximo (10)
+2. Calcula a quantidade de overflow
+3. Adiciona o overflow como PontosDisponíveis que o jogador pode gastar
+
+<CodeBlock>
+// Se adicionar um modificador excederia AtributoMáximo:
+int projected = (BaseStat + currentModifiers + newModifier);
+if (projected > MaxStat)
+{
+    int overflow = projected - MaxStat;
+    component.AvailablePoints += overflow;
+}
+</CodeBlock>
+
+## Interação de Tier de Magias
+
+Cada tier de magia em uma árvore de habilidades pode adicionar modificadores de atributos. Ao empilhar múltiplos tiers, overflow se acumula incrementalmente.
+
+[bold]Exemplo:[/bold]
+- INT base do Elfo: 8
+- Magia T1: +1 INT (efetivo: 9)
+- Magia T2: +1 INT (efetivo: 10, limitado)
+- Magia T3: +1 INT (efetivo: 10, overflow: +1 ponto disponível)
+
+## Conteúdo Em Construção
+
+Documentação completa de spell fallback coming soon. Consulte o código fonte do modificador:
+[mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+
+</Document>

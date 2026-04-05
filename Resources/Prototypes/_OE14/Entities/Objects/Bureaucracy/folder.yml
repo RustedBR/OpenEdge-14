@@ -1,0 +1,56 @@
+- type: entity
+  id: OE14PaperFolderBase
+  abstract: true
+  parent: BaseStorageItem
+  categories: [ ForkFiltered ]
+  name: folder
+  description: A folder filled with some paperwork.
+  components:
+  - type: Item
+    size: Small
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,4,3
+    whitelist:
+      tags:
+        - Document
+  - type: Tag
+    tags:
+    - Folder
+  - type: StorageFill
+    contents:
+      - id: OE14Paper
+        prob: 1
+      - id: OE14Paper
+        prob: 1
+      - id: OE14Paper
+        prob: 0.8
+      - id: OE14Paper
+        prob: 0.6
+      - id: OE14Paper
+        prob: 0.4
+      - id: OE14Paper
+        prob: 0.2
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: StaticPrice
+    price: 1
+
+- type: entity
+  id: OE14PaperFolderBlue
+  parent: OE14PaperFolderBase
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Bureaucracy/paper.rsi
+    state: folder_blue
+
+- type: entity
+  id: OE14PaperFolderRed
+  parent: OE14PaperFolderBase
+  components:
+  - type: Sprite
+    sprite: _OE14/Objects/Bureaucracy/paper.rsi
+    state: folder_red
+

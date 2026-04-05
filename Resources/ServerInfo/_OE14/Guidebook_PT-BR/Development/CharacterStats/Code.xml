@@ -1,0 +1,57 @@
+<Document>
+# Exemplos de Código (Atributos do Personagem)
+
+Esta página contém implementações de referência para trabalhar com o sistema OE14CharacterStats.
+
+## Adicionando um Modificador de Atributo a partir de uma Magia
+
+<CodeBlock>
+// No seu sistema de magia
+private void ApplySpellStatBonus(EntityUid target, int intBonus)
+{
+    if (!TryComp<OE14CharacterStatsComponent>(target, out var stats))
+        return;
+
+    // Adiciona modificador
+    stats.IntModifiers[ModifierSource.Spell] =
+        stats.IntModifiers.GetValueOrDefault(ModifierSource.Spell) + intBonus;
+
+    // Recalcula e sincroniza
+    _statsSystem.RecalculateStats(target, stats);
+}
+</CodeBlock>
+
+## Lendo Atributos Efetivos
+
+<CodeBlock>
+// Verifica se jogador atende requisito de atributo
+private bool HasEnoughIntelligence(EntityUid player, int required)
+{
+    if (!TryComp<OE14CharacterStatsComponent>(player, out var stats))
+        return false;
+
+    return stats.EffectiveIntelligence >= required;
+}
+</CodeBlock>
+
+## Removendo um Modificador
+
+<CodeBlock>
+// Quando efeito de magia termina
+private void RemoveSpellBonus(EntityUid target)
+{
+    if (!TryComp<OE14CharacterStatsComponent>(target, out var stats))
+        return;
+
+    stats.IntModifiers.Remove(ModifierSource.Spell);
+    _statsSystem.RecalculateStats(target, stats);
+}
+</CodeBlock>
+
+## Conteúdo Em Construção
+
+Mais exemplos de código coming soon. A implementação completa está em:
+[mono]Content.Shared/_OE14/CharacterStats/OE14CharacterStatsSystem.cs[/mono]
+[mono]Content.Server/_OE14/CharacterStats/OE14ServerCharacterStatsSystem.cs[/mono]
+
+</Document>

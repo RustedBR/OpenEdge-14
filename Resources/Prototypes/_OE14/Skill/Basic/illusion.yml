@@ -1,0 +1,107 @@
+# T1
+
+- type: oe14Skill
+  id: IllusionT1
+  skillUiPosition: 1, 0
+  tree: Illusion
+  name: oe14-skill-illusion-t1-name
+  desc: oe14-skill-illusion-t1-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: light
+  effects:
+  - !type:OE14AddStatBonus
+    stat: vitality
+
+- type: oe14Skill
+  id: OE14ActionSpellSphereOfLight
+  skillUiPosition: 0, 4
+  tree: Illusion
+  icon:
+    sprite: _OE14/Actions/Spells/light.rsi
+    state: sphere_of_light
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellSphereOfLight
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+
+- type: oe14Skill
+  id: OE14ActionSpellSearchOfLife
+  skillUiPosition: 2, 4
+  learnCost: 1
+  tree: Illusion
+  icon:
+    sprite: _OE14/Actions/Spells/light.rsi
+    state: search_of_life
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellSearchOfLife
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+
+# T2
+
+- type: oe14Skill
+  id: IllusionT2
+  skillUiPosition: 7, 0
+  tree: Illusion
+  name: oe14-skill-illusion-t2-name
+  desc: oe14-skill-illusion-t2-desc
+  learnCost: 0.5
+  icon:
+    sprite: _OE14/Actions/skill_tree.rsi
+    state: light2
+  effects:
+  - !type:OE14AddStatBonus
+    stat: vitality
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT1
+
+- type: oe14Skill
+  id: OE14ActionSpellFlashLight
+  skillUiPosition: 6, 4
+  tree: Illusion
+  icon:
+    sprite: _OE14/Actions/Spells/light.rsi
+    state: flash_light
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellFlashLight
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT2
+
+- type: oe14Skill
+  id: OE14ActionSpellPeaceBallade
+  skillUiPosition: 8, 4
+  tree: Illusion
+  icon:
+    sprite: _OE14/Actions/Spells/healing.rsi
+    state: peace_music
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellPeaceBallade
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: IllusionT2
+
+# T3
+
+#- type: oe14Skill
+#  id: IllusionT3
+#  skillUiPosition: 13, 0
+#  tree: Illusion
+#  name: oe14-skill-illusion-t3-name
+#  learnCost: 0.5
+#  icon:
+#    sprite: _OE14/Actions/skill_tree.rsi
+#    state: light3
+#  restrictions:
+#  - !type:NeedPrerequisite
+#    prerequisite: IllusionT2
+

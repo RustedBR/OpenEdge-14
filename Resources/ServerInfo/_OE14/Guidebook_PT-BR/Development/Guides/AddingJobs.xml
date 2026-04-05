@@ -1,0 +1,64 @@
+<Document>
+# Adicionando Novos Trabalhos
+
+Este guia cobre como criar um novo trabalho no OpenEdge 14.
+
+## Etapa 1: Criar o Prototype de Trabalho
+
+Crie um prototype em [mono]Resources/Prototypes/_OE14/Jobs/[/mono]:
+
+<CodeBlock>
+- type: job
+  id: OE14Blacksmith
+  name: job-name-oe14-blacksmith
+  description: job-description-oe14-blacksmith
+  playTimeTracker: JobBlacksmith
+  startingGear: BlacksmithGear
+  icon:
+    sprite: /Textures/_OE14/Interface/Jobs/blacksmith.rsi
+    state: icon
+</CodeBlock>
+
+## Etapa 2: Adicionar ao Mapa
+
+Adicione o ponto de spawn do trabalho ao mapa usando o editor de mapas. Pontos de spawn são entidades com o componente [mono]SpawnPoint[/mono] e um filtro de trabalho.
+
+## Etapa 3: Configurar Salário
+
+Se o trabalho recebe um salário, adicione o componente OE14Salary ao ponto de spawn ou entidade de trabalho:
+
+<CodeBlock>
+- type: OE14Salary
+  job: OE14Blacksmith
+  amount: 10
+  interval: 300  # segundos entre pagamentos
+</CodeBlock>
+
+## Etapa 4: Criar Equipamento Inicial
+
+Defina com o que o trabalho começa:
+
+<CodeBlock>
+- type: starting_gear
+  id: BlacksmithGear
+  equipment:
+    jumpsuit: ClothingUniformBlacksmithApron
+    shoes: ClothingShoesBoot
+  inhand:
+    - BlacksmithHammer
+</CodeBlock>
+
+## Etapa 5: Adicionar Localização
+
+Adicione strings a [mono]Resources/Locale/en-US/_OE14/jobs.ftl[/mono]:
+
+<CodeBlock>
+job-name-oe14-blacksmith = Ferreiro
+job-description-oe14-blacksmith = Forje armas e armaduras para o assentamento.
+</CodeBlock>
+
+## Conteúdo Em Construção
+
+Guia completo com capturas de tela e instruções do editor de mapa coming soon.
+
+</Document>

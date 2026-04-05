@@ -1,0 +1,96 @@
+<Document>
+# Magic
+
+Magic in CrystallEdge flows through [bold]Skill Trees[/bold] — arcane disciplines that grant progressively more powerful spells as you advance through their tiers.
+
+## How Magic Works
+
+Every spell requires [color=#5EABEB]mana[/color] to cast. Your mana pool is determined by your [color=#a050e0]Intelligence[/color] stat:
+- INT 5 = [color=#42aaf5]100 mana[/color]
+- INT 10 = [color=#42aaf5]~194 mana[/color]
+- INT 1 = [color=#ff6961]25 mana[/color] — barely enough for one spell
+
+Each spell has a [color=#5EABEB]mana cost[/color], a [color=#5EABEB]cooldown[/color], and most require a short [color=#5EABEB]cast channel[/color] before activating. Taking damage during a channel will interrupt the cast.
+
+Mana regenerates passively over time. Some races have special mana mechanics — [textlink="Silva" link="OE14_EN_Silva"] only regenerate mana in sunlight, while [textlink="Tieflings" link="OE14_EN_Tiefling"] regenerate faster when taking fire damage.
+
+## Skill Trees
+
+Spells are unlocked by spending skill points in a magic school. Each tree has three tiers:
+
+- [bold]Basic[/bold] — entry-level spells
+- [bold]Advanced[/bold] — stronger spells, requires Basic
+- [bold]Expert[/bold] — the most powerful spells, requires Advanced
+
+Skill points are earned through gameplay and spent in the skill menu.
+
+## Magic Schools
+
+Each race has an affinity for a specific school and begins with free Basic and Advanced tiers already unlocked:
+
+- [color=#ffa500]Pyrokinesis[/color] — Fire magic. [textlink="Tieflings" link="OE14_EN_Tiefling"]' racial school. Burning, heat, devastation.
+- [color=#5EABEB]Hydrosophistry[/color] — Water and ice magic. [textlink="Dwarves" link="OE14_EN_Dwarf"]' racial school. Freezing, barriers, sustain.
+- [color=#77dd77]Vivification[/color] — Nature and healing. [textlink="Silva" link="OE14_EN_Silva"]' racial school. Restoration, growth, support.
+- [color=#ffe269]Electromancy[/color] — Lightning magic. [textlink="Carcats" link="OE14_EN_Carcat"]' racial school. Speed, shock, chain damage.
+- [color=#5EABEB]Metamagic[/color] — Arcane mastery. [textlink="Elves" link="OE14_EN_Elf"]' racial school. Mana efficiency and spell amplification.
+
+[textlink="Humans" link="OE14_EN_Human"] have no racial school but gain extra skill points, making them flexible learners. [textlink="Goblins" link="OE14_EN_Goblin"] have near-zero mana (~25) — sustained spellcasting is impossible, but a single desperate spell is technically within reach.
+
+## Spell Scrolls
+
+Spell scrolls are consumable items that grant temporary access to a single spell. Use a scroll to cast its spell — the scroll is destroyed after use. Scrolls can be found as loot or purchased from traders.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14SpellScrollFireball" Caption="Fireball Scroll"/>
+  <GuideEntityEmbed Entity="OE14SpellScrollCureWounds" Caption="Cure Wounds Scroll"/>
+  <GuideEntityEmbed Entity="OE14SpellScrollFreeze" Caption="Freeze Scroll"/>
+  <GuideEntityEmbed Entity="OE14SpellScrollEarthWall" Caption="Earth Wall Scroll"/>
+</Box>
+
+[bold]Available scrolls by school:[/bold]
+- [color=#ffa500]Pyrokinesis[/color]: Flame, Heat, Fireball, Firewave, Fire Trap
+- [color=#5EABEB]Hydrosophistry[/color]: Water, Beer, Ice Dagger, Ice Arrow, Freeze, Ice Shards, Ice Trap
+- [color=#f55faf]Illusion[/color]: Sphere of Light, Search of Life, Flash Light
+- [color=#77dd77]Healing[/color]: Cure Wounds, Blood Purification, Cure Burn, Sheep Polymorph, Resurrection
+- [color=#56e5f5]Metamagic[/color]: Mana Transfer
+- [color=#70533f]Earth[/color]: Earth Wall
+- [color=#ffe269]Electric[/color]: Electric Trap
+
+[bold]Note:[/bold] Some spells are only available through scrolls and cannot be learned via skill trees. Resurrection, for example, is scroll-only — its skill tree node is currently unavailable. Trap spells (Fire, Ice, Electric) and Earth Wall are also scroll-exclusive.
+
+## Magic Equipment
+
+Some magical items grant spells when equipped. Holding a magical staff or artifact adds its spells to your action bar (press Q to view).
+
+<Box>
+  <GuideEntityEmbed Entity="OE14MagicFireStaff" Caption="Fire Staff"/>
+  <GuideEntityEmbed Entity="OE14MagicHealingStaff" Caption="Healing Staff"/>
+  <GuideEntityEmbed Entity="OE14ManaOperationGlove" Caption="Mana Glove"/>
+</Box>
+
+[bold]Examples:[/bold]
+- [bold]Magic Staves[/bold] — grant spells from their school (Fire Staff grants Fireball, Heat, Flame Creation)
+- [bold]Mana Glove[/bold] — grants Mana Gift, Mana Consume, and Magic Splitting Small
+- [bold]Guard Electric Staff[/bold] — grants Electric Trap and Lightning Strike spells
+
+## Race and Mana Interactions
+
+Some races have unique relationships with mana:
+- [textlink="Tieflings" link="OE14_EN_Tiefling"] — fire spells cost [color=#77dd77]40% less mana[/color]. Cold damage causes [color=#ff6961]mana drain[/color].
+- [textlink="Silva" link="OE14_EN_Silva"] — mana only regenerates in [color=#77dd77]sunlight[/color]. Drinking water also restores small amounts of mana.
+- [textlink="Goblins" link="OE14_EN_Goblin"] — [color=#ff6961]near-zero mana (~25)[/color]. Barely enough for one spell — sustained casting is impossible.
+
+## Tips
+
+- Lean into your racial school early — free T1 and T2 give you a strong foundation.
+- Invest in [color=#a050e0]Intelligence[/color] if you plan to chain multiple spells in combat.
+- Cast from a safe distance — channels can be interrupted by damage.
+- Different schools counter different threats: fire burns, ice freezes, lightning chains.
+
+## Related Systems
+
+- [textlink="Character Stats" link="OE14CharacterStats"] — Intelligence determines your mana pool
+- [textlink="Species" link="OE14_EN_Species"] — racial affinities and unique mana mechanics
+- [textlink="Combat" link="OE14Combat"] — combining spells and melee effectively
+
+</Document>

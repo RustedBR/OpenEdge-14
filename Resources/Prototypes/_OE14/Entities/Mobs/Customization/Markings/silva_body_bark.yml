@@ -1,0 +1,84 @@
+- type: marking
+  id: OE14SilvaBodyBark1
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Silva ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _OE14/Mobs/Customization/silva_body_bark.rsi
+    state: bark1
+
+- type: marking
+  id: OE14SilvaBodyBark2
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Silva ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _OE14/Mobs/Customization/silva_body_bark.rsi
+    state: bark2
+
+- type: marking
+  id: OE14SilvaBodyBark3
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Silva ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _OE14/Mobs/Customization/silva_body_bark.rsi
+    state: bark3
+
+- type: marking
+  id: OE14SilvaBodyBark4
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Silva ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d977c2" #Pink flowers!
+  sprites:
+  - sprite: _OE14/Mobs/Customization/silva_body_bark.rsi
+    state: bark4
+
+- type: marking
+  id: OE14SilvaBodyBark5
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Silva ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#543825"
+  sprites:
+  - sprite: _OE14/Mobs/Customization/silva_body_bark.rsi
+    state: bark5
+
+- type: marking
+  id: OE14SilvaBodyBark6
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ OE14Silva ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#d977c2" #Pink flowers!
+  sprites:
+  - sprite: _OE14/Mobs/Customization/silva_body_bark.rsi
+    state: bark6
+

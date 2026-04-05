@@ -1,0 +1,106 @@
+- type: entity
+  id: OE14MobSlimeFire
+  parent: OE14MobSlimeBase
+  name: fire slime
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: base
+      color: "#f7570c"
+      shader: unshaded
+  - type: PointLight
+    color: "#f7570c"
+    energy: 5
+    radius: 1.8
+  - type: SolutionContainerManager
+    solutions:
+      slime:
+        maxVol: 50
+        reagents:
+        - ReagentId: OE14ChromiumSlime
+          Quantity: 20
+        - ReagentId: OE14EssenceFire
+          Quantity: 20
+        - ReagentId: OE14DamageEffectDamageHeat
+          Quantity: 10
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3
+        Heat: 3
+  - type: Damageable
+    damageModifierSet: OE14SlimeFire
+  - type: Temperature
+    coldDamage:
+      types:
+        Cold: 1
+    heatDamage:
+      types:
+        Heat: 0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:SpillBehavior
+        solution: slime
+      - !type:SpawnEntitiesBehavior
+        spawn:
+            OE14AreaEntityEffectSlimeIgnite:
+              min: 1
+              max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IgniteOnMeleeHit
+    fireStacks: 1
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: OE14OreCopper1
+          - id: OE14OreIron1
+          - id: OE14ScrapCopper
+          - id: OE14ScrapIron
+          - id: OE14FoodMeatLambCutletCooked
+          - id: OE14CopperCoin1
+          - id: OE14Bone1
+
+- type: entity
+  id: OE14AreaEntityEffectSlimeIgnite
+  parent: OE14BaseMagicImpact
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#eea911"
+  - type: Sprite
+    noRot: true
+    drawdepth: BelowFloor
+    sprite: _OE14/Effects/Magic/area_impact.rsi
+    layers:
+    - state: area_impact_out
+      color: "#eea911"
+      scale: 2, 2
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: OE14AreaEntityEffect
+    range: 2
+    whitelist:
+      components:
+      - MobState
+    effects:
+    - !type:OE14SpellSpawnEntityOnTarget
+      spawns:
+      - OE14ImpactEffectTieflingRevenge
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:Jitter
+      - !type:FlammableReaction
+        multiplier: 1
+      - !type:AdjustTemperature
+        amount: 6000
+      - !type:Ignite

@@ -1,0 +1,107 @@
+# Basic 6
+
+- type: magicType
+  id: Earth
+  name: oe14-essence-earth
+  color: "#1cea42"
+  essenceProto: OE14EssenceEarth
+
+- type: magicType
+  id: Fire
+  name: oe14-essence-fire
+  color: "#d9741c"
+  essenceProto: OE14EssenceFire
+
+- type: magicType
+  id: Water
+  name: oe14-essence-water
+  color: "#1c94d9"
+  essenceProto: OE14EssenceWater
+
+- type: magicType
+  id: Air
+  name: oe14-essence-air
+  color: "#def9ff"
+  essenceProto: OE14EssenceAir
+
+- type: magicType
+  id: Order
+  name: oe14-essence-order
+  color: "#d9d9d9"
+  essenceProto: OE14EssenceOrder
+
+- type: magicType
+  id: Chaos
+  name: oe14-essence-chaos
+  color: "#5c5c5c"
+  essenceProto: OE14EssenceChaos
+
+# Complex tier 1
+
+- type: magicType
+  id: Frost
+  name: oe14-essence-frost
+  color: "#4f91bd"
+  essenceProto: OE14EssenceFrost
+
+- type: magicType
+  id: Light
+  name: oe14-essence-light
+  color: "#ba97b8"
+  essenceProto: OE14EssenceLight
+
+- type: magicType
+  id: Motion
+  name: oe14-essence-motion
+  color: "#575100"
+  essenceProto: OE14EssenceMotion
+
+- type: magicType
+  id: Cycle
+  name: oe14-essence-cycle
+  color: "#063b1f"
+  essenceProto: OE14EssenceCycle
+
+- type: magicType
+  id: Energia
+  name: oe14-essence-energia
+  color: "#caed72"
+  essenceProto: OE14EssenceEnergia
+
+- type: magicType
+  id: Void
+  name: oe14-essence-void
+  color: "#12021c"
+  essenceProto: OE14EssenceVoid
+
+- type: magicType
+  id: Poison
+  name: oe14-essence-poison
+  color: "#619e20"
+  essenceProto: OE14EssencePoison
+
+- type: magicType
+  id: Life
+  name: oe14-essence-life
+  color: "#eb1a3d"
+  essenceProto: OE14EssenceLife
+
+- type: magicType
+  id: Crystal
+  name: oe14-essence-crystal
+  color: "#538cb8"
+  essenceProto: OE14EssenceCrystal
+
+# Complex tier 2
+
+- type: magicType
+  id: Magic
+  name: oe14-essence-magic
+  color: "#5497d6"
+  essenceProto: OE14EssenceMagic
+
+- type: magicType
+  id: Beast
+  name: oe14-essence-beast
+  color: "#5c3c0f"
+  essenceProto: OE14EssenceBeast

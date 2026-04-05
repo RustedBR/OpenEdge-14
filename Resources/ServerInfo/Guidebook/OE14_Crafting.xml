@@ -1,0 +1,77 @@
+<Document>
+  # Crafting System
+
+  OpenEdge 14 has three different crafting systems, each suited for different types of items.
+
+  ## Workbench Crafting
+
+  The most common crafting method. Approach a crafting workbench and interact with it to see available recipes. Place the required materials nearby, select a recipe, and wait for the crafting to complete.
+
+  Crafting takes time — a progress bar will appear while your character works. Moving away or taking damage may interrupt the process.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Workbench" Caption="Workbench"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchCooking" Caption="Cooking Table"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchSewing" Caption="Sewing Table"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchAnvil" Caption="Anvil"/>
+  </Box>
+
+  [bold]Tips:[/bold]
+  - Different workbenches unlock different recipes.
+  - Some recipes require tools in addition to materials.
+
+  ## Cooking
+
+  Food is prepared using ovens, fires, and cauldrons. Place raw ingredients into the cooking device and apply heat. Items transform when they reach specific temperatures.
+
+  Pay attention to heat levels — food that gets too hot will burn and become inedible. Different foods require different cooking times.
+
+  [bold]Common cooking tools:[/bold]
+  - Fireplace: Basic heat source for simple cooking
+  - Oven: More controlled heat, suitable for baked goods
+  - Cauldron: Large container for soups and stews
+  - Bonfire: High heat, good for grilling
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14Furnace"/>
+    <GuideEntityEmbed Entity="OE14Cauldron"/>
+    <GuideEntityEmbed Entity="OE14FryingPan"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14CookingPot"/>
+    <GuideEntityEmbed Entity="OE14Lighter"/>
+  </Box>
+
+  ## Modular Crafting
+
+  Advanced crafters can customize weapons and armor with modular parts. Each crafted weapon or armor piece can accept multiple modular components that enhance its properties.
+
+  [bold]Available Modular Parts:[/bold]
+  - [bold]Stat Crystals:[/bold] Essence shards that add +1 to specific stats (Strength, Vitality, Dexterity, Intelligence)
+  - [bold]Weapon Parts:[/bold] Damage blades and speed hilts to increase weapon damage and attack speed
+  - [bold]Armor Parts:[/bold] Heavy plates and protective padding to enhance damage reduction
+  - [bold]Mobility Parts:[/bold] Light embrace and agile weave to reduce movement penalties
+  - [bold]Magical Parts:[/bold] Mana conduits and amplifiers to reduce spell casting costs
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14ModularCrystalStrength" Caption="STR Crystal"/>
+    <GuideEntityEmbed Entity="OE14ModularBladeDamage" Caption="Damage Blade"/>
+    <GuideEntityEmbed Entity="OE14ModularArmorPlateHeavy" Caption="Heavy Plate"/>
+    <GuideEntityEmbed Entity="OE14ModularManaReduction" Caption="Mana Conduit"/>
+  </Box>
+
+  To apply a modular part to a weapon or armor piece, hold the part item and interact with the weapon. A progress bar will appear as the part assembles. Once attached, the item gains the stat bonuses and mechanical benefits of that part.
+
+  You can also disassemble modular items by damaging them — the parts will drop and can be recovered.
+
+  See the [textlink="Smithing" link="OE14Smithing"] section for detailed recipes and assembly instructions.
+
+  ## Related Systems
+
+  - [textlink="Magic" link="OE14Magic"] — craft vessels to store spells and enchantments
+  - [textlink="Combat" link="OE14Combat"] — create weapons tailored to your fighting style
+  - [textlink="Smithing" link="OE14Smithing"] — specialize as a blacksmith for advanced weapon and armor crafting
+  - [textlink="Economy" link="OE14Economy"] — earn coins by selling crafted goods
+
+</Document>

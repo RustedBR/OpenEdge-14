@@ -1,0 +1,62 @@
+<Document>
+  # Sistema de Comércio
+
+  OpenEdge 14 possui uma economia dinâmica onde jogadores podem comprar e vender itens através de plataformas de comércio.
+
+  ## Plataformas de Comércio
+
+  Plataformas de comércio são estruturas especiais que permitem aos jogadores realizar transações. Diferentes plataformas oferecem serviços diferentes.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14TradingPlatform" Caption="Plataforma de Compra"/>
+    <GuideEntityEmbed Entity="OE14TradingSellingPlatform" Caption="Plataforma de Venda"/>
+    <GuideEntityEmbed Entity="OE14GoldCoin1" Caption="Moeda de Ouro"/>
+  </Box>
+
+  ## Como Usar
+
+  ### Comprando
+
+  Interaja com uma plataforma de comércio para ver posições ou serviços disponíveis. Pague com moedas para desbloquear:
+  - [bold]Posições de serviço[/bold] — desbloqueia serviços especiais de NPC
+  - [bold]Itens[/bold] — compras diretas
+
+  O preço é calculado com base no valor base do item mais a margem da plataforma.
+
+  ### Vendendo
+
+  Coloque itens numa [bold]plataforma de venda[/bold]. A plataforma avalia o valor de cada item e calcula seu saldo.
+
+  [bold]Regras:[/bold]
+  - Apenas itens OE14 podem ser vendidos (nenhum item vanilla)
+  - Moedas não podem ser vendidas (previne exploração)
+  - Coisas vivas (mobs) não podem ser vendidas
+  - Containers não podem ser vendidos
+
+  ## Preços Dinâmicos
+
+  Preços de itens são calculados automaticamente com base em:
+  - [bold]Valor base do item[/bold] — valor inerente do item
+  - [bold]Margem da plataforma[/bold] — percentagem adicionada à transação
+  - [bold]Oferta e demanda[/bold] — pode variar por localização
+
+  ## Reputação
+
+  Comerciar constrói reputação com facções. Reputação mais alta:
+  - Desbloqueia melhores posições de comércio
+  - Pode fornecer descontos
+  - Habilita pedidos especiais
+
+  ## Dicas
+
+  - [bold]Compare preços[/bold] entre plataformas
+  - [bold]Venda em quantidade[/bold] — algumas plataformas oferecem melhores taxas
+  - [bold]Construa reputação[/bold] — desbloqueia mais opções
+  - [bold]Observe a demanda[/bold] — certos itens podem valer mais
+
+  ## Sistemas Relacionados
+
+  - [textlink="Economia" link="OE14_PT_Economy"] — sistema econômico geral
+  - [textlink="Crafting" link="OE14_PT_Crafting"] — crie itens para vender
+
+</Document>

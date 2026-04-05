@@ -1,0 +1,86 @@
+- type: entity
+  id: OE14AlchemySolutionCleaner
+  parent:
+  - BaseStructureDynamic
+  - OE14BaseCrystalSlot
+  name: solution cleaner
+  description: An alchemical device that destroys from a solution poured into it the reagent that is least in the solution. Requires an energy crystal to operate.
+  categories: [ ForkFiltered ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    drawdepth: Items
+    noRot: true
+    offset: 0, 0.2
+    sprite: _OE14/Structures/Specific/Alchemy/cleaner.rsi
+    layers:
+      - state: rotate_back_stop
+        map: ["poweredBack"]
+      - state: liq-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: base
+      - state: rotate_front_stop
+        map: ["poweredFront"]
+      - state: crystal
+        shader: unshaded
+        map: ["crystal"]
+        visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.OE14MagicSlotVisuals.Inserted:
+        crystal:
+          True: { visible: true }
+          False: { visible: false }
+      enum.OE14MagicSlotVisuals.Powered:
+        poweredFront:
+          True: { state: rotate_front }
+          False: { state: rotate_front_stop }
+        poweredBack:
+          True: { state: rotate_back }
+          False: { state: rotate_back_stop }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 125
+        mask:
+        - TabletopMachineMask
+  - type: SolutionContainerManager
+    solutions:
+      cleaner:
+        maxVol: 50
+  - type: OE14SolutionTemperature
+  - type: DrainableSolution
+    solution: cleaner
+  - type: ExaminableSolution
+    solution: cleaner
+  - type: MixableSolution
+    solution: cleaner
+  - type: RefillableSolution
+    solution: cleaner
+  - type: DrawableSolution
+    solution: cleaner
+  - type: DumpableSolution
+    solution: cleaner
+  - type: OE14SolutionCleaner
+    solution: cleaner
+    leakageQuantity: 1
+    updateFrequency: 2.5
+  - type: OE14MagicEnergyAmbientSound
+  - type: AmbientSound
+    enabled: false
+    range: 6
+    volume: -3
+    sound:
+      path: /Audio/_OE14/Ambience/normalizer_working.ogg
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: liq-
+  - type: OE14MagicEnergyDraw
+    energy: -1.1
+    delay: 1
+

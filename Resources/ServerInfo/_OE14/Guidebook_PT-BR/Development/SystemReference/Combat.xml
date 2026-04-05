@@ -1,0 +1,43 @@
+<Document>
+# Referência do Sistema de Combate
+
+Referência rápida para os sistemas de combate no OpenEdge 14.
+
+## Fluxo de Dano
+
+<CodeBlock>
+Jogador ataca
+   |
+Componente MeleeWeapon calcula dano base
+   |
+Modificador FOR aplicado
+   |
+DamageEvent levantado
+   |
+HealthSystem aplica dano
+   |
+StatusEffectSystem aplica efeitos (sangramento, etc.)
+</CodeBlock>
+
+## Componentes Chave
+
+[bold]MeleeWeapon[/bold] — define dano de arma e velocidade de ataque. Atributo DES afeta delay de ataque.
+
+[bold]OE14Skills[/bold] — árvores de habilidades de combate que concedem bônus de dano e ataques especiais.
+
+## Efeitos de Atributos no Combate
+
+- [bold]FOR[/bold] — aumenta dano corpo a corpo
+- [bold]DES[/bold] — reduz delay de ataque (ataques mais rápidos)
+- [bold]VIT[/bold] — aumenta vida máxima (sobreviabilidade)
+
+## Localização dos Arquivos
+
+- [mono]Content.Shared/_OE14/Combat/[/mono]
+- [mono]Content.Server/_OE14/Combat/[/mono]
+
+## Conteúdo Em Construção
+
+Referência completa do sistema de combate coming soon.
+
+</Document>

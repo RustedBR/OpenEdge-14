@@ -1,0 +1,165 @@
+- type: entity
+  id: OE14SpawnPointJobBase
+  parent: SpawnPointJobBase
+  abstract: true
+  categories:
+  - ForkFiltered
+  components:
+  - type: Sprite
+    sprite: _OE14/Markers/jobs.rsi
+    snapCardinals: true
+  localizationId: ent-OE14SpawnPointJobBase
+- type: entity
+  id: OE14SpawnPointGuardCommander
+  parent: OE14SpawnPointJobBase
+  name: guard commander
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14GuardCommander
+  - type: Sprite
+    layers:
+    - state: green
+    - state: guard_commander
+  localizationId: ent-OE14SpawnPointGuardCommander
+- type: entity
+  id: OE14SpawnPointGuard
+  parent: OE14SpawnPointJobBase
+  name: guard
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Guard
+  - type: Sprite
+    layers:
+    - state: green
+    - state: guard
+  localizationId: ent-OE14SpawnPointGuard
+- type: entity
+  id: OE14SpawnPointInvestigator
+  parent: OE14SpawnPointJobBase
+  name: investigator
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Investigator
+  - type: Sprite
+    layers:
+    - state: green
+    - state: investigator
+  localizationId: ent-OE14SpawnPointInvestigator
+- type: entity
+  id: OE14SpawnPointAdventurer
+  parent: OE14SpawnPointJobBase
+  name: adventurer
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Adventurer
+  - type: Sprite
+    layers:
+    - state: green
+    - state: adventurer
+  localizationId: ent-OE14SpawnPointAdventurer
+- type: entity
+  id: OE14SpawnPointGuildmaster
+  parent: OE14SpawnPointJobBase
+  name: guildmaster
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Guildmaster
+  - type: Sprite
+    layers:
+    - state: green
+    - state: guildmaster
+  localizationId: ent-OE14SpawnPointGuildmaster
+- type: entity
+  id: OE14SpawnPointGuildworker
+  parent: OE14SpawnPointJobBase
+  name: guildworker
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14GuildWorker
+  - type: Sprite
+    layers:
+    - state: green
+    - state: guildmaster
+  localizationId: ent-OE14SpawnPointGuildworker
+- type: entity
+  id: OE14SpawnPointApprentice
+  parent: OE14SpawnPointJobBase
+  name: apprentice
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Apprentice
+  - type: Sprite
+    layers:
+    - state: green
+    - state: workman
+  localizationId: ent-OE14SpawnPointApprentice
+- type: entity
+  id: OE14SpawnPointMerchant
+  parent: OE14SpawnPointJobBase
+  name: merchant
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Merchant
+  - type: Sprite
+    layers:
+    - state: green
+    - state: merchant
+  localizationId: ent-OE14SpawnPointMerchant
+- type: entity
+  id: OE14SpawnPointAlchemist
+  parent: OE14SpawnPointJobBase
+  name: alchemist
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Alchemist
+  - type: Sprite
+    layers:
+    - state: green
+    - state: alchemist
+  localizationId: ent-OE14SpawnPointAlchemist
+- type: entity
+  id: OE14SpawnPointBlacksmith
+  parent: OE14SpawnPointJobBase
+  name: blacksmith
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Blacksmith
+  - type: Sprite
+    layers:
+    - state: green
+    - state: blacksmith
+  localizationId: ent-OE14SpawnPointBlacksmith
+- type: entity
+  id: OE14SpawnPointInnkeeper
+  parent: OE14SpawnPointJobBase
+  name: innkeeper
+  categories:
+  - Spawner
+  components:
+  - type: SpawnPoint
+    job_id: OE14Innkeeper
+  - type: Sprite
+    layers:
+    - state: green
+    - state: workman
+  localizationId: ent-OE14SpawnPointInnkeeper

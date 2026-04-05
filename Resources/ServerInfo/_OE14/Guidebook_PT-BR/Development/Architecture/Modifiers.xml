@@ -1,0 +1,337 @@
+<Document>
+# Sistema de Modificadores
+
+O Sistema de Modificadores trata mudanças temporárias de atributos de magias, itens, buffs e efeitos. É como bônus de atributos funcionam sem mutar valores base.
+
+## O Problema Central
+
+### Sem Modificadores (Ruim)
+<CodeBlock>
+// Atributo base
+int baseStr = 8;
+
+// Jogador conjura magia: +2 FOR
+baseStr += 2;  // baseStr = 10
+
+// Jogador bebe poção: +1 FOR
+baseStr += 1;  // baseStr = 11
+
+// Magia termina, precisa remover
+baseStr -= 2;  // baseStr = 9
+
+// Esperava, era +2? Ou havia outro bônus?
+// Caos! Não consegue rastrear fontes!
+</CodeBlock>
+
+### Com Modificadores (Bom)
+<CodeBlock>
+int baseStr = 8;
+
+// Jogador conjura magia: +2 FOR
+modifiers[ModifierSource.Spell] = 2;
+
+// Jogador bebe poção: +1 FOR
+modifiers[ModifierSource.Item] = 1;
+
+// FOR Efetiva = 8 + 2 + 1 = 11
+
+// Magia termina, remove aquela fonte
+modifiers.Remove(ModifierSource.Spell);
+
+// FOR Efetiva = 8 + 1 = 9
+
+// Rastreamento claro de quais bônus vêm de onde!
+</CodeBlock>
+
+Muito melhor!
+
+## Como Funciona
+
+### Três Camadas
+
+<CodeBlock>
+Atributo Base (Imutável)
+    8
+    |
++ Modificadores (Temporário)
+    + 2 (Magia: Metamágica)
+    + 1 (Item: Anel)
+    = +3 total
+    |
+= Atributo Efetivo (Calculado)
+    8 + 3 = 11
+</CodeBlock>
+
+O atributo base nunca muda. Todos os bônus são rastreados separadamente.
+
+### Estrutura de Dados
+
+<CodeBlock>
+public sealed partial class OE14CharacterStatsComponent : Component
+{
+    [DataField]
+    public int BaseStrength { get; set; } = 5;  // Nunca muda
+
+    [DataField, AutoNetworkedField]
+    public Dictionary<ModifierSource, int> StrengthModifiers { get; set; } = new();
+    // { Spell: 2, Item: 1, Buff: 0, ... }
+
+    [DataField, AutoNetworkedField]
+    public int EffectiveStrength { get; set; } = 5;  // Calculado
+}
+</CodeBlock>
+
+## Fontes de Modificadores
+
+Cada bônus rastreia de onde veio:
+
+<CodeBlock>
+public enum ModifierSource
+{
+    Spell,   // De itens mágicos equipados
+    Spend,   // De gastar pontos de criação de personagem
+    Item,    // De equipar equipamento
+    Buff,    // De efeitos temporários
+    Racial,  // De bônus raciais
+    Other
+}
+</CodeBlock>
+
+Isso permite debugar: "Por que minha INT está tão alta? Me mostre de onde vem o +3!"
+
+## Adicionando Modificadores
+
+<CodeBlock>
+// Magia dá +2 INT
+component.IntModifiers[ModifierSource.Spell] += 2;
+RecalculateEffectiveStats(component);
+
+// Item dá +1 VIT
+component.VitalityModifiers[ModifierSource.Item] += 1;
+RecalculateEffectiveStats(component);
+
+// Bônus racial: +1 DES (de Goblin)
+component.DexterityModifiers[ModifierSource.Racial] += 1;
+RecalculateEffectiveStats(component);
+</CodeBlock>
+
+### A Recalculação
+
+<CodeBlock>
+private void RecalculateEffectiveStats(OE14CharacterStatsComponent component)
+{
+    // FOR: Base + todos os modificadores
+    component.EffectiveStrength = component.BaseStrength
+        + component.StrengthModifiers.Values.Sum();
+
+    // Limita em 10
+    component.EffectiveStrength = Math.Min(component.EffectiveStrength, MaxStat);
+}
+</CodeBlock>
+
+## Proteção Contra Overflow
+
+O que acontece se modificadores excederem o limite do atributo?
+
+### Sem Proteção Contra Overflow
+<CodeBlock>
+INT Base: 8
+Magia metamágica: +2
+Efeito de magia: +2
+= 12 (excede máximo de 10)
+</CodeBlock>
+
+O +2 de overflow é desperdiçado!
+
+### Com Proteção Contra Overflow
+<CodeBlock>
+INT Base: 8
+Modificadores: +2 +2 = +4
+INT Efetiva: min(8+4, 10) = 10
+Overflow: 4 - 2 = 2
+Pontos Disponíveis: +2 (compensação!)
+</CodeBlock>
+
+Quando você faz overflow, você recebe pontos de compensação para gastar em outro lugar!
+
+## Removendo Modificadores
+
+<CodeBlock>
+// Magia termina, remove bônus de magia
+component.StrengthModifiers.Remove(ModifierSource.Spell);
+RecalculateEffectiveStats(component);
+
+// Múltiplas fontes? Remove apenas a específica
+component.StrengthModifiers[ModifierSource.Spell] = 0;
+RecalculateEffectiveStats(component);
+
+// Limpa todos os modificadores de um tipo
+var spells = component.StrengthModifiers.Where(x => x.Key == ModifierSource.Spell);
+foreach (var mod in spells)
+    component.StrengthModifiers.Remove(mod.Key);
+RecalculateEffectiveStats(component);
+</CodeBlock>
+
+## Exemplo Real: Conjuração de Magia
+
+<CodeBlock>
+public void CastMetaMagic(EntityUid caster)
+{
+    var stats = _entityManager.GetComponent<OE14CharacterStatsComponent>(caster);
+
+    // Verifica: Jogador pode conjurar? (valida contra atributo efetivo)
+    if (stats.EffectiveIntelligence < MinINTToCast)
+    {
+        _chat.SendMessage("Inteligência insuficiente!");
+        return;  // Rejeita
+    }
+
+    // Aplica bônus de magia
+    stats.IntModifiers[ModifierSource.Spell] =
+        stats.IntModifiers.GetValueOrDefault(ModifierSource.Spell) + 2;
+    RecalculateEffectiveStats(stats);
+
+    // Verifica overflow
+    if (stats.EffectiveIntelligence >= MaxStat)
+    {
+        int overflow = stats.IntModifiers.Values.Sum() - (MaxStat - stats.BaseIntelligence);
+        stats.AvailablePoints += overflow;
+    }
+
+    // UI mostra: "INT: 8 -> 10 (+2 Magia)"
+}
+</CodeBlock>
+
+## Exibindo Modificadores
+
+<CodeBlock>
+Atributo Base: 8
+Atributo Efetivo: 11
+
+Detalhamento:
+  + 2 (Magia: Metamágica)
+  + 1 (Item: Anel de Mago)
+  = +3 total
+
+Formato de exibição: "INT: 8 -> 11 (+2 Magia, +1 Item)"
+</CodeBlock>
+
+Jogadores sempre podem ver de onde vêm os bônus.
+
+## Limites de Atributos
+
+Atributos diferentes têm limites diferentes:
+
+<CodeBlock>
+const int MinStat = 1;
+const int MaxStat = 10;
+const int NeutralStat = 5;
+</CodeBlock>
+
+Todos os atributos são limitados a 10. Se modificadores excederem:
+<CodeBlock>
+Modificadores: +3
+Efetivo: min(8+3, 10) = 10
+Overflow: +1 (se torna ponto disponível)
+</CodeBlock>
+
+## Empilhando Modificadores
+
+Múltiplas fontes se empilham:
+
+<CodeBlock>
+VIT Base: 7
+
+// Magia: +2
+modifiers[Spell] = 2;
+// Efetivo: 7 + 2 = 9
+
+// Item: +1
+modifiers[Item] = 1;
+// Efetivo: 7 + 2 + 1 = 10
+
+// Buff: +1
+modifiers[Buff] = 1;
+// Efetivo: 7 + 2 + 1 + 1 = 11 -> limitado a 10
+// Overflow: 1 -> ponto disponível
+</CodeBlock>
+
+Sem complexidade de "maior buff ganha". Tudo se empilha e faz overflow junto.
+
+## Performance
+
+Modificadores são eficientes:
+- Lookup em dicionário é O(1)
+- Recalculação é O(n) onde n = número de fontes de modificador (geralmente menos de 10)
+- Sincronização de rede é automática com o atributo AutoNetworkedField
+- Nenhuma alocação após configuração inicial
+
+Seguro para atualizar a cada frame se necessário.
+
+## Melhores Práticas
+
+[bold]FAÇA:[/bold]
+- Sempre rastreie qual fonte adicionou um modificador
+- Recalcule atributo efetivo após mudanças
+- Verifique overflow e conceda pontos de compensação
+- Valide contra atributo efetivo (não base)
+- Use modificadores para TODOS os bônus temporários
+
+[bold]NÃO FAÇA:[/bold]
+- Modifique atributo base diretamente
+- Misture cálculos base e de modificador
+- Esqueça de tratar overflow
+- Aplique mesmo modificador duas vezes
+- Deixe modificadores velhos acumulando (limpe)
+
+## Exemplo do Mundo Real: Elfo com Magias
+
+<CodeBlock>
+INT base do Elfo: 7
+
+Magia 1: Metamágica T1 (+1 INT)
+  Modificadores: { Spell: 1 }
+  Efetivo: 7 + 1 = 8
+
+Magia 2: Metamágica T2 (+1 INT)
+  Modificadores: { Spell: 2 }
+  Efetivo: 7 + 2 = 9
+
+Magia 3: Metamágica T3 (+1 INT)
+  Modificadores: { Spell: 3 }
+  Efetivo: 7 + 3 = 10 (limitado)
+
+Item: Anel de Mago (+1 INT)
+  Modificadores: { Spell: 3, Item: 1 }
+  Efetivo: min(7 + 3 + 1, 10) = 10
+  Overflow: 1 (ponto disponível concedido)
+
+Buff: Bênção (+2 INT)
+  Modificadores: { Spell: 3, Item: 1, Buff: 2 }
+  Efetivo: min(7 + 3 + 1 + 2, 10) = 10
+  Overflow: 3 -> 2 pontos disponíveis
+
+Exibição: "INT: 7 -> 10 (+3 Magia, +1 Item, +2 Buff, overflow: 3)"
+</CodeBlock>
+
+Transparência perfeita!
+
+## Navegação
+
+- Quer adicionar um bônus de atributo? Use modificadores
+- Confuso sobre overflow? Leia [textlink="Sistema de Fallback de Magias" link="OE14_DEV_Stats_Fallback"]
+- Precisa entender cálculos? Leia [textlink="Fórmulas de Atributos" link="OE14_DEV_Stats_Formulas"]
+- Implementando um sistema? Use modificadores para todos os bônus temporários
+
+## Resumo
+
+- [bold]Atributo Base[/bold] — imutável, valor inicial
+- [bold]Modificadores[/bold] — bônus temporários de magias, itens, buffs
+- [bold]Atributo Efetivo[/bold] — base + soma de modificadores (limitado a 10)
+- [bold]Rastreamento[/bold] — cada fonte de modificador é gravada
+- [bold]Overflow[/bold] — excesso além do limite se torna pontos disponíveis
+- [bold]Sincronização[/bold] — AutoNetworkedField mantém clientes em sincronia
+
+Este sistema energiza todos os bônus de atributos no OpenEdge 14!
+
+</Document>

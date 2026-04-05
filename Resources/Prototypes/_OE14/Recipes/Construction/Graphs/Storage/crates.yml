@@ -1,0 +1,51 @@
+- type: constructionGraph
+  id: OE14SmallWoodenCrate
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14SmallWoodenCrate
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 1
+    - node: OE14SmallWoodenCrate
+      entity: OE14SmallWoodenCrate
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 1
+
+- type: constructionGraph
+  id: OE14LargeWoodenCrate
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: OE14LargeWoodenCrate
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - stackGroup: WoodenPlanks
+              amount: 2
+    - node: OE14LargeWoodenCrate
+      entity: OE14LargeWoodenCrate
+      edges:
+        - to: start
+          steps:
+            - tool: Prying
+              doAfter: 2
+          completed:
+            - !type:SpawnPrototype
+              prototype: OE14WoodenPlanks1
+              amount: 2

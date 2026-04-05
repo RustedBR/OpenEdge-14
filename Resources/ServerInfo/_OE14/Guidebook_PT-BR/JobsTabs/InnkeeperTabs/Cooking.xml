@@ -1,0 +1,32 @@
+<Document>
+  # Culinária
+
+  A culinária pode parecer bastante complicada no início, mas é muito interessante no fim! A primeira coisa que você vai precisar ao preparar qualquer prato são os ingredientes. A maioria dos ingredientes pode ser comprada de um comerciante ou cultivada por conta própria.
+  <Box>
+    <GuideEntityEmbed Entity="OE14Wheat"/>
+    <GuideEntityEmbed Entity="OE14FoodPepper"/>
+    <GuideEntityEmbed Entity="OE14FoodApple"/>
+    <GuideEntityEmbed Entity="OE14FoodOnion"/>
+  </Box>
+
+  Sem o que nenhum estalajadeiro pode viver? Exatamente — pratos, talheres e facas! A maior parte da comida só pode ser servida em pratos e tigelas. Além disso, sua faca pode ser extremamente útil para cortar ingredientes ou para afastar hóspedes particularmente bagunceiros.
+  <Box>
+    <GuideEntityEmbed Entity="OE14PlateWooden"/>
+    <GuideEntityEmbed Entity="OE14BowlWooden"/>
+    <GuideEntityEmbed Entity="OE14Spoon"/>
+    <GuideEntityEmbed Entity="OE14WeaponDaggerHatchet"/>
+  </Box>
+
+  E claro, como esquecer — a frigideira e a panela. É nelas que são preparados todos os pratos que você vai servir!
+  <Box>
+    <GuideEntityEmbed Entity="OE14FryingPan"/>
+    <GuideEntityEmbed Entity="OE14CookingPot"/>
+  </Box>
+
+  A panela e a frigideira precisam ser colocadas no forno. Mas o forno precisa estar aceso, certo? Por isso, não esqueça a lenha e um isqueiro, ou use o feitiço [color=#ffa500]"Criar Chama"[/color]. Se você deixar a comida no forno por tempo demais, ela vai queimar — fique atento. Comida queimada definitivamente não deixa os visitantes felizes.
+  <Box>
+    <GuideEntityEmbed Entity="OE14Furnace"/>
+    <GuideEntityEmbed Entity="OE14WoodenPlanks20"/>
+    <GuideEntityEmbed Entity="OE14Lighter"/>
+  </Box>
+</Document>

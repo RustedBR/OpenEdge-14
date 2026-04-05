@@ -1,0 +1,29 @@
+- type: guideEntry
+  openEdgeAllowed: false
+  id: OE14_PT_Imperial_Laws
+  name: Leis Imperiais
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/ImperialLaws.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: false
+  id: OE14_PT_Locks_and_Keys
+  name: Fechaduras e Chaves
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/LocksKeys.xml"
+  children:
+  - OE14_PT_Lockpicking
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: false
+  id: OE14_PT_Lockpicking
+  name: Arrombamento
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/Lockpicking.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Monster_Toxins
+  name: Toxinas de Monstros
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/AdventurersTabs/MonsterToxins.xml"
+  filterEnabled: True

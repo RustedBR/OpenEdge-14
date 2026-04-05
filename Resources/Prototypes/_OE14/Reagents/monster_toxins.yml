@@ -1,0 +1,76 @@
+
+- type: reagent
+  id: OE14MonsterToxinSpider
+  name: oe14-reagent-name-toxin-spider
+  desc: oe14-reagent-desc-toxin-spider
+  group: OE14MonsterToxins
+  flavor: OE14Vomit
+  color: "#00b408"
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Poison:
+      metabolismRate: 0.2 # Slower metabolism so it can build up over time for slowdown
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 1.5
+      - !type:MovespeedModifier
+        conditions:
+        - !type:ReagentThreshold
+          reagent: OE14MonsterToxinSpider
+          min: 1.5
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
+      - !type:MovespeedModifier
+        conditions:
+        - !type:ReagentThreshold
+          reagent: OE14MonsterToxinSpider
+          min: 3
+        walkSpeedModifier: 0.6
+        sprintSpeedModifier: 0.6
+  pricePerUnit: 4.0 #arbitrary for now
+
+- type: reagent
+  id: OE14MonsterToxinBleed
+  name: oe14-reagent-name-toxin-bleed
+  desc: oe14-reagent-desc-toxin-bleed
+  group: OE14MonsterToxins
+  flavor: OE14Metallic
+  color: "#872e2e"
+  physicalDesc: oe14-reagent-physical-desc-scarlet
+  metabolisms:
+    Poison:
+      metabolismRate: 0.5
+      effects:
+      - !type:ModifyBleedAmount
+        amount: 2
+      - !type:HealthChange
+        damage:
+          types:
+            Piercing: 1.5
+  pricePerUnit: 4.0 #arbitrary for now
+
+- type: reagent
+  id: OE14MonsterToxinVuln
+  name: oe14-reagent-name-toxin-vuln
+  desc: oe14-reagent-desc-toxin-vuln
+  group: OE14MonsterToxins
+  flavor: OE14Vomit
+  color: "#b545ff"
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Poison:
+      metabolismRate: 0.5
+      effects:
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: OE14MonsterToxinVuln
+          min: 2
+        effectProto: OE14StatusEffectVuln
+        time: 5
+        refresh: false
+      - !type:OE14StaminaChange
+        staminaDelta: -5
+  pricePerUnit: 4.0 #arbitrary for now
