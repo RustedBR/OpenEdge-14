@@ -27,5 +27,5 @@ if [ -n "$pids" ]; then
     fi
 fi
 
-dotnet run --project Content.Server -c Release -- --cvar=loc.culture_name=pt-BR
+dotnet run --project Content.Server -c Release -- --cvar loc.culture_name=pt-BR
 read -p "Pressione Enter para fechar..."

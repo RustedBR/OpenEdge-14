@@ -195,12 +195,69 @@ Acesse: `localhost:1212` (no launcher do SS14)
 
 ## 📊 Status do Projeto
 
-- ✅ Setup inicial
-- ✅ Mapas: Comoss, Venicialis
-- ✅ Servidor com lobby
-- 🚧 Documentação completa
-- 🚧 Tutoriais de desenvolvimento
-- 📋 Mais features em planejamento
+### 🎮 Sistemas de Jogo Implementados
+
+| Sistema | Status | Descrição |
+|---------|--------|-----------|
+| **Personagem** | ✅ Completo | Stats (STR, VIT, DEX, INT), base 5, limit 1-10 |
+| **Sistema de Magia** | ✅ Completo | Árvores de magia, custos de mana, spells |
+| **Sistema de Crafting** | ✅ Completo | Workbench, receitas, ferramentas |
+| **Sistema de Cooking** | ✅ Completo | Fornalhas, temperatura, receitas |
+| **Sistema Modular** | ✅ Completo | Crafting modular com modificadores |
+| **Economia** | ✅ Completo | Moedas, salários, trading platform |
+| **Farming** | ✅ Completo | Plantas, crescimento, colheitas |
+| **Skills** | ✅ Completo | XP por tipo de combate |
+| **Status Effects** | ✅ Completo | Queimando, Congelado, Envenenado, Sangrando |
+| **Vampiro** | ✅ Completo | Role de vampiro, habilidades específicas |
+| **Demiplano** | ✅ Completo | Sistema de viagem dimensional |
+| **Combate** | ✅ Completo | Estamina, armas melees, armas ranged, magia de combate |
+
+### 🌍 Mapas
+
+| Mapa | Status |
+|------|--------|
+| Comoss | ✅ Completo |
+| Venicialis | ✅ Completo |
+| dev_map | ✅ Completo |
+
+### 👥 Raças (Species)
+
+| Raça | Status |
+|------|--------|
+| Human | ✅ Completo (5 pontos de stats) |
+| Elf | ✅ Completo (+2 INT árvores magia) |
+| Dwarf | ✅ Completo |
+| Tiefling | ✅ Completo (+INT árvores magia) |
+| Silva | ✅ Completo |
+| Carcat | ✅ Completo |
+| Skeleton | ✅ Completo |
+| Zombie | ✅ Completo |
+
+### 🔧 Recursos
+
+| Recurso | Status |
+|---------|--------|
+| Tradução PT-BR | ✅ Completa (UI, entidades, magias, livros, guidebook) |
+| Documentação Desenvolvimento | ✅ Completa (passo a passo) |
+| Documentação Gameplay | ✅ Completa |
+| CLAUDE.md | ✅ Completo (contexto para IA) |
+| Guidebook In-Game | ✅ Completo (múltiplas páginas) |
+
+### 🛠️ Infraestrutura
+
+| Recurso | Status |
+|---------|--------|
+| OpenCode Commands | ✅ Configurados (/build, /server, /review, etc.) |
+| Build System | ✅ Dotnet 9.0+ |
+| Servidor | ✅ Porta 1212 |
+| git | ✅ Com commits Co-Authored-By |
+
+### 📋 Em Desenvolvimento
+
+- Novos sistemas conforme necessidade
+- Novos mapas e áreas
+- Novos conteúdos de Guidebook
+- Sprites e assets visuais (manual)
 
 ## 🤝 Contribuindo
 
@@ -215,12 +272,9 @@ Este é um projeto pessoal para exploração e aprendizado. Sinta-se livre para:
 Este projeto usa IA como ferramenta de desenvolvimento. As regras são:
 
 - **Código gerado por IA é permitido** — este é um fork pessoal, não há restrições internas
-- **Não envie código AI para o upstream** — nunca faça PR com código AI para o repositório Ss14-Medieval original
+- **Não envie código AI para o upstream** — nunca faça PR com código AI para o repositório Ss14-Medieval original([Cristall-Edge-14](https://github.com/crystallpunk-14/crystall-punk-14))
 - **Build obrigatório antes de commitar** — `dotnet build` deve retornar 0 erros
-- **Co-author em todo commit com código AI**:
-  ```
-  Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
-  ```
+
 - **Revise antes de commitar** — use `/review` no OpenCode para validar o que foi gerado
 
 ## 📝 Licença
