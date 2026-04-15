@@ -92,6 +92,7 @@ ent-OE14GuideSpellShadowGrab = Agarrar das Sombras
 ent-OE14GuideSpellSphereOfLight = Esfera de Luz
 
 ent-OE14ClothingPantsTrouserWhite = calça branca
+    .desc = Calças para cobrir as coxas do frio.
 
 ent-OE14ClothingPantsTrouserDarkBlue = calça azul escura
 
@@ -285,6 +286,7 @@ ent-OE14ClothingMaskMime = máscara do silêncio
     .desc = ...
 
 ent-OE14ClothingShirtCottonBlack = camisa preta de algodão
+    .desc = Um material agradável ao toque, em formato de camisa solta e confortável.
 
 ent-OE14ClothingShirtBlackDress = vestido preto de algodão
 
@@ -902,16 +904,16 @@ ent-OE14VialSmallHealingManaDepletion = poção de cura de mana de Brad
 ent-OE14BasicEffectConfuseAura = poção de aura de confusão de Brad
 
 ent-OE14VialTiny = frasco minúsculo
-    .desc = Um frasco de vidro frágil para segurar uma tiny quantidade de líquido.
+    .desc = Um frasco de vidro frágil para segurar uma quantidade minúscula de líquido.
 
 ent-OE14VialTinyReinforced = frasco minúsculo reforçado
-    .desc = Um frasco de vidro reforçado para segurar uma tiny quantidade de líquido.
+    .desc = Um frasco de vidro reforçado para segurar uma quantidade minúscula de líquido.
 
 ent-OE14VialSmall = frasco pequeno
-    .desc = Um frasco de vidro frágil para segurar uma small quantidade de líquido.
+    .desc = Um frasco de vidro frágil para segurar uma pequena quantidade de líquido.
 
 ent-OE14VialSmallReinforced = frasco pequeno reforçado
-    .desc = Um frasco de vidro reforçado para segurar uma small quantidade de líquido.
+    .desc = Um frasco de vidro reforçado para segurar uma pequena quantidade de líquido.
 
 ent-OE14VialMedium = frasco médio
     .desc = Um frasco de vidro frágil para segurar uma medium quantidade de líquido.
@@ -950,6 +952,7 @@ ent-OE14Syringe = seringa
     .desc = Usada para coletar amostras de sangue de mobs, ou para injetar reagentes neles.
 
 ent-OE14EnergyCrystalMedium = fragmento de energia
+    .desc = Um fragmento de cristal capaz de armazenar energia mágica.
 
 ent-OE14BaseEssence = essência mágica
     .desc = Partículas de energia mágica polarizadas em um tipo particular de magia. Irão desaparecer em breve, então tente coletá-las o mais rápido possível!

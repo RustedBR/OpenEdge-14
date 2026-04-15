@@ -19,11 +19,13 @@ ent-OE14WeaponDaggerIce = adaga de gelo
     .desc = Uma adaga de gelo afiada, não muito durável, mas que pode substituir armas de verdade temporariamente.
 
 ent-OE14SpellScrollIceDagger = pergaminho de feitiço adaga de gelo
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellIceArrow = Flecha de gelo
     .desc = Você cria uma flecha de gelo afiada e temporária que pode ser usada como projétil descartável para arco.
 
 ent-OE14SpellScrollIceArrow = pergaminho de feitiço flecha de gelo
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14IceArrow = flecha de gelo
     .desc = Uma flecha de gelo afiada criada com magia. Ela derrete e desaparecerá em breve, mas você pode dispará-la uma vez com seu arco.
@@ -32,6 +34,7 @@ ent-OE14ActionSpellBeerCreation = Criação de cerveja
     .desc = Um feitiço secreto que materializa cerveja a partir de mana pura.
 
 ent-OE14SpellScrollBeerCreation = pergaminho de feitiço criação de cerveja
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellWaterCreation = Criação de água
     .desc = Cria um glóbulo de água mantido em forma de balão flutuante por algum tempo.
@@ -40,6 +43,7 @@ ent-OE14LiquidDropWater = gota de líquido flutuante
     .desc = Um glóbulo de líquido mantido em forma de esfera pela magia
 
 ent-OE14SpellScrollWaterCreation = pergaminho de feitiço criação de água
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellIceShards = Fragmentos de gelo
     .desc = Agulhas de gelo rápidas para disparar rapidamente nos alvos.
@@ -47,11 +51,13 @@ ent-OE14ActionSpellIceShards = Fragmentos de gelo
 ent-OE14IceShard = fragmento de gelo
 
 ent-OE14SpellScrollIceShards = pergaminho de feitiço fragmentos de gelo
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellFreeze = Congelar
     .desc = Você começa a resfriar severamente o alvo, reduzindo sua velocidade de movimento.
 
 ent-OE14SpellScrollFreeze = pergaminho de feitiço congelar
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellIceTrap = Armadilha de gelo
     .desc = Cria uma armadilha de gelo no local selecionado. Não esqueça de recarregá-la com mana.
@@ -62,16 +68,19 @@ ent-OE14SpawnMagicIceTrap = armadilha de gelo
 ent-OE14ActionSpellIceTrapEffect = círculo de gelo
 
 ent-OE14SpellScrollIceTrap = pergaminho de feitiço armadilha de gelo
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellShadowStep = Passo das sombras
     .desc = Um passo através da fenda da realidade que permite cobrir uma pequena distância rapidamente.
 
 ent-OE14SpellScrollShadowStep = pergaminho de feitiço passo das sombras
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellShadowGrab = Agarrão das sombras
     .desc = Você atrai uma mão fantasmagórica que puxa um objeto ou entidade na sua direção.
 
 ent-OE14SpellScrollShadowGrab = pergaminho de feitiço agarrão das sombras
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellPortalToCity = Portal para a cidade
     .desc = Você abre um portal que leva à cidade e que durará um minuto.
@@ -82,6 +91,7 @@ ent-OE14ActionSpellEarthWall = Muralha de terra
     .desc = Ergue uma muralha sólida de terra das profundezas.
 
 ent-OE14SpellScrollEarthWall = pergaminho de feitiço muralha de terra
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpiderTrap = armadilha de teia
     .desc = Você envolve o alvo em uma teia, reduzindo seu movimento.
@@ -99,6 +109,7 @@ ent-OE14FlameCreationArtificialFlame = chama artificial
     .desc = Uma chama artificial criada magicamente, queimando diretamente no ar. Não é uma má fonte de luz, ou uma arma se você a jogar no rosto de alguém.
 
 ent-OE14SpellScrollFlameCreation = pergaminho de feitiço criação de chama
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellFireball = Bola de fogo
     .desc = Um método eficaz de destruição — uma bola de fogo explosiva.
@@ -106,6 +117,7 @@ ent-OE14ActionSpellFireball = Bola de fogo
 ent-OE14Fireball = bola de fogo
 
 ent-OE14SpellScrollFireball = pergaminho de feitiço bola de fogo
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellHellBallade = Balada infernal
     .desc = Sua música é infundida com o poder do fogo e queima literalmente você e seus inimigos.
@@ -117,11 +129,13 @@ ent-OE14SpawnMagicFireTrap = armadilha de fogo
     .desc = Uma runa de fogo desenhada no chão usando magia — é melhor não pisar nela.
 
 ent-OE14SpellScrollFireTrap = pergaminho de feitiço armadilha de fogo
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellHeat = Aquecer
     .desc = Você começa a aquecer intensamente o alvo, queimando-o por dentro.
 
 ent-OE14SpellScrollHeat = pergaminho de feitiço aquecer
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellFirewave = Onda de fogo
     .desc = Você libera uma onda de fogo quente que atinge vários alvos em uma área.
@@ -129,6 +143,7 @@ ent-OE14ActionSpellFirewave = Onda de fogo
 ent-OE14Firebolt = relâmpago de fogo
 
 ent-OE14SpellScrollFirewave = pergaminho de feitiço onda de fogo
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionVulnSpikes = Espinhos de fraqueza
     .desc = Você lança vários espinhos pequenos que causam fraqueza.
@@ -187,6 +202,7 @@ ent-OE14ActionSpellFlashLight = Clarão de luz
     .desc = Cria um clarão de luz brilhante e cegante.
 
 ent-OE14SpellScrollFlashLight = pergaminho de feitiço clarão de luz
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellSearchOfLife = Busca pela vida
     .desc = Detecta todos os seres vivos num grande raio ao seu redor.
@@ -194,11 +210,13 @@ ent-OE14ActionSpellSearchOfLife = Busca pela vida
 ent-OE14SearchOfLifePointer = indicador
 
 ent-OE14SpellScrollSearchOfLife = pergaminho de feitiço busca pela vida
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellSphereOfLight = Esfera de luz
     .desc = Materialização de uma fonte de luz brilhante e segura.
 
 ent-OE14SpellScrollSphereOfLight = pergaminho de feitiço esfera de luz
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellCallBoneHound = Chamado do cão de ossos
     .desc = O feitiço cria um cão de ossos sanguinário a partir de ossos. Com sorte, ele pode até ganhar uma mente tão astuta quanto a sua.
@@ -225,21 +243,25 @@ ent-OE14ActionSpellSheepPolymorph = Polimorfismo de ovelha
     .desc = Você amaldiçoa o alvo, transformando-o em uma ovelha boba por um curto período de tempo.
 
 ent-OE14SpellScrollSheepPolymorph = pergaminho de feitiço polimorfismo de ovelha
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellCureBurn = Cura de queimadura
     .desc = Você cura os danos na pele causados por resfriamento ou aquecimento excessivo.
 
 ent-OE14SpellScrollCureBurn = pergaminho de feitiço cura de queimadura
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellMagicalAcceleration = Aceleração mágica
     .desc = Ao custo de energia mágica, você acelera significativamente sua velocidade de movimento.
 
 ent-OE14SpellScrollMagicalAcceleration = pergaminho de feitiço aceleração mágica
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellCureWounds = Cura de ferimentos
     .desc = Você cura o alvo de dano físico.
 
 ent-OE14SpellScrollCureWounds = pergaminho de feitiço cura de ferimentos
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellPeaceBallade = Balada pacífica
     .desc = Sua música é preenchida com magia pacífica, proibindo qualquer pessoa próxima de lutar.
@@ -248,11 +270,13 @@ ent-OE14ActionSpellResurrection = Ressurreição
     .desc = Você tenta colocar a alma de volta no corpo.
 
 ent-OE14SpellScrollResurrection = pergaminho de feitiço ressurreição
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellBloodPurification = Purificação do sangue
     .desc = Você limpa o sangue do alvo de venenos e ácidos e restaura seu volume levemente.
 
 ent-OE14SpellScrollBloodPurification = pergaminho de feitiço purificação do sangue
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionAirSaturation = Saturação de ar
     .desc = Você envolve o alvo com ar fresco, curando a asfixia. Isso pode sustentar os moribundos.
@@ -270,6 +294,7 @@ ent-OE14ActionSpellManaGiftElf = Transferência cuidadosa de mana
     .desc = Você transfere mana a uma taxa tremenda sem causar dano ao alvo.
 
 ent-OE14SpellScrollManaGift = pergaminho de feitiço presente de mana
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellMagicSplittingSmall = Dissipação mágica menor
     .desc = Você destrói a própria essência da magia, interrompendo conjurações, destruindo mana e mais.
@@ -305,6 +330,7 @@ ent-OE14SpawnMagicElectricTrap = armadilha elétrica
 ent-OE14ActionSpellElectricTrapEffect = estrela elétrica
 
 ent-OE14SpellScrollElectricTrap = pergaminho de feitiço armadilha elétrica
+    .desc = { ent-OE14BaseSpellScroll.desc }
 
 ent-OE14ActionSpellLightningStrikeSmall = Raio menor
     .desc = Você carrega um raio que queima uma quantidade média de resistência do alvo.

@@ -28,8 +28,10 @@ ent-OE14CrystalLamp = lâmpada de cristal
     .desc = Um dispositivo que converte energia de cristais em uma fonte de luz direcional. Conveniente para viagens
 
 ent-OE14CrystalLampBlueEmpty = lâmpada de cristal azul
+    .desc = { ent-OE14CrystalLamp.desc }
 
 ent-OE14CrystalLampOrangeEmpty = lâmpada de cristal laranja
+    .desc = { ent-OE14CrystalLamp.desc }
 
 ent-OE14BaseSharpeningStone = pedra de amolar
     .desc = Permite afiar armas cegas. Se exagerar, pode acabar afiando a arma completamente.
