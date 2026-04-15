@@ -39,3 +39,4 @@ Thumbs.db
 bin/
 obj/
 .csproj.user
+RobustToolbox/Robust.Server/server_config.toml
