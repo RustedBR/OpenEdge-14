@@ -29,4 +29,92 @@
     <GuideEntityEmbed Entity="OE14WoodenPlanks20"/>
     <GuideEntityEmbed Entity="OE14Lighter"/>
   </Box>
+
+  ## Sistema de Temperatura
+
+  O forno aquece os itens gradualmente. A temperatura determina o resultado:
+
+  - [bold]0–400K:[/bold] Ingrediente cru — ainda não está pronto
+  - [bold]400–500K:[/bold] Cozido — comestível e delicioso
+  - [bold]500K+:[/bold] Queimado — vira cinzas, incomível
+
+  Fique de olho na comida! Retire do forno assim que estiver pronta.
+
+  ## Transformações por Calor
+
+  Alguns ingredientes crus se transformam simplesmente ao serem aquecidos no forno:
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodDoughLarge" Caption="Massa Grande"/>
+    <GuideEntityEmbed Entity="OE14FoodBread" Caption="Pão (400K)"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodMeatLamb" Caption="Cordeiro Cru"/>
+    <GuideEntityEmbed Entity="OE14FoodMeatLambCooked" Caption="Cordeiro Cozido"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodMeatPig" Caption="Porco Cru"/>
+    <GuideEntityEmbed Entity="OE14FoodMeatPigCooked" Caption="Porco Cozido"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodMeatBoar" Caption="Javali Cru"/>
+    <GuideEntityEmbed Entity="OE14FoodMeatBoarCooked" Caption="Javali Cozido"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodEgg" Caption="Ovo Cru"/>
+    <GuideEntityEmbed Entity="OE14FoodEggCooked" Caption="Ovo Cozido"/>
+  </Box>
+
+  ## Cortar com Faca
+
+  Alguns alimentos prontos podem ser cortados em porções usando uma [bold]faca[/bold]. Clique com a faca no alimento para fatiar:
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodBread" Caption="Pão"/>
+    <GuideEntityEmbed Entity="OE14FoodBreadSlice" Caption="Fatia de Pão"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14WeaponDaggerHatchet" Caption="Faca"/>
+  </Box>
+
+  Tortas assadas também podem ser fatiadas da mesma forma, rendendo 5 pedaços cada.
+
+  ## Pratos
+
+  Pratos são preparados combinando ingredientes na [bold]bancada de culinária[/bold]. O resultado é servido em um prato.
+  <Box>
+    <GuideEntityEmbed Entity="OE14WorkbenchCooking" Caption="Bancada"/>
+    <GuideEntityEmbed Entity="OE14PlateWooden" Caption="Prato de Madeira"/>
+    <GuideEntityEmbed Entity="OE14PlateIron" Caption="Prato de Ferro"/>
+  </Box>
+
+<GuideCookingRecipeGroupEmbed FoodType="Meal"/>
+
+  ## Sopas
+
+  Sopas são preparadas na [bold]panela[/bold] com [bold]20u de água[/bold] mais os ingredientes. Coloque a panela no forno e aguarde. Sirva em uma tigela.
+  <Box>
+    <GuideEntityEmbed Entity="OE14CookingPot" Caption="Panela"/>
+    <GuideEntityEmbed Entity="OE14BowlWooden" Caption="Tigela"/>
+    <GuideEntityEmbed Entity="OE14Furnace" Caption="Forno"/>
+  </Box>
+
+<GuideCookingRecipeGroupEmbed FoodType="Soup"/>
+
+  ## Tortas
+
+  Tortas são preparadas na [bold]forma de torta[/bold] com massa e recheio, depois assadas no forno. Cada torta rende [bold]5 fatias[/bold].
+
+  Para fazer a massa, use trigo na bancada de culinária:
+  <Box>
+    <GuideEntityEmbed Entity="OE14Wheat" Caption="Trigo"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchCooking" Caption="Bancada"/>
+    <GuideEntityEmbed Entity="OE14FoodDoughMedium" Caption="Massa Média"/>
+  </Box>
+
+  Coloque a massa + recheio na forma de torta e leve ao forno:
+  <Box>
+    <GuideEntityEmbed Entity="OE14PlatePie" Caption="Forma de Torta"/>
+    <GuideEntityEmbed Entity="OE14Furnace" Caption="Forno"/>
+  </Box>
+
+<GuideCookingRecipeGroupEmbed FoodType="Pie"/>
 </Document>

@@ -38,10 +38,11 @@
 - type: guideEntry
   openEdgeAllowed: true
   id: OE14_PT_JobInnkeeper
-  name: Estalajadeiro
+  name: Taverneiro
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/Innkeepers.xml"
   children:
   - OE14_PT_Cooking
+  filterEnabled: True
 
 - type: guideEntry
   openEdgeAllowed: true

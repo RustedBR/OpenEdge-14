@@ -1,0 +1,15 @@
+<Document>
+  # Pratos
+
+  Os pratos são preparados na [bold]Bancada de Culinária[/bold]. Coloque os ingredientes certos na bancada e o prato será montado automaticamente. Sirva em um prato de madeira, ferro ou ouro.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14WorkbenchCooking" Caption="Bancada de Culinária"/>
+    <GuideEntityEmbed Entity="OE14PlateWooden" Caption="Prato de Madeira"/>
+    <GuideEntityEmbed Entity="OE14PlateIron" Caption="Prato de Ferro"/>
+  </Box>
+
+  Cada card abaixo mostra uma receita com os ingredientes necessários (expanda "Ingredientes"):
+
+<GuideCookingRecipeGroupEmbed FoodType="Meal"/>
+</Document>

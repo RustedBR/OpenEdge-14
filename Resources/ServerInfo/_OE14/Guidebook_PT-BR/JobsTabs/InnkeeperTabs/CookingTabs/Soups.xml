@@ -1,0 +1,15 @@
+<Document>
+  # Sopas
+
+  Sopas são preparadas na [bold]panela[/bold]. Para qualquer sopa você precisa de [bold]20 unidades de água[/bold] na panela mais os ingredientes escolhidos. Coloque a panela no forno e aguarde. Sirva em uma tigela.
+
+  <Box>
+    <GuideEntityEmbed Entity="OE14CookingPot" Caption="Panela"/>
+    <GuideEntityEmbed Entity="OE14BowlWooden" Caption="Tigela"/>
+    <GuideEntityEmbed Entity="OE14Furnace" Caption="Forno"/>
+  </Box>
+
+  Cada card abaixo mostra uma receita com os ingredientes necessários (expanda "Ingredientes"):
+
+<GuideCookingRecipeGroupEmbed FoodType="Soup"/>
+</Document>

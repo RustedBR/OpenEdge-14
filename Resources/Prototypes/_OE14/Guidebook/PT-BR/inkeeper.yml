@@ -5,6 +5,7 @@
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/InnkeeperTabs/Cooking.xml"
   children:
   - OE14_PT_First_dish
+  filterEnabled: True
 
 - type: guideEntry
   openEdgeAllowed: true
@@ -12,3 +13,4 @@
   name: Seu Primeiro Prato
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/JobsTabs/InnkeeperTabs/First_dish.xml"
   filterEnabled: True
+

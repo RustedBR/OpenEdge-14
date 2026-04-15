@@ -1,0 +1,45 @@
+<Document>
+  # Transformações por Calor
+
+  Alguns ingredientes se transformam automaticamente quando aquecidos à temperatura certa. Basta colocá-los em uma frigideira ou panela no forno e aguardar.
+
+  Lembre-se: retire do forno antes de passar de [bold]500K[/bold], senão vira cinzas!
+
+  ## Massa → Pão
+
+  A massa grande colocada no forno se transforma em pão fresco.
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodDoughLarge" Caption="Massa Grande (cru)"/>
+    <GuideEntityEmbed Entity="OE14FoodBread" Caption="Pão (400K)"/>
+  </Box>
+
+  ## Carnes Cruas → Carnes Cozidas
+
+  Qualquer carne de animal pode ser cozida diretamente no forno. Coloque na frigideira e aguarde.
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodMeatLamb" Caption="Carne de Cordeiro"/>
+    <GuideEntityEmbed Entity="OE14FoodMeatLambCooked" Caption="Cordeiro Cozido (400K)"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodMeatPig" Caption="Carne de Porco"/>
+    <GuideEntityEmbed Entity="OE14FoodMeatPigCooked" Caption="Porco Cozido (400K)"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodMeatBoar" Caption="Carne de Javali"/>
+    <GuideEntityEmbed Entity="OE14FoodMeatBoarCooked" Caption="Javali Cozido (400K)"/>
+  </Box>
+
+  ## Ovo → Ovo Cozido
+
+  Ovos cozidos podem ser usados como ingrediente em pratos mais elaborados.
+  <Box>
+    <GuideEntityEmbed Entity="OE14FoodEgg" Caption="Ovo (cru)"/>
+    <GuideEntityEmbed Entity="OE14FoodEggCooked" Caption="Ovo Cozido (400K)"/>
+  </Box>
+
+  ## Dicas
+
+  - Use o feitiço [color=#ffa500]Criar Chama[/color] em vez de lenha para um aquecimento limpo e barato
+  - Use o feitiço [color=#ffa500]Calor[/color] para cozinhar instantaneamente sem combustível
+  - Fatias de carne também podem ser cozidas da mesma forma
+</Document>

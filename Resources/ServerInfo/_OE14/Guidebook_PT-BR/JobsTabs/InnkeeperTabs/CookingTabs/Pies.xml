@@ -1,0 +1,22 @@
+<Document>
+  # Tortas
+
+  Tortas são preparadas na [bold]forma de torta[/bold] com massa e recheio, depois assadas no forno. Cada torta rende [bold]5 fatias[/bold].
+
+  Para fazer a massa, use trigo na bancada de culinária:
+  <Box>
+    <GuideEntityEmbed Entity="OE14Wheat" Caption="Trigo"/>
+    <GuideEntityEmbed Entity="OE14WorkbenchCooking" Caption="Bancada"/>
+    <GuideEntityEmbed Entity="OE14FoodDoughMedium" Caption="Massa Média"/>
+  </Box>
+
+  Coloque a massa + recheio na forma de torta e leve ao forno:
+  <Box>
+    <GuideEntityEmbed Entity="OE14PlatePie" Caption="Forma de Torta"/>
+    <GuideEntityEmbed Entity="OE14Furnace" Caption="Forno"/>
+  </Box>
+
+  Cada card abaixo mostra uma receita com os ingredientes do recheio (expanda "Ingredientes"):
+
+<GuideCookingRecipeGroupEmbed FoodType="Pie"/>
+</Document>
