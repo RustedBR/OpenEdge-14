@@ -1,0 +1,36 @@
+<Document>
+# Anões
+
+<Box>
+<GuideEntityEmbed Entity="OE14MobDwarf" Caption="Anão"/>
+</Box>
+
+Anões são um povo robusto e tenaz, talhados da mesma pedra das montanhas que chamam de lar. Baixos em estatura, mas imensos em resistência, construíram civilizações em lugares onde nenhuma outra raça ousaria se estabelecer. Sua conexão com o arcano é limitada, mas seus corpos suportam punições que matariam seres inferiores.
+
+## Atributos
+
+[bold]Escala: 1–10 | Valores efetivos mostrados (inclui habilidades raciais gratuitas)[/bold]
+
+- [color=#e05050]Força[/color] — [bold][color=#77dd77]7[/color][/bold] | Alto poder físico. Golpeia mais forte que humanos no corpo a corpo.
+- [color=#50e050]Vitalidade[/color] — [bold][color=#77dd77]9[/color][/bold] | Resistência excepcional. [color=#77dd77]~150 HP[/color] antes do Crítico, [color=#ff6961]~300 HP[/color] antes da Morte. (VIT base 7, +2 das habilidades gratuitas de [color=#5EABEB]Hidrosofística[/color])
+- [color=#50e0e0]Destreza[/color] — [bold][color=#ff6961]2[/color][/bold] | Stamina muito baixa. Apenas [color=#ff6961]~25 de stamina[/color] antes do Crítico de Stamina — fácil de derrubar apesar da toughness.
+- [color=#a050e0]Inteligência[/color] — [bold][color=#ffa500]4[/color][/bold] | Potencial mágico limitado. Apenas [color=#42aaf5]~81 de mana[/color].
+
+Anões são os lutadores de linha de frente por excelência de CrystallEdge. Podem absorver enormes quantidades de dano enquanto desferem golpes corpo a corpo sólidos — mas sua stamina quase nula os torna fáceis de derrubar, e sua baixa inteligência limita a magia a feitiços básicos.
+
+## Nascidos para Resistir
+
+A constituição anã é lendária:
+- Maior pool de vida base, empatado apenas com Silva (após habilidades raciais)
+- Boa capacidade ofensiva corpo a corpo graças à alta Força natural
+- Excepcionalmente resistentes a dano sustentado em combate
+
+## Limitações Mágicas e de Stamina
+
+As artes arcanas não vêm naturalmente aos anões:
+- [color=#ff6961]Mana limitada (~81)[/color] — apenas feitiços básicos estão ao alcance sem investimento pesado em INT
+- [color=#ff6961]Stamina muito baixa (~25)[/color] — uma única rajada de ataques de stamina pode derrubar até um Anão
+
+Anões começam com [color=#5EABEB]Hidrosofística[/color] Básica e Avançada gratuitas, concedendo +2 VIT e acesso a habilidades baseadas em água.
+
+</Document>

@@ -18,6 +18,9 @@
       250: Dead
   - type: Stamina
     critThreshold: 25
+  - type: OE14DwarfAlcoholResistance
+  - type: LightweightDrunk
+    boozeStrengthMultiplier: 0.5
   - type: OE14MagicEnergyContainer
     maxEnergy: 75
     energy: 75

@@ -41,6 +41,7 @@
     maxEnergy: 150
     energy: 150
   - type: OE14MagicEnergyDraw
+    enable: false
     energy: 0
     delay: 3
   - type: OE14SkillStorage

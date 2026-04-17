@@ -10,6 +10,7 @@
   - OE14_PT_Tiefling
   - OE14_PT_Goblin
   - OE14_PT_Carcat
+  - OE14_PT_Dwarf
   filterEnabled: True
 
 - type: guideEntry
@@ -52,4 +53,11 @@
   id: OE14_PT_Carcat
   name: Carcat
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Carcat.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_Dwarf
+  name: Anão
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Dwarf.xml"
   filterEnabled: True

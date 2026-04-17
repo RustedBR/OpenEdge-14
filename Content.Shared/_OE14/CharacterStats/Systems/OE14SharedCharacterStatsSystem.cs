@@ -60,17 +60,17 @@ public abstract partial class OE14SharedCharacterStatsSystem : EntitySystem
             ? 1.0f + (effStr - 5) * 0.10f
             : 1.0f + (effStr - 5) * 0.125f;
 
-        // Vitality: 12.5 HP per point from neutral (5).
-        // Stat 5 = 0 bonus, Stat 10 = +62.5, Stat 1 = -50
-        stats.HealthBonus = (effVit - 5) * 12.5f;
+        // Vitality: 5 HP per point from neutral (5).
+        // Stat 5 = 0 bonus, Stat 10 = +25 (max 250 HP), Stat 1 = -20
+        stats.HealthBonus = (effVit - 5) * 5f;
 
-        // Dexterity: 18.75% stamina multiplier per point from neutral (5).
-        // Stat 5 = 1.0x (100 stamina), Stat 10 = 1.9375x (~194 stamina), Stat 1 = 0.25x (25 stamina, minimum)
-        stats.StaminaMultiplier = 1.0f + (effDex - 5) * 0.1875f;
+        // Dexterity: 20% stamina multiplier per point from neutral (5).
+        // Stat 5 = 1.0x (100 stamina), Stat 10 = 2.0x (200 stamina max), Stat 1 = 0.2x (20 stamina, minimum)
+        stats.StaminaMultiplier = 1.0f + (effDex - 5) * 0.20f;
 
-        // Intelligence: 18.75 mana per point from neutral (5) — mirrors DEX curve.
-        // Stat 5 = 0 bonus (100 mana), Stat 10 = +93.75 (~194 mana), Stat 1 = -75 (25 mana, minimum)
-        stats.ManaBonus = (effInt - 5) * 18.75f;
+        // Intelligence: 20 mana per point from neutral (5).
+        // Stat 5 = 0 bonus (100 mana), Stat 10 = +100 (200 mana max), Stat 1 = -100 (0 mana minimum)
+        stats.ManaBonus = (effInt - 5) * 20f;
 
         // Mark for network update
         Dirty(ent.Owner, stats);
