@@ -27,8 +27,8 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
 
     // Track last heal time per dwarf
     private Dictionary<EntityUid, float> _lastHealTime = new();
-    private const float HealInterval = 0.25f; // Heal every 0.25 seconds
-    private const float HealAmount = 50f; // 50 HP per heal tick = 200 HP/s (10x boost for testing)
+    private const float HealInterval = 1.0f; // Heal every 1 second
+    private const float HealAmount = 5f; // 5 HP per heal tick = 5 HP/s
 
 
     public override void Initialize()
@@ -62,26 +62,7 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
                 {
                     // If there are any reagents in the chemical solution, the dwarf has alcohol in their bloodstream
                     hasAlcoholInBloodstream = chemicalSolution.Contents.Count > 0;
-
-                    // AGGRESSIVE DEBUG - log every frame to see what's happening
-                    Logger.InfoS("dwarf-alcohol", $"Dwarf {uid}: {chemicalSolution.Contents.Count} reagents, hasAlcohol={hasAlcoholInBloodstream}");
-
-                    if (hasAlcoholInBloodstream)
-                    {
-                        foreach (var reagent in chemicalSolution.Contents)
-                        {
-                            Logger.InfoS("dwarf-alcohol", $"  - Reagent: {reagent.Reagent.Prototype}");
-                        }
-                    }
                 }
-                else
-                {
-                    Logger.WarningS("dwarf-alcohol", $"Could not resolve chemical solution for dwarf {uid}");
-                }
-            }
-            else
-            {
-                Logger.WarningS("dwarf-alcohol", $"Dwarf {uid} has no BloodstreamComponent");
             }
 
             if (!hasAlcoholInBloodstream)
@@ -90,7 +71,7 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
                 continue;
             }
 
-            // Track healing timing - heal every 1 second while drunk
+            // Track healing timing - heal periodically while alcohol is in bloodstream
             if (!_lastHealTime.TryGetValue(uid, out var lastHeal))
                 lastHeal = 0f;
 
@@ -98,7 +79,7 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
 
             if (lastHeal >= HealInterval)
             {
-                // Heal the dwarf: 50 HP per heal tick (0.25 seconds) = 200 HP/s total (10x boost for testing)
+                // Heal the dwarf: 5 HP per heal tick (1 second) = 5 HP/s total
                 // Heals ALL damage types while alcohol is in bloodstream
                 var damage = new DamageSpecifier();
                 damage.DamageDict["Brute"] = FixedPoint2.New(-HealAmount); // Negative = healing
@@ -111,6 +92,10 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
                 damage.DamageDict["Cold"] = FixedPoint2.New(-HealAmount);
 
                 _damageable.TryChangeDamage(uid, damage, true);
+
+                // TODO: Also reduce bleeding (bloodloss) at a slower rate than HP healing
+                // This requires write-access to BloodstreamComponent, which needs a separate system query
+
                 lastHeal = 0f;
             }
 
