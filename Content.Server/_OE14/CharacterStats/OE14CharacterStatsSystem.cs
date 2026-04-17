@@ -227,7 +227,9 @@ public sealed partial class OE14CharacterStatsSystem : OE14SharedCharacterStatsS
     /// </summary>
     private void OnRefreshMovementSpeed(Entity<OE14CharacterStatsComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
-        var dexModifier = 1.0f + (ent.Comp.Dexterity - 5) * 0.0625f;
+        // Use effective DEX (base + modifiers) for movement speed calculation
+        var effectiveDex = ent.Comp.Dexterity + ent.Comp.DexterityModifier;
+        var dexModifier = 1.0f + (effectiveDex - 5) * 0.0625f;
         args.ModifySpeed(dexModifier, dexModifier);
     }
 
