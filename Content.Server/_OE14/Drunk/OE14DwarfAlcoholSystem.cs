@@ -27,8 +27,8 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
 
     // Track last heal time per dwarf
     private Dictionary<EntityUid, float> _lastHealTime = new();
-    private const float HealInterval = 0.5f; // Heal every 0.5 seconds
-    private const float HealAmount = 5f; // HP per heal tick
+    private const float HealInterval = 0.25f; // Heal every 0.25 seconds
+    private const float HealAmount = 50f; // 50 HP per heal tick = 200 HP/s (10x boost for testing)
 
     // Debug tracking to avoid spam
     private HashSet<EntityUid> _debuggedDwarves = new();
@@ -99,12 +99,17 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
 
             if (lastHeal >= HealInterval)
             {
-                // Heal the dwarf: 5 HP per heal tick (0.5 seconds) = 10 HP/s total
-                // Heals all physical damage types (Brute, Slash, Pierce, etc.)
+                // Heal the dwarf: 50 HP per heal tick (0.25 seconds) = 200 HP/s total (10x boost for testing)
+                // Heals ALL damage types while alcohol is in bloodstream
                 var damage = new DamageSpecifier();
                 damage.DamageDict["Brute"] = FixedPoint2.New(-HealAmount); // Negative = healing
                 damage.DamageDict["Slash"] = FixedPoint2.New(-HealAmount);
                 damage.DamageDict["Pierce"] = FixedPoint2.New(-HealAmount);
+                damage.DamageDict["Burn"] = FixedPoint2.New(-HealAmount);
+                damage.DamageDict["Radiation"] = FixedPoint2.New(-HealAmount);
+                damage.DamageDict["Toxin"] = FixedPoint2.New(-HealAmount);
+                damage.DamageDict["Heat"] = FixedPoint2.New(-HealAmount);
+                damage.DamageDict["Cold"] = FixedPoint2.New(-HealAmount);
 
                 _damageable.TryChangeDamage(uid, damage, true);
                 lastHeal = 0f;
