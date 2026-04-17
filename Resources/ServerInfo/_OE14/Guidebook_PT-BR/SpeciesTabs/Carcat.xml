@@ -6,18 +6,18 @@
 <GuideEntityEmbed Entity="OE14MobCarcat" Caption="Carcat"/>
 </Box>
 
-Os Carcats são uma nação do deserto que habita a harsh expanse do Grande Deserto de Dunes. Eles são conhecidos por sua resistência, isolamento e profunda conexão com seus ancestrais. Their homeland is Bafamir, um estado que surgiu das cinzas de guerra e desastre, mantido junto pela vontade de ferro do Sultão e dos clãs dominantes. Em outras terras eles são frequentemente encontrados como mercenaries, comerciantes e artesãos.
+Os Carcats são uma nação do deserto que habita a região árida do Grande Deserto de Dunes. Eles são conhecidos por sua resistência, isolamento e profunda conexão com seus ancestrais. Sua pátria é Bafamir, um estado que surgiu das cinzas de guerra e desastre, mantido unido pela vontade de ferro do Sultão e dos clãs dominantes. Em outras terras eles são frequentemente encontrados como mercenários, comerciantes e artesãos.
 
 ## Atributos
 
 [bold]Escala: 1–10 | Valores efetivos mostrados (inclui habilidades raciais gratuitas)[/bold]
 
-- [color=#e05050]Força[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Poder físico médio, igual aos humanos.
-- [color=#50e050]Vitalidade[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Saúde média. [color=#c8c8c8]~100 HP[/color] antes do Crítico, [color=#ff6961]~200 HP[/color] antes da Morte.
-- [color=#50e0e0]Destreza[/color] — [bold][color=#77dd77]9[/color][/bold] | Agilidade excepcional. [color=#77dd77]~200 stamina[/color] antes do Crítico de Stamina — muito difícil de derrubar. (DEX base 7, +2 de habilidades gratuitas de [color=#ffe269]Eletromancia[/color])
-- [color=#a050e0]Inteligência[/color] — [bold][color=#ffa500]3[/color][/bold] | Potencial mágico limitado. Apenas [color=#42aaf5]~63 mana[/color].
+- [color=#d4a84b] Força [/color] — [bold][color=#c8c8c8] 5 [/color][/bold] | Poder físico médio, igual aos humanos.
+- [color=#e05050] Vitalidade [/color] — [bold][color=#c8c8c8] 5 [/color][/bold] | Saúde média. [color=#c8c8c8] 100 HP [/color] antes do Crítico, [color=#ff6961] 200 HP [/color] antes da Morte.
+- [color=#50c878] Destreza [/color] — [bold][color=#77dd77] 7 [/color][/bold] | Agilidade excepcional. [color=#77dd77] 140 stamina [/color] antes do Crítico de Stamina — muito difícil de derrubar.
+- [color=#5090e0] Inteligência [/color] — [bold][color=#ffa500] 3 [/color][/bold] | Potencial mágico limitado. [color=#5090e0] 60 mana [/color].
 
-Carcats combinam força e saúde no nível humano com agilidade excepcional e traços físicos únicos. Sua mana baixa torna a conjuração sustentada de feitiços difícil, mas seus reflexos e habilidades naturais os tornam formidables em combate corpo a corpo.
+Carcats combinam força e saúde no nível humano com agilidade excepcional e traços físicos únicos. Sua mana baixa torna a conjuração sustentada de feitiços difícil, mas seus reflexos e habilidades naturais os tornam formidáveis em combate corpo a corpo.
 
 ## Habilidades Felinas
 
@@ -33,6 +33,6 @@ Carcats combinam força e saúde no nível humano com agilidade excepcional e tr
 - [bold]Anonimato do poder[/bold] — os Sultões de Bafamir não têm nome, clã ou rosto; sua figura representa a vontade do deserto
 - [bold]Laços tribais[/bold] — Carcats longe de casa são especialmente calorosos com seus companheiros de tribo
 
-Carcats começam com Básico e Avançado gratuitos de [color=#ffe269]Eletromancia[/color], concedendo +2 DEX e acesso a habilidades baseadas em relâmpago.
+Carcats começam com Básico e Avançado gratuitos de [color=#ffe269] Ilusão [/color], concedendo +2 [color=#50c878] DEX [/color] e acesso a habilidades de magia ilusória.
 
 </Document>

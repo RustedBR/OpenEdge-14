@@ -178,18 +178,15 @@
 - type: damageModifierSet
   id: OE14Tiefling
   coefficients:
-    Heat: 0.5
-    Cold: 1.5
+    Heat: 0.15
+    Cold: 1.85
 
 - type: damageModifierSet
   id: OE14Goblin
   coefficients:
-    Blunt: 1.25
-    Slash: 1.25
-    Piercing: 1.25
-    Heat: 1.25
-    Cold: 1.25
-    Shock: 1.25
+    Blunt: 1.1
+    Slash: 1.1
+    Piercing: 1.1
     Poison: 0.5
     Caustic: 0.5
 

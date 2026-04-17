@@ -52,7 +52,7 @@ Escolher a raça certa é o primeiro passo para criar seu personagem em OpenEdge
 - [bold]Mana:[/bold] [color=#5090e0] 100 [/color]
 - [bold]Velocidade:[/bold] [color=#50c878] 100% [/color]
 - [bold]Dano:[/bold] [color=#d4a84b] 1.0x [/color]
-- [bold]Regen Mana:[/bold] [color=#5090e0] 1.0/s [/color] (padrão)
+- [bold]Regen Mana:[/bold] [color=#5090e0] 5.0/s [/color]
 - [bold]Especialidade:[/bold] Perfeitamente equilibrado — nenhuma fraqueza óbvia
 
 [bold][color=#42aaf5] Elfo [/color][/bold]
@@ -72,7 +72,7 @@ Escolher a raça certa é o primeiro passo para criar seu personagem em OpenEdge
 - [bold]Mana:[/bold] [color=#5090e0] 80 [/color] — limitado
 - [bold]Velocidade:[/bold] [color=#ff6961] 81% [/color] — lento
 - [bold]Dano:[/bold] [color=#d4a84b] 1.2x [/color] — muito forte
-- [bold]Regen Mana:[/bold] [color=#5090e0] 0.5/s [/color] (contínuo)
+- [bold]Regen Mana:[/bold] [color=#5090e0] 4.0/s [/color]
 - [bold]Especialidade:[/bold] Tanque que se cura bebendo álcool
 
 [bold][color=#90EE90] Silva [/color][/bold]
@@ -92,7 +92,7 @@ Escolher a raça certa é o primeiro passo para criar seu personagem em OpenEdge
 - [bold]Mana:[/bold] [color=#ff6961] 20 [/color] — muito limitado
 - [bold]Velocidade:[/bold] [color=#77dd77] 113% [/color] — rápido
 - [bold]Dano:[/bold] [color=#d4a84b] 1.1x [/color]
-- [bold]Regen Mana:[/bold] [color=#5090e0] 0.5/s [/color] (contínuo)
+- [bold]Regen Mana:[/bold] [color=#5090e0] 1.0/s [/color]
 - [bold]Especialidade:[/bold] Guerreiro ágil que consegue usar magia com INT, mas é muito limitado por mana
 
 [bold][color=#F5DEB3] Carcat [/color][/bold]
@@ -102,7 +102,7 @@ Escolher a raça certa é o primeiro passo para criar seu personagem em OpenEdge
 - [bold]Mana:[/bold] [color=#5090e0] 60 [/color] — abaixo da média
 - [bold]Velocidade:[/bold] [color=#77dd77] 113% [/color] — rápido
 - [bold]Dano:[/bold] [color=#d4a84b] 1.0x [/color]
-- [bold]Regen Mana:[/bold] [color=#5090e0] 1.0/s [/color] (padrão)
+- [bold]Regen Mana:[/bold] [color=#5090e0] 3.0/s [/color]
 - [bold]Especialidade:[/bold] Mago de ilusão ágil com visão noturna, garras naturais, mas começa fraco
 
 [bold][color=#FF4500] Tiefling [/color][/bold]

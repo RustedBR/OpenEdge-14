@@ -6,21 +6,21 @@
 <GuideEntityEmbed Entity="OE14MobHuman" Caption="Humano"/>
 </Box>
 
-Humanos - Uma das raças mais jovens culturalmente. Humanos se destacam por sua commonidade enquanto são uma das raças dominantes em números. Eles são o benchmark pelo qual todas as outras espécies são medidas — perfeitamente equilibrados em todos os atributos.
+Humanos são uma das raças mais jovens culturalmente. Humanos se destacam por sua commonalidade enquanto são uma das raças dominantes em números. Eles são o benchmark pelo qual todas as outras espécies são medidas — perfeitamente equilibrados em todos os atributos.
 
 ## Atributos
 
 [bold]Escala: 1–10 | Baseline humano: 5 em todos os stats[/bold]
 
-- [color=#e05050]Força[/color] — [bold]5[/bold] | Multiplicador de dano físico. Neutro — nem forte nem fraco.
-- [color=#50e050]Vitalidade[/color] — [bold]5[/bold] | Vida máxima. [color=#77dd77]100 HP[/color] antes do Crítico, [color=#ff6961]200 HP[/color] antes da Morte.
-- [color=#50e0e0]Destreza[/color] — [bold]5[/bold] | Stamina máxima. [color=#77dd77]100 stamina[/color] antes do Crítico de Stamina.
-- [color=#a050e0]Inteligência[/color] — [bold]5[/bold] | Mana máxima. [color=#42aaf5]100 mana[/color].
+- [color=#d4a84b] Força [/color] — [bold] 5 [/bold] | Multiplicador de dano físico. Neutro — nem forte nem fraco.
+- [color=#e05050] Vitalidade [/color] — [bold] 5 [/bold] | Vida máxima. [color=#77dd77] 100 HP [/color] antes do Crítico, [color=#ff6961] 200 HP [/color] antes da Morte.
+- [color=#50c878] Destreza [/color] — [bold] 5 [/bold] | Stamina máxima. [color=#77dd77] 100 stamina [/color] antes do Crítico de Stamina.
+- [color=#5090e0] Inteligência [/color] — [bold] 5 [/bold] | Mana máxima. [color=#5090e0] 100 mana [/color].
 
 Humanos não têm extremos — eles são o ponto de partida ideal para qualquer estilo de jogo, e seus pontos de atributo durante a criação do personagem podem empurrá-los em qualquer direção.
 
 ## Opportunistas
 
-Humanos têm [bold]0.5 pontos de habilidade de Memória a mais[/bold] no início da rodada, dando-lhes uma pequena vantagem na progressão de habilidades.
+Humanos têm [bold] 0.5 pontos de habilidade de Memória a mais [/bold] no início da rodada, dando-lhes uma pequena vantagem na progressão de habilidades.
 
 </Document>

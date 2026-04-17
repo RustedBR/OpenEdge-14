@@ -109,11 +109,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      112: Critical
-      225: Dead
+      105: Critical
+      210: Dead
   - type: Damageable
     damageContainer: OE14Biological
-    damageModifierSet: OE14Goblin #+25% all damage, -50% poison
+    damageModifierSet: OE14Goblin #+10% physical damage, -50% poison
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -127,11 +127,11 @@
         Toxin: -0.05
   - type: Stamina
     decay: 5 # 3 default
-    critThreshold: 150 # DEX 7 → 100 * (1 + (7-5)*0.25) = 150
+    critThreshold: 140 # DEX 7 → 100 * (1 + (7-5)*0.20) = 140
     stunTime: 4 #6 default
-  - type: OE14MagicEnergyContainer # Mana: INT 1 → 100 + (1-5)*25 = 0
-    maxEnergy: 0
-    energy: 0
+  - type: OE14MagicEnergyContainer # Mana: INT 1 → 100 + (1-5)*20 = 20
+    maxEnergy: 20
+    energy: 20
   - type: OE14MagicEnergyDraw #Cool x3 mana regen!
     energy: 1.5
     delay: 3

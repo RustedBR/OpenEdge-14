@@ -6,18 +6,18 @@
 <GuideEntityEmbed Entity="OE14MobSilva" Caption="Silva"/>
 </Box>
 
-Os Silva são uma raça de plantas humanoides que vivem em florestas relictas profundas. Emergindo da árvore mãe no centro de suas cidades, os Silva raramente viajam pelo mundo. Eles são os healers definitivos de CrystallEdge — quase impossíveis de matar, mas incapazes de qualquer ameaça física significativa.
+Os Silva são uma raça de plantas humanoides que vivem em florestas relictas profundas. Emergindo da árvore mãe no centro de suas cidades, os Silva raramente viajam pelo mundo. Eles são os curandeiros definitivos — quase impossíveis de matar, mas incapazes de qualquer ameaça física significativa.
 
 ## Atributos
 
 [bold]Escala: 1–10 | Valores efetivos mostrados (inclui habilidades raciais gratuitas)[/bold]
 
-- [color=#e05050]Força[/color] — [bold][color=#ff6961]1[/color][/bold] | Essencialmente sem poder físico. [color=#ff6961]Mal machuca qualquer coisa em combate corpo a corpo.[/color]
-- [color=#50e050]Vitalidade[/color] — [bold][color=#77dd77]9[/color][/bold] | Resiliência excepcional. [color=#77dd77]~150 HP[/color] antes do Crítico, [color=#ff6961]~300 HP[/color] antes da Morte. (VIT base 7, +2 de habilidades gratuitas de [color=#77dd77]Cura[/color])
-- [color=#50e0e0]Destreza[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Stamina média. [color=#c8c8c8]~100 stamina[/color] antes do Crítico de Stamina.
-- [color=#a050e0]Inteligência[/color] — [bold][color=#42aaf5]7[/color][/bold] | Capacidade mágica forte. [color=#42aaf5]~138 mana[/color].
+- [color=#d4a84b] Força [/color] — [bold][color=#ff6961] 1 [/color][/bold] | Essencialmente sem poder físico. [color=#ff6961] Mal machuca qualquer coisa em combate corpo a corpo. [/color]
+- [color=#e05050] Vitalidade [/color] — [bold][color=#77dd77] 7 [/color][/bold] | Resiliência excepcional. [color=#77dd77] 110 HP [/color] antes do Crítico, [color=#ff6961] 220 HP [/color] antes da Morte.
+- [color=#50c878] Destreza [/color] — [bold][color=#c8c8c8] 5 [/color][/bold] | Stamina média. [color=#c8c8c8] 100 stamina [/color] antes do Crítico de Stamina.
+- [color=#5090e0] Inteligência [/color] — [bold][color=#42aaf5] 7 [/color][/bold] | Capacidade mágica forte. [color=#5090e0] 140 mana [/color].
 
-Os Silva são os survivalistas definitivo — seu pool de vida é o segundo mais alto de todas as espécies e sua magia é forte. No entanto, sua força insignificante significa que devem depender inteiramente de feitiços e aliados para produção ofensiva.
+Os Silva são os sobrevivalistas definitivos — seu pool de vida é o segundo mais alto de todas as espécies e sua magia é forte. Porém, sua força insignificante significa que devem depender inteiramente de feitiços e aliados para produção ofensiva.
 
 ## Fotossíntese Mágica
 
@@ -27,6 +27,6 @@ Os Silva também podem beber água para restaurar pequenas quantidades de mana �
 
 ## Conexão com a Natureza
 
-Os Silva começam com Básico e Avançado gratuitos de [color=#77dd77]Vivificação[/color] (Cura), concedendo +2 VIT e acesso a feitiços de cura baseados na natureza.
+Os Silva começam com Básico e Avançado gratuitos de [color=#77dd77] Vivificação [/color] (Cura), concedendo +2 [color=#e05050] VIT [/color] e acesso a feitiços de cura baseados na natureza.
 
 </Document>
