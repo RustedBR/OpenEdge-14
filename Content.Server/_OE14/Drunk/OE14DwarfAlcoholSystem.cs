@@ -10,6 +10,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Containers;
+using Robust.Shared.Log;
 
 namespace Content.Server._OE14.Drunk;
 
@@ -63,7 +64,19 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
                 {
                     // If there are any reagents in the chemical solution, the dwarf has alcohol in their bloodstream
                     hasAlcoholInBloodstream = chemicalSolution.Contents.Count > 0;
+
+                    // Debug logging
+                    if (hasAlcoholInBloodstream)
+                        Logger.InfoS("dwarf-alcohol", $"Dwarf {uid} has {chemicalSolution.Contents.Count} reagents in bloodstream");
                 }
+                else
+                {
+                    Logger.WarningS("dwarf-alcohol", $"Could not resolve chemical solution for dwarf {uid}");
+                }
+            }
+            else
+            {
+                Logger.WarningS("dwarf-alcohol", $"Dwarf {uid} has no BloodstreamComponent");
             }
 
             if (!hasAlcoholInBloodstream)
