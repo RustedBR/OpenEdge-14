@@ -5,6 +5,8 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
+using Robust.Shared.Containers;
 
 namespace Content.Server._OE14.Drunk;
 
@@ -46,8 +48,21 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
                 continue;
             }
 
-            // Check if they have the Drunk status effect
-            if (!HasComp<DrunkStatusEffectComponent>(uid))
+            // Check if they have the Drunk status effect in their status effect container
+            var hasDrunkStatus = false;
+            if (TryComp<StatusEffectContainerComponent>(uid, out var container) && container.ActiveStatusEffects != null)
+            {
+                foreach (var statusEntity in container.ActiveStatusEffects.ContainedEntities)
+                {
+                    if (HasComp<DrunkStatusEffectComponent>(statusEntity))
+                    {
+                        hasDrunkStatus = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!hasDrunkStatus)
             {
                 _lastHealTime.Remove(uid);
                 continue;
