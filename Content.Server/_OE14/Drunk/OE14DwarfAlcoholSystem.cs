@@ -1,4 +1,7 @@
 using Content.Shared._OE14.Drunk;
+using Content.Shared.Body.Components;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Drunk;
 using Content.Shared.FixedPoint;
@@ -13,12 +16,13 @@ namespace Content.Server._OE14.Drunk;
 /// <summary>
 /// System for dwarven alcohol mechanics:
 /// - Dwarves resist drunkenness (shorter duration)
-/// - Dwarves heal while drunk (passive HP regeneration)
+/// - Dwarves heal while they have alcohol in their bloodstream (passive HP regeneration)
 /// </summary>
 public sealed class OE14DwarfAlcoholSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
 
     // Track last heal time per dwarf
     private Dictionary<EntityUid, float> _lastHealTime = new();
@@ -37,7 +41,7 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        // Check for dwarves with active drunk status and heal them
+        // Check for dwarves with alcohol in their bloodstream and heal them
         var query = EntityQueryEnumerator<OE14DwarfAlcoholResistanceComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -48,21 +52,21 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
                 continue;
             }
 
-            // Check if they have the Drunk status effect in their status effect container
-            var hasDrunkStatus = false;
-            if (TryComp<StatusEffectContainerComponent>(uid, out var container) && container.ActiveStatusEffects != null)
+            // Check if they have alcohol in their bloodstream
+            var hasAlcoholInBloodstream = false;
+
+            if (TryComp<BloodstreamComponent>(uid, out var bloodstream))
             {
-                foreach (var statusEntity in container.ActiveStatusEffects.ContainedEntities)
+                // Try to get the chemical solution (where alcohol/reagents accumulate)
+                if (_solutionContainerSystem.ResolveSolution(uid, bloodstream.ChemicalSolutionName,
+                    ref bloodstream.ChemicalSolution, out var chemicalSolution))
                 {
-                    if (HasComp<DrunkStatusEffectComponent>(statusEntity))
-                    {
-                        hasDrunkStatus = true;
-                        break;
-                    }
+                    // If there are any reagents in the chemical solution, the dwarf has alcohol in their bloodstream
+                    hasAlcoholInBloodstream = chemicalSolution.Contents.Count > 0;
                 }
             }
 
-            if (!hasDrunkStatus)
+            if (!hasAlcoholInBloodstream)
             {
                 _lastHealTime.Remove(uid);
                 continue;
