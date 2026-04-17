@@ -60,9 +60,9 @@ public abstract partial class OE14SharedCharacterStatsSystem : EntitySystem
             ? 1.0f + (effStr - 5) * 0.10f
             : 1.0f + (effStr - 5) * 0.125f;
 
-        // Vitality: 5 HP per point from neutral (5).
-        // Stat 5 = 0 bonus, Stat 10 = +25 (max 250 HP), Stat 1 = -20
-        stats.HealthBonus = (effVit - 5) * 5f;
+        // Vitality: 20 HP per point from neutral (5).
+        // Stat 5 = 0 bonus, Stat 10 = +100 (max 200 HP critical / 400 HP death), Stat 1 = -80
+        stats.HealthBonus = (effVit - 5) * 20f;
 
         // Dexterity: 20% stamina multiplier per point from neutral (5).
         // Stat 5 = 1.0x (100 stamina), Stat 10 = 2.0x (200 stamina max), Stat 1 = 0.2x (20 stamina, minimum)
