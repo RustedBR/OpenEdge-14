@@ -1,0 +1,187 @@
+<Document>
+
+# Comparação de Raças
+
+Escolher a raça certa é o primeiro passo para criar seu personagem em OpenEdge 14. Cada raça tem seus próprios pontos fortes e fracos — não há "melhor" raça, apenas a que melhor se encaixa no seu estilo de jogo.
+
+## Atributos Base (Escala 1–10)
+
+[bold]Baseline humano: 5 em todos os atributos[/bold]
+
+[color=#d4a84b] [bold]Força[/bold] [/color] — Multiplicador de dano físico em ataques
+[color=#e05050] [bold]Vitalidade[/bold] [/color] — Pontos de vida máximos
+[color=#50c878] [bold]Destreza[/bold] [/color] — Stamina (energia para movimento e esquiva)
+[color=#5090e0] [bold]Inteligência[/bold] [/color] — Mana (energia para magia)
+
+### Humano
+
+[color=#d4a84b] STR: [/color] 5 | [color=#e05050] VIT: [/color] 5 | [color=#50c878] DEX: [/color] 5 | [color=#5090e0] INT: [/color] 5
+
+### Elfo
+
+[color=#d4a84b] STR: [/color] 6 | [color=#e05050] VIT: [/color] 6 | [color=#50c878] DEX: [/color] 1 | [color=#5090e0] INT: [/color] 7
+
+### Anão
+
+[color=#d4a84b] STR: [/color] 7 | [color=#e05050] VIT: [/color] 7 | [color=#50c878] DEX: [/color] 2 | [color=#5090e0] INT: [/color] 4
+
+### Silva
+
+[color=#d4a84b] STR: [/color] 1 | [color=#e05050] VIT: [/color] 7 | [color=#50c878] DEX: [/color] 5 | [color=#5090e0] INT: [/color] 7
+
+### Goblin
+
+[color=#d4a84b] STR: [/color] 6 | [color=#e05050] VIT: [/color] 6 | [color=#50c878] DEX: [/color] 7 | [color=#5090e0] INT: [/color] 1
+
+### Carcat
+
+[color=#d4a84b] STR: [/color] 5 | [color=#e05050] VIT: [/color] 5 | [color=#50c878] DEX: [/color] 7 | [color=#5090e0] INT: [/color] 3
+
+### Tiefling
+
+[color=#d4a84b] STR: [/color] 7 | [color=#e05050] VIT: [/color] 5 | [color=#50c878] DEX: [/color] 2 | [color=#5090e0] INT: [/color] 6
+
+---
+
+## Estatísticas de Jogo
+
+[bold][color=#77dd77] Humano [/color][/bold]
+
+- [bold]Vida:[/bold] [color=#77dd77] 100 [/color] (crítico) / [color=#77dd77] 200 [/color] (morte)
+- [bold]Stamina:[/bold] [color=#50c878] 100 [/color]
+- [bold]Mana:[/bold] [color=#5090e0] 100 [/color]
+- [bold]Velocidade:[/bold] [color=#50c878] 100% [/color]
+- [bold]Dano:[/bold] [color=#d4a84b] 1.0x [/color]
+- [bold]Regen Mana:[/bold] [color=#5090e0] 1.0/s [/color] (padrão)
+- [bold]Especialidade:[/bold] Perfeitamente equilibrado — nenhuma fraqueza óbvia
+
+[bold][color=#42aaf5] Elfo [/color][/bold]
+
+- [bold]Vida:[/bold] [color=#77dd77] 105 [/color] (crítico) / [color=#77dd77] 210 [/color] (morte)
+- [bold]Stamina:[/bold] [color=#ff6961] 20 [/color] — extremamente frágil
+- [bold]Mana:[/bold] [color=#5090e0] 140 [/color] — poderoso mago
+- [bold]Velocidade:[/bold] [color=#ff6961] 75% [/color] — lento
+- [bold]Dano:[/bold] [color=#d4a84b] 1.1x [/color]
+- [bold]Regen Mana:[/bold] [color=#ff6961] 0 [/color] (use Mana Trance para regenerar)
+- [bold]Especialidade:[/bold] Mago mais poderoso, mas um único golpe pode derrubar
+
+[bold][color=#8b4513] Anão [/color][/bold]
+
+- [bold]Vida:[/bold] [color=#77dd77] 110 [/color] (crítico) / [color=#77dd77] 220 [/color] (morte)
+- [bold]Stamina:[/bold] [color=#ff6961] 40 [/color] — baixo, fácil de derrubar
+- [bold]Mana:[/bold] [color=#5090e0] 80 [/color] — limitado
+- [bold]Velocidade:[/bold] [color=#ff6961] 81% [/color] — lento
+- [bold]Dano:[/bold] [color=#d4a84b] 1.2x [/color] — muito forte
+- [bold]Regen Mana:[/bold] [color=#5090e0] 0.5/s [/color] (contínuo)
+- [bold]Especialidade:[/bold] Tanque que se cura bebendo álcool
+
+[bold][color=#90EE90] Silva [/color][/bold]
+
+- [bold]Vida:[/bold] [color=#77dd77] 110 [/color] (crítico) / [color=#77dd77] 220 [/color] (morte) — altíssima
+- [bold]Stamina:[/bold] [color=#50c878] 100 [/color]
+- [bold]Mana:[/bold] [color=#5090e0] 140 [/color] — poderoso mago
+- [bold]Velocidade:[/bold] [color=#50c878] 100% [/color]
+- [bold]Dano:[/bold] [color=#ff6961] 0.6x [/color] — muito fraco
+- [bold]Regen Mana:[/bold] [color=#5090e0] 4-6/s [/color] (dia) / [color=#5090e0] 1-3/s [/color] (noite) — escala com INT
+- [bold]Especialidade:[/bold] Curador que se regenera ao ficar sob o sol
+
+[bold][color=#4A8C3A] Goblin [/color][/bold]
+
+- [bold]Vida:[/bold] [color=#77dd77] 105 [/color] (crítico) / [color=#77dd77] 210 [/color] (morte)
+- [bold]Stamina:[/bold] [color=#77dd77] 140 [/color] — altíssimo, muito resistente
+- [bold]Mana:[/bold] [color=#ff6961] 20 [/color] — muito limitado
+- [bold]Velocidade:[/bold] [color=#77dd77] 113% [/color] — rápido
+- [bold]Dano:[/bold] [color=#d4a84b] 1.1x [/color]
+- [bold]Regen Mana:[/bold] [color=#5090e0] 0.5/s [/color] (contínuo)
+- [bold]Especialidade:[/bold] Guerreiro ágil que consegue usar magia com INT, mas é muito limitado por mana
+
+[bold][color=#F5DEB3] Carcat [/color][/bold]
+
+- [bold]Vida:[/bold] [color=#77dd77] 100 [/color] (crítico) / [color=#77dd77] 200 [/color] (morte)
+- [bold]Stamina:[/bold] [color=#77dd77] 140 [/color] — altíssimo, muito resistente
+- [bold]Mana:[/bold] [color=#5090e0] 60 [/color] — abaixo da média
+- [bold]Velocidade:[/bold] [color=#77dd77] 113% [/color] — rápido
+- [bold]Dano:[/bold] [color=#d4a84b] 1.0x [/color]
+- [bold]Regen Mana:[/bold] [color=#5090e0] 1.0/s [/color] (padrão)
+- [bold]Especialidade:[/bold] Mago de ilusão ágil com visão noturna, garras naturais, mas começa fraco
+
+[bold][color=#FF4500] Tiefling [/color][/bold]
+
+- [bold]Vida:[/bold] [color=#77dd77] 100 [/color] (crítico) / [color=#77dd77] 200 [/color] (morte)
+- [bold]Stamina:[/bold] [color=#ff6961] 40 [/color] — baixo, fácil de derrubar
+- [bold]Mana:[/bold] [color=#5090e0] 120 [/color] — bom mago
+- [bold]Velocidade:[/bold] [color=#ff6961] 81% [/color] — lento
+- [bold]Dano:[/bold] [color=#d4a84b] 1.2x [/color] — muito forte
+- [bold]Regen Mana:[/bold] [color=#5090e0] 2-4/s [/color] (enquanto queimando) — escala com INT
+- [bold]Especialidade:[/bold] Mago de fogo que se regenera enquanto toma dano
+
+---
+
+## Guia Rápido: Qual Raça Escolher?
+
+### Quero atacar fisicamente?
+
+[bold][color=#4A8C3A] Goblin [/color][/bold] ou [bold][color=#8b4513] Anão [/color][/bold]
+
+- [bold][color=#4A8C3A] Goblin: [/color][/bold] Rápido (113% velocidade), stamina altíssima (140), consegue usar magia se investir em INT
+- [bold][color=#8b4513] Anão: [/color][/bold] Forte (1.2x dano), vida alta, se cura bebendo álcool
+
+### Quero usar magia?
+
+[bold][color=#42aaf5] Elfo [/color][/bold] ou [bold][color=#FF4500] Tiefling [/color][/bold]
+
+- [bold][color=#42aaf5] Elfo: [/color][/bold] Mago mais poderoso (140 mana), mas muito frágil (20 stamina)
+- [bold][color=#FF4500] Tiefling: [/color][/bold] Mago de fogo (120 mana), forte (1.2x dano), se regenera enquanto queima
+
+### Quero apoiar/curar?
+
+[bold][color=#90EE90] Silva [/color][/bold]
+
+- Curador que se regenera de mana ao ficar sob o sol, vida altíssima (110)
+
+### Quero velocidade e combate físico?
+
+[bold][color=#4A8C3A] Goblin [/color][/bold] ou [bold][color=#F5DEB3] Carcat [/color][/bold]
+
+- [bold][color=#4A8C3A] Goblin: [/color][/bold] Velocidade 113%, stamina 140, físico forte
+- [bold][color=#F5DEB3] Carcat: [/color][/bold] Velocidade 113%, visão noturna, garras naturais, magia de ilusão
+
+### Quero tudo equilibrado?
+
+[bold][color=#77dd77] Humano [/color][/bold]
+
+- Perfeitamente balanceado em tudo: 100 em vida, stamina e mana, velocidade normal, dano normal
+
+---
+
+## Modificadores de Dano por Raça
+
+[bold][color=#77dd77] Humano [/color][/bold]
+
+Nenhuma modificação especial — 100% de dano recebido
+
+[bold][color=#42aaf5] Elfo [/color][/bold]
+
+[color=#5090e0] +10% resistência a magia [/color], frágil a tudo mais
+
+[bold][color=#8b4513] Anão [/color][/bold]
+
+Nenhuma modificação especial — 100% de dano recebido
+
+[bold][color=#90EE90] Silva [/color][/bold]
+
+[color=#50c878] +50% resistência a frio [/color], vulnerável a calor
+
+[bold][color=#4A8C3A] Goblin [/color][/bold]
+
+[color=#d4a84b] +10% resistência a tudo físico [/color], [color=#ff6961] +50% resistência a veneno [/color]
+
+[bold][color=#F5DEB3] Carcat [/color][/bold]
+
+Nenhuma modificação especial — 100% de dano recebido
+
+[bold][color=#FF4500] Tiefling [/color][/bold]
+
+[color=#ff6961] 85% resistência a fogo [/color], [color=#50c878] 85% vulnerabilidade a frio [/color]
+
+</Document>
