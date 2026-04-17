@@ -22,8 +22,8 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
 
     // Track last heal time per dwarf
     private Dictionary<EntityUid, float> _lastHealTime = new();
-    private const float HealInterval = 1f; // Heal every 1 second
-    private const float HealAmount = 2f; // HP per heal tick
+    private const float HealInterval = 0.5f; // Heal every 0.5 seconds
+    private const float HealAmount = 5f; // HP per heal tick
 
     private float _resistanceCheckTimer = 0f;
     private const float ResistanceCheckInterval = 2f; // Check and reduce drunk time every 2 seconds
