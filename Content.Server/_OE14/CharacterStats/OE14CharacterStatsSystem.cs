@@ -13,6 +13,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Hands;
+using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 
 namespace Content.Server._OE14.CharacterStats;
@@ -212,6 +213,12 @@ public sealed partial class OE14CharacterStatsSystem : OE14SharedCharacterStatsS
             var totalMax = currentMax + delta;
             var regenPerTick = (FixedPoint2)Math.Max(0f, totalMax.Float() / 100f);
             _magicEnergy.SetDrawRate(uid, regenPerTick, 3f);
+        }
+
+        // Refresh movement speed based on Dexterity
+        if (TryComp<MovementSpeedModifierComponent>(uid, out _))
+        {
+            _movementSpeed.RefreshMovementSpeedModifiers(uid);
         }
     }
 
