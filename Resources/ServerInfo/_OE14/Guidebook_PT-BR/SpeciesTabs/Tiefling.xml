@@ -6,28 +6,28 @@
 <GuideEntityEmbed Entity="OE14MobTiefling" Caption="Tiefling"/>
 </Box>
 
-Os Tieflings são uma raça de humanoides demonoides que saíram do Arquipélago de Fogo há muito tempo. Eles são fortemente populados por toda Sylate e se integraram às culturas de todas as terras. Sua herança infernal lhes dá força excepcional e profunda afinidade com as chamas — mas o preço é uma stamina terrível.
+Os Tieflings são uma raça de humanoides demonoides que saíram do Arquipélago de Fogo há muito tempo. Eles são fortemente populados por toda Sylate e se integraram às culturas de todas as terras. Sua herança infernal给他们带来了卓越的体力和他们带来了深刻的亲和力——但代价是terrible stamina.
 
 ## Atributos
 
 [bold]Escala: 1–10 | Valores efetivos mostrados (inclui habilidades raciais gratuitas)[/bold]
 
-- [color=#d4a84b] Força [/color] — [bold][color=#77dd77] 7 [/color][/bold] | Poder físico muito alto.
-- [color=#e05050] Vitalidade [/color] — [bold][color=#c8c8c8] 5 [/color][/bold] | Saúde média. [color=#c8c8c8] 100 HP [/color] antes do Crítico, [color=#ff6961] 200 HP [/color] antes da Morte.
-- [color=#50c878] Destreza [/color] — [bold][color=#ff6961] 2 [/color][/bold] | Stamina muito baixa. Apenas [color=#ff6961] 40 stamina [/color] antes do Crítico de Stamina — fácil de derrubar.
-- [color=#5090e0] Inteligência [/color] — [bold][color=#42aaf5] 6 [/color][/bold] | Capacidade mágica acima da média. [color=#5090e0] 120 mana [/color].
+- [color=#e05050]Força[/color] — [bold][color=#77dd77]9[/color][/bold] | Poder físico muito alto. [color=#77dd77]Causa 40% mais dano que um humano em combate corpo a corpo.[/color] (FOR base 7, +2 de habilidades gratuitas de [color=#ffa500]Pirocinese[/color])
+- [color=#50e050]Vitalidade[/color] — [bold][color=#c8c8c8]5[/color][/bold] | Saúde média. [color=#c8c8c8]~100 HP[/color] antes do Crítico, [color=#ff6961]~200 HP[/color] antes da Morte.
+- [color=#50e0e0]Destreza[/color] — [bold][color=#ff6961]2[/color][/bold] | Stamina muito baixa. Apenas [color=#ff6961]~25 stamina[/color] antes do Crítico de Stamina — fácil de staggering.
+- [color=#a050e0]Inteligência[/color] — [bold][color=#42aaf5]6[/color][/bold] | Capacidade mágica acima da média. [color=#42aaf5]~119 mana[/color].
 
-Tieflings golpeiam muito forte e têm magia sólida — mas sua stamina quase inexistente é uma fraqueza maior. Oponentes que focam em dano de stamina podem derrubar Tieflings antes que possam revidar.
+Tieflings hit extremely hard and have solid magic — mas sua stamina quase inexistente é uma fraqueza major. Oponents who focus on stamina damage can knock Tieflings down antes que possam revidar.
 
 ## Link com Fogo
 
 Tieflings têm um vínculo infernal profundo com chamas:
-- Tome [color=#77dd77] 85% menos dano de fogo [/color], mas [color=#ff6961] 85% mais dano de frio [/color]
-- A regeneração de mana base é ligeramente prejudicada, mas tomar dano de fogo [color=#77dd77] acelera muito a regeneração de mana [/color]
-- Frostbite causa [color=#ff6961] dreno de mana [/color]
-- Podem lentamente [color=#77dd77] regenerar dano de queimaduras de fogo [/color]
-- Feitiços de fogo custam [color=#77dd77] 40% menos mana [/color], mas todos os outros feitiços custam [color=#ff6961] 20% mais mana [/color]
+- Tome [color=#77dd77]2x menos dano de fogo[/color], mas [color=#ff6961]2x mais dano de frio[/color]
+- A regeneração de mana base é ligeramente prejudicada, mas tomar dano de fogo [color=#77dd77]acelera muito a regeneração de mana[/color]
+- Frostbite causa [color=#ff6961]dreno de mana[/color]
+- Podem lentamente [color=#77dd77]regenerar dano de queimaduras de fogo[/color]
+- Feitiços de fogo custam [color=#77dd77]40% menos mana[/color], mas todos os outros feitiços custam [color=#ff6961]20% mais mana[/color]
 
-Tieflings começam com Básico e Avançado gratuitos de [color=#ffa500] Pirocinese [/color], concedendo +2 [color=#d4a84b] Força [/color] e desbloqueando poderosos feitiços de fogo.
+Tieflings começam com Básico e Avançado gratuitos de [color=#ffa500]Pirocinese[/color], concedendo +2 FOR e desbloqueando poderosos feitiços de fogo.
 
 </Document>

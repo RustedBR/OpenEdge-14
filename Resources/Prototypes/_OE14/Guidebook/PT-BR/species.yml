@@ -4,7 +4,6 @@
   name: Raças Jogáveis
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/Species.xml"
   children:
-  - OE14_PT_Species_Comparison
   - OE14_PT_Human
   - OE14_PT_Silva
   - OE14_PT_Elf
@@ -12,13 +11,6 @@
   - OE14_PT_Goblin
   - OE14_PT_Carcat
   - OE14_PT_Dwarf
-  filterEnabled: True
-
-- type: guideEntry
-  openEdgeAllowed: true
-  id: OE14_PT_Species_Comparison
-  name: Comparação de Raças
-  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Comparison.xml"
   filterEnabled: True
 
 - type: guideEntry

@@ -1,5 +1,4 @@
 using Content.Server._OE14.MagicEnergy.Components;
-using Content.Shared._OE14.CharacterStats.Components;
 using Content.Shared._OE14.DayCycle;
 using Content.Shared._OE14.MagicEnergy.Components;
 using Content.Shared.Damage;
@@ -79,17 +78,8 @@ public partial class OE14MagicEnergySystem
             draw.NextUpdateTime = _gameTiming.CurTime + TimeSpan.FromSeconds(draw.Delay);
 
             var daylight = _dayCycle.UnderSunlight(uid);
-            var baseEnergy = daylight ? draw.DaylightEnergy : draw.DarknessEnergy;
 
-            // Scale by Intelligence: baseEnergy + (INT - 5)
-            var energyDelta = baseEnergy;
-            if (TryComp<OE14CharacterStatsComponent>(uid, out var stats))
-            {
-                var intBonus = stats.Intelligence - 5;
-                energyDelta += intBonus;
-            }
-
-            ChangeEnergy((uid, magicContainer), energyDelta, out _, out _, true);
+            ChangeEnergy((uid, magicContainer), daylight ? draw.DaylightEnergy : draw.DarknessEnergy, out _, out _, true);
         }
     }
 

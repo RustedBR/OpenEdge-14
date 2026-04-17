@@ -6,32 +6,32 @@
 <GuideEntityEmbed Entity="OE14MobGoblin" Caption="Goblin"/>
 </Box>
 
-Goblins são uma raça de goblinoides anões que se estabeleceram em massa por toda Sylate. Embora as outras raças sejam preconceituosas contra eles, goblins raramente tentam causar problemas propositadamente. O que lhes falta em magia, compensam mais que suficientemente com velocidade, resistência e uma resistência quase sobrenatural ao dreno de stamina.
+Goblins são uma raça de goblinoides anões que se estabeleceram em massa por toda Sylate. Embora as outras raças sejam preconceituosas contra eles, goblins raramente tentam causar problemas propositadamente. O que eles缺乏em magia, compensam mais do que com velocidade, resistência e uma resistência quase sobrenatural ao dreno de stamina.
 
 ## Atributos
 
 [bold]Escala: 1–10 | Valores efetivos mostrados (inclui habilidades raciais gratuitas)[/bold]
 
-- [color=#d4a84b] Força [/color] — [bold][color=#77dd77] 6 [/color][/bold] | Poder físico acima da média. Causa mais dano que um humano em combate corpo a corpo.
-- [color=#e05050] Vitalidade [/color] — [bold][color=#77dd77] 6 [/color][/bold] | Saúde decente. [color=#77dd77] 105 HP [/color] antes do Crítico, [color=#ff6961] 210 HP [/color] antes da Morte.
-- [color=#50c878] Destreza [/color] — [bold][color=#77dd77] 7 [/color][/bold] | Agilidade excepcional. [color=#77dd77] 140 stamina [/color] antes do Crítico de Stamina — extremamente difícil de derrubar. (DEX base 7, com habilidades gratuitas de [color=#c8c8c8] Atletismo [/color])
-- [color=#5090e0] Inteligência [/color] — [bold][color=#ff6961] 1 [/color][/bold] | Potencial mágico extremamente limitado. Apenas [color=#ff6961] 20 mana [/color] — mal suficiente para um único feitiço.
+- [color=#e05050]Força[/color] — [bold][color=#77dd77]6[/color][/bold] | Poder físico acima da média. Causa mais dano que um humano em combate corpo a corpo.
+- [color=#50e050]Vitalidade[/color] — [bold][color=#77dd77]6[/color][/bold] | Saúde decente. [color=#77dd77]~112 HP[/color] antes do Crítico, [color=#ff6961]~225 HP[/color] antes da Morte.
+- [color=#50e0e0]Destreza[/color] — [bold][color=#77dd77]9[/color][/bold] | Agilidade excepcional. [color=#77dd77]~200 stamina[/color] antes do Crítico de Stamina — extremamente difícil de derrubar. (DEX base 7, +2 de habilidades gratuitas de [color=#c8c8c8]Atletismo[/color])
+- [color=#a050e0]Inteligência[/color] — [bold][color=#ff6961]1[/color][/bold] | Potencial mágico extremamente limitado. Apenas [color=#ff6961]~25 mana[/color] — mal suficiente para um único feitiço.
 
-Goblins são construídos para combate físico hit-and-run. Eles são muito difíceis de derrubar e se recuperam rápido — mas sua ausência de mana torna a magia extremamente difícil de acessar.
+Goblins são construídos para combate físico hit-and-run. Eles são muito difíceis de derrubar e se recuperam rápido — mas sua ausência completa de mana torna a magia completamente inacessível.
 
 ## Pequenos mas Rápidos
 
 Goblins têm uma hitbox reduzida, tornando mais difícil acertar golpes neles. Sua estrutura compacta também significa:
-- [color=#ff6961] Todo dano recebido aumentado em 20% [/color] — seu pequeno tamanho faz cada golpe doer mais
-- Venenos, porém, fazem [color=#77dd77] 50% menos dano [/color]
+- [color=#ff6961]Todo dano recebido aumentado em 20%[/color] — seu pequeno tamanho faz cada golpe doer mais
+- Venenos, porém, fazem [color=#77dd77]50% menos dano[/color]
 - Outros acham mais fácil pegar goblins; goblins acham mais difícil puxar objetos grandes
 
-## Escassez de Alma
+## Smallness of Soul
 
 A natureza não foi generosa com goblins no que diz respeito à magia:
-- [color=#ff6961] Mana quase zero (20). [/color] Mal suficiente para um feitiço — conjuração sustentada é impossível.
-- A taxa de regeneração de mana é [color=#77dd77] 1.5x mais rápida [/color] que outras raças — embora com tão pouca mana, importa pouco na prática.
+- [color=#ff6961]Mana quase zero (~25).[/color] Mal suficiente para um feitiço — conjuração sustentada é impossível.
+- A taxa de regeneração de mana é [color=#77dd77]1.5x mais rápida[/color] que outras raças — embora com tão pouca mana, importa pouco na prática.
 
-Goblins começam com Básico e Avançado gratuitos de [color=#c8c8c8] Atletismo [/color], concedendo +2 [color=#50c878] DEX [/color].
+Goblins começam com Básico e Avançado gratuitos de [color=#c8c8c8]Atletismo[/color], concedendo +2 DEX.
 
 </Document>

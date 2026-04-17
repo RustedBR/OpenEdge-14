@@ -11,16 +11,11 @@
     vitality: 5
     dexterity: 2
     intelligence: 6
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      100: Critical
-      200: Dead
   - type: Stamina
-    critThreshold: 40
+    critThreshold: 25
   - type: OE14MagicEnergyContainer
-    maxEnergy: 120
-    energy: 120
+    maxEnergy: 125
+    energy: 125
   - type: Icon
     sprite: _OE14/Mobs/Species/Tiefling/parts.rsi
     state: full
@@ -48,6 +43,10 @@
   - type: OE14MagicEnergyDraw
     energy: 0.75
     delay: 3
+  - type: OE14MagicEnergyFromDamage
+    damage:
+      Heat: 1
+      Cold: -1
   - type: OE14AuraImprint
     imprintColor: '#e0762b'
   - type: OE14SkillStorage

@@ -105,14 +105,14 @@
       100: Critical
       200: Dead
   - type: Stamina
-    critThreshold: 140
+    critThreshold: 175
   - type: OE14MagicEnergyContainer
-    maxEnergy: 60
-    energy: 60
+    maxEnergy: 50
+    energy: 50
   - type: OE14SkillStorage
     freeLearnedSkills:
-    - IllusionT1
-    - IllusionT2
+    - ElectromancyT1
+    - ElectromancyT2
   - type: FireVisuals
     alternateState: Carcat_burning
   - type: Icon

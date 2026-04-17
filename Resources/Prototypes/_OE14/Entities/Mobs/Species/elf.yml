@@ -14,10 +14,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      105: Critical
-      210: Dead
+      112: Critical
+      225: Dead
   - type: Stamina
-    critThreshold: 20
+    critThreshold: 0
   - type: PassiveDamage
     allowedStates:
     - Alive
@@ -38,8 +38,8 @@
   - type: Bloodstream
     bloodReagent: OE14BloodElf
   - type: OE14MagicEnergyContainer
-    maxEnergy: 140
-    energy: 140
+    maxEnergy: 150
+    energy: 150
   - type: OE14MagicEnergyDraw
     enable: false
     energy: 0

@@ -13,7 +13,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Hands;
-using Content.Shared.Movement.Systems;
 
 namespace Content.Server._OE14.CharacterStats;
 
@@ -28,7 +27,6 @@ public sealed partial class OE14CharacterStatsSystem : OE14SharedCharacterStatsS
 {
     [Dependency] private readonly MobThresholdSystem _thresholds = default!;
     [Dependency] private readonly OE14MagicEnergySystem _magicEnergy = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
     public override void Initialize()
     {
@@ -36,7 +34,6 @@ public sealed partial class OE14CharacterStatsSystem : OE14SharedCharacterStatsS
 
         SubscribeNetworkEvent<OE14SpendStatPointMessage>(OnSpendStatPoint);
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
-        SubscribeLocalEvent<OE14CharacterStatsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
 
         // Component-directed subscriptions: fired via EntDispatch, independent of broadcast flag.
         // GotEquipped/GotUnequipped are raised on the ITEM entity — filter by OE14StatBonusComponent on the item.
@@ -210,20 +207,9 @@ public sealed partial class OE14CharacterStatsSystem : OE14SharedCharacterStatsS
                 _magicEnergy.ChangeMaximumEnergy(uid, delta);
 
             var totalMax = currentMax + delta;
-            var regenPerTick = (FixedPoint2)Math.Max(0f, totalMax.Float() / 20f);
-            _magicEnergy.SetDrawRate(uid, regenPerTick, 1f);
+            var regenPerTick = (FixedPoint2)Math.Max(0f, totalMax.Float() / 100f);
+            _magicEnergy.SetDrawRate(uid, regenPerTick, 3f);
         }
-    }
-
-    /// <summary>
-    /// Apply movement speed modifier based on Dexterity stat.
-    /// DEX 5 = 100%, DEX 10 = 125%, DEX 1 = 75%
-    /// Formula: 1.0 + (DEX - 5) * 0.0625
-    /// </summary>
-    private void OnRefreshMovementSpeed(Entity<OE14CharacterStatsComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
-    {
-        var dexModifier = 1.0f + (ent.Comp.Dexterity - 5) * 0.0625f;
-        args.ModifySpeed(dexModifier, dexModifier);
     }
 
     // ── Item equip/unequip handlers ──────────────────────────────────────────

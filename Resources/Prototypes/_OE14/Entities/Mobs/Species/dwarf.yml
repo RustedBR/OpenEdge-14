@@ -14,16 +14,16 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      110: Critical
-      220: Dead
+      125: Critical
+      250: Dead
   - type: Stamina
-    critThreshold: 40
+    critThreshold: 25
   - type: OE14DwarfAlcoholResistance
   - type: LightweightDrunk
     boozeStrengthMultiplier: 0.5
   - type: OE14MagicEnergyContainer
-    maxEnergy: 80
-    energy: 80
+    maxEnergy: 75
+    energy: 75
   - type: OE14SkillStorage
     freeLearnedSkills:
     - HydrosophistryT1

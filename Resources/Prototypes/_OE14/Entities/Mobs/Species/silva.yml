@@ -106,20 +106,18 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      110: Critical
-      220: Dead
+      125: Critical
+      250: Dead
   - type: Stamina
     critThreshold: 100
   - type: OE14MagicEnergyContainer
-    maxEnergy: 140
-    energy: 140
+    maxEnergy: 150
+    energy: 150
   - type: OE14SkillStorage
     freeLearnedSkills:
     - HealingT1
     - HealingT2
   - type: OE14MagicEnergyPhotosynthesis
-    daylightEnergy: 4
-    darknessEnergy: 0
   - type: OE14MagicEnergyDraw
     enable: false
   - type: Body

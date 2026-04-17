@@ -26,8 +26,8 @@
         - OE14ImpactEffectManaGift
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:OE14ManaChangeByInt
-          baseAmount: 2
+        - !type:OE14ManaChange
+          manaDelta: 2
           safe: true
         - !type:HealthChange
           damage:
