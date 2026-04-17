@@ -35,6 +35,14 @@
         damage:
           groups:
             Brute: -1
+      # dwarves also stop bleeding while drinking
+      - !type:ModifyBleedAmount
+        amount: -0.5
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        - !type:OrganType
+          type: OE14Dwarf
       - !type:ChemVomit
         probability: 0.04
         conditions:
