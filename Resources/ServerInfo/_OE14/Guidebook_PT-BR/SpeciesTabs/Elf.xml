@@ -12,23 +12,23 @@ Elfos são uma raça muito semelhante aos humanos, mas não têm ancestrais comu
 
 [bold]Escala: 1–10 | Valores efetivos mostrados (inclui habilidades raciais gratuitas)[/bold]
 
-- [color=#e05050]Força[/color] — [bold][color=#77dd77]6[/color][/bold] | Poder físico acima da média. Causa mais dano que humanos.
-- [color=#50e050]Vitalidade[/color] — [bold][color=#77dd77]6[/color][/bold] | Resiliência decente. [color=#77dd77]~112 HP[/color] antes do Crítico, [color=#ff6961]~225 HP[/color] antes da Morte.
-- [color=#50e0e0]Destreza[/color] — [bold][color=#ff6961]1[/color][/bold] | Stamina extremamente frágil. Apenas [color=#ff6961]~25 stamina[/color] antes do Crítico de Stamina — quase qualquer golpe pode derrubar um Elfo.
-- [color=#a050e0]Inteligência[/color] — [bold][color=#42aaf5]9[/color][/bold] | Poder mágico excepcional. [color=#42aaf5]~175 mana[/color]. (INT base 7, +2 de habilidades gratuitas de [color=#5EABEB]Metamagia[/color])
+- [color=#d4a84b] Força [/color] — [bold][color=#77dd77] 6 [/color][/bold] | Poder físico acima da média. Causa mais dano que humanos.
+- [color=#e05050] Vitalidade [/color] — [bold][color=#77dd77] 6 [/color][/bold] | Resiliência decente. [color=#77dd77] 105 HP [/color] antes do Crítico, [color=#ff6961] 210 HP [/color] antes da Morte.
+- [color=#50c878] Destreza [/color] — [bold][color=#ff6961] 1 [/color][/bold] | Stamina extremamente frágil. Apenas [color=#ff6961] 20 stamina [/color] antes do Crítico de Stamina — quase qualquer golpe pode derrubar um Elfo.
+- [color=#5090e0] Inteligência [/color] — [bold][color=#42aaf5] 7 [/color][/bold] | Poder mágico excepcional. [color=#5090e0] 140 mana [/color] base. (Habilidades gratuitas de [color=#5EABEB] Metamagia [/color] fornecem bonus adicional)
 
-Elfos são mestres da magia com saúde respeitável — mas sua stamina quase zero é uma fraqueza crítica. Uma única rajada de ataques físicos pode-os staggering antes que possam reagir.
+Elfos são mestres da magia com saúde respeitável — mas sua stamina quase zero é uma fraqueza crítica. Uma única rajada de ataques físicos pode os derrubar antes que possam reagir.
 
 ## Magia Antiga
 
-As reservas de magia dos Elfos são [color=#1e90ff]muito maiores que as dos Humans.[/color] However, they have [color=#ffa500]NO natural mana regeneration.[/color]
+As reservas de magia dos Elfos são [color=#5090e0] muito maiores que as dos Humanos. [/color] Porém, eles têm [color=#ff6961] NENHUMA regeneração de mana natural. [/color]
 
-The only way for Elves to regenerate mana is via their racial ability: [color=#5EABEB]Mana Trance[/color].
+A única forma para Elfos regenerarem mana é através de sua habilidade racial: [color=#5EABEB] Mana Trance [/color].
 
 <Box>
-<GuideEntityEmbed Entity="OE14ActionSpellManaTrance" Caption="[color=#5EABEB]Mana Trance[/color]"/>
+<GuideEntityEmbed Entity="OE14ActionSpellManaTrance" Caption="Mana Trance"/>
 </Box>
 
-Elfos também começam com Básico e Avançado gratuitos de [color=#5EABEB]Metamagia[/color], concedendo +2 INT e habilitando técnicas avançadas de feitiços.
+Elfos também começam com Básico e Avançado gratuitos de [color=#5EABEB] Metamagia [/color], concedendo +2 [color=#5090e0] INT [/color] e habilitando técnicas avançadas de feitiços.
 
 </Document>
