@@ -30,8 +30,6 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
     private const float HealInterval = 0.25f; // Heal every 0.25 seconds
     private const float HealAmount = 50f; // 50 HP per heal tick = 200 HP/s (10x boost for testing)
 
-    // Debug tracking to avoid spam
-    private HashSet<EntityUid> _debuggedDwarves = new();
 
     public override void Initialize()
     {
@@ -65,29 +63,30 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
                     // If there are any reagents in the chemical solution, the dwarf has alcohol in their bloodstream
                     hasAlcoholInBloodstream = chemicalSolution.Contents.Count > 0;
 
-                    // Debug logging - once per dwarf when alcohol detected
-                    if (hasAlcoholInBloodstream && !_debuggedDwarves.Contains(uid))
+                    // AGGRESSIVE DEBUG - log every frame to see what's happening
+                    Logger.InfoS("dwarf-alcohol", $"Dwarf {uid}: {chemicalSolution.Contents.Count} reagents, hasAlcohol={hasAlcoholInBloodstream}");
+
+                    if (hasAlcoholInBloodstream)
                     {
-                        Logger.InfoS("dwarf-alcohol", $"Dwarf {uid} has {chemicalSolution.Contents.Count} reagents in bloodstream, healing started");
-                        _debuggedDwarves.Add(uid);
+                        foreach (var reagent in chemicalSolution.Contents)
+                        {
+                            Logger.InfoS("dwarf-alcohol", $"  - Reagent: {reagent.Reagent.Prototype}");
+                        }
                     }
                 }
-                else if (!_debuggedDwarves.Contains(uid))
+                else
                 {
                     Logger.WarningS("dwarf-alcohol", $"Could not resolve chemical solution for dwarf {uid}");
-                    _debuggedDwarves.Add(uid);
                 }
             }
-            else if (!_debuggedDwarves.Contains(uid))
+            else
             {
                 Logger.WarningS("dwarf-alcohol", $"Dwarf {uid} has no BloodstreamComponent");
-                _debuggedDwarves.Add(uid);
             }
 
             if (!hasAlcoholInBloodstream)
             {
                 _lastHealTime.Remove(uid);
-                _debuggedDwarves.Remove(uid); // Reset debug tracking when alcohol is gone
                 continue;
             }
 
