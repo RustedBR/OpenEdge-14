@@ -216,10 +216,8 @@ public sealed partial class OE14CharacterStatsSystem : OE14SharedCharacterStatsS
         }
 
         // Refresh movement speed based on Dexterity
-        if (TryComp<MovementSpeedModifierComponent>(uid, out _))
-        {
-            _movementSpeed.RefreshMovementSpeedModifiers(uid);
-        }
+        EnsureComp<MovementSpeedModifierComponent>(uid);
+        _movementSpeed.RefreshMovementSpeedModifiers(uid);
     }
 
     /// <summary>
