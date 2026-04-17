@@ -93,9 +93,12 @@ public sealed class OE14DwarfAlcoholSystem : EntitySystem
 
             if (lastHeal >= HealInterval)
             {
-                // Heal the dwarf while drunk: 5 HP per second
+                // Heal the dwarf: 5 HP per heal tick (0.5 seconds) = 10 HP/s total
+                // Heals all physical damage types (Brute, Slash, Pierce, etc.)
                 var damage = new DamageSpecifier();
                 damage.DamageDict["Brute"] = FixedPoint2.New(-HealAmount); // Negative = healing
+                damage.DamageDict["Slash"] = FixedPoint2.New(-HealAmount);
+                damage.DamageDict["Pierce"] = FixedPoint2.New(-HealAmount);
 
                 _damageable.TryChangeDamage(uid, damage, true);
                 lastHeal = 0f;
