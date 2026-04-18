@@ -887,6 +887,10 @@ ent-OE14VialAirLily = frasco de extrato de lírio do ar
 
 ent-OE14VialSmallHealingBrute = poção de cura de Brad
 
+ent-OE14VialSmallHealingHeat = poção de cura queimadura de Brad
+
+ent-OE14VialSmallHealingCold = poção de cura frio de Brad
+
 ent-OE14VialSmallHealingPoison = poção de antídoto de Brad
 
 ent-OE14VialSmallHealingAirloss = poção de cura de ar de Brad
