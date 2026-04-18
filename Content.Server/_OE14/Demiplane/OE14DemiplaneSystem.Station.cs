@@ -157,7 +157,7 @@ public sealed partial class OE14DemiplaneSystem
         if (!ent.Comp.Nodes.ContainsKey(origin))
             return null;
 
-        //Проверить, есть ли у этой ноды исходящие ребра
+        // First try adjacent nodes (direct neighbors)
         var paths = new List<Vector2i>();
         foreach (var edge in ent.Comp.Edges)
         {
@@ -165,9 +165,39 @@ public sealed partial class OE14DemiplaneSystem
                 paths.Add(edge.Item2);
         }
 
-        if (paths.Count == 0)
+        if (paths.Count > 0)
+            return _random.Pick(paths);
+
+        // Fallback: BFS to find any reachable non-generated node
+        var visited = new HashSet<Vector2i> { origin };
+        var queue = new Queue<Vector2i>();
+        queue.Enqueue(origin);
+        var reachable = new List<Vector2i>();
+
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+            foreach (var edge in ent.Comp.Edges)
+            {
+                if (edge.Item1 != current)
+                    continue;
+
+                var next = edge.Item2;
+                if (visited.Contains(next))
+                    continue;
+
+                visited.Add(next);
+
+                if (!ent.Comp.GeneratedNodes.Contains(next))
+                    reachable.Add(next);
+                else
+                    queue.Enqueue(next);
+            }
+        }
+
+        if (reachable.Count == 0)
             return null;
 
-        return _random.Pick(paths);
+        return _random.Pick(reachable);
     }
 }

@@ -258,21 +258,21 @@ ent-OE14AlchemySolutionCleaner = purificador de soluções
 ent-OE14BaseVat = grande tina
     .desc = Uma tina muito grande para armazenar grandes quantidades de líquido. Pesada e desconfortável de carregar.
 
-ent-OE14DemiplaneLinkCrystal = cristal de ligação com o semiplano
-    .desc = Mantém a comunicação com os semiplanos enquanto estiver carregado. Faz com que monstros dos semiplanos ataquem a cidade. Quando se descarregar, o jogo acaba.
+ent-OE14DemiplaneLinkCrystal = cristal de ligação com o demiplano
+    .desc = Mantém a comunicação com os demiplanos enquanto estiver carregado. Faz com que monstros dos demiplanos ataquem a cidade. Quando se descarregar, o jogo acaba.
 
 ent-OE14PortalFrameCrystal = estrutura de portal
     .desc = Uma estrutura feita de cristais sombrios usada para criar um portal estável para outro local.
 
-ent-OE14DemiplaneRiftCore = núcleo da fenda do semiplano
+ent-OE14DemiplaneRiftCore = núcleo da fenda do demiplano
     .desc = Toque para abrir a porta para um novo mundo
 
-ent-OE14DemiplaneEnterPointMarker = ponto de entrada do semiplano
+ent-OE14DemiplaneEnterPointMarker = ponto de entrada do demiplano
 
-ent-OE14DemiplaneRiftAwaiting = fenda instável do semiplano
+ent-OE14DemiplaneRiftAwaiting = fenda instável do demiplano
     .desc = Uma fenda no espaço que permite viajar entre mundos. Ainda está instável e entrar nela é perigoso para sua saúde.
 
-ent-OE14DemiplaneRiftPortal = fenda do semiplano
+ent-OE14DemiplaneRiftPortal = fenda do demiplano
     .desc = Uma fenda no espaço que permite viajar entre mundos.
 
 ent-OE14TempPortalToCity = fenda temporária
