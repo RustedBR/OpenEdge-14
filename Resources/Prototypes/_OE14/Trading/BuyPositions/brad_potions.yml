@@ -22,6 +22,15 @@
   service: !type:OE14BuyItemsService
     product: OE14VialSmallHealingMana
 
+- type: oe14TradingPosition
+  id: OE14VialSmallHealingHeat
+  faction: BradPotions
+  uiPosition: 2
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallHealingHeat
 
 - type: oe14TradingPosition
   id: OE14VialTiny
@@ -90,6 +99,17 @@
     state: vial
   service: !type:OE14BuyItemsService
     product: OE14VialSmallHealingManaDepletion
+
+- type: oe14TradingPosition
+  id: OE14VialSmallHealingCold
+  faction: BradPotions
+  reputationLevel: 1
+  uiPosition: 2
+  icon:
+    sprite: _OE14/Objects/Specific/Alchemy/vial_small.rsi
+    state: vial
+  service: !type:OE14BuyItemsService
+    product: OE14VialSmallHealingCold
 
 - type: oe14TradingPosition
   id: OE14VialSmall
