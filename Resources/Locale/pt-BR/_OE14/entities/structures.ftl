@@ -1068,3 +1068,6 @@ ent-OE14WallmountOrdersBorder = quadro de encomendas
     .desc = Há trabalho para o bruxo?
 
 ent-OE14WindowBase = janela
+
+ent-OE14CommunicationCrystal = cristal de comunicação
+    .desc = Um cristal mágico que permite enviar anúncios aos aventureiros. Insira um cristal de energia para ligá-lo.

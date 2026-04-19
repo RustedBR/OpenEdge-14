@@ -1,0 +1,13 @@
+oe14-comm-crystal-insufficient-energy = Energia insuficiente.
+oe14-comm-crystal-already-has = Este dispositivo já possui um cristal de energia.
+oe14-comm-crystal-title = Cristal de Comunicação
+oe14-comm-crystal-announcer = Anúncio de {$sender}
+oe14-comm-crystal-need-energy = Requer um cristal de energia.
+oe14-comm-crystal-energy = Energia:
+oe14-comm-crystal-crystal = Cristal:
+oe14-comm-crystal-inserted = Inserido
+oe14-comm-crystal-not-inserted = Não inserido
+oe14-comm-crystal-global = Global (25 Energia)
+oe14-comm-crystal-local = Local (5 Energia)
+oe14-comm-crystal-remove-crystal = Remover Cristal
+oe14-comm-crystal-global-cooldown = Recarga do global:
