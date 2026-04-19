@@ -7286,6 +7286,20 @@
         "parent": "OE14VialSmall",
         "suffix": "Healing brute 10%"
     },
+    "OE14VialSmallHealingHeat": {
+        "id": "OE14VialSmallHealingHeat",
+        "name": "brad's heat healing potion",
+        "description": null,
+        "parent": "OE14VialSmall",
+        "suffix": "Healing heat 10%"        
+    },
+    "OE14VialSmallHealingCold": {
+        "id": "OE14VialSmallHealingCold",
+        "name": "brad's cold healing potion",
+        "description": null,
+        "parent": "OE14VialSmall",
+        "suffix": "Healing cold 10%"        
+    },
     "OE14VialSmallHealingPoison": {
         "id": "OE14VialSmallHealingPoison",
         "name": "brad's antidote potion",
