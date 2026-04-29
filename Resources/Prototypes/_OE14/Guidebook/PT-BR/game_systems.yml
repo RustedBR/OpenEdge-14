@@ -7,7 +7,6 @@
   name: Sistemas do Jogo
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/GettingStarted.xml"
   children:
-  - OE14_PT_RaceComparison
   - OE14_PT_Magic
   - OE14_PT_Crafting
   - OE14_PT_Economy
@@ -16,13 +15,6 @@
   - OE14_PT_Skill
   - OE14_PT_Trading
   - OE14_PT_StatusEffects
-
-- type: guideEntry
-  openEdgeAllowed: true
-  locFilter: "pt-BR"
-  id: OE14_PT_RaceComparison
-  name: Comparação de Raças
-  text: "/ServerInfo/_OE14/Guidebook_PT-BR/GameSystems/RaceComparison.xml"
 
 - type: guideEntry
   openEdgeAllowed: true

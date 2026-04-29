@@ -11,6 +11,7 @@
   - OE14_PT_Goblin
   - OE14_PT_Carcat
   - OE14_PT_Dwarf
+  - OE14_PT_RaceComparison
   filterEnabled: True
 
 - type: guideEntry
@@ -60,4 +61,11 @@
   id: OE14_PT_Dwarf
   name: Anão
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/Dwarf.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  openEdgeAllowed: true
+  id: OE14_PT_RaceComparison
+  name: Comparação de Raças
+  text: "/ServerInfo/_OE14/Guidebook_PT-BR/SpeciesTabs/RaceComparison.xml"
   filterEnabled: True
