@@ -1,0 +1,43 @@
+- type: entity
+  id: OE14CommunicationCrystal
+  parent: BaseStructure
+  name: communication crystal
+  categories: [ ForkFiltered ]
+  components:
+  - type: Sprite
+    drawdepth: Items
+    noRot: true
+    offset: 0, 0.2
+    sprite: _OE14/Structures/Specific/Thaumaturgy/essence_splitter.rsi
+    layers:
+    - state: base
+  - type: InteractionOutline
+  - type: Clickable
+  - type: OE14CommunicationCrystal
+    AnnouncementTitle: "Guilda"
+    AnnouncementColor: "#50C878"
+    LocalMessageColor: "#7CFC98"
+    SenderColor: "#2ECC71"
+  - type: OE14MagicEnergyExaminable
+  - type: ActivatableUI
+    key: enum.OE14CommunicationCrystalUiKey.Board
+  - type: UserInterface
+    interfaces:
+      enum.OE14CommunicationCrystalUiKey.Board:
+        type: OE14CommunicationCrystalBoundUserInterface
+  - type: ContainerContainer
+    containers:
+      crystal_slot: !type:ContainerSlot
+        count: 1
+        whitelist:
+          components:
+          - OE14MagicEnergyCrystal
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 125
+        mask:
+        - TabletopMachineMask

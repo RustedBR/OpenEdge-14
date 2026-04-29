@@ -6,6 +6,7 @@ using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Rounding;
+using Robust.Shared.Containers;
 
 namespace Content.Shared._OE14.MagicEnergy;
 
@@ -13,6 +14,7 @@ public abstract class OE14SharedMagicEnergySystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
     public override void Initialize()
     {
@@ -44,13 +46,26 @@ public abstract class OE14SharedMagicEnergySystem : EntitySystem
 
     private void OnExamined(Entity<OE14MagicEnergyExaminableComponent> ent, ref ExaminedEvent args)
     {
-        if (!TryComp<OE14MagicEnergyContainerComponent>(ent, out var magicContainer))
-            return;
-
         if (!args.IsInDetailsRange)
             return;
 
-        args.PushMarkup(GetEnergyExaminedText((ent, magicContainer)));
+        if (TryComp<OE14MagicEnergyContainerComponent>(ent, out var magicContainer))
+        {
+            args.PushMarkup(GetEnergyExaminedText((ent, magicContainer)));
+            return;
+        }
+
+        if (TryComp<ContainerManagerComponent>(ent, out var containerManager))
+        {
+            if (_container.TryGetContainer(ent, "crystal_slot", out var slot, containerManager) && slot.ContainedEntities.Count > 0)
+            {
+                var crystal = slot.ContainedEntities[0];
+                if (TryComp<OE14MagicEnergyContainerComponent>(crystal, out var crystalContainer))
+                {
+                    args.PushMarkup(GetEnergyExaminedText((crystal, crystalContainer)));
+                }
+            }
+        }
     }
 
     private void OnSlotPowerChanged(Entity<OE14MagicEnergyAmbientSoundComponent> ent, ref OE14SlotCrystalPowerChangedEvent args)
