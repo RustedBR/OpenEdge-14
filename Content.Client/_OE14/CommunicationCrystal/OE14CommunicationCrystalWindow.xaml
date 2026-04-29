@@ -1,0 +1,48 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               Title="{Loc 'oe14-comm-crystal-title'}"
+               SetSize="400 340"
+               MinSize="380 320">
+    <BoxContainer Orientation="Vertical" Margin="10">
+        <BoxContainer Orientation="Horizontal" Margin="0,0,0,10">
+            <Label Text="{Loc 'oe14-comm-crystal-energy'} " Margin="0,0,5,0"/>
+            <Label Name="EnergyValueLabel" Text="0/50" Access="Public"/>
+        </BoxContainer>
+
+        <BoxContainer Orientation="Horizontal" Margin="0,0,0,10">
+             <Label Text="{Loc 'oe14-comm-crystal-crystal'} " Margin="0,0,5,0"/>
+             <Label Name="CrystalStatusValueLabel" HorizontalExpand="True"/>
+             <Label Name="CharCountLabel" Text="0 / 500"/>
+        </BoxContainer>
+
+        <Control MinSize="0 100">
+            <TextEdit Name="MessageTextBox"
+                    MinSize="0 100"
+                    Margin="0,0,0,10"
+                    Access="Public"/>
+        </Control>
+
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
+            <Button Name="GlobalButton"
+                    Text="{Loc 'oe14-comm-crystal-global'}"
+                    MinSize="120 30"
+                    Margin="0,0,10,0"
+                    Access="Public"/>
+                <Button Name="LocalButton"
+                    Text="{Loc 'oe14-comm-crystal-local'}"
+                    MinSize="120 30"
+                    Access="Public"/>
+        </BoxContainer>
+
+        <Button Name="RemoveButton"
+                Text="{Loc 'oe14-comm-crystal-remove-crystal'}"
+                MinSize="0 30"
+                Margin="0,10,0,0"
+                Access="Public"/>
+
+        <Label Name="CooldownLabel"
+               Text=""
+               HorizontalAlignment="Center"
+               Margin="0,5,0,0"
+               Access="Public"/>
+    </BoxContainer>
+</DefaultWindow>
