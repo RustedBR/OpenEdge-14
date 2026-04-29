@@ -50,6 +50,12 @@
 
 - type: guideEntry
   openEdgeAllowed: true
+  id: OE14RaceComparison
+  name: Race Comparison
+  text: "/ServerInfo/Guidebook/OE14_RaceComparison.xml"
+
+- type: guideEntry
+  openEdgeAllowed: true
   id: OE14OpenCodeGuide
   name: OpenCode Guide
   text: "/ServerInfo/Guidebook/OE14_OpenCodeGuide.xml"

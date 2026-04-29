@@ -1,0 +1,144 @@
+<Document>
+# Race Comparison Guide
+
+Each playable race in OpenEdge 14 starts with different stat values, reflecting their unique strengths and cultural backgrounds. Some races are min-max designs, excelling in specific stats while sacrificing others.
+
+## Human — The Balanced Choice
+
+[bold]Base Stats:[/bold]
+- Strength: 5
+- Vitality: 5
+- Dexterity: 5
+- Intelligence: 5
+
+[bold]Racial Ability:[/bold] None — humans gain 3 bonus creation points instead.
+
+[bold]Playstyle:[/bold] Flexible. Humans start neutral and can be built into any role.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14MobHuman" Caption="Human"/>
+</Box>
+
+---
+
+## Elf — The Mage
+
+[bold]Base Stats:[/bold]
+- Strength: 4
+- Vitality: 5
+- Dexterity: 5
+- Intelligence: 7
+
+[bold]Racial Abilities:[/bold]
+- +1 Metamagic (Tier 1) — Reduce mana costs by 10%
+- +1 Arcane Affinity (Tier 2) — Gain +1 INT modifier
+
+[bold]Playstyle:[/bold] Magic-focused. Elves excel at spellcasting with lower mana costs and better mana pools.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14MobElf" Caption="Elf"/>
+</Box>
+
+---
+
+## Dwarf — The Warrior
+
+[bold]Base Stats:[/bold]
+- Strength: 7
+- Vitality: 7
+- Dexterity: 3
+- Intelligence: 3
+
+[bold]Racial Abilities:[/bold]
+- +1 Alcohol Tolerance (Tier 1) — Alcohol heals 50 HP instead of poisoning
+- +1 Melee Proficiency (Tier 2) — +0.2x weapon damage multiplier
+
+[bold]Special:[/bold] Can drink certain potions that would poison other races.
+
+[bold]Playstyle:[/bold] Combat-heavy. Dwarves hit hard and survive longer with high physical stats.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14MobDwarf" Caption="Dwarf"/>
+</Box>
+
+---
+
+## Tiefling — The Hybrid
+
+[bold]Base Stats:[/bold]
+- Strength: 5
+- Vitality: 6
+- Dexterity: 6
+- Intelligence: 5
+
+[bold]Racial Abilities:[/bold]
+- +1 Infernal Heritage (Tier 1) — Slight fire resistance
+- +1 Devil's Luck (Tier 2) — Critical hit chance +5%
+
+[bold]Playstyle:[/bold] Balanced combat. Tieflings are tough and skilled at dealing damage.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14MobTiefling" Caption="Tiefling"/>
+</Box>
+
+---
+
+## Silva — The Plant Person
+
+[bold]Base Stats:[/bold]
+- Strength: 6
+- Vitality: 8
+- Dexterity: 4
+- Intelligence: 4
+
+[bold]Racial Abilities:[/bold]
+- +1 Regeneration (Tier 1) — Passive health regen +2 HP/s
+- +1 Root Strike (Tier 2) — Melee attacks apply Rooted status
+
+[bold]Playstyle:[/bold] Tanky. Silva are hard to kill with high health and passive healing.
+
+<Box>
+  <GuideEntityEmbed Entity="OE14MobSilva" Caption="Silva"/>
+</Box>
+
+---
+
+## Comparison Table
+
+| Race | STR | VIT | DEX | INT | Best At | Weakness |
+|------|-----|-----|-----|-----|---------|----------|
+| Human | 5 | 5 | 5 | 5 | Flexibility | Nothing special |
+| Elf | 4 | 5 | 5 | 7 | Magic | Weak physically |
+| Dwarf | 7 | 7 | 3 | 3 | Combat | Slow, low mana |
+| Tiefling | 5 | 6 | 6 | 5 | Agile combat | Generalist |
+| Silva | 6 | 8 | 4 | 4 | Tanking | Clumsy |
+
+---
+
+## Stat Effects
+
+Each stat point affects your character differently:
+
+[bold]Strength[/bold] — Increases melee weapon damage. Base 1.0x at STR 5.
+
+[bold]Vitality[/bold] — Increases maximum health. Each point = +12.5 HP (base 100 HP at VIT 5).
+
+[bold]Dexterity[/bold] — Increases maximum stamina and dodge chance. Base 100 stamina at DEX 5.
+
+[bold]Intelligence[/bold] — Increases maximum mana and spell damage. Base 100 mana at INT 5.
+
+---
+
+## Choosing Your Race
+
+Consider your intended playstyle:
+
+- [bold]Want to cast spells?[/bold] Choose Elf. Their INT 7 and mana-saving abilities make magic feel powerful.
+- [bold]Want to swing weapons?[/bold] Choose Dwarf. STR 7 + VIT 7 = strong and survivable.
+- [bold]Want flexibility?[/bold] Choose Human. 3 extra points let you customize however you want.
+- [bold]Want survivability?[/bold] Choose Silva. VIT 8 is the highest in the game.
+- [bold]Want balanced combat?[/bold] Choose Tiefling. Good at everything.
+
+Remember: You can also spend creation points to compensate for racial weaknesses. An Elf with +3 to Strength becomes a viable melee mage.
+
+</Document>

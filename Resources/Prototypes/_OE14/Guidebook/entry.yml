@@ -2,7 +2,7 @@
   openEdgeAllowed: true
   locFilter: "en-US"
   id: OE14_EN
-  name: Welcome to CrystallEdge
+  name: Welcome to OpenEdge 14
   text: "/ServerInfo/_OE14/Guidebook_EN/Welcome.xml"
   children:
   - OE14_EN_Species
@@ -31,6 +31,7 @@
   name: Game Systems
   text: "/ServerInfo/Guidebook/OE14_GettingStarted.xml"
   children:
+  - OE14RaceComparison
   - OE14Magic
   - OE14Crafting
   - OE14Smithing
@@ -52,7 +53,7 @@
   openEdgeAllowed: true
   locFilter: "pt-BR"
   id: OE14_PT
-  name: Bem-vindo ao CrystallEdge
+  name: Bem-vindo ao OpenEdge 14
   text: "/ServerInfo/_OE14/Guidebook_PT-BR/Welcome.xml"
   children:
   - OE14_PT_Species
