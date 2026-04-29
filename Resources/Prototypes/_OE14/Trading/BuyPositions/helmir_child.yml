@@ -160,7 +160,6 @@
   faction: HelmirChild
   reputationLevel: 1
   uiPosition: 3
-  priceMarkup: 3
   icon:
     sprite: _OE14/Clothing/OuterClothing/chainmail.rsi
     state: icon
@@ -173,7 +172,6 @@
   faction: HelmirChild
   reputationLevel: 1
   uiPosition: 4
-  priceMarkup: 3
   icon:
     sprite: _OE14/Clothing/OuterClothing/cuirass.rsi
     state: icon
@@ -186,7 +184,6 @@
   faction: HelmirChild
   reputationLevel: 1
   uiPosition: 5
-  priceMarkup: 3
   icon:
     sprite: _OE14/Clothing/OuterClothing/infantry_cuirass.rsi
     state: icon

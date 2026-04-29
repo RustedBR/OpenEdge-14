@@ -14,6 +14,36 @@
           Quantity: 1
   localizationId: ent-OE14VialSmallHealingBrute
 - type: entity
+  id: OE14VialSmallHealingHeat
+  parent: OE14VialSmall
+  name: brad's heat healing potion
+  suffix: Healing Heat 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14HealingEffectHealHeat
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingHeat
+- type: entity
+  id: OE14VialSmallHealingCold
+  parent: OE14VialSmall
+  name: brad's cold healing potion
+  suffix: Healing Cold 10%
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      vial:
+        reagents:
+        - ReagentId: OE14SideEffectEmpty
+          Quantity: 9
+        - ReagentId: OE14HealingEffectHealCold
+          Quantity: 1
+  localizationId: ent-OE14VialSmallHealingCold
+- type: entity
   id: OE14VialSmallHealingPoison
   parent: OE14VialSmall
   name: brad's antidote potion
