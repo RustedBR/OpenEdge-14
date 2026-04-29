@@ -6,7 +6,7 @@
   startingGear: OE14BlacksmithGear
   icon: "OE14JobIconBlacksmith"
   supervisors: oe14-job-supervisors-command
-  setPreference: false
+  setPreference: true
   canBeAntag: false
   special:
     - !type:OE14AddTradingReputationSpecial

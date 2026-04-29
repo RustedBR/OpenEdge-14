@@ -20,7 +20,7 @@
             #Artisans
             OE14Apprentice: [ 5, 5 ]
             OE14Alchemist: [ 2, 2 ]
-            #OE14Blacksmith: [ 2, 2 ]
+            OE14Blacksmith: [ 2, 2 ]
             OE14Innkeeper: [ 3, 4 ]
             OE14Merchant: [2, 2]
             #Guard

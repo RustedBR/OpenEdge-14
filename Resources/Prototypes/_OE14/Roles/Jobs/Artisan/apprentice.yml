@@ -19,6 +19,11 @@
       skills:
       #- CopperMelting
       - AlchemyVision
+    - !type:OE14GiveKeysIfJobMissingSpecial
+      jobToKeyRing:
+        OE14Alchemist: OE14KeyRingAlchemist
+        OE14Innkeeper: OE14KeyRingInnkeeper
+        OE14Blacksmith: OE14KeyRingBlacksmith
 
 - type: startingGear
   id: OE14ApprenticeGear

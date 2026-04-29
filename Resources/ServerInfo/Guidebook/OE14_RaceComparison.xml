@@ -1,144 +1,113 @@
 <Document>
-# Race Comparison Guide
+  # Race Comparison
 
-Each playable race in OpenEdge 14 starts with different stat values, reflecting their unique strengths and cultural backgrounds. Some races are min-max designs, excelling in specific stats while sacrificing others.
+  Each playable race in OpenEdge 14 starts with different base stats, reflecting their unique strengths. Some races are min-max designs, excelling at specific stats while sacrificing others.
 
-## Human — The Balanced Choice
+  ## Comparison Table
 
-[bold]Base Stats:[/bold]
-- Strength: 5
-- Vitality: 5
-- Dexterity: 5
-- Intelligence: 5
+  | Race | STR | VIT | DEX | INT | Free Skills | Playstyle |
+  |------|-----|-----|-----|-----|-------------|-----------|
+  | Human | 5 | 5 | 5 | 5 | None (+3 points) | Flexible |
+  | Elf | 6 | 6 | 1 | 7 | Metamagic T1/T2 | Mage |
+  | Dwarf | 7 | 7 | 2 | 4 | Alcohol Resistance | Warrior |
+  | Goblin | 6 | 6 | 7 | 1 | Athletic T1/T2 | Agile |
+  | Silva | 1 | 7 | 5 | 7 | Healing T1/T2 | Tank/Healer |
+  | Carcat | 5 | 5 | 7 | 3 | Electromancy T1/T2 | Swift |
+  | Tiefling | 7 | 5 | 2 | 6 | Pyrokinetic T1/T2 | Destroyer |
 
-[bold]Racial Ability:[/bold] None — humans gain 3 bonus creation points instead.
+  ---
 
-[bold]Playstyle:[/bold] Flexible. Humans start neutral and can be built into any role.
+  ## Race Details
 
-<Box>
-  <GuideEntityEmbed Entity="OE14MobHuman" Caption="Human"/>
-</Box>
+  ### Human — The Flexible Choice
 
----
+  [bold]STR 5 · VIT 5 · DEX 5 · INT 5[/bold]
 
-## Elf — The Mage
+  No racial abilities, but gain [bold]3 bonus creation points[/bold] instead of 1. Can be built into any role.
 
-[bold]Base Stats:[/bold]
-- Strength: 4
-- Vitality: 5
-- Dexterity: 5
-- Intelligence: 7
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobHuman" Caption="Human"/>
+  </Box>
 
-[bold]Racial Abilities:[/bold]
-- +1 Metamagic (Tier 1) — Reduce mana costs by 10%
-- +1 Arcane Affinity (Tier 2) — Gain +1 INT modifier
+  ### Elf — The Mage
 
-[bold]Playstyle:[/bold] Magic-focused. Elves excel at spellcasting with lower mana costs and better mana pools.
+  [bold]STR 6 · VIT 6 · DEX 1 · INT 7[/bold]
 
-<Box>
-  <GuideEntityEmbed Entity="OE14MobElf" Caption="Elf"/>
-</Box>
+  Get [bold]Metamagic T1 and T2[/bold] for free — reduces mana cost and gains +2 effective INT. DEX 1 means they fall easily when hit.
 
----
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobElf" Caption="Elf"/>
+  </Box>
 
-## Dwarf — The Warrior
+  ### Dwarf — The Warrior
 
-[bold]Base Stats:[/bold]
-- Strength: 7
-- Vitality: 7
-- Dexterity: 3
-- Intelligence: 3
+  [bold]STR 7 · VIT 7 · DEX 2 · INT 4[/bold]
 
-[bold]Racial Abilities:[/bold]
-- +1 Alcohol Tolerance (Tier 1) — Alcohol heals 50 HP instead of poisoning
-- +1 Melee Proficiency (Tier 2) — +0.2x weapon damage multiplier
+  Have [bold]alcohol resistance[/bold] — certain drinks that poison other races heal the Dwarf. Very slow due to low DEX, but the most physically durable.
 
-[bold]Special:[/bold] Can drink certain potions that would poison other races.
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobDwarf" Caption="Dwarf"/>
+  </Box>
 
-[bold]Playstyle:[/bold] Combat-heavy. Dwarves hit hard and survive longer with high physical stats.
+  ### Goblin — The Agile
 
-<Box>
-  <GuideEntityEmbed Entity="OE14MobDwarf" Caption="Dwarf"/>
-</Box>
+  [bold]STR 6 · VIT 6 · DEX 7 · INT 1[/bold]
 
----
+  Get [bold]Athletic T1 and T2[/bold] for free — gain +2 effective DEX. INT 1 means almost no mana: practically no access to magic.
 
-## Tiefling — The Hybrid
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobGoblin" Caption="Goblin"/>
+  </Box>
 
-[bold]Base Stats:[/bold]
-- Strength: 5
-- Vitality: 6
-- Dexterity: 6
-- Intelligence: 5
+  ### Silva — The Tank/Healer
 
-[bold]Racial Abilities:[/bold]
-- +1 Infernal Heritage (Tier 1) — Slight fire resistance
-- +1 Devil's Luck (Tier 2) — Critical hit chance +5%
+  [bold]STR 1 · VIT 7 · DEX 5 · INT 7[/bold]
 
-[bold]Playstyle:[/bold] Balanced combat. Tieflings are tough and skilled at dealing damage.
+  Get [bold]Healing T1 and T2[/bold] for free — gain +2 effective VIT. STR 1 makes melee combat nearly unviable, but they have strong magic and high health.
 
-<Box>
-  <GuideEntityEmbed Entity="OE14MobTiefling" Caption="Tiefling"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobSilva" Caption="Silva"/>
+  </Box>
 
----
+  ### Carcat — The Swift
 
-## Silva — The Plant Person
+  [bold]STR 5 · VIT 5 · DEX 7 · INT 3[/bold]
 
-[bold]Base Stats:[/bold]
-- Strength: 6
-- Vitality: 8
-- Dexterity: 4
-- Intelligence: 4
+  Get [bold]Electromancy T1 and T2[/bold] for free — gain +2 effective DEX. Balanced in physical combat with excellent mobility. Limited magic.
 
-[bold]Racial Abilities:[/bold]
-- +1 Regeneration (Tier 1) — Passive health regen +2 HP/s
-- +1 Root Strike (Tier 2) — Melee attacks apply Rooted status
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobCarcat" Caption="Carcat"/>
+  </Box>
 
-[bold]Playstyle:[/bold] Tanky. Silva are hard to kill with high health and passive healing.
+  ### Tiefling — The Destroyer
 
-<Box>
-  <GuideEntityEmbed Entity="OE14MobSilva" Caption="Silva"/>
-</Box>
+  [bold]STR 7 · VIT 5 · DEX 2 · INT 6[/bold]
 
----
+  Get [bold]Pyrokinetic T1 and T2[/bold] for free — gain +2 effective STR. Combine physical strength with fire magic. Low DEX leaves them vulnerable to knockdown.
 
-## Comparison Table
+  <Box>
+    <GuideEntityEmbed Entity="OE14MobTiefling" Caption="Tiefling"/>
+  </Box>
 
-| Race | STR | VIT | DEX | INT | Best At | Weakness |
-|------|-----|-----|-----|-----|---------|----------|
-| Human | 5 | 5 | 5 | 5 | Flexibility | Nothing special |
-| Elf | 4 | 5 | 5 | 7 | Magic | Weak physically |
-| Dwarf | 7 | 7 | 3 | 3 | Combat | Slow, low mana |
-| Tiefling | 5 | 6 | 6 | 5 | Agile combat | Generalist |
-| Silva | 6 | 8 | 4 | 4 | Tanking | Clumsy |
+  ---
 
----
+  ## Stat Effects
 
-## Stat Effects
+  [bold]Strength[/bold] — physical damage. STR 5 = 1.0x, STR 10 = 1.5x damage.
 
-Each stat point affects your character differently:
+  [bold]Vitality[/bold] — max health. VIT 5 = 100 HP, each point = +12.5 HP.
 
-[bold]Strength[/bold] — Increases melee weapon damage. Base 1.0x at STR 5.
+  [bold]Dexterity[/bold] — stamina. Low DEX = knocked down easily in combat.
 
-[bold]Vitality[/bold] — Increases maximum health. Each point = +12.5 HP (base 100 HP at VIT 5).
+  [bold]Intelligence[/bold] — mana. INT 5 = 100 mana, each point = +25 mana.
 
-[bold]Dexterity[/bold] — Increases maximum stamina and dodge chance. Base 100 stamina at DEX 5.
+  ---
 
-[bold]Intelligence[/bold] — Increases maximum mana and spell damage. Base 100 mana at INT 5.
+  ## Choosing Your Race
 
----
-
-## Choosing Your Race
-
-Consider your intended playstyle:
-
-- [bold]Want to cast spells?[/bold] Choose Elf. Their INT 7 and mana-saving abilities make magic feel powerful.
-- [bold]Want to swing weapons?[/bold] Choose Dwarf. STR 7 + VIT 7 = strong and survivable.
-- [bold]Want flexibility?[/bold] Choose Human. 3 extra points let you customize however you want.
-- [bold]Want survivability?[/bold] Choose Silva. VIT 8 is the highest in the game.
-- [bold]Want balanced combat?[/bold] Choose Tiefling. Good at everything.
-
-Remember: You can also spend creation points to compensate for racial weaknesses. An Elf with +3 to Strength becomes a viable melee mage.
+  - [bold]Want to cast spells?[/bold] Elf (INT 9 effective) or Silva (INT 9 effective).
+  - [bold]Want melee combat?[/bold] Tiefling (STR 9 effective) or Dwarf.
+  - [bold]Want speed and mobility?[/bold] Goblin (DEX 9 effective) or Carcat (DEX 9 effective).
+  - [bold]Want to customize freely?[/bold] Human — 3 extra points to distribute however you want.
 
 </Document>
