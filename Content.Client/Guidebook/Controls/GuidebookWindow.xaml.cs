@@ -218,11 +218,16 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
             AddEntry(entry.Id, parent, addedEntries);
         }
 
-        Tree.SetAllExpanded(false);
+        Tree.SetAllExpanded(true);
 
-        // Expand the first root entry (Welcome) by default
-        if (Tree.Items.Count > 0)
-            Tree.Items[0].SetExpanded(true);
+        // Collapse the Development section (OE14_PT_DEVELOPMENT) by default
+        foreach (var item in Tree.Items)
+        {
+            if (item.Metadata is GuideEntry entry && entry.Id == "OE14_PT_DEVELOPMENT")
+            {
+                item.SetExpanded(false);
+            }
+        }
     }
 
     private TreeItem? AddEntry(ProtoId<GuideEntryPrototype> id,

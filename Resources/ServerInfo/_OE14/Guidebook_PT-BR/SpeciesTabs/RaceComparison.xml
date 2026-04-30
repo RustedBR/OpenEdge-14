@@ -89,22 +89,34 @@
 
   ---
 
-  ## Legenda de Cores
+  ## Melhor e Pior de Cada Raça
 
-[color=#e05050] FOR [/color] — Força — dano físico
-[color=#50e050] VIT [/color] — Vitalidade — vida máxima
-[color=#50e0e0] DES [/color] — Destreza — stamina/knockdown
-[color=#a050e0] INT [/color] — Inteligência — mana
-⭐ — Vantagem de atributo (com bônus de habilidade)
-[color=#ff4040] Vermelho [/color] — Ponto fraco da raça |
+  ### Humano
+  - [bold][color=#77dd77] Melhor: [/color][/bold] Versátil — pode ser qualquer coisa com +3 pontos
+  - [bold][color=#ff6961] Pior: [/color][/bold] Sem especialidade racial
 
-  ---
+  ### Elfo
+  - [bold][color=#77dd77] Melhor: [/color][/bold] Mago supremo (INT 9 efetivo com Metamagia)
+  - [bold][color=#ff6961] Pior: [/color][/bold] Extremamente frágil em combate físico
 
-  ## Escolhendo Sua Raça
+  ### Anão
+  - [bold][color=#77dd77] Melhor: [/color][/bold] Tank mais forte (FOR/VIT 9 efetivo, se cura com álcool)
+  - [bold][color=#ff6961] Pior: [/color][/bold] Muito lento, sem mana para magia
 
-  - [color=#a050e0] **Magia?** [/color] Elfo ou Silva (INT 9 efetivo)
-  - [color=#e05050] **Combate físico?** [/color] Tiefling ou Anão (FOR 9 efetivo)
-  - [color=#50e0e0] **Mobilidade?** [/color] Goblin ou Carcat (DES 9 efetivo)
-  - [color=#ffd700] **Personalizar?** [/color] Humano — 3 pontos extras
+  ### Goblin
+  - [bold][color=#77dd77] Melhor: [/color][/bold] Mais ágil (DES 9 efetivo com Atletismo)
+  - [bold][color=#ff6961] Pior: [/color][/bold] Quase sem mana para magia (INT 1)
+
+  ### Silva
+  - [bold][color=#77dd77] Melhor: [/color][/bold] Tank mágico (VIT + INT 9, regenera ao sol)
+  - [bold][color=#ff6961] Pior: [/color][/bold] Praticamente não causa dano físico
+
+  ### Carcat
+  - [bold][color=#77dd77] Melhor: [/color][/bold] Veloz (DES 9 efetivo com Ilusão)
+  - [bold][color=#ff6961] Pior: [/color][/bold] Magia muito limitada
+
+  ### Tiefling
+  - [bold][color=#77dd77] Melhor: [/color][/bold] Destruidor (FOR 9 efetivo com Piromancia)
+  - [bold][color=#ff6961] Pior: [/color][/bold] Vulnerável a knockdown (baixa DES)
 
 </Document>

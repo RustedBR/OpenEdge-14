@@ -154,7 +154,11 @@ public sealed class GuidebookUIController : UIController, IOnStateEntered<LobbyS
         if (GuidebookButton != null)
             GuidebookButton.Pressed = true;
 
-        _guideWindow?.Tree.SetAllExpanded(false);
+        if (_guideWindow != null)
+        {
+            _guideWindow.Tree.SetAllExpanded(true);
+            CollapseDevSection(_guideWindow);
+        }
     }
 
     /// <summary>
@@ -206,7 +210,8 @@ public sealed class GuidebookUIController : UIController, IOnStateEntered<LobbyS
         }
         _guideWindow.UpdateGuides(guides, rootEntries, forceRoot, selected);
 
-        _guideWindow.Tree.SetAllExpanded(false);
+        _guideWindow.Tree.SetAllExpanded(true);
+        CollapseDevSection(_guideWindow);
 
         _guideWindow.OpenCenteredRight();
     }
@@ -259,6 +264,18 @@ public sealed class GuidebookUIController : UIController, IOnStateEntered<LobbyS
 
             guides.Add(childId, child);
             RecursivelyAddChildren(child, guides);
+        }
+    }
+
+    private void CollapseDevSection(GuidebookWindow window)
+    {
+        // Collapse the Development section (OE14_PT_DEVELOPMENT) by default
+        foreach (var item in window.Tree.Items)
+        {
+            if (item.Metadata is GuideEntry entry && entry.Id == "OE14_PT_DEVELOPMENT")
+            {
+                item.SetExpanded(false);
+            }
         }
     }
 }
