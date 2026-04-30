@@ -7,7 +7,7 @@
 
   ### Humano — A Escolha Flexível
 
-  [color=#e05050]FOR 5[/color] · [color=#50e050]VIT 5[/color] · [color=#50e0e0]DES 5[/color] · [color=#a050e0]INT 5[/color]
+  [color=#e05050] FOR: 5 [/color] | [color=#50e050] VIT: 5 [/color] | [color=#50e0e0] DES: 5 [/color] | [color=#a050e0] INT: 5 [/color]
 
   Sem habilidades raciais. [bold]3 pontos de criação bônus[/bold]. Pode ser qualquer papel.
 
@@ -19,9 +19,9 @@
 
   ### Elfo — O Mago
 
-  [color=#e05050]FOR 6[/color] · [color=#50e050]VIT 6[/color] · [color=#50e0e0]DES 1[/color] · [color=#a050e0]INT 7⭐[/color]
+  [color=#e05050] FOR: 6 [/color] | [color=#50e050] VIT: 6 [/color] | [color=#50e0e0] DES: 1 [/color] | [color=#a050e0] INT: 7⭐ [/color]
 
-  [bold]Metamagia T1/T2[/bold] — +2 INT efetivo. Forte em magia, [color=#ff4040]muito frágil em combate[/color].
+  [bold]Metamagia T1/T2[/bold] — +2 INT efetivo. Forte em magia, [color=#ff4040] muito frágil em combate [/color].
 
   <Box>
     <GuideEntityEmbed Entity="OE14MobElf" Caption="Elfo"/>
@@ -31,9 +31,9 @@
 
   ### Anão — O Guerreiro
 
-  [color=#e05050]FOR 7⭐[/color] · [color=#50e050]VIT 7⭐[/color] · [color=#50e0e0]DES 2[/color] · [color=#a050e0]INT 4[/color]
+  [color=#e05050] FOR: 7⭐ [/color] | [color=#50e050] VIT: 7⭐ [/color] | [color=#50e0e0] DES: 2 [/color] | [color=#a050e0] INT: 4 [/color]
 
-  [bold]Resistência ao álcool[/bold]. O mais forte e resistente fisicamente, mas [color=#ff4040]muito lento[/color].
+  [bold]Resistência ao álcool[/bold]. O mais forte e resistente fisicamente, mas [color=#ff4040] muito lento [/color].
 
   <Box>
     <GuideEntityEmbed Entity="OE14MobDwarf" Caption="Anão"/>
@@ -43,9 +43,9 @@
 
   ### Goblin — O Ágil
 
-  [color=#e05050]FOR 6[/color] · [color=#50e050]VIT 6[/color] · [color=#50e0e0]DES 7⭐[/color] · [color=#a050e0]INT 1[/color]
+  [color=#e05050] FOR: 6 [/color] | [color=#50e050] VIT: 6 [/color] | [color=#50e0e0] DES: 7⭐ [/color] | [color=#a050e0] INT: 1 [/color]
 
-  [bold]Atlético T1/T2[/bold] — +2 DES efetivo. Muito ágil, [color=#ff4040]sem mana para magia[/color].
+  [bold]Atlético T1/T2[/bold] — +2 DES efetivo. Muito ágil, [color=#ff4040] sem mana para magia [/color].
 
   <Box>
     <GuideEntityEmbed Entity="OE14MobGoblin" Caption="Goblin"/>
@@ -55,9 +55,9 @@
 
   ### Silva — O Tank/Curandeiro
 
-  [color=#e05050]FOR 1[/color] · [color=#50e050]VIT 7⭐[/color] · [color=#50e0e0]DES 5[/color] · [color=#a050e0]INT 7⭐[/color]
+  [color=#e05050] FOR: 1 [/color] | [color=#50e050] VIT: 7⭐ [/color] | [color=#50e0e0] DES: 5 [/color] | [color=#a050e0] INT: 7⭐ [/color]
 
-  [bold]Cura T1/T2[/bold] — +2 VIT efetivo. Excelente magia e vida alta, [color=#ff4040]quase não causa dano físico[/color].
+  [bold]Cura T1/T2[/bold] — +2 VIT efetivo. Excelente magia e vida alta, [color=#ff4040] quase não causa dano físico [/color].
 
   <Box>
     <GuideEntityEmbed Entity="OE14MobSilva" Caption="Silva"/>
@@ -67,9 +67,9 @@
 
   ### Carcat — O Veloz
 
-  [color=#e05050]FOR 5[/color] · [color=#50e050]VIT 5[/color] · [color=#50e0e0]DES 7⭐[/color] · [color=#a050e0]INT 3[/color]
+  [color=#e05050] FOR: 5 [/color] | [color=#50e050] VIT: 5 [/color] | [color=#50e0e0] DES: 7⭐ [/color] | [color=#a050e0] INT: 3 [/color]
 
-  [bold]Eletromancia T1/T2[/bold] — +2 DES efetivo. Mobilidade excelente, [color=#ff4040]magia muito limitada[/color].
+  [bold]Ilusão T1/T2[/bold] — +2 DES efetivo. Mobilidade excelente, [color=#ff4040] magia muito limitada [/color].
 
   <Box>
     <GuideEntityEmbed Entity="OE14MobCarcat" Caption="Carcat"/>
@@ -79,9 +79,9 @@
 
   ### Tiefling — O Destruidor
 
-  [color=#e05050]FOR 7⭐[/color] · [color=#50e050]VIT 5[/color] · [color=#50e0e0]DES 2[/color] · [color=#a050e0]INT 6[/color]
+  [color=#e05050] FOR: 7⭐ [/color] | [color=#50e050] VIT: 5 [/color] | [color=#50e0e0] DES: 2 [/color] | [color=#a050e0] INT: 6 [/color]
 
-  [bold]Pirocinético T1/T2[/bold] — +2 FOR efetivo. Força + magia de fogo, [color=#ff4040]vulnerável a knockdown[/color].
+  [bold]Pirocinético T1/T2[/bold] — +2 FOR efetivo. Força + magia de fogo, [color=#ff4040] vulnerável a knockdown [/color].
 
   <Box>
     <GuideEntityEmbed Entity="OE14MobTiefling" Caption="Tiefling"/>
@@ -91,22 +91,20 @@
 
   ## Legenda de Cores
 
-  | Código | Significado |
-  |--------|-------------|
-  | [color=#e05050]FOR[/color] | Força — dano físico |
-  | [color=#50e050]VIT[/color] | Vitalidade — vida máxima |
-  | [color=#50e0e0]DES[/color] | Destreza — stamina/knockdown |
-  | [color=#a050e0]INT[/color] | Inteligência — mana |
-  | ⭐ | Vantagem de atributo (com bônus de habilidade) |
-  | [color=#ff4040]vermelho[/color] | Ponto fraco da raça |
+[color=#e05050] FOR [/color] — Força — dano físico
+[color=#50e050] VIT [/color] — Vitalidade — vida máxima
+[color=#50e0e0] DES [/color] — Destreza — stamina/knockdown
+[color=#a050e0] INT [/color] — Inteligência — mana
+⭐ — Vantagem de atributo (com bônus de habilidade)
+[color=#ff4040] Vermelho [/color] — Ponto fraco da raça |
 
   ---
 
   ## Escolhendo Sua Raça
 
-  - [color=#a050e0]Magia?[/color] Elfo ou Silva (INT 9 efetivo)
-  - [color=#e05050]Combate físico?[/color] Tiefling ou Anão (FOR 9 efetivo)
-  - [color=#50e0e0]Mobilidade?[/color] Goblin ou Carcat (DES 9 efetivo)
-  - [color=#ffd700]Personalizar?[/color] Humano — 3 pontos extras
+  - [color=#a050e0] **Magia?** [/color] Elfo ou Silva (INT 9 efetivo)
+  - [color=#e05050] **Combate físico?** [/color] Tiefling ou Anão (FOR 9 efetivo)
+  - [color=#50e0e0] **Mobilidade?** [/color] Goblin ou Carcat (DES 9 efetivo)
+  - [color=#ffd700] **Personalizar?** [/color] Humano — 3 pontos extras
 
 </Document>
