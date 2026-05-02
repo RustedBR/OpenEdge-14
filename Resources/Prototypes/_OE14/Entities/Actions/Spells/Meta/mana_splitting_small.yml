@@ -1,8 +1,8 @@
 - type: entity
   id: OE14ActionSpellMagicSplittingSmall
   parent: OE14ActionSpellBase
-  name: Small magic splitting
-  description: You destroy the very essence of magic, interrupting spell casts, destroying mana and more.
+  name: Quebra mágica menor
+  description: Você destrói a própria essência da magia, interrompendo conjurações e destruindo mana.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.7
@@ -10,6 +10,13 @@
     manaCost: 10
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneMagicSplitting
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você destrói a própria essência da magia, interrompendo conjurações e destruindo mana.
+    scaleEntries:
+    - label: Mana destruída
+      baseValue: 5.0
+      unit: " mana"
+      decimals: 1
   - type: Action
     useDelay: 10
     icon:
@@ -34,8 +41,7 @@
       - !type:OE14SpellMixSolution
         reactionTypes:
         - OE14MagicSplitting
-      - !type:OE14SpellApplyEntityEffect
-        effects:
-        - !type:OE14ManaChange
-          manaDelta: -5
-          safe: false
+      - !type:OE14SpellManaChangeScaled
+        manaDelta: -5
+        safe: false
+        scaleWithCasterInt: true

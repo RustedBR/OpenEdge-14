@@ -1,11 +1,18 @@
 - type: entity
   id: OE14ActionSpellFirewave
   parent: OE14ActionSpellBase
-  name: Firewave
-  description: You release a wave of hot fire that strikes multiple targets in an area.
+  name: Onda de fogo
+  description: Você solta uma onda de fogo que atinge múltiplos alvos em área.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.75
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você solta uma onda de fogo que atinge múltiplos alvos em área.
+    scaleEntries:
+    - label: Dano por projétil
+      baseValue: 2.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 10
   - type: OE14ActionSpeaking
@@ -32,6 +39,7 @@
         spread: 2
         projectileSpeed: 5
         projectileCount: 8
+        scaleWithCasterInt: true
 
 - type: entity
   id: OE14RuneFirebolt

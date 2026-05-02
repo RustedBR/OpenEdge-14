@@ -1,9 +1,18 @@
 - type: entity
   id: OE14ActionSpellWaterCreation
   parent: OE14ActionSpellBase
-  name: Water creation
-  description: Creating a clot of water that is held in a floating balloon shape for some time
+  name: Criação de água
+  description: Cria uma gota de água suspensa por magia.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Cria uma gota de água suspensa por magia.
+    scaleEntries:
+    - label: Quantidade
+      baseValue: 10.0
+      unit: "u"
+      decimals: 0
+      isAdditive: true
+      intBonus: 1.0
   - type: OE14ActionManaCost
     manaCost: 10
   - type: OE14ActionFreeHandsRequired
@@ -25,6 +34,7 @@
       - !type:OE14SpellSpawnInHandEntity
         spawns:
         - OE14LiquidDropWater
+        intBonusSolutionQuantity: 1.0
 
 - type: entity
   id: OE14RuneWaterCreation

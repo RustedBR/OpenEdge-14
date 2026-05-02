@@ -2,10 +2,17 @@
   id: OE14ActionSpellVampirePower
   parent: OE14ActionSpellBase
   name: Demonstration of strength
-  description: By channeling the power of your ancient vampire clan, you instantly strike your target, causing them to fly back and lose their balance.
+  description: Canalizando o poder do seu clã vampírico, você golpeia o alvo instantaneamente causando recuo.
   components:
   - type: OE14ActionDangerous
   - type: OE14MagicEffectVampire
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Canalizando o poder do seu clã vampírico, você golpeia o alvo instantaneamente causando recuo.
+    scaleEntries:
+    - label: Dano
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 20
   - type: Action
@@ -35,13 +42,10 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectVampireKick
-      - !type:OE14SpellApplyEntityEffect
-        effects:
-        - !type:HealthChange
-          ignoreResistances: false
-          damage:
-            types:
-              Blunt: 10
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Blunt: 10
 
 - type: entity
   id: OE14ImpactEffectVampireKick

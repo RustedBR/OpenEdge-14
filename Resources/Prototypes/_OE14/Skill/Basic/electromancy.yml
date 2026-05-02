@@ -76,6 +76,20 @@
     prerequisite: ElectromancyT2
 
 
+- type: oe14Skill
+  id: OE14ActionSpellElectricTrap
+  skillUiPosition: 7, 8
+  tree: Electromancy
+  icon:
+    sprite: _OE14/Actions/Spells/electromancy.rsi
+    state: electric_trap
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellElectricTrap
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: ElectromancyT2
+
 # T3
 
 #- type: oe14Skill

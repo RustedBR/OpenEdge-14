@@ -74,6 +74,9 @@ public abstract partial class OE14SharedCharacterStatsSystem : EntitySystem
 
         // Mark for network update
         Dirty(ent.Owner, stats);
+
+        // Notify other systems (e.g. spell description updater)
+        RaiseLocalEvent(ent.Owner, new OE14StatsUpdatedEvent());
     }
 
     /// <summary>

@@ -2,14 +2,24 @@
   id: OE14ActionAirSaturation
   parent: OE14ActionSpellBase
   name: Air saturation
-  description: You surround the target with fresh air, healing suffocation. This can sustain the dying.
+  description: Você envolve o alvo com ar fresco, curando a sufocação. Funciona em estado crítico.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.4
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você envolve o alvo com ar fresco, curando a sufocação. Funciona em estado crítico.
+    scaleEntries:
+    - label: Cura
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 5
+  - type: OE14ActionTargetMobStatusRequired
+    allowedStates:
+    - Alive
+    - Critical
   - type: DoAfterArgs
-    repeat: true
     delay: 2
     breakOnDamage: true
   - type: OE14ActionDoAfterVisuals
@@ -28,12 +38,12 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectAirSaturation
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Asphyxiation: -10
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Asphyxiation: -5
         - !type:Jitter
 
 # Effects

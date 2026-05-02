@@ -2,13 +2,23 @@
   id: OE14ActionSpellCureBurn
   parent: OE14ActionSpellBase
   name: Cure burn
-  description: You heal skin damage caused by excessive cooling or heating.
+  description: Você cura danos de pele causados por calor ou frio excessivo. Funciona em estado crítico.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.5
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você cura danos de pele causados por calor ou frio excessivo. Funciona em estado crítico.
+    scaleEntries:
+    - label: Cura
+      baseValue: 30.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 10
   - type: OE14ActionTargetMobStatusRequired
+    allowedStates:
+    - Alive
+    - Critical
   - type: OE14ActionSpeaking
     startSpeech: "Pellis dolorem..."
     endSpeech: "non novit"
@@ -38,14 +48,14 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectCureBurn
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Cold: -10
+            Heat: -10
+            Shock: -10
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Cold: -10
-              Heat: -10
-              Shock: -10
         - !type:Jitter
 
 - type: entity

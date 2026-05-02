@@ -1,9 +1,16 @@
 - type: entity
   id: OE14ActionSpellFireTrap
   parent: OE14ActionSpellBase
-  name: Fire trap
-  description: Creates a fire trap at the selected location. Don't forget to recharge it with mana.
+  name: Armadilha de fogo
+  description: Cria uma armadilha de fogo no local selecionado. Não esqueça de recarregá-la com mana.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Cria uma armadilha de fogo no local selecionado. Não esqueça de recarregá-la com mana.
+    scaleEntries:
+    - label: Dano
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.9
   - type: OE14ActionManaCost
@@ -19,6 +26,7 @@
       sprite: _OE14/Actions/Spells/fire.rsi
       state: fire_trap
   - type: TargetAction
+    checkCanAccess: false
     range: 3
   - type: DoAfterArgs
     delay: 2
@@ -29,9 +37,8 @@
         spawns:
         - OE14ImpactEffectFireTrap
       effects:
-      - !type:OE14SpellSpawnEntityOnTarget
-        spawns:
-        - OE14SpawnMagicFireTrap
+      - !type:OE14SpellSpawnTrapEntityOnTarget
+        trap: OE14SpawnMagicFireTrap
 
 - type: entity
   id: OE14RuneFireTrap
@@ -105,20 +112,72 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: TriggerOnCollide
-    fixtureID: trap
-  - type: IgnitionSource
-    temperature: 400
-    ignited: true
-  - type: IgniteOnCollide
-    fireStacks: 3
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: FireBomb
-    totalIntensity: 8.0
-    intensitySlope: 3
-    maxIntensity: 2
-  - type: DeleteOnTrigger
+  - type: OE14TrapCollide
+    whitelist:
+      components:
+      - MobState
+    triggerSound: !type:SoundCollectionSpecifier
+      collection: ToySqueak
+    effects:
+    - !type:OE14SpellArea
+      range: 1
+      affectCaster: false
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Heat: 10
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:AdjustTemperature
+          amount: 50000
+        - !type:Ignite
+    - !type:OE14SpellSpawnEntityOnTarget
+      spawns:
+      - OE14ActionSpellFireTrapEffect
+
+- type: entity
+  id: OE14ActionSpellFireTrapEffect
+  name: fire circle
+  categories: [ HideSpawnMenu ]
+  save: false
+  components:
+  - type: Sprite
+    sprite: _OE14/Effects/Magic/cast_impact.rsi
+    drawdepth: Mobs
+    noRot: true
+    layers:
+      - state: circle_increase
+        color: "#eea911"
+        shader: unshaded
+  - type: TimedDespawn
+    lifetime: 1
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: OE14AreaEntityEffect
+    range: 1
+    effects:
+    - !type:OE14SpellApplyEntityEffect
+      effects:
+      - !type:HealthChange
+        ignoreResistances: false
+        damage:
+          types:
+            Heat: 10
+      - !type:AdjustTemperature
+        amount: 50000
+      - !type:Ignite
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/fire.ogg
+      params:
+        variation: 0.1
+        volume: -2
+  - type: TriggerOnSpawn
 
 - type: entity
   parent: OE14BaseSpellScrollFire

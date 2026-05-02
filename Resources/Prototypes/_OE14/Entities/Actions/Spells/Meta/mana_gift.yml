@@ -1,8 +1,8 @@
 - type: entity
   id: OE14ActionSpellManaGift
   parent: OE14ActionSpellBase
-  name: Mana transfer
-  description: You can transfer a small amount of your magical energy to a target entity or magical object.
+  name: Transferência de mana
+  description: Você transfere energia mágica para um alvo ou objeto mágico.
   components:
   - type: OE14ActionManaCost
     manaCost: 10
@@ -14,6 +14,13 @@
     breakOnDamage: true
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneManaGift
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você transfere energia mágica para um alvo ou objeto mágico.
+    scaleEntries:
+    - label: Mana transferida
+      baseValue: 10.0
+      unit: " mana"
+      decimals: 1
   - type: Action
     useDelay: 2
     icon:
@@ -36,17 +43,16 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectManaGift
-      - !type:OE14SpellApplyEntityEffect
-        effects:
-        - !type:OE14ManaChange
-          manaDelta: 10
-          safe: false
+      - !type:OE14SpellManaChangeScaled
+        manaDelta: 10
+        safe: false
+        scaleWithCasterInt: true
 
 - type: entity
   id: OE14ActionSpellManaGiftElf
   parent: OE14ActionSpellManaGift
-  name: Carefull mana transfer
-  description: You transfer mana at a tremendous rate without dealing damage to the target.
+  name: Absorção élfica
+  description: Você transfere mana a uma taxa tremenda sem causar dano ao alvo. A quantidade transferida escala com Inteligência.
   components:
   - type: OE14ActionManaCost
     manaCost: 20
@@ -56,11 +62,10 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectManaGift
-      - !type:OE14SpellApplyEntityEffect
-        effects:
-        - !type:OE14ManaChange
-          manaDelta: 20
-          safe: true
+      - !type:OE14SpellManaChangeScaled
+        manaDelta: 20
+        safe: true
+        scaleWithCasterInt: true
 
 - type: entity
   id: OE14RuneManaGift

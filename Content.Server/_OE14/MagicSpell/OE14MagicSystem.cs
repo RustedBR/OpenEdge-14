@@ -1,8 +1,10 @@
 using Content.Shared._OE14.MagicSpell.Spells;
+using Content.Shared.Audio;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Random;
 
@@ -13,6 +15,7 @@ public sealed  class OE14MagicSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -23,6 +26,28 @@ public sealed  class OE14MagicSystem : EntitySystem
         SubscribeLocalEvent<OE14SpellEffectOnHitComponent, MeleeHitEvent>(OnMeleeHit);
         SubscribeLocalEvent<OE14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<OE14SpellEffectOnCollideComponent, StartCollideEvent>(OnStartCollide);
+        SubscribeLocalEvent<OE14TrapCollideComponent, StartCollideEvent>(OnTrapCollide);
+    }
+
+    private void OnTrapCollide(Entity<OE14TrapCollideComponent> ent, ref StartCollideEvent args)
+    {
+        if (ent.Comp.Owner == args.OtherEntity)
+            return;
+
+        if (ent.Comp.Whitelist is not null && !_whitelist.IsValid(ent.Comp.Whitelist, args.OtherEntity))
+            return;
+
+        if (ent.Comp.TriggerSound is not null)
+            _audio.PlayPvs(ent.Comp.TriggerSound, ent);
+
+        var triggerCoords = Transform(ent).Coordinates;
+
+        foreach (var effect in ent.Comp.Effects)
+        {
+            effect.Effect(EntityManager, new OE14SpellEffectBaseArgs(ent.Comp.Owner, ent, args.OtherEntity, triggerCoords));
+        }
+
+        QueueDel(ent);
     }
 
     private void OnStartCollide(Entity<OE14SpellEffectOnCollideComponent> ent, ref StartCollideEvent args)

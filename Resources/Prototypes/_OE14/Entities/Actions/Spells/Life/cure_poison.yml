@@ -2,16 +2,26 @@
   id: OE14ActionSpellBloodPurification
   parent: OE14ActionSpellBase
   name: Blood purification
-  description: You cleanse the target's blood of poisons and acids, and restore its volume slightly
+  description: Você purifica o sangue do alvo de venenos e ácidos. Funciona em estado crítico.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.5
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você purifica o sangue do alvo de venenos e ácidos. Funciona em estado crítico.
+    scaleEntries:
+    - label: Cura
+      baseValue: 30.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 10
   - type: OE14ActionSpeaking
     startSpeech: "Nella coda..."
     endSpeech: "sta il veleno"
   - type: OE14ActionTargetMobStatusRequired
+    allowedStates:
+    - Alive
+    - Critical
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneBloodPurification
   - type: Action
@@ -38,14 +48,14 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectBloodPurification
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Poison: -10
+            Bloodloss: -10
+            Caustic: -10
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Poison: -10
-              Bloodloss: -10
-              Caustic: -10
         - !type:Jitter
         - !type:ModifyBloodLevel
           amount: 25

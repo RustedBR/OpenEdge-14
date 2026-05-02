@@ -1,9 +1,18 @@
 - type: entity
   id: OE14ActionSpellFlashLight
   parent: OE14ActionSpellBase
-  name: Flash Light
-  description: Creates a flash of bright, blinding light.
+  name: Flash de luz
+  description: Cria um flash de luz intensa e ofuscante.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Cria um flash de luz intensa e ofuscante.
+    scaleEntries:
+    - label: Raio
+      baseValue: 4.0
+      unit: " tiles"
+      decimals: 0
+      isAdditive: true
+      intBonus: 0.334
   - type: OE14ActionManaCost
     manaCost: 10
   - type: OE14ActionSpeaking
@@ -20,6 +29,7 @@
       sprite: _OE14/Actions/Spells/light.rsi
       state: flash_light
   - type: TargetAction
+    checkCanAccess: false
     range: 10
   - type: WorldTargetAction
     event: !type:OE14WorldTargetModularEffectEvent
@@ -28,9 +38,13 @@
         spawns:
         - OE14ImpactEffectFlashLight
       effects:
+      - !type:OE14SpellFlashArea
+        baseRange: 4
+        intDivisor: 3
+        flashDuration: 4
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
-        - OE14SpawnEffectFlashLight
+        - OE14SpellFlashEffect
 
 - type: entity
   id: OE14RuneFlashLight

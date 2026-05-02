@@ -1,11 +1,18 @@
 - type: entity
   id: OE14ActionSpellHeat
   parent: OE14ActionSpellBase
-  name: Heat
-  description: You start to heat the target up a lot, burning it from the inside.
+  name: Calor
+  description: Você começa a aquecer o alvo intensamente, queimando-o por dentro.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.8
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você começa a aquecer o alvo intensamente, queimando-o por dentro.
+    scaleEntries:
+    - label: Aquecimento
+      baseValue: 25.0
+      unit: " K/s"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 7
   - type: OE14ActionSpeaking
@@ -19,8 +26,8 @@
       sprite: _OE14/Actions/Spells/fire.rsi
       state: heat
   - type: DoAfterArgs
-    hidden: true
-    repeat: true
+    breakOnDamage: true
+    delay: 1.0
     distanceThreshold: 5
   - type: TargetAction
     range: 8
@@ -33,6 +40,7 @@
         - OE14ImpactEffectHeat
       - !type:OE14AdjustAllSolutionThermalEnergy
         delta: 2500
+        scaleWithCasterInt: true
       - !type:OE14SpellApplyEntityEffect
         effects:
         - !type:AdjustTemperature

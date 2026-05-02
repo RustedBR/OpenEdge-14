@@ -1,9 +1,18 @@
 - type: entity
   id: OE14ActionSpellBeerCreation
   parent: OE14ActionSpellBase
-  name: Beer creation
-  description: A secret spell that materializes beer from pure mana.
+  name: Criação de cerveja
+  description: Uma magia secreta que materializa cerveja a partir de mana pura.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Uma magia secreta que materializa cerveja a partir de mana pura.
+    scaleEntries:
+    - label: Quantidade
+      baseValue: 10.0
+      unit: "u"
+      decimals: 0
+      isAdditive: true
+      intBonus: 1.0
   - type: Sprite
     sprite: _OE14/Actions/Spells/water.rsi
     state: beer_creation
@@ -31,6 +40,7 @@
       - !type:OE14SpellSpawnInHandEntity
         spawns:
         - OE14LiquidDropBeer
+        intBonusSolutionQuantity: 1.0
 
 - type: entity
   id: OE14RuneBeerCreation

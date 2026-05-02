@@ -1,9 +1,16 @@
 - type: entity
   id: OE14ActionSpellIceDagger
   parent: OE14ActionSpellBase
-  name: Ice dagger
-  description: You form an icy sharp dagger that will do for temporary use.
+  name: Adaga de gelo
+  description: Você forma uma adaga de gelo afiada para uso temporário.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você forma uma adaga de gelo afiada para uso temporário.
+    scaleEntries:
+    - label: Dano
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 25
   - type: OE14ActionSpeaking
@@ -28,6 +35,7 @@
       - !type:OE14SpellSpawnInHandEntity
         spawns:
         - OE14WeaponDaggerIce
+        scaleWeaponDamage: true
 
 - type: entity
   name: ice dagger

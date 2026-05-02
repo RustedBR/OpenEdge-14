@@ -1,11 +1,20 @@
 - type: entity
   id: OE14ActionSpellMagicArmor
   parent: OE14ActionSpellBase
-  name: Magic Armor
-  description: You surround the target with a short-lived magical barrier that absorbs some of the damage it receives.
+  name: Armadura mágica
+  description: Você envolve o alvo em uma barreira mágica que absorve parte do dano recebido.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.5
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você envolve o alvo em uma barreira mágica que absorve parte do dano recebido.
+    scaleEntries:
+    - label: Duração
+      baseValue: 20.0
+      unit: "s"
+      decimals: 0
+      isAdditive: true
+      intBonus: 1.0
   - type: OE14ActionManaCost
     manaCost: 15
   - type: DoAfterArgs
@@ -34,3 +43,4 @@
       - !type:OE14SpellApplyStatusEffect
         statusEffect: OE14StatusEffectMagicArmor
         duration: 20
+        intDurationScale: 1

@@ -120,6 +120,20 @@
   - !type:NeedPrerequisite
     prerequisite: HydrosophistryT2
 
+- type: oe14Skill
+  id: OE14ActionSpellIceTrap
+  skillUiPosition: 7, 8
+  tree: Hydrosophistry
+  icon:
+    sprite: _OE14/Actions/Spells/water.rsi
+    state: ice_trap
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellIceTrap
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: HydrosophistryT2
+
 # T3
 
 #- type: oe14Skill

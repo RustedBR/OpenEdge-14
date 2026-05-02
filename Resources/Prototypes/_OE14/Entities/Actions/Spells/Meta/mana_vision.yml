@@ -1,8 +1,8 @@
 - type: entity
   id: OE14ActionToggleMagicVision
   parent: BaseMentalAction
-  name: Magical vision
-  description: You focus on magical flows to track recent events and scan the aura imprints of other living beings.
+  name: Visão mágica
+  description: Você se concentra nos fluxos mágicos para rastrear eventos recentes e escanear as marcas de aura de outros seres vivos.
   components:
   - type: Action
     useDelay: 0.5

@@ -1,9 +1,24 @@
 - type: entity
   id: OE14ActionSpellSearchOfLife
   parent: OE14ActionSpellBase
-  name: Search of life
-  description: Detects all living things in a large radius around you.
+  name: Busca de entidades
+  description: Detecta todas as entidades vivas em um grande raio ao seu redor.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Detecta todas as entidades vivas em um grande raio ao seu redor.
+    scaleEntries:
+    - label: Raio
+      baseValue: 20.0
+      unit: " tiles"
+      decimals: 0
+      isAdditive: true
+      intBonus: 3.0
+    - label: Entidades
+      baseValue: 0.0
+      unit: ""
+      decimals: 0
+      isAdditive: true
+      intBonus: 1.0
   - type: OE14ActionManaCost
     manaCost: 30
   - type: OE14ActionSpeaking
@@ -28,7 +43,9 @@
         - OE14ImpactEffectSearchOfLife
       - !type:OE14SpellPointerToAlive
         pointerEntity: OE14SearchOfLifePointer
-        searchRange: 30
+        searchRange: 20
+        intRangeBonus: 3
+        maxTargetsFromInt: true
 
 - type: entity
   id: OE14ImpactEffectSearchOfLife

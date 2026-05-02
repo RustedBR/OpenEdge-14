@@ -1,11 +1,18 @@
 - type: entity
   id: OE14ActionSpellLightningStrikeSmall
   parent: OE14ActionSpellBase
-  name: Small lightning strike
-  description: You charge a lightning bolt that burns a medium amount of stamina from the target.
+  name: Raio menor
+  description: Você carrega um raio que queima parte da estamina do alvo.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.5
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você carrega um raio que queima parte da estamina do alvo.
+    scaleEntries:
+    - label: Dano
+      baseValue: 4.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 7
   - type: OE14ActionDangerous
@@ -25,16 +32,15 @@
         - OE14ElectrifiedEffect
       - !type:OE14SpellCreateBeam
         beamProto: OE14LightningStrikeSmallBeam
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Shock: 4
       - !type:OE14SpellApplyEntityEffect
         effects:
         - !type:Jitter
         - !type:OE14StaminaChange
           staminaDelta: -15
-        - !type:HealthChange
-          ignoreResistances: false
-          damage:
-            types:
-              Shock: 4
       - !type:OE14SpellThrowFromUser
         throwPower: 2
         distance: 0.5

@@ -1,11 +1,18 @@
 - type: entity
   id: OE14ActionSpellFreeze
   parent: OE14ActionSpellBase
-  name: Freeze
-  description: You begin to severely cool down the target, slowing its movement speed.
+  name: Congelar
+  description: Você começa a resfriar severamente o alvo, diminuindo sua velocidade.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.8
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você começa a resfriar severamente o alvo, diminuindo sua velocidade.
+    scaleEntries:
+    - label: Resfriamento
+      baseValue: 8.0
+      unit: " K/s"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 7
   - type: OE14ActionSpeaking
@@ -14,12 +21,11 @@
     proto: OE14RunePlantFreeze
   - type: OE14ActionDangerous
   - type: DoAfterArgs
-    repeat: true
     breakOnDamage: true
     delay: 1.5
     distanceThreshold: 5
   - type: Action
-    useDelay: 15
+    useDelay: 3
     icon:
       sprite: _OE14/Actions/Spells/water.rsi
       state: freeze
@@ -33,7 +39,8 @@
         spawns:
         - OE14ImpactEffectFreeze
       - !type:OE14AdjustAllSolutionThermalEnergy
-        delta: -1200 # One full use cools 100u from ~300k to ~250k
+        delta: -1200
+        scaleWithCasterInt: true
       - !type:OE14SpellApplyEntityEffect
         effects:
         - !type:MovespeedModifier

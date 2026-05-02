@@ -1,4 +1,5 @@
 using Content.Server._OE14.MagicSpellStorage.Components;
+using Content.Shared._OE14.CharacterStats;
 using Content.Shared._OE14.MagicSpell.Events;
 using Content.Shared._OE14.MagicSpellStorage;
 using Content.Shared.Actions;
@@ -77,6 +78,7 @@ public sealed partial class OE14SpellStorageSystem : OE14SharedSpellStorageSyste
             return false;
 
         _actions.GrantActions(user, storage.Comp.SpellEntities, storage.Owner);
+        RaiseLocalEvent(user, new OE14StatsUpdatedEvent());
         return true;
     }
 }
