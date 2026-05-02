@@ -1,4 +1,6 @@
 using System.Numerics;
+using Content.Shared._OE14.CharacterStats.Components;
+using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
@@ -23,6 +25,13 @@ public sealed partial class OE14SpellProjectile : OE14SpellEffect
 
     [DataField]
     public bool SaveVelocity = false;
+
+    /// <summary>
+    /// When true, the spawned projectile's damage is multiplied by the caster's INT.
+    /// Formula: INT 5 = 1.0x, INT 10 = 1.5x, INT 1 = 0.5x.
+    /// </summary>
+    [DataField]
+    public bool ScaleWithCasterInt = false;
 
     public override void Effect(EntityManager entManager, OE14SpellEffectBaseArgs args)
     {
@@ -70,10 +79,26 @@ public sealed partial class OE14SpellProjectile : OE14SpellEffect
 
             var ent = entManager.PredictedSpawnAtPosition(Prototype, spawnCoords);
 
+            // Scale projectile damage by caster Intelligence
+            if (ScaleWithCasterInt &&
+                args.User is not null &&
+                entManager.TryGetComponent<OE14CharacterStatsComponent>(args.User.Value, out var casterStats) &&
+                entManager.TryGetComponent<ProjectileComponent>(ent, out var proj))
+            {
+                var effInt = Math.Clamp(
+                    casterStats.Intelligence + casterStats.IntelligenceModifier,
+                    1,
+                    casterStats.MaxStatValue);
+                var multiplier = effInt >= 5
+                    ? 1.0f + (effInt - 5) * 0.10f
+                    : 1.0f + (effInt - 5) * 0.125f;
+                proj.Damage *= multiplier;
+            }
+
             var direction = offsetedTargetPoint.ToMapPos(entManager, transform) -
                             spawnCoords.ToMapPos(entManager, transform);
 
-            gunSystem.ShootProjectile(ent, direction, SaveVelocity ? userVelocity : new Vector2(), args.User.Value, args.User, ProjectileSpeed);
+            gunSystem.ShootProjectile(ent, direction, SaveVelocity ? userVelocity : new Vector2(), args.User!.Value, args.User, ProjectileSpeed);
         }
     }
 }

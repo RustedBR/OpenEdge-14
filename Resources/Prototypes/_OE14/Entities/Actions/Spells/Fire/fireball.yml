@@ -1,11 +1,18 @@
 - type: entity
   id: OE14ActionSpellFireball
   parent: OE14ActionSpellBase
-  name: Fireball
-  description: An effective method of destruction - an explosive fireball
+  name: Bola de fogo
+  description: Um método eficaz de destruição — uma bola de fogo explosiva.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.3
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Um método eficaz de destruição — uma bola de fogo explosiva.
+    scaleEntries:
+    - label: Dano
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 20
   - type: OE14ActionSpeaking
@@ -33,6 +40,7 @@
         - OE14ImpactEffectFireball
       - !type:OE14SpellProjectile
         prototype: OE14Fireball
+        scaleWithCasterInt: true
 
 - type: entity
   id: OE14RuneFireball

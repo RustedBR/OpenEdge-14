@@ -1,9 +1,16 @@
 - type: entity
   id: OE14ActionSpellElectricTrap
   parent: OE14ActionSpellBase
-  name: Electric trap
-  description: Creates a electric trap at the selected location. Don't forget to recharge it with mana.
+  name: Armadilha elétrica
+  description: Cria uma armadilha elétrica no local selecionado. Não esqueça de recarregá-la com mana.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Cria uma armadilha elétrica no local selecionado. Não esqueça de recarregá-la com mana.
+    scaleEntries:
+    - label: Dano
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.9
   - type: OE14ActionManaCost
@@ -19,6 +26,7 @@
       sprite: _OE14/Actions/Spells/electromancy.rsi
       state: electric_trap
   - type: TargetAction
+    checkCanAccess: false
     range: 3
   - type: DoAfterArgs
     delay: 2
@@ -29,9 +37,8 @@
         spawns:
         - OE14ImpactEffectElectricTrap
       effects:
-      - !type:OE14SpellSpawnEntityOnTarget
-        spawns:
-        - OE14SpawnMagicElectricTrap
+      - !type:OE14SpellSpawnTrapEntityOnTarget
+        trap: OE14SpawnMagicElectricTrap
 
 - type: entity
   id: OE14RuneElectricTrap
@@ -105,11 +112,36 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: TriggerOnCollide
-    fixtureID: trap
-  - type: SpawnOnTrigger
-    proto: OE14ActionSpellElectricTrapEffect
-  - type: DeleteOnTrigger
+  - type: OE14TrapCollide
+    whitelist:
+      components:
+      - MobState
+    triggerSound: !type:SoundCollectionSpecifier
+      collection: ToySqueak
+    effects:
+    - !type:OE14SpellArea
+      range: 2
+      affectCaster: false
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Shock: 10
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:Jitter
+        - !type:OE14StaminaChange
+          staminaDelta: -100
+        - !type:MovespeedModifier
+          walkSpeedModifier: 1.3
+          sprintSpeedModifier: 1.3
+          statusLifetime: 4
+    - !type:OE14SpellSpawnEntityOnTarget
+      spawns:
+      - OE14ActionSpellElectricTrapEffect
 
 - type: entity
   id: OE14ActionSpellElectricTrapEffect

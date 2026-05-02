@@ -26,9 +26,10 @@ oe14-magic-spell-ssd = Não toque em jogadores desconectados!
 oe14-magic-spell-target-not-mob = O alvo deve ser um ser vivo!
 
 oe14-magic-spell-target-mob-state = Só pode ser usado em alvos {$state}!
-oe14-magic-spell-target-mob-state-dead = mortos 
+oe14-magic-spell-target-mob-state-dead = mortos
 oe14-magic-spell-target-mob-state-live = vivos
 oe14-magic-spell-target-mob-state-critical = morrendo
+oe14-magic-spell-target-mob-state-not-dead = Não pode ser usada em alvos mortos.
 
 oe14-magic-spell-target-god-follower = Seu alvo deve ser seu seguidor!
 

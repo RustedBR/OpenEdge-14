@@ -1,11 +1,26 @@
 - type: entity
   id: OE14ActionSpellSpeedBallade
   parent: OE14ActionSpellBase
-  name: Speed ballade
-  description: Your music is filled with accelerating magic, speeding up the movement of all creatures nearby
+  name: Balada da velocidade
+  description: Sua música está cheia de magia acelerada, aumentando a velocidade dos seres próximos.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 1
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Sua música está cheia de magia acelerada, aumentando a velocidade dos seres próximos.
+    scaleEntries:
+    - label: Alcance
+      baseValue: 5.0
+      unit: " tiles"
+      decimals: 1
+      isAdditive: true
+      intBonus: 0.1
+    - label: Alvos
+      baseValue: 4.0
+      unit: ""
+      decimals: 0
+      isAdditive: true
+      intBonus: 0.2
   - type: OE14ActionManaCost
     manaCost: 1
   - type: DoAfterArgs
@@ -27,6 +42,8 @@
         affectCaster: true
         range: 5
         maxTargets: 4
+        intRangeBonus: 0.1
+        intMaxTargetsBonus: 0.2
         whitelist:
           components:
           - MobState

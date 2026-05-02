@@ -1,14 +1,29 @@
 - type: entity
   id: OE14ActionSpellHellBallade
   parent: OE14ActionSpellBase
-  name: Hell ballade
-  description: Your music is infused with the power of fire and literally burns you and your enemies up.
+  name: Balada infernal
+  description: Sua música é infundida com o poder do fogo, queimando você e seus inimigos.
   components:
   - type: Sprite
     sprite: _OE14/Actions/Spells/fire.rsi
     state: fire_music
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.5
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Sua música é infundida com o poder do fogo, queimando você e seus inimigos.
+    scaleEntries:
+    - label: Alcance
+      baseValue: 3.0
+      unit: " tiles"
+      decimals: 1
+      isAdditive: true
+      intBonus: 0.1
+    - label: Alvos
+      baseValue: 4.0
+      unit: ""
+      decimals: 0
+      isAdditive: true
+      intBonus: 0.2
   - type: OE14ActionManaCost
     manaCost: 8
   - type: OE14ActionRequiredMusicTool
@@ -31,6 +46,8 @@
       - !type:OE14SpellArea
         range: 3
         maxTargets: 4
+        intRangeBonus: 0.1
+        intMaxTargetsBonus: 0.2
         whitelist:
           components:
           - MobState

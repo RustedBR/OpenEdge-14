@@ -1,11 +1,18 @@
 - type: entity
   id: OE14ActionSpellManaConsume
   parent: OE14ActionSpellBase
-  name: Mana consume
-  description: You absorb a small amount of mana from the target.
+  name: Absorção de mana
+  description: Você absorve mana do alvo.
   components:
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneManaConsume
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você absorve mana do alvo.
+    scaleEntries:
+    - label: Mana drenada
+      baseValue: 10.0
+      unit: " mana"
+      decimals: 1
   - type: Action
     useDelay: 5
     icon:
@@ -32,12 +39,13 @@
         - OE14ImpactEffectManaConsume
       - !type:OE14SpellConsumeManaEffect
         mana: 10
+        scaleWithCasterInt: true
 
 - type: entity
   id: OE14ActionSpellManaConsumeElf
   parent: OE14ActionSpellManaConsume
-  name: Carefull mana consume
-  description: You absorb mana at a tremendous rate without dealing damage to the mana holder.
+  name: Absorção de mana cuidadosa
+  description: Você absorve mana a uma taxa tremenda sem causar dano ao portador. A quantidade drenada escala com Inteligência.
   components:
   - type: EntityTargetAction
     event: !type:OE14EntityTargetModularEffectEvent
@@ -48,6 +56,7 @@
       - !type:OE14SpellConsumeManaEffect
         safe: true
         mana: 20
+        scaleWithCasterInt: true
 
 - type: entity
   id: OE14RuneManaConsume

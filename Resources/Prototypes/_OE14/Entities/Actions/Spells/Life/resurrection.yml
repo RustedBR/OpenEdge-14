@@ -2,10 +2,17 @@
   id: OE14ActionSpellResurrection
   parent: OE14ActionSpellBase
   name: Resurrection
-  description: You're trying to put the soul back into the body.
+  description: Você tenta devolver a alma ao corpo.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.2
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você tenta devolver a alma ao corpo.
+    scaleEntries:
+    - label: Cura
+      baseValue: 600.0
+      unit: " HP"
+      decimals: 0
   - type: OE14ActionManaCost
     manaCost: 100
   - type: OE14ActionTargetMobStatusRequired
@@ -41,6 +48,11 @@
         spawns:
         - OE14ImpactEffectResurrection
       - !type:OE14SpellResurrectionEffect
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Asphyxiation: -500
+            Bloodloss: -100
       - !type:OE14SpellApplyEntityEffect
         effects:
         - !type:ChemVomit
@@ -49,11 +61,6 @@
           showInChat: false
           emote: Cough
           probability: 0.3
-        - !type:HealthChange
-          damage:
-            types:
-              Asphyxiation: -500
-              Bloodloss: -100
         - !type:Jitter
 
 - type: entity

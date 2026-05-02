@@ -1,12 +1,19 @@
 - type: entity
   id: OE14ActionSpellIceShards
   parent: OE14ActionSpellBase
-  name: Ice Shards
-  description: Fast ice needles, for rapid shooting of targets.
+  name: Fragmentos de gelo
+  description: Dispara agulhas de gelo rapidamente no alvo.
   components:
   - type: Sprite
     sprite: _OE14/Actions/Spells/water.rsi
     state: ice_shards
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Dispara agulhas de gelo rapidamente no alvo.
+    scaleEntries:
+    - label: Dano por agulha
+      baseValue: 7.5
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 5
   - type: OE14ActionSpeaking
@@ -26,6 +33,7 @@
       effects:
       - !type:OE14SpellProjectile
         prototype: OE14IceShard
+        scaleWithCasterInt: true
       - !type:OE14SpellSpawnEntityOnUser
         spawns:
         - OE14ImpactEffectWaterCreation

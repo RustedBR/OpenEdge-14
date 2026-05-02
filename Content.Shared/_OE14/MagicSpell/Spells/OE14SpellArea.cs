@@ -1,3 +1,4 @@
+using Content.Shared._OE14.CharacterStats.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map;
 
@@ -23,6 +24,20 @@ public sealed partial class OE14SpellArea : OE14SpellEffect
     [DataField]
     public bool AffectCaster = false;
 
+    /// <summary>
+    /// Adds (effInt * IntRangeBonus) to the base Range.
+    /// INT 5 = +0.5 tiles per 0.1 bonus; INT 10 = +1.0 tile per 0.1 bonus.
+    /// </summary>
+    [DataField]
+    public float IntRangeBonus = 0f;
+
+    /// <summary>
+    /// Adds floor(effInt * IntMaxTargetsBonus) to MaxTargets.
+    /// Only applied when MaxTargets > 0.
+    /// </summary>
+    [DataField]
+    public float IntMaxTargetsBonus = 0f;
+
     public override void Effect(EntityManager entManager, OE14SpellEffectBaseArgs args)
     {
         EntityCoordinates? targetPoint = null;
@@ -36,10 +51,23 @@ public sealed partial class OE14SpellArea : OE14SpellEffect
         if (targetPoint is null)
             return;
 
+        var effectiveRange = Range;
+        var effectiveMaxTargets = MaxTargets;
+
+        if ((IntRangeBonus > 0f || IntMaxTargetsBonus > 0f) &&
+            args.User is not null &&
+            entManager.TryGetComponent<OE14CharacterStatsComponent>(args.User.Value, out var stats))
+        {
+            var effInt = Math.Clamp(stats.Intelligence + stats.IntelligenceModifier, 1, stats.MaxStatValue);
+            effectiveRange += effInt * IntRangeBonus;
+            if (MaxTargets > 0)
+                effectiveMaxTargets += (int)(effInt * IntMaxTargetsBonus);
+        }
+
         var lookup = entManager.System<EntityLookupSystem>();
         var whitelist = entManager.System<EntityWhitelistSystem>();
 
-        var entitiesAround = lookup.GetEntitiesInRange(targetPoint.Value, Range, LookupFlags.Uncontained);
+        var entitiesAround = lookup.GetEntitiesInRange(targetPoint.Value, effectiveRange, LookupFlags.Uncontained);
 
         var count = 0;
         foreach (var entity in entitiesAround)
@@ -52,12 +80,12 @@ public sealed partial class OE14SpellArea : OE14SpellEffect
 
             foreach (var effect in Effects)
             {
-                effect.Effect(entManager, new OE14SpellEffectBaseArgs(args.User, null, entity,  targetPoint));
+                effect.Effect(entManager, new OE14SpellEffectBaseArgs(args.User, null, entity, targetPoint));
             }
 
             count++;
 
-            if (MaxTargets > 0 && count >= MaxTargets)
+            if (effectiveMaxTargets > 0 && count >= effectiveMaxTargets)
                 break;
         }
     }

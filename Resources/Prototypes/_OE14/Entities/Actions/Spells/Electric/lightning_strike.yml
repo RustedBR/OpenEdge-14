@@ -1,11 +1,18 @@
 - type: entity
   id: OE14ActionSpellLightningStrike
   parent: OE14ActionSpellBase
-  name: Lightning strike
-  description: You charge a powerful lightning bolt that burns a large amount of stamina from the target.
+  name: Raio
+  description: Você carrega um raio poderoso que queima boa parte da estamina do alvo.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.5
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você carrega um raio poderoso que queima boa parte da estamina do alvo.
+    scaleEntries:
+    - label: Dano
+      baseValue: 12.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 20
   - type: OE14ActionSpeaking
@@ -33,13 +40,12 @@
         - OE14ElectrifiedEffect
       - !type:OE14SpellCreateBeam
         beamProto: OE14LightningStrikeBeam
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Shock: 12
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:HealthChange
-          ignoreResistances: false
-          damage:
-            types:
-              Shock: 12
         - !type:Jitter
         - !type:OE14StaminaChange
           staminaDelta: -80

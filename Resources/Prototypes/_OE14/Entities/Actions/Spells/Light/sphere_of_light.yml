@@ -1,9 +1,18 @@
 - type: entity
   id: OE14ActionSpellSphereOfLight
   parent: OE14ActionSpellBase
-  name: Sphere of Light
-  description: Materialization of a bright and safe light source.
+  name: Esfera de luz
+  description: Materializa uma esfera de luz brilhante e segura.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Materializa uma esfera de luz brilhante e segura.
+    scaleEntries:
+    - label: Duração
+      baseValue: 100.0
+      unit: "s"
+      decimals: 0
+      isAdditive: true
+      intBonus: 10.0
   - type: OE14ActionManaCost
     manaCost: 10
   - type: OE14ActionSpeaking
@@ -34,7 +43,8 @@
         - OE14ImpactEffectSphereOfLight
       - !type:OE14SpellApplyStatusEffect
         statusEffect: OE14StatusEffectGlowing
-        duration: 120
+        duration: 100
+        intDurationScale: 10
 
 - type: entity
   id: OE14RuneSphereOfLight

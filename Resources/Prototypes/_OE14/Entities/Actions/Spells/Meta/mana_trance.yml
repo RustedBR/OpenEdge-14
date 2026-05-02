@@ -1,8 +1,8 @@
 - type: entity
   id: OE14ActionSpellManaTrance
   parent: OE14ActionSpellBase
-  name: Mana trance
-  description: You go into a trance for a while, restoring mana.
+  name: Transe de mana
+  description: Você entra em transe por um tempo, restaurando mana.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.05
@@ -13,6 +13,13 @@
     breakOnDamage: true
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneManaTrance
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você entra em transe por um tempo, restaurando mana.
+    scaleEntries:
+    - label: Mana restaurada/tick
+      baseValue: 2.0
+      unit: " mana"
+      decimals: 1
   - type: Action
     useDelay: 60
     icon:
@@ -24,11 +31,12 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectManaGift
+      - !type:OE14SpellManaChangeScaled
+        manaDelta: 2
+        safe: true
+        scaleWithCasterInt: true
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:OE14ManaChange
-          manaDelta: 2
-          safe: true
         - !type:HealthChange
           damage:
             types:

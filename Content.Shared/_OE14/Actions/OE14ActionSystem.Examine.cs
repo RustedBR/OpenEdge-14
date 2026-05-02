@@ -60,12 +60,22 @@ public abstract partial class OE14SharedActionSystem
 
     private void OnMobStateExamined(Entity<OE14ActionTargetMobStatusRequiredComponent> ent, ref ExaminedEvent args)
     {
+        var allowed = ent.Comp.AllowedStates;
+
+        // When alive+critical are allowed (but not dead), use the shorter negative form.
+        if (allowed.Contains(MobState.Alive) && allowed.Contains(MobState.Critical) && !allowed.Contains(MobState.Dead))
+        {
+            args.PushMarkup(Loc.GetString("oe14-magic-spell-target-mob-state-not-dead"));
+            return;
+        }
+
         var states = string.Join(", ",
-            ent.Comp.AllowedStates.Select(state => state switch
+            allowed.Select(state => state switch
         {
             MobState.Alive => Loc.GetString("oe14-magic-spell-target-mob-state-live"),
             MobState.Dead => Loc.GetString("oe14-magic-spell-target-mob-state-dead"),
-            MobState.Critical => Loc.GetString("oe14-magic-spell-target-mob-state-critical")
+            MobState.Critical => Loc.GetString("oe14-magic-spell-target-mob-state-critical"),
+            _ => state.ToString()
         }));
 
         args.PushMarkup(Loc.GetString("oe14-magic-spell-target-mob-state", ("state", states)));

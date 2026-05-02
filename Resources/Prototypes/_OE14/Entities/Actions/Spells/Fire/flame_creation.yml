@@ -1,9 +1,24 @@
 - type: entity
   id: OE14ActionSpellFlameCreation
   parent: OE14ActionSpellBase
-  name: Flame creation
-  description: A artificial flame forms in your hand, illuminating your surroundings. You can throw it to use it as a disposable weapon.
+  name: Criação de chama
+  description: Uma chama artificial se forma em sua mão, iluminando os arredores. Você pode arremessá-la para usá-la como arma.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Uma chama artificial se forma em sua mão, iluminando os arredores. Você pode arremessá-la para usá-la como arma.
+    scaleEntries:
+    - label: Dano corpo a corpo
+      baseValue: 8.0
+      unit: " HP"
+      decimals: 1
+      isAdditive: true
+      intBonus: 1.0
+    - label: Dano de arremesso
+      baseValue: 12.0
+      unit: " HP"
+      decimals: 1
+      isAdditive: true
+      intBonus: 1.0
   - type: OE14ActionManaCost
     manaCost: 5
   - type: OE14ActionSpeaking
@@ -29,6 +44,7 @@
       - !type:OE14SpellSpawnInHandEntity
         spawns:
         - OE14FlameCreationArtificialFlame
+        scaleWeaponDamage: true
 
 - type: entity
   id: OE14RuneFlameCreation

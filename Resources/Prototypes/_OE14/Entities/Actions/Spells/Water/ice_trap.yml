@@ -1,9 +1,16 @@
 - type: entity
   id: OE14ActionSpellIceTrap
   parent: OE14ActionSpellBase
-  name: Ice trap
-  description: Creates a ice trap at the selected location. Don't forget to recharge it with mana.
+  name: Armadilha de gelo
+  description: Cria uma armadilha de gelo no local selecionado. Não esqueça de recarregá-la com mana.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Cria uma armadilha de gelo no local selecionado. Não esqueça de recarregá-la com mana.
+    scaleEntries:
+    - label: Dano
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.9
   - type: OE14ActionManaCost
@@ -21,6 +28,7 @@
   - type: DoAfterArgs
     delay: 5
   - type: TargetAction
+    checkCanAccess: false
     range: 3
   - type: WorldTargetAction
     event: !type:OE14WorldTargetModularEffectEvent
@@ -29,9 +37,8 @@
         spawns:
         - OE14ImpactEffectIceTrap
       effects:
-      - !type:OE14SpellSpawnEntityOnTarget
-        spawns:
-        - OE14SpawnMagicIceTrap
+      - !type:OE14SpellSpawnTrapEntityOnTarget
+        trap: OE14SpawnMagicIceTrap
 
 - type: entity
   id: OE14RuneIceTrap
@@ -105,14 +112,39 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: TriggerOnCollide
-    fixtureID: trap
-  - type: DeleteOnTrigger
-  - type: EmitSoundOnTrigger
-    sound:
+  - type: OE14TrapCollide
+    whitelist:
+      components:
+      - MobState
+    triggerSound: !type:SoundCollectionSpecifier
       collection: ToySqueak
-  - type: SpawnOnTrigger
-    proto: OE14ActionSpellIceTrapEffect
+    effects:
+    - !type:OE14SpellArea
+      range: 1
+      affectCaster: false
+      whitelist:
+        components:
+        - MobState
+      effects:
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Cold: 10
+      - !type:OE14SpellApplyEntityEffect
+        effects:
+        - !type:MovespeedModifier
+          walkSpeedModifier: 0.0
+          sprintSpeedModifier: 0.0
+          statusLifetime: 3
+        - !type:AdjustTemperature
+          amount: -50000
+        - !type:ExtinguishReaction
+      - !type:OE14SpellSpawnEntityOnTarget
+        spawns:
+        - OE14WindowMagicIceBlock
+    - !type:OE14SpellSpawnEntityOnTarget
+      spawns:
+      - OE14ActionSpellIceTrapEffect
 
 - type: entity
   id: OE14ActionSpellIceTrapEffect

@@ -1,11 +1,30 @@
 - type: entity
   id: OE14ActionSpellMagicBallade
   parent: OE14ActionSpellBase
-  name: Magic ballade
-  description: With your music, you infuse the objects around you with mana
+  name: Balada mágica
+  description: Com sua música, você infunde mana nos objetos ao redor.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.8
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Com sua música, você infunde mana nos objetos ao redor.
+    scaleEntries:
+    - label: Alcance
+      baseValue: 5.0
+      unit: " tiles"
+      decimals: 1
+      isAdditive: true
+      intBonus: 0.1
+    - label: Alvos
+      baseValue: 5.0
+      unit: ""
+      decimals: 0
+      isAdditive: true
+      intBonus: 0.2
+    - label: Mana/alvo
+      baseValue: 1.2
+      unit: " mana"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 5
     canModifyManacost: false
@@ -28,6 +47,8 @@
       - !type:OE14SpellArea
         range: 5
         maxTargets: 5
+        intRangeBonus: 0.1
+        intMaxTargetsBonus: 0.2
         whitelist:
           components:
           - OE14MagicEnergyContainer
@@ -36,11 +57,10 @@
         - !type:OE14SpellSpawnEntityOnTarget
           spawns:
           - OE14ImpactEffectMagicBallade
-        - !type:OE14SpellApplyEntityEffect
-          effects:
-          - !type:OE14ManaChange
-            manaDelta: 1.2
-            safe: true
+        - !type:OE14SpellManaChangeScaled
+          manaDelta: 1.2
+          safe: true
+          scaleWithCasterInt: true
 
 - type: entity
   id: OE14ImpactEffectMagicBallade

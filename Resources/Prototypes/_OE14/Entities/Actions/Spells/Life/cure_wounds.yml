@@ -2,10 +2,17 @@
   id: OE14ActionSpellCureWounds
   parent: OE14ActionSpellBase
   name: Cure wounds
-  description: You heal the target from physical damage
+  description: Você cura o alvo de danos físicos. Funciona em estado crítico.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.5
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você cura o alvo de danos físicos. Funciona em estado crítico.
+    scaleEntries:
+    - label: Cura
+      baseValue: 30.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 10
   - type: DoAfterArgs
@@ -15,6 +22,9 @@
     startSpeech: "Et curabuntur..."
     endSpeech: "vulnera tua"
   - type: OE14ActionTargetMobStatusRequired
+    allowedStates:
+    - Alive
+    - Critical
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneCureWounds
   - type: Action
@@ -38,14 +48,14 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectCureWounds
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Slash: -10
+            Blunt: -10
+            Piercing: -10
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Slash: -10
-              Blunt: -10
-              Piercing: -10
         - !type:Jitter
         - !type:ModifyBleedAmount
           amount: -5

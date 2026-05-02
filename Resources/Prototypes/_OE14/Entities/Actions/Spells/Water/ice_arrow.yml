@@ -1,9 +1,20 @@
 - type: entity
   id: OE14ActionSpellIceArrow
   parent: OE14ActionSpellBase
-  name: Ice arrow
-  description: You create a temporary sharp ice arrow that can be used as a disposable bow projectile.
+  name: Flecha de gelo
+  description: Você cria uma flecha de gelo afiada que pode ser usada uma vez em um arco.
   components:
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Você cria uma flecha de gelo afiada que pode ser usada uma vez em um arco.
+    scaleEntries:
+    - label: Dano de perfuração
+      baseValue: 15.0
+      unit: " HP"
+      decimals: 1
+    - label: Dano de frio
+      baseValue: 5.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 7
   - type: OE14ActionSpeaking
@@ -28,6 +39,7 @@
       - !type:OE14SpellSpawnInHandEntity
         spawns:
         - OE14IceArrow
+        scaleWeaponDamage: true
 
 - type: entity
   parent: OE14BaseSpellScrollWater

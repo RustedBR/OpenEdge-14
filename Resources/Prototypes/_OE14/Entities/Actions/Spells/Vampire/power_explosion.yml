@@ -2,11 +2,18 @@
   id: OE14ActionSpellVampirePower3
   parent: OE14ActionSpellBase
   name: Impulse
-  description: By unleashing the power of your ancient vampire clan, you repel everyone and everything around you, stunning them for a long time.
+  description: Desencadeando o poder do seu clã vampírico, você repele todos ao redor por um longo tempo.
   components:
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.4
   - type: OE14MagicEffectVampire
+  - type: OE14ActionIntScaledDescription
+    baseDescription: Desencadeando o poder do seu clã vampírico, você repele todos ao redor por um longo tempo.
+    scaleEntries:
+    - label: Dano por alvo
+      baseValue: 10.0
+      unit: " HP"
+      decimals: 1
   - type: OE14ActionManaCost
     manaCost: 50
   - type: OE14ActionDangerous
@@ -45,10 +52,7 @@
           clientside: true
           spawns:
           - OE14ImpactEffectBloodStep
-        - !type:OE14SpellApplyEntityEffect
-          effects:
-          - !type:HealthChange
-            ignoreResistances: false
-            damage:
-              types:
-                Blunt: 10
+        - !type:OE14SpellApplyDamageScaled
+          damage:
+            types:
+              Blunt: 10

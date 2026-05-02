@@ -37,20 +37,20 @@
       - !type:OE14SpellSpawnEntityOnTarget
         spawns:
         - OE14ImpactEffectBloodEssence
+      - !type:OE14SpellApplyDamageScaled
+        damage:
+          types:
+            Slash: -15
+            Blunt: -15
+            Piercing: -15
+            Poison: -15
+            Bloodloss: -15
+            Caustic: -15
+            Cold: -15
+            Heat: -15
+            Shock: -15
       - !type:OE14SpellApplyEntityEffect
         effects:
-        - !type:HealthChange
-          damage:
-            types:
-              Slash: -15
-              Blunt: -15
-              Piercing: -15
-              Poison: -15
-              Bloodloss: -15
-              Caustic: -15
-              Cold: -15
-              Heat: -15
-              Shock: -15
         - !type:Jitter
         - !type:ModifyBleedAmount
           amount: -25

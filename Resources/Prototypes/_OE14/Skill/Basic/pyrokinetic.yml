@@ -125,6 +125,20 @@
   - !type:NeedPrerequisite
     prerequisite: PyrokineticT2
 
+- type: oe14Skill
+  id: OE14ActionSpellFireTrap
+  skillUiPosition: 7, 8
+  tree: Pyrokinetic
+  icon:
+    sprite: _OE14/Actions/Spells/fire.rsi
+    state: fire_trap
+  effects:
+  - !type:AddAction
+    action: OE14ActionSpellFireTrap
+  restrictions:
+  - !type:NeedPrerequisite
+    prerequisite: PyrokineticT2
+
 # T3
 
 #- type: oe14Skill
