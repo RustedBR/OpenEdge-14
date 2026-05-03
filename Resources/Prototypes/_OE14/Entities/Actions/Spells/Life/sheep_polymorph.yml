@@ -26,7 +26,7 @@
     range: 3
     interactOnMiss: false
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 0.75
     breakOnDamage: true
   - type: EntityTargetAction
     whitelist:

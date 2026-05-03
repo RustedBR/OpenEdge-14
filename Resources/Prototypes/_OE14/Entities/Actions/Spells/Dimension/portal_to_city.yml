@@ -14,7 +14,7 @@
   - type: DoAfterArgs
     breakOnHandChange: false
     breakOnMove: true
-    delay: 2
+    delay: 1
   - type: Action
     useDelay: 30
     icon:

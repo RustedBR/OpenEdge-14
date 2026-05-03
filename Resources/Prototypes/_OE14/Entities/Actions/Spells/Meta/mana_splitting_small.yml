@@ -23,7 +23,7 @@
       sprite: _OE14/Actions/Spells/meta.rsi
       state: counter_spell_small
   - type: DoAfterArgs
-    delay: 1
+    delay: 0.5
     breakOnDamage: true
   - type: TargetAction
     range: 5

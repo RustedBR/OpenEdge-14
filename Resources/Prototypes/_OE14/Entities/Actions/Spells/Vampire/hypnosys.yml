@@ -12,10 +12,9 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneVampireHypnosis
   - type: DoAfterArgs
-    delay: 1
+    delay: 0.5
     breakOnMove: true
     breakOnDamage: true
-    repeat: true
   - type: Action
     useDelay: 120
     icon:

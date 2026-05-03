@@ -27,7 +27,7 @@
       state: heat
   - type: DoAfterArgs
     breakOnDamage: true
-    delay: 1.0
+    delay: 0.5
     distanceThreshold: 5
   - type: TargetAction
     range: 8

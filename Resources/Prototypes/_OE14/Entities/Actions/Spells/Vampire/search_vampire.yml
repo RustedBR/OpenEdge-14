@@ -9,7 +9,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneVampireHypnosis
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 0.75
   - type: Action
     useDelay: 8
     icon:

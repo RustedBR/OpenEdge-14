@@ -28,7 +28,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneVampireResurrection
   - type: DoAfterArgs
-    delay: 5
+    delay: 2.5
   - type: Action
     useDelay: 180
     sound: !type:SoundPathSpecifier

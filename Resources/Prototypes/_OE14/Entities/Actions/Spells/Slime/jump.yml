@@ -6,7 +6,7 @@
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.1
   - type: DoAfterArgs
-    delay: 1
+    delay: 0.5
     hidden: true
   - type: Action
     itemIconStyle: BigAction

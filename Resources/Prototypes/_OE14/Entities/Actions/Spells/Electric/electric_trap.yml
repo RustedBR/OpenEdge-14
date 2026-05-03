@@ -29,7 +29,7 @@
     checkCanAccess: false
     range: 3
   - type: DoAfterArgs
-    delay: 2
+    delay: 1
   - type: WorldTargetAction
     event: !type:OE14WorldTargetModularEffectEvent
       telegraphyEffects:

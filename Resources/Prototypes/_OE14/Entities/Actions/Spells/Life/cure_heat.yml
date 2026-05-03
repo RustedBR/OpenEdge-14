@@ -30,7 +30,7 @@
       sprite: _OE14/Actions/Spells/healing.rsi
       state: cure_burn
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 0.75
     breakOnDamage: true
   - type: TargetAction
     range: 7

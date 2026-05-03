@@ -29,7 +29,7 @@
   - type: TargetAction
     range: 5
   - type: DoAfterArgs
-    delay: 2
+    delay: 1
     breakOnDamage: true
   - type: EntityTargetAction
     canTargetSelf: false

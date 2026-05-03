@@ -15,7 +15,7 @@
   - type: DoAfterArgs
     breakOnHandChange: false
     distanceThreshold: 1.5
-    delay: 0.5
+    delay: 0.25
   - type: Action
     useDelay: 5
     sound: null

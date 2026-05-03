@@ -12,7 +12,7 @@
     allowedStates:
     - Alive
   - type: DoAfterArgs
-    delay: 2
+    delay: 1
     hidden: true
   - type: Action
     useDelay: 0.5
@@ -22,7 +22,6 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Effects/gib1.ogg
   - type: TargetAction
-    repeat: true
     range: 1
     interactOnMiss: false
   - type: EntityTargetAction

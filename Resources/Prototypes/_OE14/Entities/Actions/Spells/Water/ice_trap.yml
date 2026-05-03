@@ -26,7 +26,7 @@
       sprite: _OE14/Actions/Spells/water.rsi
       state: ice_trap
   - type: DoAfterArgs
-    delay: 5
+    delay: 2.5
   - type: TargetAction
     checkCanAccess: false
     range: 3

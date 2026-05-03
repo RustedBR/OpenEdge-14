@@ -23,7 +23,7 @@
     proto: OE14RuneFireball
   - type: OE14ActionDangerous
   - type: DoAfterArgs
-    delay: 2.5
+    delay: 1.25
   - type: Action
     useDelay: 25
     icon:

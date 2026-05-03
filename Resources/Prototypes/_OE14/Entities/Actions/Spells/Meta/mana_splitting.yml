@@ -9,8 +9,7 @@
   - type: OE14ActionManaCost
     manaCost: 10
   - type: DoAfterArgs
-    delay: 1
-    repeat: true
+    delay: 0.5
     breakOnMove: true
     breakOnDamage: true
   - type: OE14ActionDoAfterVisuals

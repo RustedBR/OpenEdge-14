@@ -8,9 +8,8 @@
     manaCost: 10
     canModifyManacost: false
   - type: DoAfterArgs
-    repeat: true
     breakOnMove: true
-    delay: 1
+    delay: 0.5
     breakOnDamage: true
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneManaGift

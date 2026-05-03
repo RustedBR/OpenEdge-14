@@ -30,8 +30,7 @@
     canModifyManacost: false
   - type: DoAfterArgs
     hidden: true
-    repeat: true
-    delay: 1
+    delay: 0.5
   - type: OE14ActionRequiredMusicTool
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneMagicBallade

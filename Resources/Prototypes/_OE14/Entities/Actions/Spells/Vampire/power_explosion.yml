@@ -25,7 +25,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/_OE14/Effects/essence_consume.ogg
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 0.75
   - type: InstantAction
     event: !type:OE14InstantModularEffectEvent
       effects:

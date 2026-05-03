@@ -16,7 +16,7 @@
   - type: OE14ActionManaCost
     manaCost: 10
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 0.75
     breakOnDamage: true
   - type: OE14ActionSpeaking
     startSpeech: "Et curabuntur..."

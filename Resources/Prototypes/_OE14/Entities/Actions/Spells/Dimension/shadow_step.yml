@@ -20,7 +20,7 @@
     breakOnHandChange: false
     breakOnMove: false
     hidden: true
-    delay: 0.5
+    delay: 0.25
   - type: TargetAction
     range: 7
   - type: WorldTargetAction

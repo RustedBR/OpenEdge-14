@@ -22,7 +22,7 @@
   - type: OE14ActionDangerous
   - type: DoAfterArgs
     breakOnDamage: true
-    delay: 1.5
+    delay: 0.75
     distanceThreshold: 5
   - type: Action
     useDelay: 3

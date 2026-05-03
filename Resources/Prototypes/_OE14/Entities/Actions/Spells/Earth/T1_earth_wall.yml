@@ -18,7 +18,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneEarthWall
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 0.75
   - type: Action
     useDelay: 10
     icon:

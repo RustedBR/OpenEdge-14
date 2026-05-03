@@ -21,14 +21,13 @@
     proto: OE14RuneFirebolt
   - type: OE14ActionDangerous
   - type: DoAfterArgs
-    delay: 0.5
+    delay: 0.25
   - type: Action
     useDelay: 1
     icon:
       sprite: _OE14/Actions/Spells/fire.rsi
       state: firewave
   - type: TargetAction
-    repeat: true
     checkCanAccess: false
     range: 60
   - type: WorldTargetAction

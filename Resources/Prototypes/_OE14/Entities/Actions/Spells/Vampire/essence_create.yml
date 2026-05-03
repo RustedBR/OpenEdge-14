@@ -10,7 +10,7 @@
     skillPoint: Blood
     count: 1
   - type: DoAfterArgs
-    delay: 2.5
+    delay: 1.25
   - type: Action
     useDelay: 1
     icon:

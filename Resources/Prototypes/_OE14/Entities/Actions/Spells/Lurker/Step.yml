@@ -7,7 +7,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneLurkerFear
   - type: DoAfterArgs
-    delay: 1.0
+    delay: 0.5
     hidden: true
   - type: Action
     useDelay: 30

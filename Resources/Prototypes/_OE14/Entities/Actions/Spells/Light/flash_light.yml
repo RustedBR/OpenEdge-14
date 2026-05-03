@@ -21,7 +21,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneFlashLight
   - type: DoAfterArgs
-    delay: 0.5
+    delay: 0.25
     breakOnDamage: true
   - type: Action
     useDelay: 6
