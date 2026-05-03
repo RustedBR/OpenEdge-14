@@ -19,9 +19,8 @@
       sprite: _OE14/Actions/Spells/meta.rsi
       state: mana_consume
   - type: DoAfterArgs
-    repeat: true
     breakOnMove: true
-    delay: 1
+    delay: 0.5
     breakOnDamage: true
   - type: TargetAction
   - type: EntityTargetAction

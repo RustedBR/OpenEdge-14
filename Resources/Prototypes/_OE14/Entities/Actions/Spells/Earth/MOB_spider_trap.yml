@@ -17,7 +17,7 @@
     breakOnMove: false
     breakOnDamage: false
     hidden: true
-    delay: 0.5
+    delay: 0.25
   - type: TargetAction
     range: 10
     checkCanAccess: false

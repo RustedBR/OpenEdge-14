@@ -7,7 +7,7 @@
   - type: OE14ActionDoAfterSlowdown
     speedMultiplier: 0.8
   - type: DoAfterArgs
-    delay: 1
+    delay: 0.5
     hidden: true
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneVulnSpikes
@@ -19,7 +19,6 @@
       state: vulnerability
       color: "#a81e33"
   - type: TargetAction
-    repeat: false
     checkCanAccess: false
     range: 60
   - type: EntityTargetAction

@@ -25,7 +25,6 @@
       sprite: _OE14/Actions/Spells/water.rsi
       state: ice_shards
   - type: TargetAction
-    repeat: true
     checkCanAccess: false
     range: 60
   - type: WorldTargetAction

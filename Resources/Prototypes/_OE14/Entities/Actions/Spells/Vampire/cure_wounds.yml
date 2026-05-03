@@ -23,7 +23,7 @@
     range: 7
     interactOnMiss: false
   - type: DoAfterArgs
-    delay: 1.5
+    delay: 0.75
   - type: EntityTargetAction
     whitelist:
       components:

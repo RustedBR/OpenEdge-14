@@ -31,7 +31,7 @@
     range: 7
     interactOnMiss: false
   - type: DoAfterArgs
-    delay: 5
+    delay: 2.5
     breakOnMove: true
   - type: EntityTargetAction
     canTargetSelf: false

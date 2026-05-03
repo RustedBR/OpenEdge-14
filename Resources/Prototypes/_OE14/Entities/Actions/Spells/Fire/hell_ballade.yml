@@ -31,8 +31,7 @@
     proto: OE14RuneHellBallade
   - type: DoAfterArgs
     hidden: true
-    repeat: true
-    delay: 1
+    delay: 0.5
   - type: OE14ActionDangerous
   - type: Action
     useDelay: 15

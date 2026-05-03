@@ -27,7 +27,7 @@
       sprite: _OE14/Actions/Spells/light.rsi
       state: sphere_of_light
   - type: DoAfterArgs
-    delay: 0.5
+    delay: 0.25
   - type: TargetAction
     range: 5
   - type: EntityTargetAction

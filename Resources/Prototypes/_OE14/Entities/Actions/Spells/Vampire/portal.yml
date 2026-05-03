@@ -9,7 +9,7 @@
   - type: OE14ActionManaCost
     manaCost: 30
   - type: DoAfterArgs
-    delay: 2
+    delay: 1
     breakOnMove: true
     breakOnDamage: true
   - type: Action

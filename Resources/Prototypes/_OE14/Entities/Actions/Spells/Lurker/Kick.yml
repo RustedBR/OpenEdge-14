@@ -7,7 +7,7 @@
   - type: OE14ActionStaminaCost
     stamina: 20
   - type: DoAfterArgs
-    delay: 2.5
+    delay: 1.25
     distanceThreshold: 2.5
     breakOnDamage: true
   - type: OE14ActionEmoting

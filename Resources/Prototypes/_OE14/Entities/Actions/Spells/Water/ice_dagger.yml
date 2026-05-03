@@ -20,7 +20,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneWaterCreation
   - type: DoAfterArgs
-    delay: 0.5
+    delay: 0.25
   - type: Action
     useDelay: 5
     icon:

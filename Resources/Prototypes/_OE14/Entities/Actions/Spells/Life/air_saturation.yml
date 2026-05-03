@@ -20,7 +20,7 @@
     - Alive
     - Critical
   - type: DoAfterArgs
-    delay: 2
+    delay: 1
     breakOnDamage: true
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneAirSaturation

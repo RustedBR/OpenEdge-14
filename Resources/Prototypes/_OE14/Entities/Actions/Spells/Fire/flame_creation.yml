@@ -34,7 +34,7 @@
       state: flame_creation
   - type: DoAfterArgs
     breakOnHandChange: false
-    delay: 1
+    delay: 0.5
   - type: InstantAction
     event: !type:OE14InstantModularEffectEvent
       effects:

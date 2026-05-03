@@ -24,7 +24,7 @@
       sprite: _OE14/Actions/Spells/water.rsi
       state: water_creation
   - type: DoAfterArgs
-    delay: 1
+    delay: 0.5
   - type: InstantAction
     event: !type:OE14InstantModularEffectEvent
       effects:

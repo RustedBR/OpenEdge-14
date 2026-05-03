@@ -17,10 +17,9 @@
     range: 15
     interactOnMiss: false
   - type: DoAfterArgs
-    delay: 1
+    delay: 0.5
     hidden: true
     breakOnDamage: true
-    repeat: true
   - type: EntityTargetAction
     canTargetSelf: false
     whitelist:

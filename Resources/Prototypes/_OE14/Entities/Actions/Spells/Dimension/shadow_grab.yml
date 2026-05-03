@@ -14,7 +14,7 @@
       state: shadow_grab
   - type: DoAfterArgs
     breakOnHandChange: false
-    delay: 0.5
+    delay: 0.25
   - type: TargetAction
     range: 10
   - type: EntityTargetAction

@@ -9,7 +9,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14RuneTieflingRevenge
   - type: DoAfterArgs
-    delay: 1
+    delay: 0.5
   - type: Action
     useDelay: 10
     icon:

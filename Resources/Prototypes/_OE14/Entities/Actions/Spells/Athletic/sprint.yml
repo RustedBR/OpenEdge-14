@@ -10,8 +10,7 @@
     stamina: 2.0
   - type: DoAfterArgs
     hidden: true
-    repeat: true
-    delay: 0.25
+    delay: 0.125
   - type: Action
     useDelay: 2
     sound: null

@@ -12,7 +12,7 @@
   - type: OE14ActionDoAfterVisuals
     proto: OE14ImpactEffectBloodStep
   - type: DoAfterArgs
-    delay: 0.5
+    delay: 0.25
     hidden: true
   - type: Action
     useDelay: 10
