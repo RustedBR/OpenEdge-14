@@ -1,13 +1,13 @@
-using Content.Server.Flash;
 using Content.Shared._OE14.CharacterStats.Components;
-using Content.Shared._OE14.MagicSpell.Spells;
+using Content.Shared._OE14.MagicSpell.Events;
 using Robust.Shared.Network;
 
-namespace Content.Server._OE14.MagicSpell.Spells;
+namespace Content.Shared._OE14.MagicSpell.Spells;
 
 /// <summary>
 /// Spell effect that flashes all entities in a radius around the target position.
 /// Range scales with caster INT: BaseRange + ceil(effInt / IntDivisor).
+/// Actual flash execution is handled server-side via OE14FlashAreaEffectEvent.
 /// </summary>
 public sealed partial class OE14SpellFlashArea : OE14SpellEffect
 {
@@ -30,13 +30,8 @@ public sealed partial class OE14SpellFlashArea : OE14SpellEffect
     public override void Effect(EntityManager entManager, OE14SpellEffectBaseArgs args)
     {
         var net = IoCManager.Resolve<INetManager>();
-        if (net.IsClient)
+        if (net.IsClient || args.User is null)
             return;
-
-        if (args.User is null)
-            return;
-
-        var flashSys = entManager.System<FlashSystem>();
 
         var effectiveRange = BaseRange;
 
@@ -46,6 +41,7 @@ public sealed partial class OE14SpellFlashArea : OE14SpellEffect
             effectiveRange += MathF.Ceiling(effInt / IntDivisor);
         }
 
-        flashSys.FlashArea(args.User.Value, args.User, effectiveRange, FlashDuration, SlowTo);
+        var ev = new OE14FlashAreaEffectEvent(args.User.Value, args.User, effectiveRange, FlashDuration, SlowTo);
+        entManager.EventBus.RaiseLocalEvent(args.User.Value, ref ev);
     }
 }

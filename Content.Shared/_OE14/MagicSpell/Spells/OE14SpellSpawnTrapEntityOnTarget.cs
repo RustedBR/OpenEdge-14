@@ -1,9 +1,8 @@
-using Content.Shared._OE14.MagicSpell.Spells;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._OE14.MagicSpell.Spells;
+namespace Content.Shared._OE14.MagicSpell.Spells;
 
 /// <summary>
 /// Spawns a trap entity at the target position and assigns the spell caster as the owner
@@ -16,6 +15,10 @@ public sealed partial class OE14SpellSpawnTrapEntityOnTarget : OE14SpellEffect
 
     public override void Effect(EntityManager entManager, OE14SpellEffectBaseArgs args)
     {
+        var netMan = IoCManager.Resolve<INetManager>();
+        if (netMan.IsClient)
+            return;
+
         EntityCoordinates? targetPoint = null;
         if (args.Position is not null)
             targetPoint = args.Position.Value;
@@ -23,10 +26,6 @@ public sealed partial class OE14SpellSpawnTrapEntityOnTarget : OE14SpellEffect
             targetPoint = xform.Coordinates;
 
         if (targetPoint is null)
-            return;
-
-        var netMan = IoCManager.Resolve<INetManager>();
-        if (netMan.IsClient)
             return;
 
         var trap = entManager.SpawnAtPosition(Trap, targetPoint.Value);
