@@ -1,3 +1,6 @@
+using Content.Server.Flash;
+using Content.Shared._OE14.MagicSpell;
+using Content.Shared._OE14.MagicSpell.Events;
 using Content.Shared._OE14.MagicSpell.Spells;
 using Content.Shared.Audio;
 using Content.Shared.CombatMode.Pacification;
@@ -16,6 +19,7 @@ public sealed  class OE14MagicSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly FlashSystem _flash = default!;
 
     public override void Initialize()
     {
@@ -27,6 +31,12 @@ public sealed  class OE14MagicSystem : EntitySystem
         SubscribeLocalEvent<OE14SpellEffectOnHitComponent, ThrowDoHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<OE14SpellEffectOnCollideComponent, StartCollideEvent>(OnStartCollide);
         SubscribeLocalEvent<OE14TrapCollideComponent, StartCollideEvent>(OnTrapCollide);
+        SubscribeLocalEvent<OE14FlashAreaEffectEvent>(OnFlashAreaEffect);
+    }
+
+    private void OnFlashAreaEffect(ref OE14FlashAreaEffectEvent ev)
+    {
+        _flash.FlashArea(ev.Source, ev.Instigator, ev.Range, ev.Duration, ev.SlowTo);
     }
 
     private void OnTrapCollide(Entity<OE14TrapCollideComponent> ent, ref StartCollideEvent args)

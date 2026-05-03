@@ -1,10 +1,10 @@
 using Content.Shared._OE14.MagicSpell.Spells;
 using Content.Shared.Whitelist;
 
-namespace Content.Server._OE14.MagicSpell;
+namespace Content.Shared._OE14.MagicSpell;
 
 /// <summary>
-/// Component that allows an meleeWeapon to apply effects to other entities on melee attacks.
+/// Component that allows an entity to apply spell effects to other entities on collision.
 /// </summary>
 [RegisterComponent]
 public sealed partial class OE14SpellEffectOnCollideComponent : Component

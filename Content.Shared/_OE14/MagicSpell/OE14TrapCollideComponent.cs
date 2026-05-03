@@ -2,7 +2,7 @@ using Content.Shared._OE14.MagicSpell.Spells;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 
-namespace Content.Server._OE14.MagicSpell;
+namespace Content.Shared._OE14.MagicSpell;
 
 /// <summary>
 /// Replaces TriggerOnCollide + DeleteOnTrigger + SpawnOnTrigger for magic traps.

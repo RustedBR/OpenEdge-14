@@ -1,6 +1,7 @@
 using Content.Shared._OE14.CharacterStats;
 using Content.Shared._OE14.CharacterStats.Components;
 using Content.Shared._OE14.MagicSpell.Components;
+using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 
 namespace Content.Server._OE14.MagicSpell;
@@ -18,11 +19,20 @@ public sealed partial class OE14ActionIntScaledDescriptionSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<OE14CharacterStatsComponent, OE14StatsUpdatedEvent>(OnStatsUpdated);
+        SubscribeLocalEvent<OE14CharacterStatsComponent, ActionAddedEvent>(OnActionAdded);
     }
 
     private void OnStatsUpdated(EntityUid uid, OE14CharacterStatsComponent stats, OE14StatsUpdatedEvent args)
     {
         UpdateAllActionDescriptions(uid, stats);
+    }
+
+    private void OnActionAdded(EntityUid uid, OE14CharacterStatsComponent stats, ActionAddedEvent args)
+    {
+        if (!TryComp<OE14ActionIntScaledDescriptionComponent>(args.Action, out var descComp))
+            return;
+
+        UpdateActionDescription(args.Action, descComp, stats);
     }
 
     // ─── Helpers ───────────────────────────────────────────────────────────────
