@@ -1,5 +1,30 @@
 - type: entity
   parent: OE14BaseGameRule
+  id: OE14GameRuleVampireClanBattleSingle
+  components:
+  - type: OE14VampireRule
+  - type: GameRule
+    minPlayers: 10
+    maxPlayers: 19
+  - type: SubGamemodes
+    rules:
+    - id: OE14GameRuleVampireClanUnnameable
+
+- type: entity
+  parent: OE14BaseGameRule
+  id: OE14GameRuleVampireClanBattleDouble
+  components:
+  - type: OE14VampireRule
+  - type: GameRule
+    minPlayers: 20
+    maxPlayers: 29
+  - type: SubGamemodes
+    rules:
+    - id: OE14GameRuleVampireClanDevourers
+    - id: OE14GameRuleVampireClanNightChildrens
+
+- type: entity
+  parent: OE14BaseGameRule
   id: OE14GameRuleVampireClanBattleTriple
   components:
   - type: OE14VampireRule

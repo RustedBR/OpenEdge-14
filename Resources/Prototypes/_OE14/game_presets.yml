@@ -30,6 +30,19 @@
   cP14Allowed: true
   rules:
     - OE14BasicStationEventScheduler
+    - OE14RoundObjectivesRule
+
+- type: gamePreset
+  id: OE14VampireClansBattleSingle
+  name: oe14-vampire-clans-battle
+  description: oe14-vampire-clans-description
+  showInVote: true
+  cP14Allowed: true
+  minPlayers: 10
+  maxPlayers: 19
+  rules:
+    - OE14BasicStationEventScheduler
+    - OE14GameRuleVampireClanBattleSingle
 
 - type: gamePreset
   id: OE14VampireClansBattleDouble
