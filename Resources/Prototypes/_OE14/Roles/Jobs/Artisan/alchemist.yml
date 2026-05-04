@@ -20,9 +20,6 @@
       - AlchemyVision
       - TraderWit # Craftsmen have always taken this perk. The main purpose of craftsmen is trade.
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: OE14Artisan
-      time: 7200 # 2 hours
     - !type:TraitsRequirement
       inverted: true
       traits:

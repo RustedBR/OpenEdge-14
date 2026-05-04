@@ -9,6 +9,7 @@
   - type: OE14ActionStaminaCost
     stamina: 2.0
   - type: DoAfterArgs
+    repeat: true
     hidden: true
     delay: 0.125
   - type: Action

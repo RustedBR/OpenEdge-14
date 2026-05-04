@@ -11,10 +11,6 @@
   canBeAntag: false
   supervisors: oe14-job-supervisors-command
   weight: 2
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: OE14Guard
-      time: 10980 # 3 hours
   special:
     #- !type:OE14LearnSkillsSpecial
     #  skills:

@@ -8,10 +8,6 @@
   icon: "OE14JobIconInvestigator"
   supervisors: oe14-job-supervisors-guard-commander
   canBeAntag: false
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: OE14Guard
-      time: 3600 # 1 hours
   special:
     - !type:OE14LearnSkillsSpecial
       skills:

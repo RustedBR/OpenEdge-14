@@ -154,7 +154,7 @@ public sealed partial class OE14CharacterStatsComponent : Component
     /// Maximum value any single stat can reach (including modifiers).
     /// </summary>
     [DataField]
-    public int MaxStatValue = 10;
+    public int MaxStatValue = 15;
 
     // ── Last-applied tracking (server-only) ───────────────────────────────────
     // Used to apply stat contributions as deltas so external bonuses
