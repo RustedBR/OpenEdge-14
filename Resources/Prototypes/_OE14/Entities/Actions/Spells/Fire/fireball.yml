@@ -97,9 +97,9 @@
       shader: unshaded
   - type: Explosive
     explosionType: FireBomb
-    totalIntensity: 15
-    intensitySlope: 1
-    maxIntensity: 6
+    totalIntensity: 8
+    intensitySlope: 0.5
+    maxIntensity: 3
     canCreateVacuum: false
 
 - type: entity

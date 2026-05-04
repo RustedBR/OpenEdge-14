@@ -155,8 +155,11 @@
         variation: 0.250
         volume: -12
     cPAnimationLength: 0.15
-  - type: OE14DelayedIgnitionSource
-    enabled: true
+  - type: IgnitionSource
+    temperature: 400
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.30
 
 - type: entity
   parent: OE14BaseSpellScrollFire

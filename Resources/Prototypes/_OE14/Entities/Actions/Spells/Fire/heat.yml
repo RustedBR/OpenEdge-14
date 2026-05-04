@@ -45,7 +45,6 @@
         effects:
         - !type:AdjustTemperature
           amount: 20000
-        - !type:ExtinguishReaction
 
 - type: entity
   id: OE14ImpactEffectHeat

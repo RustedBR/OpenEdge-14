@@ -94,6 +94,11 @@
         Heat: 2
     soundHit:
       path: /Audio/Weapons/Guns/Hits/energy_metal1.ogg
+  - type: IgnitionSource
+    temperature: 400
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.25
   - type: Sprite
     sprite: _OE14/Effects/fire.rsi
     layers:
