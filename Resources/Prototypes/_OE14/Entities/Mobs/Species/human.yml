@@ -15,7 +15,7 @@
   - type: OE14SkillStorage
     skillPoints:
       Memory:
-        max: 5.5
+        max: 12
   - type: Inventory
     templateId: OE14Human
     displacements:
