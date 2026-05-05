@@ -3,6 +3,7 @@
   id: OE14GameRuleVampireClanBattleSingle
   components:
   - type: OE14VampireRule
+  - type: OE14VampireNightRule
   - type: GameRule
     minPlayers: 10
     maxPlayers: 19
@@ -46,6 +47,7 @@
   id: OE14GameRuleVampireClanBattleDouble
   components:
   - type: OE14VampireRule
+  - type: OE14VampireNightRule
   - type: GameRule
     minPlayers: 20
     maxPlayers: 29
@@ -89,6 +91,7 @@
   id: OE14GameRuleVampireClanBattleTriple
   components:
   - type: OE14VampireRule
+  - type: OE14VampireNightRule
   - type: GameRule
     minPlayers: 30
   - type: AntagObjectives
