@@ -169,6 +169,39 @@ lsof -ti:1212 | xargs kill -9
 - **AI policy**: This is a personal fork — AI-assisted code is allowed. Do NOT push AI code to upstream Ss14-Medieval.
 - **Build check**: Always run `dotnet build` before committing. 0 errors required.
 
+## Git Commit Policy — **IMPORTANT**
+
+**RULE: NEVER make a commit without explicit permission from the user.**
+
+1. **Before committing**, always ask the user for approval:
+   - Show what will be committed: `git status` and `git diff`
+   - Explain what changed and why
+   - Wait for explicit confirmation ("yes", "ok", "proceed", etc.)
+
+2. **Never commit automatically** when:
+   - The session ends
+   - Tests pass
+   - Build succeeds
+   - Changes are "complete"
+   - Any other automated trigger
+
+3. **Always require explicit permission** even if:
+   - User said "implement this feature" (that's implementation approval, not commit approval)
+   - Changes are small or "obvious"
+   - Previous commits were already made (each commit needs fresh approval)
+   - The branch will be for a PR (commits still need approval)
+
+4. **Acceptable commit workflows**:
+   - ✅ User: "Commit this" → make commits with user message
+   - ✅ User: "Implement feature X and commit it" → implement + show changes + wait for "yes" → commit
+   - ✅ User: "Just implement, don't commit" → implement → stop (no commit)
+   - ❌ User: "Implement feature X" → implement + auto-commit (WRONG!)
+
+5. **After committing**, always:
+   - Show the commit hash: `git log --oneline -1`
+   - Confirm commit was successful
+   - Ask if user wants to push or make a PR
+
 ---
 
 ## Guidebook System — How It Works
