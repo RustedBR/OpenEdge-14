@@ -6,52 +6,6 @@
   - type: GameRule
     minPlayers: 10
     maxPlayers: 19
-  - type: SubGamemodes
-    rules:
-    - id: OE14GameRuleVampireClanUnnameable
-
-- type: entity
-  parent: OE14BaseGameRule
-  id: OE14GameRuleVampireClanBattleDouble
-  components:
-  - type: OE14VampireRule
-  - type: GameRule
-    minPlayers: 20
-    maxPlayers: 29
-  - type: SubGamemodes
-    rules:
-    - id: OE14GameRuleVampireClanDevourers
-    - id: OE14GameRuleVampireClanNightChildrens
-
-- type: entity
-  parent: OE14BaseGameRule
-  id: OE14GameRuleVampireClanBattleTriple
-  components:
-  - type: OE14VampireRule
-  - type: GameRule
-    minPlayers: 30
-  - type: SubGamemodes
-    rules:
-    - id: OE14GameRuleVampireClanUnnameable
-    - id: OE14GameRuleVampireClanDevourers
-    - id: OE14GameRuleVampireClanNightChildrens
-
-- type: entity
-  parent: OE14BaseGameRule
-  id: OE14GameRuleVampireClanBattleDouble
-  components:
-  - type: OE14VampireRule
-  - type: GameRule
-    minPlayers: 20
-  - type: SubGamemodes
-    rules:
-    - id: OE14GameRuleVampireClanDevourers
-    - id: OE14GameRuleVampireClanNightChildrens
-
-- type: entity
-  parent: OE14BaseGameRule
-  id: OE14GameRuleVampireClanUnnameable
-  components:
   - type: AntagObjectives
     objectives:
     - OE14VampireObjectiveBloodPurity
@@ -60,9 +14,7 @@
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ OE14Vampire ]
-      min: 1
-      max: 3
-      playerRatio: 2
+      playerRatio: 6
       lateJoinAdditional: true
       mindRoles:
       - OE14MindRoleVampire
@@ -76,7 +28,7 @@
           Peckish: OE14VampirePeckish
           Starving: OE14VampireStarving
           Dead: OE14VampireStarving
-        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+        starvingSlowdownModifier: 1.1
       - type: PassiveDamage
         allowedStates:
         - Alive
@@ -91,8 +43,12 @@
 
 - type: entity
   parent: OE14BaseGameRule
-  id: OE14GameRuleVampireClanDevourers
+  id: OE14GameRuleVampireClanBattleDouble
   components:
+  - type: OE14VampireRule
+  - type: GameRule
+    minPlayers: 20
+    maxPlayers: 29
   - type: AntagObjectives
     objectives:
     - OE14VampireObjectiveBloodPurity
@@ -101,9 +57,7 @@
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ OE14Vampire ]
-      min: 1
-      max: 3
-      playerRatio: 2
+      playerRatio: 6
       lateJoinAdditional: true
       mindRoles:
       - OE14MindRoleVampire
@@ -117,7 +71,7 @@
           Peckish: OE14VampirePeckish
           Starving: OE14VampireStarving
           Dead: OE14VampireStarving
-        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+        starvingSlowdownModifier: 1.1
       - type: PassiveDamage
         allowedStates:
         - Alive
@@ -132,8 +86,11 @@
 
 - type: entity
   parent: OE14BaseGameRule
-  id: OE14GameRuleVampireClanNightChildrens
+  id: OE14GameRuleVampireClanBattleTriple
   components:
+  - type: OE14VampireRule
+  - type: GameRule
+    minPlayers: 30
   - type: AntagObjectives
     objectives:
     - OE14VampireObjectiveBloodPurity
@@ -142,9 +99,7 @@
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ OE14Vampire ]
-      min: 1
-      max: 3
-      playerRatio: 2
+      playerRatio: 6
       lateJoinAdditional: true
       mindRoles:
       - OE14MindRoleVampire
@@ -158,7 +113,7 @@
           Peckish: OE14VampirePeckish
           Starving: OE14VampireStarving
           Dead: OE14VampireStarving
-        starvingSlowdownModifier: 1.1 #Speed Up when hunger!
+        starvingSlowdownModifier: 1.1
       - type: PassiveDamage
         allowedStates:
         - Alive
@@ -170,3 +125,4 @@
         text: oe14-roles-antag-vampire-briefing-night-childrens
         color: "#630f24"
         sound: "/Audio/_OE14/Ambience/Antag/vampire.ogg"
+
