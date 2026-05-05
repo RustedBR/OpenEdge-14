@@ -23,9 +23,9 @@
     - Sandbox
 
 - type: gamePreset
-  id: OE14Peaceful
-  name: oe14-peaceful-title
-  description: oe14-peaceful-description
+  id: OE14Adventure
+  name: oe14-adventure-title
+  description: oe14-adventure-description
   showInVote: true
   cP14Allowed: true
   rules:
