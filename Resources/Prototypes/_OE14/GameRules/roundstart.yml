@@ -13,7 +13,7 @@
   - type: OE14PersonalObjectivesRule
     roleObjectives:
       OE14Adventurer:
-      - OE14PersonalCurrencyCollectObjectiveGroup
+      - OE14PersonalDefeatEnemiesObjectiveGroup
       OE14Alchemist:
       - OE14PersonalCurrencyCollectObjectiveGroup
       OE14Apprentice:

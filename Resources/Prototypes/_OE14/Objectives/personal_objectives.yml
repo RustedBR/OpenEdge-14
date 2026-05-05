@@ -38,3 +38,33 @@
   weights:
     OE14PersonalCurrencyCollectObjective: 1
 
+# Defeat enemies objectives
+- type: entity
+  abstract: true
+  parent: OE14BasePersonalObjective
+  id: OE14BasePersonalDefeatEnemiesObjective
+  components:
+  - type: Objective
+    difficulty: 0
+  - type: OE14DefeatEnemiesCondition
+    targetCount: 5
+    currentCount: 0
+    memoryReward: 0.5
+    rewardEvery: 5
+    objectiveText: oe14-objective-personal-defeat-enemies-title
+    objectiveDescription: oe14-objective-personal-defeat-enemies-desc
+
+- type: entity
+  parent: OE14BasePersonalDefeatEnemiesObjective
+  id: OE14PersonalDefeatEnemiesObjective
+  components:
+  - type: Objective
+    difficulty: 1
+  - type: OE14DefeatEnemiesCondition
+    targetCount: 5
+
+- type: weightedRandom
+  id: OE14PersonalDefeatEnemiesObjectiveGroup
+  weights:
+    OE14PersonalDefeatEnemiesObjective: 1
+

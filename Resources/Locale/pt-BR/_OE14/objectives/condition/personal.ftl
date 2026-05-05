@@ -5,3 +5,6 @@ oe14-objective-personal-currency-collect-desc = Planejo ganhar pelo menos{$coins
 
 oe14-objective-personal-richest-merchant-title = Tornar-se o mais rico dos mercadores
 oe14-objective-personal-richest-merchant-desc = Preciso superar todos os outros mercadores ganando mais dinheiro que todos eles!
+
+oe14-objective-personal-defeat-enemies-title = Derrotar {$count} inimigos
+oe14-objective-personal-defeat-enemies-desc = Preciso derrotar pelo menos {$count} inimigos para ganhar experiência em combate.

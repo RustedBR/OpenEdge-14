@@ -5,3 +5,6 @@ oe14-objective-personal-currency-collect-desc = I plan to earn at least{$coins} 
 
 oe14-objective-personal-richest-merchant-title = Become the richest of merchants
 oe14-objective-personal-richest-merchant-desc = I must beat all other merchants by making more money than all of them!
+
+oe14-objective-personal-defeat-enemies-title = Defeat {$count} enemies
+oe14-objective-personal-defeat-enemies-desc = I must defeat at least {$count} enemies to gain combat experience.
