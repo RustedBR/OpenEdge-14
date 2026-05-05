@@ -23,7 +23,7 @@
       sprite: /Textures/_OE14/Objects/Economy/gp_coin.rsi
       state: coin10
 
-# Collect currency group
+# Collect currency group - for townsfolk with Memory rewards
 - type: entity
   parent: OE14BasePersonalCurrencyCollectObjective
   id: OE14PersonalCurrencyCollectObjective
@@ -32,6 +32,8 @@
     difficulty: 1
   - type: OE14CurrencyCollectCondition
     currency: 500
+    memoryReward: 0.5
+    rewardEvery: 2
 
 - type: weightedRandom
   id: OE14PersonalCurrencyCollectObjectiveGroup
